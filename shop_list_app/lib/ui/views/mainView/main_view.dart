@@ -7,7 +7,25 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar:
-            AppBar(title: Text('Application'), actions: [CustomMenuButtons()]));
+      appBar:
+          AppBar(title: Text('Application'), actions: [CustomMenuButtons()]),
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Actions"),
+            SizedBox(
+              width: 20,
+            ),
+            RaisedButton(
+              child: Text("Recipe list"),
+              onPressed: () {
+                Navigator.pushNamed(context, recipesView);
+              },
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
