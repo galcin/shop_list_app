@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:shop_list_app/ui/route_constants.dart';
 import 'package:shop_list_app/ui/views/mainView/components/menu_buttons.dart';
 
+import '../../route_constants.dart';
+
 class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,11 +19,21 @@ class MainView extends StatelessWidget {
             SizedBox(
               width: 20,
             ),
-            RaisedButton(
-              child: Text("Recipe list"),
-              onPressed: () {
-                Navigator.pushNamed(context, recipesView);
-              },
+            Center(
+              child: ElevatedButton (
+                child: Text("Recipe list"),
+                onPressed: () {
+                  Navigator.pushNamed(context, recipesView);
+                },
+              ),
+            ),
+            Center(
+              child: ElevatedButton (
+                child: Text("Create Week Menu"),
+                onPressed: (){
+                  Navigator.pushNamed(context, menuComposer);
+                },
+              ),              
             )
           ],
         ),

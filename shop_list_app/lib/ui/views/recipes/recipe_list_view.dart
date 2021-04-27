@@ -12,18 +12,19 @@ class RecipeListView extends StatelessWidget {
         title: Text("Recipe list"),
       ),
       body: FutureBuilder(
-        future: recipeViewModel.getItemList(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-          } else if (snapshot.hasError) {}
-          return ListView.builder(
-            itemCount: snapshot.data.length,
-            itemBuilder: (context, index) {
-              return ListTileComponent(snapshot.data[index]);
-            },
-          );
-        },
-      ),
+          future: recipeViewModel.getItemList(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return ListView.builder(
+                itemCount: snapshot.data.length,
+                itemBuilder: (context, index) {
+                  return ListTileComponent(snapshot.data[index]);
+                },
+              );
+            } else {
+              return CircularProgressIndicator();
+            }
+          }),
     );
   }
 }
