@@ -3,11 +3,13 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:inline_calender/inline_calender.dart';
+import 'package:shop_list_app/ui/views/menuComposer/menu_container_component.dart';
 
-class MenuComposerView extends StatefulWidget{
+class MenuComposerView extends StatefulWidget {
   @override
-  _MenuComposerView createState()=>_MenuComposerView();
+  _MenuComposerView createState() => _MenuComposerView();
 }
+
 class _MenuComposerView extends State<MenuComposerView> {
   InlineCalenderModel _controller;
   DateTime _pickedDate = DateTime.now();
@@ -16,12 +18,12 @@ class _MenuComposerView extends State<MenuComposerView> {
     DateTime.now().subtract(Duration(days: 7)): Colors.red,
   };
   @override
-  void initState(){
-      _controller = InlineCalenderModel(
+  void initState() {
+    _controller = InlineCalenderModel(
       defaultSelectedDate: _pickedDate,
       onChange: (DateTime date) => print(date),
     );
-    _controller.setColoredDates(_coloredDates) ;
+    _controller.setColoredDates(_coloredDates);
     super.initState();
   }
 
@@ -31,17 +33,17 @@ class _MenuComposerView extends State<MenuComposerView> {
     _controller.dispose();
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            _controller.selectedDate =
-                _controller.selectedDate.add(DateTime.now().difference(_controller.selectedDate));
-          },
-          child: Icon(Icons.calendar_today),
-        ),
+        onPressed: () {
+          _controller.selectedDate = _controller.selectedDate
+              .add(DateTime.now().difference(_controller.selectedDate));
+        },
+        child: Icon(Icons.calendar_today),
+      ),
       appBar: AppBar(
         title: Text("Menu Composer"),
         bottom: InlineCalender(
@@ -51,8 +53,12 @@ class _MenuComposerView extends State<MenuComposerView> {
           middleWeekday: DateTime.now().weekday,
         ),
       ),
-      body: Container(
-        child: Text("Composer go here"),
+      body: Column(
+        children: [
+          MenuContainerComponent("Breakfast", null),
+          MenuContainerComponent("Lunch", null),
+          MenuContainerComponent("Dinner", null)
+        ],
       ),
     );
   }
