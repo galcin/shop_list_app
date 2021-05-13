@@ -1,8 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:inline_calender/inline_calender.dart';
+import 'package:shop_list_app/ui/views/menuComposer/components/carousel/date_selector.dart';
 import 'package:shop_list_app/ui/views/menuComposer/menu_container_component.dart';
 
 class MenuComposerView extends StatefulWidget {
@@ -11,26 +9,20 @@ class MenuComposerView extends StatefulWidget {
 }
 
 class _MenuComposerView extends State<MenuComposerView> {
-  InlineCalenderModel _controller;
   DateTime _pickedDate = DateTime.now();
   Map<DateTime, Color> _coloredDates = {
     DateTime.now().add(Duration(days: 2)): Colors.blue,
     DateTime.now().subtract(Duration(days: 7)): Colors.red,
   };
+
   @override
   void initState() {
-    _controller = InlineCalenderModel(
-      defaultSelectedDate: _pickedDate,
-      onChange: (DateTime date) => print(date),
-    );
-    _controller.setColoredDates(_coloredDates);
     super.initState();
   }
 
   @override
   void dispose() {
     print('dispose');
-    _controller.dispose();
     super.dispose();
   }
 
@@ -38,21 +30,15 @@ class _MenuComposerView extends State<MenuComposerView> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _controller.selectedDate = _controller.selectedDate
-              .add(DateTime.now().difference(_controller.selectedDate));
-        },
+        onPressed: () {},
         child: Icon(Icons.calendar_today),
       ),
       appBar: AppBar(
-        title: Text("Menu Composer"),
-        bottom: InlineCalender(
-          controller: _controller,
-          locale: Locale('en_GB'),
-          isShamsi: false,
-          middleWeekday: DateTime.now().weekday,
-        ),
-      ),
+          title: Text("Menu Composer"),
+          bottom: PreferredSize(
+            preferredSize: Size(15.0, 15.0),
+            child: DateSelector(),
+          )),
       body: Column(
         children: [
           MenuContainerComponent("Breakfast", null),

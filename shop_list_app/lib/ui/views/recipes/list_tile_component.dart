@@ -8,10 +8,16 @@ class ListTileComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(Icons.image_not_supported_outlined),
-      title: Text(item.name),
-      subtitle: Text(item.description),
+    return Container(
+      child: ListTile(
+        leading: Icon(Icons.image_not_supported_outlined),
+        title: Text(item.name),
+        subtitle: Text(item.description),
+      ),
+      margin: EdgeInsets.all(5),
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.blueAccent),
+          borderRadius: BorderRadius.circular(20)),
     );
   }
 }
