@@ -1,13 +1,13 @@
 class Recipe {
-  int id;
-  String name;
-  String photo;
-  String description;
-  int foodCategoryId;
-  String foodCategory;
+  int? id;
+  String? name;
+  String? photo;
+  String? description;
+  int? foodCategoryId;
+  String? foodCategory;
 
-  Recipe(this.name, this.photo, this.description, this.foodCategoryId,
-      {this.id});
+  Recipe(
+      {this.name, this.photo, this.description, this.foodCategoryId, this.id});
 
   Recipe.fromMap(Map<String, dynamic> json) {
     this.name = json["name"];

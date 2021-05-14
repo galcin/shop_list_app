@@ -2,11 +2,7 @@ import 'package:shop_list_app/core/repository/recipe_repository.dart';
 import 'package:shop_list_app/service/models/recipe.dart';
 
 class RecipeViewModel {
-  RecipeRepository repository;
-
-  RecipeViewModel() {
-    repository = new RecipeRepository();
-  }
+  RecipeRepository repository = new RecipeRepository();
 
   Future<List<Recipe>> getItemList() async {
     return await repository.getRecipesList();

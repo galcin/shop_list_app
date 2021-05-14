@@ -4,9 +4,14 @@ import 'package:flutter/rendering.dart';
 
 class DateSelector extends StatefulWidget {
   final EdgeInsets padding;
+  final void Function(int selectedDay) onFilterChanged;
+  final List<int> filters;
 
   const DateSelector(
-      {Key key, this.padding = const EdgeInsets.symmetric(vertical: 1.0)})
+      {Key? key,
+      this.padding = const EdgeInsets.symmetric(vertical: 1.0),
+      required this.filters,
+      required this.onFilterChanged})
       : super(key: key);
 
   @override
@@ -24,7 +29,7 @@ class _DateSelector extends State<DateSelector> {
         final itemSize = constraints.maxWidth * _fractionPerItem;
 
         return Stack(
-          alignment: Alignment.topCenter,
+          alignment: Alignment.bottomCenter,
           children: [
             SizedBox(
               height: itemSize * 2 + widget.padding.vertical,

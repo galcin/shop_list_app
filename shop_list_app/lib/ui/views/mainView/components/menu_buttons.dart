@@ -39,7 +39,7 @@ class CustomMenuButtons extends StatelessWidget {
         )
       ],
       onSelected: (value) {
-        Navigator.pushNamed(context, value);
+        Navigator.pushNamed(context, value as String);
       },
     ));
   }
