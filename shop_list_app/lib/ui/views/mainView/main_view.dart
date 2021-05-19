@@ -34,6 +34,14 @@ class MainView extends StatelessWidget {
                   Navigator.pushNamed(context, menuComposer);
                 },
               ),              
+            ),
+            Center(
+              child: ElevatedButton (
+                child: Text("Filter selector test"),
+                onPressed: (){
+                  Navigator.pushNamed(context, filterSelector);
+                },
+              ),              
             )
           ],
         ),

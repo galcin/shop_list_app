@@ -4,6 +4,7 @@ import 'package:shop_list_app/ui/route_constants.dart';
 import 'package:shop_list_app/ui/views/aboutView/about_view.dart';
 import 'package:shop_list_app/ui/views/errorView/error_view.dart';
 import 'package:shop_list_app/ui/views/mainView/main_view.dart';
+import 'package:shop_list_app/ui/views/menuComposer/components/carousel/test_file.dart';
 import 'package:shop_list_app/ui/views/menuComposer/menu_composer_view.dart';
 import 'package:shop_list_app/ui/views/menuView/menu_view.dart';
 import 'package:shop_list_app/ui/views/recipes/recipe_list_view.dart';
@@ -27,6 +28,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => RecipeListView());
     case menuComposer:
       return MaterialPageRoute(builder: (context) => MenuComposerView());
+    case filterSelector:
+      return MaterialPageRoute(
+          builder: (context) => ExampleInstagramFilterSelection());
     default:
       return MaterialPageRoute(builder: (context) => ErrorView());
   }
