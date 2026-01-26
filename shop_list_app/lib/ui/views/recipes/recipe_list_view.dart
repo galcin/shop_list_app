@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_list_app/core/viewModels/recipe_viewmodel.dart';
 import 'package:shop_list_app/service/models/recipe.dart';

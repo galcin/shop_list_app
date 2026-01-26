@@ -1,4 +1,4 @@
-import 'package:shop_list_app/service/models/recipe.dart';
+import '../../models/recipe.dart';
 
 class FakeData {
   static List<Recipe> fakeList = [];

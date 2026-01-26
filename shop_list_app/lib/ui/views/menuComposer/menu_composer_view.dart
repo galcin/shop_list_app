@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_list_app/ui/views/menuComposer/components/carousel/date_selector.dart';
 import 'package:shop_list_app/ui/views/menuComposer/components/carousel/template_selector.dart';

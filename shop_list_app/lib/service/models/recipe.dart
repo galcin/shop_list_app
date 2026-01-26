@@ -3,6 +3,7 @@ class Recipe {
   String? name;
   String? photo;
   String? description;
+  String? instructions;
   int? foodCategoryId;
   String? foodCategory;
 

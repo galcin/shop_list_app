@@ -1,5 +1,5 @@
-import 'package:shop_list_app/service/models/recipe.dart';
-import 'package:shop_list_app/service/storage/fakeApi/fake_data.dart';
+import '../../service/models/recipe.dart';
+import '../../service/storage/fakeApi/fake_data.dart';
 
 class RecipeRepository {
   RecipeRepository() {

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AboutView extends StatelessWidget {
@@ -9,7 +8,7 @@ class AboutView extends StatelessWidget {
         title: Text("About Application"),
       ),
       body: Container(
-        child: Text("About application gose here"),
+        child: Text("About application will be here"),
       ),
     );
   }

@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_list_app/ui/route_constants.dart';
 import 'package:shop_list_app/ui/views/mainView/components/menu_buttons.dart';
-
-import '../../route_constants.dart';
 
 class MainView extends StatelessWidget {
   @override
@@ -20,7 +17,7 @@ class MainView extends StatelessWidget {
               width: 20,
             ),
             Center(
-              child: ElevatedButton (
+              child: ElevatedButton(
                 child: Text("Recipe list"),
                 onPressed: () {
                   Navigator.pushNamed(context, recipesView);
@@ -28,20 +25,20 @@ class MainView extends StatelessWidget {
               ),
             ),
             Center(
-              child: ElevatedButton (
+              child: ElevatedButton(
                 child: Text("Create Week Menu"),
-                onPressed: (){
+                onPressed: () {
                   Navigator.pushNamed(context, menuComposer);
                 },
-              ),              
+              ),
             ),
             Center(
-              child: ElevatedButton (
+              child: ElevatedButton(
                 child: Text("Filter selector test"),
-                onPressed: (){
+                onPressed: () {
                   Navigator.pushNamed(context, filterSelector);
                 },
-              ),              
+              ),
             )
           ],
         ),

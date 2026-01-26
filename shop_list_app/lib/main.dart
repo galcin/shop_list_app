@@ -1,13 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_list_app/ui/route_constants.dart';
+
 import 'ui/router.dart' as router;
 
 void main(List<String> args) {
-  runApp(ShopingListApp());
+  runApp(ShoppingListApp());
 }
 
-class ShopingListApp extends StatelessWidget {
+class ShoppingListApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

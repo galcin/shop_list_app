@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_list_app/ui/route_constants.dart';
 import 'package:shop_list_app/ui/views/aboutView/about_view.dart';
@@ -10,10 +9,8 @@ import 'package:shop_list_app/ui/views/menuView/menu_view.dart';
 import 'package:shop_list_app/ui/views/recipes/recipe_list_view.dart';
 import 'package:shop_list_app/ui/views/settingsView/settings_view_page.dart';
 
-import 'route_constants.dart';
-
 Route<dynamic> generateRoute(RouteSettings settings) {
-  final args = settings.arguments;
+  //final args = settings.arguments;
 
   switch (settings.name) {
     case mainView:

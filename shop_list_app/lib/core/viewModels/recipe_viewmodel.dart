@@ -1,5 +1,5 @@
-import 'package:shop_list_app/core/repository/recipe_repository.dart';
-import 'package:shop_list_app/service/models/recipe.dart';
+import '../../service/models/recipe.dart';
+import '../repository/recipe_repository.dart';
 
 class RecipeViewModel {
   RecipeRepository repository = new RecipeRepository();

@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_list_app/service/models/recipe.dart';
 
 class MenuContainerComponent extends StatelessWidget {
   final String _label;
   final Recipe _recipe;
+
   MenuContainerComponent(this._label, this._recipe);
 
   @override
