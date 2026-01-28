@@ -1,32 +1,35 @@
 class Recipe {
-  int? id;
-  String? name;
-  String? photo;
-  String? description;
-  String? instructions;
-  int? foodCategoryId;
-  String? foodCategory;
+  final int? id;
+  final String? name;
+  final String? instructions;
+  final int? prepTime;
+  final bool? favorite;
 
-  Recipe(
-      {this.name, this.photo, this.description, this.foodCategoryId, this.id});
+  Recipe({
+    this.id,
+    this.name,
+    this.instructions,
+    this.prepTime,
+    this.favorite,
+  });
 
-  Recipe.fromMap(Map<String, dynamic> json) {
-    this.name = json["name"];
-    this.photo = json["photo"];
-    this.description = json["description"];
-    this.id = json["id"];
-    this.foodCategoryId = json["foodCategoryId"];
-    this.foodCategory = json["foodCategory"];
+  factory Recipe.fromMap(Map<String, dynamic> json) {
+    return Recipe(
+      id: json['id'] as int?,
+      name: json['name'] as String?,
+      instructions: json['instructions'] as String?,
+      prepTime: json['prepTime'] as int?,
+      favorite: json['favorite'] as bool?,
+    );
   }
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
       'name': name,
-      'photo': photo,
-      'description': description,
-      'foodCategoryId': foodCategoryId,
-      'foodCategory': foodCategory
+      'instructions': instructions,
+      'prepTime': prepTime,
+      'favorite': favorite,
     };
   }
 }

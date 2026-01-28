@@ -1,28 +1,26 @@
 import 'package:drift/drift.dart';
-import 'package:drift/native.dart';
-import 'tables.dart';
-import 'dart:io';
-import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
+import 'package:drift_flutter/drift_flutter.dart';
+import 'product_category_table.dart';
+import 'product_table.dart';
+import 'recipe_table.dart';
+import 'recipe_seeder.dart';
 
 part 'app_database.g.dart';
 
-@DriftDatabase(tables: [Ingredients])
+@DriftDatabase(tables: [ProductCategories, Products, Recipes])
 class AppDatabase extends _$AppDatabase {
-  static AppDatabase instance() => AppDatabase();
-
-  AppDatabase() : super(_openConnection());
-
-  Future<List<Ingredient>> getAllIngredients() => select(ingredients).get();
+  AppDatabase() : super(_openConnection()) {
+    _seedDefaultData();
+  }
 
   @override
   int get schemaVersion => 1;
-}
 
-LazyDatabase _openConnection() {
-  return LazyDatabase(() async {
-    final dbFolder = await getApplicationDocumentsDirectory();
-    final file = File(p.join(dbFolder.path, 'db.sqlite'));
-    return NativeDatabase.createInBackground(file);
-  });
+  static QueryExecutor _openConnection() {
+    return driftDatabase(name: 'shop_list_db');
+  }
+
+  Future<void> _seedDefaultData() async {
+    await RecipeSeeder.seedDefaultRecipes(this);
+  }
 }

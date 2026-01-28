@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:shop_list_app/service/models/recipe.dart';
+import 'package:shop_list_app/service/models/product.dart';
 import 'package:shop_list_app/ui/views/menuComposer/menu_container_component.dart';
 
 class TemplateSelector extends StatelessWidget {
@@ -7,9 +7,9 @@ class TemplateSelector extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MenuContainerComponent("Breakfast", new Recipe()),
-        MenuContainerComponent("Lunch", new Recipe()),
-        MenuContainerComponent("Dinner", new Recipe())
+        MenuContainerComponent("Breakfast", new Product()),
+        MenuContainerComponent("Lunch", new Product()),
+        MenuContainerComponent("Dinner", new Product())
       ],
     );
   }

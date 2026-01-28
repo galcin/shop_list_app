@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shop_list_app/service/models/recipe.dart';
+import 'package:shop_list_app/service/models/product.dart';
 
 class MenuContainerComponent extends StatelessWidget {
   final String _label;
-  final Recipe _recipe;
+  final Product _products;
 
-  MenuContainerComponent(this._label, this._recipe);
+  MenuContainerComponent(this._label, this._products);
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shop_list_app/service/models/recipe.dart';
+import 'package:shop_list_app/service/storage/local_db/app_database.dart';
 
 class ListTileComponent extends StatelessWidget {
-  final Recipe item;
+  final Product item;
   ListTileComponent(this.item);
 
   @override
@@ -11,7 +11,7 @@ class ListTileComponent extends StatelessWidget {
       child: ListTile(
         leading: Icon(Icons.image_not_supported_outlined),
         title: Text(item.name!),
-        subtitle: Text(item.description!),
+        subtitle: Text(item.name!),
       ),
       margin: EdgeInsets.all(5),
       decoration: BoxDecoration(
