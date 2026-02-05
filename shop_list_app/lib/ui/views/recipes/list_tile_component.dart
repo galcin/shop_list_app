@@ -10,8 +10,8 @@ class ListTileComponent extends StatelessWidget {
     return Container(
       child: ListTile(
         leading: Icon(Icons.image_not_supported_outlined),
-        title: Text(item.name!),
-        subtitle: Text(item.name!),
+        title: Text(item.name),
+        subtitle: Text(item.name),
       ),
       margin: EdgeInsets.all(5),
       decoration: BoxDecoration(

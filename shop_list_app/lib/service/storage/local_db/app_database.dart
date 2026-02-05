@@ -4,6 +4,7 @@ import 'product_category_table.dart';
 import 'product_table.dart';
 import 'recipe_table.dart';
 import 'recipe_seeder.dart';
+import 'product_category_seeder.dart';
 
 part 'app_database.g.dart';
 
@@ -21,6 +22,7 @@ class AppDatabase extends _$AppDatabase {
   }
 
   Future<void> _seedDefaultData() async {
+    await ProductCategorySeeder.seedDefaultCategories(this);
     await RecipeSeeder.seedDefaultRecipes(this);
   }
 }
