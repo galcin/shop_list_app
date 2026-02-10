@@ -26,6 +26,22 @@ class MainView extends StatelessWidget {
             ),
             Center(
               child: ElevatedButton(
+                child: Text("Products"),
+                onPressed: () {
+                  Navigator.pushNamed(context, productView);
+                },
+              ),
+            ),
+            Center(
+              child: ElevatedButton(
+                child: Text("Product Categories"),
+                onPressed: () {
+                  Navigator.pushNamed(context, productCategoryView);
+                },
+              ),
+            ),
+            Center(
+              child: ElevatedButton(
                 child: Text("Create Week Menu"),
                 onPressed: () {
                   Navigator.pushNamed(context, menuComposer);

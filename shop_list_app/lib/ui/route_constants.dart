@@ -1,7 +1,11 @@
-const String mainView = '/';
+const String splashView = '/';
+const String mainView = '/main';
 const String aboutView = 'about';
 const String settingsView = 'settings';
 const String menuView = "menu";
 const String recipesView = "recipeView";
 const String menuComposer = "menuComposer";
 const String filterSelector = "filterSelector";
+const String productView = "productView";
+const String productDetail = "productDetail";
+const String productCategoryView = "productCategoryView";

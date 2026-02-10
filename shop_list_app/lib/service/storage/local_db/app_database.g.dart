@@ -23,8 +23,13 @@ class $ProductCategoriesTable extends ProductCategories
   late final GeneratedColumn<String> name = GeneratedColumn<String>(
       'name', aliasedName, false,
       type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _photoMeta = const VerificationMeta('photo');
   @override
-  List<GeneratedColumn> get $columns => [id, name];
+  late final GeneratedColumn<String> photo = GeneratedColumn<String>(
+      'photo', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  @override
+  List<GeneratedColumn> get $columns => [id, name, photo];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
@@ -44,6 +49,10 @@ class $ProductCategoriesTable extends ProductCategories
     } else if (isInserting) {
       context.missing(_nameMeta);
     }
+    if (data.containsKey('photo')) {
+      context.handle(
+          _photoMeta, photo.isAcceptableOrUnknown(data['photo']!, _photoMeta));
+    }
     return context;
   }
 
@@ -57,6 +66,8 @@ class $ProductCategoriesTable extends ProductCategories
           .read(DriftSqlType.int, data['${effectivePrefix}id'])!,
       name: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}name'])!,
+      photo: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}photo']),
     );
   }
 
@@ -69,12 +80,16 @@ class $ProductCategoriesTable extends ProductCategories
 class ProductCategory extends DataClass implements Insertable<ProductCategory> {
   final int id;
   final String name;
-  const ProductCategory({required this.id, required this.name});
+  final String? photo;
+  const ProductCategory({required this.id, required this.name, this.photo});
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
     map['id'] = Variable<int>(id);
     map['name'] = Variable<String>(name);
+    if (!nullToAbsent || photo != null) {
+      map['photo'] = Variable<String>(photo);
+    }
     return map;
   }
 
@@ -82,6 +97,8 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
     return ProductCategoriesCompanion(
       id: Value(id),
       name: Value(name),
+      photo:
+          photo == null && nullToAbsent ? const Value.absent() : Value(photo),
     );
   }
 
@@ -91,6 +108,7 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
     return ProductCategory(
       id: serializer.fromJson<int>(json['id']),
       name: serializer.fromJson<String>(json['name']),
+      photo: serializer.fromJson<String?>(json['photo']),
     );
   }
   @override
@@ -99,17 +117,24 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
       'name': serializer.toJson<String>(name),
+      'photo': serializer.toJson<String?>(photo),
     };
   }
 
-  ProductCategory copyWith({int? id, String? name}) => ProductCategory(
+  ProductCategory copyWith(
+          {int? id,
+          String? name,
+          Value<String?> photo = const Value.absent()}) =>
+      ProductCategory(
         id: id ?? this.id,
         name: name ?? this.name,
+        photo: photo.present ? photo.value : this.photo,
       );
   ProductCategory copyWithCompanion(ProductCategoriesCompanion data) {
     return ProductCategory(
       id: data.id.present ? data.id.value : this.id,
       name: data.name.present ? data.name.value : this.name,
+      photo: data.photo.present ? data.photo.value : this.photo,
     );
   }
 
@@ -117,46 +142,55 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
   String toString() {
     return (StringBuffer('ProductCategory(')
           ..write('id: $id, ')
-          ..write('name: $name')
+          ..write('name: $name, ')
+          ..write('photo: $photo')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, name);
+  int get hashCode => Object.hash(id, name, photo);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is ProductCategory &&
           other.id == this.id &&
-          other.name == this.name);
+          other.name == this.name &&
+          other.photo == this.photo);
 }
 
 class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
   final Value<int> id;
   final Value<String> name;
+  final Value<String?> photo;
   const ProductCategoriesCompanion({
     this.id = const Value.absent(),
     this.name = const Value.absent(),
+    this.photo = const Value.absent(),
   });
   ProductCategoriesCompanion.insert({
     this.id = const Value.absent(),
     required String name,
+    this.photo = const Value.absent(),
   }) : name = Value(name);
   static Insertable<ProductCategory> custom({
     Expression<int>? id,
     Expression<String>? name,
+    Expression<String>? photo,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
       if (name != null) 'name': name,
+      if (photo != null) 'photo': photo,
     });
   }
 
-  ProductCategoriesCompanion copyWith({Value<int>? id, Value<String>? name}) {
+  ProductCategoriesCompanion copyWith(
+      {Value<int>? id, Value<String>? name, Value<String?>? photo}) {
     return ProductCategoriesCompanion(
       id: id ?? this.id,
       name: name ?? this.name,
+      photo: photo ?? this.photo,
     );
   }
 
@@ -169,6 +203,9 @@ class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
     if (name.present) {
       map['name'] = Variable<String>(name.value);
     }
+    if (photo.present) {
+      map['photo'] = Variable<String>(photo.value);
+    }
     return map;
   }
 
@@ -176,7 +213,8 @@ class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
   String toString() {
     return (StringBuffer('ProductCategoriesCompanion(')
           ..write('id: $id, ')
-          ..write('name: $name')
+          ..write('name: $name, ')
+          ..write('photo: $photo')
           ..write(')'))
         .toString();
   }
@@ -890,11 +928,13 @@ typedef $$ProductCategoriesTableCreateCompanionBuilder
     = ProductCategoriesCompanion Function({
   Value<int> id,
   required String name,
+  Value<String?> photo,
 });
 typedef $$ProductCategoriesTableUpdateCompanionBuilder
     = ProductCategoriesCompanion Function({
   Value<int> id,
   Value<String> name,
+  Value<String?> photo,
 });
 
 final class $$ProductCategoriesTableReferences extends BaseReferences<
@@ -933,6 +973,9 @@ class $$ProductCategoriesTableFilterComposer
   ColumnFilters<String> get name => $composableBuilder(
       column: $table.name, builder: (column) => ColumnFilters(column));
 
+  ColumnFilters<String> get photo => $composableBuilder(
+      column: $table.photo, builder: (column) => ColumnFilters(column));
+
   Expression<bool> productsRefs(
       Expression<bool> Function($$ProductsTableFilterComposer f) f) {
     final $$ProductsTableFilterComposer composer = $composerBuilder(
@@ -969,6 +1012,9 @@ class $$ProductCategoriesTableOrderingComposer
 
   ColumnOrderings<String> get name => $composableBuilder(
       column: $table.name, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get photo => $composableBuilder(
+      column: $table.photo, builder: (column) => ColumnOrderings(column));
 }
 
 class $$ProductCategoriesTableAnnotationComposer
@@ -985,6 +1031,9 @@ class $$ProductCategoriesTableAnnotationComposer
 
   GeneratedColumn<String> get name =>
       $composableBuilder(column: $table.name, builder: (column) => column);
+
+  GeneratedColumn<String> get photo =>
+      $composableBuilder(column: $table.photo, builder: (column) => column);
 
   Expression<T> productsRefs<T extends Object>(
       Expression<T> Function($$ProductsTableAnnotationComposer a) f) {
@@ -1035,18 +1084,22 @@ class $$ProductCategoriesTableTableManager extends RootTableManager<
           updateCompanionCallback: ({
             Value<int> id = const Value.absent(),
             Value<String> name = const Value.absent(),
+            Value<String?> photo = const Value.absent(),
           }) =>
               ProductCategoriesCompanion(
             id: id,
             name: name,
+            photo: photo,
           ),
           createCompanionCallback: ({
             Value<int> id = const Value.absent(),
             required String name,
+            Value<String?> photo = const Value.absent(),
           }) =>
               ProductCategoriesCompanion.insert(
             id: id,
             name: name,
+            photo: photo,
           ),
           withReferenceMapper: (p0) => p0
               .map((e) => (

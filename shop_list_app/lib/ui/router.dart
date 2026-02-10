@@ -8,11 +8,16 @@ import 'package:shop_list_app/ui/views/menuComposer/menu_composer_view.dart';
 import 'package:shop_list_app/ui/views/menuView/menu_view.dart';
 import 'package:shop_list_app/ui/views/recipes/recipe_list_view.dart';
 import 'package:shop_list_app/ui/views/settingsView/settings_view_page.dart';
+import 'package:shop_list_app/ui/views/productView/product_view_page.dart';
+import 'package:shop_list_app/ui/views/productCategoryView/product_category_view_page.dart';
+import '../main.dart' show SplashScreen;
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   //final args = settings.arguments;
 
   switch (settings.name) {
+    case splashView:
+      return MaterialPageRoute(builder: (context) => SplashScreen());
     case mainView:
       return MaterialPageRoute(builder: (context) => MainView());
     case aboutView:
@@ -23,6 +28,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => SettingsView());
     case recipesView:
       return MaterialPageRoute(builder: (context) => RecipeListView());
+    case productView:
+      return MaterialPageRoute(builder: (context) => ProductViewPage());
+    case productCategoryView:
+      return MaterialPageRoute(builder: (context) => ProductCategoryViewPage());
     case menuComposer:
       return MaterialPageRoute(builder: (context) => MenuComposerView());
     case filterSelector:
