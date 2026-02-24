@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../service/models/product_category.dart' as model;
 import '../../../service/models/product.dart' as model;
-import '../../../core/repository/product_category_repository.dart';
-import '../../../core/repository/product_repository.dart';
+import '../../../core/repository/interfaces/i_product_category_repository.dart';
+import '../../../core/repository/interfaces/i_product_repository.dart';
+import '../../../core/repository/implementations/product_category_repository.dart';
+import '../../../core/repository/implementations/product_repository.dart';
 import '../../../service/storage/local_db/app_database.dart';
 
 class ProductCategoryDetailPage extends StatefulWidget {
@@ -16,8 +18,8 @@ class ProductCategoryDetailPage extends StatefulWidget {
 }
 
 class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
-  late final ProductCategoryRepository _categoryRepository;
-  late final ProductRepository _productRepository;
+  late final IProductCategoryRepository _categoryRepository;
+  late final IProductRepository _productRepository;
   late final AppDatabase _database;
   List<model.Product> _categoryProducts = [];
   bool _isLoading = true;

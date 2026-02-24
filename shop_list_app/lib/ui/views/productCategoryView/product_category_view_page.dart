@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../service/models/product_category.dart' as model;
-import '../../../core/repository/product_category_repository.dart';
+import '../../../core/repository/interfaces/i_product_category_repository.dart';
+import '../../../core/repository/implementations/product_category_repository.dart';
 import '../../../service/storage/local_db/app_database.dart';
 import 'product_category_detail_page.dart';
 
@@ -11,7 +12,7 @@ class ProductCategoryViewPage extends StatefulWidget {
 }
 
 class _ProductCategoryViewPageState extends State<ProductCategoryViewPage> {
-  late final ProductCategoryRepository _categoryRepository;
+  late final IProductCategoryRepository _categoryRepository;
   late final AppDatabase _database;
   List<model.ProductCategory> _categories = [];
   bool _isLoading = true;

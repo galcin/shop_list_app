@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../service/models/product.dart' as model;
 import '../../../service/models/product_category.dart' as model;
-import '../../../core/repository/product_repository.dart';
-import '../../../core/repository/product_category_repository.dart';
+import '../../../core/repository/interfaces/i_product_repository.dart';
+import '../../../core/repository/interfaces/i_product_category_repository.dart';
+import '../../../core/repository/implementations/product_repository.dart';
+import '../../../core/repository/implementations/product_category_repository.dart';
 import '../../../service/storage/local_db/app_database.dart';
 import 'product_detail_page.dart';
 
@@ -12,8 +14,8 @@ class ProductViewPage extends StatefulWidget {
 }
 
 class _ProductViewPageState extends State<ProductViewPage> {
-  late final ProductRepository _productRepository;
-  late final ProductCategoryRepository _categoryRepository;
+  late final IProductRepository _productRepository;
+  late final IProductCategoryRepository _categoryRepository;
   late final AppDatabase _database;
   List<model.Product> _products = [];
   List<model.ProductCategory> _categories = [];
@@ -449,7 +451,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
                 ),
                 SizedBox(height: 16),
                 DropdownButtonFormField<int>(
-                  value: selectedCategoryId,
+                  initialValue: selectedCategoryId,
                   decoration: InputDecoration(
                     labelText: 'Category *',
                     border: OutlineInputBorder(),

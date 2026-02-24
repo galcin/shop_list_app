@@ -1,7 +1,7 @@
 // product_category_seeder.dart
 import 'package:drift/drift.dart';
 
-import 'app_database.dart';
+import '../app_database.dart';
 
 class ProductCategorySeeder {
   static Future<void> seedDefaultCategories(AppDatabase db) async {

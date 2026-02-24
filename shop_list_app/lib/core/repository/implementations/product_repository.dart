@@ -1,7 +1,7 @@
 import 'package:drift/drift.dart';
-import 'package:shop_list_app/core/repository/interfaces/i_product_repository.dart';
-import '../../service/storage/local_db/app_database.dart';
-import '../../service/models/product.dart' as model;
+import '../../../service/storage/local_db/app_database.dart';
+import '../../../service/models/product.dart' as model;
+import '../interfaces/i_product_repository.dart';
 
 class ProductRepository implements IProductRepository {
   final AppDatabase _database;

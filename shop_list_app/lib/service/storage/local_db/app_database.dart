@@ -2,9 +2,9 @@ import 'package:drift/drift.dart';
 import 'product_category_table.dart';
 import 'product_table.dart';
 import 'recipe_table.dart';
-import 'recipe_seeder.dart';
-import 'product_category_seeder.dart';
-import 'product_seeder.dart';
+import 'seeder/recipe_seeder.dart';
+import 'seeder/product_category_seeder.dart';
+import 'seeder/product_seeder.dart';
 import 'connection/connection.dart' as impl;
 
 part 'app_database.g.dart';
