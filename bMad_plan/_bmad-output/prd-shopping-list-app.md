@@ -1041,12 +1041,12 @@ An intelligent mobile app that treats meal planning and shopping as a unified wo
 
 **Local Data Layer:**
 
-- **Database:** Hive 2.x (NoSQL) OR Drift 2.x (SQLite with type-safe queries)
-- **Recommendation:** Hive for MVP simplicity, migrate to Drift if complex queries needed
+- **Database:** Drift 2.x (SQLite with type-safe queries, migrations, and reactive streams)
+- **Rationale:** Better for complex queries (search, filtering), compile-time safety, built-in migrations
 - **Cache:** Flutter Cache Manager for images
 - **Secure Storage:** Flutter Secure Storage for sensitive data
 
-**Backend (Cloud Services):**
+**Backend (Cloud Services - Post-MVP):**
 
 - **Option A - Firebase:**
   - Firestore (NoSQL database)
@@ -1062,7 +1062,7 @@ An intelligent mobile app that treats meal planning and shopping as a unified wo
   - Edge Functions
   - Self-hosted analytics
 
-**Recommendation:** Firebase for MVP (faster setup), Supabase for Phase 2 if migration needed for cost/control
+**Note:** Cloud services are optional post-MVP features. MVP works fully offline with local Drift database.
 
 **Additional Services:**
 
@@ -1100,8 +1100,9 @@ An intelligent mobile app that treats meal planning and shopping as a unified wo
 │         │                          │            │
 │  ┌──────▼────────┐         ┌───────▼────────┐  │
 │  │ Local Data    │         │  Remote Data   │  │
-│  │ Source (Hive) │         │ Source (API)   │  │
+│  │ Source(Drift) │         │ Source (API)   │  │
 │  └───────────────┘         └────────────────┘  │
+│      [MVP]                    [Post-MVP]       │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -1252,17 +1253,18 @@ class UserProfile {
 
 ---
 
-### TR-5: Database Schema (Hive/Local)
+### TR-5: Database Schema (Drift/SQLite)
 
-**Collections/Boxes:**
+**Tables:**
 
-- **recipes** (Recipe entity)
-- **meal_plans** (MealPlan entity)
+- **recipes** (Recipe entity with ingredients, instructions)
+- **meal_plans** (MealPlan entity with linked recipes)
 - **shopping_lists** (ShoppingList entity)
-- **pantry_items** (PantryItem entity)
-- **user_profile** (UserProfile entity)
-- **sync_queue** (Pending sync operations)
-- **sync_metadata** (Last sync timestamps, version tracking)
+- **shopping_items** (Individual items in shopping lists)
+- **pantry_items** (PantryItem entity with expiration tracking)
+- **user_profile** (UserProfile settings)
+- **sync_queue** (Pending sync operations - for post-MVP cloud sync)
+- **sync_metadata** (Last sync timestamps - for post-MVP cloud sync)
 
 **Indexes:**
 
@@ -1270,6 +1272,11 @@ class UserProfile {
 - pantry_items: expirationDate, category
 - shopping_lists: createdAt, isCompleted
 - meal_plans: weekStartDate
+
+**Foreign Keys:**
+
+- shopping_items.shoppingListId → shopping_lists.id
+- meal_plans.recipeId → recipes.id
 
 ---
 
@@ -1973,9 +1980,9 @@ _Note: Monetization via freemium model (premium features: advanced AI, unlimited
    - Curate starter collections by cuisine/diet?
    - Rely on user imports only?
 
-4. **Sync Complexity:**
-   - Is Hive sufficient or do we need Drift/SQLite for complex queries?
-   - Should we implement operational transform for MVP or defer to P1?
+4. **Sync Complexity (Post-MVP):**
+   - ✅ Using Drift/SQLite for type-safe queries and complex filtering
+   - Should we implement operational transform for cloud sync or defer to P1?
    - Acceptable sync conflict rate before needing manual resolution?
 
 5. **Notification Strategy:**

@@ -65,7 +65,8 @@ This document provides a comprehensive technical architecture for the Flutter Sh
 │  │               Data Layer (Repository)                   │ │
 │  │  ┌───────────────────┐    ┌──────────────────────┐    │ │
 │  │  │ Local Data Source │    │ Remote Data Source   │    │ │
-│  │  │ (Hive/Drift)      │◄──►│ (Firebase/Supabase)  │    │ │
+│  │  │ (Drift/SQLite)    │◄──►│ (Firebase/Supabase)  │    │ │
+│  │  │    [MVP]          │    │     [Post-MVP]       │    │ │
 │  │  └───────────────────┘    └──────────────────────┘    │ │
 │  └────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────┘
@@ -97,11 +98,11 @@ This document provides a comprehensive technical architecture for the Flutter Sh
 | Component            | Responsibilities                             | Technologies         |
 | -------------------- | -------------------------------------------- | -------------------- |
 | **Mobile Client**    | UI, local storage, offline logic, sync queue | Flutter, Dart        |
-| **Local Database**   | Persistent storage, offline data             | Hive or Drift        |
-| **Backend Services** | Authentication, cloud sync, storage          | Firebase or Supabase |
-| **Cloud Functions**  | Recipe import, image processing, sync        | Node.js, TypeScript  |
-| **Storage**          | Recipe images, user photos                   | Cloud Storage        |
-| **External APIs**    | Recipe data, nutrition info, ML services     | REST APIs            |
+| **Local Database**   | Persistent storage, offline data (MVP)       | Drift (SQLite)       |
+| **Backend Services** | Authentication, cloud sync (Post-MVP)        | Firebase or Supabase |
+| **Cloud Functions**  | Recipe import, image processing (Post-MVP)   | Node.js, TypeScript  |
+| **Storage**          | Recipe images, user photos (Post-MVP)        | Cloud Storage        |
+| **External APIs**    | Recipe data, nutrition info (Post-MVP)       | REST APIs            |
 
 ---
 
@@ -561,8 +562,10 @@ final sharedPreferencesProvider = Provider<SharedPreferences>((ref) {
   throw UnimplementedError('SharedPreferences must be overridden in main()');
 });
 
-final hiveBoxProvider = Provider<Box>((ref) {
-  throw UnimplementedError('Hive Box must be overridden in main()');
+final databaseProvider = Provider<AppDatabase>((ref) {
+  final database = AppDatabase();
+  ref.onDispose(() => database.close());
+  return database;
 });
 
 // Core services
@@ -573,7 +576,7 @@ final networkInfoProvider = Provider<NetworkInfo>((ref) {
 // lib/features/shopping/data/providers/shopping_data_providers.dart
 
 final shoppingListLocalDataSourceProvider = Provider<ShoppingListLocalDataSource>((ref) {
-  return ShoppingListLocalDataSourceImpl(db: ref.watch(hiveBoxProvider));
+  return ShoppingListLocalDataSourceImpl(db: ref.watch(databaseProvider));
 });
 
 final shoppingListRemoteDataSourceProvider = Provider<ShoppingListRemoteDataSource>((ref) {
@@ -609,13 +612,13 @@ void main() async {
 
   // Initialize external dependencies
   final sharedPreferences = await SharedPreferences.getInstance();
-  final hiveBox = await Hive.openBox('app_database');
+  // Database is initialized lazily by Drift provider
 
   runApp(
     ProviderScope(
       overrides: [
         sharedPreferencesProvider.overrideWithValue(sharedPreferences),
-        hiveBoxProvider.overrideWithValue(hiveBox),
+        // databaseProvider creates AppDatabase instance automatically
       ],
       child: MyApp(),
     ),
@@ -629,164 +632,132 @@ void main() async {
 
 ### Database Schema
 
-#### Local Database (Hive/Drift)
+#### Local Database (Drift/SQLite)
 
-**Hive Boxes:**
-
-```dart
-// recipes (Box<RecipeModel>)
-@HiveType(typeId: 0)
-class RecipeModel extends HiveObject {
-  @HiveField(0)
-  late String id;
-
-  @HiveField(1)
-  late String title;
-
-  @HiveField(2)
-  String? description;
-
-  @HiveField(3)
-  late int servings;
-
-  @HiveField(4)
-  int? prepTimeMinutes;
-
-  @HiveField(5)
-  int? cookTimeMinutes;
-
-  @HiveField(6)
-  late List<IngredientModel> ingredients;
-
-  @HiveField(7)
-  late List<String> instructions;
-
-  @HiveField(8)
-  List<String>? imageUrls;
-
-  @HiveField(9)
-  late List<String> tags;
-
-  @HiveField(10)
-  late DateTime createdAt;
-
-  @HiveField(11)
-  late DateTime updatedAt;
-
-  @HiveField(12)
-  late bool isSynced;
-
-  @HiveField(13)
-  late int syncVersion;
-
-  @HiveField(14)
-  bool isDeleted = false;
-}
-
-// shopping_lists (Box<ShoppingListModel>)
-@HiveType(typeId: 1)
-class ShoppingListModel extends HiveObject {
-  @HiveField(0)
-  late String id;
-
-  @HiveField(1)
-  late String name;
-
-  @HiveField(2)
-  late List<ShoppingItemModel> items;
-
-  @HiveField(3)
-  String? linkedMealPlanId;
-
-  @HiveField(4)
-  late bool isCompleted;
-
-  @HiveField(5)
-  late DateTime createdAt;
-
-  @HiveField(6)
-  late DateTime updatedAt;
-
-  @HiveField(7)
-  late bool isSynced;
-
-  @HiveField(8)
-  late int syncVersion;
-}
-
-// pantry_items (Box<PantryItemModel>)
-@HiveType(typeId: 3)
-class PantryItemModel extends HiveObject {
-  @HiveField(0)
-  late String id;
-
-  @HiveField(1)
-  late String name;
-
-  @HiveField(2)
-  late double quantity;
-
-  @HiveField(3)
-  late String unit;
-
-  @HiveField(4)
-  String? category;
-
-  @HiveField(5)
-  DateTime? expirationDate;
-
-  @HiveField(6)
-  late DateTime addedAt;
-
-  @HiveField(7)
-  late DateTime updatedAt;
-
-  @HiveField(8)
-  late bool isSynced;
-
-  @HiveField(9)
-  late int syncVersion;
-}
-
-// sync_queue (Box<SyncOperationModel>)
-@HiveType(typeId: 10)
-class SyncOperationModel extends HiveObject {
-  @HiveField(0)
-  late String id;
-
-  @HiveField(1)
-  late String entityType; // 'recipe', 'shopping_list', etc.
-
-  @HiveField(2)
-  late String entityId;
-
-  @HiveField(3)
-  late String operation; // 'create', 'update', 'delete'
-
-  @HiveField(4)
-  late Map<String, dynamic> data;
-
-  @HiveField(5)
-  late DateTime createdAt;
-
-  @HiveField(6)
-  late int retryCount;
-
-  @HiveField(7)
-  String? error;
-}
-```
-
-**Drift Schema (Alternative - More Complex Queries):**
+**Drift Tables:**
 
 ```dart
-// Tables
-@DataClassName('Recipe')
+// core/database/tables/recipes_table.dart
+import 'package:drift/drift.dart';
+
 class Recipes extends Table {
   TextColumn get id => text()();
   TextColumn get title => text()();
   TextColumn get description => text().nullable()();
   IntColumn get servings => integer()();
+  IntColumn get prepTimeMinutes => integer().nullable()();
+  IntColumn get cookTimeMinutes => integer().nullable()();
+  TextColumn get ingredients => text()(); // JSON string
+  TextColumn get instructions => text()(); // JSON array
+  TextColumn get imageUrls => text().nullable()(); // JSON array
+  TextColumn get tags => text()(); // JSON array
+  DateTimeColumn get createdAt => dateTime()();
+  DateTimeColumn get updatedAt => dateTime()();
+  BoolColumn get isSynced => boolean().withDefault(const Constant(false))();
+  IntColumn get syncVersion => integer().withDefault(const Constant(0))();
+
+  BoolColumn get isDeleted => boolean().withDefault(const Constant(false))();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+// core/database/tables/shopping_lists_table.dart
+class ShoppingLists extends Table {
+  TextColumn get id => text()();
+  TextColumn get name => text()();
+  TextColumn get linkedMealPlanId => text().nullable()();
+  BoolColumn get isCompleted => boolean().withDefault(const Constant(false))();
+  DateTimeColumn get createdAt => dateTime()();
+  DateTimeColumn get updatedAt => dateTime()();
+  BoolColumn get isSynced => boolean().withDefault(const Constant(false))();
+  IntColumn get syncVersion => integer().withDefault(const Constant(0))();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+// core/database/tables/shopping_items_table.dart
+class ShoppingItems extends Table {
+  TextColumn get id => text()();
+  TextColumn get shoppingListId => text()();
+  TextColumn get name => text()();
+  RealColumn get quantity => real()();
+  TextColumn get unit => text()();
+  TextColumn get category => text().nullable()();
+  BoolColumn get isChecked => boolean().withDefault(const Constant(false))();
+  DateTimeColumn get createdAt => dateTime()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+// core/database/tables/pantry_items_table.dart
+class PantryItems extends Table {
+  TextColumn get id => text()();
+  TextColumn get name => text()();
+  RealColumn get quantity => real()();
+  TextColumn get unit => text()();
+  TextColumn get category => text().nullable()();
+  DateTimeColumn get expirationDate => dateTime().nullable()();
+  DateTimeColumn get addedAt => dateTime()();
+  DateTimeColumn get updatedAt => dateTime()();
+  BoolColumn get isSynced => boolean().withDefault(const Constant(false))();
+  IntColumn get syncVersion => integer().withDefault(const Constant(0))();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+// sync_queue (Drift Table for Post-MVP cloud sync)
+class SyncQueue extends Table {
+  TextColumn get id => text()();
+  TextColumn get entityType => text()(); // 'recipe', 'shopping_list', etc.
+  TextColumn get entityId => text()();
+  TextColumn get operation => text()(); // 'create', 'update', 'delete'
+  TextColumn get data => text()(); // JSON string
+  DateTimeColumn get createdAt => dateTime()();
+  IntColumn get retryCount => integer().withDefault(const Constant(0))();
+  TextColumn get error => text().nullable()();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+```
+
+**Drift Schema Features:**
+
+```dart
+// Database class with all tables
+@DriftDatabase(
+  tables: [
+    Recipes,
+    ShoppingLists,
+    ShoppingItems,
+    PantryItems,
+    MealPlans,
+    SyncQueue,
+  ],
+)
+class AppDatabase extends _$AppDatabase {
+  AppDatabase() : super(_openConnection());
+
+  @override
+  int get schemaVersion => 1;
+
+  // Migrations
+  @override
+  MigrationStrategy get migration {
+    return MigrationStrategy(
+      onCreate: (Migrator m) async {
+        await m.createAll();
+      },
+      onUpgrade: (Migrator m, int from, int to) async {
+        // Handle schema changes
+      },
+    );
+  }
+}
   IntColumn get prepTimeMinutes => integer().nullable()();
   IntColumn get cookTimeMinutes => integer().nullable()();
   TextColumn get ingredientsJson => text()(); // JSON string
@@ -1779,24 +1750,37 @@ class AuthService {
 **Local Data Encryption:**
 
 ```dart
-// Encrypt sensitive fields in Hive
-class EncryptedHiveBox {
-  final Box box;
+// Encrypt sensitive fields with Drift
+import 'package:drift/drift.dart';
+import 'package:encrypt/encrypt.dart';
+
+class EncryptedDriftConverter extends TypeConverter<String, String> {
   final Encrypter encrypter;
+  final IV iv;
 
-  EncryptedHiveBox(this.box, String encryptionKey)
-      : encrypter = Encrypter(AES(Key.fromUtf8(encryptionKey)));
+  EncryptedDriftConverter(String encryptionKey)
+      : encrypter = Encrypter(AES(Key.fromUtf8(encryptionKey))),
+        iv = IV.fromLength(16);
 
-  Future<void> putEncrypted(String key, String value) async {
-    final encrypted = encrypter.encrypt(value, iv: IV.fromLength(16));
-    await box.put(key, encrypted.base64);
+  @override
+  String fromSql(String fromDb) {
+    return encrypter.decrypt64(fromDb, iv: iv);
   }
 
-  String? getDecrypted(String key) {
-    final encryptedData = box.get(key);
-    if (encryptedData == null) return null;
+  @override
+  String toSql(String value) {
+    return encrypter.encrypt(value, iv: iv).base64;
+  }
+}
 
-    return encrypter.decrypt64(encryptedData, iv: IV.fromLength(16));
+// Usage in table definition
+class UserProfiles extends Table {
+  TextColumn get id => text()();
+  TextColumn get encryptedApiKey => text().map(EncryptedDriftConverter('your-key'))();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
   }
 }
 
@@ -2167,24 +2151,14 @@ class _PaginatedRecipeListState extends ConsumerState<PaginatedRecipeList> {
 class OptimizedRecipeQueries {
   final AppDatabase database;
 
-  // Fast search with indexes
+  // Fast search with indexes using Drift
   Future<List<Recipe>> searchRecipes(String query) async {
-    // Hive: Create index on title field
-    // Drift: Use full-text search index
-
-    if (database is DriftDatabase) {
-      return (database.select(database.recipes)
-        ..where((r) => r.title.like('%$query%') | r.tagsJson.contains(query))
-        ..orderBy([(r) => OrderingTerm.desc(r.updatedAt)])
-        ..limit(50)
-      ).get();
-    }
-
-    // Fallback for Hive
-    return database.recipes.values
-        .where((r) => r.title.toLowerCase().contains(query.toLowerCase()))
-        .take(50)
-        .toList();
+    // Drift: Use SQL LIKE and indexed columns
+    return (database.select(database.recipes)
+      ..where((r) => r.title.like('%$query%') | r.tags.contains(query))
+      ..orderBy([(r) => OrderingTerm.desc(r.updatedAt)])
+      ..limit(50)
+    ).get();
   }
 
   // Optimized "What Can I Make?" query
@@ -2774,22 +2748,22 @@ class PerformanceMonitoring {
 
 ### Technology Stack Summary
 
-| Layer                  | Technology         | Version  | Purpose                 |
-| ---------------------- | ------------------ | -------- | ----------------------- |
-| **Frontend**           | Flutter            | 3.16+    | Mobile app framework    |
-| **Language**           | Dart               | 3.2+     | Programming language    |
-| **State Management**   | Riverpod           | 2.x      | UI state management     |
-| **Local DB**           | Hive               | 2.x      | NoSQL local storage     |
-| **Backend (Option A)** | Firebase           | Latest   | Cloud services          |
-| **Backend (Option B)** | Supabase           | Latest   | Open source alternative |
-| **Auth**               | Firebase Auth      | Latest   | Authentication          |
-| **Storage**            | Cloud Storage      | Latest   | Image storage           |
-| **Functions**          | Cloud Functions    | Node 18  | Serverless logic        |
-| **Push Notifications** | FCM                | Latest   | Push messaging          |
-| **Analytics**          | Firebase Analytics | Latest   | User analytics          |
-| **Crash Reporting**    | Sentry             | Latest   | Error tracking          |
-| **Testing**            | Flutter Test       | Built-in | Unit & widget tests     |
-| **CI/CD**              | GitHub Actions     | Latest   | Automation              |
+| Layer                  | Technology         | Version  | Purpose                     |
+| ---------------------- | ------------------ | -------- | --------------------------- |
+| **Frontend**           | Flutter            | 3.16+    | Mobile app framework        |
+| **Language**           | Dart               | 3.2+     | Programming language        |
+| **State Management**   | Riverpod           | 2.x      | UI state management         |
+| **Local DB**           | Drift (SQLite)     | 2.x      | Type-safe SQL storage       |
+| **Backend (Option A)** | Firebase           | Latest   | Cloud services (Post-MVP)   |
+| **Backend (Option B)** | Supabase           | Latest   | Open source alternative     |
+| **Auth**               | Firebase Auth      | Latest   | Authentication (Post-MVP)   |
+| **Storage**            | Cloud Storage      | Latest   | Image storage (Post-MVP)    |
+| **Functions**          | Cloud Functions    | Node 18  | Serverless logic (Post-MVP) |
+| **Push Notifications** | FCM                | Latest   | Push messaging (Post-MVP)   |
+| **Analytics**          | Firebase Analytics | Latest   | User analytics (Post-MVP)   |
+| **Crash Reporting**    | Sentry             | Latest   | Error tracking              |
+| **Testing**            | Flutter Test       | Built-in | Unit & widget tests         |
+| **CI/CD**              | GitHub Actions     | Latest   | Automation                  |
 
 ---
 
@@ -2808,11 +2782,11 @@ class PerformanceMonitoring {
 
 ### Open Questions
 
-1. **Database Choice:** Hive (simpler) vs. Drift (more powerful queries)?
-2. **Backend Choice:** Firebase (faster setup) vs. Supabase (more control)?
-3. **ML Integration:** On-device ML Kit or cloud-based?
-4. **Recipe Import:** Build scraper or use Spoonacular API?
-5. **Monetization:** When to introduce premium features?
+1. **Backend Choice (Post-MVP):** Firebase (faster setup) vs. Supabase (more control)?
+2. **ML Integration:** On-device ML Kit or cloud-based?
+3. **Recipe Import:** Build scraper or use Spoonacular API?
+4. **Monetization:** When to introduce premium features?
+5. **Cloud Sync Strategy:** Real-time vs. periodic sync for multi-device access?
 
 ---
 
