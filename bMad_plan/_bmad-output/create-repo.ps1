@@ -1,6 +1,6 @@
 # Create GitHub Repository
 $REPO_NAME = "shop_list_app"
-$GITHUB_TOKEN = "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"
+$GITHUB_TOKEN = "your-github-token-here"  # Replace with your GitHub Personal Access Token
 
 $headers = @{
     "Authorization" = "Bearer $GITHUB_TOKEN"

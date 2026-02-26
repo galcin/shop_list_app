@@ -1,8 +1,8 @@
 # GitHub Issues Creator - ALL 57 User Stories
 # Configuration
-$REPO_OWNER = "galcin"
+$REPO_OWNER = "your-username"  # Replace with your GitHub username
 $REPO_NAME = "shop_list_app"
-$GITHUB_TOKEN = "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"
+$GITHUB_TOKEN = "your-github-token-here"  # Replace with your GitHub Personal Access Token
 $BASE_URL = "https://api.github.com"
 
 # Helper function for API calls
