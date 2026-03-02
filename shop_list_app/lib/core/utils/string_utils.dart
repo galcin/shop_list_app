@@ -1,8 +1,3 @@
-extension StringUtils on String {
-  /// Returns the string with its first character capitalised.
-  String get capitalised =>
-      isEmpty ? this : '${this[0].toUpperCase()}${substring(1)}';
-
-  /// Returns true if the string is null or contains only whitespace.
-  bool get isBlank => trim().isEmpty;
-}
+// Kept for backwards compatibility — logic now lives in StringExtensions.
+// New code should import shared/extensions/string_extensions.dart.
+export 'package:shop_list_app/shared/extensions/string_extensions.dart';
