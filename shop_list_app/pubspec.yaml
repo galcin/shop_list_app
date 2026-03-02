@@ -1,29 +1,55 @@
 name: shop_list_app
-description: A new Flutter project.
+description: A Flutter Shopping List & Meal Planning app built with Clean Architecture, Riverpod, and Drift.
 
 publish_to: 'none'
 
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.6.0 <4.0.0" # <-- minimum for latest mockito
+  sdk: ">=3.6.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.6.1
+
+  # Local Database
   drift: ^2.15.0
-  path_provider: ^2.0.14
-  sqlite3_flutter_libs: ^0.5.0  
-  drift_flutter: ^0.2.8
-  sqlite3_web: ^0.1.0
-  sqlite3: ^2.4.0
+  sqlite3_flutter_libs: ^0.5.0
+  path_provider: ^2.1.0
+  path: ^1.8.3
+
+  # Functional Programming
+  dartz: ^0.10.1
+  equatable: ^2.0.5
+
+  # Utils
+  uuid: ^4.5.1
+  intl: ^0.19.0
+  connectivity_plus: ^6.1.0
+  shared_preferences: ^2.3.0
+
+  # JSON / Code Generation Annotations
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.9.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito: ^5.6.3
-  drift_dev: ^2.14.0
+  flutter_lints: ^4.0.0
+
+  # Code Generation
   build_runner: ^2.4.8
+  drift_dev: ^2.14.0
+  freezed: ^2.4.5
+  json_serializable: ^6.8.0
+
+  # Testing
+  mockito: ^5.4.2
+  integration_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true

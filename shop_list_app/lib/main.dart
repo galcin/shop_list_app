@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:shop_list_app/ui/route_constants.dart';
-import 'package:shop_list_app/service/storage/local_db/app_database.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shop_list_app/core/database/app_database.dart';
+import 'package:shop_list_app/shared/route_constants.dart';
 
-import 'ui/router.dart' as router;
+import 'app.dart';
 
 void main(List<String> args) {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(ShoppingListApp());
-}
-
-class ShoppingListApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: true,
-      onGenerateRoute: router.generateRoute,
-      initialRoute: splashView,
-    );
-  }
+  runApp(const ProviderScope(child: App()));
 }
 
 // Splash screen that initializes database in background
