@@ -1,95 +1,162 @@
+import 'package:dartz/dartz.dart';
 import 'package:drift/drift.dart';
 import 'package:shop_list_app/core/database/app_database.dart';
+import 'package:shop_list_app/core/error/failures.dart';
+import 'package:shop_list_app/core/utils/app_logger.dart';
 import '../../domain/entities/product_category.dart' as model;
 import '../../domain/repositories/i_product_category_repository.dart';
+import '../datasources/product_category_data_source.dart';
 
 class ProductCategoryRepository implements IProductCategoryRepository {
-  final AppDatabase _database;
+  ProductCategoryRepository(this._dataSource);
 
-  ProductCategoryRepository(this._database);
+  final ProductCategoryDataSource _dataSource;
 
-  // Get all product categories
-  Future<List<model.ProductCategory>> getAllCategories() async {
-    final categories =
-        await _database.select(_database.productCategories).get();
-    return categories.map((row) => _categoryFromRow(row)).toList();
-  }
+  // ── Reactive (new) ──────────────────────────────────────────────────────────
 
-  // Get category by ID
-  Future<model.ProductCategory?> getCategoryById(int id) async {
-    final category = await (_database.select(_database.productCategories)
-          ..where((tbl) => tbl.id.equals(id)))
-        .getSingleOrNull();
-    return category != null ? _categoryFromRow(category) : null;
-  }
-
-  // Get category by name
-  Future<model.ProductCategory?> getCategoryByName(String name) async {
-    final category = await (_database.select(_database.productCategories)
-          ..where((tbl) => tbl.name.equals(name)))
-        .getSingleOrNull();
-    return category != null ? _categoryFromRow(category) : null;
-  }
-
-  // Search categories by name
-  Future<List<model.ProductCategory>> searchCategories(String query) async {
-    final categories = await (_database.select(_database.productCategories)
-          ..where((tbl) => tbl.name.contains(query)))
-        .get();
-    return categories.map((row) => _categoryFromRow(row)).toList();
-  }
-
-  // Add a new category
-  Future<int> addCategory(model.ProductCategory category) async {
-    return await _database.into(_database.productCategories).insert(
-          ProductCategoriesCompanion.insert(
-            name: category.name,
-            photo: Value(category.photo),
-          ),
+  @override
+  Stream<Either<Failure, List<model.ProductCategory>>> watchAll() {
+    return _dataSource
+        .watchAll()
+        .map<Either<Failure, List<model.ProductCategory>>>(
+          (rows) => Right(rows.map(_toEntity).toList()),
+        )
+        .handleError(
+      (e, StackTrace st) {
+        AppLogger.instance.error(
+          '[CategoryRepo] watchAll stream error',
+          error: e,
+          stackTrace: st,
         );
-  }
-
-  // Update an existing category
-  Future<bool> updateCategory(model.ProductCategory category) async {
-    final updated = await (_database.update(_database.productCategories)
-          ..where((tbl) => tbl.id.equals(category.id)))
-        .write(
-      ProductCategoriesCompanion(
-        name: Value(category.name),
-        photo: Value(category.photo),
-      ),
+        return Left<Failure, List<model.ProductCategory>>(
+            DatabaseFailure(e.toString()));
+      },
     );
-    return updated > 0;
   }
 
-  // Delete a category
+  // ── Mutations (new Either-returning) ────────────────────────────────────────
+
+  @override
+  Future<Either<Failure, model.ProductCategory>> save(
+      model.ProductCategory category) async {
+    try {
+      final now = DateTime.now();
+      final id = await _dataSource.insert(
+        ProductCategoriesCompanion.insert(
+          name: category.name,
+          photo: Value(category.photo),
+          colorHex: Value(category.colorHex),
+          iconName: Value(category.iconName),
+          sortOrder: Value(category.sortOrder),
+          createdAt: Value(now),
+          updatedAt: Value(now),
+        ),
+      );
+      final saved = category.copyWith(id: id, createdAt: now, updatedAt: now);
+      return Right(saved);
+    } catch (e) {
+      return Left(DatabaseFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, model.ProductCategory>> update(
+      model.ProductCategory category) async {
+    try {
+      final now = DateTime.now();
+      await _dataSource.updateById(
+        category.id,
+        ProductCategoriesCompanion(
+          name: Value(category.name),
+          photo: Value(category.photo),
+          colorHex: Value(category.colorHex),
+          iconName: Value(category.iconName),
+          sortOrder: Value(category.sortOrder),
+          updatedAt: Value(now),
+        ),
+      );
+      return Right(category.copyWith(updatedAt: now));
+    } catch (e) {
+      return Left(DatabaseFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> delete(int id) async {
+    try {
+      final count = await _dataSource.countProductsForCategory(id);
+      if (count > 0) {
+        return Left(ConflictFailure(
+          'This category has $count product(s) assigned to it.',
+        ));
+      }
+      final deleted = await _dataSource.deleteById(id);
+      return Right(deleted > 0);
+    } catch (e) {
+      return Left(DatabaseFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> reorder(List<int> orderedIds) async {
+    try {
+      await _dataSource.bulkUpdateSortOrder(orderedIds);
+      return const Right(true);
+    } catch (e) {
+      return Left(DatabaseFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<int> countProductsForCategory(int categoryId) {
+    return _dataSource.countProductsForCategory(categoryId);
+  }
+
+  // ── Legacy helpers ───────────────────────────────────────────────────────────
+
+  @override
+  Future<List<model.ProductCategory>> getAllCategories() async {
+    final rows = await _dataSource.getAll();
+    return rows.map(_toEntity).toList();
+  }
+
+  @override
+  Future<model.ProductCategory?> getCategoryById(int id) async {
+    final row = await _dataSource.getById(id);
+    return row != null ? _toEntity(row) : null;
+  }
+
+  @override
+  Future<int> addCategory(model.ProductCategory category) async {
+    final result = await save(category);
+    return result.fold((_) => 0, (saved) => saved.id);
+  }
+
+  @override
+  Future<bool> updateCategory(model.ProductCategory category) async {
+    final result = await update(category);
+    return result.fold((_) => false, (_) => true);
+  }
+
+  @override
   Future<bool> deleteCategory(int id) async {
-    final deleted = await (_database.delete(_database.productCategories)
-          ..where((tbl) => tbl.id.equals(id)))
-        .go();
+    // Legacy delete: bypasses conflict check by deleting directly.
+    final deleted = await _dataSource.deleteById(id);
     return deleted > 0;
   }
 
-  // Check if category with name exists
-  Future<bool> categoryExists(String name) async {
-    final category = await (_database.select(_database.productCategories)
-          ..where((tbl) => tbl.name.equals(name)))
-        .getSingleOrNull();
-    return category != null;
-  }
+  // ── Private helpers ──────────────────────────────────────────────────────────
 
-  // Get category count
-  Future<int> getCategoryCount() async {
-    final count = await _database.select(_database.productCategories).get();
-    return count.length;
-  }
-
-  // Convert database row to ProductCategory model
-  model.ProductCategory _categoryFromRow(ProductCategory row) {
+  model.ProductCategory _toEntity(ProductCategory row) {
     return model.ProductCategory(
       id: row.id,
       name: row.name,
       photo: row.photo,
+      colorHex: row.colorHex,
+      iconName: row.iconName,
+      sortOrder: row.sortOrder,
+      createdAt: row.createdAt,
+      updatedAt: row.updatedAt,
     );
   }
 }

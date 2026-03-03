@@ -2,11 +2,13 @@
 
 ## Flutter Shopping List & Meal Planning App
 
-**Document Version:** 1.0  
-**Date:** February 26, 2026  
+**Document Version:** 2.0  
+**Date:** March 3, 2026  
 **Author:** BMad Master  
-**Status:** Design Ready  
+**Status:** Design Updated — Dark Theme  
 **Related Documents:** [PRD](prd-shopping-list-app.md), [Architecture](architecture-shopping-list-app.md), [Revised Epics](revised-epics-database-first.md)
+
+> **Design Direction (v2):** Dark charcoal/black backgrounds, warm orange accent (#FF6B35), full-bleed image cards with gradient title overlays, Poppins typeface. Inspired by premium cooking app aesthetics.
 
 ---
 
@@ -23,11 +25,12 @@ This document provides detailed UI/UX specifications including:
 
 ### Design Philosophy
 
-1. **Offline-First Visibility** - User always knows sync status
-2. **Speed Over Beauty** - Fast interactions, minimal taps
-3. **Kitchen-Friendly** - Large touch targets, high contrast
-4. **Progressive Disclosure** - Simple by default, powerful when needed
-5. **Family-Oriented** - Accessible to all skill levels
+1. **Dark & Immersive** — Charcoal (#121212) canvas puts food photography centre-stage
+2. **Orange as Voice** — Single warm accent (#FF6B35) drives all calls-to-action; nothing competes with it
+3. **Full-Bleed First** — Recipe images fill cards edge-to-edge; gradient overlays keep text readable without obscuring the food
+4. **Kitchen-Friendly** — Poppins typeface at generous sizes; 48 dp minimum touch targets, 56 dp recommended
+5. **Offline-First Visibility** — Sync status always visible via a subtle chip in the app bar
+6. **Progressive Disclosure** — Home/Discovery screen shows curated content; depth unlocks on tap
 
 ---
 
@@ -128,67 +131,66 @@ App Root
 
 ### Color Palette
 
-**Primary Colors:**
+**Primary Colors (Dark Theme — v2):**
 
 ```dart
 class AppColors {
-  // Brand colors
-  static const Color primary = Color(0xFF2E7D32);      // Green 800
-  static const Color primaryLight = Color(0xFF4CAF50); // Green 500
-  static const Color primaryDark = Color(0xFF1B5E20);  // Green 900
+  // ── Brand / Accent ────────────────────────────────────
+  static const Color primary      = Color(0xFFFF6B35); // Orange — main accent
+  static const Color primaryLight = Color(0xFFFF8C5A); // Orange hover/highlight
+  static const Color primaryDark  = Color(0xFFE04E1A); // Orange pressed
+  static const Color secondary    = Color(0xFFFFB347); // Amber — secondary accent
 
-  static const Color secondary = Color(0xFFFF6F00);      // Orange 900
-  static const Color secondaryLight = Color(0xFFFF9800); // Orange 500
+  // ── Backgrounds & Surfaces ───────────────────────────
+  static const Color background  = Color(0xFF121212); // Page background
+  static const Color surface     = Color(0xFF1E1E1E); // Cards, elevated areas
+  static const Color surfaceHigh = Color(0xFF2A2A2A); // Input fields, chips
+  static const Color bottomBar   = Color(0xFF1A1A1A); // Bottom navigation bar
 
-  // Semantic colors (Food-related)
-  static const Color fresh = Color(0xFF4CAF50);    // Green - Fresh produce
-  static const Color useSoon = Color(0xFFFFC107);  // Amber - Use within days
-  static const Color urgent = Color(0xFFF44336);   // Red - Urgent/expired
-  static const Color neutral = Color(0xFF9E9E9E);  // Gray - No expiration
+  // ── Semantic / Food freshness ────────────────────────
+  static const Color fresh   = Color(0xFF22C55E); // Green — fresh
+  static const Color useSoon = Color(0xFFF59E0B); // Amber — use within days
+  static const Color urgent  = Color(0xFFEF4444); // Red   — urgent/expired
+  static const Color neutral = Color(0xFF6B7280); // Gray  — no expiration
 
-  // UI colors
-  static const Color success = Color(0xFF4CAF50);
-  static const Color warning = Color(0xFFFF9800);
-  static const Color error = Color(0xFFF44336);
-  static const Color info = Color(0xFF2196F3);
+  // ── Feedback ────────────────────────────────────────
+  static const Color success = Color(0xFF22C55E);
+  static const Color warning = Color(0xFFF59E0B);
+  static const Color error   = Color(0xFFEF4444);
+  static const Color info    = Color(0xFF3B82F6);
 
-  // Surface colors (Light theme)
-  static const Color surface = Color(0xFFFAFAFA);
-  static const Color background = Color(0xFFFFFFFF);
-  static const Color card = Color(0xFFFFFFFF);
+  // ── Text ─────────────────────────────────────────────
+  static const Color textPrimary   = Color(0xFFFFFFFF); // White on dark bg
+  static const Color textSecondary = Color(0xFFA0A0A0); // Muted labels
+  static const Color textDisabled  = Color(0xFF555555); // Disabled
+  static const Color textOnImage   = Color(0xFFFFFFFF); // Text on photo overlay
 
-  // Surface colors (Dark theme)
-  static const Color surfaceDark = Color(0xFF121212);
-  static const Color backgroundDark = Color(0xFF000000);
-  static const Color cardDark = Color(0xFF1E1E1E);
-
-  // Text colors
-  static const Color textPrimary = Color(0xFF212121);
-  static const Color textSecondary = Color(0xFF757575);
-  static const Color textDisabled = Color(0xFFBDBDBD);
-
-  static const Color textPrimaryDark = Color(0xFFFFFFFF);
-  static const Color textSecondaryDark = Color(0xFFB0B0B0);
+  // ── Full-bleed card gradient (transparent → 80% black) ────────
+  static const Color cardOverlayStart = Color(0x00000000); // transparent
+  static const Color cardOverlayEnd   = Color(0xCC000000); // 80% black
 }
 ```
 
 **Color Usage Guidelines:**
 
-- **Primary Green:** Main actions (FABs, primary buttons), success states, fresh food
-- **Secondary Orange:** Cooking/warm actions, warnings, use-soon indicators
-- **Red:** Urgent actions, deletions, expiring food
-- **Blue:** Information, links, optional features
-- **Gray:** Neutral states, disabled elements, purchased items
+- **Orange (`primary`):** FABs, primary buttons, active nav icon, active chips, progress bars, step numbers
+- **Amber (`secondary`):** Time/serving badges, leftover pills, cooking-mode highlights
+- **Dark surfaces:** All pages use `background` (#121212); cards use `surface` (#1E1E1E)
+- **Full-bleed image cards:** Always apply `cardOverlay` gradient so white text stays legible
+- **Red:** Expiry urgency, delete swipe actions — same semantic meaning
+- **Gray (`neutral`):** Inactive nav icons, disabled inputs, purchased items (strikethrough + dimmed)
 
 ---
 
 ### Typography
 
-**Type Scale (Material Design 3):**
+**Type Scale (Material Design 3 — Poppins):**
+
+Font: **Poppins** (Google Fonts). SemiBold (600) for display/headline, Medium (500) for titles/labels, Regular (400) for body. All text on dark surfaces uses white or muted-gray.
 
 ```dart
 class AppTypography {
-  static const String fontFamily = 'Roboto'; // System default
+  static const String fontFamily = 'Poppins'; // Google Fonts
 
   static const TextTheme textTheme = TextTheme(
     // Display (large hero text)
@@ -290,10 +292,11 @@ class AppTypography {
 
 **Typography Usage:**
 
-- **Headlines:** Screen titles, section headers
-- **Titles:** Card titles, list item names, recipe titles
-- **Body:** Recipe instructions, descriptions, long-form content
-- **Labels:** Buttons, chips, badges, metadata (date, servings)
+- **Headlines:** Screen titles, section headers — white, Poppins SemiBold
+- **Titles:** Card/overlay titles — white on dark image, Poppins SemiBold
+- **Body:** Recipe instructions, descriptions — `textSecondary` (#A0A0A0), Poppins Regular
+- **Labels:** Buttons (orange bg, white text), chips, badges, metadata — Poppins Medium
+- **Category chips:** Poppins Medium 12 px; inactive = `surfaceHigh` bg + white text; active = `primary` bg + white text
 
 ---
 
@@ -472,21 +475,23 @@ class AppBarWithSync extends StatelessWidget implements PreferredSizeWidget {
 
 ### 2. Card Components
 
-#### Recipe Card (Grid)
+#### Recipe Card (Grid) — Full-Bleed with Gradient Overlay
 
 **Visual:**
 
 ```
 ┌─────────────────────┐
 │                     │
-│     [Image]         │
+│  [Full-bleed food   │
+│   photo  4:3]       │
 │                     │
-├─────────────────────┤
-│ Recipe Title        │
-│ ⭐⭐⭐⭐⭐  4.5      │
-│ 🕐 30 min           │
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ← gradient transparent→#CC000000
+│ Chicken Tacos       │ ← white, Poppins SemiBold
+│ ⭐ 4.5  🕐 30 min   │ ← amber star, white text, Poppins Medium 11px
 └─────────────────────┘
 ```
+
+Corner radius: **16 px**. No separate content area below the image — all text sits **inside** the card on the gradient overlay.
 
 **Specification:**
 
@@ -506,50 +511,83 @@ class RecipeCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       clipBehavior: Clip.antiAlias,
+      color: AppColors.surface,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppBorderRadius.lg), // 16 px
+      ),
       child: InkWell(
         onTap: onTap,
         onLongPress: onLongPress,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
           children: [
-            // Image section (16:9 aspect ratio)
+            // Full-bleed image (4:3 aspect ratio)
             AspectRatio(
-              aspectRatio: 16 / 9,
+              aspectRatio: 4 / 3,
               child: RecipeImage(
                 imageUrl: recipe.photoUrls.firstOrNull,
-                placeholder: const Icon(Icons.restaurant, size: 48),
+                fit: BoxFit.cover,
+                placeholder: Container(
+                  color: AppColors.surfaceHigh,
+                  child: const Icon(Icons.restaurant, size: 48,
+                      color: AppColors.textSecondary),
+                ),
               ),
             ),
 
-            // Content section
-            Padding(
-              padding: const EdgeInsets.all(AppSpacing.md),
+            // Gradient overlay (bottom 60 % of card)
+            Positioned.fill(
+              child: DecoratedBox(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: [0.35, 1.0],
+                    colors: [
+                      AppColors.cardOverlayStart,
+                      AppColors.cardOverlayEnd,
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
+            // Text overlaid at the bottom of the card
+            Positioned(
+              left: AppSpacing.md,
+              right: AppSpacing.md,
+              bottom: AppSpacing.sm,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Title
                   Text(
                     recipe.title,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      color: AppColors.textOnImage,
+                      fontWeight: FontWeight.w600,
+                    ),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  const SizedBox(height: AppSpacing.xs),
-
-                  // Rating (if available)
-                  if (recipe.rating != null)
-                    StarRating(rating: recipe.rating!),
-
-                  const SizedBox(height: AppSpacing.xs),
-
-                  // Metadata row
+                  const SizedBox(height: 2),
                   Row(
                     children: [
-                      Icon(Icons.access_time, size: 16, color: AppColors.textSecondary),
-                      const SizedBox(width: 4),
+                      const Icon(Icons.star_rounded, size: 12,
+                          color: AppColors.secondary),
+                      const SizedBox(width: 2),
+                      Text(
+                        recipe.rating?.toStringAsFixed(1) ?? '—',
+                        style: Theme.of(context).textTheme.labelSmall
+                            ?.copyWith(color: AppColors.textOnImage),
+                      ),
+                      const SizedBox(width: AppSpacing.sm),
+                      const Icon(Icons.access_time_rounded, size: 12,
+                          color: AppColors.textOnImage),
+                      const SizedBox(width: 2),
                       Text(
                         '${recipe.totalTime.inMinutes} min',
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.labelSmall
+                            ?.copyWith(color: AppColors.textOnImage),
                       ),
                     ],
                   ),
@@ -566,29 +604,29 @@ class RecipeCard extends StatelessWidget {
 
 **Dimensions:**
 
-- Width: Flexible (grid takes 2 columns on phone, 3-4 on tablet)
-- Height: Auto (content-driven)
-- Image: 16:9 aspect ratio
-- Padding: 16px internal padding
+- Width: Flexible (2-column grid on phone, 3–4 on tablet)
+- Image: 4:3 aspect ratio, full-bleed edge-to-edge
+- Corner radius: 16 px
+- No content area below the image; title + meta sit on gradient overlay
 
 **States:**
 
-- Default
-- Pressed (ripple effect)
-- Long-press (selection mode)
+- Default: gradient overlay at natural opacity
+- Pressed: orange ink ripple + subtle scale-down (0.97×)
+- Long-press: orange border ring 2 px (selection mode)
 
 ---
 
 #### Shopping List Card
 
-**Visual:**
+**Visual (dark theme):**
 
 ```
-┌─────────────────────────────────────────────────┐
-│  Weekly Groceries               [⋮]            │
-│  12 items • 5 purchased                         │
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │ ← Progress bar
-│  Updated 2 hours ago                            │
+┌─────────────────────────────────────────────────┐  bg #1E1E1E, radius 16 px
+│  Weekly Groceries               [⋮]            │  ← white Poppins SemiBold + muted icon
+│  12 items • 5 purchased                         │  ← textSecondary #A0A0A0
+│  ▰▰▰▰▰▰▰▰▰▰▰▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱  (42%)          │  ← orange LinearProgressIndicator
+│  Updated 2 hours ago                            │  ← bodySmall, textSecondary
 └─────────────────────────────────────────────────┘
 ```
 
@@ -1096,17 +1134,17 @@ class EmptyState extends StatelessWidget {
 
 ### 7. Loading Components
 
-#### Skeleton Loader (Card)
+#### Skeleton Loader (Card) — Dark Theme
 
 **Visual:**
 
 ```
-┌─────────────────────┐
-│ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ │  ← Shimmering placeholder
-│ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ │
-├─────────────────────┤
-│ ▒▒▒▒▒▒▒▒▒▒▒▒       │
-│ ▒▒▒▒▒▒             │
+┌─────────────────────┐  bg #1E1E1E, radius 16px
+│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓│  ← shimmer on dark: #2A2A2A → #3A3A3A
+│ ▓▓▓▓▓ [4:3 image area] ▓▓ │
+│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓│
+│ ▓▓▓▓▓▓▓▓▓▓▓▓       │  ← title bar
+│ ▓▓▓▓▓▓             │  ← metadata bar
 └─────────────────────┘
 ```
 
@@ -1145,8 +1183,8 @@ class Skeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Colors.grey[300]!,
-      highlightColor: Colors.grey[100]!,
+      baseColor: const Color(0xFF2A2A2A),  // dark shimmer base
+      highlightColor: const Color(0xFF3A3A3A), // dark shimmer highlight,
       child: Container(
         width: width,
         height: height,
@@ -1164,35 +1202,72 @@ class Skeleton extends StatelessWidget {
 
 ## Shopping List Screens
 
+### Home / Discovery Screen _(new in v2)_
+
+**Screen Layout:**
+
+```
+┌─────────────────────────────────────────────────┐  bg #121212
+│  Good Morning, Alex 👋          [🔔] [👤]      │  ← white Poppins SemiBold 18px
+│  What would you like to cook today?             │  ← textSecondary
+├─────────────────────────────────────────────────┤
+│  ┌─────────────────────────────────────────┐   │
+│  │ 🔍  Search recipes, ingredients...     │   │  ← pill search bar, bg #2A2A2A
+│  └─────────────────────────────────────────┘   │
+├─────────────────────────────────────────────────┤
+│  [🍕 All] [🥗 Healthy] [🍝 Pasta] [🥩 Meat]  │  ← horizontal scroll chips
+│  [🍜 Asian] [🌮 Mexican] [🥐 Breakfast]       │     active = orange #FF6B35
+├─────────────────────────────────────────────────┤
+│  Featured                              See all  │  ← SemiBold 16px + orange link
+│  ┌─────────────────────────────────────┐        │
+│  │  [Full-bleed 16:9 hero image]      │        │  ← radius 20px
+│  │▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓│        │  ← gradient overlay
+│  │ Chicken Tacos             🕐 30m   │        │  ← white overlay text
+│  │ ⭐ 4.8  •  Mexican                │        │
+│  └─────────────────────────────────────┘        │
+│                                                 │
+│  Popular Recipes                       See all  │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐     │
+│  │[Full img]│  │[Full img]│  │[Full img]│     │  ← 4:3, radius 16px
+│  │▓ Pasta   │  │▓ Salmon  │  │▓ Tacos   │     │
+│  │ ⭐4.5    │  │ ⭐4.7    │  │ ⭐4.9    │     │
+│  │ 🕐20min  │  │ 🕐40min  │  │ 🕐30min  │     │
+│  └──────────┘  └──────────┘  └──────────┘     │
+├─────────────────────────────────────────────────┤
+│  🗓️      🛒      📚      🥫      ⚙️           │  ← nav bar #1A1A1A; active = orange
+└─────────────────────────────────────────────────┘
+```
+
+---
+
 ### Shopping Lists Page (Grid View)
 
 **Screen Layout:**
 
 ```
-┌─────────────────────────────────────────────────┐
-│  Shopping Lists                      [🔍]      │ ← App bar
+┌─────────────────────────────────────────────────┐  bg #121212
+│  Shopping Lists                      [🔍]      │  ← white Poppins SemiBold
 ├─────────────────────────────────────────────────┤
 │                                                 │
-│  ┌──────────────┐  ┌──────────────┐           │
-│  │ Weekly       │  │ Party        │           │ ← List cards
+│  ┌──────────────┐  ┌──────────────┐           │  ← cards bg #1E1E1E radius 16px
+│  │ Weekly       │  │ Party        │           │
 │  │ Groceries    │  │ Supplies     │           │
 │  │ 12 items     │  │ 5 items      │           │
 │  │ 5 purchased  │  │ 2 purchased  │           │
-│  │ ━━━━━━━      │  │ ━━━━━        │           │
+│  │ ▰▰▰▰▰▱▱▱▱   │  │ ▰▰▰▱▱▱▱▱▱   │           │  ← orange progress bar
 │  └──────────────┘  └──────────────┘           │
 │                                                 │
 │  ┌──────────────┐  ┌──────────────┐           │
-│  │ Costco Run   │  │ + New List   │           │
-│  │ 3 items      │  │              │           │
+│  │ Costco Run   │  │ + New List   │           │  ← new-list card: dashed orange border
+│  │ 3 items      │  │  (dashed)    │           │
 │  │ 0 purchased  │  │              │           │
-│  │ ━            │  │              │           │
 │  └──────────────┘  └──────────────┘           │
 │                                                 │
 ├─────────────────────────────────────────────────┤
-│  🗓️   🛒   📚   🥫   ⚙️                       │ ← Bottom nav
+│  🗓️      🛒      📚      🥫      ⚙️           │  ← nav bar #1A1A1A, active = orange
 └─────────────────────────────────────────────────┘
     ┌─────┐
-    │  +  │  ← FAB: Create new list
+    │  +  │  ← FAB orange #FF6B35, white icon
     └─────┘
 ```
 
@@ -1258,31 +1333,42 @@ class ShoppingListsPage extends ConsumerWidget {
 **Screen Layout:**
 
 ```
-┌─────────────────────────────────────────────────┐
-│  ←  Weekly Groceries         ✓ Synced   [⋮]   │ ← App bar with sync
+┌─────────────────────────────────────────────────┐  bg #121212
+│  ← Weekly Groceries        ✓ Synced    [⋮]    │  ← white; sync status chip
 ├─────────────────────────────────────────────────┤
-│  5/12 items • $34.50 / $80                     │ ← Progress header
-│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━                  │
+│  ┌─────────────────────────────────────────┐   │
+│  │  5 / 12 items                  42%      │   │  ← progress card bg #1E1E1E
+│  │  ▰▰▰▰▰▰▰▰▰▱▱▱▱▱▱▱▱▱▱▱  (orange)       │   │
+│  └─────────────────────────────────────────┘   │
 ├─────────────────────────────────────────────────┤
-│  [ Filter: All ] [ Sort: Category ▼ ]         │ ← Filters
+│  [All ▼]  [By Category ▼]                     │  ← pill chips bg #2A2A2A
 ├─────────────────────────────────────────────────┤
-│  ✓ Produce (3/4)                        ▼      │ ← Category section (collapsed)
+│  ✓ Produce (3/4)                        [▾]   │  ← section header; ✓ = green
 ├─────────────────────────────────────────────────┤
-│  □ Dairy (0/3)                          ▼      │ ← Category section (expanded)
-│    ☐  Milk (2L)                      Dairy $5  │ ← Item
-│    ☐  Cheddar Cheese                Dairy $7  │
-│    ☐  Greek Yogurt                  Dairy $6  │
+│  Dairy (0/3)                            [▾]   │  ← expanded section
+│  ┌─────────────────────────────────────────┐   │
+│  │  ○  Milk (2L)               Dairy  $5  │   │  ← item row bg #1E1E1E radius 12px
+│  │  ○  Cheddar Cheese          Dairy  $7  │   │
+│  │  ○  Greek Yogurt            Dairy  $6  │   │
+│  └─────────────────────────────────────────┘   │
+│  Meat & Seafood (0/2)                   [▾]   │
+│  ┌─────────────────────────────────────────┐   │
+│  │  ○  Chicken Breast (1kg)    Meat  $12  │   │
+│  │  ○  Salmon Fillet           Meat  $15  │   │
+│  └─────────────────────────────────────────┘   │
 ├─────────────────────────────────────────────────┤
-│  □ Meat & Seafood (0/2)                 ▼      │
-│    ☐  Chicken Breast (1kg)          Meat $12  │
-│    ☐  Salmon Fillet                 Meat $15  │
-├─────────────────────────────────────────────────┤
-│  🗓️   🛒   📚   🥫   ⚙️                       │
+│  🗓️      🛒      📚      🥫      ⚙️           │  ← nav bar #1A1A1A
 └─────────────────────────────────────────────────┘
     ┌─────┐
-    │  +  │  ← FAB: Add item
+    │  +  │  ← FAB orange
     └─────┘
 ```
+
+**Design Notes:**
+
+- Checked items: text dims to `textSecondary`, strikethrough applied; checkbox becomes solid orange ✓
+- Swipe right on item row → edit (orange bg); swipe left → delete (red #EF4444)
+- Section headers: Poppins Medium 13 px, `textSecondary`; item rows sit in `#1E1E1E` grouped card
 
 **Widget Tree:**
 
@@ -1550,32 +1636,35 @@ class _AddItemBottomSheetState extends ConsumerState<AddItemBottomSheet> {
 **Screen Layout:**
 
 ```
-┌─────────────────────────────────────────────────┐
-│  Recipes                    [🔍] [⋮]           │ ← App bar
+┌─────────────────────────────────────────────────┐  bg #121212
+│  Recipes                       [🔍] [⋮]        │  ← white Poppins SemiBold
 ├─────────────────────────────────────────────────┤
-│  [ All ] [ ⭐ Favorites ] [ 🕐 Recent ]        │ ← Filter chips
+│  ┌───────────────────────────────────────────┐  │
+│  │ 🔍  Search recipes...                     │  │  ← pill search bar bg #2A2A2A
+│  └───────────────────────────────────────────┘  │
+├─────────────────────────────────────────────────┤
+│  [All] [⭐ Faves] [🕐 Recent] [🥗 Healthy]    │  ← pill chips; active = orange #FF6B35
 ├─────────────────────────────────────────────────┤
 │  ┌───────────┐  ┌───────────┐  ┌───────────┐  │
-│  │  [Image]  │  │  [Image]  │  │  [Image]  │  │ ← Recipe cards (grid)
-│  │ Chicken   │  │ Pasta     │  │ Salmon    │  │
-│  │ Tacos     │  │ Carbonara │  │ Teriyaki  │  │
-│  │ ⭐⭐⭐⭐⭐ │  │ ⭐⭐⭐⭐   │  │ ⭐⭐⭐⭐⭐ │  │
-│  │ 🕐 30 min │  │ 🕐 20 min │  │ 🕐 40 min │  │
+│  │[Full img] │  │[Full img] │  │[Full img] │  │  ← full-bleed 4:3, radius 16px
+│  │▓ Chicken  │  │▓ Pasta    │  │▓ Salmon   │  │  ← gradient + white overlay text
+│  │   Tacos   │  │   Carbonar│  │   Teriyaki│  │
+│  │ ⭐4.8      │  │ ⭐4.5      │  │ ⭐4.7      │  │
+│  │ 🕐30min   │  │ 🕐20min   │  │ 🕐40min   │  │
 │  └───────────┘  └───────────┘  └───────────┘  │
 │                                                 │
 │  ┌───────────┐  ┌───────────┐  ┌───────────┐  │
-│  │  [Image]  │  │  [Image]  │  │  [Image]  │  │
-│  │ Thai      │  │ Vegan     │  │ BBQ       │  │
-│  │ Curry     │  │ Buddha    │  │ Ribs      │  │
-│  │ ⭐⭐⭐⭐   │  │ ⭐⭐⭐      │  │ ⭐⭐⭐⭐⭐ │  │
-│  │ 🕐 45 min │  │ 🕐 25 min │  │ 🕐 2 hrs  │  │
+│  │[Full img] │  │[Full img] │  │[Full img] │  │
+│  │▓ Thai     │  │▓ Vegan    │  │▓ BBQ      │  │
+│  │   Curry   │  │   Buddha  │  │   Ribs    │  │
+│  │ ⭐4.4      │  │ ⭐4.1      │  │ ⭐4.9      │  │
+│  │ 🕐45min   │  │ 🕐25min   │  │ 🕐2hrs    │  │
 │  └───────────┘  └───────────┘  └───────────┘  │
-│                                                 │
 ├─────────────────────────────────────────────────┤
-│  🗓️   🛒   📚   🥫   ⚙️                       │
+│  🗓️      🛒      📚      🥫      ⚙️           │  ← nav bar #1A1A1A
 └─────────────────────────────────────────────────┘
     ┌────────────────┐
-    │  + New Recipe  │  ← Extended FAB
+    │  + New Recipe  │  ← Extended FAB, orange bg #FF6B35
     └────────────────┘
 ```
 
@@ -1587,41 +1676,40 @@ class _AddItemBottomSheetState extends ConsumerState<AddItemBottomSheet> {
 
 ```
 ┌─────────────────────────────────────────────────┐
-│  ←                                     ⭐ [⋮]  │ ← Transparent app bar over image
+│  ← (transparent)                    ⭐  [⋮]   │  ← icons over image, white
+│                                                 │
+│       [Full-bleed hero photo 16:9]              │  ← swipeable carousel
+│       ● ○ ○  (page dots, orange active)         │
+│▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ← gradient bottom
+├─────────────────────────────────────────────────┤  ← content card #1E1E1E, top-radius 24px
+│  Chicken Tacos                                  │  ← white, Poppins SemiBold 22px
+│  ⭐ 4.5  (12 ratings)                          │  ← amber stars, textSecondary
+│                                                 │
+│  ┌───────┐  ┌──────────┐  ┌─────────┐  │
+│  │🕐30m │  │🍽️4 serv.│  │🔥Medium│  │  ← orange-bordered badge chips
+│  └───────┘  └──────────┘  └─────────┘  │
+├─────────────────────────────────────────────────┤
+│  [Ingredients]  [Instructions]  [Notes]        │  ← orange underline on active tab
 ├─────────────────────────────────────────────────┤
 │                                                 │
-│          [Recipe Hero Image]                    │ ← Image carousel (swipeable)
-│           1 / 3                                 │ ← Image indicator
-│                                                 │
-├─────────────────────────────────────────────────┤
-│  Chicken Tacos                                  │ ← Title
-│  ⭐⭐⭐⭐⭐ 4.5 (12 ratings)                    │ ← Rating
-│                                                 │
-│  🕐 30 min  |  🍽️ 4 servings  |  🔥 Medium   │ ← Metadata
-├─────────────────────────────────────────────────┤
-│  [ Ingredients ] [ Instructions ] [ Notes ]    │ ← Tab bar
-├─────────────────────────────────────────────────┤
-│                                                 │
-│  🥬 Produce                                    │ ← Category
-│    ☐  1 head Lettuce, shredded                │
-│    ☐  2 Tomatoes, diced                       │
-│    ☐  1/2 cup Cilantro, chopped               │
+│  🥬 Produce                                    │  ← category label, textSecondary
+│    ○  1 head Lettuce, shredded                 │  ← circle checkbox, white text
+│    ○  2 Tomatoes, diced                        │
+│    ○  1/2 cup Cilantro, chopped                │
 │                                                 │
 │  🍗 Meat                                       │
-│    ☐  500g Chicken breast                     │
+│    ○  500g Chicken breast                      │
 │                                                 │
 │  🧂 Pantry                                     │
-│    ☐  12 Taco shells                          │
-│    ☐  2 tbsp Taco seasoning                   │
-│                                                 │
-│  ┌──────────────────────────────────────────┐  │
-│  │  + Add Missing Items to Shopping List    │  │ ← Quick action
-│  └──────────────────────────────────────────┘  │
-│                                                 │
+│    ○  12 Taco shells                           │
+│    ○  2 tbsp Taco seasoning                    │
 ├─────────────────────────────────────────────────┤
-│  ┌────────────────┐  ┌────────────────┐       │
-│  │ Add to Meal    │  │ Start Cooking  │       │ ← Action buttons
-│  └────────────────┘  └────────────────┘       │
+│  ┌──────────────────┐  ┌───────────────────┐ │
+│  │ Add to Meal Plan  │  │  Start Cooking 🔥  │ │  ← left = outlined; right = orange
+│  └──────────────────┘  └───────────────────┘ │
+│  ┌───────────────────────────────────────┐   │
+│  │  + Add Missing Items to Shopping List  │   │  ← full-width outlined orange
+│  └───────────────────────────────────────┘   │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -1630,21 +1718,25 @@ class _AddItemBottomSheetState extends ConsumerState<AddItemBottomSheet> {
 ```
 │  Instructions                                   │
 ├─────────────────────────────────────────────────┤
-│  1. Heat oil in large skillet over medium-high │ ← Step-by-step
-│     heat. Add chicken and cook until browned,  │   (checkboxes for tracking)
-│     about 5-7 minutes.                          │
-│     ☐ Mark as complete                         │
+│  ┌───────────────────────────────────────┐   │
+│  │● 1  Heat oil in skillet. Cook chicken    │   │  ← step card bg #2A2A2A radius 12px
+│  │       until browned (5–7 min).           │   │  ← ● = orange step number circle
+│  │       [□ Mark done]                        │   │  ← checkbox; checked = orange ✓
+│  └───────────────────────────────────────┘   │
+│  ┌───────────────────────────────────────┐   │
+│  │● 2  Add taco seasoning + 1/4 cup water. │   │
+│  │       Simmer until thick (2–3 min).       │   │
+│  │       [□ Mark done]                        │   │
+│  └───────────────────────────────────────┘   │
 │                                                 │
-│  2. Add taco seasoning and 1/4 cup water.      │
-│     Simmer until sauce thickens, 2-3 minutes.  │
-│     ☐ Mark as complete                         │
-│                                                 │
-│  3. Warm taco shells according to package      │
-│     directions.                                 │
-│     ☐ Mark as complete                         │
-│                                                 │
-│  [ 🎤 Voice Chef ]  ← Optional voice assistant │
+│  [ 🎤 Voice Chef ]  ← orange outlined button    │
 ```
+
+**Design Notes:**
+
+- Hero image is full-width 16:9; content card slides up over it with top-radius 24 px
+- Active instruction step card gets an orange left border when "Mark done" is tapped
+- Serving stepper (− / count / +) inline next to the serving badge chip
 
 ---
 
@@ -1655,72 +1747,67 @@ class _AddItemBottomSheetState extends ConsumerState<AddItemBottomSheet> {
 **Screen Layout:**
 
 ```
-┌─────────────────────────────────────────────────┐
-│  Meal Plan                   Feb 26 - Mar 4    │ ← App bar with week
-│                              ← Week of →       │
+┌─────────────────────────────────────────────────┐  bg #121212
+│  Meal Plan           Feb 26 – Mar 4    ← →   │  ← white Poppins SemiBold + week arrows
 ├─────────────────────────────────────────────────┤
-│  Mon  Tue  Wed  Thu  Fri  Sat  Sun            │ ← Day tabs (horizontal scroll)
-│  ───  ───  ───  ───  ───  ───  ───            │
-│   ●                                             │ ← Active day indicator
+│  [Mon] [Tue] [Wed] [Thu] [Fri] [Sat] [Sun]   │  ← day pill chips, horiz. scroll
+│   ███                                          │  ← active chip = orange #FF6B35 bg
 ├─────────────────────────────────────────────────┤
-│  Monday, Feb 26                                 │
+│  Monday, Feb 26                                 │  ← section label white
 │                                                 │
-│  🌅 Breakfast                                  │ ← Meal slot
-│  ┌─────────────────────────────────────────┐  │
-│  │  [Image]  Oatmeal with Berries          │  │ ← Recipe card
-│  │           🕐 10 min  |  2 servings      │  │
-│  │           Have all ingredients✓          │  │
-│  └─────────────────────────────────────────┘  │
+│  🌅 Breakfast                                  │  ← meal-type label, textSecondary
+│  ┌───────────────────────────────────────┐   │
+│  │ [img] Oatmeal with Berries              │   │  ← recipe card #1E1E1E radius 14px
+│  │       🕐 10 min  •  2 servings  ✓       │   │  ← ✓ green = all ingredients on hand
+│  └───────────────────────────────────────┘   │
 │                                                 │
 │  🌞 Lunch                                      │
-│  ┌─────────────────────────────────────────┐  │
-│  │  🍲 Leftover Pasta Carbonara            │  │ ← Leftover indicator
-│  │     from Sun dinner                      │  │
-│  └─────────────────────────────────────────┘  │
+│  ┌───────────────────────────────────────┐   │
+│  │ 🍲  Leftover Pasta Carbonara           │   │  ← amber leftover pill chip
+│  │     from Sun dinner                     │   │
+│  └───────────────────────────────────────┘   │
 │                                                 │
 │  🌙 Dinner                                     │
-│  ┌─────────────────────────────────────────┐  │
-│  │  [Image]  Chicken Tacos                 │  │
-│  │           🕐 30 min  |  4 servings      │  │
-│  │           ⚠️ Need 2 ingredients         │  │ ← Warning indicator
-│  └─────────────────────────────────────────┘  │
+│  ┌───────────────────────────────────────┐   │
+│  │ [img] Chicken Tacos                    │   │
+│  │       🕐 30 min  •  ⚠️ 2 missing ingred. │   │  ← ⚠️ in orange
+│  └───────────────────────────────────────┘   │
 │                                                 │
-│  ┌──────────────────────────────────────────┐  │
-│  │  📝 Generate Shopping List for Week      │  │ ← Primary CTA
-│  └──────────────────────────────────────────┘  │
-│                                                 │
+│  ┌───────────────────────────────────────┐   │
+│  │  📝  Generate Shopping List for Week   │   │  ← orange full-width button
+│  └───────────────────────────────────────┘   │
 ├─────────────────────────────────────────────────┤
-│  🗓️   🛒   📚   🥫   ⚙️                       │
+│  🗓️      🛒      📚      🥫      ⚙️           │  ← nav bar #1A1A1A
 └─────────────────────────────────────────────────┘
     ┌─────┐
-    │  +  │  ← FAB: Assign meal
+    │  +  │  ← FAB orange
     └─────┘
 ```
 
-**Tap Empty Slot:**
+**Empty slot:**
 
 ```
-┌─────────────────────────────────────────────────┐
-│  🌙 Dinner                                     │
-│  ┌─────────────────────────────────────────┐  │
-│  │              [+ Tap to add]              │  │ ← Dashed border
-│  └─────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────┘
-                    ↓ Taps
-┌─────────────────────────────────────────────────┐
-│  Select Recipe for Monday Dinner               │ ← Bottom sheet opens
-│                                                 │   (recipe picker)
-│  [ Search recipes... ]                         │
-│  [ All ] [ ⭐ Favorites ] [ 🔥 Trending ]      │
+│  ┌───────────────────────────────────────┐   │
+│  │    [+ Tap to add meal]                  │   │  ← dashed orange border, dark bg
+│  └───────────────────────────────────────┘   │
+```
+
+**Recipe Picker Bottom Sheet (dark):**
+
+```
+┌─────────────────────────────────────────────────┐  bg #1E1E1E top-radius 24px
+│  ···                                            │  ← drag handle
+│  Select — Monday Dinner                         │  ← white Poppins SemiBold
+│  ┌───────────────────────────────────────────┐  │
+│  │ 🔍  Search recipes...                     │  │  ← pill search bar #2A2A2A
+│  └───────────────────────────────────────────┘  │
+│  [All] [⭐ Faves] [🔥 Trending] [⏰ <30min]  │  ← orange-active pill chips
+│  🧑‍🍳 What Can I Make? (23)                  │  ← smart filter, orange icon
 │                                                 │
-│  🧑‍🍳 What Can I Make? (23 recipes)           │ ← Smart filter
-│  ⏰ Quick Meals (<30 min)  (45 recipes)       │
-│                                                 │
-│  ┌───────────┐  ┌───────────┐                 │
-│  │  [Image]  │  │  [Image]  │                 │
-│  │ Chicken   │  │ Pasta     │                 │
-│  │ Tacos     │  │ Carbonara │                 │
-│  └───────────┘  └───────────┘                 │
+│  ┌───────────┐  ┌───────────┐  ┌───────────┐  │
+│  │[Full img] │  │[Full img] │  │[Full img] │  │  ← same full-bleed cards
+│  │▓ Chicken  │  │▓ Pasta    │  │▓ Salmon   │  │
+│  └───────────┘  └───────────┘  └───────────┘  │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -1733,37 +1820,49 @@ class _AddItemBottomSheetState extends ConsumerState<AddItemBottomSheet> {
 **Screen Layout:**
 
 ```
-┌─────────────────────────────────────────────────┐
-│  Pantry                          [🔍] [⋮]      │ ← App bar
+┌─────────────────────────────────────────────────┐  bg #121212
+│  Pantry                          [🔍] [⋮]      │  ← white Poppins SemiBold
 ├─────────────────────────────────────────────────┤
-│  ⚠️ 3 items expiring within 3 days             │ ← Alert banner (tap to filter)
+│  ┌───────────────────────────────────────────┐  │
+│  │  ⚠️  3 items expiring within 3 days       │  │  ← alert banner bg #2A1F16 radius 12px
+│  │       Tap to view →                       │  │  ← orange-amber left stripe
+│  └───────────────────────────────────────────┘  │
 ├─────────────────────────────────────────────────┤
-│  [ All ] [ 🚨 Expiring ] [ 🟢 Fresh ]          │ ← Filter chips
+│  [All] [🚨 Expiring] [🟢 Fresh]               │  ← pill chips, active = orange
 ├─────────────────────────────────────────────────┤
-│  🥛 Dairy                                   ▼  │ ← Category (collapsible)
-│    Milk (2L)                          🔴  1.5L │ ← Item with freshness
-│    Exp: Feb 28 (2 days)                        │
+│  🥛 Dairy                                  [▾] │  ← section label white + collapse icon
+│  ┌───────────────────────────────────────┐   │
+│  │  🥛  Milk (2L)                  🔴 1.5L │   │  ← item card bg #1E1E1E radius 12px
+│  │       Exp: Feb 28 (2 days)              │   │  ← red dot = urgent
+│  ├───────────────────────────────────────┤   │
+│  │  🧀  Cheddar Cheese            🟡 250g  │   │  ← amber dot = use soon (3–7 days)
+│  │       Exp: Mar 5 (7 days)               │   │
+│  └───────────────────────────────────────┘   │
 │                                                 │
-│    Cheddar Cheese                     🟡  250g │
-│    Exp: Mar 5 (7 days)                         │
+│  🍎 Produce                                [▾] │
+│  ┌───────────────────────────────────────┐   │
+│  │  🍎  Apples                    🟢 6 pcs │   │  ← green dot = fresh (8+ days)
+│  │       Exp: Mar 15 (17 days)             │   │
+│  ├───────────────────────────────────────┤   │
+│  │  🥬  Lettuce                   🔴 1 head │   │
+│  │       Exp: Feb 27 (1 day)               │   │
+│  └───────────────────────────────────────┘   │
 │                                                 │
-│  🍎 Produce                                 ▼  │
-│    Apples                             🟢  6 pcs│
-│    Exp: Mar 15 (17 days)                       │
-│                                                 │
-│    Lettuce                            🔴  1 head│
-│    Exp: Feb 27 (1 day)                         │
-│                                                 │
-│  🍞 Pantry                                  ▼  │
-│    Pasta                              ⚪  500g │
-│    No expiration                                │
-│                                                 │
+│  🍞 Pantry Staples                         [▾] │
+│  ┌───────────────────────────────────────┐   │
+│  │  🍝  Pasta                      ⚪ 500g │   │  ← grey dot = no expiry
+│  │       No expiration                     │   │
+│  └───────────────────────────────────────┘   │
 ├─────────────────────────────────────────────────┤
-│  🗓️   🛒   📚   🥫   ⚙️                       │
+│  🗓️      🛒      📚      🥫      ⚙️           │  ← Pantry tab badge = orange count
 └─────────────────────────────────────────────────┘
     ┌─────┐
-    │  +  │  ← FAB: Add pantry item
+    │  +  │  ← FAB orange
     └─────┘
+```
+
+    └─────┘
+
 ```
 
 ---
@@ -1773,36 +1872,42 @@ class _AddItemBottomSheetState extends ConsumerState<AddItemBottomSheet> {
 **Screen Layout:**
 
 ```
-┌─────────────────────────────────────────────────┐
-│  ←  Expiring Soon                               │
+
+┌─────────────────────────────────────────────────┐ bg #121212
+│ ← Expiring Soon │ ← white Poppins SemiBold
 ├─────────────────────────────────────────────────┤
-│  🚨 Urgent (0-2 days) - 3 items                │ ← Section
-│                                                 │
-│  ┌─────────────────────────────────────────┐  │
-│  │  🥛 Milk (2L)               🔴    1.5L  │  │
-│  │  Expires in 2 days (Feb 28)             │  │
-│  │                                          │  │
-│  │  💡 Recipe Ideas:                       │  │ ← Smart suggestions
-│  │  • Creamy Pasta Sauce                   │  │
-│  │  • Pancakes                              │  │
-│  │  [Show More Recipes]                    │  │
-│  └─────────────────────────────────────────┘  │
-│                                                 │
-│  ┌─────────────────────────────────────────┐  │
-│  │  🥬 Lettuce                 🔴   1 head │  │
-│  │  Expires in 1 day (Feb 27)              │  │
-│  │                                          │  │
-│  │  💡 Recipe Ideas:                       │  │
-│  │  • Caesar Salad                         │  │
-│  │  • Tacos                                 │  │
-│  └─────────────────────────────────────────┘  │
-│                                                 │
-│  ⚠️ Use Soon (3-7 days) - 2 items              │
-│                                                 │
-│  [... similar cards ...]                       │
-│                                                 │
+│ 🚨 Urgent (0–2 days) · 3 items │ ← red label textSecondary
+│ │
+│ ┌───────────────────────────────────────────┐ │
+│ │ 🥛 Milk (2L) 🔴 1.5L │ │ ← item card bg #1E1E1E radius 12px
+│ │ Expires in 2 days (Feb 28) │ │ ← red dot + expiry text
+│ │ │ │
+│ │ 💡 Recipe Ideas: │ │ ← amber section label
+│ │ ┌──────────┐ ┌──────────┐ │ │
+│ │ │[img] │ │[img] │ │ │ ← mini recipe fullbleed cards
+│ │ │▓Pancakes │ │▓Pasta │ │ │
+│ │ └──────────┘ └──────────┘ │ │
+│ └───────────────────────────────────────────┘ │
+│ │
+│ ┌───────────────────────────────────────────┐ │
+│ │ 🥬 Lettuce 🔴 1 head │ │
+│ │ Expires in 1 day (Feb 27) │ │
+│ │ │ │
+│ │ 💡 Recipe Ideas: │ │
+│ │ ┌──────────┐ ┌──────────┐ │ │
+│ │ │[img] │ │[img] │ │ │
+│ │ │▓Caesar │ │▓Tacos │ │ │
+│ │ └──────────┘ └──────────┘ │ │
+│ └───────────────────────────────────────────┘ │
+│ │
+│ ⚠️ Use Soon (3–7 days) · 2 items │ ← amber label
+│ [... similar cards ...] │
+│ │
+├─────────────────────────────────────────────────┤
+│ 🗓️ 🛒 📚 🥫 ⚙️ │ ← nav bar #1A1A1A
 └─────────────────────────────────────────────────┘
-```
+
+````
 
 ---
 
@@ -1884,7 +1989,7 @@ class Breakpoints {
   static const double medium = 840;      // Large phone, small tablet
   static const double expanded = 1200;   // Tablet, desktop
 }
-```
+````
 
 **Layout Adaptations:**
 

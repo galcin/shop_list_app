@@ -1,3160 +1,1276 @@
-# Epics and User Stories - Architecture Aligned
+﻿# Epics and User Stories  Vertical Slice Approach
 
 ## Flutter Shopping List & Meal Planning App
 
-**Document Version:** 4.0  
-**Date:** February 26, 2026  
-**Author:** BMad Team  
-**Status:** Development Ready - Architecture Aligned  
-**Approach:** Clean Architecture + Offline-First + Riverpod + Drift  
+**Document Version:** 5.0
+**Date:** March 3, 2026
+**Author:** BMad Team
+**Status:** Development Ready  Vertical Slice Redesign
+**Approach:** Clean Architecture + Offline-First + Riverpod + Drift + **Vertical Slices**
 **Related Documents:** [Architecture](architecture-shopping-list-app.md), [PRD](prd-shopping-list-app.md), [UX Design](ux-design-shopping-list-app.md)
 
 ---
 
-## Document Overview
+## Why Vertical Slices?
 
-This document organizes all development work into **Epics** and **User Stories** aligned with the technical architecture specification. Each story follows Clean Architecture principles with clear separation between Presentation, Application (Use Cases), Domain, and Data layers.
+The previous document organised work into **horizontal layers** (Data Layer  Domain Layer  Presentation Layer). Each layer epic had to be completed before the next, and no story produced a UI-testable result.
 
-### Key Architectural Decisions
+This revision adopts **vertical slices**: every story cuts through **all layers** (Database  Domain Entity  Repository  Use Case  State Provider  UI Page) for a single feature or workflow. The result is that each completed story can be:
 
-✅ **Clean Architecture** - Strict layer separation (Presentation → Application → Domain → Data)  
-✅ **Offline-First Pattern** - Local DB is source of truth, cloud sync is optional  
-✅ **Repository Pattern** - Abstract data sources behind repositories  
-✅ **MVVM with Riverpod** - StateNotifiers manage UI state, UseCase execute business logic  
-✅ **Drift Database** - Type-safe SQLite with reactive queries  
-✅ **Feature Modules** - Each feature has domain/data/presentation folders  
-✅ **Dependency Injection** - Riverpod providers for all dependencies
+-  **Demo'd in the running app** immediately
+-  **Tested from the UI** (widget tests, integration tests, manual QA)
+-  **Integrated end-to-end** without waiting for other layers
 
-### Story Point Scale
+### Vertical Slice Anatomy
 
-- **1 point:** 1-2 hours (simple changes)
-- **2 points:** Half day (basic feature)
-- **3 points:** Full day (standard feature)
-- **5 points:** 2-3 days (complex feature)
-- **8 points:** 3-5 days (very complex)
-- **13 points:** 1-2 weeks (needs splitting)
+Every story follows this delivery checklist:
 
-### Priority Levels
-
-- **P0 (Critical):** MVP blocker - app doesn't work without it
-- **P1 (High):** Core feature for product-market fit
-- **P2 (Medium):** Important enhancement
-- **P3 (Low):** Nice-to-have, future release
+```
+1. Drift Table / Migration (if new entity)
+2. Domain Entity + business methods
+3. Repository Interface (domain layer)
+4. Data Model (freezed / drift DAO)
+5. Local Data Source (Drift queries)
+6. Repository Implementation
+7. Riverpod Providers (all layers wired)
+8. Use Case(s) for this slice
+9. State Notifier / AsyncNotifier (presentation)
+10. UI Page(s) + Widgets
+11. Tests: unit + widget + integration
+```
 
 ---
 
-## Table of Contents
+## Technical Architecture Quick Reference
 
-1. [Epic Summary](#epic-summary)
-2. [Phase 0: Foundation & Core Infrastructure](#phase-0-foundation--core-infrastructure)
-3. [Phase 1: Data Layer (Repositories & Data Sources)](#phase-1-data-layer-repositories--data-sources)
-4. [Phase 2: Domain Layer (Use Cases & Business Logic)](#phase-2-domain-layer-use-cases--business-logic)
-5. [Phase 3: Presentation Layer (UI & State Management)](#phase-3-presentation-layer-ui--state-management)
-6. [Phase 4: Cloud Sync & Collaboration (Post-MVP)](#phase-4-cloud-sync--collaboration-post-mvp)
-7. [Phase 5: Performance & Polish](#phase-5-performance--polish)
-8. [Release Planning](#release-planning)
+```
+
+       Presentation Layer                   Pages, Widgets, Riverpod StateNotifiers
+
+      Application Layer (Use Cases)         Business operations, validation
+
+        Domain Layer                        Entities, Repository Interfaces
+    (pure Dart, zero dependencies)       
+
+         Data Layer                         Drift tables, Models, DataSources, Repo Impl
+
+        Each story delivers ALL four layers
+```
+
+---
+
+## Story Point Scale
+
+| Points | Effort          |
+|--------|-----------------|
+| 1      | 12 hours       |
+| 2      | Half day        |
+| 3      | Full day        |
+| 5      | 23 days        |
+| 8      | 35 days        |
+| 13     | Needs splitting |
+
+## Priority Levels
+
+| Level | Meaning                         |
+|-------|---------------------------------|
+| P0    | MVP blocker                     |
+| P1    | Core feature for product fit    |
+| P2    | Important enhancement           |
+| P3    | Nice-to-have, future release    |
+
+---
+
+## Current Implementation Status (March 2026)
+
+| Area                          | Status                                                                          |
+|-------------------------------|---------------------------------------------------------------------------------|
+| E0  Foundation               |  ~90% Done  skip re-implementation                                           |
+| Product Category (data+UI)    |  Partial  table, entity, repo, pages exist; no use cases; no Riverpod wiring |
+| Product (data+UI)             |  Partial  table, entity, repo, pages exist; no use cases; no Riverpod wiring |
+| Recipes (data+partial UI)     |  Partial  table, entity, repo, list UI exist; no use cases                  |
+| Meal Planning                 |  UI skeleton only  no data layer yet                                         |
+| Shopping Lists                |  Not started                                                                   |
+| Pantry                        |  Not started                                                                   |
 
 ---
 
 ## Epic Summary
 
-| Phase | Epic ID | Epic Name                       | Stories | Points | Priority | Duration   |
-| ----- | ------- | ------------------------------- | ------- | ------ | -------- | ---------- |
-| **0** | **E0**  | **Foundation & Infrastructure** | **7**   | **34** | **P0**   | Week 1-2   |
-| **1** | **E1**  | **Recipe Data Layer**           | **6**   | **26** | **P0**   | Week 2-3   |
-| **1** | **E2**  | **Shopping List Data Layer**    | **5**   | **21** | **P0**   | Week 3     |
-| **1** | **E3**  | **Meal Plan Data Layer**        | **5**   | **20** | **P0**   | Week 3-4   |
-| **1** | **E4**  | **Pantry Data Layer**           | **5**   | **19** | **P0**   | Week 4     |
-| **2** | **E5**  | **Recipe Use Cases**            | **7**   | **28** | **P0**   | Week 4-5   |
-| **2** | **E6**  | **Shopping List Use Cases**     | **6**   | **24** | **P0**   | Week 5-6   |
-| **2** | **E7**  | **Meal Planning Use Cases**     | **6**   | **26** | **P0**   | Week 6     |
-| **2** | **E8**  | **Pantry Use Cases**            | **5**   | **21** | **P0**   | Week 6-7   |
-| **3** | **E9**  | **Core UI Components & Theme**  | **6**   | **22** | **P0**   | Week 7     |
-| **3** | **E10** | **Shopping List UI**            | **6**   | **24** | **P0**   | Week 7-8   |
-| **3** | **E11** | **Recipe Management UI**        | **7**   | **29** | **P0**   | Week 8-9   |
-| **3** | **E12** | **Meal Planning UI**            | **6**   | **26** | **P0**   | Week 9-10  |
-| **3** | **E13** | **Pantry Inventory UI**         | **5**   | **21** | **P0**   | Week 10    |
-| **3** | **E14** | **Settings & Data Management**  | **5**   | **20** | **P0**   | Week 11    |
-| **4** | **E15** | **Sync Engine & Queue**         | **7**   | **35** | **P1**   | Week 12-13 |
-| **4** | **E16** | **Cloud Backend Integration**   | **8**   | **40** | **P1**   | Week 13-15 |
-| **4** | **E17** | **Authentication & Security**   | **6**   | **29** | **P1**   | Week 15-16 |
-| **4** | **E18** | **Family & Collaboration**      | **6**   | **27** | **P2**   | Week 16-17 |
-| **5** | **E19** | **Performance Optimization**    | **6**   | **26** | **P1**   | Week 17-18 |
-| **5** | **E20** | **Smart Features & AI**         | **7**   | **38** | **P2**   | Week 18-20 |
-| **5** | **E21** | **Testing & Quality Assurance** | **8**   | **32** | **P0**   | Continuous |
+| Epic | Name                            | Stories | Points | Priority | Sprint     |
+|------|---------------------------------|---------|--------|----------|------------|
+| E0   | Foundation & Infrastructure     | 7       | 34     | P0       |  Done    |
+| E1   | App Shell & Navigation          | 2       | 7      | P0       | Sprint 1   |
+| E2   | Product Category Feature        | 3       | 14     | P0       | Sprint 1   |
+| E3   | Product Feature                 | 3       | 15     | P0       | Sprint 2   |
+| E4   | Shopping List Feature           | 5       | 24     | P0       | Sprint 23 |
+| E5   | Recipe Management Feature       | 5       | 26     | P0       | Sprint 34 |
+| E6   | Meal Planning Feature           | 4       | 22     | P0       | Sprint 45 |
+| E7   | Pantry Inventory Feature        | 3       | 16     | P0       | Sprint 5   |
+| E8   | Settings & Data Management      | 4       | 17     | P0       | Sprint 6   |
+| E9   | Sync Engine & Queue             | 7       | 35     | P1       | Sprint 78 |
+| E10  | Cloud Backend Integration       | 8       | 40     | P1       | Sprint 810|
+| E11  | Authentication & Security       | 6       | 29     | P1       | Sprint 1011|
+| E12  | Family & Collaboration          | 6       | 27     | P2       | Sprint 1112|
+| E13  | Smart Features & AI             | 7       | 38     | P2       | Sprint 1214|
+| E14  | Performance & Optimisation      | 6       | 26     | P1       | Sprint 1415|
+| E15  | Testing & Quality Assurance     | 8       | 32     | P0       | Ongoing    |
 
-### MVP Scope (Offline-First)
-
-**Phases 0-3 (Epics E0-E14):** **341 story points** ≈ **13-15 weeks** for 2 developers
-
-- ✅ Fully functional offline app
-- ✅ Clean Architecture implementation
-- ✅ All core features (recipes, shopping, meal planning, pantry)
-- ✅ Comprehensive testing
-
-### Post-MVP Features
-
-**Phases 4-5 (Epics E15-E21):** **227 story points** ≈ **10-12 weeks**
-
-- 🌐 Cloud sync with conflict resolution
-- 👥 Family sharing and collaboration
-- 🤖 AI-powered features
-- ⚡ Performance optimizations
+**MVP (E1E8):** ~141 story points  67 sprints (2 devs, 2-week sprints)
 
 ---
 
-## PHASE 0: Foundation & Core Infrastructure
+## EPIC E0: Foundation & Infrastructure ( NEARLY COMPLETE  SKIP)
 
-### Epic E0: Foundation & Infrastructure
-
-**Epic Goal:** Establish development foundation with Clean Architecture, Drift database, and Riverpod dependency injection.
-
-**Business Value:** Solid foundation enables rapid, maintainable feature development.
-
-**Story Count:** 7 stories | **Total Points:** 34 | **Duration:** Week 1-2
+Core architecture, Drift setup, error handling, theme, utils, and CI/CD are already implemented.
+Complete any remaining gaps (e.g., CI/CD pipeline) as minor tasks, not new stories.
+Refer to the original document version 4.0 for E0 story details if needed.
 
 ---
 
-#### US-E0.1: Project Setup with Clean Architecture
+## EPIC E1: App Shell & Core Navigation
 
-**As a** developer  
-**I want to** set up Flutter project with Clean Architecture structure  
-**So that** code is maintainable, testable, and scalable
+**Goal:** A running, navigable app shell with bottom navigation and reusable core UI components. All subsequent epics plug UI pages into this shell.
 
-**Story Points:** 5 | **Priority:** P0 | **Dependencies:** None
+**Story Count:** 2 | **Total Points:** 7 | **Priority:** P0
+
+---
+
+### US-E1.1: App Shell with Bottom Navigation
+
+**As a** user
+**I want to** see a persistent navigation bar at the bottom of the app
+**So that** I can switch between Shopping, Recipes, Meal Planning, Pantry, and Settings at any time
+
+**Story Points:** 4 | **Priority:** P0 | **Dependencies:** E0
+
+**Vertical Slice Deliverables:**
+
+| Layer   | Deliverable                                                                   |
+|---------|-------------------------------------------------------------------------------|
+| Domain  | `AppRoute` enum: `shopping`, `recipes`, `mealPlanning`, `pantry`, `settings` |
+| State   | `NavigationNotifier` (Riverpod `StateNotifier`) holding current route         |
+| UI      | `MainShell` widget with `NavigationBar` + `IndexedStack` children             |
+| Routes  | GoRouter wiring all top-level pages                                           |
+| Tests   | Widget test: tapping each nav item shows correct page                         |
 
 **Acceptance Criteria:**
 
-- [ ] Flutter project initialized (3.16+, Dart 3.2+)
-- [ ] Clean Architecture folder structure created (domain/data/presentation)
-- [ ] Feature-based modules created (shopping, recipes, meal_planning, pantry)
-- [ ] Core shared modules configured
-- [ ] Git repository initialized with `.gitignore`
-- [ ] README with architecture overview
-
-**Folder Structure:**
-
-```
-lib/
-├── main.dart
-├── app.dart
-├── core/
-│   ├── database/
-│   │   ├── app_database.dart
-│   │   └── tables/
-│   ├── constants/
-│   │   ├── app_constants.dart
-│   │   ├── api_constants.dart
-│   │   └── storage_constants.dart
-│   ├── error/
-│   │   ├── failures.dart
-│   │   └── exceptions.dart
-│   ├── network/
-│   │   ├── network_info.dart
-│   │   └── api_client.dart
-│   ├── utils/
-│   │   ├── date_utils.dart
-│   │   ├── validators.dart
-│   │   └── string_utils.dart
-│   ├── theme/
-│   │   ├── app_theme.dart
-│   │   ├── colors.dart
-│   │   └── typography.dart
-│   └── providers/
-│       └── core_providers.dart
-├── features/
-│   ├── shopping/
-│   │   ├── domain/
-│   │   │   ├── entities/
-│   │   │   ├── repositories/
-│   │   │   └── usecases/
-│   │   ├── data/
-│   │   │   ├── models/
-│   │   │   ├── datasources/
-│   │   │   └── repositories/
-│   │   └── presentation/
-│   │       ├── providers/
-│   │       ├── pages/
-│   │       └── widgets/
-│   ├── recipes/
-│   ├── meal_planning/
-│   ├── pantry/
-│   └── sync/
-└── shared/
-    ├── widgets/
-    └── extensions/
-```
-
-**Dependencies (pubspec.yaml):**
-
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-
-  # State Management
-  flutter_riverpod: ^2.4.0
-
-  # Local Database
-  drift: ^2.14.0
-  sqlite3_flutter_libs: ^0.5.0
-  path_provider: ^2.1.0
-  path: ^1.8.3
-
-  # Functional Programming
-  dartz: ^0.10.1
-  equatable: ^2.0.5
-
-  # Utils
-  uuid: ^4.0.0
-  intl: ^0.18.0
-  connectivity_plus: ^5.0.2
-  shared_preferences: ^2.2.0
-
-  # JSON Serialization
-  freezed_annotation: ^2.4.1
-  json_annotation: ^4.8.1
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^3.0.0
-
-  # Code Generation
-  build_runner: ^2.4.6
-  drift_dev: ^2.14.0
-  freezed: ^2.4.5
-  json_serializable: ^6.7.1
-
-  # Testing
-  mockito: ^5.4.2
-  integration_test:
-    sdk: flutter
-```
-
-**Technical Notes:**
-
-- Follow dependency rule: inner layers don't depend on outer layers
-- Use `analysis_options.yaml` for strict linting
-- Configure CI/CD pipeline in later story
-
-**Testing Requirements:**
-
-- [ ] Project builds successfully
-- [ ] No linting errors
-- [ ] Folder structure verified
+- [ ] Bottom navigation shows 5 tabs with icons and labels
+- [ ] Active tab is highlighted
+- [ ] Switching tabs preserves the state of each tab (no reload)
+- [ ] Deep links to each tab work
+- [ ] Works on Android, iOS, and web
+- [ ] Widget test verifies navigation changes
 
 ---
 
-#### US-E0.2: Drift Database Configuration & Base Tables
+### US-E1.2: Core UI Components (Empty, Error, Loading)
 
-**As a** developer  
-**I want to** configure Drift database with migration support  
-**So that** we have type-safe, reactive SQLite storage
+**As a** user
+**I want to** see consistent empty states, error messages, and loading indicators
+**So that** I always understand what is happening in the app
 
-**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E0.1
+**Story Points:** 3 | **Priority:** P0 | **Dependencies:** US-E1.1
+
+**Vertical Slice Deliverables:**
+
+| Layer | Deliverable                                                           |
+|-------|-----------------------------------------------------------------------|
+| UI    | `EmptyStateWidget(icon, title, subtitle, action?)` component          |
+| UI    | `ErrorStateWidget(message, onRetry?)` component                       |
+| UI    | `LoadingStateWidget` (shimmer skeleton)                               |
+| UI    | `AsyncValueWidget<T>` helper that wraps Riverpod `AsyncValue`         |
+| Tests | Widget tests for each component covering all states                   |
 
 **Acceptance Criteria:**
 
-- [ ] Drift database class created (`AppDatabase`)
-- [ ] Database initialization configured with versioning
-- [ ] Migration strategy implemented
-- [ ] Sync queue table created for future cloud sync
-- [ ] Database provider configured in Riverpod
-- [ ] Development database populated with sample data
-- [ ] Database inspector tool integrated (for debugging)
-
-**Implementation:**
-
-```dart
-// lib/core/database/app_database.dart
-import 'package:drift/drift.dart';
-import 'package:drift/native.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:path/path.dart' as p;
-import 'dart:io';
-
-part 'app_database.g.dart';
-
-// Sync Queue Table (for Post-MVP cloud sync)
-class SyncQueue extends Table {
-  TextColumn get id => text()();
-  TextColumn get entityType => text()();        // 'recipe', 'shopping_list', etc.
-  TextColumn get entityId => text()();
-  TextColumn get operation => text()();         // 'create', 'update', 'delete'
-  TextColumn get data => text()();              // JSON string
-  DateTimeColumn get createdAt => dateTime()();
-  IntColumn get retryCount => integer().withDefault(const Constant(0))();
-  TextColumn get error => text().nullable()();
-
-  @override
-  Set<Column> get primaryKey => {id};
-}
-
-@DriftDatabase(
-  tables: [
-    SyncQueue,
-    // Tables will be added in Phase 1 epics
-  ],
-)
-class AppDatabase extends _$AppDatabase {
-  AppDatabase() : super(_openConnection());
-
-  @override
-  int get schemaVersion => 1;
-
-  @override
-  MigrationStrategy get migration {
-    return MigrationStrategy(
-      onCreate: (Migrator m) async {
-        await m.createAll();
-      },
-      onUpgrade: (Migrator m, int from, int to) async {
-        // Future migrations
-        if (from < 2) {
-          // Migration example
-          // await m.addColumn(recipes, recipes.newColumn);
-        }
-      },
-    );
-  }
-}
-
-LazyDatabase _openConnection() {
-  return LazyDatabase(() async {
-    final dbFolder = await getApplicationDocumentsDirectory();
-    final file = File(p.join(dbFolder.path, 'shopping_app.db'));
-    return NativeDatabase(file);
-  });
-}
-```
-
-**Riverpod Provider:**
-
-```dart
-// lib/core/providers/core_providers.dart
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../database/app_database.dart';
-
-final databaseProvider = Provider<AppDatabase>((ref) {
-  final database = AppDatabase();
-  ref.onDispose(() => database.close());
-  return database;
-});
-```
-
-**Technical Notes:**
-
-- Drift generates type-safe DAOs and queries
-- Schema version enables future migrations
-- LazyDatabase delays initialization until first query
-- Database is singleton through Riverpod
-
-**Testing Requirements:**
-
-- [ ] Unit test: Database initializes successfully
-- [ ] Unit test: Migration strategy executes without errors
-- [ ] Integration test: CRUD operations on test table
+- [ ] `AsyncValueWidget` renders loading, error, and data states correctly
+- [ ] Empty state has optional call-to-action button
+- [ ] Error state has optional retry button
+- [ ] All components use `AppTheme` tokens (no hard-coded colours or sizes)
+- [ ] Widget test covers all three states
 
 ---
 
-#### US-E0.3: Error Handling & Result Pattern
+## EPIC E2: Product Category Feature
 
-**As a** developer  
-**I want to** implement consistent error handling with Result type  
-**So that** errors are handled predictably across all layers
+**Goal:** Users can manage product categories (e.g., "Dairy", "Produce"). This is the first complete vertical slice  from Drift table through to CRUD UI.
 
-**Story Points:** 3 | **Priority:** P0 | **Dependencies:** US-E0.1
+**Story Count:** 3 | **Total Points:** 14 | **Priority:** P0
+
+> **Note:** Table, entity, repository, and UI pages for `ProductCategory` already exist. These stories focus on **wiring everything together correctly**  adding use cases, Riverpod providers, proper state management  so the feature is fully testable end-to-end.
+
+---
+
+### US-E2.1: View & Create Product Categories
+
+**As a** user
+**I want to** see all my product categories and add new ones
+**So that** I can organise my shopping items
+
+**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E1.1
+
+**Vertical Slice Deliverables:**
+
+| Layer      | Deliverable                                                                                     |
+|------------|-------------------------------------------------------------------------------------------------|
+| DB         | `ProductCategoryTable` (exists)  verify: `id`, `name`, `colorHex`, `iconName`, `sortOrder`, `createdAt`, `updatedAt` |
+| Domain     | `ProductCategory` entity (exists)  verify `copyWith`, `Equatable`                             |
+| Domain     | `IProductCategoryRepository` (exists)  verify `watchAll()`, `save()`                          |
+| Data       | `ProductCategoryDataSource` (Drift DAO)  verify `watchAll()`, `insert()`                      |
+| Data       | `ProductCategoryRepositoryImpl`  verify exception  Failure conversion                         |
+| Use Cases  | `WatchProductCategoriesUseCase`  `Stream<Either<Failure, List<ProductCategory>>>`              |
+| Use Cases  | `CreateProductCategoryUseCase(name, colorHex?, iconName?)`  validates non-empty name, generates UUID, saves |
+| Providers  | `productCategoryRepositoryProvider`, `watchCategoriesProvider`, `createCategoryProvider`        |
+| State      | `ProductCategoryListNotifier extends AsyncNotifier<List<ProductCategory>>`                      |
+| UI         | `ProductCategoryViewPage`  list via `AsyncValueWidget` + FAB to add                           |
+| UI         | `CreateCategoryBottomSheet`  text field + colour picker + save button                          |
+| Tests      | Unit: `CreateProductCategoryUseCase` with empty name  `ValidationFailure`                     |
+| Tests      | Unit: repository `save()` calls data source and returns entity                                  |
+| Tests      | Widget: `ProductCategoryViewPage` renders 3 mocked categories                                  |
+| Tests      | Integration: create category via UI  appears in list                                           |
 
 **Acceptance Criteria:**
 
-- [ ] `Failure` base class and subtypes created
-- [ ] `Result<T>` type alias from dartz configured
-- [ ] Exception types defined
-- [ ] Error messages centralized
-- [ ] Result pattern used in all repository interfaces
-
-**Implementation:**
-
-```dart
-// lib/core/error/failures.dart
-import 'package:equatable/equatable.dart';
-
-abstract class Failure extends Equatable {
-  final String message;
-  final int? code;
-
-  const Failure(this.message, {this.code});
-
-  @override
-  List<Object?> get props => [message, code];
-}
-
-class DatabaseFailure extends Failure {
-  const DatabaseFailure(String message) : super(message);
-}
-
-class ValidationFailure extends Failure {
-  const ValidationFailure(String message) : super(message);
-}
-
-class NetworkFailure extends Failure {
-  const NetworkFailure(String message) : super(message);
-}
-
-class NotFoundFailure extends Failure {
-  const NotFoundFailure(String message) : super(message);
-}
-
-class CacheFailure extends Failure {
-  const CacheFailure(String message) : super(message);
-}
-
-class ServerFailure extends Failure {
-  const ServerFailure(String message, {int? code}) : super(message, code: code);
-}
-
-class ConflictFailure extends Failure {
-  final dynamic localData;
-  final dynamic remoteData;
-
-  const ConflictFailure(String message, {this.localData, this.remoteData})
-      : super(message);
-
-  @override
-  List<Object?> get props => [message, localData, remoteData];
-}
-```
-
-```dart
-// lib/core/error/exceptions.dart
-class DatabaseException implements Exception {
-  final String message;
-  DatabaseException(this.message);
-}
-
-class ValidationException implements Exception {
-  final String message;
-  ValidationException(this.message);
-}
-
-class NetworkException implements Exception {
-  final String message;
-  NetworkException(this.message);
-}
-
-class NotFoundException implements Exception {
-  final String message;
-  NotFoundException(this.message);
-}
-
-class CacheException implements Exception {
-  final String message;
-  CacheException(this.message);
-}
-```
-
-**Usage Pattern:**
-
-```dart
-import 'package:dartz/dartz.dart';
-
-// Repository Interface
-abstract class RecipeRepository {
-  Future<Either<Failure, List<Recipe>>> getAllRecipes();
-  Future<Either<Failure, Recipe>> getRecipeById(String id);
-  Future<Either<Failure, Recipe>> saveRecipe(Recipe recipe);
-  Future<Either<Failure, Unit>> deleteRecipe(String id);
-}
-
-// Use Case
-class GetAllRecipesUseCase {
-  final RecipeRepository repository;
-
-  GetAllRecipesUseCase(this.repository);
-
-  Future<Either<Failure, List<Recipe>>> call() async {
-    return await repository.getAllRecipes();
-  }
-}
-
-// UI Layer handling
-final result = await ref.read(getAllRecipesUseCaseProvider).call();
-result.fold(
-  (failure) => _showError(failure.message),
-  (recipes) => state = RecipeListState.loaded(recipes),
-);
-```
-
-**Technical Notes:**
-
-- `Either<Failure, T>` forces explicit error handling
-- Exceptions converted to Failures in repository layer
-- UI never catches exceptions, only handles Failures
-- Equatable enables value comparison for testing
-
-**Testing Requirements:**
-
-- [ ] Unit test: Each Failure type created correctly
-- [ ] Unit test: Failure equality comparison works
+- [ ] Opening the Shopping tab shows category list
+- [ ] Empty state shown when no categories exist, with "Add Category" action
+- [ ] Tapping FAB opens `CreateCategoryBottomSheet`
+- [ ] Submitting an empty name shows inline validation error (no toast)
+- [ ] Created category appears at bottom of list immediately (reactive stream)
+- [ ] Integration test: create  verify in list  pass
 
 ---
 
-#### US-E0.4: Network Info & Connectivity Check
+### US-E2.2: Edit & Delete Product Category
 
-**As a** developer  
-**I want to** check network connectivity reliably  
-**So that** offline-first logic knows when to attempt sync
+**As a** user
+**I want to** rename or delete a product category
+**So that** I can keep my categories up to date
 
-**Story Points:** 2 | **Priority:** P0 | **Dependencies:** US-E0.1
+**Story Points:** 4 | **Priority:** P0 | **Dependencies:** US-E2.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                              |
+|-----------|------------------------------------------------------------------------------------------|
+| Use Cases | `UpdateProductCategoryUseCase(id, name, colorHex?, iconName?)`  validates, updates      |
+| Use Cases | `DeleteProductCategoryUseCase(id)`  checks if products use this category, warns or blocks |
+| Providers | `updateCategoryProvider`, `deleteCategoryProvider`                                        |
+| UI        | Swipe-to-delete on list tile (with undo snackbar, 4 seconds)                             |
+| UI        | Long-press or trailing icon opens `EditCategoryBottomSheet` (pre-filled form)            |
+| UI        | Confirmation dialog if category has products assigned                                     |
+| Tests     | Unit: `DeleteProductCategoryUseCase` with products assigned  `ConflictFailure`          |
+| Tests     | Widget: swipe tile  confirmation dialog appears                                         |
+| Tests     | Integration: edit name  updated in list; delete  removed from list                    |
 
 **Acceptance Criteria:**
 
-- [ ] `NetworkInfo` interface created
-- [ ] Implementation using `connectivity_plus` package
-- [ ] Connectivity stream for reactive checks
-- [ ] Riverpod provider configured
-- [ ] Works on iOS and Android
-
-**Implementation:**
-
-```dart
-// lib/core/network/network_info.dart
-abstract class NetworkInfo {
-  Future<bool> get isConnected;
-  Stream<bool> get connectivityStream;
-}
-
-class NetworkInfoImpl implements NetworkInfo {
-  final Connectivity connectivity;
-
-  NetworkInfoImpl({required this.connectivity});
-
-  @override
-  Future<bool> get isConnected async {
-    final result = await connectivity.checkConnectivity();
-    return result != ConnectivityResult.none;
-  }
-
-  @override
-  Stream<bool> get connectivityStream {
-    return connectivity.onConnectivityChanged.map(
-      (result) => result != ConnectivityResult.none,
-    );
-  }
-}
-```
-
-**Provider:**
-
-```dart
-// lib/core/providers/core_providers.dart
-import 'package:connectivity_plus/connectivity_plus.dart';
-
-final connectivityProvider = Provider<Connectivity>((ref) {
-  return Connectivity();
-});
-
-final networkInfoProvider = Provider<NetworkInfo>((ref) {
-  return NetworkInfoImpl(
-    connectivity: ref.watch(connectivityProvider),
-  );
-});
-```
-
-**Technical Notes:**
-
-- Check network before sync operations
-- Stream enables reactive UI (show offline banner)
-- Don't block user actions when offline (offline-first)
-
-**Testing Requirements:**
-
-- [ ] Unit test: `isConnected` returns correct status
-- [ ] Unit test: Stream emits connectivity changes
-- [ ] Mock `Connectivity` in tests
+- [ ] Swiping a category left reveals delete action
+- [ ] Delete prompts confirmation dialog showing category name
+- [ ] Deleting a category with products warns the user ("Delete anyway?")
+- [ ] Deleted category disappears from list; undo snackbar shown for 4 seconds
+- [ ] Tapping edit icon opens pre-filled form
+- [ ] Saving updates the name and colour in the list immediately
 
 ---
 
-#### US-E0.5: Core Utilities & Extensions
+### US-E2.3: Product Category Reordering
 
-**As a** developer  
-**I want to** reusable utilities and extensions  
-**So that** common operations are DRY and consistent
+**As a** user
+**I want to** drag and drop categories to reorder them
+**So that** my most-used categories appear at the top
 
-**Story Points:** 3 | **Priority:** P0 | **Dependencies:** US-E0.1
+**Story Points:** 5 | **Priority:** P2 | **Dependencies:** US-E2.2
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                |
+|-----------|----------------------------------------------------------------------------|
+| DB        | Ensure `sortOrder` column exists on `ProductCategoryTable`                 |
+| Use Cases | `ReorderProductCategoriesUseCase(orderedIds)`  bulk updates `sortOrder`   |
+| Providers | `reorderCategoriesProvider`                                                |
+| UI        | `ReorderableListView` in `ProductCategoryViewPage` with drag handles       |
+| Tests     | Unit: reorder use case assigns correct sort indices                        |
+| Tests     | Widget: drag tile  list reorders visually                                 |
 
 **Acceptance Criteria:**
 
-- [ ] Date formatting utilities
-- [ ] String validators (email, non-empty, etc.)
-- [ ] Number formatters (fractions for recipes)
-- [ ] Context extensions for theming
-- [ ] String extensions
-- [ ] Duration formatters
-
-**Implementation:**
-
-```dart
-// lib/core/utils/date_utils.dart
-import 'package:intl/intl.dart';
-
-class AppDateUtils {
-  static String formatDate(DateTime date) {
-    return DateFormat('MMM d, yyyy').format(date);
-  }
-
-  static String formatDateTime(DateTime date) {
-    return DateFormat('MMM d, yyyy h:mm a').format(date);
-  }
-
-  static String formatRelative(DateTime date) {
-    final now = DateTime.now();
-    final difference = now.difference(date);
-
-    if (difference.inDays == 0) return 'Today';
-    if (difference.inDays == 1) return 'Yesterday';
-    if (difference.inDays < 7) return '${difference.inDays} days ago';
-    return formatDate(date);
-  }
-
-  static DateTime startOfWeek(DateTime date) {
-    return date.subtract(Duration(days: date.weekday - 1));
-  }
-
-  static bool isSameDay(DateTime a, DateTime b) {
-    return a.year == b.year && a.month == b.month && a.day == b.day;
-  }
-}
-```
-
-```dart
-// lib/core/utils/validators.dart
-class Validators {
-  static String? validateNonEmpty(String? value, {String? fieldName}) {
-    if (value == null || value.trim().isEmpty) {
-      return '${fieldName ?? 'Field'} cannot be empty';
-    }
-    return null;
-  }
-
-  static String? validateEmail(String? value) {
-    if (value == null || value.trim().isEmpty) {
-      return 'Email cannot be empty';
-    }
-
-    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
-    if (!emailRegex.hasMatch(value)) {
-      return 'Invalid email format';
-    }
-
-    return null;
-  }
-
-  static String? validatePositive(double? value, {String? fieldName}) {
-    if (value == null || value <= 0) {
-      return '${fieldName ?? 'Value'} must be positive';
-    }
-    return null;
-  }
-}
-```
-
-```dart
-// lib/shared/extensions/context_extensions.dart
-import 'package:flutter/material.dart';
-
-extension ContextExtensions on BuildContext {
-  ThemeData get theme => Theme.of(this);
-  TextTheme get textTheme => theme.textTheme;
-  ColorScheme get colorScheme => theme.colorScheme;
-
-  Size get screenSize => MediaQuery.of(this).size;
-  double get screenWidth => screenSize.width;
-  double get screenHeight => screenSize.height;
-
-  void showSnackBar(String message, {bool isError = false}) {
-    ScaffoldMessenger.of(this).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        backgroundColor: isError ? colorScheme.error : null,
-      ),
-    );
-  }
-}
-```
-
-```dart
-// lib/shared/extensions/string_extensions.dart
-extension StringExtensions on String {
-  String capitalize() {
-    if (isEmpty) return this;
-    return '${this[0].toUpperCase()}${substring(1)}';
-  }
-
-  String toTitleCase() {
-    return split(' ').map((word) => word.capitalize()).join(' ');
-  }
-
-  bool get isNumeric => double.tryParse(this) != null;
-}
-```
-
-**Technical Notes:**
-
-- Extensions reduce boilerplate in UI code
-- Validators used in UseCase layer for business rules
-- Date utils consistent across app
-
-**Testing Requirements:**
-
-- [ ] Unit test: All date formatting functions
-- [ ] Unit test: All validators with edge cases
-- [ ] Unit test: String extensions
+- [ ] Drag handle visible on each category row
+- [ ] Dragging updates order immediately (optimistic UI)
+- [ ] Sort order persisted  reopening app shows same order
+- [ ] Works on touch (mobile) and mouse (desktop/web)
 
 ---
 
-#### US-E0.6: App Theme & Design System
+## EPIC E3: Product Feature
 
-**As a** developer  
-**I want to** app-wide theme with Material Design 3  
-**So that** UI is consistent and follows design guidelines
+**Goal:** Users can manage the product catalogue  individual products that belong to categories. Products are the building blocks of shopping lists and pantry entries.
 
-**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E0.1
+**Story Count:** 3 | **Total Points:** 15 | **Priority:** P0
+
+> **Note:** Table, entity, repository, and UI pages for `Product` already exist. Stories focus on correct wiring, use cases, and full end-to-end testability.
+
+---
+
+### US-E3.1: View & Create Products
+
+**As a** user
+**I want to** browse all products and add new ones with a name, unit, and category
+**So that** I can build a reusable product catalogue
+
+**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E2.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                |
+|-----------|--------------------------------------------------------------------------------------------|
+| DB        | `ProductTable` (exists)  verify: `id`, `name`, `defaultUnit`, `categoryId` (FK), `barcode?`, `imageUrl?`, `createdAt`, `updatedAt` |
+| Domain    | `Product` entity (exists)  verify business methods and `Equatable`                       |
+| Domain    | `IProductRepository`  `watchAll()`, `watchByCategory(id)`, `save()`                      |
+| Data      | `ProductDataSource` (Drift DAO) + `ProductRepositoryImpl`                                 |
+| Use Cases | `WatchProductsUseCase`, `CreateProductUseCase(name, unit, categoryId)`                    |
+| Providers | `productRepositoryProvider`, `watchProductsProvider`, `createProductProvider`             |
+| State     | `ProductListNotifier extends AsyncNotifier<List<Product>>`                                |
+| UI        | `ProductViewPage` (exists)  wire to Riverpod stream; products grouped by category        |
+| UI        | `CreateProductBottomSheet`  name field, unit dropdown, category picker                   |
+| Tests     | Unit: `CreateProductUseCase` validates non-empty name and valid `categoryId`              |
+| Tests     | Widget: `ProductViewPage` renders products grouped by category                            |
+| Tests     | Integration: create product  appears in correct category group                           |
 
 **Acceptance Criteria:**
 
-- [ ] Material Design 3 theme configured
-- [ ] Light and dark themes defined
-- [ ] Custom color palette matching brand
-- [ ] Typography scale configured
-- [ ] Spacing constants defined
-- [ ] Border radius constants
-- [ ] Theme provider for switching
-
-**Implementation:**
-
-```dart
-// lib/core/theme/colors.dart
-import 'package:flutter/material.dart';
-
-class AppColors {
-  // Primary colors
-  static const primary = Color(0xFF6750A4);
-  static const onPrimary = Color(0xFFFFFFFF);
-  static const primaryContainer = Color(0xFFE9DDFF);
-  static const onPrimaryContainer = Color(0xFF22005D);
-
-  // Secondary colors
-  static const secondary = Color(0xFF625B71);
-  static const onSecondary = Color(0xFFFFFFFF);
-  static const secondaryContainer = Color(0xFFE8DEF8);
-  static const onSecondaryContainer = Color(0xFF1E192B);
-
-  // Error colors
-  static const error = Color(0xFFBA1A1A);
-  static const onError = Color(0xFFFFFFFF);
-  static const errorContainer = Color(0xFFFFDAD6);
-  static const onErrorContainer = Color(0xFF410002);
-
-  // Functional colors
-  static const success = Color(0xFF4CAF50);
-  static const warning = Color(0xFFFF9800);
-  static const info = Color(0xFF2196F3);
-
-  // Surface colors
-  static const surface = Color(0xFFFEF7FF);
-  static const onSurface = Color(0xFF1D1B20);
-  static const surfaceVariant = Color(0xFFE7E0EC);
-  static const onSurfaceVariant = Color(0xFF49454E);
-}
-```
-
-```dart
-// lib/core/theme/app_theme.dart
-import 'package:flutter/material.dart';
-import 'colors.dart';
-
-class AppTheme {
-  static ThemeData get lightTheme {
-    return ThemeData(
-      useMaterial3: true,
-      colorScheme: const ColorScheme(
-        brightness: Brightness.light,
-        primary: AppColors.primary,
-        onPrimary: AppColors.onPrimary,
-        primaryContainer: AppColors.primaryContainer,
-        onPrimaryContainer: AppColors.onPrimaryContainer,
-        secondary: AppColors.secondary,
-        onSecondary: AppColors.onSecondary,
-        secondaryContainer: AppColors.secondaryContainer,
-        onSecondaryContainer: AppColors.onSecondaryContainer,
-        error: AppColors.error,
-        onError: AppColors.onError,
-        errorContainer: AppColors.errorContainer,
-        onErrorContainer: AppColors.onErrorContainer,
-        background: AppColors.surface,
-        onBackground: AppColors.onSurface,
-        surface: AppColors.surface,
-        onSurface: AppColors.onSurface,
-        surfaceVariant: AppColors.surfaceVariant,
-        onSurfaceVariant: AppColors.onSurfaceVariant,
-        outline: Color(0xFF7A757F),
-        shadow: Color(0xFF000000),
-      ),
-
-      // Typography
-      textTheme: _textTheme,
-
-      // Component themes
-      appBarTheme: const AppBarTheme(
-        centerTitle: false,
-        elevation: 0,
-      ),
-
-      cardTheme: CardTheme(
-        elevation: 1,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
-
-      inputDecorationTheme: InputDecorationTheme(
-        filled: true,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-      ),
-
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        elevation: 2,
-      ),
-    );
-  }
-
-  static ThemeData get darkTheme {
-    // Dark theme implementation
-    return lightTheme.copyWith(
-      brightness: Brightness.dark,
-      // Override colors for dark mode
-    );
-  }
-
-  static const _textTheme = TextTheme(
-    displayLarge: TextStyle(fontSize: 57, fontWeight: FontWeight.w400),
-    displayMedium: TextStyle(fontSize: 45, fontWeight: FontWeight.w400),
-    displaySmall: TextStyle(fontSize: 36, fontWeight: FontWeight.w400),
-    headlineLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.w400),
-    headlineMedium: TextStyle(fontSize: 28, fontWeight: FontWeight.w400),
-    headlineSmall: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
-    titleLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
-    titleMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-    titleSmall: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-    bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
-    bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
-    bodySmall: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
-    labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-    labelMedium: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
-    labelSmall: TextStyle(fontSize: 11, fontWeight: FontWeight.w500),
-  );
-}
-```
-
-```dart
-// lib/core/constants/app_constants.dart
-class AppSpacing {
-  static const double xs = 4.0;
-  static const double sm = 8.0;
-  static const double md = 16.0;
-  static const double lg = 24.0;
-  static const double xl = 32.0;
-  static const double xxl = 48.0;
-}
-
-class AppBorderRadius {
-  static const double sm = 4.0;
-  static const double md = 8.0;
-  static const double lg = 12.0;
-  static const double xl = 16.0;
-  static const double round = 999.0;
-}
-```
-
-**Technical Notes:**
-
-- Material 3 provides modern, adaptive components
-- Theme switching for accessibility
-- Consistent spacing prevents magic numbers
-
-**Testing Requirements:**
-
-- [ ] Widget test: Theme applies correctly
-- [ ] Visual regression test for components
+- [ ] Products grouped by category in the list
+- [ ] Empty state per category group when no products exist
+- [ ] FAB opens create form
+- [ ] Category picker shows existing categories from E2
+- [ ] Created product appears in correct group immediately (reactive stream)
+- [ ] Integration test: create  verify grouping
 
 ---
 
-#### US-E0.7: CI/CD Pipeline Setup
+### US-E3.2: Edit & Delete Product
 
-**As a** developer  
-**I want to** automated CI/CD pipeline  
-**So that** code quality is maintained and builds are automated
+**As a** user
+**I want to** edit a product's name, unit, or category and delete products I no longer need
+**So that** my product catalogue stays accurate
 
-**Story Points:** 5 | **Priority:** P1 | **Dependencies:** US-E0.1
+**Story Points:** 4 | **Priority:** P0 | **Dependencies:** US-E3.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                     |
+|-----------|---------------------------------------------------------------------------------|
+| Use Cases | `UpdateProductUseCase(id, name?, unit?, categoryId?)`                           |
+| Use Cases | `DeleteProductUseCase(id)`  soft delete                                        |
+| UI        | `ProductDetailPage` (exists)  wire edit/delete actions                         |
+| UI        | Edit form pre-filled; save updates list reactively                               |
+| UI        | Swipe-to-delete with undo snackbar                                               |
+| Tests     | Unit: `UpdateProductUseCase` merges only provided fields                        |
+| Tests     | Integration: edit  delete  verify state                                       |
 
 **Acceptance Criteria:**
 
-- [ ] GitHub Actions workflow configured
-- [ ] Automated linting on PR
-- [ ] Automated tests on PR
-- [ ] Build verification for iOS and Android
-- [ ] Code coverage reporting
-- [ ] Automated changelog generation
-
-**Implementation:**
-
-```yaml
-# .github/workflows/main.yml
-name: Flutter CI/CD
-
-on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main, develop]
-
-jobs:
-  analyze:
-    name: Analyze & Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: "3.16.0"
-          channel: "stable"
-
-      - name: Get dependencies
-        run: flutter pub get
-
-      - name: Verify formatting
-        run: dart format --set-exit-if-changed .
-
-      - name: Analyze code
-        run: flutter analyze
-
-  test:
-    name: Unit & Widget Tests
-    runs-on: ubuntu-latest
-    needs: analyze
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: "3.16.0"
-
-      - name: Get dependencies
-        run: flutter pub get
-
-      - name: Run tests
-        run: flutter test --coverage
-
-      - name: Upload coverage
-        uses: codecov/codecov-action@v3
-        with:
-          files: ./coverage/lcov.info
-
-  build-android:
-    name: Build Android APK
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: "3.16.0"
-
-      - name: Get dependencies
-        run: flutter pub get
-
-      - name: Build APK
-        run: flutter build apk --release
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v3
-        with:
-          name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
-
-  build-ios:
-    name: Build iOS (No Signing)
-    runs-on: macos-latest
-    needs: test
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: "3.16.0"
-
-      - name: Get dependencies
-        run: flutter pub get
-
-      - name: Build iOS
-        run: flutter build ios --release --no-codesign
-```
-
-**Technical Notes:**
-
-- Runs on every PR to ensure quality
-- Blocks merge if tests fail
-- Separate jobs for parallelization
-
-**Testing Requirements:**
-
-- [ ] Integration test: Pipeline runs successfully
-- [ ] Verify all jobs complete
+- [ ] Tapping a product opens detail page with edit option
+- [ ] Saving changes updates the product in the list immediately
+- [ ] Deleting removes the product (undo available for 4 seconds)
+- [ ] If product is in an active shopping list, user sees a warning
 
 ---
 
-## PHASE 1: Data Layer (Repositories & Data Sources)
+### US-E3.3: Product Search & Category Filter
 
-### Epic E1: Recipe Data Layer
+**As a** user
+**I want to** search for products by name and filter by category
+**So that** I can quickly find items in a large catalogue
 
-**Epic Goal:** Implement complete data layer for recipe management with Drift database, repositories, and offline storage.
+**Story Points:** 6 | **Priority:** P1 | **Dependencies:** US-E3.1
 
-**Business Value:** Enables offline recipe storage and retrieval, foundation for all recipe features.
+**Vertical Slice Deliverables:**
 
-**Story Count:** 6 stories | **Total Points:** 26 | **Duration:** Week 2-3
-
----
-
-#### US-E1.1: Recipe Domain Entities
-
-**As a** developer  
-**I want to** define core Recipe and Ingredient domain entities  
-**So that** business logic has clear data structures
-
-**Story Points:** 3 | **Priority:** P0 | **Dependencies:** US-E0.1
+| Layer     | Deliverable                                                                   |
+|-----------|-------------------------------------------------------------------------------|
+| Data      | `searchProducts(query)` Drift query  case-insensitive LIKE on `name`        |
+| Use Cases | `SearchProductsUseCase(query)`                                                |
+| Use Cases | `FilterProductsByCategoryUseCase(categoryId?)`                                |
+| State     | `ProductSearchNotifier`  `query` + `selectedCategory` + debounce 300 ms     |
+| UI        | Search bar at top of `ProductViewPage`                                        |
+| UI        | Category filter chips below search bar                                        |
+| UI        | Results update in real time as user types                                     |
+| Tests     | Unit: search use case returns correct subset                                  |
+| Tests     | Widget: typing "mil" filters to "Milk"                                        |
 
 **Acceptance Criteria:**
 
-- [ ] `Recipe` entity class created with all fields
-- [ ] `Ingredient` value object created
-- [ ] Business logic methods implemented (scale servings, etc.)
-- [ ] Equatable for value comparison
-- [ ] Immutable with `copyWith` methods
-- [ ] Zero external dependencies (pure Dart)
-
-**Implementation:**
-
-```dart
-// lib/features/recipes/domain/entities/ingredient.dart
-import 'package:equatable/equatable.dart';
-
-class Ingredient extends Equatable {
-  final String name;
-  final double quantity;
-  final String unit;
-  final String? notes;
-
-  const Ingredient({
-    required this.name,
-    required this.quantity,
-    required this.unit,
-    this.notes,
-  });
-
-  Ingredient scale(double factor) {
-    return Ingredient(
-      name: name,
-      quantity: quantity * factor,
-      unit: unit,
-      notes: notes,
-    );
-  }
-
-  @override
-  List<Object?> get props => [name, quantity, unit, notes];
-
-  Ingredient copyWith({
-    String? name,
-    double? quantity,
-    String? unit,
-    String? notes,
-  }) {
-    return Ingredient(
-      name: name ?? this.name,
-      quantity: quantity ?? this.quantity,
-      unit: unit ?? this.unit,
-      notes: notes ?? this.notes,
-    );
-  }
-}
-```
-
-```dart
-// lib/features/recipes/domain/entities/recipe.dart
-import 'package:equatable/equatable.dart';
-import 'ingredient.dart';
-
-class Recipe extends Equatable {
-  final String id;
-  final String title;
-  final String? description;
-  final int servings;
-  final int? prepTimeMinutes;
-  final int? cookTimeMinutes;
-  final List<Ingredient> ingredients;
-  final List<String> instructions;
-  final List<String> imageUrls;
-  final List<String> tags;
-  final DateTime createdAt;
-  final DateTime updatedAt;
-
-  const Recipe({
-    required this.id,
-    required this.title,
-    this.description,
-    required this.servings,
-    this.prepTimeMinutes,
-    this.cookTimeMinutes,
-    required this.ingredients,
-    required this.instructions,
-    this.imageUrls = const [],
-    this.tags = const [],
-    required this.createdAt,
-    required this.updatedAt,
-  });
-
-  // Business logic
-  int get totalTimeMinutes => (prepTimeMinutes ?? 0) + (cookTimeMinutes ?? 0);
-
-  bool hasIngredient(String ingredientName) {
-    return ingredients.any(
-      (ing) => ing.name.toLowerCase().contains(ingredientName.toLowerCase()),
-    );
-  }
-
-  Recipe scaleServings(int newServings) {
-    final scaleFactor = newServings / servings;
-    return copyWith(
-      servings: newServings,
-      ingredients: ingredients.map((ing) => ing.scale(scaleFactor)).toList(),
-    );
-  }
-
-  bool matchesTags(List<String> searchTags) {
-    return searchTags.any((tag) => tags.contains(tag.toLowerCase()));
-  }
-
-  @override
-  List<Object?> get props => [
-    id, title, description, servings, prepTimeMinutes, cookTimeMinutes,
-    ingredients, instructions, imageUrls, tags, createdAt, updatedAt,
-  ];
-
-  Recipe copyWith({
-    String? id,
-    String? title,
-    String? description,
-    int? servings,
-    int? prepTimeMinutes,
-    int? cookTimeMinutes,
-    List<Ingredient>? ingredients,
-    List<String>? instructions,
-    List<String>? imageUrls,
-    List<String>? tags,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-  }) {
-    return Recipe(
-      id: id ?? this.id,
-      title: title ?? this.title,
-      description: description ?? this.description,
-      servings: servings ?? this.servings,
-      prepTimeMinutes: prepTimeMinutes ?? this.prepTimeMinutes,
-      cookTimeMinutes: cookTimeMinutes ?? this.cookTimeMinutes,
-      ingredients: ingredients ?? this.ingredients,
-      instructions: instructions ?? this.instructions,
-      imageUrls: imageUrls ?? this.imageUrls,
-      tags: tags ?? this.tags,
-      createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt,
-    );
-  }
-}
-```
-
-**Technical Notes:**
-
-- Domain entities have no Flutter or external dependencies
-- Business logic lives in entities (DDD principle)
-- Immutability prevents accidental state changes
-- Equatable enables value comparison in tests
-
-**Testing Requirements:**
-
-- [ ] Unit test: `Recipe.scaleServings` with various factors
-- [ ] Unit test: `Recipe.hasIngredient` search
-- [ ] Unit test: `Ingredient.scale` calculations
-- [ ] Unit test: Equatable comparison works
+- [ ] Search filters products as user types (300 ms debounce)
+- [ ] Category chip toggles filter on/off
+- [ ] Search + category combination works correctly
+- [ ] "No results" empty state shown
+- [ ] Clearing search restores full list
+- [ ] Widget test: type "mil"  only "Milk" visible
 
 ---
 
-#### US-E1.2: Recipe Drift Table & Model
+## EPIC E4: Shopping List Feature
 
-**As a** developer  
-**I want to** create Drift table for recipes with JSON serialization  
-**So that** recipes can be persisted in SQLite
+**Goal:** Users can create and manage shopping lists, add items from the product catalogue, check off items as they shop, and track their progress.
 
-**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E0.2, US-E1.1
+**Story Count:** 5 | **Total Points:** 24 | **Priority:** P0
+
+---
+
+### US-E4.1: Shopping Lists Overview  Create & Delete Lists
+
+**As a** user
+**I want to** see all my shopping lists and create new ones
+**So that** I can manage separate lists for different occasions
+
+**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E1.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                    |
+|-----------|------------------------------------------------------------------------------------------------|
+| DB        | `ShoppingListsTable`: `id`, `name`, `createdAt`, `updatedAt`, `isSynced`, `isDeleted`         |
+| Domain    | `ShoppingList` entity: `id`, `name`, `items List<ShoppingItem>`, `createdAt`; computed `completionPercent` |
+| Domain    | `IShoppingListRepository`: `watchAll()`, `save()`, `delete(id)`, `watchById(id)`              |
+| Data      | `ShoppingListDataSource` (Drift DAO) + `ShoppingListRepositoryImpl`                           |
+| Use Cases | `WatchShoppingListsUseCase`, `CreateShoppingListUseCase(name)`, `DeleteShoppingListUseCase(id)` |
+| Providers | `shoppingListRepositoryProvider`, `shoppingListsProvider` (StreamProvider)                    |
+| State     | `ShoppingListsNotifier`                                                                       |
+| UI        | `ShoppingListsPage`  card per list showing name, item count, completion bar                  |
+| UI        | FAB  `CreateListDialog` (single name text field)                                             |
+| UI        | Long-press card  context menu: Rename / Delete                                               |
+| UI        | Delete confirmation showing item count                                                        |
+| Tests     | Unit: `CreateShoppingListUseCase` rejects empty name                                          |
+| Tests     | Widget: list card shows completion percentage bar                                             |
+| Tests     | Integration: create list  card appears; delete list  card removed                          |
 
 **Acceptance Criteria:**
 
-- [ ] Drift table created with all fields
-- [ ] JSON converter for ingredients list
-- [ ] JSON converter for instructions/tags arrays
-- [ ] `RecipeModel` with freezed for serialization
-- [ ] Conversion between `Recipe` entity and `RecipeModel`
-- [ ] Sync metadata fields (isSynced, syncVersion)
-- [ ] Soft delete support (isDeleted flag)
-
-**Implementation:**
-
-```dart
-// lib/core/database/tables/recipes_table.dart
-import 'package:drift/drift.dart';
-
-@DataClassName('RecipeData')
-class Recipes extends Table {
-  TextColumn get id => text()();
-  TextColumn get title => text()();
-  TextColumn get description => text().nullable()();
-  IntColumn get servings => integer()();
-  IntColumn get prepTimeMinutes => integer().nullable()();
-  IntColumn get cookTimeMinutes => integer().nullable()();
-
-  // JSON columns for complex data
-  TextColumn get ingredientsJson => text()();
-  TextColumn get instructionsJson => text()();
-  TextColumn get imageUrlsJson => text()();
-  TextColumn get tagsJson => text()();
-
-  DateTimeColumn get createdAt => dateTime()();
-  DateTimeColumn get updatedAt => dateTime()();
-
-  // Sync metadata (for Post-MVP cloud sync)
-  BoolColumn get isSynced => boolean().withDefault(const Constant(false))();
-  IntColumn get syncVersion => integer().withDefault(const Constant(0))();
-  BoolColumn get isDeleted => boolean().withDefault(const Constant(false))();
-
-  @override
-  Set<Column> get primaryKey => {id};
-}
-```
-
-```dart
-// lib/features/recipes/data/models/recipe_model.dart
-import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../domain/entities/recipe.dart';
-import '../../domain/entities/ingredient.dart';
-
-part 'recipe_model.freezed.dart';
-part 'recipe_model.g.dart';
-
-@freezed
-class RecipeModel with _$RecipeModel {
-  const factory RecipeModel({
-    required String id,
-    required String title,
-    String? description,
-    required int servings,
-    int? prepTimeMinutes,
-    int? cookTimeMinutes,
-    required List<IngredientModel> ingredients,
-    required List<String> instructions,
-    @Default([]) List<String> imageUrls,
-    @Default([]) List<String> tags,
-    required DateTime createdAt,
-    required DateTime updatedAt,
-    @Default(false) bool isSynced,
-    @Default(0) int syncVersion,
-    @Default(false) bool isDeleted,
-  }) = _RecipeModel;
-
-  factory RecipeModel.fromJson(Map<String, dynamic> json) =>
-      _$RecipeModelFromJson(json);
-
-  factory RecipeModel.fromEntity(Recipe recipe) {
-    return RecipeModel(
-      id: recipe.id,
-      title: recipe.title,
-      description: recipe.description,
-      servings: recipe.servings,
-      prepTimeMinutes: recipe.prepTimeMinutes,
-      cookTimeMinutes: recipe.cookTimeMinutes,
-      ingredients: recipe.ingredients
-          .map((ing) => IngredientModel.fromEntity(ing))
-          .toList(),
-      instructions: recipe.instructions,
-      imageUrls: recipe.imageUrls,
-      tags: recipe.tags,
-      createdAt: recipe.createdAt,
-      updatedAt: recipe.updatedAt,
-    );
-  }
-}
-
-extension RecipeModelX on RecipeModel {
-  Recipe toEntity() {
-    return Recipe(
-      id: id,
-      title: title,
-      description: description,
-      servings: servings,
-      prepTimeMinutes: prepTimeMinutes,
-      cookTimeMinutes: cookTimeMinutes,
-      ingredients: ingredients.map((ing) => ing.toEntity()).toList(),
-      instructions: instructions,
-      imageUrls: imageUrls,
-      tags: tags,
-      createdAt: createdAt,
-      updatedAt: updatedAt,
-    );
-  }
-}
-
-@freezed
-class IngredientModel with _$IngredientModel {
-  const factory IngredientModel({
-    required String name,
-    required double quantity,
-    required String unit,
-    String? notes,
-  }) = _IngredientModel;
-
-  factory IngredientModel.fromJson(Map<String, dynamic> json) =>
-      _$IngredientModelFromJson(json);
-
-  factory IngredientModel.fromEntity(Ingredient ingredient) {
-    return IngredientModel(
-      name: ingredient.name,
-      quantity: ingredient.quantity,
-      unit: ingredient.unit,
-      notes: ingredient.notes,
-    );
-  }
-}
-
-extension IngredientModelX on IngredientModel {
-  Ingredient toEntity() {
-    return Ingredient(
-      name: name,
-      quantity: quantity,
-      unit: unit,
-      notes: notes,
-    );
-  }
-}
-```
-
-**Update Database:**
-
-```dart
-// lib/core/database/app_database.dart
-import 'tables/recipes_table.dart';
-
-@DriftDatabase(
-  tables: [
-    Recipes,
-    SyncQueue,
-  ],
-)
-class AppDatabase extends _$AppDatabase {
-  // ... existing code
-}
-```
-
-**Technical Notes:**
-
-- Freezed generates immutable models with JSON serialization
-- JSON columns store complex data (lists, objects)
-- Separation: Entity (domain) vs Model (data)
-- Soft delete preserves data for sync
-
-**Testing Requirements:**
-
-- [ ] Unit test: RecipeModel.fromJson/toJson
-- [ ] Unit test: RecipeModel.fromEntity/toEntity conversions
-- [ ] Unit test: JSON serialization of ingredients
-- [ ] Integration test: Save/retrieve recipe from database
+- [ ] Shopping tab shows all lists as cards
+- [ ] Each card shows name, item count, and completion bar
+- [ ] FAB opens inline dialog to name the new list
+- [ ] New list card appears immediately
+- [ ] Long-press  context menu with Rename and Delete
+- [ ] Delete shows confirmation with item count; undo available for 5 seconds
+- [ ] Empty state shown when no lists exist
+- [ ] Integration test: create  delete  verify state
 
 ---
 
-#### US-E1.3: Recipe Local Data Source
+### US-E4.2: Add & Manage Items in a Shopping List
 
-**As a** developer  
-**I want to** implement recipe local data source using Drift  
-**So that** recipes can be stored and queried efficiently
+**As a** user
+**I want to** add products to a shopping list with quantities and units
+**So that** I know exactly what to buy
 
-**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E1.2
+**Story Points:** 6 | **Priority:** P0 | **Dependencies:** US-E4.1, US-E3.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                    |
+|-----------|------------------------------------------------------------------------------------------------|
+| DB        | `ShoppingItemsTable`: `id`, `listId` (FK), `productId` (FK nullable), `name`, `quantity`, `unit`, `isChecked`, `categoryId`, `sortOrder`, `createdAt` |
+| Domain    | `ShoppingItem` entity + `toggleChecked()`, `copyWith()`                                        |
+| Domain    | `IShoppingListRepository` extended with add/remove/update item methods                        |
+| Data      | `ShoppingItemDataSource` with JOIN queries                                                    |
+| Use Cases | `AddItemToListUseCase(listId, name, qty, unit, categoryId?)`, `RemoveItemFromListUseCase(listId, itemId)`, `UpdateItemUseCase(listId, itemId, qty?, unit?)` |
+| State     | `ShoppingListDetailNotifier(listId)`  streams items in real time                            |
+| UI        | `ShoppingListDetailPage`  item list; FAB opens `AddItemBottomSheet`                         |
+| UI        | `AddItemBottomSheet`  product catalogue picker OR free-text, quantity + unit                 |
+| UI        | Swipe-to-delete item with undo                                                                |
+| Tests     | Unit: `AddItemUseCase` handles product reference and free-text correctly                      |
+| Tests     | Widget: `ShoppingListDetailPage` renders items from stream                                   |
+| Tests     | Integration: open list  add item  item appears in list                                     |
 
 **Acceptance Criteria:**
 
-- [ ] `RecipeLocalDataSource` interface defined
-- [ ] Implementation with Drift queries
-- [ ] CRUD operations (Create, Read, Update, Delete)
-- [ ] Search by title/tags
-- [ ] Filter by ingredients
-- [ ] Stream queries for reactive UI
-- [ ] Exception handling
-
-**Implementation:**
-
-```dart
-// lib/features/recipes/data/datasources/recipe_local_data_source.dart
-import 'dart:convert';
-import 'package:drift/drift.dart';
-import '../../../../core/database/app_database.dart';
-import '../../../../core/error/exceptions.dart';
-import '../models/recipe_model.dart';
-
-abstract class RecipeLocalDataSource {
-  Future<List<RecipeModel>> getAllRecipes();
-  Future<RecipeModel> getRecipeById(String id);
-  Future<RecipeModel> saveRecipe(RecipeModel recipe);
-  Future<void> deleteRecipe(String id);
-  Future<List<RecipeModel>> searchRecipes(String query);
-  Future<List<RecipeModel>> filterByTags(List<String> tags);
-  Stream<List<RecipeModel>> watchAllRecipes();
-  Stream<RecipeModel> watchRecipe(String id);
-}
-
-class RecipeLocalDataSourceImpl implements RecipeLocalDataSource {
-  final AppDatabase database;
-
-  RecipeLocalDataSourceImpl({required this.database});
-
-  @override
-  Future<List<RecipeModel>> getAllRecipes() async {
-    try {
-      final recipes = await (database.select(database.recipes)
-            ..where((tbl) => tbl.isDeleted.equals(false)))
-          .get();
-
-      return recipes.map(_toModel).toList();
-    } catch (e) {
-      throw DatabaseException('Failed to get recipes: $e');
-    }
-  }
-
-  @override
-  Future<RecipeModel> getRecipeById(String id) async {
-    try {
-      final recipe = await (database.select(database.recipes)
-            ..where((tbl) => tbl.id.equals(id) & tbl.isDeleted.equals(false)))
-          .getSingleOrNull();
-
-      if (recipe == null) {
-        throw NotFoundException('Recipe with id $id not found');
-      }
-
-      return _toModel(recipe);
-    } catch (e) {
-      if (e is NotFoundException) rethrow;
-      throw DatabaseException('Failed to get recipe: $e');
-    }
-  }
-
-  @override
-  Future<RecipeModel> saveRecipe(RecipeModel recipe) async {
-    try {
-      await database.into(database.recipes).insertOnConflictUpdate(
-        RecipesCompanion(
-          id: Value(recipe.id),
-          title: Value(recipe.title),
-          description: Value(recipe.description),
-          servings: Value(recipe.servings),
-          prepTimeMinutes: Value(recipe.prepTimeMinutes),
-          cookTimeMinutes: Value(recipe.cookTimeMinutes),
-          ingredientsJson: Value(jsonEncode(
-            recipe.ingredients.map((ing) => ing.toJson()).toList()
-          )),
-          instructionsJson: Value(jsonEncode(recipe.instructions)),
-          imageUrlsJson: Value(jsonEncode(recipe.imageUrls)),
-          tagsJson: Value(jsonEncode(recipe.tags)),
-          createdAt: Value(recipe.createdAt),
-          updatedAt: Value(recipe.updatedAt),
-          isSynced: Value(recipe.isSynced),
-          syncVersion: Value(recipe.syncVersion),
-          isDeleted: Value(recipe.isDeleted),
-        ),
-      );
-
-      return recipe;
-    } catch (e) {
-      throw DatabaseException('Failed to save recipe: $e');
-    }
-  }
-
-  @override
-  Future<void> deleteRecipe(String id) async {
-    try {
-      // Soft delete
-      await (database.update(database.recipes)
-            ..where((tbl) => tbl.id.equals(id)))
-          .write(
-        RecipesCompanion(
-          isDeleted: Value(true),
-          updatedAt: Value(DateTime.now()),
-        ),
-      );
-    } catch (e) {
-      throw DatabaseException('Failed to delete recipe: $e');
-    }
-  }
-
-  @override
-  Future<List<RecipeModel>> searchRecipes(String query) async {
-    try {
-      final lowerQuery = query.toLowerCase();
-
-      final recipes = await (database.select(database.recipes)
-            ..where((tbl) =>
-              tbl.isDeleted.equals(false) &
-              (tbl.title.lower().like('%$lowerQuery%') |
-               tbl.description.lower().like('%$lowerQuery%'))))
-          .get();
-
-      return recipes.map(_toModel).toList();
-    } catch (e) {
-      throw DatabaseException('Failed to search recipes: $e');
-    }
-  }
-
-  @override
-  Future<List<RecipeModel>> filterByTags(List<String> tags) async {
-    try {
-      final recipes = await (database.select(database.recipes)
-            ..where((tbl) => tbl.isDeleted.equals(false)))
-          .get();
-
-      // Filter in memory for tags (JSON search in SQLite is limited)
-      return recipes
-          .map(_toModel)
-          .where((recipe) =>
-            tags.any((tag) => recipe.tags.contains(tag.toLowerCase())))
-          .toList();
-    } catch (e) {
-      throw DatabaseException('Failed to filter recipes: $e');
-    }
-  }
-
-  @override
-  Stream<List<RecipeModel>> watchAllRecipes() {
-    return (database.select(database.recipes)
-          ..where((tbl) => tbl.isDeleted.equals(false))
-          ..orderBy([(tbl) => OrderingTerm.desc(tbl.createdAt)]))
-        .watch()
-        .map((recipes) => recipes.map(_toModel).toList());
-  }
-
-  @override
-  Stream<RecipeModel> watchRecipe(String id) {
-    return (database.select(database.recipes)
-          ..where((tbl) => tbl.id.equals(id)))
-        .watchSingleOrNull()
-        .map((recipe) {
-          if (recipe == null) {
-            throw NotFoundException('Recipe not found');
-          }
-          return _toModel(recipe);
-        });
-  }
-
-  // Helper method to convert Drift data to model
-  RecipeModel _toModel(RecipeData data) {
-    return RecipeModel(
-      id: data.id,
-      title: data.title,
-      description: data.description,
-      servings: data.servings,
-      prepTimeMinutes: data.prepTimeMinutes,
-      cookTimeMinutes: data.cookTimeMinutes,
-      ingredients: (jsonDecode(data.ingredientsJson) as List)
-          .map((json) => IngredientModel.fromJson(json))
-          .toList(),
-      instructions: List<String>.from(jsonDecode(data.instructionsJson)),
-      imageUrls: List<String>.from(jsonDecode(data.imageUrlsJson)),
-      tags: List<String>.from(jsonDecode(data.tagsJson)),
-      createdAt: data.createdAt,
-      updatedAt: data.updatedAt,
-      isSynced: data.isSynced,
-      syncVersion: data.syncVersion,
-      isDeleted: data.isDeleted,
-    );
-  }
-}
-```
-
-**Technical Notes:**
-
-- Drift queries are type-safe at compile time
-- Stream queries enable reactive UI updates
-- Soft delete preserves data for sync
-- JSON search is limited, may need full-text search later
-
-**Testing Requirements:**
-
-- [ ] Unit test: Save recipe and retrieve by ID
-- [ ] Unit test: Delete recipe (soft delete)
-- [ ] Unit test: Search recipes by title
-- [ ] Unit test: Filter by tags
-- [ ] Unit test: Watch stream emits updates
+- [ ] Tapping a list card opens detail page
+- [ ] AddItem sheet shows product catalogue picker AND free-text fallback
+- [ ] Added item appears at bottom of list immediately
+- [ ] Quantity and unit visible on each item row
+- [ ] Swipe-left deletes item (with undo for 4 seconds)
+- [ ] Integration test: add  delete  verify
 
 ---
 
-#### US-E1.4: Recipe Repository Interface
+### US-E4.3: Check Items Off While Shopping
 
-**As a** developer  
-**I want to** define Recipe repository interface  
-**So that** domain layer is decoupled from data implementation
+**As a** user
+**I want to** tap items to mark them as collected
+**So that** I can track what I have already put in my basket
 
-**Story Points:** 2 | **Priority:** P0 | **Dependencies:** US-E1.1
+**Story Points:** 4 | **Priority:** P0 | **Dependencies:** US-E4.2
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                     |
+|-----------|---------------------------------------------------------------------------------|
+| Use Cases | `ToggleItemCheckedUseCase(listId, itemId)`  flips `isChecked`, updates DB     |
+| State     | `ShoppingListDetailNotifier` handles optimistic toggle                          |
+| UI        | Animated checkbox on each list tile (check + strikethrough text + fade)        |
+| UI        | Checked items collapse to a "Done (N)" section at the bottom                   |
+| UI        | App bar counter "3 / 7 items" updates live                                     |
+| Tests     | Unit: toggle use case flips `isChecked`                                         |
+| Tests     | Widget: tap checkbox  text is struck-through                                   |
+| Tests     | Integration: check 2 of 4 items  completion bar shows 50%                     |
 
 **Acceptance Criteria:**
 
-- [ ] Repository interface in domain layer
-- [ ] All operations return `Either<Failure, T>`
-- [ ] Stream methods for reactive queries
-- [ ] No implementation details (pure abstraction)
-- [ ] Clear method documentation
-
-**Implementation:**
-
-```dart
-// lib/features/recipes/domain/repositories/recipe_repository.dart
-import 'package:dartz/dartz.dart';
-import '../../../../core/error/failures.dart';
-import '../entities/recipe.dart';
-
-abstract class RecipeRepository {
-  /// Get all recipes (non-deleted)
-  /// Returns [DatabaseFailure] on database error
-  Future<Either<Failure, List<Recipe>>> getAllRecipes();
-
-  /// Get recipe by ID
-  /// Returns [NotFoundFailure] if recipe doesn't exist
-  /// Returns [DatabaseFailure] on database error
-  Future<Either<Failure, Recipe>> getRecipeById(String id);
-
-  /// Save recipe (create or update)
-  /// Returns [ValidationFailure] if recipe data is invalid
-  /// Returns [DatabaseFailure] on database error
-  Future<Either<Failure, Recipe>> saveRecipe(Recipe recipe);
-
-  /// Delete recipe (soft delete)
-  /// Returns [NotFoundFailure] if recipe doesn't exist
-  /// Returns [DatabaseFailure] on database error
-  Future<Either<Failure, Unit>> deleteRecipe(String id);
-
-  /// Search recipes by query (searches title and description)
-  /// Returns [DatabaseFailure] on database error
-  Future<Either<Failure, List<Recipe>>> searchRecipes(String query);
-
-  /// Filter recipes by tags
-  /// Returns [DatabaseFailure] on database error
-  Future<Either<Failure, List<Recipe>>> filterByTags(List<String> tags);
-
-  /// Watch all recipes (reactive stream)
-  /// Stream emits new list whenever recipes change
-  Stream<List<Recipe>> watchAllRecipes();
-
-  /// Watch single recipe by ID (reactive stream)
-  /// Stream emits updated recipe whenever it changes
-  Stream<Recipe> watchRecipe(String id);
-}
-```
-
-**Technical Notes:**
-
-- Interface lives in domain layer (no data dependencies)
-- `Either<Failure, T>` forces explicit error handling
-- Streams enable reactive UI
-- Documentation specifies failure types for each method
-
-**Testing Requirements:**
-
-- [ ] No direct tests (interface only)
-- [ ] Implementation tests in E1.5
+- [ ] Tapping checkbox toggles checked state with smooth animation
+- [ ] Checked items move to a collapsed "Done" section at the bottom
+- [ ] App bar shows item counter and updates live
+- [ ] Tapping a checked item unchecks it and moves it back to the main list
+- [ ] Integration test: check items  verify completion %
 
 ---
 
-#### US-E1.5: Recipe Repository Implementation
+### US-E4.4: Category-Grouped Shopping View
 
-**As a** developer  
-**I want to** implement Recipe repository with offline-first logic  
-**So that** domain layer can access recipes through clean interface
+**As a** user
+**I want to** see my shopping items grouped by category
+**So that** I can shop efficiently by aisle
 
-**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E1.3, US-E1.4
+**Story Points:** 4 | **Priority:** P1 | **Dependencies:** US-E4.3
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                           |
+|-----------|---------------------------------------------------------------------------------------|
+| Use Cases | `GetItemsGroupedByCategoryUseCase(listId)`  `Map<String, List<ShoppingItem>>`       |
+| State     | Toggle `flat` / `grouped` view mode in `ShoppingListDetailNotifier`                  |
+| UI        | Segmented button (Flat / By Category) in app bar                                     |
+| UI        | Grouped view: sticky section header per category                                      |
+| UI        | Uncategorised items under "Other"                                                     |
+| Tests     | Unit: grouping use case organises mixed-category items correctly                      |
+| Tests     | Widget: grouped view renders section headers                                          |
 
 **Acceptance Criteria:**
 
-- [ ] Implementation of `RecipeRepository` interface
-- [ ] Delegates to local data source (MVP - offline only)
-- [ ] Converts exceptions to Failures
-- [ ] Converts models to entities
-- [ ] Post-MVP: Add network check and sync queue
-- [ ] Unit tests with mocked data source
-
-**Implementation:**
-
-```dart
-// lib/features/recipes/data/repositories/recipe_repository_impl.dart
-import 'package:dartz/dartz.dart';
-import '../../../../core/error/failures.dart';
-import '../../../../core/error/exceptions.dart';
-import '../../domain/entities/recipe.dart';
-import '../../domain/repositories/recipe_repository.dart';
-import '../datasources/recipe_local_data_source.dart';
-import '../models/recipe_model.dart';
-
-class RecipeRepositoryImpl implements RecipeRepository {
-  final RecipeLocalDataSource localDataSource;
-  // Post-MVP: Add RemoteDataSource and NetworkInfo
-
-  RecipeRepositoryImpl({
-    required this.localDataSource,
-  });
-
-  @override
-  Future<Either<Failure, List<Recipe>>> getAllRecipes() async {
-    try {
-      final recipeModels = await localDataSource.getAllRecipes();
-      final recipes = recipeModels.map((model) => model.toEntity()).toList();
-      return Right(recipes);
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, Recipe>> getRecipeById(String id) async {
-    try {
-      final recipeModel = await localDataSource.getRecipeById(id);
-      return Right(recipeModel.toEntity());
-    } on NotFoundException catch (e) {
-      return Left(NotFoundFailure(e.message));
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, Recipe>> saveRecipe(Recipe recipe) async {
-    try {
-      // Convert entity to model
-      final recipeModel = RecipeModel.fromEntity(recipe);
-
-      // Save to local database (offline-first)
-      final savedModel = await localDataSource.saveRecipe(recipeModel);
-
-      // Post-MVP: Add to sync queue for cloud sync
-      // await syncQueue.enqueue(SyncOperation.createOrUpdate(...));
-
-      return Right(savedModel.toEntity());
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> deleteRecipe(String id) async {
-    try {
-      await localDataSource.deleteRecipe(id);
-
-      // Post-MVP: Add to sync queue
-      // await syncQueue.enqueue(SyncOperation.delete(...));
-
-      return Right(unit);
-    } on NotFoundException catch (e) {
-      return Left(NotFoundFailure(e.message));
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, List<Recipe>>> searchRecipes(String query) async {
-    try {
-      final recipeModels = await localDataSource.searchRecipes(query);
-      final recipes = recipeModels.map((model) => model.toEntity()).toList();
-      return Right(recipes);
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, List<Recipe>>> filterByTags(List<String> tags) async {
-    try {
-      final recipeModels = await localDataSource.filterByTags(tags);
-      final recipes = recipeModels.map((model) => model.toEntity()).toList();
-      return Right(recipes);
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Stream<List<Recipe>> watchAllRecipes() {
-    return localDataSource.watchAllRecipes().map(
-      (models) => models.map((model) => model.toEntity()).toList(),
-    );
-  }
-
-  @override
-  Stream<Recipe> watchRecipe(String id) {
-    return localDataSource.watchRecipe(id).map(
-      (model) => model.toEntity(),
-    );
-  }
-}
-```
-
-**Technical Notes:**
-
-- Repository is the boundary between data and domain layers
-- Converts exceptions (data layer) to Failures (domain layer)
-- Converts models (data layer) to entities (domain layer)
-- MVP: Offline-only, no network calls
-- Post-MVP: Add sync queue and network checks
-
-**Testing Requirements:**
-
-- [ ] Unit test: getAllRecipes success case
-- [ ] Unit test: getAllRecipes database failure
-- [ ] Unit test: getRecipeById not found
-- [ ] Unit test: saveRecipe success
-- [ ] Unit test: deleteRecipe success
-- [ ] Unit test: searchRecipes with query
-- [ ] Mock `RecipeLocalDataSource` in tests
+- [ ] Toggle in app bar switches flat  grouped views
+- [ ] Grouped view shows category names as sticky section headers
+- [ ] Items without a category appear under "Other"
+- [ ] Checking items works identically in both views
+- [ ] View preference persisted per list
 
 ---
 
-#### US-E1.6: Recipe Data Layer Providers
+### US-E4.5: Rename Shopping List
 
-**As a** developer  
-**I want to** configure Riverpod providers for recipe data layer  
-**So that** dependencies are injected consistently
+**As a** user
+**I want to** rename a shopping list
+**So that** I can keep my lists descriptively named as my needs change
 
-**Story Points:** 2 | **Priority:** P0 | **Dependencies:** US-E1.5
+**Story Points:** 3 | **Priority:** P0 | **Dependencies:** US-E4.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                           |
+|-----------|-----------------------------------------------------------------------|
+| Use Cases | `RenameShoppingListUseCase(id, newName)`  validates non-empty        |
+| UI        | Rename dialog pre-filled with current name (triggered from context menu) |
+| Tests     | Unit: rename use case rejects empty name                              |
+| Tests     | Integration: rename  verify new name on card in overview             |
 
 **Acceptance Criteria:**
 
-- [ ] Data source provider created
-- [ ] Repository provider created
-- [ ] Providers use core database provider
-- [ ] Proper disposal of resources
-- [ ] All providers tested
-
-**Implementation:**
-
-```dart
-// lib/features/recipes/data/providers/recipe_data_providers.dart
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/providers/core_providers.dart';
-import '../../domain/repositories/recipe_repository.dart';
-import '../datasources/recipe_local_data_source.dart';
-import '../repositories/recipe_repository_impl.dart';
-
-// Data Source Provider
-final recipeLocalDataSourceProvider = Provider<RecipeLocalDataSource>((ref) {
-  final database = ref.watch(databaseProvider);
-  return RecipeLocalDataSourceImpl(database: database);
-});
-
-// Repository Provider
-final recipeRepositoryProvider = Provider<RecipeRepository>((ref) {
-  final localDataSource = ref.watch(recipeLocalDataSourceProvider);
-
-  return RecipeRepositoryImpl(
-    localDataSource: localDataSource,
-    // Post-MVP: Add remoteDataSource, networkInfo, syncQueue
-  );
-});
-```
-
-**Technical Notes:**
-
-- Providers create singletons by default
-- `ref.onDispose` handles cleanup
-- Repository provider is only interface exposed to domain layer
-- Data source provider is private to data layer
-
-**Testing Requirements:**
-
-- [ ] Unit test: Providers return correct instances
-- [ ] Integration test: Repository works through providers
+- [ ] Rename option accessible from list card context menu
+- [ ] Dialog shows current name pre-filled
+- [ ] Empty name shows validation error
+- [ ] Saving updates card name immediately
+- [ ] Integration test: rename  verify new label on card
 
 ---
 
-### Epic E2: Shopping List Data Layer
+## EPIC E5: Recipe Management Feature
 
-**Epic Goal:** Implement data layer for shopping list management with offline storage.
+**Goal:** Users can create, browse, edit, and use recipes with ingredients and step-by-step instructions.
 
-**Business Value:** Enables offline shopping list management, core app functionality.
+**Story Count:** 5 | **Total Points:** 26 | **Priority:** P0
 
-**Story Count:** 5 stories | **Total Points:** 21 | **Duration:** Week 3
+> **Note:** Recipe table, entity, and a repository implementation exist. Stories wire in use cases, Riverpod providers, and build full UI for complete end-to-end testability.
 
 ---
 
-#### US-E2.1: Shopping List Domain Entities
+### US-E5.1: Recipe List & Detail View
 
-**As a** developer  
-**I want to** define ShoppingList and ShoppingItem domain entities  
-**So that** business logic has clear shopping data structures
+**As a** user
+**I want to** browse all my recipes and tap one to see full details
+**So that** I can find and review a recipe before cooking
 
-**Story Points:** 3 | **Priority:** P0 | **Dependencies:** US-E0.1
+**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E1.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                  |
+|-----------|----------------------------------------------------------------------------------------------|
+| DB        | `RecipesTable` (exists)  verify all columns; `IngredientsTable` as child table or JSON column |
+| Domain    | `Recipe` entity (exists)  verify `Ingredient` value object, `scaleServings()`, `totalTime` |
+| Domain    | `IRecipeRepository`  `watchAll()`, `getById(id)`, `save()`, `delete(id)`, `search(query)`  |
+| Data      | `RecipeDataSource` (Drift DAO) + `RecipeRepositoryImpl` (exists  verify exception mapping) |
+| Use Cases | `WatchRecipesUseCase`, `GetRecipeByIdUseCase(id)`                                           |
+| Providers | `recipeRepositoryProvider`, `recipesProvider` (StreamProvider), `recipeDetailProvider(id)` |
+| State     | `RecipeListNotifier`                                                                         |
+| UI        | `RecipeListPage` (exists)  wire to Riverpod stream                                         |
+| UI        | `RecipeDetailPage`  title, image, time badges, ingredient list, instruction steps          |
+| Tests     | Widget: `RecipeListPage` renders 3 mocked recipes                                           |
+| Tests     | Widget: `RecipeDetailPage` shows ingredients and instruction steps                          |
+| Tests     | Integration: open Recipes tab  tap recipe  verify detail page                            |
 
 **Acceptance Criteria:**
 
-- [ ] `ShoppingList` entity created
-- [ ] `ShoppingItem` value object created
-- [ ] Business methods (add item, toggle checked, etc.)
-- [ ] Category organization logic
-- [ ] Completion status calculation
-
-**Implementation:**
-
-```dart
-// lib/features/shopping/domain/entities/shopping_item.dart
-import 'package:equatable/equatable.dart';
-
-class ShoppingItem extends Equatable {
-  final String id;
-  final String name;
-  final double quantity;
-  final String unit;
-  final String? category;
-  final bool isChecked;
-  final DateTime createdAt;
-
-  const ShoppingItem({
-    required this.id,
-    required this.name,
-    required this.quantity,
-    required this.unit,
-    this.category,
-    this.isChecked = false,
-    required this.createdAt,
-  });
-
-  ShoppingItem toggleChecked() {
-    return copyWith(isChecked: !isChecked);
-  }
-
-  ShoppingItem updateQuantity(double newQuantity) {
-    return copyWith(quantity: newQuantity);
-  }
-
-  @override
-  List<Object?> get props => [id, name, quantity, unit, category, isChecked, createdAt];
-
-  ShoppingItem copyWith({
-    String? id,
-    String? name,
-    double? quantity,
-    String? unit,
-    String? category,
-    bool? isChecked,
-    DateTime? createdAt,
-  }) {
-    return ShoppingItem(
-      id: id ?? this.id,
-      name: name ?? this.name,
-      quantity: quantity ?? this.quantity,
-      unit: unit ?? this.unit,
-      category: category ?? this.category,
-      isChecked: isChecked ?? this.isChecked,
-      createdAt: createdAt ?? this.createdAt,
-    );
-  }
-}
-```
-
-```dart
-// lib/features/shopping/domain/entities/shopping_list.dart
-import 'package:equatable/equatable.dart';
-import 'shopping_item.dart';
-
-class ShoppingList extends Equatable {
-  final String id;
-  final String name;
-  final List<ShoppingItem> items;
-  final String? linkedMealPlanId;
-  final bool isCompleted;
-  final DateTime createdAt;
-  final DateTime updatedAt;
-
-  const ShoppingList({
-    required this.id,
-    required this.name,
-    this.items = const [],
-    this.linkedMealPlanId,
-    this.isCompleted = false,
-    required this.createdAt,
-    required this.updatedAt,
-  });
-
-  // Business logic
-  int get totalItems => items.length;
-  int get checkedItems => items.where((item) => item.isChecked).length;
-  double get completionPercentage =>
-      totalItems == 0 ? 0 : (checkedItems / totalItems) * 100;
-
-  bool get allItemsChecked => totalItems > 0 && checkedItems == totalItems;
-
-  Map<String?, List<ShoppingItem>> get itemsByCategory {
-    final grouped = <String?, List<ShoppingItem>>{};
-    for (final item in items) {
-      grouped.putIfAbsent(item.category, () => []).add(item);
-    }
-    return grouped;
-  }
-
-  ShoppingList addItem(ShoppingItem item) {
-    return copyWith(
-      items: [...items, item],
-      updatedAt: DateTime.now(),
-    );
-  }
-
-  ShoppingList removeItem(String itemId) {
-    return copyWith(
-      items: items.where((item) => item.id != itemId).toList(),
-      updatedAt: DateTime.now(),
-    );
-  }
-
-  ShoppingList toggleItem(String itemId) {
-    return copyWith(
-      items: items.map((item) {
-        return item.id == itemId ? item.toggleChecked() : item;
-      }).toList(),
-      updatedAt: DateTime.now(),
-    );
-  }
-
-  ShoppingList updateItem(ShoppingItem updatedItem) {
-    return copyWith(
-      items: items.map((item) {
-        return item.id == updatedItem.id ? updatedItem : item;
-      }).toList(),
-      updatedAt: DateTime.now(),
-    );
-  }
-
-  ShoppingList markCompleted(bool completed) {
-    return copyWith(
-      isCompleted: completed,
-      updatedAt: DateTime.now(),
-    );
-  }
-
-  @override
-  List<Object?> get props => [
-    id, name, items, linkedMealPlanId, isCompleted, createdAt, updatedAt,
-  ];
-
-  ShoppingList copyWith({
-    String? id,
-    String? name,
-    List<ShoppingItem>? items,
-    String? linkedMealPlanId,
-    bool? isCompleted,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-  }) {
-    return ShoppingList(
-      id: id ?? this.id,
-      name: name ?? this.name,
-      items: items ?? this.items,
-      linkedMealPlanId: linkedMealPlanId ?? this.linkedMealPlanId,
-      isCompleted: isCompleted ?? this.isCompleted,
-      createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt,
-    );
-  }
-}
-```
-
-**Technical Notes:**
-
-- Rich business logic in entities (DDD)
-- Immutable with copy methods
-- Calculated properties for UI
-
-**Testing Requirements:**
-
-- [ ] Unit test: addItem, removeItem, toggleItem
-- [ ] Unit test: completionPercentage calculation
-- [ ] Unit test: itemsByCategory grouping
-- [ ] Unit test: allItemsChecked logic
+- [ ] Recipe list shows title, thumbnail, total time, and serving count
+- [ ] Tapping a recipe navigates to detail page
+- [ ] Detail page shows ingredients with quantities and units
+- [ ] Detail page shows numbered instruction steps
+- [ ] Loading state shown while recipes load from DB
+- [ ] Integration test: launch app  Recipes tab  tap recipe  verify detail
 
 ---
 
-#### US-E2.2: Shopping List Drift Table & Model
+### US-E5.2: Create & Edit Recipe
 
-**As a** developer  
-**I want to** create Drift tables for shopping lists  
-**So that** shopping data can be persisted locally
+**As a** user
+**I want to** add new recipes and edit existing ones with full details
+**So that** I can build my personal recipe collection
 
-**Story Points:** 4 | **Priority:** P0 | **Dependencies:** US-E0.2, US-E2.1
+**Story Points:** 8 | **Priority:** P0 | **Dependencies:** US-E5.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                        |
+|-----------|----------------------------------------------------------------------------------------------------|
+| Use Cases | `SaveRecipeUseCase(recipe)`  validates non-empty title + at least 1 ingredient, generates UUID, sets timestamps |
+| Use Cases | `ValidateRecipeUseCase(recipe)`  `Either<ValidationFailure, Recipe>`                             |
+| State     | `RecipeFormNotifier`  manages multi-section form draft state                                      |
+| UI        | `RecipeFormPage`  3 sections: (1) basics, (2) ingredients, (3) instructions                      |
+| UI        | `IngredientInputRow`  name typeahead from product catalogue, quantity, unit selector             |
+| UI        | `InstructionStepList`  numbered, reorderable, add/remove steps                                   |
+| UI        | Save button in app bar  spinner while saving                                                     |
+| UI        | Edit mode: `RecipeDetailPage` "Edit" button  `RecipeFormPage` pre-filled                        |
+| Tests     | Unit: `SaveRecipeUseCase` rejects empty title                                                     |
+| Tests     | Unit: `SaveRecipeUseCase` sets `createdAt` on new recipe                                         |
+| Tests     | Widget: ingredient typeahead suggests matching products                                            |
+| Tests     | Integration: fill form  save  appears in recipe list  open detail                             |
 
 **Acceptance Criteria:**
 
-- [ ] `ShoppingLists` Drift table created
-- [ ] `ShoppingItems` Drift table created (separate table for normalization)
-- [ ] Foreign key relationship configured
-- [ ] Models with freezed for serialization
-- [ ] Entity/Model conversions
-
-**Implementation:**
-
-```dart
-// lib/core/database/tables/shopping_lists_table.dart
-import 'package:drift/drift.dart';
-
-@DataClassName('ShoppingListData')
-class ShoppingLists extends Table {
-  TextColumn get id => text()();
-  TextColumn get name => text()();
-  TextColumn get linkedMealPlanId => text().nullable()();
-  BoolColumn get isCompleted => boolean().withDefault(const Constant(false))();
-  DateTimeColumn get createdAt => dateTime()();
-  DateTimeColumn get updatedAt => dateTime()();
-  BoolColumn get isSynced => boolean().withDefault(const Constant(false))();
-  IntColumn get syncVersion => integer().withDefault(const Constant(0))();
-
-  @override
-  Set<Column> get primaryKey => {id};
-}
-
-@DataClassName('ShoppingItemData')
-class ShoppingItems extends Table {
-  TextColumn get id => text()();
-  TextColumn get shoppingListId => text()();
-  TextColumn get name => text()();
-  RealColumn get quantity => real()();
-  TextColumn get unit => text()();
-  TextColumn get category => text().nullable()();
-  BoolColumn get isChecked => boolean().withDefault(const Constant(false))();
-  DateTimeColumn get createdAt => dateTime()();
-
-  @override
-  Set<Column> get primaryKey => {id};
-
-  @override
-  List<Set<Column>> get uniqueKeys => [];
-}
-```
-
-```dart
-// lib/features/shopping/data/models/shopping_list_model.dart
-import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../domain/entities/shopping_list.dart';
-import 'shopping_item_model.dart';
-
-part 'shopping_list_model.freezed.dart';
-part 'shopping_list_model.g.dart';
-
-@freezed
-class ShoppingListModel with _$ShoppingListModel {
-  const factory ShoppingListModel({
-    required String id,
-    required String name,
-    @Default([]) List<ShoppingItemModel> items,
-    String? linkedMealPlanId,
-    @Default(false) bool isCompleted,
-    required DateTime createdAt,
-    required DateTime updatedAt,
-    @Default(false) bool isSynced,
-    @Default(0) int syncVersion,
-  }) = _ShoppingListModel;
-
-  factory ShoppingListModel.fromJson(Map<String, dynamic> json) =>
-      _$ShoppingListModelFromJson(json);
-
-  factory ShoppingListModel.fromEntity(ShoppingList list) {
-    return ShoppingListModel(
-      id: list.id,
-      name: list.name,
-      items: list.items.map((item) => ShoppingItemModel.fromEntity(item)).toList(),
-      linkedMealPlanId: list.linkedMealPlanId,
-      isCompleted: list.isCompleted,
-      createdAt: list.createdAt,
-      updatedAt: list.updatedAt,
-    );
-  }
-}
-
-extension ShoppingListModelX on ShoppingListModel {
-  ShoppingList toEntity() {
-    return ShoppingList(
-      id: id,
-      name: name,
-      items: items.map((item) => item.toEntity()).toList(),
-      linkedMealPlanId: linkedMealPlanId,
-      isCompleted: isCompleted,
-      createdAt: createdAt,
-      updatedAt: updatedAt,
-    );
-  }
-}
-
-@freezed
-class ShoppingItemModel with _$ShoppingItemModel {
-  const factory ShoppingItemModel({
-    required String id,
-    required String name,
-    required double quantity,
-    required String unit,
-    String? category,
-    @Default(false) bool isChecked,
-    required DateTime createdAt,
-  }) = _ShoppingItemModel;
-
-  factory ShoppingItemModel.fromJson(Map<String, dynamic> json) =>
-      _$ShoppingItemModelFromJson(json);
-
-  factory ShoppingItemModel.fromEntity(ShoppingItem item) {
-    return ShoppingItemModel(
-      id: item.id,
-      name: item.name,
-      quantity: item.quantity,
-      unit: item.unit,
-      category: item.category,
-      isChecked: item.isChecked,
-      createdAt: item.createdAt,
-    );
-  }
-}
-
-extension ShoppingItemModelX on ShoppingItemModel {
-  ShoppingItem toEntity() {
-    return ShoppingItem(
-      id: id,
-      name: name,
-      quantity: quantity,
-      unit: unit,
-      category: category,
-      isChecked: isChecked,
-      createdAt: createdAt,
-    );
-  }
-}
-```
-
-**Update Database:**
-
-```dart
-// lib/core/database/app_database.dart
-import 'tables/shopping_lists_table.dart';
-
-@DriftDatabase(
-  tables: [
-    Recipes,
-    ShoppingLists,
-    ShoppingItems,
-    SyncQueue,
-  ],
-)
-class AppDatabase extends _$AppDatabase {
-  // ... existing code
-}
-```
-
-**Technical Notes:**
-
-- Separate tables allow efficient queries
-- Items linked via foreign key
-- Can query items independently
-
-**Testing Requirements:**
-
-- [ ] Unit test: Model JSON serialization
-- [ ] Unit test: Entity/Model conversions
-- [ ] Integration test: Save list with items
+- [ ] FAB on recipe list opens new recipe form
+- [ ] Form has 3 clearly labelled sections
+- [ ] Ingredient input suggests from product catalogue with free-text fallback
+- [ ] Can add, remove, and reorder ingredients and instruction steps
+- [ ] Saving with empty title shows inline error on title field
+- [ ] Must have at least 1 ingredient (or warning shown)
+- [ ] After save, navigates back to list; new recipe appears
+- [ ] Integration test: full form fill  save  verify in list  check detail
 
 ---
 
-#### US-E2.3: Shopping List Local Data Source
+### US-E5.3: Delete Recipe
 
-**As a** developer  
-**I want to** implement shopping list local data source  
-**So that** shopping lists can be stored and retrieved with items
+**As a** user
+**I want to** delete recipes I no longer need
+**So that** my collection stays manageable
 
-**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E2.2
+**Story Points:** 2 | **Priority:** P0 | **Dependencies:** US-E5.2
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                          |
+|-----------|--------------------------------------------------------------------------------------|
+| Use Cases | `DeleteRecipeUseCase(id)`  soft delete; returns `ConflictFailure` if in a meal plan |
+| UI        | Delete option in `RecipeDetailPage` overflow menu                                    |
+| UI        | Confirmation dialog: "Remove [name] from your recipes?"                              |
+| UI        | If recipe is in meal plan: "This recipe is in your meal plan. Delete anyway?"        |
+| Tests     | Unit: delete use case returns `ConflictFailure` when recipe is in an active meal plan |
+| Tests     | Integration: delete recipe  no longer in list                                       |
 
 **Acceptance Criteria:**
 
-- [ ] CRUD operations for shopping lists
-- [ ] Join queries to fetch lists with items
-- [ ] Update individual items
-- [ ] Toggle item checked status
-- [ ] Stream queries for reactive UI
-- [ ] Proper transaction handling
-
-**Implementation:**
-
-```dart
-// lib/features/shopping/data/datasources/shopping_list_local_data_source.dart
-import 'package:drift/drift.dart';
-import '../../../../core/database/app_database.dart';
-import '../../../../core/error/exceptions.dart';
-import '../models/shopping_list_model.dart';
-
-abstract class ShoppingListLocalDataSource {
-  Future<List<ShoppingListModel>> getAllShoppingLists();
-  Future<ShoppingListModel> getShoppingListById(String id);
-  Future<ShoppingListModel> saveShoppingList(ShoppingListModel list);
-  Future<void> deleteShoppingList(String id);
-  Future<void> addItemToList(String listId, ShoppingItemModel item);
-  Future<void> removeItemFromList(String itemId);
-  Future<void> toggleItemChecked(String itemId);
-  Stream<List<ShoppingListModel>> watchAllShoppingLists();
-  Stream<ShoppingListModel> watchShoppingList(String id);
-}
-
-class ShoppingListLocalDataSourceImpl implements ShoppingListLocalDataSource {
-  final AppDatabase database;
-
-  ShoppingListLocalDataSourceImpl({required this.database});
-
-  @override
-  Future<List<ShoppingListModel>> getAllShoppingLists() async {
-    try {
-      final lists = await database.select(database.shoppingLists).get();
-
-      // Fetch items for each list
-      final listModels = <ShoppingListModel>[];
-      for (final list in lists) {
-        final items = await (database.select(database.shoppingItems)
-              ..where((tbl) => tbl.shoppingListId.equals(list.id)))
-            .get();
-
-        listModels.add(_toListModel(list, items));
-      }
-
-      return listModels;
-    } catch (e) {
-      throw DatabaseException('Failed to get shopping lists: $e');
-    }
-  }
-
-  @override
-  Future<ShoppingListModel> getShoppingListById(String id) async {
-    try {
-      final list = await (database.select(database.shoppingLists)
-            ..where((tbl) => tbl.id.equals(id)))
-          .getSingleOrNull();
-
-      if (list == null) {
-        throw NotFoundException('Shopping list with id $id not found');
-      }
-
-      final items = await (database.select(database.shoppingItems)
-            ..where((tbl) => tbl.shoppingListId.equals(id)))
-          .get();
-
-      return _toListModel(list, items);
-    } catch (e) {
-      if (e is NotFoundException) rethrow;
-      throw DatabaseException('Failed to get shopping list: $e');
-    }
-  }
-
-  @override
-  Future<ShoppingListModel> saveShoppingList(ShoppingListModel list) async {
-    try {
-      await database.transaction(() async {
-        // Save/update the list
-        await database.into(database.shoppingLists).insertOnConflictUpdate(
-          ShoppingListsCompanion(
-            id: Value(list.id),
-            name: Value(list.name),
-            linkedMealPlanId: Value(list.linkedMealPlanId),
-            isCompleted: Value(list.isCompleted),
-            createdAt: Value(list.createdAt),
-            updatedAt: Value(list.updatedAt),
-            isSynced: Value(list.isSynced),
-            syncVersion: Value(list.syncVersion),
-          ),
-        );
-
-        // Delete existing items
-        await (database.delete(database.shoppingItems)
-              ..where((tbl) => tbl.shoppingListId.equals(list.id)))
-            .go();
-
-        // Insert new items
-        for (final item in list.items) {
-          await database.into(database.shoppingItems).insert(
-            ShoppingItemsCompanion(
-              id: Value(item.id),
-              shoppingListId: Value(list.id),
-              name: Value(item.name),
-              quantity: Value(item.quantity),
-              unit: Value(item.unit),
-              category: Value(item.category),
-              isChecked: Value(item.isChecked),
-              createdAt: Value(item.createdAt),
-            ),
-          );
-        }
-      });
-
-      return list;
-    } catch (e) {
-      throw DatabaseException('Failed to save shopping list: $e');
-    }
-  }
-
-  @override
-  Future<void> deleteShoppingList(String id) async {
-    try {
-      await database.transaction(() async {
-        // Delete items first (foreign key)
-        await (database.delete(database.shoppingItems)
-              ..where((tbl) => tbl.shoppingListId.equals(id)))
-            .go();
-
-        // Delete list
-        await (database.delete(database.shoppingLists)
-              ..where((tbl) => tbl.id.equals(id)))
-            .go();
-      });
-    } catch (e) {
-      throw DatabaseException('Failed to delete shopping list: $e');
-    }
-  }
-
-  @override
-  Future<void> addItemToList(String listId, ShoppingItemModel item) async {
-    try {
-      await database.into(database.shoppingItems).insert(
-        ShoppingItemsCompanion(
-          id: Value(item.id),
-          shoppingListId: Value(listId),
-          name: Value(item.name),
-          quantity: Value(item.quantity),
-          unit: Value(item.unit),
-          category: Value(item.category),
-          isChecked: Value(item.isChecked),
-          createdAt: Value(item.createdAt),
-        ),
-      );
-
-      // Update list updatedAt timestamp
-      await (database.update(database.shoppingLists)
-            ..where((tbl) => tbl.id.equals(listId)))
-          .write(
-        ShoppingListsCompanion(
-          updatedAt: Value(DateTime.now()),
-        ),
-      );
-    } catch (e) {
-      throw DatabaseException('Failed to add item: $e');
-    }
-  }
-
-  @override
-  Future<void> removeItemFromList(String itemId) async {
-    try {
-      // Get list ID before deleting
-      final item = await (database.select(database.shoppingItems)
-            ..where((tbl) => tbl.id.equals(itemId)))
-          .getSingleOrNull();
-
-      if (item == null) {
-        throw NotFoundException('Item not found');
-      }
-
-      await (database.delete(database.shoppingItems)
-            ..where((tbl) => tbl.id.equals(itemId)))
-          .go();
-
-      // Update list timestamp
-      await (database.update(database.shoppingLists)
-            ..where((tbl) => tbl.id.equals(item.shoppingListId)))
-          .write(
-        ShoppingListsCompanion(
-          updatedAt: Value(DateTime.now()),
-        ),
-      );
-    } catch (e) {
-      if (e is NotFoundException) rethrow;
-      throw DatabaseException('Failed to remove item: $e');
-    }
-  }
-
-  @override
-  Future<void> toggleItemChecked(String itemId) async {
-    try {
-      final item = await (database.select(database.shoppingItems)
-            ..where((tbl) => tbl.id.equals(itemId)))
-          .getSingleOrNull();
-
-      if (item == null) {
-        throw NotFoundException('Item not found');
-      }
-
-      await (database.update(database.shoppingItems)
-            ..where((tbl) => tbl.id.equals(itemId)))
-          .write(
-        ShoppingItemsCompanion(
-          isChecked: Value(!item.isChecked),
-        ),
-      );
-
-      // Update list timestamp
-      await (database.update(database.shoppingLists)
-            ..where((tbl) => tbl.id.equals(item.shoppingListId)))
-          .write(
-        ShoppingListsCompanion(
-          updatedAt: Value(DateTime.now()),
-        ),
-      );
-    } catch (e) {
-      if (e is NotFoundException) rethrow;
-      throw DatabaseException('Failed to toggle item: $e');
-    }
-  }
-
-  @override
-  Stream<List<ShoppingListModel>> watchAllShoppingLists() {
-    // This is complex with joins - simplified version
-    return database.select(database.shoppingLists).watch().asyncMap(
-      (lists) async {
-        final listModels = <ShoppingListModel>[];
-        for (final list in lists) {
-          final items = await (database.select(database.shoppingItems)
-                ..where((tbl) => tbl.shoppingListId.equals(list.id)))
-              .get();
-          listModels.add(_toListModel(list, items));
-        }
-        return listModels;
-      },
-    );
-  }
-
-  @override
-  Stream<ShoppingListModel> watchShoppingList(String id) {
-    return database.select(database.shoppingLists)
-        .watch()
-        .asyncMap((lists) async {
-          final list = lists.firstWhere((l) => l.id == id);
-          final items = await (database.select(database.shoppingItems)
-                ..where((tbl) => tbl.shoppingListId.equals(id)))
-              .get();
-          return _toListModel(list, items);
-        });
-  }
-
-  ShoppingListModel _toListModel(
-    ShoppingListData list,
-    List<ShoppingItemData> items,
-  ) {
-    return ShoppingListModel(
-      id: list.id,
-      name: list.name,
-      items: items.map(_toItemModel).toList(),
-      linkedMealPlanId: list.linkedMealPlanId,
-      isCompleted: list.isCompleted,
-      createdAt: list.createdAt,
-      updatedAt: list.updatedAt,
-      isSynced: list.isSynced,
-      syncVersion: list.syncVersion,
-    );
-  }
-
-  ShoppingItemModel _toItemModel(ShoppingItemData data) {
-    return ShoppingItemModel(
-      id: data.id,
-      name: data.name,
-      quantity: data.quantity,
-      unit: data.unit,
-      category: data.category,
-      isChecked: data.isChecked,
-      createdAt: data.createdAt,
-    );
-  }
-}
-```
-
-**Technical Notes:**
-
-- Transactions ensure data consistency
-- Join queries fetch related data
-- Stream queries reactive to both tables
-
-**Testing Requirements:**
-
-- [ ] Unit test: Save list with items
-- [ ] Unit test: Add/remove items
-- [ ] Unit test: Toggle item checked
-- [ ] Unit test: Delete list deletes items (cascade)
-- [ ] Integration test: Watch stream updates
+- [ ] Recipe detail has "Delete" in the overflow menu
+- [ ] Confirmation dialog shows recipe name
+- [ ] Recipe removed from list after deletion
+- [ ] Warning shown if recipe appears in meal plan slots
 
 ---
 
-#### US-E2.4: Shopping List Repository Implementation
+### US-E5.4: Recipe Search & Tag Filter
 
-**As a** developer  
-**I want to** implement shopping list repository  
-**So that** domain layer can access shopping lists through clean interface
+**As a** user
+**I want to** search recipes by name and filter by tags
+**So that** I can quickly find the right recipe
 
-**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E2.3
+**Story Points:** 5 | **Priority:** P1 | **Dependencies:** US-E5.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                          |
+|-----------|--------------------------------------------------------------------------------------|
+| Data      | `searchRecipes(query)` Drift query  searches title + description                   |
+| Data      | `filterByTags(tags)`  JSON contains search on `tagsJson` column                    |
+| Use Cases | `SearchRecipesUseCase(query, tags?)`  combined search + filter                     |
+| State     | `RecipeSearchNotifier`  query + tag filters + 300 ms debounce                      |
+| UI        | Search bar in `RecipeListPage` (collapses by default, expands on search icon tap)   |
+| UI        | Tag filter chips below search bar (filled from `WatchAllTagsUseCase`)               |
+| Tests     | Unit: search returns only recipes whose title contains query                        |
+| Tests     | Widget: typing "pasta" filters to pasta recipes                                     |
 
 **Acceptance Criteria:**
 
-- [ ] Repository interface defined in domain layer
-- [ ] Implementation with offline-first logic
-- [ ] Exception to Failure conversion
-- [ ] Model to Entity conversion
-- [ ] All operations tested
-
-**Implementation:**
-
-```dart
-// lib/features/shopping/domain/repositories/shopping_list_repository.dart
-import 'package:dartz/dartz.dart';
-import '../../../../core/error/failures.dart';
-import '../entities/shopping_list.dart';
-import '../entities/shopping_item.dart';
-
-abstract class ShoppingListRepository {
-  Future<Either<Failure, List<ShoppingList>>> getAllShoppingLists();
-  Future<Either<Failure, ShoppingList>> getShoppingListById(String id);
-  Future<Either<Failure, ShoppingList>> saveShoppingList(ShoppingList list);
-  Future<Either<Failure, Unit>> deleteShoppingList(String id);
-  Future<Either<Failure, Unit>> addItemToList(String listId, ShoppingItem item);
-  Future<Either<Failure, Unit>> removeItemFromList(String itemId);
-  Future<Either<Failure, Unit>> toggleItemChecked(String itemId);
-  Stream<List<ShoppingList>> watchAllShoppingLists();
-  Stream<ShoppingList> watchShoppingList(String id);
-}
-```
-
-```dart
-// lib/features/shopping/data/repositories/shopping_list_repository_impl.dart
-import 'package:dartz/dartz.dart';
-import '../../../../core/error/failures.dart';
-import '../../../../core/error/exceptions.dart';
-import '../../domain/entities/shopping_list.dart';
-import '../../domain/entities/shopping_item.dart';
-import '../../domain/repositories/shopping_list_repository.dart';
-import '../datasources/shopping_list_local_data_source.dart';
-import '../models/shopping_list_model.dart';
-
-class ShoppingListRepositoryImpl implements ShoppingListRepository {
-  final ShoppingListLocalDataSource localDataSource;
-
-  ShoppingListRepositoryImpl({required this.localDataSource});
-
-  @override
-  Future<Either<Failure, List<ShoppingList>>> getAllShoppingLists() async {
-    try {
-      final models = await localDataSource.getAllShoppingLists();
-      final lists = models.map((m) => m.toEntity()).toList();
-      return Right(lists);
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, ShoppingList>> getShoppingListById(String id) async {
-    try {
-      final model = await localDataSource.getShoppingListById(id);
-      return Right(model.toEntity());
-    } on NotFoundException catch (e) {
-      return Left(NotFoundFailure(e.message));
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, ShoppingList>> saveShoppingList(ShoppingList list) async {
-    try {
-      final model = ShoppingListModel.fromEntity(list);
-      final saved = await localDataSource.saveShoppingList(model);
-      return Right(saved.toEntity());
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> deleteShoppingList(String id) async {
-    try {
-      await localDataSource.deleteShoppingList(id);
-      return Right(unit);
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> addItemToList(String listId, ShoppingItem item) async {
-    try {
-      final itemModel = ShoppingItemModel.fromEntity(item);
-      await localDataSource.addItemToList(listId, itemModel);
-      return Right(unit);
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> removeItemFromList(String itemId) async {
-    try {
-      await localDataSource.removeItemFromList(itemId);
-      return Right(unit);
-    } on NotFoundException catch (e) {
-      return Left(NotFoundFailure(e.message));
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Future<Either<Failure, Unit>> toggleItemChecked(String itemId) async {
-    try {
-      await localDataSource.toggleItemChecked(itemId);
-      return Right(unit);
-    } on NotFoundException catch (e) {
-      return Left(NotFoundFailure(e.message));
-    } on DatabaseException catch (e) {
-      return Left(DatabaseFailure(e.message));
-    } catch (e) {
-      return Left(DatabaseFailure('Unexpected error: $e'));
-    }
-  }
-
-  @override
-  Stream<List<ShoppingList>> watchAllShoppingLists() {
-    return localDataSource.watchAllShoppingLists().map(
-      (models) => models.map((m) => m.toEntity()).toList(),
-    );
-  }
-
-  @override
-  Stream<ShoppingList> watchShoppingList(String id) {
-    return localDataSource.watchShoppingList(id).map((m) => m.toEntity());
-  }
-}
-```
-
-**Testing Requirements:**
-
-- [ ] Unit test: All repository methods with mocked data source
-- [ ] Unit test: Exception to Failure conversion
-- [ ] Unit test: Model to Entity conversion
+- [ ] Search bar expands on tapping the search icon
+- [ ] Recipes filter as user types (300 ms debounce)
+- [ ] Tag chips toggle on/off; active chips shown as filled
+- [ ] Combined name + tag filter works
+- [ ] "No recipes found" empty state with hint to clear filters
+- [ ] Clearing all filters restores full list
 
 ---
 
-#### US-E2.5: Shopping List Data Layer Providers
+### US-E5.5: Recipe Serving Scaler
 
-**As a** developer  
-**I want to** configure Riverpod providers for shopping list data layer  
-**So that** dependencies are properly injected
+**As a** user
+**I want to** adjust the serving count on a recipe and see scaled ingredient quantities
+**So that** I can cook for different group sizes without manual calculation
 
-**Story Points:** 2 | **Priority:** P0 | **Dependencies:** US-E2.4
+**Story Points:** 3 | **Priority:** P1 | **Dependencies:** US-E5.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                          |
+|-----------|--------------------------------------------------------------------------------------|
+| Domain    | `Recipe.scaleServings(newServings)` (verify on entity)                              |
+| Use Cases | `ScaleRecipeUseCase(recipe, newServings)`  scaled `Recipe` in memory (not saved)   |
+| State     | `servingCountProvider(recipeId)`  session-only overridable state                   |
+| UI        | Serving stepper (`` / count / `+`) in `RecipeDetailPage` header                   |
+| UI        | Ingredient quantities update live as serving count changes                           |
+| UI        | Reset button restores original serving count                                         |
+| Tests     | Unit: `ScaleRecipeUseCase`  2 cups flour for 4 servings  3 cups for 6           |
+| Tests     | Widget: tap `+`  ingredient quantities update                                      |
 
 **Acceptance Criteria:**
 
-- [ ] Data source provider
-- [ ] Repository provider
-- [ ] Proper dependency injection
-
-**Implementation:**
-
-```dart
-// lib/features/shopping/data/providers/shopping_data_providers.dart
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/providers/core_providers.dart';
-import '../../domain/repositories/shopping_list_repository.dart';
-import '../datasources/shopping_list_local_data_source.dart';
-import '../repositories/shopping_list_repository_impl.dart';
-
-final shoppingListLocalDataSourceProvider = Provider<ShoppingListLocalDataSource>((ref) {
-  final database = ref.watch(databaseProvider);
-  return ShoppingListLocalDataSourceImpl(database: database);
-});
-
-final shoppingListRepositoryProvider = Provider<ShoppingListRepository>((ref) {
-  final localDataSource = ref.watch(shoppingListLocalDataSourceProvider);
-  return ShoppingListRepositoryImpl(localDataSource: localDataSource);
-});
-```
-
-**Testing Requirements:**
-
-- [ ] Unit test: Providers return correct instances
+- [ ] Serving counter in recipe detail header
+- [ ] `+` / `` adjusts serving count (minimum 1)
+- [ ] All ingredient quantities scale proportionally, displayed as readable fractions
+- [ ] Reset button restores original defaults
+- [ ] Scaled quantities are NOT persisted to DB (session only)
 
 ---
 
-### Note on Remaining Epics
+## EPIC E6: Meal Planning Feature
 
-Due to the extensive length of this document, I'll provide a summary structure for the remaining epics. Each follows the same pattern as E1 and E2:
+**Goal:** Users can plan weekly meals by assigning recipes to breakfast/lunch/dinner slots, then generate a shopping list from the plan.
 
-### Epic E3: Meal Plan Data Layer
+**Story Count:** 4 | **Total Points:** 22 | **Priority:** P0
 
-- US-E3.1: Meal Plan Domain Entities (MealPlan, MealSlot)
-- US-E3.2: Meal Plan Drift Table & Model
-- US-E3.3: Meal Plan Local Data Source
-- US-E3.4: Meal Plan Repository Implementation
-- US-E3.5: Meal Plan Data Layer Providers
-
-### Epic E4: Pantry Data Layer
-
-- US-E4.1: Pantry Item Domain Entity
-- US-E4.2: Pantry Drift Table & Model
-- US-E4.3: Pantry Local Data Source
-- US-E4.4: Pantry Repository Implementation
-- US-E4.5: Pantry Data Layer Providers
+> **Note:** UI skeleton (calendar, menu views) already exists. Stories add the data layer, domain, use cases, and wire everything together.
 
 ---
 
-## PHASE 2: Domain Layer (Use Cases & Business Logic)
+### US-E6.1: Weekly Meal Plan View
 
-### Epic E5: Recipe Use Cases
+**As a** user
+**I want to** see a weekly calendar with meal slots (breakfast, lunch, dinner) for each day
+**So that** I can plan my meals for the week ahead
 
-- US-E5.1: Get All Recipes Use Case
-- US-E5.2: Get Recipe By ID Use Case
-- US-E5.3: Save Recipe Use Case (with validation)
-- US-E5.4: Delete Recipe Use Case
-- US-E5.5: Search Recipes Use Case
-- US-E5.6: Scale Recipe Servings Use Case
-- US-E5.7: Use Case Providers
+**Story Points:** 6 | **Priority:** P0 | **Dependencies:** US-E1.1
 
-### Epic E6: Shopping List Use Cases
+**Vertical Slice Deliverables:**
 
-- US-E6.1: Get All Shopping Lists Use Case
-- US-E6.2: Create Shopping List Use Case
-- US-E6.3: Add Item to List Use Case (with category inference)
-- US-E6.4: Toggle Item Checked Use Case
-- US-E6.5: Generate List from Meal Plan Use Case
-- US-E6.6: Use Case Providers
+| Layer     | Deliverable                                                                                   |
+|-----------|-----------------------------------------------------------------------------------------------|
+| DB        | `MealPlansTable`: `id`, `weekStartDate`, `createdAt`                                         |
+| DB        | `MealSlotsTable`: `id`, `planId` (FK), `date`, `mealType` (enum: breakfast/lunch/dinner), `recipeId` (FK nullable), `customName` (nullable) |
+| Domain    | `MealPlan` entity + `MealSlot` value object                                                  |
+| Domain    | `IMealPlanRepository`: `watchByWeek(weekStart)`, `save()`, `clearSlot(slotId)`              |
+| Data      | `MealPlanDataSource` + `MealPlanRepositoryImpl`                                              |
+| Use Cases | `GetOrCreateWeeklyPlanUseCase(weekStart)`  creates plan if none exists for that week        |
+| Use Cases | `WatchWeeklyPlanUseCase(weekStart)`                                                          |
+| Providers | `mealPlanRepositoryProvider`, `weeklyPlanProvider(weekStart)`                                |
+| State     | `MealPlanNotifier(weekStart)`                                                                |
+| UI        | Wire existing `MenuView` / `CalendarComponent` to Riverpod stream                           |
+| UI        | Week navigation (prev/next week arrows)                                                      |
+| UI        | Empty slot shows "+" placeholder; filled slot shows recipe name + thumbnail                  |
+| Tests     | Unit: `GetOrCreateWeeklyPlanUseCase` creates plan for a new week                            |
+| Tests     | Widget: calendar shows 7 days  3 meal types grid                                           |
+| Tests     | Integration: navigate to Meal Planning tab  see empty week grid                            |
 
-### Epic E7: Meal Planning Use Cases
+**Acceptance Criteria:**
 
-- US-E7.1: Get Weekly Meal Plan Use Case
-- US-E7.2: Assign Recipe to Meal Slot Use Case
-- US-E7.3: Generate Shopping List from Plan Use Case
-- US-E7.4: Clear Meal Slot Use Case
-- US-E7.5: Duplicate Meal Plan Use Case
-- US-E7.6: Use Case Providers
-
-### Epic E8: Pantry Use Cases
-
-- US-E8.1: Get All Pantry Items Use Case
-- US-E8.2: Add Pantry Item Use Case
-- US-E8.3: Update Item Quantity Use Case
-- US-E8.4: Get Expiring Items Use Case
-- US-E8.5: Use Case Providers
-
----
-
-## PHASE 3: Presentation Layer (UI & State Management)
-
-### Epic E9: Core UI Components & Theme
-
-- US-E9.1: App Shell & Navigation
-- US-E9.2: Common Widgets (LoadingSkeleton, ErrorView, EmptyState)
-- US-E9.3: Bottom Navigation
-- US-E9.4: App Bar Components
-- US-E9.5: Form Input Components
-- US-E9.6: Dialogs & Bottom Sheets
-
-### Epic E10: Shopping List UI
-
-- US-E10.1: Shopping Lists Overview Page with State Provider
-- US-E10.2: Shopping List Detail Page with Stream Provider
-- US-E10.3: Add/Edit Item Bottom Sheet
-- US-E10.4: Category Grouping UI
-- US-E10.5: Item Check Animation
-- US-E10.6: List Actions (rename, delete, share)
-
-### Epic E11: Recipe Management UI
-
-- US-E11.1: Recipe List Page with Search
-- US-E11.2: Recipe Detail Page
-- US-E11.3: Add/Edit Recipe Form
-- US-E11.4: Ingredient Input Component
-- US-E11.5: Instruction Steps Component
-- US-E11.6: Recipe Image Picker
-- US-E11.7: Recipe Actions (edit, delete, scale)
-
-### Epic E12: Meal Planning UI
-
-- US-E12.1: Weekly Calendar View
-- US-E12.2: Meal Slot Component
-- US-E12.3: Recipe Picker Bottom Sheet
-- US-E12.4: Drag-and-Drop Recipe Assignment
-- US-E12.5: Generate Shopping List Button
-- US-E12.6: Week Navigation
-
-### Epic E13: Pantry Inventory UI
-
-- US-E13.1: Pantry Items List
-- US-E13.2: Add Pantry Item Form
-- US-E13.3: Expiring Items Badge
-- US-E13.4: Quick Quantity Adjust
-- US-E13.5: Category Filter
-
-### Epic E14: Settings & Data Management
-
-- US-E14.1: Settings Page
-- US-E14.2: Export Data to JSON
-- US-E14.3: Import Data from JSON
-- US-E14.4: Clear All Data (with confirmation)
-- US-E14.5: About/Help Page
+- [ ] Meal Planning tab shows current week by default
+- [ ] 7 columns (days)  3 rows (breakfast/lunch/dinner) grid
+- [ ] Empty slots show "+" tap target
+- [ ] Week header shows date range (e.g., "Mar 3  Mar 9")
+- [ ] Prev/Next arrows navigate between weeks
+- [ ] Integration test: open tab  grid renders correctly
 
 ---
 
-## PHASE 4: Cloud Sync & Collaboration (Post-MVP)
+### US-E6.2: Assign Recipe to Meal Slot
 
-### Epic E15: Sync Engine & Queue
+**As a** user
+**I want to** assign a recipe to a meal slot by tapping on it
+**So that** I can plan what I will cook each day
 
-- US-E15.1: Sync Queue Implementation
-- US-E15.2: Sync Coordinator
-- US-E15.3: Conflict Resolver (Last-Write-Wins)
-- US-E15.4: Operational Transform for Lists
-- US-E15.5: Network Change Listener
-- US-E15.6: Background Sync Job
-- US-E15.7: Sync Status UI Indicator
+**Story Points:** 6 | **Priority:** P0 | **Dependencies:** US-E6.1, US-E5.1
 
-### Epic E16: Cloud Backend Integration
+**Vertical Slice Deliverables:**
 
-- US-E16.1: Choose Backend (Firebase or Supabase)
-- US-E16.2: Remote Data Sources for All Entities
-- US-E16.3: Cloud Functions for Recipe Import
-- US-E16.4: Image Upload & Optimization
-- US-E16.5: API Client with Retry Logic
-- US-E16.6: Database Migration to Cloud
-- US-E16.7: Differential Sync Implementation
-- US-E16.8: Real-time Updates with WebSocket
+| Layer     | Deliverable                                                                               |
+|-----------|-------------------------------------------------------------------------------------------|
+| Use Cases | `AssignRecipeToSlotUseCase(slotId, recipeId)`  upserts slot with recipe reference       |
+| Use Cases | `ClearMealSlotUseCase(slotId)`  sets recipeId to null                                   |
+| UI        | Tapping empty slot opens `RecipePickerBottomSheet` (searchable recipe list)              |
+| UI        | Tapping filled slot shows context menu: "Change Recipe" / "Clear Slot"                   |
+| UI        | After assignment, slot shows recipe thumbnail and name                                    |
+| Tests     | Unit: `AssignRecipeToSlotUseCase` stores `recipeId` on correct slot                     |
+| Tests     | Widget: recipe picker renders recipes from stream                                        |
+| Tests     | Integration: tap slot  pick recipe  slot shows recipe name                            |
 
-### Epic E17: Authentication & Security
+**Acceptance Criteria:**
 
-- US-E17.1: Email/Password Authentication
-- US-E17.2: Google Sign-In
-- US-E17.3: Token Management (Refresh logic)
-- US-E17.4: Secure Storage (Keychain/Keystore)
-- US-E17.5: Row-Level Security Policies
-- US-E17.6: Data Encryption for Sensitive Fields
-
-### Epic E18: Family & Collaboration
-
-- US-E18.1: Create Family Group
-- US-E18.2: Invite Members
-- US-E18.3: Share Shopping List
-- US-E18.4: Real-time Collaborative Editing
-- US-E18.5: User Roles & Permissions
-- US-E18.6: Activity Feed
+- [ ] Tapping an empty slot opens recipe picker
+- [ ] Picker has a search bar to filter recipes
+- [ ] Tapping a recipe in the picker assigns it and closes the sheet
+- [ ] Slot immediately shows assigned recipe name (+ thumbnail if available)
+- [ ] Tapping a filled slot shows context menu (Change / Clear)
+- [ ] Clearing a slot resets it to the "+" placeholder
+- [ ] Integration test: assign  verify slot displays recipe name
 
 ---
 
-## PHASE 5: Performance & Polish
+### US-E6.3: Generate Shopping List from Meal Plan
 
-### Epic E19: Performance Optimization
+**As a** user
+**I want to** generate a shopping list from my weekly meal plan
+**So that** I don't have to copy ingredient lists manually from each recipe
 
-- US-E19.1: Image Caching with CachedNetworkImage
-- US-E19.2: Pagination for Recipe List
-- US-E19.3: Lazy Loading Images
-- US-E19.4: Database Query Optimization with Indexes
-- US-E19.5: Image Compression on Upload
-- US-E19.6: Performance Monitoring Integration
+**Story Points:** 6 | **Priority:** P0 | **Dependencies:** US-E6.2, US-E4.1
 
-### Epic E20: Smart Features & AI
+**Vertical Slice Deliverables:**
 
-- US-E20.1: Recipe Import from URL (Web Scraping)
-- US-E20.2: Ingredient Recognition (ML Kit)
-- US-E20.3: Smart Category Inference
-- US-E20.4: Recipe Recommendations
-- US-E20.5: Nutrition Calculation
-- US-E20.6: Voice Input for Items
-- US-E20.7: Barcode Scanner for Pantry
+| Layer     | Deliverable                                                                                          |
+|-----------|------------------------------------------------------------------------------------------------------|
+| Use Cases | `GenerateShoppingListFromPlanUseCase(planId, listName)`  collects ingredients from all assigned recipes, aggregates quantities by ingredient name + unit, creates a new `ShoppingList` |
+| Domain    | Aggregation rule: same name + same unit  sum quantities; different units kept separate             |
+| State     | `GenerateListNotifier`  loading / error / success states                                           |
+| UI        | "Generate Shopping List" button at bottom of meal plan screen                                       |
+| UI        | Confirmation sheet: shows recipe count + estimated item count                                       |
+| UI        | On success: navigate to the newly created shopping list detail page                                 |
+| Tests     | Unit: aggregation merges "2 cups flour" + "1 cup flour"  "3 cups flour"                          |
+| Tests     | Unit: "2 cups" + "1 tsp" kept as separate items (different units)                                  |
+| Tests     | Integration: plan with 2 recipes  generate  shopping list created with all ingredients           |
 
-### Epic E21: Testing & Quality Assurance
+**Acceptance Criteria:**
 
-- US-E21.1: Unit Test Suite (60% coverage)
-- US-E21.2: Widget Test Suite
-- US-E21.3: Integration Tests for Critical Flows
-- US-E21.4: E2E Tests with Flutter Driver
-- US-E21.5: Performance Tests
-- US-E21.6: Accessibility Tests
-- US-E21.7: Beta Testing Program
-- US-E21.8: Crash Monitoring (Sentry)
+- [ ] "Generate Shopping List" button visible on meal plan screen
+- [ ] Confirmation sheet shows recipe count and estimated item count before creating
+- [ ] Generated list is named after the week (e.g., "Week of Mar 3")
+- [ ] Duplicate ingredients (same name + unit) are combined
+- [ ] After generation, navigation goes to the new shopping list detail page
+- [ ] Integration test: assign recipes  generate list  verify aggregated items
+
+---
+
+### US-E6.4: Meal Plan Duplication & Clearing
+
+**As a** user
+**I want to** duplicate a past week's plan into the current week and clear individual days or the entire week
+**So that** I can reuse meal combinations I enjoyed
+
+**Story Points:** 4 | **Priority:** P2 | **Dependencies:** US-E6.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                              |
+|-----------|------------------------------------------------------------------------------------------|
+| Use Cases | `DuplicateMealPlanUseCase(sourceWeekStart, targetWeekStart)`  copies slot assignments  |
+| Use Cases | `ClearDayUseCase(planId, date)`  removes all 3 slot assignments for a given day        |
+| Use Cases | `ClearWeekUseCase(planId)`  removes all assignments for the week                       |
+| UI        | Week header overflow menu: "Copy from Previous Week" / "Clear Week"                     |
+| UI        | Day column long-press: "Clear Day"                                                       |
+| Tests     | Unit: duplicate use case copies all slot assignments to target week                     |
+| Tests     | Integration: duplicate previous plan  current week shows same recipes                  |
+
+**Acceptance Criteria:**
+
+- [ ] Overflow menu on week header has duplicate and clear options
+- [ ] Duplicating copies recipe assignments (does not generate a shopping list)
+- [ ] Clearing a day removes all 3 slots for that day
+- [ ] Clearing the week removes all assignments; does not delete shopping lists
+- [ ] Confirmation dialog shown before "Clear Week"
+
+---
+
+## EPIC E7: Pantry Inventory Feature
+
+**Goal:** Users can track what they already have at home, update quantities, and see what is about to expire.
+
+**Story Count:** 3 | **Total Points:** 16 | **Priority:** P0
+
+---
+
+### US-E7.1: Pantry Item CRUD
+
+**As a** user
+**I want to** add, view, and remove items from my pantry inventory
+**So that** I know what I already have and can avoid buying duplicates
+
+**Story Points:** 6 | **Priority:** P0 | **Dependencies:** US-E1.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                   |
+|-----------|-----------------------------------------------------------------------------------------------|
+| DB        | `PantryItemsTable`: `id`, `productId` (FK nullable), `name`, `quantity`, `unit`, `categoryId`, `expiryDate` (nullable), `purchasedDate`, `location` (nullable), `createdAt`, `updatedAt`, `isSynced`, `isDeleted` |
+| Domain    | `PantryItem` entity: `isExpired`, `daysUntilExpiry`, `copyWith()`                            |
+| Domain    | `IPantryRepository`: `watchAll()`, `save()`, `delete(id)`, `watchExpiringSoon(days)`         |
+| Data      | `PantryDataSource` + `PantryRepositoryImpl`                                                  |
+| Use Cases | `WatchPantryItemsUseCase`, `AddPantryItemUseCase(name, qty, unit, categoryId?, expiryDate?)` |
+| Use Cases | `DeletePantryItemUseCase(id)`                                                                |
+| Providers | `pantryRepositoryProvider`, `pantryItemsProvider`                                            |
+| State     | `PantryNotifier`                                                                              |
+| UI        | `PantryPage`  items grouped by category; FAB to add                                         |
+| UI        | `AddPantryItemBottomSheet`  name (from catalogue or free-text), qty, unit, expiry date picker |
+| UI        | Swipe-to-delete with undo                                                                     |
+| Tests     | Unit: `AddPantryItemUseCase` rejects quantity  0                                           |
+| Tests     | Widget: pantry page renders items grouped by category                                        |
+| Tests     | Integration: add item  appears in pantry list                                               |
+
+**Acceptance Criteria:**
+
+- [ ] Pantry tab shows items grouped by category
+- [ ] FAB opens add-item form with optional expiry date picker
+- [ ] Item row shows: name, quantity + unit, expiry date (if set)
+- [ ] Swipe-to-delete with undo snackbar
+- [ ] Integration test: add  verify  delete  verify removed
+
+---
+
+### US-E7.2: Quick Quantity Adjustment
+
+**As a** user
+**I want to** quickly update the quantity of a pantry item by tapping + or 
+**So that** I can update my pantry without opening a full edit form
+
+**Story Points:** 4 | **Priority:** P1 | **Dependencies:** US-E7.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                        |
+|-----------|------------------------------------------------------------------------------------|
+| Use Cases | `UpdatePantryItemQuantityUseCase(id, newQuantity)`  clamps to minimum 0          |
+| State     | Optimistic update in `PantryNotifier`                                              |
+| UI        | Inline stepper (`` / qty / `+`) on each pantry item row                          |
+| UI        | Quantity = 0  item dims with "Out of stock" badge (not deleted automatically)    |
+| UI        | Tapping item row (not stepper)  `EditPantryItemPage` (full edit form)            |
+| Tests     | Unit: update use case clamps quantity to 0 minimum                                |
+| Tests     | Widget: tap `+` increases displayed quantity; tap `` decreases                   |
+
+**Acceptance Criteria:**
+
+- [ ] Each pantry row has visible `` and `+` buttons
+- [ ] Quantity updates instantly (optimistic)
+- [ ] Quantity cannot go below 0
+- [ ] Items at 0 show a visual "Out of stock" indicator
+- [ ] Full edit (name, unit, expiry) accessible by tapping the row
+
+---
+
+### US-E7.3: Expiry Tracking & Alerts
+
+**As a** user
+**I want to** see which pantry items are expiring soon
+**So that** I can use them before they go to waste
+
+**Story Points:** 5 | **Priority:** P1 | **Dependencies:** US-E7.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                   |
+|-----------|-----------------------------------------------------------------------------------------------|
+| Domain    | `PantryItem.expiryStatus` enum: `fresh`, `expiringSoon` (< 3 days), `expired`                |
+| Use Cases | `WatchExpiringSoonUseCase(withinDays: 3)`  stream of items expiring within N days           |
+| Providers | `expiringSoonProvider`                                                                        |
+| UI        | Badge on Pantry nav tab showing count of expiring items                                      |
+| UI        | "Expiring Soon" collapsible banner at top of pantry page                                     |
+| UI        | Colour-coded expiry chips on item rows: yellow = expiring soon, red = expired                |
+| UI        | "Show expiring only" filter chip                                                              |
+| Tests     | Unit: `WatchExpiringSoonUseCase` returns only items within threshold                         |
+| Tests     | Widget: badge shows correct count                                                            |
+| Tests     | Integration: add item with expiry tomorrow  badge shows 1                                   |
+
+**Acceptance Criteria:**
+
+- [ ] Nav tab badge shows expiring item count (hidden when 0)
+- [ ] "Expiring Soon" banner appears when  1 item expires within 3 days
+- [ ] Item rows show colour-coded expiry chip
+- [ ] "Show expiring only" filter chip toggles filtered view
+- [ ] Integration test: add item expiring tomorrow  badge shows 1
+
+---
+
+## EPIC E8: Settings & Data Management
+
+**Goal:** Users can configure the app, export their data, and restore from a backup.
+
+**Story Count:** 4 | **Total Points:** 17 | **Priority:** P0
+
+---
+
+### US-E8.1: Settings & Theme Preferences
+
+**As a** user
+**I want to** switch between light and dark mode and configure basic preferences
+**So that** the app works comfortably in my environment
+
+**Story Points:** 4 | **Priority:** P0 | **Dependencies:** US-E1.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                    |
+|-----------|--------------------------------------------------------------------------------|
+| Data      | `SharedPreferences`-based `SettingsDataSource` with typed getters/setters      |
+| Domain    | `AppSettings` value object: `themeMode`, `defaultServings`, `currency`        |
+| Use Cases | `SaveSettingsUseCase(AppSettings)`                                             |
+| Providers | `settingsProvider` (persisted `StateNotifier`)                                 |
+| UI        | `SettingsPage` (exists as `settings_view_page.dart`)  wire it to providers   |
+| UI        | Theme toggle (System / Light / Dark)  applies immediately                    |
+| UI        | Default servings number picker                                                 |
+| UI        | About section (app version, open-source licences)                             |
+| Tests     | Unit: `SaveSettingsUseCase` persists and reads correctly                       |
+| Tests     | Widget: toggling dark mode updates theme immediately in widget tree            |
+
+**Acceptance Criteria:**
+
+- [ ] Settings tab accessible from nav bar
+- [ ] Theme picker applies the theme change immediately
+- [ ] Settings persist across app restarts
+- [ ] About section shows app version
+
+---
+
+### US-E8.2: Export Data to JSON
+
+**As a** user
+**I want to** export all my data to a JSON file
+**So that** I have a backup I can restore or transfer to another device
+
+**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E8.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                |
+|-----------|--------------------------------------------------------------------------------------------|
+| Use Cases | `ExportDataUseCase()`  queries all repositories, builds `AppExportDto` with schema version |
+| Data      | `AppExportDto` (freezed model containing all top-level entities)                          |
+| Use Cases | Serialises dto to JSON; writes file to `getApplicationDocumentsDirectory()`               |
+| UI        | "Export Data" row in Settings  triggers export + shows share/save dialog                 |
+| UI        | Progress indicator during export                                                           |
+| UI        | Success: "Exported 42 recipes, 15 lists..." snackbar + OS share sheet                    |
+| Tests     | Unit: export dto serialises all entities to valid JSON                                    |
+| Tests     | Integration: export  read JSON file  verify recipe count matches DB                    |
+
+**Acceptance Criteria:**
+
+- [ ] "Export Data" option in Settings
+- [ ] Progress indicator shown while export runs
+- [ ] On success, OS share sheet opens with the exported JSON file
+- [ ] JSON file is human-readable and includes `"export_version": 1`
+- [ ] Integration test: export  read file  verify recipe count matches
+
+---
+
+### US-E8.3: Import Data from JSON
+
+**As a** user
+**I want to** import a previously exported JSON file
+**So that** I can restore a backup or transfer data from another device
+
+**Story Points:** 5 | **Priority:** P0 | **Dependencies:** US-E8.2
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                   |
+|-----------|-----------------------------------------------------------------------------------------------|
+| Use Cases | `ImportDataUseCase(filePath)`  reads JSON, validates schema version, upserts all entities   |
+| Use Cases | Conflict rule: existing record not overwritten when import has an older `updatedAt`          |
+| UI        | "Import Data" row in Settings  file picker (JSON files only)                                |
+| UI        | Preview sheet: "Found 42 recipes, 15 lists. Import will merge with existing data."           |
+| UI        | Confirm  progress indicator  success summary                                               |
+| Tests     | Unit: `ImportDataUseCase` rejects invalid JSON schema gracefully                             |
+| Tests     | Unit: existing record not overwritten when import data has older `updatedAt`                |
+| Tests     | Integration: export  wipe DB  import  verify all data restored                           |
+
+**Acceptance Criteria:**
+
+- [ ] "Import Data" opens file picker filtered to JSON
+- [ ] Preview sheet shows entity counts before committing
+- [ ] Import merges (upserts) without duplicating unchanged records
+- [ ] Invalid file shows user-friendly error (no crash)
+- [ ] Integration test: export  import  verify data
+
+---
+
+### US-E8.4: Clear All Data
+
+**As a** user
+**I want to** delete all my data with a single action
+**So that** I can reset the app to a clean state
+
+**Story Points:** 2 | **Priority:** P0 | **Dependencies:** US-E8.1
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                               |
+|-----------|---------------------------------------------------------------------------|
+| Use Cases | `ClearAllDataUseCase()`  truncates all tables respecting FK order        |
+| UI        | "Danger Zone" section in Settings with a red "Clear All Data" button      |
+| UI        | Two-step confirmation: first dialog + second requires typing "DELETE"     |
+| Tests     | Unit: clear use case deletes records from all tables                      |
+| Tests     | Integration: add data  clear  verify empty states on all tabs           |
+
+**Acceptance Criteria:**
+
+- [ ] "Clear All Data" is in a clearly marked "Danger Zone" section
+- [ ] Two confirmation steps prevent accidental deletion
+- [ ] After clearing, all tabs show empty states
+- [ ] App preferences (theme, etc.) are NOT cleared
+
+---
+
+## PHASE 4 (Post-MVP): Cloud Sync & Collaboration
+
+### Epic E9: Sync Engine & Queue
+
+Each story is a vertical slice  sync logic change + UI indicator confirming it works:
+
+- **US-E9.1:** Sync Queue Implementation (table + DAO + queue manager + status indicator in app bar)
+- **US-E9.2:** Sync Coordinator (triggers sync + shows "Syncing" badge)
+- **US-E9.3:** Conflict Resolver  Last-Write-Wins (engine + conflict notification toast)
+- **US-E9.4:** Operational Transform for Lists (merge algorithm + live collaborative cursor)
+- **US-E9.5:** Network Change Listener (offline banner appears/disappears on connectivity change)
+- **US-E9.6:** Background Sync Job (platform background task + last-synced timestamp in Settings)
+- **US-E9.7:** Sync Status UI Indicator (persistent icon showing sync state across all tabs)
+
+---
+
+### Epic E10: Cloud Backend Integration
+
+Each story includes the data-source implementation AND a visible UI confirmation (synced badge, cloud icon):
+
+- US-E10.1: Choose Backend (Firebase or Supabase)  ADR document + scaffolded remote client
+- US-E10.2: Remote Data Sources for all Entities  recipe, shopping list, meal plan, pantry
+- US-E10.3: Cloud Functions for Recipe Import
+- US-E10.4: Image Upload & Optimisation  upload flow + progress indicator
+- US-E10.5: API Client with Retry Logic
+- US-E10.6: Database Migration to Cloud  migration wizard UI
+- US-E10.7: Differential Sync Implementation
+- US-E10.8: Real-time Updates  WebSocket/Stream + live "edited by" indicator
+
+---
+
+### Epic E11: Authentication & Security
+
+- US-E11.1: Email/Password Authentication  full sign-up/sign-in/sign-out flow with UI
+- US-E11.2: Google Sign-In  one-tap button + account avatar in Settings
+- US-E11.3: Token Management  refresh logic + session expiry notification
+- US-E11.4: Secure Storage  Keychain/Keystore integration
+- US-E11.5: Row-Level Security Policies  backend policies + verified via integration test
+- US-E11.6: Data Encryption for Sensitive Fields
+
+---
+
+### Epic E12: Family & Collaboration
+
+- US-E12.1: Create Family Group  group creation form + shareable invite link
+- US-E12.2: Invite Members  invite link flow + acceptance screen
+- US-E12.3: Share Shopping List  share toggle on list detail + shared indicator chip
+- US-E12.4: Real-time Collaborative Editing  live presence dots on shared list
+- US-E12.5: User Roles & Permissions  role picker in group management screen
+- US-E12.6: Activity Feed  feed page showing recent changes by family members
+
+---
+
+## PHASE 5 (Post-MVP): Smart Features
+
+### Epic E13: Smart Features & AI
+
+Each story is a full vertical slice from ML/API integration to UI exposure:
+
+- **US-E13.1:** Recipe Import from URL  URL input field  scraper  new recipe pre-filled in form  save
+- **US-E13.2:** Barcode Scanner for Pantry  camera scan  product lookup  pre-fill add-pantry-item form
+- **US-E13.3:** Smart Category Inference  ML category suggestion chip on add-item forms (accept/reject)
+- **US-E13.4:** Recipe Recommendations  recommendation engine  "Suggested for this week" section in meal plan
+- **US-E13.5:** Nutrition Calculation  per-recipe nutrition API  nutrition card on recipe detail page
+- **US-E13.6:** Voice Input for Items  mic button on AddItem sheet  speech-to-text fills name field
+- **US-E13.7:** Ingredient Recognition from Image  camera button on recipe form  ML-parsed ingredient list pre-fill
+
+---
+
+### Epic E14: Performance Optimisation
+
+- US-E14.1: Pagination for Recipe List (cursor-based, infinite scroll)
+- US-E14.2: Image Caching with `cached_network_image`
+- US-E14.3: Database Query Optimisation  add indexes, measure with `EXPLAIN QUERY PLAN`
+- US-E14.4: Image Compression on Upload
+- US-E14.5: Lazy Loading for Meal Calendar (load adjacent weeks on demand)
+- US-E14.6: Performance Monitoring Integration (Firebase Performance or Sentry)
+
+---
+
+## EPIC E15: Testing & Quality Assurance (Ongoing)
+
+- **US-E15.1:** Unit Test Suite  target 70% coverage across all use cases and entities
+- **US-E15.2:** Widget Test Suite  all pages tested with mocked Riverpod providers
+- **US-E15.3:** Integration Tests for Critical Flows: E2.1, E4.3, E5.2, E6.3
+- **US-E15.4:** E2E Tests with `patrol` or `flutter_driver`
+- **US-E15.5:** Accessibility Tests  screen reader labels, contrast ratios
+- **US-E15.6:** Performance Regression Tests  DB with 1 000+ records
+- **US-E15.7:** Beta Testing Programme
+- **US-E15.8:** Crash Monitoring (Sentry)
 
 ---
 
 ## Release Planning
 
-### MVP v1.0 (Weeks 1-15)
+### MVP v1.0 (Epics E1E8)
 
-**Scope:** Offline-first app with all core features
+**Scope:** Complete offline-first app, all core features testable end-to-end from the UI
 
-- ✅ Complete data layer with Drift
-- ✅ All use cases for offline operations
-- ✅ Full UI for all features
-- ✅ Local data export/import
-- ✅ Comprehensive testing
+| Sprint | Focus                                   | Epics        | Points |
+|--------|-----------------------------------------|--------------|--------|
+| 1      | App Shell + Product Categories          | E1, E2       | ~21    |
+| 2      | Products + Shopping List foundation     | E3, E4 P0   | ~38    |
+| 3      | Shopping List P1 features               | E4 P1P2     | ~12    |
+| 4      | Recipes                                 | E5           | ~26    |
+| 5      | Meal Planning                           | E6           | ~22    |
+| 6      | Pantry + Settings                       | E7, E8       | ~33    |
+| 7      | Bug fixes, polish, QA sprint            | E15          | ~20    |
 
-**Sprint Breakdown:**
+**Estimated Duration:** 7 sprints  2 weeks = **14 weeks** for 2 developers
 
-- Sprint 1-2: Foundation (E0)
-- Sprint 3-4: Data Layer (E1-E4)
-- Sprint 5-7: Domain Layer (E5-E8)
-- Sprint 8-12: Presentation Layer (E9-E14)
-- Sprint 13-15: Testing, Bug Fixes, Polish
-
-### v1.1 (Weeks 16-20)
-
-**Scope:** Cloud sync and collaboration
-
-- 🌐 Sync engine with conflict resolution
-- 🌐 Cloud backend integration
-- 🔐 Authentication
-- 👥 Family sharing
-
-### v1.2 (Weeks 21-25)
-
-**Scope:** Smart features and AI
-
-- 🤖 Recipe import from URL
-- 🤖 ML-based categorization
-- 🤖 Recipe recommendations
-- 📊 Nutrition tracking
+### v1.1  Cloud Sync & Auth (Epics E9E12)
+### v1.2  Smart Features & Performance (Epics E13E14)
 
 ---
 
-## Velocity Estimation
+## Appendix: Technology Stack
 
-**Team:** 2 developers
-**Sprint Length:** 2 weeks
-**Velocity:** 40-50 story points per sprint (both developers combined)
-
-**MVP Timeline:**
-
-- Total Points: 341
-- Sprints Required: ~7-8 sprints
-- Duration: **15-16 weeks**
-
-**Full Product (with Post-MVP):**
-
-- Total Points: 568
-- Sprints Required: ~12-14 sprints
-- Duration: **24-28 weeks**
+| Concern           | Technology                                     |
+|-------------------|------------------------------------------------|
+| Framework         | Flutter 3.16+                                  |
+| Language          | Dart 3.2+                                      |
+| State Management  | Riverpod 2.x (`AsyncNotifier`, `StreamProvider`) |
+| Local Database    | Drift 2.x (type-safe SQLite)                   |
+| Functional        | Dartz (`Either<Failure, T>`)                   |
+| JSON / Models     | freezed + json_serializable                    |
+| Navigation        | GoRouter                                       |
+| Settings          | shared_preferences                             |
+| Testing           | flutter_test, mockito, integration_test, patrol |
+| CI/CD             | GitHub Actions                                 |
 
 ---
 
-## Risk Mitigation
-
-### Technical Risks
-
-1. **Drift Migration Complexity**
-   - Mitigation: Start simple, add complex queries incrementally
-   - Test migrations thoroughly in dev environment
-
-2. **Sync Conflict Resolution**
-   - Mitigation: Implement simple Last-Write-Wins first
-   - Add operational transform for critical features only
-
-3. **Performance with Large Datasets**
-   - Mitigation: Pagination, lazy loading, indexed queries
-   - Performance testing with 10K+ records
-
-### Schedule Risks
-
-1. **Scope Creep**
-   - Mitigation: Strict MVP definition, defer enhancements to v1.1+
-   - Regular sprint reviews to stay on track
-
-2. **Testing Takes Longer**
-   - Mitigation: Write tests alongside features (TDD)
-   - Allocate 20% of sprint for testing
-
----
-
-## Appendix
-
-### Architecture Quick Reference
-
-```
-┌─────────────────────────────────────────┐
-│       Presentation Layer                │  ← Pages, Widgets, Providers
-│  (UI, State Management with Riverpod)   │
-├─────────────────────────────────────────┤
-│      Application Layer                  │  ← Use Cases (Business Logic)
-│         (Use Cases)                     │
-├─────────────────────────────────────────┤
-│        Domain Layer                     │  ← Entities, Repository Interfaces
-│  (Entities, Repository Interfaces)      │    (Pure Dart, no dependencies)
-├─────────────────────────────────────────┤
-│         Data Layer                      │  ← Models, Data Sources, Repository Impl
-│  (Models, Data Sources, Repositories)   │    (Drift, Network, Conversions)
-└─────────────────────────────────────────┘
-```
-
-### Technology Stack
-
-- **Framework:** Flutter 3.16+
-- **Language:** Dart 3.2+
-- **State Management:** Riverpod 2.x
-- **Local Database:** Drift (SQLite)
-- **Functional:** Dartz (Either, Option)
-- **JSON:** Freezed, json_serializable
-- **Testing:** flutter_test, mockito, integration_test
-- **CI/CD:** GitHub Actions
-
----
-
-**Document End**
-
-This comprehensive epic and user story document provides a complete roadmap for building the Flutter Shopping List & Meal Planning App following Clean Architecture principles with offline-first approach using Drift and Riverpod.
+**Document End  Version 5.0 (Vertical Slice Approach)**

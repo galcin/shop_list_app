@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:intl/intl.dart';
 import 'package:shop_list_app/core/utils/date_utils.dart';
 
 void main() {

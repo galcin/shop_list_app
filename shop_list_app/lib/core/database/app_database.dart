@@ -1,4 +1,5 @@
 import 'package:drift/drift.dart';
+import 'package:shop_list_app/core/utils/app_logger.dart';
 import 'tables/product_category_table.dart';
 import 'tables/product_table.dart';
 import 'tables/recipe_table.dart';
@@ -25,13 +26,18 @@ class AppDatabase extends _$AppDatabase {
   // Factory constructor for backward compatibility
   factory AppDatabase() => instance;
 
+  /// Factory constructor for tests: accepts any [QueryExecutor] (e.g. NativeDatabase.memory()).
+  AppDatabase.forTesting(QueryExecutor executor) : super(executor);
+
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 4;
 
   /// Step-by-step migration strategy.
   ///
   /// v1 → v2: initial data-table additions (ProductCategories, Products, Recipes).
   /// v2 → v3: add sync_queue table to support Post-MVP cloud sync (US-E0.2).
+  /// v3 → v4: add colorHex, iconName, sortOrder, createdAt, updatedAt to
+  ///           product_categories for E2 feature (US-E2.1 – US-E2.3).
   @override
   MigrationStrategy get migration {
     return MigrationStrategy(
@@ -41,18 +47,128 @@ class AppDatabase extends _$AppDatabase {
       },
       // Called for each schema version increment above the stored version.
       onUpgrade: (Migrator m, int from, int to) async {
-        // v1 → v2: ProductCategories, Products, Recipes were already handled
-        // by the original createAll(); nothing additional needed here.
+        AppLogger.instance.info('[DB] onUpgrade from=$from to=$to');
 
         // v2 → v3: create the SyncQueue table.
         if (from < 3) {
-          await m.createTable(syncQueue);
+          try {
+            await m.createTable(syncQueue);
+            AppLogger.instance.info('[DB] Created sync_queue table');
+          } catch (e) {
+            AppLogger.instance
+                .warning('[DB] sync_queue already exists (skipped)', error: e);
+          }
+        }
+
+        // v3 → v4: add new columns to ProductCategories.
+        if (from < 4) {
+          Future<void> tryAdd(
+              String colName, Future<void> Function() fn) async {
+            try {
+              await fn();
+              AppLogger.instance.info('[DB] Added column $colName');
+            } catch (e) {
+              AppLogger.instance.warning(
+                  '[DB] Column $colName already exists (skipped)',
+                  error: e);
+            }
+          }
+
+          await tryAdd('color_hex',
+              () => m.addColumn(productCategories, productCategories.colorHex));
+          await tryAdd('icon_name',
+              () => m.addColumn(productCategories, productCategories.iconName));
+          await tryAdd(
+              'sort_order',
+              () =>
+                  m.addColumn(productCategories, productCategories.sortOrder));
+          await tryAdd(
+              'created_at',
+              () =>
+                  m.addColumn(productCategories, productCategories.createdAt));
+          await tryAdd(
+              'updated_at',
+              () =>
+                  m.addColumn(productCategories, productCategories.updatedAt));
+
+          final nowMillis = DateTime.now().millisecondsSinceEpoch;
+          await customStatement(
+            "UPDATE product_categories SET created_at = $nowMillis "
+            "WHERE typeof(created_at) != 'integer'",
+          );
+          await customStatement(
+            "UPDATE product_categories SET updated_at = $nowMillis "
+            "WHERE typeof(updated_at) != 'integer'",
+          );
+          AppLogger.instance.info('[DB] onUpgrade v3→v4 complete');
         }
       },
-      // Optional: runs after every open (new or upgraded) to verify integrity.
+      // Runs after every open (new or upgraded) to verify integrity.
       beforeOpen: (details) async {
-        // Enable foreign-key enforcement on every connection.
+        AppLogger.instance.info(
+          '[DB] Opening — schemaVersion=${details.versionNow}, '
+          'wasCreated=${details.wasCreated}, '
+          'hadUpgrade=${details.hadUpgrade}',
+        );
+
         await customStatement('PRAGMA foreign_keys = ON');
+
+        // Self-healing: ensure all v4 columns exist regardless of migration
+        // history. This recovers databases where onUpgrade failed silently.
+        try {
+          final existingCols = await customSelect(
+            "SELECT name FROM pragma_table_info('product_categories')",
+          )
+              .get()
+              .then((rows) => rows.map((r) => r.read<String>('name')).toSet());
+
+          AppLogger.instance
+              .info('[DB] product_categories columns: $existingCols');
+
+          if (!existingCols.contains('color_hex')) {
+            await customStatement(
+                'ALTER TABLE product_categories ADD COLUMN color_hex TEXT');
+            AppLogger.instance.info('[DB] Recovered: added color_hex');
+          }
+          if (!existingCols.contains('icon_name')) {
+            await customStatement(
+                'ALTER TABLE product_categories ADD COLUMN icon_name TEXT');
+            AppLogger.instance.info('[DB] Recovered: added icon_name');
+          }
+          if (!existingCols.contains('sort_order')) {
+            await customStatement(
+                'ALTER TABLE product_categories ADD COLUMN sort_order INTEGER NOT NULL DEFAULT 0');
+            AppLogger.instance.info('[DB] Recovered: added sort_order');
+          }
+          if (!existingCols.contains('created_at')) {
+            final nowMillis = DateTime.now().millisecondsSinceEpoch;
+            await customStatement(
+                'ALTER TABLE product_categories ADD COLUMN created_at INTEGER NOT NULL DEFAULT $nowMillis');
+            AppLogger.instance.info('[DB] Recovered: added created_at');
+          }
+          if (!existingCols.contains('updated_at')) {
+            final nowMillis = DateTime.now().millisecondsSinceEpoch;
+            await customStatement(
+                'ALTER TABLE product_categories ADD COLUMN updated_at INTEGER NOT NULL DEFAULT $nowMillis');
+            AppLogger.instance.info('[DB] Recovered: added updated_at');
+          }
+
+          // Fix any rows where datetime was stored as SQLite text instead of
+          // integer milliseconds (happens when DEFAULT CURRENT_TIMESTAMP was used).
+          final nowMillis = DateTime.now().millisecondsSinceEpoch;
+          await customStatement(
+            "UPDATE product_categories SET created_at = $nowMillis "
+            "WHERE typeof(created_at) != 'integer'",
+          );
+          await customStatement(
+            "UPDATE product_categories SET updated_at = $nowMillis "
+            "WHERE typeof(updated_at) != 'integer'",
+          );
+          AppLogger.instance.info('[DB] Self-heal complete');
+        } catch (e, st) {
+          AppLogger.instance
+              .error('[DB] Self-heal failed', error: e, stackTrace: st);
+        }
       },
     );
   }
@@ -61,17 +177,20 @@ class AppDatabase extends _$AppDatabase {
   /// Safe to call multiple times – seeders check for existing data.
   Future<void> ensureInitialized() async {
     try {
-      print('[Database] Starting seeding...');
+      AppLogger.instance.info('[Database] Starting seeding...');
       await ProductCategorySeeder.seedDefaultCategories(this);
-      print('[Database] Product categories seeded');
+      AppLogger.instance.info('[Database] Product categories seeded');
       await ProductSeeder.seedDefaultProducts(this);
-      print('[Database] Products seeded');
+      AppLogger.instance.info('[Database] Products seeded');
       await RecipeSeeder.seedDefaultRecipes(this);
-      print('[Database] Recipes seeded');
-      print('[Database] Seeding complete');
+      AppLogger.instance.info('[Database] Recipes seeded');
+      AppLogger.instance.info('[Database] Seeding complete');
     } catch (e, stackTrace) {
-      print('[Database] Error during seeding: $e');
-      print('[Database] Stack trace: $stackTrace');
+      AppLogger.instance.error(
+        '[Database] Error during seeding',
+        error: e,
+        stackTrace: stackTrace,
+      );
       rethrow;
     }
   }

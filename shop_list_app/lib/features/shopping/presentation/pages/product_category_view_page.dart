@@ -1,323 +1,342 @@
 import 'package:flutter/material.dart';
-import '../../domain/entities/product_category.dart' as model;
-import '../../domain/repositories/i_product_category_repository.dart';
-import '../../data/repositories/product_category_repository.dart';
-import 'package:shop_list_app/core/database/app_database.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shop_list_app/core/error/failures.dart';
+import 'package:shop_list_app/shared/widgets/async_value_widget.dart';
+import 'package:shop_list_app/shared/widgets/empty_state_widget.dart';
+import 'package:shop_list_app/shared/widgets/error_state_widget.dart';
+import '../../domain/entities/product_category.dart';
+import '../providers/product_category_providers.dart';
+import '../widgets/category_bottom_sheet.dart';
 import 'product_category_detail_page.dart';
 
-class ProductCategoryViewPage extends StatefulWidget {
+class ProductCategoryViewPage extends ConsumerStatefulWidget {
+  const ProductCategoryViewPage({super.key});
+
   @override
-  _ProductCategoryViewPageState createState() =>
+  ConsumerState<ProductCategoryViewPage> createState() =>
       _ProductCategoryViewPageState();
 }
 
-class _ProductCategoryViewPageState extends State<ProductCategoryViewPage> {
-  late final IProductCategoryRepository _categoryRepository;
-  late final AppDatabase _database;
-  List<model.ProductCategory> _categories = [];
-  bool _isLoading = true;
-  String _searchQuery = '';
+class _ProductCategoryViewPageState
+    extends ConsumerState<ProductCategoryViewPage> {
+  bool _reorderMode = false;
 
-  @override
-  void initState() {
-    super.initState();
-    _database = AppDatabase.instance;
-    _categoryRepository = ProductCategoryRepository(_database);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _loadCategories();
-    });
-  }
-
-  Future<void> _loadCategories() async {
-    if (!mounted) return;
-
-    setState(() {
-      _isLoading = true;
-    });
-
-    try {
-      final categories = await _categoryRepository.getAllCategories();
-
-      if (!mounted) return;
-
-      setState(() {
-        _categories = categories;
-        _isLoading = false;
-      });
-    } catch (e) {
-      if (!mounted) return;
-
-      setState(() {
-        _isLoading = false;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error loading categories: $e')),
-      );
-    }
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  List<model.ProductCategory> get _filteredCategories {
-    if (_searchQuery.isEmpty) {
-      return _categories;
-    }
-    return _categories
-        .where((category) =>
-            category.name.toLowerCase().contains(_searchQuery.toLowerCase()))
-        .toList();
-  }
+  // ── Build ──────────────────────────────────────────────────────────────────
 
   @override
   Widget build(BuildContext context) {
+    final asyncValue = ref.watch(productCategoryListProvider);
+
     return Scaffold(
+      backgroundColor: const Color(0xFF121212),
       appBar: AppBar(
-        title: Text('Product Categories'),
-      ),
-      body: Column(
-        children: [
-          _buildSearchBar(),
-          Expanded(
-            child: _isLoading
-                ? Center(child: CircularProgressIndicator())
-                : _filteredCategories.isEmpty
-                    ? _buildEmptyState()
-                    : _buildCategoryGrid(),
+        backgroundColor: const Color(0xFF121212),
+        title: const Text(
+          'Categories',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
+          ),
+        ),
+        actions: [
+          PopupMenuButton<String>(
+            color: const Color(0xFF1E1E1E),
+            icon: const Icon(Icons.more_vert, color: Colors.white),
+            onSelected: (v) {
+              if (v == 'reorder') {
+                setState(() => _reorderMode = !_reorderMode);
+              }
+            },
+            itemBuilder: (_) => [
+              PopupMenuItem(
+                value: 'reorder',
+                child: Text(
+                  _reorderMode ? 'Done Reordering' : 'Reorder',
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _addCategory,
-        child: Icon(Icons.add),
-        tooltip: 'Add Category',
-      ),
-    );
-  }
-
-  Widget _buildSearchBar() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: TextField(
-        decoration: InputDecoration(
-          hintText: 'Search categories...',
-          prefixIcon: Icon(Icons.search),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          filled: true,
+      body: AsyncValueWidget<List<ProductCategory>>(
+        value: asyncValue,
+        error: (err, st) => ErrorStateWidget(
+          message: err is Failure ? err.message : err.toString(),
+          onRetry: () => ref.invalidate(productCategoryListProvider),
         ),
-        onChanged: (value) {
-          setState(() {
-            _searchQuery = value;
-          });
+        data: (categories) {
+          if (categories.isEmpty) {
+            return EmptyStateWidget(
+              icon: Icons.category_outlined,
+              title: 'No categories yet',
+              subtitle: 'Tap + to add your first category',
+              actionLabel: '+ Add Category',
+              onAction: () => showCreateCategorySheet(context),
+            );
+          }
+          return _reorderMode
+              ? _buildReorderableList(categories)
+              : _buildGrid(categories);
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color(0xFFFF6B35),
+        foregroundColor: Colors.white,
+        tooltip: 'Add Category',
+        onPressed: () => showCreateCategorySheet(context),
+        child: const Icon(Icons.add),
+      ),
     );
   }
 
-  Widget _buildCategoryGrid() {
+  // ── Grid view ──────────────────────────────────────────────────────────────
+
+  Widget _buildGrid(List<ProductCategory> categories) {
+    // Extra tile at the end: "New Category"
+    final itemCount = categories.length + 1;
     return GridView.builder(
-      padding: EdgeInsets.all(16),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-        childAspectRatio: 1.0,
+      padding: const EdgeInsets.all(16),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        crossAxisSpacing: 12,
+        mainAxisSpacing: 12,
+        childAspectRatio: 0.9,
       ),
-      itemCount: _filteredCategories.length,
-      itemBuilder: (context, index) {
-        return _buildCategoryCard(_filteredCategories[index]);
+      itemCount: itemCount,
+      itemBuilder: (_, i) {
+        if (i == categories.length) return _buildNewTile();
+        return _buildCategoryTile(categories[i]);
       },
     );
   }
 
-  Widget _buildCategoryCard(model.ProductCategory category) {
-    return Card(
-      elevation: 3,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
+  Widget _buildCategoryTile(ProductCategory category) {
+    final bg = _parseColor(category.colorHex) ?? const Color(0xFF2A2A2A);
+    return Dismissible(
+      key: ValueKey(category.id),
+      direction: DismissDirection.startToEnd,
+      background: Container(
+        alignment: Alignment.centerLeft,
+        padding: const EdgeInsets.only(left: 16),
+        decoration: BoxDecoration(
+          color: const Color(0xFFEF4444),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: const Icon(Icons.delete_outline, color: Colors.white),
       ),
-      child: InkWell(
-        onTap: () => _viewCategoryDetails(category),
-        borderRadius: BorderRadius.circular(16),
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // Category Icon/Emoji
-              Container(
-                width: 70,
-                height: 70,
-                decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(12),
+      confirmDismiss: (_) => _confirmDelete(category),
+      onDismissed: (_) => _handleDeleteDismissed(category),
+      child: GestureDetector(
+        onLongPress: () => showEditCategorySheet(context, category),
+        child: InkWell(
+          onTap: () => _openDetail(category),
+          borderRadius: BorderRadius.circular(16),
+          child: Container(
+            decoration: BoxDecoration(
+              color: bg.withValues(alpha: 0.25),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: bg.withValues(alpha: 0.5), width: 1),
+            ),
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Icon
+                Text(
+                  category.iconName ?? category.photo ?? '📦',
+                  style: const TextStyle(fontSize: 28),
                 ),
-                child: Center(
-                  child: category.photo != null && category.photo!.isNotEmpty
-                      ? Text(
-                          category.photo!,
-                          style: TextStyle(fontSize: 42),
-                        )
-                      : Icon(
-                          Icons.category,
-                          size: 42,
-                          color: Colors.grey[400],
-                        ),
+                const Spacer(),
+                // Name
+                Text(
+                  category.name,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
-              ),
-              SizedBox(height: 8),
-              // Category Name
-              Text(
-                category.name,
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
+                // Trailing edit icon
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: GestureDetector(
+                    onTap: () => showEditCategorySheet(context, category),
+                    child: const Icon(Icons.edit_outlined,
+                        color: Colors.white38, size: 16),
+                  ),
                 ),
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildEmptyState() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.category_outlined,
-            size: 80,
-            color: Colors.grey[400],
+  Widget _buildNewTile() {
+    return GestureDetector(
+      onTap: () => showCreateCategorySheet(context),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: Colors.white24,
+            width: 1.5,
+            strokeAlign: BorderSide.strokeAlignCenter,
           ),
-          SizedBox(height: 16),
-          Text(
-            'No categories found',
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.grey[600],
-            ),
-          ),
-          SizedBox(height: 8),
-          Text(
-            'Tap + to add a new category',
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey[500],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _viewCategoryDetails(model.ProductCategory category) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ProductCategoryDetailPage(category: category),
-      ),
-    ).then((_) => _loadCategories());
-  }
-
-  void _addCategory() {
-    _showCategoryDialog();
-  }
-
-  void _showCategoryDialog({model.ProductCategory? category}) {
-    final isEditing = category != null;
-    final nameController = TextEditingController(text: category?.name ?? '');
-    final photoController = TextEditingController(text: category?.photo ?? '');
-
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(isEditing ? 'Edit Category' : 'Add Category'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
+        ),
+        child: const Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: nameController,
-              decoration: InputDecoration(
-                labelText: 'Category Name',
-                border: OutlineInputBorder(),
-              ),
-              autofocus: true,
-            ),
-            SizedBox(height: 16),
-            TextField(
-              controller: photoController,
-              decoration: InputDecoration(
-                labelText: 'Emoji Icon',
-                border: OutlineInputBorder(),
-                hintText: '🍎',
-              ),
+            Icon(Icons.add, color: Colors.white38, size: 32),
+            SizedBox(height: 4),
+            Text(
+              'New',
+              style: TextStyle(color: Colors.white38, fontSize: 13),
             ),
           ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              final name = nameController.text.trim();
-              final photo = photoController.text.trim();
-
-              if (name.isEmpty) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Please enter a category name')),
-                );
-                return;
-              }
-
-              try {
-                if (isEditing) {
-                  await _categoryRepository.updateCategory(
-                    model.ProductCategory(
-                      id: category.id,
-                      name: name,
-                      photo: photo.isEmpty ? null : photo,
-                    ),
-                  );
-                } else {
-                  await _categoryRepository.addCategory(
-                    model.ProductCategory(
-                      id: 0, // Will be auto-generated
-                      name: name,
-                      photo: photo.isEmpty ? null : photo,
-                    ),
-                  );
-                }
-
-                Navigator.pop(context);
-                _loadCategories();
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(isEditing
-                        ? 'Category updated'
-                        : 'Category added successfully'),
-                  ),
-                );
-              } catch (e) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Error saving category: $e')),
-                );
-              }
-            },
-            child: Text(isEditing ? 'Update' : 'Add'),
-          ),
-        ],
       ),
     );
+  }
+
+  // ── Reorderable list ───────────────────────────────────────────────────────
+
+  Widget _buildReorderableList(List<ProductCategory> categories) {
+    return ReorderableListView.builder(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      itemCount: categories.length,
+      onReorder: (oldIndex, newIndex) {
+        if (newIndex > oldIndex) newIndex--;
+        final reordered = [...categories];
+        final item = reordered.removeAt(oldIndex);
+        reordered.insert(newIndex, item);
+        ref
+            .read(productCategoryListProvider.notifier)
+            .reorderCategories(reordered.map((c) => c.id).toList());
+      },
+      itemBuilder: (_, i) {
+        final category = categories[i];
+        return _buildReorderTile(category, key: ValueKey(category.id));
+      },
+    );
+  }
+
+  Widget _buildReorderTile(ProductCategory category, {required Key key}) {
+    final bg = _parseColor(category.colorHex) ?? const Color(0xFF2A2A2A);
+    return Container(
+      key: key,
+      margin: const EdgeInsets.symmetric(vertical: 4),
+      decoration: BoxDecoration(
+        color: const Color(0xFF1E1E1E),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: bg.withValues(alpha: 0.4), width: 1),
+      ),
+      child: ListTile(
+        leading: Text(
+          category.iconName ?? category.photo ?? '📦',
+          style: const TextStyle(fontSize: 24),
+        ),
+        title: Text(
+          category.name,
+          style: const TextStyle(color: Colors.white, fontSize: 15),
+        ),
+        trailing: ReorderableDragStartListener(
+          index: 0, // placeholder; ReorderableListView manages this
+          child: const Icon(Icons.drag_handle, color: Color(0xFF9CA3AF)),
+        ),
+      ),
+    );
+  }
+
+  // ── Helpers ────────────────────────────────────────────────────────────────
+
+  void _openDetail(ProductCategory category) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ProductCategoryDetailPage(category: category),
+      ),
+    );
+  }
+
+  /// Returns [true] (confirm) or [false] (cancel) from the confirmation dialog.
+  /// If the category has products, shows an extra warning.
+  Future<bool> _confirmDelete(ProductCategory category) async {
+    final productCount = await ref
+        .read(productCategoryRepositoryProvider)
+        .countProductsForCategory(category.id);
+
+    if (!mounted) return false;
+
+    return await showDialog<bool>(
+          context: context,
+          builder: (_) => AlertDialog(
+            backgroundColor: const Color(0xFF1E1E1E),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            title: Text(
+              'Delete "${category.name}"?',
+              style: const TextStyle(color: Colors.white),
+            ),
+            content: productCount > 0
+                ? Text(
+                    'This category has $productCount product(s).\n'
+                    'They will become uncategorised.',
+                    style: const TextStyle(color: Colors.white70),
+                  )
+                : null,
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: const Text('Cancel',
+                    style: TextStyle(color: Colors.white54)),
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(context, true),
+                child: const Text('Delete',
+                    style: TextStyle(color: Color(0xFFEF4444))),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+  }
+
+  void _handleDeleteDismissed(ProductCategory category) {
+    ref
+        .read(productCategoryListProvider.notifier)
+        .deleteCategory(category.id, force: true);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('"${category.name}" deleted'),
+        duration: const Duration(seconds: 4),
+        action: SnackBarAction(
+          label: 'Undo',
+          onPressed: () {
+            ref.read(productCategoryListProvider.notifier).createCategory(
+                  name: category.name,
+                  colorHex: category.colorHex,
+                  iconName: category.iconName ?? category.photo,
+                );
+          },
+        ),
+      ),
+    );
+  }
+
+  Color? _parseColor(String? hex) {
+    if (hex == null || hex.isEmpty) return null;
+    try {
+      final clean = hex.replaceAll('#', '');
+      return Color(int.parse('FF$clean', radix: 16));
+    } catch (_) {
+      return null;
+    }
   }
 }

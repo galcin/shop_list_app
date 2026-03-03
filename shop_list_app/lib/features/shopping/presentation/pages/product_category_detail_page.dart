@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import '../../domain/entities/product_category.dart' as model;
-import '../../domain/entities/product.dart' as model;
+import '../../domain/entities/product_category.dart' as cat_model;
+import '../../domain/entities/product.dart' as prod_model;
 import '../../domain/repositories/i_product_category_repository.dart';
 import '../../domain/repositories/i_product_repository.dart';
+import '../../data/datasources/product_category_data_source.dart';
 import '../../data/repositories/product_category_repository.dart';
 import '../../data/repositories/product_repository.dart';
 import 'package:shop_list_app/core/database/app_database.dart';
 
 class ProductCategoryDetailPage extends StatefulWidget {
-  final model.ProductCategory category;
+  final cat_model.ProductCategory category;
 
   const ProductCategoryDetailPage({required this.category});
 
@@ -21,16 +22,17 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
   late final IProductCategoryRepository _categoryRepository;
   late final IProductRepository _productRepository;
   late final AppDatabase _database;
-  List<model.Product> _categoryProducts = [];
+  List<prod_model.Product> _categoryProducts = [];
   bool _isLoading = true;
 
-  model.ProductCategory get category => widget.category;
+  cat_model.ProductCategory get category => widget.category;
 
   @override
   void initState() {
     super.initState();
     _database = AppDatabase.instance;
-    _categoryRepository = ProductCategoryRepository(_database);
+    _categoryRepository =
+        ProductCategoryRepository(ProductCategoryDataSource(_database));
     _productRepository = ProductRepository(_database);
     _loadCategoryProducts();
   }
@@ -299,7 +301,7 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
 
               try {
                 await _categoryRepository.updateCategory(
-                  model.ProductCategory(
+                  cat_model.ProductCategory(
                     id: category.id,
                     name: name,
                     photo: photo.isEmpty ? null : photo,

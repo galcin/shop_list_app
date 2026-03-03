@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../domain/entities/product.dart' as model;
-import '../../domain/entities/product_category.dart' as model;
+import '../../domain/entities/product.dart' as prod_model;
+import '../../domain/entities/product_category.dart' as cat_model;
 import '../../domain/repositories/i_product_repository.dart';
 import '../../domain/repositories/i_product_category_repository.dart';
+import '../../data/datasources/product_category_data_source.dart';
 import '../../data/repositories/product_repository.dart';
 import '../../data/repositories/product_category_repository.dart';
 import 'package:shop_list_app/core/database/app_database.dart';
@@ -17,8 +18,8 @@ class _ProductViewPageState extends State<ProductViewPage> {
   late final IProductRepository _productRepository;
   late final IProductCategoryRepository _categoryRepository;
   late final AppDatabase _database;
-  List<model.Product> _products = [];
-  List<model.ProductCategory> _categories = [];
+  List<prod_model.Product> _products = [];
+  List<cat_model.ProductCategory> _categories = [];
   bool _isLoading = true;
   String _searchQuery = '';
   int? _selectedCategoryId;
@@ -30,7 +31,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
     // Use the singleton instance that was initialized at startup
     _database = AppDatabase.instance;
     _productRepository = ProductRepository(_database);
-    _categoryRepository = ProductCategoryRepository(_database);
+    _categoryRepository = ProductCategoryRepository(ProductCategoryDataSource(_database));
     // Defer loading slightly to ensure everything is ready
     WidgetsBinding.instance.addPostFrameCallback((_) {
       print('[ProductView] Starting to load products');
@@ -90,7 +91,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
     super.dispose();
   }
 
-  List<model.Product> get _filteredProducts {
+  List<prod_model.Product> get _filteredProducts {
     return _products.where((product) {
       final matchesSearch =
           product.name?.toLowerCase().contains(_searchQuery.toLowerCase()) ??
@@ -164,7 +165,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
     );
   }
 
-  Widget _buildProductCard(model.Product product) {
+  Widget _buildProductCard(prod_model.Product product) {
     final isExpiringSoon = product.expirationDate != null &&
         product.expirationDate!.isBefore(DateTime.now().add(Duration(days: 7)));
     final isExpired = product.expirationDate != null &&
@@ -381,11 +382,11 @@ class _ProductViewPageState extends State<ProductViewPage> {
     _showProductDialog();
   }
 
-  void _editProduct(model.Product product) {
+  void _editProduct(prod_model.Product product) {
     _showProductDialog(product: product);
   }
 
-  void _showProductDialog({model.Product? product}) {
+  void _showProductDialog({prod_model.Product? product}) {
     final isEditing = product != null;
     final nameController = TextEditingController(text: product?.name ?? '');
     final quantityController =
@@ -557,7 +558,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
                 try {
                   if (isEditing && product.id != null) {
                     await _productRepository.updateProduct(
-                      model.Product(
+                      prod_model.Product(
                         id: product.id,
                         name: name,
                         quantity: quantity,
@@ -573,7 +574,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
                     );
                   } else {
                     await _productRepository.addProduct(
-                      model.Product(
+                      prod_model.Product(
                         id: 0, // Will be auto-generated
                         name: name,
                         quantity: quantity,
@@ -603,7 +604,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
     );
   }
 
-  void _deleteProduct(model.Product product) {
+  void _deleteProduct(prod_model.Product product) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -638,7 +639,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
     );
   }
 
-  void _viewProductDetails(model.Product product) async {
+  void _viewProductDetails(prod_model.Product product) async {
     final category = product.productCategoryId != null
         ? await _categoryRepository.getCategoryById(product.productCategoryId!)
         : null;

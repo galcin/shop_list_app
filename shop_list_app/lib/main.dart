@@ -1,12 +1,40 @@
+import 'dart:ui';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/database/app_database.dart';
-import 'package:shop_list_app/shared/route_constants.dart';
+import 'package:shop_list_app/core/navigation/app_route.dart';
+import 'package:shop_list_app/core/utils/app_logger.dart';
 
 import 'app.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialise file logger first so all subsequent errors are captured.
+  await AppLogger.instance.init();
+
+  // Capture Flutter framework errors (widget build errors, etc.).
+  FlutterError.onError = (FlutterErrorDetails details) {
+    AppLogger.instance.error(
+      'FlutterError: ${details.exceptionAsString()}',
+      stackTrace: details.stack,
+    );
+    FlutterError.presentError(details);
+  };
+
+  // Capture async / isolate errors that escape Flutter's error handler.
+  PlatformDispatcher.instance.onError = (Object error, StackTrace stack) {
+    AppLogger.instance.error(
+      'Unhandled platform error: $error',
+      error: error,
+      stackTrace: stack,
+    );
+    return false; // let the platform handle it too
+  };
+
   runApp(const ProviderScope(child: App()));
 }
 
@@ -28,31 +56,31 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _initializeApp() async {
     try {
-      print('[Splash] Starting database initialization...');
-      // Initialize database in background
+      AppLogger.instance.info('[Splash] Starting database initialization...');
       final database = AppDatabase.instance;
       await database.ensureInitialized();
-      print('[Splash] Database initialization complete');
+      AppLogger.instance.info('[Splash] Database initialization complete');
 
-      // Navigate to main view after initialization
       if (mounted) {
-        print('[Splash] Navigating to main view');
-        Navigator.of(context).pushReplacementNamed(mainView);
+        AppLogger.instance.info('[Splash] Navigating to main shell');
+        context.go(AppRoute.shopping.path);
       }
     } catch (e, stackTrace) {
-      print('[Splash] Error initializing app: $e');
-      print('[Splash] Stack trace: $stackTrace');
+      AppLogger.instance.error(
+        '[Splash] Error initializing app',
+        error: e,
+        stackTrace: stackTrace,
+      );
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Error initializing app: $e'),
-            duration: Duration(seconds: 5),
+            duration: const Duration(seconds: 5),
           ),
         );
-        // Still navigate to main view to prevent being stuck
-        await Future.delayed(Duration(seconds: 2));
+        await Future.delayed(const Duration(seconds: 2));
         if (mounted) {
-          Navigator.of(context).pushReplacementNamed(mainView);
+          context.go(AppRoute.shopping.path);
         }
       }
     }
@@ -60,7 +88,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
