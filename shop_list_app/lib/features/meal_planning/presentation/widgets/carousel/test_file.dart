@@ -13,7 +13,7 @@ import 'package:flutter/rendering.dart' show ViewportOffset;
 
 @immutable
 class ExampleInstagramFilterSelection extends StatefulWidget {
-  const ExampleInstagramFilterSelection({Key? key}) : super(key: key);
+  const ExampleInstagramFilterSelection({super.key});
 
   @override
   _ExampleInstagramFilterSelectionState createState() =>
@@ -82,11 +82,11 @@ class _ExampleInstagramFilterSelectionState
 @immutable
 class FilterSelector extends StatefulWidget {
   const FilterSelector({
-    Key? key,
+    super.key,
     required this.filters,
     required this.onFilterChanged,
     this.padding = const EdgeInsets.symmetric(vertical: 24.0),
-  }) : super(key: key);
+  });
 
   final List<Color> filters;
   final void Function(Color selectedColor) onFilterChanged;
@@ -145,7 +145,7 @@ class _FilterSelectorState extends State<FilterSelector> {
     return Scrollable(
       controller: _controller,
       axisDirection: AxisDirection.right,
-      physics: PageScrollPhysics(),
+      physics: const PageScrollPhysics(),
       viewportBuilder: (context, viewportOffset) {
         return LayoutBuilder(
           builder: (context, constraints) {
@@ -299,11 +299,11 @@ class CarouselFlowDelegate extends FlowDelegate {
 
 @immutable
 class FilterItem extends StatelessWidget {
-  FilterItem({
-    Key? key,
+  const FilterItem({
+    super.key,
     required this.color,
     this.onFilterSelected,
-  }) : super(key: key);
+  });
 
   final Color color;
   final VoidCallback? onFilterSelected;

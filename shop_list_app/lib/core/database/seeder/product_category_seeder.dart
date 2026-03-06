@@ -19,31 +19,31 @@ class ProductCategorySeeder {
     final defaultCategories = [
       ProductCategoriesCompanion.insert(
         name: 'Fruits',
-        photo: Value('🍎'),
+        photo: const Value('🍎'),
       ),
       ProductCategoriesCompanion.insert(
         name: 'Vegetables',
-        photo: Value('🥕'),
+        photo: const Value('🥕'),
       ),
       ProductCategoriesCompanion.insert(
         name: 'Dairy',
-        photo: Value('🥛'),
+        photo: const Value('🥛'),
       ),
       ProductCategoriesCompanion.insert(
         name: 'Bakery',
-        photo: Value('🍞'),
+        photo: const Value('🍞'),
       ),
       ProductCategoriesCompanion.insert(
         name: 'Meat',
-        photo: Value('🥩'),
+        photo: const Value('🥩'),
       ),
       ProductCategoriesCompanion.insert(
         name: 'Beverages',
-        photo: Value('🥤'),
+        photo: const Value('🥤'),
       ),
       ProductCategoriesCompanion.insert(
         name: 'Snacks',
-        photo: Value('🍿'),
+        photo: const Value('🍿'),
       ),
     ];
 

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class AboutView extends StatelessWidget {
+  const AboutView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("About Application"),
+        title: const Text('About Application'),
       ),
       body: Container(
-        child: Text("About application will be here"),
+        child: const Text('About application will be here'),
       ),
     );
   }

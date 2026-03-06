@@ -11,7 +11,7 @@ import 'package:shop_list_app/core/database/app_database.dart';
 class ProductCategoryDetailPage extends StatefulWidget {
   final cat_model.ProductCategory category;
 
-  const ProductCategoryDetailPage({required this.category});
+  const ProductCategoryDetailPage({super.key, required this.category});
 
   @override
   _ProductCategoryDetailPageState createState() =>
@@ -68,11 +68,11 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
         title: Text(category.name),
         actions: [
           IconButton(
-            icon: Icon(Icons.edit),
+            icon: const Icon(Icons.edit),
             onPressed: _editCategory,
           ),
           IconButton(
-            icon: Icon(Icons.delete),
+            icon: const Icon(Icons.delete),
             onPressed: _deleteCategory,
           ),
         ],
@@ -92,7 +92,7 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
   Widget _buildCategoryHeader() {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(24),
+      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: Colors.grey[100],
       ),
@@ -109,7 +109,7 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
               child: category.photo != null && category.photo!.isNotEmpty
                   ? Text(
                       category.photo!,
-                      style: TextStyle(fontSize: 72),
+                      style: const TextStyle(fontSize: 72),
                     )
                   : Icon(
                       Icons.category,
@@ -118,15 +118,15 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
                     ),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Text(
             category.name,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             'Category ID: ${category.id}',
             style: TextStyle(
@@ -141,14 +141,14 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
 
   Widget _buildProductsSection() {
     return Padding(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'Products in this category',
                 style: TextStyle(
                   fontSize: 20,
@@ -157,7 +157,8 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
               ),
               if (!_isLoading)
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(20),
@@ -173,9 +174,9 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
                 ),
             ],
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           _isLoading
-              ? Center(child: CircularProgressIndicator())
+              ? const Center(child: CircularProgressIndicator())
               : _categoryProducts.isEmpty
                   ? _buildEmptyProducts()
                   : _buildProductsList(),
@@ -187,7 +188,7 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
   Widget _buildEmptyProducts() {
     return Center(
       child: Padding(
-        padding: EdgeInsets.all(32),
+        padding: const EdgeInsets.all(32),
         child: Column(
           children: [
             Icon(
@@ -195,7 +196,7 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
               size: 64,
               color: Colors.grey[400],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               'No products in this category',
               style: TextStyle(
@@ -212,12 +213,12 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
   Widget _buildProductsList() {
     return ListView.builder(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: _categoryProducts.length,
       itemBuilder: (context, index) {
         final product = _categoryProducts[index];
         return Card(
-          margin: EdgeInsets.only(bottom: 12),
+          margin: const EdgeInsets.only(bottom: 12),
           child: ListTile(
             leading: Container(
               width: 50,
@@ -228,13 +229,13 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
               ),
               child: Center(
                 child: product.photo != null && product.photo!.isNotEmpty
-                    ? Text(product.photo!, style: TextStyle(fontSize: 28))
+                    ? Text(product.photo!, style: const TextStyle(fontSize: 28))
                     : Icon(Icons.shopping_bag, color: Colors.grey[400]),
               ),
             ),
             title: Text(
               product.name ?? 'Unnamed Product',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             subtitle: Text('${product.quantity ?? 0} ${product.units ?? ''}'),
             trailing: product.expirationDate != null
@@ -260,21 +261,21 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Edit Category'),
+        title: const Text('Edit Category'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             TextField(
               controller: nameController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Category Name',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             TextField(
               controller: photoController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Emoji Icon',
                 border: OutlineInputBorder(),
                 hintText: '🍎',
@@ -285,7 +286,7 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () async {
@@ -294,7 +295,7 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
 
               if (name.isEmpty) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Please enter a category name')),
+                  const SnackBar(content: Text('Please enter a category name')),
                 );
                 return;
               }
@@ -311,7 +312,8 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
                 Navigator.pop(context);
                 Navigator.pop(context); // Go back to list
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Category updated successfully')),
+                  const SnackBar(
+                      content: Text('Category updated successfully')),
                 );
               } catch (e) {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -319,7 +321,7 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
                 );
               }
             },
-            child: Text('Update'),
+            child: const Text('Update'),
           ),
         ],
       ),
@@ -330,7 +332,7 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Delete Category'),
+        title: const Text('Delete Category'),
         content: Text(
           'Are you sure you want to delete "${category.name}"?\n\n'
           'This category has ${_categoryProducts.length} products. '
@@ -339,7 +341,7 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           ElevatedButton(
             onPressed: () async {
@@ -348,7 +350,8 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
                 Navigator.pop(context); // Close dialog
                 Navigator.pop(context); // Go back to list
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Category deleted successfully')),
+                  const SnackBar(
+                      content: Text('Category deleted successfully')),
                 );
               } catch (e) {
                 Navigator.pop(context);
@@ -360,7 +363,7 @@ class _ProductCategoryDetailPageState extends State<ProductCategoryDetailPage> {
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red,
             ),
-            child: Text('Delete'),
+            child: const Text('Delete'),
           ),
         ],
       ),

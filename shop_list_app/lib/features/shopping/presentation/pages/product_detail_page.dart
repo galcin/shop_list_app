@@ -7,33 +7,34 @@ class ProductDetailPage extends StatelessWidget {
   final ProductCategory? category;
 
   const ProductDetailPage({
-    Key? key,
+    super.key,
     required this.product,
     this.category,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     final isExpired = product.expirationDate != null &&
         product.expirationDate!.isBefore(DateTime.now());
     final isExpiringSoon = product.expirationDate != null &&
-        product.expirationDate!.isBefore(DateTime.now().add(Duration(days: 7)));
+        product.expirationDate!
+            .isBefore(DateTime.now().add(const Duration(days: 7)));
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Product Details'),
+        title: const Text('Product Details'),
         actions: [
           IconButton(
-            icon: Icon(Icons.edit),
+            icon: const Icon(Icons.edit),
             onPressed: () {
               // TODO: Navigate to edit page
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Edit functionality coming soon')),
+                const SnackBar(content: Text('Edit functionality coming soon')),
               );
             },
           ),
           IconButton(
-            icon: Icon(Icons.delete),
+            icon: const Icon(Icons.delete),
             onPressed: () => _showDeleteConfirmation(context),
           ),
         ],
@@ -54,12 +55,12 @@ class ProductDetailPage extends StatelessWidget {
                   // Product Name
                   Text(
                     product.name ?? 'Unnamed Product',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
 
                   // Category
                   if (category != null) ...[
@@ -69,7 +70,7 @@ class ProductDetailPage extends StatelessWidget {
                       value: category!.name,
                       iconColor: Colors.blue,
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                   ],
 
                   // Quantity
@@ -79,7 +80,7 @@ class ProductDetailPage extends StatelessWidget {
                     value: '${product.quantity ?? 0} ${product.units ?? ''}',
                     iconColor: Colors.green,
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
 
                   // Expiration Date
                   if (product.expirationDate != null) ...[
@@ -98,11 +99,11 @@ class ProductDetailPage extends StatelessWidget {
                               ? Colors.orange
                               : null,
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
 
                     // Status Badge
                     _buildStatusBadge(isExpired, isExpiringSoon),
-                    SizedBox(height: 24),
+                    const SizedBox(height: 24),
                   ],
 
                   // Additional Information Card
@@ -117,14 +118,14 @@ class ProductDetailPage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Additional Information',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          SizedBox(height: 12),
+                          const SizedBox(height: 12),
                           _buildDetailRow(
                               'Product ID', '${product.id ?? 'N/A'}'),
                           if (product.productCategoryId != null)
@@ -154,7 +155,7 @@ class ProductDetailPage extends StatelessWidget {
         child: product.photo != null && product.photo!.isNotEmpty
             ? Text(
                 product.photo!,
-                style: TextStyle(fontSize: 120),
+                style: const TextStyle(fontSize: 120),
               )
             : _buildPlaceholderImage(),
       ),
@@ -181,7 +182,7 @@ class ProductDetailPage extends StatelessWidget {
     return Row(
       children: [
         Container(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             color: (iconColor ?? Colors.grey).withOpacity(0.1),
             borderRadius: BorderRadius.circular(8),
@@ -192,7 +193,7 @@ class ProductDetailPage extends StatelessWidget {
             color: iconColor ?? Colors.grey,
           ),
         ),
-        SizedBox(width: 16),
+        const SizedBox(width: 16),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -205,7 +206,7 @@ class ProductDetailPage extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Text(
                 value,
                 style: TextStyle(
@@ -236,7 +237,7 @@ class ProductDetailPage extends StatelessWidget {
           ),
           Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w500,
             ),
@@ -247,10 +248,10 @@ class ProductDetailPage extends StatelessWidget {
   }
 
   Widget _buildStatusBadge(bool isExpired, bool isExpiringSoon) {
-    if (!isExpired && !isExpiringSoon) return SizedBox.shrink();
+    if (!isExpired && !isExpiringSoon) return const SizedBox.shrink();
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
         color: isExpired
             ? Colors.red.withOpacity(0.1)
@@ -269,7 +270,7 @@ class ProductDetailPage extends StatelessWidget {
             size: 20,
             color: isExpired ? Colors.red : Colors.orange,
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Text(
             isExpired ? 'Expired' : 'Expiring Soon',
             style: TextStyle(
@@ -290,13 +291,13 @@ class ProductDetailPage extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Delete Product'),
+        title: const Text('Delete Product'),
         content: Text(
             'Are you sure you want to delete ${product.name}? This action cannot be undone.'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           TextButton(
             onPressed: () {
@@ -304,10 +305,10 @@ class ProductDetailPage extends StatelessWidget {
               Navigator.pop(context); // Close dialog
               Navigator.pop(context); // Go back to list
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Product deleted')),
+                const SnackBar(content: Text('Product deleted')),
               );
             },
-            child: Text('Delete', style: TextStyle(color: Colors.red)),
+            child: const Text('Delete', style: TextStyle(color: Colors.red)),
           ),
         ],
       ),

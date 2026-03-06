@@ -1,9 +1,10 @@
 import 'dart:async';
 
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/core/error/failures.dart';
 import 'package:shop_list_app/core/providers/core_providers.dart';
+
 import '../../data/datasources/product_category_data_source.dart';
 import '../../data/repositories/product_category_repository.dart';
 import '../../domain/entities/product_category.dart';

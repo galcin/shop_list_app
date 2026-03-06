@@ -21,7 +21,7 @@ class ProductSeeder {
         quantity: 5.0,
         units: 'kg',
         photo: '🍎',
-        expirationDate: now.add(Duration(days: 14)),
+        expirationDate: now.add(const Duration(days: 14)),
         productCategoryId: 1, // Fruits
       ),
       ProductsCompanion.insert(
@@ -29,7 +29,7 @@ class ProductSeeder {
         quantity: 2.0,
         units: 'kg',
         photo: '🍌',
-        expirationDate: now.add(Duration(days: 7)),
+        expirationDate: now.add(const Duration(days: 7)),
         productCategoryId: 1, // Fruits
       ),
       ProductsCompanion.insert(
@@ -37,7 +37,7 @@ class ProductSeeder {
         quantity: 3.0,
         units: 'kg',
         photo: '🥕',
-        expirationDate: now.add(Duration(days: 21)),
+        expirationDate: now.add(const Duration(days: 21)),
         productCategoryId: 2, // Vegetables
       ),
       ProductsCompanion.insert(
@@ -45,7 +45,7 @@ class ProductSeeder {
         quantity: 1.5,
         units: 'kg',
         photo: '🍅',
-        expirationDate: now.add(Duration(days: 10)),
+        expirationDate: now.add(const Duration(days: 10)),
         productCategoryId: 2, // Vegetables
       ),
       ProductsCompanion.insert(
@@ -53,7 +53,7 @@ class ProductSeeder {
         quantity: 2.0,
         units: 'liters',
         photo: '🥛',
-        expirationDate: now.add(Duration(days: 5)),
+        expirationDate: now.add(const Duration(days: 5)),
         productCategoryId: 3, // Dairy
       ),
       ProductsCompanion.insert(
@@ -61,7 +61,7 @@ class ProductSeeder {
         quantity: 0.5,
         units: 'kg',
         photo: '🧀',
-        expirationDate: now.add(Duration(days: 30)),
+        expirationDate: now.add(const Duration(days: 30)),
         productCategoryId: 3, // Dairy
       ),
       ProductsCompanion.insert(
@@ -69,7 +69,7 @@ class ProductSeeder {
         quantity: 2.0,
         units: 'loaves',
         photo: '🍞',
-        expirationDate: now.add(Duration(days: 3)),
+        expirationDate: now.add(const Duration(days: 3)),
         productCategoryId: 4, // Bakery
       ),
       ProductsCompanion.insert(
@@ -77,7 +77,7 @@ class ProductSeeder {
         quantity: 1.0,
         units: 'kg',
         photo: '🍗',
-        expirationDate: now.add(Duration(days: 4)),
+        expirationDate: now.add(const Duration(days: 4)),
         productCategoryId: 5, // Meat
       ),
       ProductsCompanion.insert(
@@ -85,7 +85,7 @@ class ProductSeeder {
         quantity: 1.0,
         units: 'liters',
         photo: '🧃',
-        expirationDate: now.add(Duration(days: 7)),
+        expirationDate: now.add(const Duration(days: 7)),
         productCategoryId: 6, // Beverages
       ),
       ProductsCompanion.insert(
@@ -93,7 +93,7 @@ class ProductSeeder {
         quantity: 3.0,
         units: 'bags',
         photo: '🥔',
-        expirationDate: now.add(Duration(days: 60)),
+        expirationDate: now.add(const Duration(days: 60)),
         productCategoryId: 7, // Snacks
       ),
     ];

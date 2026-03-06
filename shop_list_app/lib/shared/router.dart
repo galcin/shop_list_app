@@ -17,7 +17,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 
   switch (settings.name) {
     case splashView:
-      return MaterialPageRoute(builder: (context) => SplashScreen());
+      return MaterialPageRoute(builder: (context) => const SplashScreen());
     case mainView:
       return MaterialPageRoute(builder: (context) => MainView());
     case aboutView:
@@ -31,12 +31,13 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case productView:
       return MaterialPageRoute(builder: (context) => ProductViewPage());
     case productCategoryView:
-      return MaterialPageRoute(builder: (context) => ProductCategoryViewPage());
+      return MaterialPageRoute(
+          builder: (context) => const ProductCategoryViewPage());
     case menuComposer:
       return MaterialPageRoute(builder: (context) => MenuComposerView());
     case filterSelector:
       return MaterialPageRoute(
-          builder: (context) => ExampleInstagramFilterSelection());
+          builder: (context) => const ExampleInstagramFilterSelection());
     default:
       return MaterialPageRoute(builder: (context) => ErrorView());
   }

@@ -27,7 +27,7 @@ class AppDatabase extends _$AppDatabase {
   factory AppDatabase() => instance;
 
   /// Factory constructor for tests: accepts any [QueryExecutor] (e.g. NativeDatabase.memory()).
-  AppDatabase.forTesting(QueryExecutor executor) : super(executor);
+  AppDatabase.forTesting(super.executor);
 
   @override
   int get schemaVersion => 4;
@@ -93,11 +93,11 @@ class AppDatabase extends _$AppDatabase {
 
           final nowMillis = DateTime.now().millisecondsSinceEpoch;
           await customStatement(
-            "UPDATE product_categories SET created_at = $nowMillis "
+            'UPDATE product_categories SET created_at = $nowMillis '
             "WHERE typeof(created_at) != 'integer'",
           );
           await customStatement(
-            "UPDATE product_categories SET updated_at = $nowMillis "
+            'UPDATE product_categories SET updated_at = $nowMillis '
             "WHERE typeof(updated_at) != 'integer'",
           );
           AppLogger.instance.info('[DB] onUpgrade v3→v4 complete');
@@ -157,11 +157,11 @@ class AppDatabase extends _$AppDatabase {
           // integer milliseconds (happens when DEFAULT CURRENT_TIMESTAMP was used).
           final nowMillis = DateTime.now().millisecondsSinceEpoch;
           await customStatement(
-            "UPDATE product_categories SET created_at = $nowMillis "
+            'UPDATE product_categories SET created_at = $nowMillis '
             "WHERE typeof(created_at) != 'integer'",
           );
           await customStatement(
-            "UPDATE product_categories SET updated_at = $nowMillis "
+            'UPDATE product_categories SET updated_at = $nowMillis '
             "WHERE typeof(updated_at) != 'integer'",
           );
           AppLogger.instance.info('[DB] Self-heal complete');

@@ -245,9 +245,9 @@ class _ProductCategoryViewPageState
           category.name,
           style: const TextStyle(color: Colors.white, fontSize: 15),
         ),
-        trailing: ReorderableDragStartListener(
+        trailing: const ReorderableDragStartListener(
           index: 0, // placeholder; ReorderableListView manages this
-          child: const Icon(Icons.drag_handle, color: Color(0xFF9CA3AF)),
+          child: Icon(Icons.drag_handle, color: Color(0xFF9CA3AF)),
         ),
       ),
     );

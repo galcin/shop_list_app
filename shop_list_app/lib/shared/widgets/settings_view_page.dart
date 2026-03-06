@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:shop_list_app/core/utils/app_logger.dart';
 
 class SettingsView extends StatefulWidget {
+  const SettingsView({super.key});
+
   @override
   State<SettingsView> createState() => _SettingsViewState();
 }

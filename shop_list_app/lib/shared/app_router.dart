@@ -23,7 +23,7 @@ final appRouter = GoRouter(
     // ── Splash ──────────────────────────────────────────────────────────────
     GoRoute(
       path: '/splash',
-      builder: (context, state) => SplashScreen(),
+      builder: (context, state) => const SplashScreen(),
     ),
 
     // ── Main shell (bottom nav + IndexedStack) ───────────────────────────────

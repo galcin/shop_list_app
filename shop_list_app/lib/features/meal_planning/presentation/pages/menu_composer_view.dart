@@ -3,6 +3,8 @@ import '../widgets/carousel/date_selector.dart';
 import '../widgets/carousel/template_selector.dart';
 
 class MenuComposerView extends StatefulWidget {
+  const MenuComposerView({super.key});
+
   @override
   _MenuComposerView createState() => _MenuComposerView();
 }
@@ -11,7 +13,7 @@ class _MenuComposerView extends State<MenuComposerView> {
   final _days = [1, ...List.generate(7, (index) => index++)];
   final _selectedDay = ValueNotifier<int>(1);
 
-  _onSelecteDay(int day) {
+  void _onSelecteDay(int day) {
     _selectedDay.value = day;
   }
 

@@ -4,8 +4,8 @@ class FilterItem extends StatelessWidget {
   final VoidCallback onFilterSelected;
   final String day;
 
-  FilterItem({Key? key, required this.onFilterSelected, required this.day})
-      : super(key: key);
+  const FilterItem(
+      {super.key, required this.onFilterSelected, required this.day});
 
   @override
   Widget build(BuildContext context) {

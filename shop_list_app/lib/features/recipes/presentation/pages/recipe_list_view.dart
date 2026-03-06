@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class RecipeListView extends StatelessWidget {
+  const RecipeListView({super.key});
+
   // final recipeViewModel = new RecipeViewModel();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Recipe list"),
+        title: const Text('Recipe list'),
       ),
       //   body: FutureBuilder(
       //       initialData: [],

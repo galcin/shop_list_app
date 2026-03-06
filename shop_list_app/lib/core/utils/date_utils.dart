@@ -42,7 +42,7 @@ class AppDateUtils {
     final minutes = duration.inMinutes.remainder(60);
 
     if (hours == 0) return '$minutes min';
-    if (minutes == 0) return '${hours > 1 ? '$hours hrs' : '1 hr'}';
+    if (minutes == 0) return hours > 1 ? '$hours hrs' : '1 hr';
     return '${hours > 1 ? '$hours hrs' : '1 hr'} $minutes min';
   }
 

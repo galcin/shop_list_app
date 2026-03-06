@@ -11,18 +11,18 @@ class RecipeSeeder {
 
     final defaultRecipes = [
       RecipesCompanion.insert(
-        name: Value('Egg Omelet'),
-        instructions: Value(
+        name: const Value('Egg Omelet'),
+        instructions: const Value(
             'Beat 2 eggs, add salt and pepper. Heat butter in a pan, pour eggs and fold when cooked. Serve hot.'),
-        prepTime: Value(10),
-        favorite: Value(false),
+        prepTime: const Value(10),
+        favorite: const Value(false),
       ),
       RecipesCompanion.insert(
-        name: Value('Chicken Soup'),
-        instructions: Value(
+        name: const Value('Chicken Soup'),
+        instructions: const Value(
             'Boil chicken in water with carrots, celery, and onions for 45 minutes. Season with salt and pepper. Add noodles if desired.'),
-        prepTime: Value(50),
-        favorite: Value(false),
+        prepTime: const Value(50),
+        favorite: const Value(false),
       ),
     ];
 

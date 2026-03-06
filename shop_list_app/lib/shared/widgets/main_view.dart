@@ -3,22 +3,24 @@ import 'package:shop_list_app/shared/route_constants.dart';
 import 'package:shop_list_app/shared/widgets/menu_buttons.dart';
 
 class MainView extends StatelessWidget {
+  const MainView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          AppBar(title: Text('Application'), actions: [CustomMenuButtons()]),
+      appBar: AppBar(
+          title: const Text('Application'), actions: [CustomMenuButtons()]),
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Actions"),
-            SizedBox(
+            const Text('Actions'),
+            const SizedBox(
               width: 20,
             ),
             Center(
               child: ElevatedButton(
-                child: Text("Recipe list"),
+                child: const Text('Recipe list'),
                 onPressed: () {
                   Navigator.pushNamed(context, recipesView);
                 },
@@ -26,7 +28,7 @@ class MainView extends StatelessWidget {
             ),
             Center(
               child: ElevatedButton(
-                child: Text("Products"),
+                child: const Text('Products'),
                 onPressed: () {
                   Navigator.pushNamed(context, productView);
                 },
@@ -34,7 +36,7 @@ class MainView extends StatelessWidget {
             ),
             Center(
               child: ElevatedButton(
-                child: Text("Product Categories"),
+                child: const Text('Product Categories'),
                 onPressed: () {
                   Navigator.pushNamed(context, productCategoryView);
                 },
@@ -42,7 +44,7 @@ class MainView extends StatelessWidget {
             ),
             Center(
               child: ElevatedButton(
-                child: Text("Create Week Menu"),
+                child: const Text('Create Week Menu'),
                 onPressed: () {
                   Navigator.pushNamed(context, menuComposer);
                 },
@@ -50,7 +52,7 @@ class MainView extends StatelessWidget {
             ),
             Center(
               child: ElevatedButton(
-                child: Text("Filter selector test"),
+                child: const Text('Filter selector test'),
                 onPressed: () {
                   Navigator.pushNamed(context, filterSelector);
                 },

@@ -10,6 +10,8 @@ import 'package:shop_list_app/core/database/app_database.dart';
 import 'product_detail_page.dart';
 
 class ProductViewPage extends StatefulWidget {
+  const ProductViewPage({super.key});
+
   @override
   _ProductViewPageState createState() => _ProductViewPageState();
 }
@@ -31,7 +33,8 @@ class _ProductViewPageState extends State<ProductViewPage> {
     // Use the singleton instance that was initialized at startup
     _database = AppDatabase.instance;
     _productRepository = ProductRepository(_database);
-    _categoryRepository = ProductCategoryRepository(ProductCategoryDataSource(_database));
+    _categoryRepository =
+        ProductCategoryRepository(ProductCategoryDataSource(_database));
     // Defer loading slightly to ensure everything is ready
     WidgetsBinding.instance.addPostFrameCallback((_) {
       print('[ProductView] Starting to load products');
@@ -106,10 +109,10 @@ class _ProductViewPageState extends State<ProductViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Products'),
+        title: const Text('Products'),
         actions: [
           IconButton(
-            icon: Icon(Icons.filter_list),
+            icon: const Icon(Icons.filter_list),
             onPressed: _showFilterDialog,
           ),
         ],
@@ -119,7 +122,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
           _buildSearchBar(),
           Expanded(
             child: _isLoading
-                ? Center(child: CircularProgressIndicator())
+                ? const Center(child: CircularProgressIndicator())
                 : _filteredProducts.isEmpty
                     ? _buildEmptyState()
                     : _buildProductList(),
@@ -128,8 +131,8 @@ class _ProductViewPageState extends State<ProductViewPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _addProduct,
-        child: Icon(Icons.add),
         tooltip: 'Add Product',
+        child: Icon(Icons.add),
       ),
     );
   }
@@ -140,7 +143,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
       child: TextField(
         decoration: InputDecoration(
           hintText: 'Search products...',
-          prefixIcon: Icon(Icons.search),
+          prefixIcon: const Icon(Icons.search),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -157,7 +160,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
 
   Widget _buildProductList() {
     return ListView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       itemCount: _filteredProducts.length,
       itemBuilder: (context, index) {
         return _buildProductCard(_filteredProducts[index]);
@@ -167,12 +170,13 @@ class _ProductViewPageState extends State<ProductViewPage> {
 
   Widget _buildProductCard(prod_model.Product product) {
     final isExpiringSoon = product.expirationDate != null &&
-        product.expirationDate!.isBefore(DateTime.now().add(Duration(days: 7)));
+        product.expirationDate!
+            .isBefore(DateTime.now().add(const Duration(days: 7)));
     final isExpired = product.expirationDate != null &&
         product.expirationDate!.isBefore(DateTime.now());
 
     return Card(
-      margin: EdgeInsets.only(bottom: 12),
+      margin: const EdgeInsets.only(bottom: 12),
       elevation: 2,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
@@ -196,13 +200,13 @@ class _ProductViewPageState extends State<ProductViewPage> {
                   child: product.photo != null && product.photo!.isNotEmpty
                       ? Text(
                           product.photo!,
-                          style: TextStyle(fontSize: 32),
+                          style: const TextStyle(fontSize: 32),
                         )
                       : Icon(Icons.shopping_bag,
                           size: 30, color: Colors.grey[400]),
                 ),
               ),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               // Product Info
               Expanded(
                 child: Column(
@@ -210,12 +214,12 @@ class _ProductViewPageState extends State<ProductViewPage> {
                   children: [
                     Text(
                       product.name ?? 'Unnamed Product',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Text(
                       '${product.quantity ?? 0} ${product.units ?? ''}',
                       style: TextStyle(
@@ -224,7 +228,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
                       ),
                     ),
                     if (product.expirationDate != null) ...[
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                       Row(
                         children: [
                           Icon(
@@ -236,7 +240,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
                                     ? Colors.orange
                                     : Colors.grey[600],
                           ),
-                          SizedBox(width: 4),
+                          const SizedBox(width: 4),
                           Text(
                             'Exp: ${_formatDate(product.expirationDate!)}',
                             style: TextStyle(
@@ -267,7 +271,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
                   }
                 },
                 itemBuilder: (context) => [
-                  PopupMenuItem(
+                  const PopupMenuItem(
                     value: 'edit',
                     child: Row(
                       children: [
@@ -277,7 +281,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
                       ],
                     ),
                   ),
-                  PopupMenuItem(
+                  const PopupMenuItem(
                     value: 'delete',
                     child: Row(
                       children: [
@@ -306,7 +310,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
             size: 80,
             color: Colors.grey[400],
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Text(
             'No products found',
             style: TextStyle(
@@ -315,7 +319,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
             'Add your first product to get started',
             style: TextStyle(
@@ -336,12 +340,12 @@ class _ProductViewPageState extends State<ProductViewPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Filter by Category'),
+        title: const Text('Filter by Category'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
-              title: Text('All Categories'),
+              title: const Text('All Categories'),
               leading: Radio<int?>(
                 value: null,
                 groupValue: _selectedCategoryId,
@@ -371,7 +375,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Close'),
+            child: const Text('Close'),
           ),
         ],
       ),
@@ -408,31 +412,31 @@ class _ProductViewPageState extends State<ProductViewPage> {
               children: [
                 TextField(
                   controller: nameController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Product Name *',
                     border: OutlineInputBorder(),
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Row(
                   children: [
                     Expanded(
                       flex: 2,
                       child: TextField(
                         controller: quantityController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Quantity *',
                           border: OutlineInputBorder(),
                         ),
-                        keyboardType:
-                            TextInputType.numberWithOptions(decimal: true),
+                        keyboardType: const TextInputType.numberWithOptions(
+                            decimal: true),
                       ),
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                     Expanded(
                       child: TextField(
                         controller: unitsController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Units',
                           border: OutlineInputBorder(),
                           hintText: 'kg, pcs',
@@ -441,19 +445,19 @@ class _ProductViewPageState extends State<ProductViewPage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextField(
                   controller: photoController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Emoji Icon',
                     border: OutlineInputBorder(),
                     hintText: '🍎',
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 DropdownButtonFormField<int>(
                   initialValue: selectedCategoryId,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Category *',
                     border: OutlineInputBorder(),
                   ),
@@ -465,8 +469,8 @@ class _ProductViewPageState extends State<ProductViewPage> {
                           if (category.photo != null &&
                               category.photo!.isNotEmpty)
                             Text(category.photo!,
-                                style: TextStyle(fontSize: 20)),
-                          SizedBox(width: 8),
+                                style: const TextStyle(fontSize: 20)),
+                          const SizedBox(width: 8),
                           Text(category.name),
                         ],
                       ),
@@ -478,15 +482,15 @@ class _ProductViewPageState extends State<ProductViewPage> {
                     });
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 InkWell(
                   onTap: () async {
                     final DateTime? picked = await showDatePicker(
                       context: builderContext,
-                      initialDate:
-                          selectedDate ?? DateTime.now().add(Duration(days: 7)),
+                      initialDate: selectedDate ??
+                          DateTime.now().add(const Duration(days: 7)),
                       firstDate: DateTime.now(),
-                      lastDate: DateTime.now().add(Duration(days: 365)),
+                      lastDate: DateTime.now().add(const Duration(days: 365)),
                     );
                     if (picked != null) {
                       setDialogState(() {
@@ -495,7 +499,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
                     }
                   },
                   child: InputDecorator(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Expiration Date',
                       border: OutlineInputBorder(),
                       suffixIcon: Icon(Icons.calendar_today),
@@ -517,7 +521,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(builderContext),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             ElevatedButton(
               onPressed: () async {
@@ -528,14 +532,15 @@ class _ProductViewPageState extends State<ProductViewPage> {
 
                 if (name.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Please enter a product name')),
+                    const SnackBar(
+                        content: Text('Please enter a product name')),
                   );
                   return;
                 }
 
                 if (quantityText.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Please enter a quantity')),
+                    const SnackBar(content: Text('Please enter a quantity')),
                   );
                   return;
                 }
@@ -543,14 +548,15 @@ class _ProductViewPageState extends State<ProductViewPage> {
                 final quantity = double.tryParse(quantityText);
                 if (quantity == null) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Please enter a valid quantity')),
+                    const SnackBar(
+                        content: Text('Please enter a valid quantity')),
                   );
                   return;
                 }
 
                 if (selectedCategoryId == null) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Please select a category')),
+                    const SnackBar(content: Text('Please select a category')),
                   );
                   return;
                 }
@@ -565,12 +571,13 @@ class _ProductViewPageState extends State<ProductViewPage> {
                         units: units.isEmpty ? null : units,
                         photo: photo.isEmpty ? null : photo,
                         expirationDate: selectedDate,
-                        productCategoryId: selectedCategoryId!,
+                        productCategoryId: selectedCategoryId,
                       ),
                     );
                     Navigator.pop(builderContext);
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Product updated successfully')),
+                      const SnackBar(
+                          content: Text('Product updated successfully')),
                     );
                   } else {
                     await _productRepository.addProduct(
@@ -581,12 +588,13 @@ class _ProductViewPageState extends State<ProductViewPage> {
                         units: units.isEmpty ? null : units,
                         photo: photo.isEmpty ? null : photo,
                         expirationDate: selectedDate,
-                        productCategoryId: selectedCategoryId!,
+                        productCategoryId: selectedCategoryId,
                       ),
                     );
                     Navigator.pop(builderContext);
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Product added successfully')),
+                      const SnackBar(
+                          content: Text('Product added successfully')),
                     );
                   }
                   _loadProducts();
@@ -608,12 +616,12 @@ class _ProductViewPageState extends State<ProductViewPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Delete Product'),
+        title: const Text('Delete Product'),
         content: Text('Are you sure you want to delete ${product.name}?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('Cancel'),
+            child: const Text('Cancel'),
           ),
           TextButton(
             onPressed: () async {
@@ -622,7 +630,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
                 try {
                   await _productRepository.deleteProduct(product.id!);
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Product deleted')),
+                    const SnackBar(content: Text('Product deleted')),
                   );
                   _loadProducts(); // Reload the list
                 } catch (e) {
@@ -632,7 +640,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
                 }
               }
             },
-            child: Text('Delete', style: TextStyle(color: Colors.red)),
+            child: const Text('Delete', style: TextStyle(color: Colors.red)),
           ),
         ],
       ),

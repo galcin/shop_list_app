@@ -9,12 +9,14 @@ class ProductRepository implements IProductRepository {
   ProductRepository(this._database);
 
   // Get all products
+  @override
   Future<List<model.Product>> getAllProducts() async {
     final products = await _database.select(_database.products).get();
     return products.map((row) => _productFromRow(row)).toList();
   }
 
   // Get product by ID
+  @override
   Future<model.Product?> getProductById(int id) async {
     final product = await (_database.select(_database.products)
           ..where((tbl) => tbl.id.equals(id)))
@@ -23,6 +25,7 @@ class ProductRepository implements IProductRepository {
   }
 
   // Get products by category
+  @override
   Future<List<model.Product>> getProductsByCategory(int categoryId) async {
     final products = await (_database.select(_database.products)
           ..where((tbl) => tbl.productCategoryId.equals(categoryId)))
@@ -31,6 +34,7 @@ class ProductRepository implements IProductRepository {
   }
 
   // Get expiring products (within specified days)
+  @override
   Future<List<model.Product>> getExpiringProducts(int days) async {
     final now = DateTime.now();
     final futureDate = now.add(Duration(days: days));
@@ -43,6 +47,7 @@ class ProductRepository implements IProductRepository {
   }
 
   // Get expired products
+  @override
   Future<List<model.Product>> getExpiredProducts() async {
     final now = DateTime.now();
 
@@ -54,6 +59,7 @@ class ProductRepository implements IProductRepository {
   }
 
   // Search products by name
+  @override
   Future<List<model.Product>> searchProducts(String query) async {
     final products = await (_database.select(_database.products)
           ..where((tbl) => tbl.name.contains(query)))
@@ -62,6 +68,7 @@ class ProductRepository implements IProductRepository {
   }
 
   // Add a new product
+  @override
   Future<int> addProduct(model.Product product) async {
     return await _database.into(_database.products).insert(
           ProductsCompanion.insert(
@@ -76,6 +83,7 @@ class ProductRepository implements IProductRepository {
   }
 
   // Update an existing product
+  @override
   Future<bool> updateProduct(model.Product product) async {
     if (product.id == null) return false;
 
@@ -95,6 +103,7 @@ class ProductRepository implements IProductRepository {
   }
 
   // Delete a product
+  @override
   Future<bool> deleteProduct(int id) async {
     final deleted = await (_database.delete(_database.products)
           ..where((tbl) => tbl.id.equals(id)))
@@ -103,17 +112,20 @@ class ProductRepository implements IProductRepository {
   }
 
   // Delete all products
+  @override
   Future<int> deleteAllProducts() async {
     return await _database.delete(_database.products).go();
   }
 
   // Get product count
+  @override
   Future<int> getProductCount() async {
     final count = await _database.select(_database.products).get();
     return count.length;
   }
 
   // Get product count by category
+  @override
   Future<int> getProductCountByCategory(int categoryId) async {
     final count = await (_database.select(_database.products)
           ..where((tbl) => tbl.productCategoryId.equals(categoryId)))
@@ -122,6 +134,7 @@ class ProductRepository implements IProductRepository {
   }
 
   // Check if product with name exists
+  @override
   Future<bool> productExists(String name) async {
     final product = await (_database.select(_database.products)
           ..where((tbl) => tbl.name.equals(name)))
