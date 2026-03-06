@@ -2,9 +2,9 @@ import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shop_list_app/core/database/app_database.dart'
     hide ProductCategory;
-import 'package:shop_list_app/features/shopping/data/datasources/product_category_data_source.dart';
-import 'package:shop_list_app/features/shopping/data/repositories/product_category_repository.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product_category.dart';
+import 'package:shop_list_app/data/datasources/shopping/product_category_data_source.dart';
+import 'package:shop_list_app/data/repositories/shopping/product_category_repository.dart';
+import 'package:shop_list_app/domain/entities/shopping/product_category.dart';
 
 void main() {
   late AppDatabase db;

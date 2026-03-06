@@ -1,9 +1,9 @@
 import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/navigation/app_route.dart';
-import 'package:shop_list_app/features/meal_planning/presentation/pages/menu_view.dart';
-import 'package:shop_list_app/features/pantry/presentation/pages/pantry_page.dart';
-import 'package:shop_list_app/features/recipes/presentation/pages/recipe_list_view.dart';
-import 'package:shop_list_app/features/shopping/presentation/pages/product_category_view_page.dart';
+import 'package:shop_list_app/presentation/pages/meal_planning/menu_view.dart';
+import 'package:shop_list_app/presentation/pages/pantry/pantry_page.dart';
+import 'package:shop_list_app/presentation/pages/recipes/recipe_list_view.dart';
+import 'package:shop_list_app/presentation/pages/shopping/product_category_view_page.dart';
 import 'package:shop_list_app/shared/widgets/main_shell.dart';
 import 'package:shop_list_app/shared/widgets/settings_view_page.dart';
 import 'package:shop_list_app/main.dart' show SplashScreen;

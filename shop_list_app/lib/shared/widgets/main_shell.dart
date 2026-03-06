@@ -20,41 +20,9 @@ class MainShell extends ConsumerWidget {
 
     return Scaffold(
       body: navigationShell,
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: currentIndex,
+      bottomNavigationBar: _GroceryNavBar(
+        currentIndex: currentIndex,
         onDestinationSelected: _onDestinationSelected,
-        destinations: const [
-          NavigationDestination(
-            key: Key('nav_plan'),
-            icon: Icon(Icons.calendar_month_outlined),
-            selectedIcon: Icon(Icons.calendar_month),
-            label: 'Plan',
-          ),
-          NavigationDestination(
-            key: Key('nav_shop'),
-            icon: Icon(Icons.shopping_cart_outlined),
-            selectedIcon: Icon(Icons.shopping_cart),
-            label: 'Shop',
-          ),
-          NavigationDestination(
-            key: Key('nav_recipes'),
-            icon: Icon(Icons.menu_book_outlined),
-            selectedIcon: Icon(Icons.menu_book),
-            label: 'Recipes',
-          ),
-          NavigationDestination(
-            key: Key('nav_pantry'),
-            icon: Icon(Icons.kitchen_outlined),
-            selectedIcon: Icon(Icons.kitchen),
-            label: 'Pantry',
-          ),
-          NavigationDestination(
-            key: Key('nav_settings'),
-            icon: Icon(Icons.settings_outlined),
-            selectedIcon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
       ),
     );
   }
@@ -62,9 +30,59 @@ class MainShell extends ConsumerWidget {
   void _onDestinationSelected(int index) {
     navigationShell.goBranch(
       index,
-      // Tapping the active tab resets it to its initial route (scroll-to-top
-      // equivalent for stack-based branches).
       initialLocation: index == navigationShell.currentIndex,
+    );
+  }
+}
+
+class _GroceryNavBar extends StatelessWidget {
+  const _GroceryNavBar({
+    required this.currentIndex,
+    required this.onDestinationSelected,
+  });
+
+  final int currentIndex;
+  final ValueChanged<int> onDestinationSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    return NavigationBar(
+      selectedIndex: currentIndex,
+      onDestinationSelected: onDestinationSelected,
+      height: 65,
+      labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+      destinations: const [
+        NavigationDestination(
+          key: Key('nav_plan'),
+          icon: Icon(Icons.calendar_month_outlined),
+          selectedIcon: Icon(Icons.calendar_month),
+          label: 'Plan',
+        ),
+        NavigationDestination(
+          key: Key('nav_shop'),
+          icon: Icon(Icons.shopping_cart_outlined),
+          selectedIcon: Icon(Icons.shopping_cart),
+          label: 'Shop',
+        ),
+        NavigationDestination(
+          key: Key('nav_recipes'),
+          icon: Icon(Icons.menu_book_outlined),
+          selectedIcon: Icon(Icons.menu_book),
+          label: 'Recipes',
+        ),
+        NavigationDestination(
+          key: Key('nav_pantry'),
+          icon: Icon(Icons.kitchen_outlined),
+          selectedIcon: Icon(Icons.kitchen),
+          label: 'Pantry',
+        ),
+        NavigationDestination(
+          key: Key('nav_settings'),
+          icon: Icon(Icons.settings_outlined),
+          selectedIcon: Icon(Icons.settings),
+          label: 'Settings',
+        ),
+      ],
     );
   }
 }
