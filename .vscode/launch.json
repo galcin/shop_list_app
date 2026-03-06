@@ -5,23 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "shop_list_app",
-            "cwd": "shop_list_app",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "shop_list_app (profile mode)",
+            "name": "shop_list_app (Android)",
             "cwd": "shop_list_app",
             "request": "launch",
             "type": "dart",
+            "deviceId": "emulator-5554"
+        },
+        {
+            "name": "shop_list_app (Android - profile mode)",
+            "cwd": "shop_list_app",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "emulator-5554",
             "flutterMode": "profile"
         },
         {
-            "name": "shop_list_app (release mode)",
+            "name": "shop_list_app (Android - release mode)",
             "cwd": "shop_list_app",
             "request": "launch",
             "type": "dart",
+            "deviceId": "emulator-5554",
             "flutterMode": "release"
         }
     ]

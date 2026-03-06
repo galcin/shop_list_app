@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shop_list_app/core/error/failures.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product_category.dart';
-import 'package:shop_list_app/features/shopping/domain/repositories/i_product_category_repository.dart';
-import 'package:shop_list_app/features/shopping/presentation/pages/product_category_view_page.dart';
-import 'package:shop_list_app/features/shopping/presentation/providers/product_category_providers.dart';
+import 'package:shop_list_app/domain/entities/shopping/product_category.dart';
+import 'package:shop_list_app/domain/repositories/shopping/i_product_category_repository.dart';
+import 'package:shop_list_app/presentation/pages/shopping/product_category_view_page.dart';
+import 'package:shop_list_app/presentation/providers/shopping/product_category_providers.dart';
 
 const _kThree = [
   ProductCategory(id: 1, name: 'Dairy', iconName: '🥛', colorHex: '#4CAF50'),

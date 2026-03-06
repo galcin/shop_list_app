@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shop_list_app/core/error/failures.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product_category.dart';
-import 'package:shop_list_app/features/shopping/domain/repositories/i_product_category_repository.dart';
-import 'package:shop_list_app/features/shopping/domain/usecases/reorder_product_categories_use_case.dart';
+import 'package:shop_list_app/domain/entities/shopping/product_category.dart';
+import 'package:shop_list_app/domain/repositories/shopping/i_product_category_repository.dart';
+import 'package:shop_list_app/domain/usecases/shopping/reorder_product_categories_use_case.dart';
 
 class _FakeRepository implements IProductCategoryRepository {
   List<int>? lastReorderedIds;

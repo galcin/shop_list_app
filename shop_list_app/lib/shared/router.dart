@@ -3,13 +3,13 @@ import 'package:shop_list_app/shared/route_constants.dart';
 import 'package:shop_list_app/shared/widgets/about_view.dart';
 import 'package:shop_list_app/shared/widgets/error_view.dart';
 import 'package:shop_list_app/shared/widgets/main_view.dart';
-import 'package:shop_list_app/features/meal_planning/presentation/widgets/carousel/test_file.dart';
-import 'package:shop_list_app/features/meal_planning/presentation/pages/menu_composer_view.dart';
-import 'package:shop_list_app/features/meal_planning/presentation/pages/menu_view.dart';
-import 'package:shop_list_app/features/recipes/presentation/pages/recipe_list_view.dart';
+import 'package:shop_list_app/presentation/widgets/meal_planning/carousel/test_file.dart';
+import 'package:shop_list_app/presentation/pages/meal_planning/menu_composer_view.dart';
+import 'package:shop_list_app/presentation/pages/meal_planning/menu_view.dart';
+import 'package:shop_list_app/presentation/pages/recipes/recipe_list_view.dart';
 import 'package:shop_list_app/shared/widgets/settings_view_page.dart';
-import 'package:shop_list_app/features/shopping/presentation/pages/product_view_page.dart';
-import 'package:shop_list_app/features/shopping/presentation/pages/product_category_view_page.dart';
+import 'package:shop_list_app/presentation/pages/shopping/product_view_page.dart';
+import 'package:shop_list_app/presentation/pages/shopping/product_category_view_page.dart';
 import '../main.dart' show SplashScreen;
 
 Route<dynamic> generateRoute(RouteSettings settings) {
