@@ -40,6 +40,12 @@ class $ProductCategoriesTable extends ProductCategories
   late final GeneratedColumn<String> iconName = GeneratedColumn<String>(
       'icon_name', aliasedName, true,
       type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _imageNameMeta =
+      const VerificationMeta('imageName');
+  @override
+  late final GeneratedColumn<String> imageName = GeneratedColumn<String>(
+      'image_name', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
   static const VerificationMeta _sortOrderMeta =
       const VerificationMeta('sortOrder');
   @override
@@ -65,8 +71,17 @@ class $ProductCategoriesTable extends ProductCategories
       requiredDuringInsert: false,
       defaultValue: currentDateAndTime);
   @override
-  List<GeneratedColumn> get $columns =>
-      [id, name, photo, colorHex, iconName, sortOrder, createdAt, updatedAt];
+  List<GeneratedColumn> get $columns => [
+        id,
+        name,
+        photo,
+        colorHex,
+        iconName,
+        imageName,
+        sortOrder,
+        createdAt,
+        updatedAt
+      ];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
@@ -97,6 +112,10 @@ class $ProductCategoriesTable extends ProductCategories
     if (data.containsKey('icon_name')) {
       context.handle(_iconNameMeta,
           iconName.isAcceptableOrUnknown(data['icon_name']!, _iconNameMeta));
+    }
+    if (data.containsKey('image_name')) {
+      context.handle(_imageNameMeta,
+          imageName.isAcceptableOrUnknown(data['image_name']!, _imageNameMeta));
     }
     if (data.containsKey('sort_order')) {
       context.handle(_sortOrderMeta,
@@ -129,6 +148,8 @@ class $ProductCategoriesTable extends ProductCategories
           .read(DriftSqlType.string, data['${effectivePrefix}color_hex']),
       iconName: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}icon_name']),
+      imageName: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}image_name']),
       sortOrder: attachedDatabase.typeMapping
           .read(DriftSqlType.int, data['${effectivePrefix}sort_order'])!,
       createdAt: attachedDatabase.typeMapping
@@ -150,6 +171,10 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
   final String? photo;
   final String? colorHex;
   final String? iconName;
+
+  /// Asset image filename for this category, e.g. 'fruits_category.png'.
+  /// When set, the UI shows the image instead of the emoji/icon.
+  final String? imageName;
   final int sortOrder;
   final DateTime createdAt;
   final DateTime updatedAt;
@@ -159,6 +184,7 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
       this.photo,
       this.colorHex,
       this.iconName,
+      this.imageName,
       required this.sortOrder,
       required this.createdAt,
       required this.updatedAt});
@@ -175,6 +201,9 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
     }
     if (!nullToAbsent || iconName != null) {
       map['icon_name'] = Variable<String>(iconName);
+    }
+    if (!nullToAbsent || imageName != null) {
+      map['image_name'] = Variable<String>(imageName);
     }
     map['sort_order'] = Variable<int>(sortOrder);
     map['created_at'] = Variable<DateTime>(createdAt);
@@ -194,6 +223,9 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
       iconName: iconName == null && nullToAbsent
           ? const Value.absent()
           : Value(iconName),
+      imageName: imageName == null && nullToAbsent
+          ? const Value.absent()
+          : Value(imageName),
       sortOrder: Value(sortOrder),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
@@ -209,6 +241,7 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
       photo: serializer.fromJson<String?>(json['photo']),
       colorHex: serializer.fromJson<String?>(json['colorHex']),
       iconName: serializer.fromJson<String?>(json['iconName']),
+      imageName: serializer.fromJson<String?>(json['imageName']),
       sortOrder: serializer.fromJson<int>(json['sortOrder']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
       updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
@@ -223,6 +256,7 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
       'photo': serializer.toJson<String?>(photo),
       'colorHex': serializer.toJson<String?>(colorHex),
       'iconName': serializer.toJson<String?>(iconName),
+      'imageName': serializer.toJson<String?>(imageName),
       'sortOrder': serializer.toJson<int>(sortOrder),
       'createdAt': serializer.toJson<DateTime>(createdAt),
       'updatedAt': serializer.toJson<DateTime>(updatedAt),
@@ -235,6 +269,7 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
           Value<String?> photo = const Value.absent(),
           Value<String?> colorHex = const Value.absent(),
           Value<String?> iconName = const Value.absent(),
+          Value<String?> imageName = const Value.absent(),
           int? sortOrder,
           DateTime? createdAt,
           DateTime? updatedAt}) =>
@@ -244,6 +279,7 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
         photo: photo.present ? photo.value : this.photo,
         colorHex: colorHex.present ? colorHex.value : this.colorHex,
         iconName: iconName.present ? iconName.value : this.iconName,
+        imageName: imageName.present ? imageName.value : this.imageName,
         sortOrder: sortOrder ?? this.sortOrder,
         createdAt: createdAt ?? this.createdAt,
         updatedAt: updatedAt ?? this.updatedAt,
@@ -255,6 +291,7 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
       photo: data.photo.present ? data.photo.value : this.photo,
       colorHex: data.colorHex.present ? data.colorHex.value : this.colorHex,
       iconName: data.iconName.present ? data.iconName.value : this.iconName,
+      imageName: data.imageName.present ? data.imageName.value : this.imageName,
       sortOrder: data.sortOrder.present ? data.sortOrder.value : this.sortOrder,
       createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
       updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
@@ -269,6 +306,7 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
           ..write('photo: $photo, ')
           ..write('colorHex: $colorHex, ')
           ..write('iconName: $iconName, ')
+          ..write('imageName: $imageName, ')
           ..write('sortOrder: $sortOrder, ')
           ..write('createdAt: $createdAt, ')
           ..write('updatedAt: $updatedAt')
@@ -277,8 +315,8 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
   }
 
   @override
-  int get hashCode => Object.hash(
-      id, name, photo, colorHex, iconName, sortOrder, createdAt, updatedAt);
+  int get hashCode => Object.hash(id, name, photo, colorHex, iconName,
+      imageName, sortOrder, createdAt, updatedAt);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -288,6 +326,7 @@ class ProductCategory extends DataClass implements Insertable<ProductCategory> {
           other.photo == this.photo &&
           other.colorHex == this.colorHex &&
           other.iconName == this.iconName &&
+          other.imageName == this.imageName &&
           other.sortOrder == this.sortOrder &&
           other.createdAt == this.createdAt &&
           other.updatedAt == this.updatedAt);
@@ -299,6 +338,7 @@ class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
   final Value<String?> photo;
   final Value<String?> colorHex;
   final Value<String?> iconName;
+  final Value<String?> imageName;
   final Value<int> sortOrder;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
@@ -308,6 +348,7 @@ class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
     this.photo = const Value.absent(),
     this.colorHex = const Value.absent(),
     this.iconName = const Value.absent(),
+    this.imageName = const Value.absent(),
     this.sortOrder = const Value.absent(),
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
@@ -318,6 +359,7 @@ class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
     this.photo = const Value.absent(),
     this.colorHex = const Value.absent(),
     this.iconName = const Value.absent(),
+    this.imageName = const Value.absent(),
     this.sortOrder = const Value.absent(),
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
@@ -328,6 +370,7 @@ class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
     Expression<String>? photo,
     Expression<String>? colorHex,
     Expression<String>? iconName,
+    Expression<String>? imageName,
     Expression<int>? sortOrder,
     Expression<DateTime>? createdAt,
     Expression<DateTime>? updatedAt,
@@ -338,6 +381,7 @@ class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
       if (photo != null) 'photo': photo,
       if (colorHex != null) 'color_hex': colorHex,
       if (iconName != null) 'icon_name': iconName,
+      if (imageName != null) 'image_name': imageName,
       if (sortOrder != null) 'sort_order': sortOrder,
       if (createdAt != null) 'created_at': createdAt,
       if (updatedAt != null) 'updated_at': updatedAt,
@@ -350,6 +394,7 @@ class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
       Value<String?>? photo,
       Value<String?>? colorHex,
       Value<String?>? iconName,
+      Value<String?>? imageName,
       Value<int>? sortOrder,
       Value<DateTime>? createdAt,
       Value<DateTime>? updatedAt}) {
@@ -359,6 +404,7 @@ class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
       photo: photo ?? this.photo,
       colorHex: colorHex ?? this.colorHex,
       iconName: iconName ?? this.iconName,
+      imageName: imageName ?? this.imageName,
       sortOrder: sortOrder ?? this.sortOrder,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
@@ -383,6 +429,9 @@ class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
     if (iconName.present) {
       map['icon_name'] = Variable<String>(iconName.value);
     }
+    if (imageName.present) {
+      map['image_name'] = Variable<String>(imageName.value);
+    }
     if (sortOrder.present) {
       map['sort_order'] = Variable<int>(sortOrder.value);
     }
@@ -403,6 +452,7 @@ class ProductCategoriesCompanion extends UpdateCompanion<ProductCategory> {
           ..write('photo: $photo, ')
           ..write('colorHex: $colorHex, ')
           ..write('iconName: $iconName, ')
+          ..write('imageName: $imageName, ')
           ..write('sortOrder: $sortOrder, ')
           ..write('createdAt: $createdAt, ')
           ..write('updatedAt: $updatedAt')
@@ -1562,6 +1612,7 @@ typedef $$ProductCategoriesTableCreateCompanionBuilder
   Value<String?> photo,
   Value<String?> colorHex,
   Value<String?> iconName,
+  Value<String?> imageName,
   Value<int> sortOrder,
   Value<DateTime> createdAt,
   Value<DateTime> updatedAt,
@@ -1573,6 +1624,7 @@ typedef $$ProductCategoriesTableUpdateCompanionBuilder
   Value<String?> photo,
   Value<String?> colorHex,
   Value<String?> iconName,
+  Value<String?> imageName,
   Value<int> sortOrder,
   Value<DateTime> createdAt,
   Value<DateTime> updatedAt,
@@ -1622,6 +1674,9 @@ class $$ProductCategoriesTableFilterComposer
 
   ColumnFilters<String> get iconName => $composableBuilder(
       column: $table.iconName, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get imageName => $composableBuilder(
+      column: $table.imageName, builder: (column) => ColumnFilters(column));
 
   ColumnFilters<int> get sortOrder => $composableBuilder(
       column: $table.sortOrder, builder: (column) => ColumnFilters(column));
@@ -1678,6 +1733,9 @@ class $$ProductCategoriesTableOrderingComposer
   ColumnOrderings<String> get iconName => $composableBuilder(
       column: $table.iconName, builder: (column) => ColumnOrderings(column));
 
+  ColumnOrderings<String> get imageName => $composableBuilder(
+      column: $table.imageName, builder: (column) => ColumnOrderings(column));
+
   ColumnOrderings<int> get sortOrder => $composableBuilder(
       column: $table.sortOrder, builder: (column) => ColumnOrderings(column));
 
@@ -1711,6 +1769,9 @@ class $$ProductCategoriesTableAnnotationComposer
 
   GeneratedColumn<String> get iconName =>
       $composableBuilder(column: $table.iconName, builder: (column) => column);
+
+  GeneratedColumn<String> get imageName =>
+      $composableBuilder(column: $table.imageName, builder: (column) => column);
 
   GeneratedColumn<int> get sortOrder =>
       $composableBuilder(column: $table.sortOrder, builder: (column) => column);
@@ -1773,6 +1834,7 @@ class $$ProductCategoriesTableTableManager extends RootTableManager<
             Value<String?> photo = const Value.absent(),
             Value<String?> colorHex = const Value.absent(),
             Value<String?> iconName = const Value.absent(),
+            Value<String?> imageName = const Value.absent(),
             Value<int> sortOrder = const Value.absent(),
             Value<DateTime> createdAt = const Value.absent(),
             Value<DateTime> updatedAt = const Value.absent(),
@@ -1783,6 +1845,7 @@ class $$ProductCategoriesTableTableManager extends RootTableManager<
             photo: photo,
             colorHex: colorHex,
             iconName: iconName,
+            imageName: imageName,
             sortOrder: sortOrder,
             createdAt: createdAt,
             updatedAt: updatedAt,
@@ -1793,6 +1856,7 @@ class $$ProductCategoriesTableTableManager extends RootTableManager<
             Value<String?> photo = const Value.absent(),
             Value<String?> colorHex = const Value.absent(),
             Value<String?> iconName = const Value.absent(),
+            Value<String?> imageName = const Value.absent(),
             Value<int> sortOrder = const Value.absent(),
             Value<DateTime> createdAt = const Value.absent(),
             Value<DateTime> updatedAt = const Value.absent(),
@@ -1803,6 +1867,7 @@ class $$ProductCategoriesTableTableManager extends RootTableManager<
             photo: photo,
             colorHex: colorHex,
             iconName: iconName,
+            imageName: imageName,
             sortOrder: sortOrder,
             createdAt: createdAt,
             updatedAt: updatedAt,

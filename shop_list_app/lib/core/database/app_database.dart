@@ -27,10 +27,10 @@ class AppDatabase extends _$AppDatabase {
   factory AppDatabase() => instance;
 
   /// Factory constructor for tests: accepts any [QueryExecutor] (e.g. NativeDatabase.memory()).
-  AppDatabase.forTesting(QueryExecutor executor) : super(executor);
+  AppDatabase.forTesting(super.executor);
 
   @override
-  int get schemaVersion => 4;
+  int get schemaVersion => 5;
 
   /// Step-by-step migration strategy.
   ///
@@ -38,6 +38,7 @@ class AppDatabase extends _$AppDatabase {
   /// v2 → v3: add sync_queue table to support Post-MVP cloud sync (US-E0.2).
   /// v3 → v4: add colorHex, iconName, sortOrder, createdAt, updatedAt to
   ///           product_categories for E2 feature (US-E2.1 – US-E2.3).
+  /// v4 → v5: add image_name to product_categories for asset image support.
   @override
   MigrationStrategy get migration {
     return MigrationStrategy(
@@ -93,14 +94,27 @@ class AppDatabase extends _$AppDatabase {
 
           final nowMillis = DateTime.now().millisecondsSinceEpoch;
           await customStatement(
-            "UPDATE product_categories SET created_at = $nowMillis "
+            'UPDATE product_categories SET created_at = $nowMillis '
             "WHERE typeof(created_at) != 'integer'",
           );
           await customStatement(
-            "UPDATE product_categories SET updated_at = $nowMillis "
+            'UPDATE product_categories SET updated_at = $nowMillis '
             "WHERE typeof(updated_at) != 'integer'",
           );
           AppLogger.instance.info('[DB] onUpgrade v3→v4 complete');
+        }
+
+        // v4 → v5: add image_name column to product_categories.
+        if (from < 5) {
+          try {
+            await m.addColumn(productCategories, productCategories.imageName);
+            AppLogger.instance.info('[DB] Added column image_name');
+          } catch (e) {
+            AppLogger.instance.warning(
+                '[DB] Column image_name already exists (skipped)',
+                error: e);
+          }
+          AppLogger.instance.info('[DB] onUpgrade v4→v5 complete');
         }
       },
       // Runs after every open (new or upgraded) to verify integrity.
@@ -152,16 +166,21 @@ class AppDatabase extends _$AppDatabase {
                 'ALTER TABLE product_categories ADD COLUMN updated_at INTEGER NOT NULL DEFAULT $nowMillis');
             AppLogger.instance.info('[DB] Recovered: added updated_at');
           }
+          if (!existingCols.contains('image_name')) {
+            await customStatement(
+                'ALTER TABLE product_categories ADD COLUMN image_name TEXT');
+            AppLogger.instance.info('[DB] Recovered: added image_name');
+          }
 
           // Fix any rows where datetime was stored as SQLite text instead of
           // integer milliseconds (happens when DEFAULT CURRENT_TIMESTAMP was used).
           final nowMillis = DateTime.now().millisecondsSinceEpoch;
           await customStatement(
-            "UPDATE product_categories SET created_at = $nowMillis "
+            'UPDATE product_categories SET created_at = $nowMillis '
             "WHERE typeof(created_at) != 'integer'",
           );
           await customStatement(
-            "UPDATE product_categories SET updated_at = $nowMillis "
+            'UPDATE product_categories SET updated_at = $nowMillis '
             "WHERE typeof(updated_at) != 'integer'",
           );
           AppLogger.instance.info('[DB] Self-heal complete');

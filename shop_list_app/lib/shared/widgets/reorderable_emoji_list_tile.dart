@@ -3,7 +3,8 @@ import 'package:shop_list_app/core/theme/colors.dart';
 
 /// A list tile designed for use inside a [ReorderableListView].
 ///
-/// Displays an emoji badge on the left and a drag handle on the right.
+/// Displays a category image (if [imageName] is provided) or an emoji badge
+/// on the left, and a drag handle on the right.
 /// The [index] must match the item's position in the list so that
 /// [ReorderableDragStartListener] works correctly.
 class ReorderableEmojiListTile extends StatelessWidget {
@@ -13,6 +14,7 @@ class ReorderableEmojiListTile extends StatelessWidget {
     required this.accentColor,
     required this.emoji,
     required this.title,
+    this.imageName,
   });
 
   /// Position of this tile in the list — passed to [ReorderableDragStartListener].
@@ -21,10 +23,14 @@ class ReorderableEmojiListTile extends StatelessWidget {
   /// Colour used for the left badge background and card border.
   final Color accentColor;
 
-  /// Emoji (or short string) rendered inside the left badge.
+  /// Emoji (or short string) rendered inside the left badge when [imageName] is null.
   final String emoji;
 
   final String title;
+
+  /// Optional asset image filename (e.g. 'fruits_category.png').
+  /// When provided, renders the image instead of the emoji.
+  final String? imageName;
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +56,19 @@ class ReorderableEmojiListTile extends StatelessWidget {
             color: accentColor.withOpacity(0.15),
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Center(
-            child: Text(emoji, style: const TextStyle(fontSize: 22)),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: imageName != null
+                ? Image.asset(
+                    'assets/images/$imageName',
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => Center(
+                      child: Text(emoji, style: const TextStyle(fontSize: 22)),
+                    ),
+                  )
+                : Center(
+                    child: Text(emoji, style: const TextStyle(fontSize: 22)),
+                  ),
           ),
         ),
         title: Text(

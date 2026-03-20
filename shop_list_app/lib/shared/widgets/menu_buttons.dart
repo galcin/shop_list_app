@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:shop_list_app/shared/route_constants.dart';
 
 class CustomMenuButtons extends StatelessWidget {
+  const CustomMenuButtons({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: PopupMenuButton(
+    return PopupMenuButton(
       itemBuilder: (context) => [
-        PopupMenuItem(
+        const PopupMenuItem(
           value: settingsView,
           child: Row(
             children: [
@@ -17,7 +18,7 @@ class CustomMenuButtons extends StatelessWidget {
             ],
           ),
         ),
-        PopupMenuItem(
+        const PopupMenuItem(
           value: aboutView,
           child: Row(
             children: [
@@ -27,7 +28,7 @@ class CustomMenuButtons extends StatelessWidget {
             ],
           ),
         ),
-        PopupMenuItem(
+        const PopupMenuItem(
           value: menuView,
           child: Row(
             children: [
@@ -41,6 +42,6 @@ class CustomMenuButtons extends StatelessWidget {
       onSelected: (value) {
         Navigator.pushNamed(context, value);
       },
-    ));
+    );
   }
 }

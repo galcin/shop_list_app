@@ -40,6 +40,8 @@ void main(List<String> args) async {
 
 // Splash screen that initializes database in background
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }

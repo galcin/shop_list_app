@@ -1,12 +1,12 @@
 import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/navigation/app_route.dart';
-import 'package:shop_list_app/presentation/pages/meal_planning/menu_view.dart';
-import 'package:shop_list_app/presentation/pages/pantry/pantry_page.dart';
-import 'package:shop_list_app/presentation/pages/recipes/recipe_list_view.dart';
-import 'package:shop_list_app/presentation/pages/shopping/product_category_view_page.dart';
+import 'package:shop_list_app/features/meal_planning/presentation/pages/menu_view.dart';
+import 'package:shop_list_app/features/pantry/presentation/pages/pantry_page.dart';
+import 'package:shop_list_app/features/recipes/presentation/pages/recipe_list_view.dart';
+import 'package:shop_list_app/features/product_category/presentation/pages/product_category_view_page.dart';
+import 'package:shop_list_app/main.dart' show SplashScreen;
 import 'package:shop_list_app/shared/widgets/main_shell.dart';
 import 'package:shop_list_app/shared/widgets/settings_view_page.dart';
-import 'package:shop_list_app/main.dart' show SplashScreen;
 
 /// Application-level [GoRouter] instance.
 ///
@@ -23,7 +23,7 @@ final appRouter = GoRouter(
     // ── Splash ──────────────────────────────────────────────────────────────
     GoRoute(
       path: '/splash',
-      builder: (context, state) => SplashScreen(),
+      builder: (context, state) => const SplashScreen(),
     ),
 
     // ── Main shell (bottom nav + IndexedStack) ───────────────────────────────
@@ -76,7 +76,7 @@ final appRouter = GoRouter(
           routes: [
             GoRoute(
               path: AppRoute.settings.path,
-              builder: (context, state) => SettingsView(),
+              builder: (context, state) => const SettingsView(),
             ),
           ],
         ),
