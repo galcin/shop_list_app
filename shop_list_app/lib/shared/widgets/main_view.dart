@@ -5,8 +5,6 @@ import 'package:shop_list_app/shared/widgets/menu_buttons.dart';
 class MainView extends StatelessWidget {
   const MainView({super.key});
 
-  const MainView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -3,6 +3,7 @@ import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
 
 class MenuContainerComponent extends StatelessWidget {
   final String _label;
+  // ignore: unused_field
   final Product _products;
 
   const MenuContainerComponent(this._label, this._products, {super.key});

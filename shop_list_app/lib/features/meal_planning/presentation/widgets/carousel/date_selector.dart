@@ -42,11 +42,6 @@ class _DateSelector extends State<DateSelector> {
     }
   }
 
-  void _onFilterTapped(int index) {
-    _controller.animateToPage(index,
-        duration: const Duration(microseconds: 450), curve: Curves.ease);
-  }
-
   @override
   void dispose() {
     _controller.dispose();

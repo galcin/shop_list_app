@@ -197,6 +197,8 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
             .isBefore(DateTime.now().add(const Duration(days: 7)));
     final isExpired = product.expirationDate != null &&
         product.expirationDate!.isBefore(DateTime.now());
+    final expiryColor =
+        isExpired ? Colors.red : (isExpiringSoon ? Colors.orange : Colors.grey);
 
     return Card(
       margin: EdgeInsets.only(bottom: 12),
@@ -503,8 +505,6 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
                         ),
                         keyboardType: const TextInputType.numberWithOptions(
                             decimal: true),
-                        keyboardType: const TextInputType.numberWithOptions(
-                            decimal: true),
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -649,7 +649,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
                 }
 
                 final productData = prod_model.Product(
-                  id: isEditing ? (product?.id ?? 0) : 0,
+                  id: isEditing ? product.id : 0,
                   name: name,
                   quantity: quantity,
                   units: units.isEmpty ? null : units,
