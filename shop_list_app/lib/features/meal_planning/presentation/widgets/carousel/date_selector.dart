@@ -8,11 +8,10 @@ class DateSelector extends StatefulWidget {
   final List<int> filters;
 
   const DateSelector(
-      {Key? key,
+      {super.key,
       this.padding = const EdgeInsets.symmetric(vertical: 1.0),
       required this.filters,
-      required this.onFilterChanged})
-      : super(key: key);
+      required this.onFilterChanged});
 
   @override
   _DateSelector createState() => _DateSelector();
@@ -45,7 +44,7 @@ class _DateSelector extends State<DateSelector> {
 
   void _onFilterTapped(int index) {
     _controller.animateToPage(index,
-        duration: Duration(microseconds: 450), curve: Curves.ease);
+        duration: const Duration(microseconds: 450), curve: Curves.ease);
   }
 
   @override
@@ -59,7 +58,7 @@ class _DateSelector extends State<DateSelector> {
     return Scrollable(
         controller: _controller,
         axisDirection: AxisDirection.right,
-        physics: PageScrollPhysics(),
+        physics: const PageScrollPhysics(),
         viewportBuilder: (context, viewportOffset) {
           return LayoutBuilder(
             builder: (context, constraints) {

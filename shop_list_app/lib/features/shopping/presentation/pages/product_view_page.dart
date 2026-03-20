@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/features/shopping/domain/entities/product.dart'
     as prod_model;
@@ -198,25 +198,11 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
     final isExpired = product.expirationDate != null &&
         product.expirationDate!.isBefore(DateTime.now());
 
-    final expiryColor = isExpired
-        ? const Color(0xFFF3603F)
-        : isExpiringSoon
-            ? const Color(0xFFF8A44C)
-            : const Color(0xFF7C7C7C);
-
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: const Color(0xFFE2E2E2), width: 0.8),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.04),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
+    return Card(
+      margin: EdgeInsets.only(bottom: 12),
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
       ),
       child: InkWell(
         onTap: () => _viewProductDetails(product),
@@ -237,7 +223,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
                   child: product.photo != null && product.photo!.isNotEmpty
                       ? Text(
                           product.photo!,
-                          style: const TextStyle(fontSize: 34),
+                          style: TextStyle(fontSize: 32),
                         )
                       : const Icon(Icons.shopping_bag,
                           size: 32, color: Color(0xFFDBDBDB)),
@@ -515,6 +501,8 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
                           labelText: 'Quantity *',
                           border: OutlineInputBorder(),
                         ),
+                        keyboardType: const TextInputType.numberWithOptions(
+                            decimal: true),
                         keyboardType: const TextInputType.numberWithOptions(
                             decimal: true),
                       ),

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class MenuView extends StatelessWidget {
+  const MenuView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Select Menu Program"),
+        title: const Text('Select Menu Program'),
       ),
       body: Container(
-        child: Text("Generate menu"),
+        child: const Text('Generate menu'),
       ),
     );
   }
