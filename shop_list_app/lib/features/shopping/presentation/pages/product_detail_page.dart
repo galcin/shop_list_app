@@ -1,25 +1,130 @@
-import 'package:flutter/material.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
-import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart';
+﻿// product_detail_page.dart
+//
+// Displays the full details of a single product with working Edit and Delete
+// actions.  Converted to ConsumerStatefulWidget so local product state can
+// refresh after an edit without re-building the entire tree.
+import 'dart:io';
 
-class ProductDetailPage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart';
+import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
+import 'package:shop_list_app/features/shopping/presentation/providers/product_providers.dart';
+import 'package:shop_list_app/features/shopping/presentation/widgets/create_product_bottom_sheet.dart';
+
+class ProductDetailPage extends ConsumerStatefulWidget {
   final Product product;
   final ProductCategory? category;
 
   const ProductDetailPage({
-    Key? key,
+    super.key,
     required this.product,
     this.category,
-  }) : super(key: key);
+  });
+
+  @override
+  ConsumerState<ProductDetailPage> createState() => _ProductDetailPageState();
+}
+
+class _ProductDetailPageState extends ConsumerState<ProductDetailPage> {
+  late Product _product;
+  late ProductCategory? _category;
+
+  @override
+  void initState() {
+    super.initState();
+    _product = widget.product;
+    _category = widget.category;
+  }
+
+  bool get _isExpired =>
+      _product.expirationDate != null &&
+      _product.expirationDate!.isBefore(DateTime.now());
+
+  bool get _isExpiringSoon =>
+      _product.expirationDate != null &&
+      _product.expirationDate!
+          .isBefore(DateTime.now().add(const Duration(days: 7)));
+
+  bool get _hasFilePhoto =>
+      _product.photo != null &&
+      _product.photo!.isNotEmpty &&
+      (_product.photo!.startsWith('/') ||
+          _product.photo!.startsWith('file://'));
+
+  Future<void> _openEditSheet() async {
+    await showEditProductSheet(context, _product);
+    if (mounted) {
+      final updated = ref
+          .read(productListProvider)
+          .asData
+          ?.value
+          .where((p) => p.id == _product.id)
+          .firstOrNull;
+      if (updated != null) setState(() => _product = updated);
+    }
+  }
+
+  void _confirmDelete() {
+    showDialog<void>(
+      context: context,
+      builder: (_) => AlertDialog(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: const Text(
+          'Delete Product',
+          style: TextStyle(
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w600,
+              color: Color(0xFF181725)),
+        ),
+        content: Text(
+          'Are you sure you want to delete "${_product.name}"?\nThis action cannot be undone.',
+          style:
+              const TextStyle(fontFamily: 'Poppins', color: Color(0xFF4C4F4D)),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel',
+                style:
+                    TextStyle(color: Color(0xFF7C7C7C), fontFamily: 'Poppins')),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              Navigator.pop(context);
+              if (_product.id != null) {
+                final result = await ref
+                    .read(productListProvider.notifier)
+                    .deleteProduct(_product.id!);
+                result.fold(
+                  (f) => ScaffoldMessenger.of(context)
+                      .showSnackBar(SnackBar(content: Text(f.message))),
+                  (_) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Product deleted')),
+                    );
+                    Navigator.pop(context);
+                  },
+                );
+              }
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFFF3603F),
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              textStyle: const TextStyle(fontFamily: 'Poppins'),
+            ),
+            child: const Text('Delete'),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    final isExpired = product.expirationDate != null &&
-        product.expirationDate!.isBefore(DateTime.now());
-    final isExpiringSoon = product.expirationDate != null &&
-        product.expirationDate!
-            .isBefore(DateTime.now().add(const Duration(days: 7)));
-
     return Scaffold(
       backgroundColor: const Color(0xFFFCFCFC),
       appBar: AppBar(
@@ -33,25 +138,22 @@ class ProductDetailPage extends StatelessWidget {
         title: const Text(
           'Product Detail',
           style: TextStyle(
-            fontFamily: 'Poppins',
-            color: Color(0xFF181725),
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
-          ),
+              fontFamily: 'Poppins',
+              color: Color(0xFF181725),
+              fontWeight: FontWeight.w600,
+              fontSize: 20),
         ),
         centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.edit_outlined, color: Color(0xFF181725)),
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Edit functionality coming soon')),
-              );
-            },
+            tooltip: 'Edit',
+            onPressed: _openEditSheet,
           ),
           IconButton(
             icon: const Icon(Icons.delete_outline, color: Color(0xFFF3603F)),
-            onPressed: () => _showDeleteConfirmation(context),
+            tooltip: 'Delete',
+            onPressed: _confirmDelete,
           ),
         ],
       ),
@@ -65,88 +167,94 @@ class ProductDetailPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Product Name
                   Text(
-                    product.name ?? 'Unnamed Product',
+                    _product.name ?? 'Unnamed Product',
                     style: const TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 26,
-                      fontWeight: FontWeight.w700,
-                      color: Color(0xFF181725),
-                    ),
+                        fontFamily: 'Poppins',
+                        fontSize: 26,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFF181725)),
                   ),
                   const SizedBox(height: 20),
-
-                  // Category
-                  if (category != null) ...[
+                  if (_category != null) ...[
                     _buildInfoRow(
-                      icon: Icons.category_outlined,
-                      label: 'Category',
-                      value: category!.name,
-                      iconColor: const Color(0xFF53B175),
-                    ),
+                        icon: Icons.category_outlined,
+                        label: 'Category',
+                        value: _category!.name,
+                        iconColor: const Color(0xFF53B175)),
                     const SizedBox(height: 16),
                   ],
-
-                  // Quantity
                   _buildInfoRow(
-                    icon: Icons.inventory_2_outlined,
-                    label: 'Quantity',
-                    value: '${product.quantity ?? 0} ${product.units ?? ''}',
-                    iconColor: const Color(0xFF53B175),
-                  ),
+                      icon: Icons.inventory_2_outlined,
+                      label: 'Default Unit',
+                      value:
+                          '${_product.quantity ?? 1} ${_product.units ?? ''}',
+                      iconColor: const Color(0xFF53B175)),
                   const SizedBox(height: 16),
-
-                  // Expiration
-                  if (product.expirationDate != null) ...[
+                  if (_product.expirationDate != null) ...[
                     _buildInfoRow(
                       icon: Icons.calendar_today_outlined,
                       label: 'Expiration Date',
-                      value: _formatDate(product.expirationDate!),
-                      iconColor: isExpired
+                      value: _formatDate(_product.expirationDate!),
+                      iconColor: _isExpired
                           ? const Color(0xFFF3603F)
-                          : isExpiringSoon
+                          : _isExpiringSoon
                               ? const Color(0xFFF8A44C)
                               : const Color(0xFF7C7C7C),
-                      valueColor: isExpired
+                      valueColor: _isExpired
                           ? const Color(0xFFF3603F)
-                          : isExpiringSoon
+                          : _isExpiringSoon
                               ? const Color(0xFFF8A44C)
                               : null,
                     ),
                     const SizedBox(height: 16),
-                    _buildStatusBadge(isExpired, isExpiringSoon),
-                    const SizedBox(height: 20),
+                    _buildStatusBadge(),
+                    const SizedBox(height: 16),
                   ],
-
-                  // Additional Info Card
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFF2F3F2),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
+                        color: const Color(0xFFF2F3F2),
+                        borderRadius: BorderRadius.circular(16)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Additional Information',
-                          style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF181725),
-                          ),
-                        ),
+                        const Text('Additional Information',
+                            style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xFF181725))),
                         const SizedBox(height: 12),
-                        _buildDetailRow('Product ID', '${product.id ?? 'N/A'}'),
-                        if (product.productCategoryId != null)
+                        _buildDetailRow(
+                            'Product ID', '${_product.id ?? 'N/A'}'),
+                        if (_product.productCategoryId != null)
                           _buildDetailRow(
-                              'Category ID', '${product.productCategoryId}'),
+                              'Category ID', '${_product.productCategoryId}'),
                       ],
                     ),
                   ),
                   const SizedBox(height: 24),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: OutlinedButton.icon(
+                      onPressed: _confirmDelete,
+                      icon: const Icon(Icons.delete_outline,
+                          color: Color(0xFFF3603F), size: 18),
+                      label: const Text('Delete Product',
+                          style: TextStyle(
+                              fontFamily: 'Poppins',
+                              color: Color(0xFFF3603F),
+                              fontWeight: FontWeight.w600)),
+                      style: OutlinedButton.styleFrom(
+                        side: const BorderSide(
+                            color: Color(0xFFF3603F), width: 1.5),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(14)),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -160,76 +268,65 @@ class ProductDetailPage extends StatelessWidget {
     return Container(
       height: 240,
       width: double.infinity,
-      decoration: const BoxDecoration(
-        color: Color(0xFFF2F3F2),
-      ),
-      child: Center(
-        child: product.photo != null && product.photo!.isNotEmpty
-            ? Text(
-                product.photo!,
-                style: const TextStyle(fontSize: 110),
-              )
-            : _buildPlaceholderImage(),
-      ),
+      decoration: const BoxDecoration(color: Color(0xFFF2F3F2)),
+      child: Center(child: _buildImageContent()),
     );
   }
 
-  Widget _buildPlaceholderImage() {
-    return const Center(
-      child: Icon(
-        Icons.shopping_bag_outlined,
-        size: 80,
-        color: Color(0xFFDBDBDB),
-      ),
-    );
+  Widget _buildImageContent() {
+    final photo = _product.photo;
+    if (photo == null || photo.isEmpty) {
+      return const Icon(Icons.shopping_bag_outlined,
+          size: 80, color: Color(0xFFDBDBDB));
+    }
+    if (_hasFilePhoto) {
+      final file = File(photo.replaceFirst('file://', ''));
+      if (file.existsSync()) {
+        return Image.file(file,
+            fit: BoxFit.contain,
+            height: 220,
+            errorBuilder: (_, __, ___) => const Icon(
+                Icons.broken_image_outlined,
+                size: 80,
+                color: Color(0xFFDBDBDB)));
+      }
+    }
+    return Text(photo, style: const TextStyle(fontSize: 110));
   }
 
-  Widget _buildInfoRow({
-    required IconData icon,
-    required String label,
-    required String value,
-    Color? iconColor,
-    Color? valueColor,
-  }) {
+  Widget _buildInfoRow(
+      {required IconData icon,
+      required String label,
+      required String value,
+      Color? iconColor,
+      Color? valueColor}) {
     return Row(
       children: [
         Container(
           width: 44,
           height: 44,
           decoration: BoxDecoration(
-            color: (iconColor ?? const Color(0xFF7C7C7C)).withOpacity(0.1),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Icon(
-            icon,
-            size: 22,
-            color: iconColor ?? const Color(0xFF7C7C7C),
-          ),
+              color: (iconColor ?? const Color(0xFF7C7C7C)).withOpacity(0.1),
+              borderRadius: BorderRadius.circular(12)),
+          child:
+              Icon(icon, size: 22, color: iconColor ?? const Color(0xFF7C7C7C)),
         ),
         const SizedBox(width: 14),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                label,
-                style: const TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 12,
-                  color: Color(0xFF7C7C7C),
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              const SizedBox(height: 2),
-              Text(
-                value,
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                  color: valueColor ?? const Color(0xFF181725),
-                ),
-              ),
+              Text(label,
+                  style: const TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 12,
+                      color: Color(0xFF7C7C7C))),
+              Text(value,
+                  style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: valueColor ?? const Color(0xFF181725))),
             ],
           ),
         ),
@@ -243,111 +340,47 @@ class ProductDetailPage extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            label,
-            style: const TextStyle(
-              fontFamily: 'Poppins',
-              fontSize: 13,
-              color: Color(0xFF7C7C7C),
-            ),
-          ),
-          Text(
-            value,
-            style: const TextStyle(
-              fontFamily: 'Poppins',
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
-              color: Color(0xFF181725),
-            ),
-          ),
+          Text(label,
+              style: const TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 13,
+                  color: Color(0xFF7C7C7C))),
+          Text(value,
+              style: const TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF181725))),
         ],
       ),
     );
   }
 
-  Widget _buildStatusBadge(bool isExpired, bool isExpiringSoon) {
-    if (!isExpired && !isExpiringSoon) return const SizedBox.shrink();
-
-    final color = isExpired ? const Color(0xFFF3603F) : const Color(0xFFF8A44C);
-
+  Widget _buildStatusBadge() {
+    if (!_isExpired && !_isExpiringSoon) return const SizedBox.shrink();
+    final color =
+        _isExpired ? const Color(0xFFF3603F) : const Color(0xFFF8A44C);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: color.withOpacity(0.4), width: 1),
-      ),
+          color: color.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: color.withOpacity(0.4), width: 1)),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.warning_amber_rounded, size: 18, color: color),
           const SizedBox(width: 8),
-          Text(
-            isExpired ? 'Expired' : 'Expiring Soon',
-            style: TextStyle(
-              fontFamily: 'Poppins',
-              color: color,
-              fontWeight: FontWeight.w600,
-              fontSize: 13,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  String _formatDate(DateTime date) {
-    return '${date.day}/${date.month}/${date.year}';
-  }
-
-  void _showDeleteConfirmation(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Text(
-          'Delete Product',
-          style: TextStyle(
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w600,
-            color: Color(0xFF181725),
-          ),
-        ),
-        content: Text(
-          'Are you sure you want to delete ${product.name}? This action cannot be undone.',
-          style: const TextStyle(
-            fontFamily: 'Poppins',
-            color: Color(0xFF4C4F4D),
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text(
-              'Cancel',
-              style: TextStyle(color: Color(0xFF7C7C7C), fontFamily: 'Poppins'),
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Product deleted')),
-              );
-            },
-            child: const Text(
-              'Delete',
+          Text(_isExpired ? 'Expired' : 'Expiring Soon',
               style: TextStyle(
-                color: Color(0xFFF3603F),
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
+                  fontFamily: 'Poppins',
+                  color: color,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 13)),
         ],
       ),
     );
   }
+
+  String _formatDate(DateTime date) => '${date.day}/${date.month}/${date.year}';
 }

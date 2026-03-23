@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:shop_list_app/core/theme/colors.dart';
 
 /// Empty-state shown inside [CategoryProductsSection] when a category has
-/// no products yet.
+/// no products yet.  Optionally shows an "Add Product" call-to-action when
+/// [onAdd] is provided.
 class CategoryEmptyProducts extends StatelessWidget {
-  const CategoryEmptyProducts({super.key});
+  final VoidCallback? onAdd;
+
+  const CategoryEmptyProducts({super.key, this.onAdd});
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +41,24 @@ class CategoryEmptyProducts extends StatelessWidget {
                 color: AppColors.textSecondary,
               ),
             ),
+            if (onAdd != null) ...[
+              const SizedBox(height: 16),
+              TextButton.icon(
+                onPressed: onAdd,
+                icon: const Icon(Icons.add, size: 16),
+                label: const Text(
+                  'Add Product',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14,
+                  ),
+                ),
+                style: TextButton.styleFrom(
+                  foregroundColor: AppColors.primary,
+                ),
+              ),
+            ],
           ],
         ),
       ),

@@ -1,10 +1,10 @@
-// category_product_tile.dart  –  analogous to movie_field.dart
+﻿// category_product_tile.dart  -  analogous to movie_field.dart
 import 'package:flutter/material.dart';
 import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
+import 'package:shop_list_app/features/shopping/presentation/widgets/product_image_widget.dart';
 
-/// A single product row inside the detail page's products list.
-/// Mirrors the role of `MovieField` – a small, self-contained display widget.
+/// A single product row inside the detail page products list.
 class CategoryProductTile extends StatelessWidget {
   final Product product;
 
@@ -29,22 +29,12 @@ class CategoryProductTile extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Emoji / placeholder icon
-          Container(
-            width: 46,
-            height: 46,
-            decoration: BoxDecoration(
-              color: AppColors.surfaceVariant,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Center(
-              child: product.photo != null && product.photo!.isNotEmpty
-                  ? Text(product.photo!, style: const TextStyle(fontSize: 24))
-                  : const Icon(
-                      Icons.shopping_bag_outlined,
-                      color: AppColors.border,
-                    ),
-            ),
+          // Photo / emoji / placeholder
+          ProductImageWidget(
+            photo: product.photo,
+            size: 46,
+            borderRadius: 12,
+            backgroundColor: AppColors.surfaceVariant,
           ),
           const SizedBox(width: 12),
           // Name + quantity

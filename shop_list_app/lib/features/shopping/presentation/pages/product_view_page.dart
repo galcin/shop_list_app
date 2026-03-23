@@ -1,15 +1,21 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product.dart'
-    as prod_model;
+import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart'
     as cat_model;
-import 'package:shop_list_app/features/shopping/presentation/pages/product_detail_page.dart';
 import 'package:shop_list_app/features/product_category/presentation/providers/product_category_providers.dart';
+import 'package:shop_list_app/features/shopping/domain/entities/product.dart'
+    as prod_model;
+import 'package:shop_list_app/features/shopping/presentation/pages/product_detail_page.dart';
 import 'package:shop_list_app/features/shopping/presentation/providers/product_providers.dart';
+import 'package:shop_list_app/features/shopping/presentation/widgets/create_product_bottom_sheet.dart';
+import 'package:shop_list_app/features/shopping/presentation/widgets/product_image_widget.dart';
 
-/// View — delegates all data operations to [ProductListNotifier] (ViewModel).
-/// No repository or database access happens inside this widget.
+/// Lists all products using the same visual language as the category list:
+/// – Stack pattern: card body offset right + circular image/emoji overlay
+/// – Dismissible (swipe left) for delete
+/// – LongPress to edit
+/// – Tap to view detail
 class ProductViewPage extends ConsumerStatefulWidget {
   const ProductViewPage({super.key});
 
@@ -18,7 +24,7 @@ class ProductViewPage extends ConsumerStatefulWidget {
 }
 
 class _ProductViewPageState extends ConsumerState<ProductViewPage> {
-  // -- Build -----------------------------------------------------------------
+  // ── Build ──────────────────────────────────────────────────────────────────
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +34,21 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
         ref.watch(productCategoryListProvider).asData?.value ?? [];
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFCFCFC),
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFFFFFFFF),
+        backgroundColor: AppColors.surface,
         elevation: 0,
+        leading: Navigator.canPop(context)
+            ? IconButton(
+                icon: const Icon(Icons.arrow_back_ios,
+                    color: AppColors.textPrimary, size: 20),
+                onPressed: () => Navigator.pop(context),
+              )
+            : null,
         title: const Text(
-          'Products',
+          'All Products',
           style: TextStyle(
-            color: Color(0xFF181725),
+            color: AppColors.textPrimary,
             fontWeight: FontWeight.w700,
             fontSize: 22,
             fontFamily: 'Poppins',
@@ -43,37 +56,58 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
         ),
         centerTitle: false,
         actions: [
-          IconButton(
-            icon: const Icon(Icons.filter_list, color: Color(0xFF181725)),
-            onPressed: () => _showFilterDialog(categories),
+          PopupMenuButton<String>(
+            color: AppColors.surface,
+            icon: const Icon(Icons.more_vert, color: AppColors.textPrimary),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+            onSelected: (v) {
+              if (v == 'filter') _showFilterDialog(categories);
+            },
+            itemBuilder: (_) => [
+              const PopupMenuItem(
+                value: 'filter',
+                child: Row(
+                  children: [
+                    Icon(Icons.filter_list,
+                        size: 18, color: AppColors.textPrimary),
+                    SizedBox(width: 10),
+                    Text(
+                      'Filter by Category',
+                      style: TextStyle(
+                          fontFamily: 'Poppins', color: AppColors.textPrimary),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),
       body: asyncProducts.when(
         loading: () => const Center(
-          child: CircularProgressIndicator(color: Color(0xFF53B175)),
+          child: CircularProgressIndicator(color: AppColors.primary),
         ),
         error: (err, _) => Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.error_outline,
-                  color: Color(0xFFF3603F), size: 48),
+              const Icon(Icons.error_outline, color: AppColors.error, size: 48),
               const SizedBox(height: 12),
               Text(
                 err.toString(),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                    fontFamily: 'Poppins', color: Color(0xFF7C7C7C)),
+                    fontFamily: 'Poppins', color: AppColors.textSecondary),
               ),
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () => ref.invalidate(productListProvider),
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF53B175)),
+                    backgroundColor: AppColors.primary),
                 child: const Text('Retry',
-                    style:
-                        TextStyle(color: Colors.white, fontFamily: 'Poppins')),
+                    style: TextStyle(
+                        color: AppColors.onPrimary, fontFamily: 'Poppins')),
               ),
             ],
           ),
@@ -85,17 +119,189 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
             Expanded(
               child: filteredProducts.isEmpty
                   ? _buildEmptyState()
-                  : _buildProductList(filteredProducts),
+                  : _buildProductList(filteredProducts, categories),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => _showProductDialog(categories: categories),
-        backgroundColor: const Color(0xFF53B175),
-        foregroundColor: Colors.white,
+        onPressed: () => showCreateProductSheet(context),
+        backgroundColor: AppColors.primary,
+        foregroundColor: AppColors.onPrimary,
         tooltip: 'Add Product',
+        elevation: 4,
         child: const Icon(Icons.add),
+      ),
+    );
+  }
+
+  // ── List ───────────────────────────────────────────────────────────────────
+
+  Widget _buildProductList(
+    List<prod_model.Product> products,
+    List<cat_model.ProductCategory> categories,
+  ) {
+    return ListView.builder(
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      itemCount: products.length,
+      itemBuilder: (context, index) =>
+          _buildProductRow(products[index], categories),
+    );
+  }
+
+  Widget _buildProductRow(
+    prod_model.Product product,
+    List<cat_model.ProductCategory> categories,
+  ) {
+    final match = categories.where((c) => c.id == product.productCategoryId);
+    final cat = match.isNotEmpty ? match.first : null;
+    final accentColor = _parseColor(cat?.colorHex) ?? AppColors.primary;
+
+    return Dismissible(
+      key: ValueKey(product.id),
+      direction: DismissDirection.endToStart,
+      background: Container(
+        margin: const EdgeInsets.only(left: 56, bottom: 10),
+        decoration: BoxDecoration(
+          color: AppColors.error.withOpacity(0.85),
+          borderRadius: BorderRadius.circular(18),
+        ),
+        alignment: Alignment.centerRight,
+        padding: const EdgeInsets.only(right: 20),
+        child: const Icon(Icons.delete_outline, color: Colors.white, size: 22),
+      ),
+      confirmDismiss: (_) => _confirmDelete(product),
+      onDismissed: (_) => _handleDeleteDismissed(product),
+      child: Stack(
+        children: [
+          // ── Card body (offset right) ─────────────────────────────────
+          GestureDetector(
+            onTap: () => _viewProductDetails(product, cat),
+            onLongPress: () => showEditProductSheet(context, product),
+            child: Container(
+              width: double.infinity,
+              height: 96,
+              margin: const EdgeInsets.only(left: 56, bottom: 10),
+              decoration: BoxDecoration(
+                color: AppColors.surface,
+                borderRadius: BorderRadius.circular(18),
+                border: Border.all(color: AppColors.divider, width: 0.8),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.04),
+                    blurRadius: 8,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    top: 10, bottom: 10, left: 50, right: 14),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    // Product name
+                    Text(
+                      product.name ?? 'Unnamed product',
+                      style: const TextStyle(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                        color: AppColors.textPrimary,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Accent dot + category name + qty
+                        Flexible(
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: accentColor,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                              const SizedBox(width: 6),
+                              Flexible(
+                                child: Text(
+                                  cat?.name ?? 'No category',
+                                  style: const TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 12,
+                                    color: AppColors.textSecondary,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              if (product.quantity != null ||
+                                  product.units != null) ...[
+                                const SizedBox(width: 8),
+                                Text(
+                                  '${product.quantity ?? 0} ${product.units ?? ''}',
+                                  style: const TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 12,
+                                    color: AppColors.textSecondary,
+                                  ),
+                                ),
+                              ],
+                            ],
+                          ),
+                        ),
+                        // Expiry badge OR chevron
+                        if (_isExpired(product.expirationDate))
+                          _expiryBadge('Expired', AppColors.error)
+                        else if (_isExpiringSoon(product.expirationDate))
+                          _expiryBadge(
+                              'Exp. ${_formatDate(product.expirationDate!)}',
+                              AppColors.accent)
+                        else
+                          const Icon(Icons.chevron_right,
+                              color: AppColors.textSecondary, size: 20),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          // ── Circular image overlay (left) ────────────────────────────
+          Positioned(
+            top: 6,
+            left: 0,
+            child: _ProductCircleImage(
+              photo: product.photo,
+              accentColor: accentColor,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _expiryBadge(String label, Color color) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.12),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: color.withOpacity(0.4), width: 0.8),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 11,
+          fontWeight: FontWeight.w600,
+          color: color,
+        ),
       ),
     );
   }
@@ -125,11 +331,10 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
           duration: const Duration(milliseconds: 200),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
           decoration: BoxDecoration(
-            color: selected ? const Color(0xFF53B175) : const Color(0xFFF2F3F2),
+            color: selected ? AppColors.primary : AppColors.surfaceVariant,
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
-              color:
-                  selected ? const Color(0xFF53B175) : const Color(0xFFDBDBDB),
+              color: selected ? AppColors.primary : AppColors.border,
               width: 1,
             ),
           ),
@@ -139,7 +344,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
               fontFamily: 'Poppins',
               fontSize: 13,
               fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
-              color: selected ? Colors.white : const Color(0xFF4C4F4D),
+              color: selected ? AppColors.onPrimary : AppColors.textBody,
             ),
           ),
         ),
@@ -152,16 +357,16 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
       child: TextField(
         decoration: InputDecoration(
-          hintText: 'Search store',
+          hintText: 'Search products',
           hintStyle: const TextStyle(
             fontFamily: 'Poppins',
-            color: Color(0xFF7C7C7C),
+            color: AppColors.textSecondary,
             fontSize: 14,
           ),
-          prefixIcon:
-              const Icon(Icons.search, color: Color(0xFF7C7C7C), size: 20),
+          prefixIcon: const Icon(Icons.search,
+              color: AppColors.textSecondary, size: 20),
           filled: true,
-          fillColor: const Color(0xFFF2F3F2),
+          fillColor: AppColors.surfaceVariant,
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           border: OutlineInputBorder(
@@ -174,162 +379,11 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
-            borderSide: const BorderSide(color: Color(0xFF53B175), width: 1.5),
+            borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
           ),
         ),
-        onChanged: (value) =>
-            ref.read(productSearchQueryProvider.notifier).state = value,
-      ),
-    );
-  }
-
-  Widget _buildProductList(List<prod_model.Product> products) {
-    return ListView.builder(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 100),
-      itemCount: products.length,
-      itemBuilder: (context, index) => _buildProductCard(products[index]),
-    );
-  }
-
-  Widget _buildProductCard(prod_model.Product product) {
-    final isExpiringSoon = product.expirationDate != null &&
-        product.expirationDate!
-            .isBefore(DateTime.now().add(const Duration(days: 7)));
-    final isExpired = product.expirationDate != null &&
-        product.expirationDate!.isBefore(DateTime.now());
-    final expiryColor =
-        isExpired ? Colors.red : (isExpiringSoon ? Colors.orange : Colors.grey);
-
-    return Card(
-      margin: EdgeInsets.only(bottom: 12),
-      elevation: 2,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: InkWell(
-        onTap: () => _viewProductDetails(product),
-        borderRadius: BorderRadius.circular(18),
-        child: Padding(
-          padding: const EdgeInsets.all(14),
-          child: Row(
-            children: [
-              // Product Photo
-              Container(
-                width: 64,
-                height: 64,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF2F3F2),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Center(
-                  child: product.photo != null && product.photo!.isNotEmpty
-                      ? Text(
-                          product.photo!,
-                          style: TextStyle(fontSize: 32),
-                        )
-                      : const Icon(Icons.shopping_bag,
-                          size: 32, color: Color(0xFFDBDBDB)),
-                ),
-              ),
-              const SizedBox(width: 14),
-              // Product Info
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      product.name ?? 'Unnamed Product',
-                      style: const TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF181725),
-                      ),
-                    ),
-                    const SizedBox(height: 3),
-                    Text(
-                      '${product.quantity ?? 0} ${product.units ?? ''}',
-                      style: const TextStyle(
-                        fontFamily: 'Poppins',
-                        fontSize: 13,
-                        color: Color(0xFF7C7C7C),
-                      ),
-                    ),
-                    if (product.expirationDate != null) ...[
-                      const SizedBox(height: 4),
-                      Row(
-                        children: [
-                          Icon(Icons.calendar_today,
-                              size: 12, color: expiryColor),
-                          const SizedBox(width: 4),
-                          Text(
-                            'Exp: ${_formatDate(product.expirationDate!)}',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 11,
-                              color: expiryColor,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ],
-                ),
-              ),
-              // Actions
-              PopupMenuButton<String>(
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
-                icon: const Icon(Icons.more_vert,
-                    color: Color(0xFF7C7C7C), size: 20),
-                onSelected: (value) {
-                  if (value == 'edit') {
-                    final categories =
-                        ref.read(productCategoryListProvider).asData?.value ??
-                            [];
-                    _showProductDialog(
-                        product: product, categories: categories);
-                  }
-                  if (value == 'delete') _deleteProduct(product);
-                },
-                itemBuilder: (context) => [
-                  const PopupMenuItem(
-                    value: 'edit',
-                    child: Row(
-                      children: [
-                        Icon(Icons.edit_outlined,
-                            size: 18, color: Color(0xFF181725)),
-                        SizedBox(width: 10),
-                        Text(
-                          'Edit',
-                          style: TextStyle(
-                              fontFamily: 'Poppins', color: Color(0xFF181725)),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const PopupMenuItem(
-                    value: 'delete',
-                    child: Row(
-                      children: [
-                        Icon(Icons.delete_outline,
-                            size: 18, color: Color(0xFFF3603F)),
-                        SizedBox(width: 10),
-                        Text(
-                          'Delete',
-                          style: TextStyle(
-                              fontFamily: 'Poppins', color: Color(0xFFF3603F)),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
+        onChanged: (v) =>
+            ref.read(productSearchQueryProvider.notifier).state = v,
       ),
     );
   }
@@ -343,14 +397,11 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
             width: 110,
             height: 110,
             decoration: BoxDecoration(
-              color: const Color(0xFF53B175).withOpacity(0.1),
+              color: AppColors.primary.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
-            child: const Icon(
-              Icons.shopping_basket_outlined,
-              size: 52,
-              color: Color(0xFF53B175),
-            ),
+            child: const Icon(Icons.shopping_basket_outlined,
+                size: 52, color: AppColors.primary),
           ),
           const SizedBox(height: 20),
           const Text(
@@ -359,7 +410,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
               fontFamily: 'Poppins',
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: Color(0xFF181725),
+              color: AppColors.textPrimary,
             ),
           ),
           const SizedBox(height: 8),
@@ -368,7 +419,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
             style: TextStyle(
               fontFamily: 'Poppins',
               fontSize: 14,
-              color: Color(0xFF7C7C7C),
+              color: AppColors.textSecondary,
             ),
           ),
         ],
@@ -376,8 +427,87 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
     );
   }
 
-  String _formatDate(DateTime date) {
-    return '${date.day}/${date.month}/${date.year}';
+  // ── Helpers ────────────────────────────────────────────────────────────────
+
+  bool _isExpired(DateTime? d) => d != null && d.isBefore(DateTime.now());
+
+  bool _isExpiringSoon(DateTime? d) =>
+      d != null && d.isBefore(DateTime.now().add(const Duration(days: 7)));
+
+  String _formatDate(DateTime d) => '${d.day}/${d.month}/${d.year}';
+
+  Color? _parseColor(String? hex) {
+    if (hex == null || hex.isEmpty) return null;
+    try {
+      return Color(int.parse('FF${hex.replaceAll('#', '')}', radix: 16));
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<bool> _confirmDelete(prod_model.Product product) async {
+    return await showDialog<bool>(
+          context: context,
+          builder: (_) => AlertDialog(
+            backgroundColor: AppColors.surface,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            title: Text(
+              'Delete "${product.name}"?',
+              style: const TextStyle(
+                color: AppColors.textPrimary,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: const Text('Cancel',
+                    style: TextStyle(
+                        color: AppColors.textSecondary, fontFamily: 'Poppins')),
+              ),
+              TextButton(
+                onPressed: () => Navigator.pop(context, true),
+                child: const Text('Delete',
+                    style: TextStyle(
+                        color: AppColors.error,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Poppins')),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+  }
+
+  void _handleDeleteDismissed(prod_model.Product product) {
+    if (product.id == null) return;
+    ref.read(productListProvider.notifier).deleteProduct(product.id!).then(
+      (result) {
+        if (!mounted) return;
+        result.fold(
+          (f) => ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text(f.message))),
+          (_) => ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('"${product.name}" deleted'),
+              duration: const Duration(seconds: 4),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _viewProductDetails(
+      prod_model.Product product, cat_model.ProductCategory? category) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ProductDetailPage(product: product, category: category),
+      ),
+    ).then((_) => ref.invalidate(productListProvider));
   }
 
   void _showFilterDialog(List<cat_model.ProductCategory> categories) {
@@ -385,50 +515,45 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.surface,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         title: const Text(
           'Filter by Category',
           style: TextStyle(
             fontFamily: 'Poppins',
             fontWeight: FontWeight.w600,
-            color: Color(0xFF181725),
+            color: AppColors.textPrimary,
           ),
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
-              title: const Text(
-                'All Categories',
-                style:
-                    TextStyle(fontFamily: 'Poppins', color: Color(0xFF181725)),
-              ),
+              title: const Text('All Categories',
+                  style: TextStyle(
+                      fontFamily: 'Poppins', color: AppColors.textPrimary)),
               leading: Radio<int?>(
                 value: null,
                 groupValue: selectedCategoryId,
-                activeColor: const Color(0xFF53B175),
-                onChanged: (value) {
-                  ref.read(productSelectedCategoryProvider.notifier).state =
-                      value;
+                activeColor: AppColors.primary,
+                onChanged: (v) {
+                  ref.read(productSelectedCategoryProvider.notifier).state = v;
                   Navigator.pop(context);
                 },
               ),
             ),
             ...categories.map(
-              (category) => ListTile(
-                title: Text(
-                  category.name,
-                  style: const TextStyle(
-                      fontFamily: 'Poppins', color: Color(0xFF181725)),
-                ),
+              (cat) => ListTile(
+                title: Text(cat.name,
+                    style: const TextStyle(
+                        fontFamily: 'Poppins', color: AppColors.textPrimary)),
                 leading: Radio<int?>(
-                  value: category.id,
+                  value: cat.id,
                   groupValue: selectedCategoryId,
-                  activeColor: const Color(0xFF53B175),
-                  onChanged: (value) {
+                  activeColor: AppColors.primary,
+                  onChanged: (v) {
                     ref.read(productSelectedCategoryProvider.notifier).state =
-                        value;
+                        v;
                     Navigator.pop(context);
                   },
                 ),
@@ -439,341 +564,55 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text(
-              'Close',
-              style: TextStyle(
-                  color: Color(0xFF53B175),
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600),
-            ),
+            child: const Text('Close',
+                style: TextStyle(
+                    color: AppColors.primary,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600)),
           ),
         ],
       ),
     );
   }
+}
 
-  void _showProductDialog({
-    prod_model.Product? product,
-    required List<cat_model.ProductCategory> categories,
-  }) {
-    final isEditing = product != null;
-    final nameController = TextEditingController(text: product?.name ?? '');
-    final quantityController =
-        TextEditingController(text: product?.quantity?.toString() ?? '');
-    final unitsController = TextEditingController(text: product?.units ?? '');
-    final photoController = TextEditingController(text: product?.photo ?? '');
-    DateTime? selectedDate = product?.expirationDate;
-    int? selectedCategoryId = product?.productCategoryId ??
-        (categories.isNotEmpty ? categories.first.id : null);
+// ── Circular product image overlay ────────────────────────────────────────────
 
-    showDialog(
-      context: context,
-      builder: (dialogContext) => StatefulBuilder(
-        builder: (builderContext, setDialogState) => AlertDialog(
-          backgroundColor: Colors.white,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          title: Text(
-            isEditing ? 'Edit Product' : 'Add Product',
-            style: const TextStyle(
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.w600,
-              color: Color(0xFF181725),
-            ),
-          ),
-          content: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                TextField(
-                  controller: nameController,
-                  decoration: const InputDecoration(
-                    labelText: 'Product Name *',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: TextField(
-                        controller: quantityController,
-                        decoration: const InputDecoration(
-                          labelText: 'Quantity *',
-                          border: OutlineInputBorder(),
-                        ),
-                        keyboardType: const TextInputType.numberWithOptions(
-                            decimal: true),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: TextField(
-                        controller: unitsController,
-                        decoration: const InputDecoration(
-                          labelText: 'Units',
-                          border: OutlineInputBorder(),
-                          hintText: 'kg, pcs',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16),
-                TextField(
-                  controller: photoController,
-                  decoration: const InputDecoration(
-                    labelText: 'Emoji Icon',
-                    border: OutlineInputBorder(),
-                    hintText: '??',
-                  ),
-                ),
-                const SizedBox(height: 16),
-                DropdownButtonFormField<int>(
-                  initialValue: selectedCategoryId,
-                  decoration: const InputDecoration(
-                    labelText: 'Category *',
-                    border: OutlineInputBorder(),
-                  ),
-                  items: categories.map((category) {
-                    return DropdownMenuItem<int>(
-                      value: category.id,
-                      child: Row(
-                        children: [
-                          if (category.photo != null &&
-                              category.photo!.isNotEmpty)
-                            Text(category.photo!,
-                                style: const TextStyle(fontSize: 20)),
-                          const SizedBox(width: 8),
-                          Text(category.name),
-                        ],
-                      ),
-                    );
-                  }).toList(),
-                  onChanged: (value) {
-                    setDialogState(() {
-                      selectedCategoryId = value;
-                    });
-                  },
-                ),
-                const SizedBox(height: 16),
-                InkWell(
-                  onTap: () async {
-                    final DateTime? picked = await showDatePicker(
-                      context: builderContext,
-                      initialDate: selectedDate ??
-                          DateTime.now().add(const Duration(days: 7)),
-                      firstDate: DateTime.now(),
-                      lastDate: DateTime.now().add(const Duration(days: 365)),
-                    );
-                    if (picked != null) {
-                      setDialogState(() {
-                        selectedDate = picked;
-                      });
-                    }
-                  },
-                  child: InputDecorator(
-                    decoration: const InputDecoration(
-                      labelText: 'Expiration Date',
-                      border: OutlineInputBorder(),
-                      suffixIcon: Icon(Icons.calendar_today),
-                    ),
-                    child: Text(
-                      selectedDate != null
-                          ? _formatDate(selectedDate!)
-                          : 'Select date',
-                      style: TextStyle(
-                        color: selectedDate != null
-                            ? const Color(0xFF181725)
-                            : const Color(0xFF7C7C7C),
-                        fontFamily: 'Poppins',
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(builderContext),
-              child: const Text(
-                'Cancel',
-                style:
-                    TextStyle(color: Color(0xFF7C7C7C), fontFamily: 'Poppins'),
-              ),
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF53B175),
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14)),
-                minimumSize: const Size(0, 44),
-                textStyle: const TextStyle(
-                    fontFamily: 'Poppins', fontWeight: FontWeight.w600),
-              ),
-              onPressed: () async {
-                final name = nameController.text.trim();
-                final quantityText = quantityController.text.trim();
-                final units = unitsController.text.trim();
-                final photo = photoController.text.trim();
+/// Mirrors [CategoryEmojiImage]: a circular avatar with an accent-coloured ring.
+class _ProductCircleImage extends StatelessWidget {
+  final String? photo;
+  final Color accentColor;
 
-                if (name.isEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                        content: Text('Please enter a product name')),
-                  );
-                  return;
-                }
-                if (quantityText.isEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Please enter a quantity')),
-                  );
-                  return;
-                }
-                final quantity = double.tryParse(quantityText);
-                if (quantity == null) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                        content: Text('Please enter a valid quantity')),
-                  );
-                  return;
-                }
-                if (selectedCategoryId == null) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Please select a category')),
-                  );
-                  return;
-                }
+  const _ProductCircleImage({required this.photo, required this.accentColor});
 
-                final productData = prod_model.Product(
-                  id: isEditing ? product.id : 0,
-                  name: name,
-                  quantity: quantity,
-                  units: units.isEmpty ? null : units,
-                  photo: photo.isEmpty ? null : photo,
-                  expirationDate: selectedDate,
-                  productCategoryId: selectedCategoryId,
-                );
-
-                if (isEditing) {
-                  final result = await ref
-                      .read(productListProvider.notifier)
-                      .updateProduct(productData);
-                  result.fold(
-                    (f) => ScaffoldMessenger.of(context)
-                        .showSnackBar(SnackBar(content: Text(f.message))),
-                    (_) {
-                      Navigator.pop(builderContext);
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                            content: Text('Product updated successfully')),
-                      );
-                    },
-                  );
-                } else {
-                  final result = await ref
-                      .read(productListProvider.notifier)
-                      .addProduct(productData);
-                  result.fold(
-                    (f) => ScaffoldMessenger.of(context)
-                        .showSnackBar(SnackBar(content: Text(f.message))),
-                    (_) {
-                      Navigator.pop(builderContext);
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                            content: Text('Product added successfully')),
-                      );
-                    },
-                  );
-                }
-              },
-              child: Text(isEditing ? 'Update' : 'Add'),
-            ),
-          ],
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 84,
+      height: 84,
+      decoration: BoxDecoration(
+        color: accentColor.withOpacity(0.12),
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: accentColor.withOpacity(0.35),
+          width: 2.2,
         ),
-      ),
-    );
-  }
-
-  void _deleteProduct(prod_model.Product product) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Text(
-          'Delete Product',
-          style: TextStyle(
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w600,
-            color: Color(0xFF181725),
-          ),
-        ),
-        content: Text(
-          'Are you sure you want to delete ${product.name}?',
-          style: const TextStyle(
-            fontFamily: 'Poppins',
-            color: Color(0xFF4C4F4D),
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text(
-              'Cancel',
-              style: TextStyle(color: Color(0xFF7C7C7C), fontFamily: 'Poppins'),
-            ),
-          ),
-          TextButton(
-            onPressed: () async {
-              Navigator.pop(context);
-              if (product.id != null) {
-                final result = await ref
-                    .read(productListProvider.notifier)
-                    .deleteProduct(product.id!);
-                result.fold(
-                  (f) => ScaffoldMessenger.of(context)
-                      .showSnackBar(SnackBar(content: Text(f.message))),
-                  (_) => ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Product deleted'))),
-                );
-              }
-            },
-            child: const Text(
-              'Delete',
-              style: TextStyle(
-                color: Color(0xFFF3603F),
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+        boxShadow: [
+          BoxShadow(
+            color: accentColor.withOpacity(0.18),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
           ),
         ],
       ),
-    );
-  }
-
-  void _viewProductDetails(prod_model.Product product) {
-    final categories =
-        ref.read(productCategoryListProvider).asData?.value ?? [];
-    cat_model.ProductCategory? category;
-    if (product.productCategoryId != null) {
-      final matches =
-          categories.where((c) => c.id == product.productCategoryId);
-      category = matches.isNotEmpty ? matches.first : null;
-    }
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => ProductDetailPage(
-          product: product,
-          category: category,
+      child: ClipOval(
+        child: ProductImageWidget(
+          photo: photo,
+          size: 84,
+          borderRadius: 42,
+          backgroundColor: Colors.transparent,
         ),
       ),
-    ).then((_) => ref.invalidate(productListProvider));
+    );
   }
 }

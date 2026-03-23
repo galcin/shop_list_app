@@ -14,6 +14,7 @@ import 'package:shop_list_app/features/product_category/presentation/widgets/cat
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_detail_header_poster.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_detail_thumbnail.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_products_section.dart';
+import 'package:shop_list_app/features/shopping/presentation/widgets/create_product_bottom_sheet.dart';
 
 class ProductCategoryDetailPage extends ConsumerStatefulWidget {
   final cat_model.ProductCategory category;
@@ -87,6 +88,21 @@ class _ProductCategoryDetailPageState
           const Divider(indent: 16, endIndent: 16, color: AppColors.divider),
           CategoryProductsSection(categoryId: category.id),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: AppColors.primary,
+        foregroundColor: AppColors.onPrimary,
+        elevation: 4,
+        icon: const Icon(Icons.add),
+        label: const Text(
+          'Add Product',
+          style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w600),
+        ),
+        tooltip: 'Add product to this category',
+        onPressed: () => showCreateProductSheet(
+          context,
+          initialCategoryId: category.id,
+        ),
       ),
     );
   }

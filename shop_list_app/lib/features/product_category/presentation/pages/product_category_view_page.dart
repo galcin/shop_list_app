@@ -8,6 +8,7 @@ import 'package:shop_list_app/features/product_category/presentation/providers/p
 import 'package:shop_list_app/features/product_category/presentation/widgets/category_bottom_sheet.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_card.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_emoji_image.dart';
+import 'package:shop_list_app/features/shopping/presentation/pages/product_view_page.dart';
 import 'package:shop_list_app/shared/widgets/app_reorderable_list_view.dart';
 import 'package:shop_list_app/shared/widgets/async_value_widget.dart';
 import 'package:shop_list_app/shared/widgets/empty_state_widget.dart';
@@ -89,81 +90,92 @@ class _ProductCategoryViewPageState
               onAction: () => showCreateCategorySheet(context),
             );
           }
-          return _reorderMode
-              ? AppReorderableListView<ProductCategory>(
-                  items: categories,
-                  onReorder: (oldIndex, newIndex) {
-                    if (newIndex > oldIndex) newIndex--;
-                    final reordered = [...categories];
-                    final item = reordered.removeAt(oldIndex);
-                    reordered.insert(newIndex, item);
-                    ref
-                        .read(productCategoryListProvider.notifier)
-                        .reorderCategories(reordered.map((c) => c.id).toList());
-                  },
-                  itemBuilder: (ctx, i, category) => ReorderableEmojiListTile(
-                    key: ValueKey(category.id),
-                    index: i,
-                    accentColor:
-                        _parseColor(category.colorHex) ?? AppColors.primary,
-                    emoji: category.iconName ?? category.photo ?? '??',
-                    imageName: category.imageName,
-                    title: category.name,
-                  ),
-                )
-              : ListView.builder(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                  itemCount: categories.length,
-                  itemBuilder: (ctx, index) {
-                    final cat = categories[index];
-                    final accentColor =
-                        _parseColor(cat.colorHex) ?? AppColors.primary;
-                    final emoji = cat.iconName ?? cat.photo ?? '?';
-                    // Stack pattern from movies_ui:
-                    // card body is offset right, emoji image overlaid on the left
-                    return Dismissible(
-                      key: ValueKey(cat.id),
-                      direction: DismissDirection.endToStart,
-                      background: Container(
-                        margin: const EdgeInsets.only(left: 56, bottom: 10),
-                        decoration: BoxDecoration(
-                          color: AppColors.error.withOpacity(0.85),
-                          borderRadius: BorderRadius.circular(18),
+          return Column(
+            children: [
+              _buildAllProductsBanner(),
+              Expanded(
+                child: _reorderMode
+                    ? AppReorderableListView<ProductCategory>(
+                        items: categories,
+                        onReorder: (oldIndex, newIndex) {
+                          if (newIndex > oldIndex) newIndex--;
+                          final reordered = [...categories];
+                          final item = reordered.removeAt(oldIndex);
+                          reordered.insert(newIndex, item);
+                          ref
+                              .read(productCategoryListProvider.notifier)
+                              .reorderCategories(
+                                  reordered.map((c) => c.id).toList());
+                        },
+                        itemBuilder: (ctx, i, category) =>
+                            ReorderableEmojiListTile(
+                          key: ValueKey(category.id),
+                          index: i,
+                          accentColor: _parseColor(category.colorHex) ??
+                              AppColors.primary,
+                          emoji: category.iconName ?? category.photo ?? '??',
+                          imageName: category.imageName,
+                          title: category.name,
                         ),
-                        alignment: Alignment.centerRight,
-                        padding: const EdgeInsets.only(right: 20),
-                        child: const Icon(
-                          Icons.delete_outline,
-                          color: Colors.white,
-                          size: 22,
-                        ),
-                      ),
-                      confirmDismiss: (_) => _confirmDelete(cat),
-                      onDismissed: (_) => _handleDeleteDismissed(cat),
-                      child: Stack(
-                        children: [
-                          CategoryCard(
-                            category: cat,
-                            accentColor: accentColor,
-                            onTap: () => _openDetail(cat),
-                            onLongPress: () =>
-                                showEditCategorySheet(context, cat),
-                          ),
-                          Positioned(
-                            top: 6,
-                            left: 0,
-                            child: CategoryEmojiImage(
-                              emoji: emoji,
-                              accentColor: accentColor,
-                              imageName: cat.imageName,
+                      )
+                    : ListView.builder(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 16),
+                        itemCount: categories.length,
+                        itemBuilder: (ctx, index) {
+                          final cat = categories[index];
+
+                          final accentColor =
+                              _parseColor(cat.colorHex) ?? AppColors.primary;
+                          final emoji = cat.iconName ?? cat.photo ?? '?';
+                          // Stack pattern from movies_ui:
+                          // card body is offset right, emoji image overlaid on the left
+                          return Dismissible(
+                            key: ValueKey(cat.id),
+                            direction: DismissDirection.endToStart,
+                            background: Container(
+                              margin:
+                                  const EdgeInsets.only(left: 56, bottom: 10),
+                              decoration: BoxDecoration(
+                                color: AppColors.error.withOpacity(0.85),
+                                borderRadius: BorderRadius.circular(18),
+                              ),
+                              alignment: Alignment.centerRight,
+                              padding: const EdgeInsets.only(right: 20),
+                              child: const Icon(
+                                Icons.delete_outline,
+                                color: Colors.white,
+                                size: 22,
+                              ),
                             ),
-                          ),
-                        ],
+                            confirmDismiss: (_) => _confirmDelete(cat),
+                            onDismissed: (_) => _handleDeleteDismissed(cat),
+                            child: Stack(
+                              children: [
+                                CategoryCard(
+                                  category: cat,
+                                  accentColor: accentColor,
+                                  onTap: () => _openDetail(cat),
+                                  onLongPress: () =>
+                                      showEditCategorySheet(context, cat),
+                                ),
+                                Positioned(
+                                  top: 6,
+                                  left: 0,
+                                  child: CategoryEmojiImage(
+                                    emoji: emoji,
+                                    accentColor: accentColor,
+                                    imageName: cat.imageName,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
                       ),
-                    );
-                  },
-                );
+              ),
+            ],
+          );
         },
       ),
       floatingActionButton: FloatingActionButton(
@@ -178,6 +190,47 @@ class _ProductCategoryViewPageState
   }
 
   // ── Helpers ────────────────────────────────────────────────────────────────
+
+  Widget _buildAllProductsBanner() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 10, 16, 4),
+      child: GestureDetector(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const ProductViewPage()),
+        ),
+        child: Container(
+          height: 52,
+          decoration: BoxDecoration(
+            color: AppColors.primary.withOpacity(0.08),
+            borderRadius: BorderRadius.circular(14),
+            border:
+                Border.all(color: AppColors.primary.withOpacity(0.3), width: 1),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: const Row(
+            children: [
+              Icon(Icons.inventory_2_outlined,
+                  color: AppColors.primary, size: 20),
+              SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  'All Products',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14,
+                    color: AppColors.primary,
+                  ),
+                ),
+              ),
+              Icon(Icons.chevron_right, color: AppColors.primary, size: 20),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
   void _openDetail(ProductCategory category) {
     Navigator.push(
