@@ -1,7 +1,7 @@
-﻿import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart';
 import 'package:shop_list_app/core/error/failures.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
-import 'package:shop_list_app/features/shopping/domain/repositories/i_product_repository.dart';
+import 'package:shop_list_app/features/products/domain/entities/product.dart';
+import 'package:shop_list_app/features/products/domain/repositories/i_product_repository.dart';
 
 /// Returns all [Product] records belonging to the given [categoryId].
 class GetProductsByCategoryUseCase {

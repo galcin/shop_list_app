@@ -1,8 +1,8 @@
-﻿// category_product_tile.dart  -  analogous to movie_field.dart
+// category_product_tile.dart  -  analogous to movie_field.dart
 import 'package:flutter/material.dart';
 import 'package:shop_list_app/core/theme/colors.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
-import 'package:shop_list_app/features/shopping/presentation/widgets/product_image_widget.dart';
+import 'package:shop_list_app/features/products/domain/entities/product.dart';
+import 'package:shop_list_app/features/products/presentation/widgets/product_image_widget.dart';
 
 /// A single product row inside the detail page products list.
 class CategoryProductTile extends StatelessWidget {

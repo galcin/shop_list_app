@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_empty_products.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_product_tile.dart';
-import 'package:shop_list_app/features/shopping/presentation/providers/product_providers.dart';
-import 'package:shop_list_app/features/shopping/presentation/widgets/create_product_bottom_sheet.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
+import 'package:shop_list_app/features/products/presentation/widgets/create_product_bottom_sheet.dart';
 
 /// Products list section for the category detail page.
 /// Mirrors `MovieDetailCast` – a focused widget that owns its own data watch

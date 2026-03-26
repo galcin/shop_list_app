@@ -14,7 +14,7 @@ import 'package:shop_list_app/features/product_category/presentation/widgets/cat
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_detail_header_poster.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_detail_thumbnail.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_products_section.dart';
-import 'package:shop_list_app/features/shopping/presentation/widgets/create_product_bottom_sheet.dart';
+import 'package:shop_list_app/features/products/presentation/widgets/create_product_bottom_sheet.dart';
 
 class ProductCategoryDetailPage extends ConsumerStatefulWidget {
   final cat_model.ProductCategory category;

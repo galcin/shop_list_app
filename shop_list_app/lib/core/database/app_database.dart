@@ -4,6 +4,8 @@ import 'tables/product_category_table.dart';
 import 'tables/product_table.dart';
 import 'tables/recipe_table.dart';
 import 'tables/sync_queue_table.dart';
+import 'tables/shopping_list_table.dart';
+import 'tables/shopping_item_table.dart';
 import 'seeder/recipe_seeder.dart';
 import 'seeder/product_category_seeder.dart';
 import 'seeder/product_seeder.dart';
@@ -11,7 +13,14 @@ import 'connection/connection.dart' as impl;
 
 part 'app_database.g.dart';
 
-@DriftDatabase(tables: [ProductCategories, Products, Recipes, SyncQueue])
+@DriftDatabase(tables: [
+  ProductCategories,
+  Products,
+  Recipes,
+  SyncQueue,
+  ShoppingLists,
+  ShoppingItems
+])
 class AppDatabase extends _$AppDatabase {
   // Singleton pattern
   static AppDatabase? _instance;
@@ -30,7 +39,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.forTesting(super.executor);
 
   @override
-  int get schemaVersion => 5;
+  int get schemaVersion => 6;
 
   /// Step-by-step migration strategy.
   ///
@@ -115,6 +124,27 @@ class AppDatabase extends _$AppDatabase {
                 error: e);
           }
           AppLogger.instance.info('[DB] onUpgrade v4→v5 complete');
+        }
+
+        // v5 → v6: create shopping_lists and shopping_items tables.
+        if (from < 6) {
+          try {
+            await m.createTable(shoppingLists);
+            AppLogger.instance.info('[DB] Created shopping_lists table');
+          } catch (e) {
+            AppLogger.instance.warning(
+                '[DB] shopping_lists already exists (skipped)',
+                error: e);
+          }
+          try {
+            await m.createTable(shoppingItems);
+            AppLogger.instance.info('[DB] Created shopping_items table');
+          } catch (e) {
+            AppLogger.instance.warning(
+                '[DB] shopping_items already exists (skipped)',
+                error: e);
+          }
+          AppLogger.instance.info('[DB] onUpgrade v5→v6 complete');
         }
       },
       // Runs after every open (new or upgraded) to verify integrity.

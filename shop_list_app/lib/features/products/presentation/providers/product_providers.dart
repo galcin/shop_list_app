@@ -1,24 +1,24 @@
-﻿import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/core/error/failures.dart';
 import 'package:shop_list_app/core/providers/core_providers.dart';
-import 'package:shop_list_app/features/shopping/data/repositories/product_repository.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
-import 'package:shop_list_app/features/shopping/domain/repositories/i_product_repository.dart';
-import 'package:shop_list_app/features/shopping/domain/usecases/add_product_use_case.dart';
-import 'package:shop_list_app/features/shopping/domain/usecases/delete_product_use_case.dart';
-import 'package:shop_list_app/features/shopping/domain/usecases/get_all_products_use_case.dart';
-import 'package:shop_list_app/features/shopping/domain/usecases/get_products_by_category_use_case.dart';
-import 'package:shop_list_app/features/shopping/domain/usecases/update_product_use_case.dart';
+import 'package:shop_list_app/features/products/data/repositories/product_repository.dart';
+import 'package:shop_list_app/features/products/domain/entities/product.dart';
+import 'package:shop_list_app/features/products/domain/repositories/i_product_repository.dart';
+import 'package:shop_list_app/features/products/domain/usecases/add_product_use_case.dart';
+import 'package:shop_list_app/features/products/domain/usecases/delete_product_use_case.dart';
+import 'package:shop_list_app/features/products/domain/usecases/get_all_products_use_case.dart';
+import 'package:shop_list_app/features/products/domain/usecases/get_products_by_category_use_case.dart';
+import 'package:shop_list_app/features/products/domain/usecases/update_product_use_case.dart';
 
-// ── Infrastructure providers ─────────────────────────────────────────────────
+// -- Infrastructure providers -------------------------------------------------
 
 /// Provides the [IProductRepository] implementation.
 final productRepositoryProvider = Provider<IProductRepository>((ref) {
   return ProductRepository(ref.watch(databaseProvider));
 });
 
-// ── Use-case providers ───────────────────────────────────────────────────────
+// -- Use-case providers -------------------------------------------------------
 
 final getAllProductsUseCaseProvider = Provider<GetAllProductsUseCase>((ref) {
   return GetAllProductsUseCase(ref.watch(productRepositoryProvider));
@@ -41,7 +41,7 @@ final getProductsByCategoryUseCaseProvider =
   return GetProductsByCategoryUseCase(ref.watch(productRepositoryProvider));
 });
 
-// ── UI filter state ──────────────────────────────────────────────────────────
+// -- UI filter state ----------------------------------------------------------
 
 /// Current search text entered by the user on the product list page.
 /// Auto-disposed so it resets when the page is unmounted.
@@ -53,7 +53,7 @@ final productSearchQueryProvider =
 final productSelectedCategoryProvider =
     StateProvider.autoDispose<int?>((ref) => null);
 
-// ── ViewModel (product list) ─────────────────────────────────────────────────
+// -- ViewModel (product list) -------------------------------------------------
 
 /// Central state provider for the product list.
 ///
@@ -93,7 +93,7 @@ class ProductListNotifier extends AsyncNotifier<List<Product>> {
   }
 }
 
-// ── Derived provider (filtered list) ─────────────────────────────────────────
+// -- Derived provider (filtered list) -----------------------------------------
 
 /// Derives a filtered product list from [productListProvider] and the current
 /// UI filter state.  The View should display this list rather than the raw one.
@@ -114,7 +114,7 @@ final filteredProductsProvider = Provider.autoDispose<List<Product>>((ref) {
   );
 });
 
-// ── ViewModel (category-detail products) ─────────────────────────────────────
+// -- ViewModel (category-detail products) -------------------------------------
 
 /// ViewModel for the list of products belonging to a single category.
 /// Used by [ProductCategoryDetailPage].  Keyed by the category id.

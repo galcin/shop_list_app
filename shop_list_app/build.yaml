@@ -1,0 +1,10 @@
+targets:
+  $default:
+    builders:
+      # json_serializable is not used in this project.
+      # Disabling it prevents "Cannot recurse" build errors that block drift_dev.
+      json_serializable:
+        enabled: false
+      # mockito code generation also causes recursive-phase errors; disable for build.
+      mockito:mockBuilder:
+        enabled: false

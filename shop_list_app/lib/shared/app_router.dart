@@ -2,8 +2,10 @@ import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/navigation/app_route.dart';
 import 'package:shop_list_app/features/meal_planning/presentation/pages/menu_view.dart';
 import 'package:shop_list_app/features/pantry/presentation/pages/pantry_page.dart';
-import 'package:shop_list_app/features/recipes/presentation/pages/recipe_list_view.dart';
 import 'package:shop_list_app/features/product_category/presentation/pages/product_category_view_page.dart';
+import 'package:shop_list_app/features/recipes/presentation/pages/recipe_list_view.dart';
+import 'package:shop_list_app/features/shopping_lists/presentation/pages/shopping_list_detail_page.dart';
+import 'package:shop_list_app/features/shopping_lists/presentation/pages/shopping_lists_page.dart';
 import 'package:shop_list_app/main.dart' show SplashScreen;
 import 'package:shop_list_app/shared/widgets/layout/main_shell.dart';
 import 'package:shop_list_app/shared/widgets/views/settings_view_page.dart';
@@ -46,7 +48,16 @@ final appRouter = GoRouter(
           routes: [
             GoRoute(
               path: AppRoute.shopping.path,
-              builder: (context, state) => const ProductCategoryViewPage(),
+              builder: (context, state) => const ShoppingListsPage(),
+              routes: [
+                GoRoute(
+                  path: ':id',
+                  builder: (context, state) {
+                    final id = int.parse(state.pathParameters['id']!);
+                    return ShoppingListDetailPage(listId: id);
+                  },
+                ),
+              ],
             ),
           ],
         ),
@@ -77,6 +88,12 @@ final appRouter = GoRouter(
             GoRoute(
               path: AppRoute.settings.path,
               builder: (context, state) => const SettingsView(),
+              routes: [
+                GoRoute(
+                  path: 'categories',
+                  builder: (context, state) => const ProductCategoryViewPage(),
+                ),
+              ],
             ),
           ],
         ),

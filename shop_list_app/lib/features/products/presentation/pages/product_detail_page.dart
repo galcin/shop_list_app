@@ -1,4 +1,4 @@
-﻿// product_detail_page.dart
+// product_detail_page.dart
 //
 // Displays the full details of a single product with working Edit and Delete
 // actions.  Converted to ConsumerStatefulWidget so local product state can
@@ -8,9 +8,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
-import 'package:shop_list_app/features/shopping/presentation/providers/product_providers.dart';
-import 'package:shop_list_app/features/shopping/presentation/widgets/create_product_bottom_sheet.dart';
+import 'package:shop_list_app/features/products/domain/entities/product.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
+import 'package:shop_list_app/features/products/presentation/widgets/create_product_bottom_sheet.dart';
 import 'package:shop_list_app/shared/widgets/display/detail_row.dart';
 import 'package:shop_list_app/shared/widgets/display/info_row.dart';
 import 'package:shop_list_app/shared/widgets/feedback/status_badge.dart';

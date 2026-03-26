@@ -16,8 +16,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart';
 import 'package:shop_list_app/features/product_category/presentation/providers/product_category_providers.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
-import 'package:shop_list_app/features/shopping/presentation/providers/product_providers.dart';
+import 'package:shop_list_app/features/products/domain/entities/product.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
 
 // ── Presets ────────────────────────────────────────────────────────────────────
 

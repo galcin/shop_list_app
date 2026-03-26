@@ -4,12 +4,12 @@ import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart'
     as cat_model;
 import 'package:shop_list_app/features/product_category/presentation/providers/product_category_providers.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product.dart'
+import 'package:shop_list_app/features/products/domain/entities/product.dart'
     as prod_model;
-import 'package:shop_list_app/features/shopping/presentation/pages/product_detail_page.dart';
-import 'package:shop_list_app/features/shopping/presentation/providers/product_providers.dart';
-import 'package:shop_list_app/features/shopping/presentation/widgets/create_product_bottom_sheet.dart';
-import 'package:shop_list_app/features/shopping/presentation/widgets/product_image_widget.dart';
+import 'package:shop_list_app/features/products/presentation/pages/product_detail_page.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
+import 'package:shop_list_app/features/products/presentation/widgets/create_product_bottom_sheet.dart';
+import 'package:shop_list_app/features/products/presentation/widgets/product_image_widget.dart';
 import 'package:shop_list_app/shared/widgets/display/circle_accent_avatar.dart';
 
 /// Lists all products using the same visual language as the category list:
@@ -25,7 +25,7 @@ class ProductViewPage extends ConsumerStatefulWidget {
 }
 
 class _ProductViewPageState extends ConsumerState<ProductViewPage> {
-  // ── Build ──────────────────────────────────────────────────────────────────
+  // -- Build ------------------------------------------------------------------
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +140,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
     );
   }
 
-  // ── List ───────────────────────────────────────────────────────────────────
+  // -- List -------------------------------------------------------------------
 
   Widget _buildProductList(
     List<prod_model.Product> products,
@@ -179,7 +179,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
       onDismissed: (_) => _handleDeleteDismissed(product),
       child: Stack(
         children: [
-          // ── Card body (offset right) ─────────────────────────────────
+          // -- Card body (offset right) ---------------------------------
           GestureDetector(
             onTap: () => _viewProductDetails(product, cat),
             onLongPress: () => showEditProductSheet(context, product),
@@ -277,7 +277,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
               ),
             ),
           ),
-          // ── Circular image overlay (left) ────────────────────────────
+          // -- Circular image overlay (left) ----------------------------
           Positioned(
             top: 6,
             left: 0,
@@ -437,7 +437,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
     );
   }
 
-  // ── Helpers ────────────────────────────────────────────────────────────────
+  // -- Helpers ----------------------------------------------------------------
 
   bool _isExpired(DateTime? d) => d != null && d.isBefore(DateTime.now());
 

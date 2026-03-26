@@ -1,4 +1,4 @@
-﻿import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
+import 'package:shop_list_app/features/products/domain/entities/product.dart';
 
 abstract class IProductRepository {
   // Get all products

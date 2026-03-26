@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/utils/app_logger.dart';
 
 class SettingsView extends StatefulWidget {
@@ -45,6 +46,23 @@ class _SettingsViewState extends State<SettingsView> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          // ── Catalogue ──────────────────────────────────────────────────
+          const Text(
+            'Catalogue',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          ),
+          const SizedBox(height: 4),
+          ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: const Icon(Icons.category_outlined),
+            title: const Text('Product Categories'),
+            subtitle: const Text('Manage categories and products'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => context.go('/settings/categories'),
+          ),
+          const Divider(),
+          const SizedBox(height: 8),
+          // ── Diagnostics ─────────────────────────────────────────────────
           const Text('Diagnostics',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
           const SizedBox(height: 8),

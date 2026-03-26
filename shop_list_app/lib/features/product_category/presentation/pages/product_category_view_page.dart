@@ -8,7 +8,7 @@ import 'package:shop_list_app/features/product_category/presentation/providers/p
 import 'package:shop_list_app/features/product_category/presentation/widgets/category_bottom_sheet.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_card.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_emoji_image.dart';
-import 'package:shop_list_app/features/shopping/presentation/pages/product_view_page.dart';
+import 'package:shop_list_app/features/products/presentation/pages/product_view_page.dart';
 import 'package:shop_list_app/shared/widgets/list/app_reorderable_list_view.dart';
 import 'package:shop_list_app/shared/widgets/feedback/async_value_widget.dart';
 import 'package:shop_list_app/shared/widgets/feedback/empty_state_widget.dart';

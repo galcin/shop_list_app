@@ -1,5 +1,5 @@
-﻿import 'package:flutter/cupertino.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:shop_list_app/features/products/domain/entities/product.dart';
 import '../menu_container_component.dart';
 
 class TemplateSelector extends StatelessWidget {

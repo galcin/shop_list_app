@@ -1,5 +1,5 @@
-﻿import 'package:flutter/material.dart';
-import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
+import 'package:flutter/material.dart';
+import 'package:shop_list_app/features/products/domain/entities/product.dart';
 
 class MenuContainerComponent extends StatelessWidget {
   final String _label;

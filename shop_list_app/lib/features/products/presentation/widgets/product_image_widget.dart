@@ -28,8 +28,6 @@ class ProductImageWidget extends StatelessWidget {
   bool get _isFilePath =>
       photo != null && (photo!.startsWith('/') || photo!.startsWith('file://'));
 
-  bool get _isEmoji => photo != null && photo!.isNotEmpty && !_isFilePath;
-
   @override
   Widget build(BuildContext context) {
     return Container(
