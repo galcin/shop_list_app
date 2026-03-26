@@ -223,6 +223,54 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
     );
   }
 
+  // ── Hint helper ──────────────────────────────────────────────────────────────
+
+  /// Returns a category-specific example hint for the product name field.
+  String _hintForCategory(List<ProductCategory> categories) {
+    if (_selectedCategoryId == null) return 'Product name *  e.g. "Milk"';
+    final match = categories.where((c) => c.id == _selectedCategoryId);
+    if (match.isEmpty) return 'Product name *  e.g. "Milk"';
+    final name = match.first.name.toLowerCase();
+    const Map<String, String> _examples = {
+      'fruit': 'e.g. "Granny Smith Apple"',
+      'vegetable': 'e.g. "Baby Spinach"',
+      'dairy': 'e.g. "Full-cream Milk"',
+      'meat': 'e.g. "Chicken Breast"',
+      'poultry': 'e.g. "Chicken Breast"',
+      'seafood': 'e.g. "Atlantic Salmon"',
+      'fish': 'e.g. "Atlantic Salmon"',
+      'bakery': 'e.g. "Sourdough Bread"',
+      'bread': 'e.g. "Sourdough Loaf"',
+      'snack': 'e.g. "Salted Almonds"',
+      'sweet': 'e.g. "Dark Chocolate"',
+      'chocolate': 'e.g. "Dark Chocolate Bar"',
+      'beverage': 'e.g. "Orange Juice"',
+      'drink': 'e.g. "Sparkling Water"',
+      'frozen': 'e.g. "Frozen Peas"',
+      'cereal': 'e.g. "Rolled Oats"',
+      'pasta': 'e.g. "Spaghetti 500g"',
+      'grain': 'e.g. "Basmati Rice"',
+      'rice': 'e.g. "Basmati Rice"',
+      'sauce': 'e.g. "Tomato Pasta Sauce"',
+      'condiment': 'e.g. "Dijon Mustard"',
+      'spice': 'e.g. "Smoked Paprika"',
+      'herb': 'e.g. "Fresh Basil"',
+      'oil': 'e.g. "Olive Oil"',
+      'cleaning': 'e.g. "Dish Soap"',
+      'household': 'e.g. "Paper Towels"',
+      'hygiene': 'e.g. "Hand Soap"',
+      'personal': 'e.g. "Shampoo"',
+      'baby': 'e.g. "Nappy Size 3"',
+      'pet': 'e.g. "Dry Dog Food"',
+    };
+    for (final entry in _examples.entries) {
+      if (name.contains(entry.key)) return 'Product name *  ${entry.value}';
+    }
+    // Fall back to capitalised category name as a generic hint.
+    final catName = match.first.name;
+    return 'Product name *  e.g. "$catName item"';
+  }
+
   // ── Build ─────────────────────────────────────────────────────────────────────
 
   @override
@@ -283,7 +331,7 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
                   fontFamily: 'Poppins',
                 ),
                 decoration: InputDecoration(
-                  hintText: 'Product name *  e.g. "Chicken breast"',
+                  hintText: _hintForCategory(categories),
                   hintStyle: const TextStyle(
                     color: Color(0xFF7C7C7C),
                     fontFamily: 'Poppins',

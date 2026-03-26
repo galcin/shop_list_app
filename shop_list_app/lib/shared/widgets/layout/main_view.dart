@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_list_app/shared/route_constants.dart';
-import 'package:shop_list_app/shared/widgets/menu_buttons.dart';
+import 'package:shop_list_app/shared/widgets/display/menu_buttons.dart';
 
 class MainView extends StatelessWidget {
   const MainView({super.key});

@@ -89,20 +89,16 @@ class _ProductCategoryDetailPageState
           CategoryProductsSection(categoryId: category.id),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: FloatingActionButton(
         backgroundColor: AppColors.primary,
         foregroundColor: AppColors.onPrimary,
         elevation: 4,
-        icon: const Icon(Icons.add),
-        label: const Text(
-          'Add Product',
-          style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w600),
-        ),
         tooltip: 'Add product to this category',
         onPressed: () => showCreateProductSheet(
           context,
           initialCategoryId: category.id,
         ),
+        child: const Icon(Icons.add),
       ),
     );
   }

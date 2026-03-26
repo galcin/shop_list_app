@@ -5,8 +5,8 @@ import 'package:shop_list_app/features/pantry/presentation/pages/pantry_page.dar
 import 'package:shop_list_app/features/recipes/presentation/pages/recipe_list_view.dart';
 import 'package:shop_list_app/features/product_category/presentation/pages/product_category_view_page.dart';
 import 'package:shop_list_app/main.dart' show SplashScreen;
-import 'package:shop_list_app/shared/widgets/main_shell.dart';
-import 'package:shop_list_app/shared/widgets/settings_view_page.dart';
+import 'package:shop_list_app/shared/widgets/layout/main_shell.dart';
+import 'package:shop_list_app/shared/widgets/views/settings_view_page.dart';
 
 /// Application-level [GoRouter] instance.
 ///

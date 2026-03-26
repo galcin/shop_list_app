@@ -29,7 +29,7 @@ class CarouselFlowDelegate extends FlowDelegate {
         ..translate((size - itemExtent) / 2)
         ..translate(itemXFromCenter)
         ..translate(itemExtent / 2, itemExtent / 2)
-        ..multiply(Matrix4.diagonal3Values(itemScale, itemScale, 1.0))
+        ..scale(itemScale, itemScale, 1.0)
         ..translate(-itemExtent / 2, -itemExtent / 2);
 
       context.paintChild(

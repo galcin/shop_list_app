@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_list_app/shared/widgets/add_item_tile.dart';
+import 'package:shop_list_app/shared/widgets/list/add_item_tile.dart';
 
 /// A generic two-column (configurable) grid view.
 ///

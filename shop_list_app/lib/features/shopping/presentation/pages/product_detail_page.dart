@@ -11,6 +11,9 @@ import 'package:shop_list_app/features/product_category/domain/entities/product_
 import 'package:shop_list_app/features/shopping/domain/entities/product.dart';
 import 'package:shop_list_app/features/shopping/presentation/providers/product_providers.dart';
 import 'package:shop_list_app/features/shopping/presentation/widgets/create_product_bottom_sheet.dart';
+import 'package:shop_list_app/shared/widgets/display/detail_row.dart';
+import 'package:shop_list_app/shared/widgets/display/info_row.dart';
+import 'package:shop_list_app/shared/widgets/feedback/status_badge.dart';
 
 class ProductDetailPage extends ConsumerStatefulWidget {
   final Product product;
@@ -177,14 +180,14 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage> {
                   ),
                   const SizedBox(height: 20),
                   if (_category != null) ...[
-                    _buildInfoRow(
+                    InfoRow(
                         icon: Icons.category_outlined,
                         label: 'Category',
                         value: _category!.name,
                         iconColor: const Color(0xFF53B175)),
                     const SizedBox(height: 16),
                   ],
-                  _buildInfoRow(
+                  InfoRow(
                       icon: Icons.inventory_2_outlined,
                       label: 'Default Unit',
                       value:
@@ -192,7 +195,7 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage> {
                       iconColor: const Color(0xFF53B175)),
                   const SizedBox(height: 16),
                   if (_product.expirationDate != null) ...[
-                    _buildInfoRow(
+                    InfoRow(
                       icon: Icons.calendar_today_outlined,
                       label: 'Expiration Date',
                       value: _formatDate(_product.expirationDate!),
@@ -208,7 +211,13 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage> {
                               : null,
                     ),
                     const SizedBox(height: 16),
-                    _buildStatusBadge(),
+                    if (_isExpired || _isExpiringSoon)
+                      StatusBadge(
+                        label: _isExpired ? 'Expired' : 'Expiring Soon',
+                        color: _isExpired
+                            ? const Color(0xFFF3603F)
+                            : const Color(0xFFF8A44C),
+                      ),
                     const SizedBox(height: 16),
                   ],
                   Container(
@@ -226,11 +235,13 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage> {
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xFF181725))),
                         const SizedBox(height: 12),
-                        _buildDetailRow(
-                            'Product ID', '${_product.id ?? 'N/A'}'),
+                        DetailRow(
+                            label: 'Product ID',
+                            value: '${_product.id ?? 'N/A'}'),
                         if (_product.productCategoryId != null)
-                          _buildDetailRow(
-                              'Category ID', '${_product.productCategoryId}'),
+                          DetailRow(
+                              label: 'Category ID',
+                              value: '${_product.productCategoryId}'),
                       ],
                     ),
                   ),
@@ -292,94 +303,6 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage> {
       }
     }
     return Text(photo, style: const TextStyle(fontSize: 110));
-  }
-
-  Widget _buildInfoRow(
-      {required IconData icon,
-      required String label,
-      required String value,
-      Color? iconColor,
-      Color? valueColor}) {
-    return Row(
-      children: [
-        Container(
-          width: 44,
-          height: 44,
-          decoration: BoxDecoration(
-              color: (iconColor ?? const Color(0xFF7C7C7C)).withOpacity(0.1),
-              borderRadius: BorderRadius.circular(12)),
-          child:
-              Icon(icon, size: 22, color: iconColor ?? const Color(0xFF7C7C7C)),
-        ),
-        const SizedBox(width: 14),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(label,
-                  style: const TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 12,
-                      color: Color(0xFF7C7C7C))),
-              Text(value,
-                  style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: valueColor ?? const Color(0xFF181725))),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildDetailRow(String label, String value) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(label,
-              style: const TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 13,
-                  color: Color(0xFF7C7C7C))),
-          Text(value,
-              style: const TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF181725))),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildStatusBadge() {
-    if (!_isExpired && !_isExpiringSoon) return const SizedBox.shrink();
-    final color =
-        _isExpired ? const Color(0xFFF3603F) : const Color(0xFFF8A44C);
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-      decoration: BoxDecoration(
-          color: color.withOpacity(0.1),
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: color.withOpacity(0.4), width: 1)),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.warning_amber_rounded, size: 18, color: color),
-          const SizedBox(width: 8),
-          Text(_isExpired ? 'Expired' : 'Expiring Soon',
-              style: TextStyle(
-                  fontFamily: 'Poppins',
-                  color: color,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 13)),
-        ],
-      ),
-    );
   }
 
   String _formatDate(DateTime date) => '${date.day}/${date.month}/${date.year}';

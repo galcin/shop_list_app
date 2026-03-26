@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:shop_list_app/shared/widgets/async_value_widget.dart';
-import 'package:shop_list_app/shared/widgets/empty_state_widget.dart';
-import 'package:shop_list_app/shared/widgets/error_state_widget.dart';
-import 'package:shop_list_app/shared/widgets/loading_state_widget.dart';
+import 'package:shop_list_app/shared/widgets/feedback/async_value_widget.dart';
+import 'package:shop_list_app/shared/widgets/feedback/empty_state_widget.dart';
+import 'package:shop_list_app/shared/widgets/feedback/error_state_widget.dart';
+import 'package:shop_list_app/shared/widgets/feedback/loading_state_widget.dart';
 
 Widget _wrap(Widget child) => ProviderScope(
       child: MaterialApp(home: Scaffold(body: child)),

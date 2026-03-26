@@ -10,6 +10,7 @@ import 'package:shop_list_app/features/shopping/presentation/pages/product_detai
 import 'package:shop_list_app/features/shopping/presentation/providers/product_providers.dart';
 import 'package:shop_list_app/features/shopping/presentation/widgets/create_product_bottom_sheet.dart';
 import 'package:shop_list_app/features/shopping/presentation/widgets/product_image_widget.dart';
+import 'package:shop_list_app/shared/widgets/display/circle_accent_avatar.dart';
 
 /// Lists all products using the same visual language as the category list:
 /// – Stack pattern: card body offset right + circular image/emoji overlay
@@ -125,7 +126,11 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => showCreateProductSheet(context),
+        onPressed: () {
+          final selectedCategoryId = ref.read(productSelectedCategoryProvider);
+          showCreateProductSheet(context,
+              initialCategoryId: selectedCategoryId);
+        },
         backgroundColor: AppColors.primary,
         foregroundColor: AppColors.onPrimary,
         tooltip: 'Add Product',
@@ -276,9 +281,14 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
           Positioned(
             top: 6,
             left: 0,
-            child: _ProductCircleImage(
-              photo: product.photo,
+            child: CircleAccentAvatar(
               accentColor: accentColor,
+              child: ProductImageWidget(
+                photo: product.photo,
+                size: 84,
+                borderRadius: 42,
+                backgroundColor: Colors.transparent,
+              ),
             ),
           ),
         ],
@@ -571,47 +581,6 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
                     fontWeight: FontWeight.w600)),
           ),
         ],
-      ),
-    );
-  }
-}
-
-// ── Circular product image overlay ────────────────────────────────────────────
-
-/// Mirrors [CategoryEmojiImage]: a circular avatar with an accent-coloured ring.
-class _ProductCircleImage extends StatelessWidget {
-  final String? photo;
-  final Color accentColor;
-
-  const _ProductCircleImage({required this.photo, required this.accentColor});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 84,
-      height: 84,
-      decoration: BoxDecoration(
-        color: accentColor.withOpacity(0.12),
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: accentColor.withOpacity(0.35),
-          width: 2.2,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: accentColor.withOpacity(0.18),
-            blurRadius: 10,
-            offset: const Offset(0, 3),
-          ),
-        ],
-      ),
-      child: ClipOval(
-        child: ProductImageWidget(
-          photo: photo,
-          size: 84,
-          borderRadius: 42,
-          backgroundColor: Colors.transparent,
-        ),
       ),
     );
   }

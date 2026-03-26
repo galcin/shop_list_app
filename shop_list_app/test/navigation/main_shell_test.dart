@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/navigation/app_route.dart';
-import 'package:shop_list_app/shared/widgets/main_shell.dart';
+import 'package:shop_list_app/shared/widgets/layout/main_shell.dart';
 
 /// Builds a lightweight [GoRouter] that routes directly to the shell so tests
 /// do not need the splash screen or real feature pages.

@@ -1,36 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:shop_list_app/core/constants/app_constants.dart';
 
-/// A shimmer skeleton loader for card-shaped content.
+/// A generic shimmer-ready skeleton card placeholder.
 ///
-/// Shows an image placeholder followed by title and metadata shimmer bars.
-/// Uses the `shimmer` package with grey-300/grey-100 colours as specified.
-class LoadingStateWidget extends StatelessWidget {
-  const LoadingStateWidget({
-    this.itemCount = 4,
+/// Renders an image placeholder followed by title and metadata shimmer bars.
+/// The dimensions can be customised via [imageHeight] and [metadataWidth]
+/// to fit different list contexts.
+class SkeletonCard extends StatelessWidget {
+  const SkeletonCard({
+    this.imageHeight = 150,
+    this.metadataWidth = 100,
     super.key,
   });
 
-  /// How many skeleton cards to render (default 4).
-  final int itemCount;
+  /// Height of the image placeholder area.
+  final double imageHeight;
 
-  @override
-  Widget build(BuildContext context) {
-    return Shimmer.fromColors(
-      baseColor: Colors.grey[300]!,
-      highlightColor: Colors.grey[100]!,
-      child: ListView.builder(
-        padding: const EdgeInsets.all(AppSpacing.md),
-        itemCount: itemCount,
-        itemBuilder: (_, __) => const _SkeletonCard(),
-      ),
-    );
-  }
-}
-
-class _SkeletonCard extends StatelessWidget {
-  const _SkeletonCard();
+  /// Width of the secondary metadata shimmer bar.
+  final double metadataWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +28,7 @@ class _SkeletonCard extends StatelessWidget {
         children: [
           // Image placeholder
           Container(
-            height: 150,
+            height: imageHeight,
             width: double.infinity,
             color: Colors.white,
           ),
@@ -60,10 +47,10 @@ class _SkeletonCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: AppSpacing.sm),
-                // Metadata placeholder — 100 px wide
+                // Metadata placeholder — configurable width
                 Container(
                   height: AppSpacing.md,
-                  width: 100,
+                  width: metadataWidth,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(AppBorderRadius.sm),
