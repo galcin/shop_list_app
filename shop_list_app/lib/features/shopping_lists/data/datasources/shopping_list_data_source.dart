@@ -65,8 +65,8 @@ class ShoppingListDataSource {
 
   // ── Items ──────────────────────────────────────────────────────────────────
 
-  Future<int> addItem(ShoppingItemEntity item) {
-    return _db.into(_db.shoppingItems).insert(
+  Future<int> addItem(ShoppingItemEntity item) async {
+    final id = await _db.into(_db.shoppingItems).insert(
           ShoppingItemsCompanion.insert(
             listId: item.listId,
             name: item.name,
@@ -77,11 +77,19 @@ class ShoppingListDataSource {
             sortOrder: Value(item.sortOrder),
           ),
         );
+    await _updateListUpdatedAt(item.listId);
+    return id;
   }
 
   Future<void> removeItem(int itemId) async {
+    // First get the listId
+    final item = await (_db.select(_db.shoppingItems)
+          ..where((t) => t.id.equals(itemId)))
+        .getSingleOrNull();
+    if (item == null) return;
     await (_db.delete(_db.shoppingItems)..where((t) => t.id.equals(itemId)))
         .go();
+    await _updateListUpdatedAt(item.listId);
   }
 
   Future<void> updateItem(ShoppingItemEntity item) async {
@@ -95,6 +103,7 @@ class ShoppingListDataSource {
       categoryId: Value(item.categoryId),
       sortOrder: Value(item.sortOrder),
     ));
+    await _updateListUpdatedAt(item.listId);
   }
 
   Future<void> toggleItemChecked(int itemId) async {
@@ -105,6 +114,7 @@ class ShoppingListDataSource {
     if (row == null) return;
     await (_db.update(_db.shoppingItems)..where((t) => t.id.equals(itemId)))
         .write(ShoppingItemsCompanion(isChecked: Value(!row.isChecked)));
+    await _updateListUpdatedAt(row.listId);
   }
 
   Future<Map<int?, List<ShoppingItemEntity>>> getItemsGroupedByCategory(
@@ -118,6 +128,11 @@ class ShoppingListDataSource {
   }
 
   // ── Private helpers ────────────────────────────────────────────────────────
+
+  Future<void> _updateListUpdatedAt(int listId) async {
+    await (_db.update(_db.shoppingLists)..where((t) => t.id.equals(listId)))
+        .write(ShoppingListsCompanion(updatedAt: Value(DateTime.now())));
+  }
 
   Future<List<ShoppingItemEntity>> _itemsForList(int listId) async {
     final rows = await (_db.select(_db.shoppingItems)

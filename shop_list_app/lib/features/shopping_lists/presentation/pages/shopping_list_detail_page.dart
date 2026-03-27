@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
+import 'package:shop_list_app/shared/extensions/context_extensions.dart';
 import 'package:shop_list_app/features/shopping_lists/domain/entities/shopping_item_entity.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/providers/shopping_list_providers.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/widgets/add_item_bottom_sheet.dart';
@@ -14,26 +16,31 @@ class ShoppingListDetailPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final detailAsync = ref.watch(shoppingListDetailProvider(listId));
 
+    final colors = context.colorScheme;
+
     return Scaffold(
-      backgroundColor: const Color(0xFF121212),
+      backgroundColor: colors.background,
       body: detailAsync.when(
-        loading: () => const Center(
-            child: CircularProgressIndicator(color: Color(0xFFFF6B35))),
+        loading: () =>
+            Center(child: CircularProgressIndicator(color: colors.primary)),
         error: (e, __) => Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.error_outline, color: Colors.white54),
+              Icon(Icons.error_outline, color: colors.error),
               const SizedBox(height: 8),
-              Text(e.toString(), style: const TextStyle(color: Colors.white54)),
+              Text(
+                e.toString(),
+                style: TextStyle(color: colors.onSurfaceVariant),
+              ),
             ],
           ),
         ),
         data: (list) {
           if (list == null) {
-            return const Center(
+            return Center(
               child: Text('List not found.',
-                  style: TextStyle(color: Colors.white54)),
+                  style: TextStyle(color: colors.onSurfaceVariant)),
             );
           }
 
@@ -44,15 +51,15 @@ class ShoppingListDetailPage extends ConsumerWidget {
           return CustomScrollView(
             slivers: [
               SliverAppBar(
-                backgroundColor: const Color(0xFF121212),
-                foregroundColor: Colors.white,
+                backgroundColor: colors.surface,
+                foregroundColor: colors.onSurface,
                 pinned: true,
                 title: Text(
                   list.name,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w600,
-                    color: Colors.white,
+                    color: colors.onSurface,
                   ),
                 ),
                 bottom: PreferredSize(
@@ -65,10 +72,10 @@ class ShoppingListDetailPage extends ConsumerWidget {
                           children: [
                             Text(
                               '${list.checkedCount} / ${list.items.length} items',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 12,
-                                color: Colors.white54,
+                                color: colors.onSurfaceVariant,
                               ),
                             ),
                             const SizedBox(width: 12),
@@ -77,9 +84,9 @@ class ShoppingListDetailPage extends ConsumerWidget {
                                 borderRadius: BorderRadius.circular(2),
                                 child: LinearProgressIndicator(
                                   value: progress,
-                                  backgroundColor: const Color(0xFF2A2A2A),
-                                  valueColor: const AlwaysStoppedAnimation(
-                                      Color(0xFFFF6B35)),
+                                  backgroundColor: colors.surfaceVariant,
+                                  valueColor:
+                                      AlwaysStoppedAnimation(colors.primary),
                                   minHeight: 4,
                                 ),
                               ),
@@ -87,10 +94,10 @@ class ShoppingListDetailPage extends ConsumerWidget {
                             const SizedBox(width: 8),
                             Text(
                               '${(progress * 100).toInt()}%',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 12,
-                                color: Color(0xFFFF6B35),
+                                color: colors.primary,
                               ),
                             ),
                           ],
@@ -102,29 +109,29 @@ class ShoppingListDetailPage extends ConsumerWidget {
               ),
               // Unchecked items
               if (uncheckedItems.isEmpty && checkedItems.isEmpty)
-                const SliverFillRemaining(
+                SliverFillRemaining(
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text('📋', style: TextStyle(fontSize: 48)),
-                        SizedBox(height: 12),
+                        const Text('📋', style: TextStyle(fontSize: 48)),
+                        const SizedBox(height: 12),
                         Text(
                           'No items yet',
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                            color: colors.onSurface,
                           ),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Text(
                           'Tap + to add your first item.',
                           style: TextStyle(
                             fontFamily: 'Poppins',
                             fontSize: 14,
-                            color: Colors.white54,
+                            color: colors.onSurfaceVariant,
                           ),
                         ),
                       ],
@@ -141,11 +148,11 @@ class ShoppingListDetailPage extends ConsumerWidget {
                       padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
                       child: Text(
                         'Done (${checkedItems.length})',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w600,
                           fontSize: 13,
-                          color: Colors.white38,
+                          color: colors.onSurfaceVariant,
                         ),
                       ),
                     ),
@@ -160,8 +167,8 @@ class ShoppingListDetailPage extends ConsumerWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xFFFF6B35),
-        foregroundColor: Colors.white,
+        backgroundColor: colors.primary,
+        foregroundColor: colors.onPrimary,
         onPressed: () => _showAddItemSheet(context),
         child: const Icon(Icons.add),
       ),
@@ -172,7 +179,7 @@ class ShoppingListDetailPage extends ConsumerWidget {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: Theme.of(context).colorScheme.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
@@ -194,6 +201,19 @@ class _ItemsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final asyncProducts = ref.watch(productListProvider);
+    final productPhotoById = <int, String?>{};
+    asyncProducts.maybeWhen(
+      data: (products) {
+        for (final product in products) {
+          if (product.id != null) {
+            productPhotoById[product.id!] = product.photo;
+          }
+        }
+      },
+      orElse: () {},
+    );
+
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       sliver: SliverList(
@@ -204,6 +224,9 @@ class _ItemsSection extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 8),
               child: ShoppingItemTile(
                 item: item,
+                productPhoto: item.productId == null
+                    ? null
+                    : productPhotoById[item.productId!],
                 onToggle: () async {
                   final result = await ref
                       .read(shoppingListDetailProvider(listId).notifier)

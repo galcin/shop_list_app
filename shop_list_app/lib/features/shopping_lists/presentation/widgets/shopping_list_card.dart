@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shop_list_app/features/shopping_lists/domain/entities/shopping_list_entity.dart';
+import 'package:shop_list_app/shared/extensions/context_extensions.dart';
 
 /// Card showing list name, item count, completion bar, and creation date.
 /// Long-press triggers the [onLongPress] callback (rename / delete menu).
@@ -16,13 +17,9 @@ class ShoppingListCard extends StatelessWidget {
   final VoidCallback onTap;
   final VoidCallback onLongPress;
 
-  static const _cardColor = Color(0xFF1E1E1E);
-  static const _progressFilled = Color(0xFFFF6B35);
-  static const _progressTrack = Color(0xFF2A2A2A);
-  static const _textSecondary = Color(0xFF9CA3AF);
-
   @override
   Widget build(BuildContext context) {
+    final colors = context.colorScheme;
     final totalItems = list.items.length;
     final checkedItems = list.checkedCount;
     final progress = list.completionPercent;
@@ -33,13 +30,14 @@ class ShoppingListCard extends StatelessWidget {
       onLongPress: onLongPress,
       child: Container(
         decoration: BoxDecoration(
-          color: _cardColor,
-          borderRadius: BorderRadius.circular(12),
+          color: colors.surface,
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: colors.outline, width: 0.9),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.3),
-              blurRadius: 6,
-              offset: const Offset(0, 2),
+              color: Colors.black.withOpacity(0.04),
+              blurRadius: 8,
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -54,11 +52,11 @@ class ShoppingListCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     list.name,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
-                      color: Colors.white,
+                      color: colors.onSurface,
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -66,10 +64,10 @@ class ShoppingListCard extends StatelessWidget {
                 ),
                 Text(
                   '$checkedItems/$totalItems done',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontFamily: 'Poppins',
                     fontSize: 12,
-                    color: _textSecondary,
+                    color: colors.onSurfaceVariant,
                   ),
                 ),
               ],
@@ -80,8 +78,8 @@ class ShoppingListCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(2),
               child: LinearProgressIndicator(
                 value: progress,
-                backgroundColor: _progressTrack,
-                valueColor: const AlwaysStoppedAnimation(_progressFilled),
+                backgroundColor: colors.surfaceVariant,
+                valueColor: AlwaysStoppedAnimation(colors.primary),
                 minHeight: 4,
               ),
             ),
@@ -91,21 +89,22 @@ class ShoppingListCard extends StatelessWidget {
               children: [
                 Text(
                   '$totalItems item${totalItems == 1 ? '' : 's'}',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontFamily: 'Poppins',
                     fontSize: 12,
-                    color: _textSecondary,
+                    color: colors.onSurfaceVariant,
                   ),
                 ),
                 if (totalItems > 0) ...[
-                  const Text(' • ',
-                      style: TextStyle(color: _textSecondary, fontSize: 12)),
+                  Text(' • ',
+                      style: TextStyle(
+                          color: colors.onSurfaceVariant, fontSize: 12)),
                   Text(
                     'Created $dateStr',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 12,
-                      color: _textSecondary,
+                      color: colors.onSurfaceVariant,
                     ),
                   ),
                 ],

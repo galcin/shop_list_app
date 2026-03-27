@@ -5,6 +5,7 @@ import 'package:shop_list_app/features/shopping_lists/domain/entities/shopping_l
 import 'package:shop_list_app/features/shopping_lists/presentation/providers/shopping_list_providers.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/widgets/create_list_dialog.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/widgets/shopping_list_card.dart';
+import 'package:shop_list_app/shared/extensions/context_extensions.dart';
 
 class ShoppingListsPage extends ConsumerWidget {
   const ShoppingListsPage({super.key});
@@ -13,36 +14,41 @@ class ShoppingListsPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final listsAsync = ref.watch(shoppingListsProvider);
 
+    final colors = context.colorScheme;
+
     return Scaffold(
-      backgroundColor: const Color(0xFF121212),
+      backgroundColor: colors.background,
       appBar: AppBar(
-        backgroundColor: const Color(0xFF121212),
+        backgroundColor: colors.surface,
         elevation: 0,
-        title: const Text(
+        title: Text(
           'Shopping Lists',
           style: TextStyle(
             fontFamily: 'Poppins',
             fontWeight: FontWeight.w600,
-            color: Colors.white,
+            color: colors.onSurface,
           ),
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.search, color: Colors.white),
+            icon: Icon(Icons.search, color: colors.onSurface),
             onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(Icons.more_vert, color: Colors.white),
+            icon: Icon(Icons.more_vert, color: colors.onSurface),
             onPressed: () {},
           ),
         ],
       ),
       body: listsAsync.when(
-        loading: () => const Center(
-            child: CircularProgressIndicator(color: Color(0xFFFF6B35))),
+        loading: () =>
+            Center(child: CircularProgressIndicator(color: colors.primary)),
         error: (e, __) => Center(
-          child:
-              Text(e.toString(), style: const TextStyle(color: Colors.white54)),
+          child: Text(
+            e.toString(),
+            style: TextStyle(
+                fontFamily: 'Poppins', color: colors.onSurfaceVariant),
+          ),
         ),
         data: (lists) {
           if (lists.isEmpty) {
@@ -60,8 +66,7 @@ class ShoppingListsPage extends ConsumerWidget {
               }
               return ShoppingListCard(
                 list: lists[index],
-                onTap: () => context.push('/shopping/${lists[index].id}',
-                    extra: lists[index]),
+                onTap: () => context.go('/shopping/${lists[index].id}'),
                 onLongPress: () => _showContextMenu(context, ref, lists[index]),
               );
             },
@@ -69,8 +74,8 @@ class ShoppingListsPage extends ConsumerWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xFFFF6B35),
-        foregroundColor: Colors.white,
+        backgroundColor: colors.primary,
+        foregroundColor: colors.onPrimary,
         onPressed: () => _showCreateDialog(context, ref),
         child: const Icon(Icons.add),
       ),
@@ -98,7 +103,7 @@ class ShoppingListsPage extends ConsumerWidget {
       BuildContext context, WidgetRef ref, ShoppingListEntity list) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: Theme.of(context).colorScheme.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
@@ -116,29 +121,31 @@ class _EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.colorScheme;
+
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           const Text('🛒', style: TextStyle(fontSize: 64)),
           const SizedBox(height: 16),
-          const Text(
+          Text(
             'No lists yet',
             style: TextStyle(
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w600,
               fontSize: 20,
-              color: Colors.white,
+              color: colors.onSurface,
             ),
           ),
           const SizedBox(height: 8),
-          const Text(
+          Text(
             'Create your first shopping list\nto get started.',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Poppins',
               fontSize: 14,
-              color: Colors.white54,
+              color: colors.onSurfaceVariant,
             ),
           ),
           const SizedBox(height: 24),
@@ -151,8 +158,8 @@ class _EmptyState extends StatelessWidget {
                   TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w600),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFFF6B35),
-              foregroundColor: Colors.white,
+              backgroundColor: colors.primary,
+              foregroundColor: colors.onPrimary,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12)),
@@ -171,23 +178,30 @@ class _NewListCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
     return GestureDetector(
       onTap: onTap,
       child: DottedBorder(
+        strokeColor: colors.outline,
         child: Container(
           height: 56,
           alignment: Alignment.center,
-          child: const Row(
+          decoration: BoxDecoration(
+            color: colors.surface,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.add, color: Color(0xFF9CA3AF)),
-              SizedBox(width: 8),
+              Icon(Icons.add, color: colors.onSurfaceVariant),
+              const SizedBox(width: 8),
               Text(
                 'New list',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 14,
-                  color: Color(0xFF9CA3AF),
+                  color: colors.onSurfaceVariant,
                 ),
               ),
             ],
@@ -200,26 +214,32 @@ class _NewListCard extends StatelessWidget {
 
 /// Simple dashed-border container (no external dependency).
 class DottedBorder extends StatelessWidget {
-  const DottedBorder({super.key, required this.child});
+  const DottedBorder(
+      {super.key, required this.child, required this.strokeColor});
 
   final Widget child;
+  final Color strokeColor;
 
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: _DashBorderPainter(),
+      painter: _DashBorderPainter(strokeColor),
       child: child,
     );
   }
 }
 
 class _DashBorderPainter extends CustomPainter {
+  _DashBorderPainter(this.strokeColor);
+
+  final Color strokeColor;
+
   @override
   void paint(Canvas canvas, Size size) {
     const dashWidth = 6.0;
     const dashSpace = 4.0;
     final paint = Paint()
-      ..color = const Color(0xFF9CA3AF)
+      ..color = strokeColor
       ..strokeWidth = 1.5
       ..style = PaintingStyle.stroke;
 

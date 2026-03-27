@@ -1,10 +1,27 @@
 import 'package:flutter/material.dart';
 import 'colors.dart';
 import 'typography.dart';
+import 'app_theme_extension.dart';
+
+/// Named theme variants available in the app.
+enum AppThemeType {
+  light,
+  dark,
+}
 
 /// Full Material-3 light theme matching the Online Groceries App UI Figma.
 class AppTheme {
   AppTheme._();
+
+  static ThemeData of(AppThemeType themeType) {
+    switch (themeType) {
+      case AppThemeType.dark:
+        return dark;
+      case AppThemeType.light:
+      default:
+        return light;
+    }
+  }
 
   static ThemeData get light {
     const cs = ColorScheme(
@@ -195,6 +212,7 @@ class AppTheme {
           color: AppColors.textBody,
         ),
       ),
+      extensions: const [AppThemeColors.light],
     );
   }
 
@@ -205,5 +223,6 @@ class AppTheme {
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
+        extensions: const [AppThemeColors.dark],
       );
 }

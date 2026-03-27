@@ -7,7 +7,7 @@ import 'package:path_provider/path_provider.dart';
 
 QueryExecutor openConnection() {
   return LazyDatabase(() async {
-    final dbFolder = await getApplicationDocumentsDirectory();
+    final dbFolder = await getTemporaryDirectory();
     final file = File(p.join(dbFolder.path, 'shop_list_db.db'));
     return NativeDatabase.createInBackground(file);
   });
