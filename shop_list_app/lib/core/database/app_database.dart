@@ -1,15 +1,16 @@
 import 'package:drift/drift.dart';
 import 'package:shop_list_app/core/utils/app_logger.dart';
+
+import 'connection/connection.dart' as impl;
+import 'seeder/product_category_seeder.dart';
+import 'seeder/product_seeder.dart';
+import 'seeder/recipe_seeder.dart';
 import 'tables/product_category_table.dart';
 import 'tables/product_table.dart';
 import 'tables/recipe_table.dart';
-import 'tables/sync_queue_table.dart';
-import 'tables/shopping_list_table.dart';
 import 'tables/shopping_item_table.dart';
-import 'seeder/recipe_seeder.dart';
-import 'seeder/product_category_seeder.dart';
-import 'seeder/product_seeder.dart';
-import 'connection/connection.dart' as impl;
+import 'tables/shopping_list_table.dart';
+import 'tables/sync_queue_table.dart';
 
 part 'app_database.g.dart';
 
@@ -39,7 +40,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.forTesting(super.executor);
 
   @override
-  int get schemaVersion => 6;
+  int get schemaVersion => 7;
 
   /// Step-by-step migration strategy.
   ///
@@ -124,6 +125,32 @@ class AppDatabase extends _$AppDatabase {
                 error: e);
           }
           AppLogger.instance.info('[DB] onUpgrade v4→v5 complete');
+        }
+
+        // v6 → v7: add new columns to Recipes table.
+        if (from < 7) {
+          final newRecipeCols = {
+            'description': 'TEXT',
+            'cook_time': 'INTEGER',
+            'servings': 'INTEGER',
+            'image_url': 'TEXT',
+            'rating': 'REAL',
+            'tags_json': 'TEXT',
+            'ingredients_json': 'TEXT',
+          };
+          for (final entry in newRecipeCols.entries) {
+            try {
+              await customStatement(
+                  'ALTER TABLE recipes ADD COLUMN ${entry.key} ${entry.value}');
+              AppLogger.instance
+                  .info('[DB] Added column ${entry.key} to recipes');
+            } catch (e) {
+              AppLogger.instance.warning(
+                  '[DB] Column ${entry.key} already exists in recipes (skipped)',
+                  error: e);
+            }
+          }
+          AppLogger.instance.info('[DB] onUpgrade v6→v7 complete');
         }
 
         // v5 → v6: create shopping_lists and shopping_items tables.
@@ -213,6 +240,31 @@ class AppDatabase extends _$AppDatabase {
             'UPDATE product_categories SET updated_at = $nowMillis '
             "WHERE typeof(updated_at) != 'integer'",
           );
+          // Self-heal recipe columns (v7).
+          final recipeColsResult = await customSelect(
+            "SELECT name FROM pragma_table_info('recipes')",
+          )
+              .get()
+              .then((rows) => rows.map((r) => r.read<String>('name')).toSet());
+
+          final recipeColsToAdd = {
+            'description': 'TEXT',
+            'cook_time': 'INTEGER',
+            'servings': 'INTEGER',
+            'image_url': 'TEXT',
+            'rating': 'REAL',
+            'tags_json': 'TEXT',
+            'ingredients_json': 'TEXT',
+          };
+          for (final entry in recipeColsToAdd.entries) {
+            if (!recipeColsResult.contains(entry.key)) {
+              await customStatement(
+                  'ALTER TABLE recipes ADD COLUMN ${entry.key} ${entry.value}');
+              AppLogger.instance
+                  .info('[DB] Self-healed recipe column: ${entry.key}');
+            }
+          }
+
           AppLogger.instance.info('[DB] Self-heal complete');
         } catch (e, st) {
           AppLogger.instance

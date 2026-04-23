@@ -78,7 +78,7 @@ class ShoppingListCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(2),
               child: LinearProgressIndicator(
                 value: progress,
-                backgroundColor: colors.surfaceVariant,
+                backgroundColor: colors.surfaceContainerHighest,
                 valueColor: AlwaysStoppedAnimation(colors.primary),
                 minHeight: 4,
               ),

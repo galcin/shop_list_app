@@ -3,10 +3,10 @@ import 'package:drift/drift.dart';
 import 'package:shop_list_app/core/database/app_database.dart';
 import 'package:shop_list_app/core/error/failures.dart';
 import 'package:shop_list_app/core/utils/app_logger.dart';
+import 'package:shop_list_app/features/product_category/data/datasources/product_category_data_source.dart';
 import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart'
     as model;
 import 'package:shop_list_app/features/product_category/domain/repositories/i_product_category_repository.dart';
-import 'package:shop_list_app/features/product_category/data/datasources/product_category_data_source.dart';
 
 class ProductCategoryRepository implements IProductCategoryRepository {
   ProductCategoryRepository(this._dataSource);

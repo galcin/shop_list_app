@@ -19,7 +19,7 @@ class ShoppingListDetailPage extends ConsumerWidget {
     final colors = context.colorScheme;
 
     return Scaffold(
-      backgroundColor: colors.background,
+      backgroundColor: colors.surface,
       body: detailAsync.when(
         loading: () =>
             Center(child: CircularProgressIndicator(color: colors.primary)),
@@ -84,7 +84,8 @@ class ShoppingListDetailPage extends ConsumerWidget {
                                 borderRadius: BorderRadius.circular(2),
                                 child: LinearProgressIndicator(
                                   value: progress,
-                                  backgroundColor: colors.surfaceVariant,
+                                  backgroundColor:
+                                      colors.surfaceContainerHighest,
                                   valueColor:
                                       AlwaysStoppedAnimation(colors.primary),
                                   minHeight: 4,

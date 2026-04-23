@@ -298,7 +298,7 @@ class _AddItemBottomSheetState extends ConsumerState<AddItemBottomSheet> {
               const SizedBox(width: 12),
               Expanded(
                 child: DropdownButtonFormField<String>(
-                  value: _unit,
+                  initialValue: _unit,
                   dropdownColor: const Color(0xFF2A2A2A),
                   style: const TextStyle(
                       color: Colors.white, fontFamily: 'Poppins'),

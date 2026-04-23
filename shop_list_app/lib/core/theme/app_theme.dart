@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+
+import 'app_theme_extension.dart';
 import 'colors.dart';
 import 'typography.dart';
-import 'app_theme_extension.dart';
 
 /// Named theme variants available in the app.
 enum AppThemeType {
@@ -18,7 +19,6 @@ class AppTheme {
       case AppThemeType.dark:
         return dark;
       case AppThemeType.light:
-      default:
         return light;
     }
   }

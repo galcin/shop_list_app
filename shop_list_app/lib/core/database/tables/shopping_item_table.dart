@@ -1,7 +1,8 @@
 import 'package:drift/drift.dart';
-import 'shopping_list_table.dart';
-import 'product_table.dart';
+
 import 'product_category_table.dart';
+import 'product_table.dart';
+import 'shopping_list_table.dart';
 
 /// Stores items belonging to a shopping list.
 class ShoppingItems extends Table {

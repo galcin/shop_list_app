@@ -17,7 +17,7 @@ class ShoppingListsPage extends ConsumerWidget {
     final colors = context.colorScheme;
 
     return Scaffold(
-      backgroundColor: colors.background,
+      backgroundColor: colors.surface,
       appBar: AppBar(
         backgroundColor: colors.surface,
         elevation: 0,
@@ -243,7 +243,7 @@ class _DashBorderPainter extends CustomPainter {
       ..strokeWidth = 1.5
       ..style = PaintingStyle.stroke;
 
-    final radius = Radius.circular(12);
+    const radius = Radius.circular(12);
     final rrect = RRect.fromRectAndRadius(
         Rect.fromLTWH(0, 0, size.width, size.height), radius);
     final path = Path()..addRRect(rrect);

@@ -13,7 +13,7 @@ class ListTileComponent extends StatelessWidget {
           border: Border.all(color: Colors.blueAccent),
           borderRadius: BorderRadius.circular(20)),
       child: ListTile(
-        leading: Icon(Icons.image_not_supported_outlined),
+        leading: const Icon(Icons.image_not_supported_outlined),
         title: Text(item.name),
         subtitle: Text(item.name),
       ),

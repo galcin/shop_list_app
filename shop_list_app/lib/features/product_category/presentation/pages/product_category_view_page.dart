@@ -9,10 +9,10 @@ import 'package:shop_list_app/features/product_category/presentation/widgets/cat
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_card.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_emoji_image.dart';
 import 'package:shop_list_app/features/products/presentation/pages/product_view_page.dart';
-import 'package:shop_list_app/shared/widgets/list/app_reorderable_list_view.dart';
 import 'package:shop_list_app/shared/widgets/feedback/async_value_widget.dart';
 import 'package:shop_list_app/shared/widgets/feedback/empty_state_widget.dart';
 import 'package:shop_list_app/shared/widgets/feedback/error_state_widget.dart';
+import 'package:shop_list_app/shared/widgets/list/app_reorderable_list_view.dart';
 import 'package:shop_list_app/shared/widgets/list/reorderable_emoji_list_tile.dart';
 
 class ProductCategoryViewPage extends ConsumerStatefulWidget {
@@ -150,25 +150,18 @@ class _ProductCategoryViewPageState
                             ),
                             confirmDismiss: (_) => _confirmDelete(cat),
                             onDismissed: (_) => _handleDeleteDismissed(cat),
-                            child: Stack(
-                              children: [
-                                CategoryCard(
-                                  category: cat,
-                                  accentColor: accentColor,
-                                  onTap: () => _openDetail(cat),
-                                  onLongPress: () =>
-                                      showEditCategorySheet(context, cat),
-                                ),
-                                Positioned(
-                                  top: 6,
-                                  left: 0,
-                                  child: CategoryEmojiImage(
-                                    emoji: emoji,
-                                    accentColor: accentColor,
-                                    imageName: cat.imageName,
-                                  ),
-                                ),
-                              ],
+                            child: CategoryCard(
+                              category: cat,
+                              accentColor: accentColor,
+                              onTap: () => _openDetail(cat),
+                              onLongPress: () =>
+                                  showEditCategorySheet(context, cat),
+                              circleChild: CategoryEmojiImage(
+                                emoji: emoji,
+                                accentColor: accentColor,
+                                imageName: cat.imageName,
+                                size: 96,
+                              ),
                             ),
                           );
                         },

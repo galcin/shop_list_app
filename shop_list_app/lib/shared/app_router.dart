@@ -3,6 +3,9 @@ import 'package:shop_list_app/core/navigation/app_route.dart';
 import 'package:shop_list_app/features/meal_planning/presentation/pages/menu_view.dart';
 import 'package:shop_list_app/features/pantry/presentation/pages/pantry_page.dart';
 import 'package:shop_list_app/features/product_category/presentation/pages/product_category_view_page.dart';
+import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
+import 'package:shop_list_app/features/recipes/presentation/pages/recipe_detail_page.dart';
+import 'package:shop_list_app/features/recipes/presentation/pages/recipe_form_page.dart';
 import 'package:shop_list_app/features/recipes/presentation/pages/recipe_list_view.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/pages/shopping_list_detail_page.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/pages/shopping_lists_page.dart';
@@ -38,7 +41,7 @@ final appRouter = GoRouter(
           routes: [
             GoRoute(
               path: AppRoute.mealPlanning.path,
-              builder: (context, state) => MenuView(),
+              builder: (context, state) => const MenuView(),
             ),
           ],
         ),
@@ -67,7 +70,29 @@ final appRouter = GoRouter(
           routes: [
             GoRoute(
               path: AppRoute.recipes.path,
-              builder: (context, state) => RecipeListView(),
+              builder: (context, state) => const RecipeListView(),
+              routes: [
+                GoRoute(
+                  path: 'new',
+                  builder: (context, state) => const RecipeFormPage(),
+                ),
+                GoRoute(
+                  path: ':id',
+                  builder: (context, state) {
+                    final id = int.parse(state.pathParameters['id']!);
+                    return RecipeDetailPage(recipeId: id);
+                  },
+                  routes: [
+                    GoRoute(
+                      path: 'edit',
+                      builder: (context, state) {
+                        final recipe = state.extra as Recipe?;
+                        return RecipeFormPage(initialRecipe: recipe);
+                      },
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),

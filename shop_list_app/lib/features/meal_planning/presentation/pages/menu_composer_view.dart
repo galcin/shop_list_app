@@ -23,7 +23,7 @@ class _MenuComposerView extends State<MenuComposerView> {
       color: Colors.blueAccent,
       child: Stack(
         children: [
-          Positioned.fill(
+          const Positioned.fill(
             child: TemplateSelector(),
           ),
           Positioned.fill(

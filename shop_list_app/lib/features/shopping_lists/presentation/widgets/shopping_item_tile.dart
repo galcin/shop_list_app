@@ -69,14 +69,14 @@ class ShoppingItemTile extends StatelessWidget {
                 photo: productPhoto,
                 size: 46,
                 borderRadius: 12,
-                backgroundColor: colors.surfaceVariant,
+                backgroundColor: colors.surfaceContainerHighest,
               )
             else
               Container(
                 width: 46,
                 height: 46,
                 decoration: BoxDecoration(
-                  color: colors.surfaceVariant,
+                  color: colors.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(

@@ -14,17 +14,21 @@ class CategoryEmojiImage extends StatelessWidget {
   /// When provided, renders the image instead of the emoji.
   final String? imageName;
 
+  final double size;
+
   const CategoryEmojiImage({
     super.key,
     required this.emoji,
     required this.accentColor,
     this.imageName,
+    this.size = 84,
   });
 
   @override
   Widget build(BuildContext context) {
     return CircleAccentAvatar(
       accentColor: accentColor,
+      size: size,
       child: imageName != null
           ? Image.asset(
               'assets/images/$imageName',

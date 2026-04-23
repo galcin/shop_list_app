@@ -861,6 +861,12 @@ class $RecipesTable extends Recipes with TableInfo<$RecipesTable, Recipe> {
   late final GeneratedColumn<String> name = GeneratedColumn<String>(
       'name', aliasedName, true,
       type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _descriptionMeta =
+      const VerificationMeta('description');
+  @override
+  late final GeneratedColumn<String> description = GeneratedColumn<String>(
+      'description', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
   static const VerificationMeta _instructionsMeta =
       const VerificationMeta('instructions');
   @override
@@ -873,6 +879,18 @@ class $RecipesTable extends Recipes with TableInfo<$RecipesTable, Recipe> {
   late final GeneratedColumn<int> prepTime = GeneratedColumn<int>(
       'prep_time', aliasedName, true,
       type: DriftSqlType.int, requiredDuringInsert: false);
+  static const VerificationMeta _cookTimeMeta =
+      const VerificationMeta('cookTime');
+  @override
+  late final GeneratedColumn<int> cookTime = GeneratedColumn<int>(
+      'cook_time', aliasedName, true,
+      type: DriftSqlType.int, requiredDuringInsert: false);
+  static const VerificationMeta _servingsMeta =
+      const VerificationMeta('servings');
+  @override
+  late final GeneratedColumn<int> servings = GeneratedColumn<int>(
+      'servings', aliasedName, true,
+      type: DriftSqlType.int, requiredDuringInsert: false);
   static const VerificationMeta _favoriteMeta =
       const VerificationMeta('favorite');
   @override
@@ -882,9 +900,44 @@ class $RecipesTable extends Recipes with TableInfo<$RecipesTable, Recipe> {
       requiredDuringInsert: false,
       defaultConstraints:
           GeneratedColumn.constraintIsAlways('CHECK ("favorite" IN (0, 1))'));
+  static const VerificationMeta _imageUrlMeta =
+      const VerificationMeta('imageUrl');
   @override
-  List<GeneratedColumn> get $columns =>
-      [id, name, instructions, prepTime, favorite];
+  late final GeneratedColumn<String> imageUrl = GeneratedColumn<String>(
+      'image_url', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _ratingMeta = const VerificationMeta('rating');
+  @override
+  late final GeneratedColumn<double> rating = GeneratedColumn<double>(
+      'rating', aliasedName, true,
+      type: DriftSqlType.double, requiredDuringInsert: false);
+  static const VerificationMeta _tagsJsonMeta =
+      const VerificationMeta('tagsJson');
+  @override
+  late final GeneratedColumn<String> tagsJson = GeneratedColumn<String>(
+      'tags_json', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _ingredientsJsonMeta =
+      const VerificationMeta('ingredientsJson');
+  @override
+  late final GeneratedColumn<String> ingredientsJson = GeneratedColumn<String>(
+      'ingredients_json', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
+  @override
+  List<GeneratedColumn> get $columns => [
+        id,
+        name,
+        description,
+        instructions,
+        prepTime,
+        cookTime,
+        servings,
+        favorite,
+        imageUrl,
+        rating,
+        tagsJson,
+        ingredientsJson
+      ];
   @override
   String get aliasedName => _alias ?? actualTableName;
   @override
@@ -902,6 +955,12 @@ class $RecipesTable extends Recipes with TableInfo<$RecipesTable, Recipe> {
       context.handle(
           _nameMeta, name.isAcceptableOrUnknown(data['name']!, _nameMeta));
     }
+    if (data.containsKey('description')) {
+      context.handle(
+          _descriptionMeta,
+          description.isAcceptableOrUnknown(
+              data['description']!, _descriptionMeta));
+    }
     if (data.containsKey('instructions')) {
       context.handle(
           _instructionsMeta,
@@ -912,9 +971,35 @@ class $RecipesTable extends Recipes with TableInfo<$RecipesTable, Recipe> {
       context.handle(_prepTimeMeta,
           prepTime.isAcceptableOrUnknown(data['prep_time']!, _prepTimeMeta));
     }
+    if (data.containsKey('cook_time')) {
+      context.handle(_cookTimeMeta,
+          cookTime.isAcceptableOrUnknown(data['cook_time']!, _cookTimeMeta));
+    }
+    if (data.containsKey('servings')) {
+      context.handle(_servingsMeta,
+          servings.isAcceptableOrUnknown(data['servings']!, _servingsMeta));
+    }
     if (data.containsKey('favorite')) {
       context.handle(_favoriteMeta,
           favorite.isAcceptableOrUnknown(data['favorite']!, _favoriteMeta));
+    }
+    if (data.containsKey('image_url')) {
+      context.handle(_imageUrlMeta,
+          imageUrl.isAcceptableOrUnknown(data['image_url']!, _imageUrlMeta));
+    }
+    if (data.containsKey('rating')) {
+      context.handle(_ratingMeta,
+          rating.isAcceptableOrUnknown(data['rating']!, _ratingMeta));
+    }
+    if (data.containsKey('tags_json')) {
+      context.handle(_tagsJsonMeta,
+          tagsJson.isAcceptableOrUnknown(data['tags_json']!, _tagsJsonMeta));
+    }
+    if (data.containsKey('ingredients_json')) {
+      context.handle(
+          _ingredientsJsonMeta,
+          ingredientsJson.isAcceptableOrUnknown(
+              data['ingredients_json']!, _ingredientsJsonMeta));
     }
     return context;
   }
@@ -929,12 +1014,26 @@ class $RecipesTable extends Recipes with TableInfo<$RecipesTable, Recipe> {
           .read(DriftSqlType.int, data['${effectivePrefix}id'])!,
       name: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}name']),
+      description: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}description']),
       instructions: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}instructions']),
       prepTime: attachedDatabase.typeMapping
           .read(DriftSqlType.int, data['${effectivePrefix}prep_time']),
+      cookTime: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}cook_time']),
+      servings: attachedDatabase.typeMapping
+          .read(DriftSqlType.int, data['${effectivePrefix}servings']),
       favorite: attachedDatabase.typeMapping
           .read(DriftSqlType.bool, data['${effectivePrefix}favorite']),
+      imageUrl: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}image_url']),
+      rating: attachedDatabase.typeMapping
+          .read(DriftSqlType.double, data['${effectivePrefix}rating']),
+      tagsJson: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}tags_json']),
+      ingredientsJson: attachedDatabase.typeMapping.read(
+          DriftSqlType.string, data['${effectivePrefix}ingredients_json']),
     );
   }
 
@@ -947,15 +1046,33 @@ class $RecipesTable extends Recipes with TableInfo<$RecipesTable, Recipe> {
 class Recipe extends DataClass implements Insertable<Recipe> {
   final int id;
   final String? name;
+  final String? description;
   final String? instructions;
   final int? prepTime;
+  final int? cookTime;
+  final int? servings;
   final bool? favorite;
+  final String? imageUrl;
+  final double? rating;
+
+  /// JSON-encoded List<String> of tag strings.
+  final String? tagsJson;
+
+  /// JSON-encoded List<{name, quantity, unit}> for ingredients.
+  final String? ingredientsJson;
   const Recipe(
       {required this.id,
       this.name,
+      this.description,
       this.instructions,
       this.prepTime,
-      this.favorite});
+      this.cookTime,
+      this.servings,
+      this.favorite,
+      this.imageUrl,
+      this.rating,
+      this.tagsJson,
+      this.ingredientsJson});
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -963,14 +1080,35 @@ class Recipe extends DataClass implements Insertable<Recipe> {
     if (!nullToAbsent || name != null) {
       map['name'] = Variable<String>(name);
     }
+    if (!nullToAbsent || description != null) {
+      map['description'] = Variable<String>(description);
+    }
     if (!nullToAbsent || instructions != null) {
       map['instructions'] = Variable<String>(instructions);
     }
     if (!nullToAbsent || prepTime != null) {
       map['prep_time'] = Variable<int>(prepTime);
     }
+    if (!nullToAbsent || cookTime != null) {
+      map['cook_time'] = Variable<int>(cookTime);
+    }
+    if (!nullToAbsent || servings != null) {
+      map['servings'] = Variable<int>(servings);
+    }
     if (!nullToAbsent || favorite != null) {
       map['favorite'] = Variable<bool>(favorite);
+    }
+    if (!nullToAbsent || imageUrl != null) {
+      map['image_url'] = Variable<String>(imageUrl);
+    }
+    if (!nullToAbsent || rating != null) {
+      map['rating'] = Variable<double>(rating);
+    }
+    if (!nullToAbsent || tagsJson != null) {
+      map['tags_json'] = Variable<String>(tagsJson);
+    }
+    if (!nullToAbsent || ingredientsJson != null) {
+      map['ingredients_json'] = Variable<String>(ingredientsJson);
     }
     return map;
   }
@@ -979,15 +1117,35 @@ class Recipe extends DataClass implements Insertable<Recipe> {
     return RecipesCompanion(
       id: Value(id),
       name: name == null && nullToAbsent ? const Value.absent() : Value(name),
+      description: description == null && nullToAbsent
+          ? const Value.absent()
+          : Value(description),
       instructions: instructions == null && nullToAbsent
           ? const Value.absent()
           : Value(instructions),
       prepTime: prepTime == null && nullToAbsent
           ? const Value.absent()
           : Value(prepTime),
+      cookTime: cookTime == null && nullToAbsent
+          ? const Value.absent()
+          : Value(cookTime),
+      servings: servings == null && nullToAbsent
+          ? const Value.absent()
+          : Value(servings),
       favorite: favorite == null && nullToAbsent
           ? const Value.absent()
           : Value(favorite),
+      imageUrl: imageUrl == null && nullToAbsent
+          ? const Value.absent()
+          : Value(imageUrl),
+      rating:
+          rating == null && nullToAbsent ? const Value.absent() : Value(rating),
+      tagsJson: tagsJson == null && nullToAbsent
+          ? const Value.absent()
+          : Value(tagsJson),
+      ingredientsJson: ingredientsJson == null && nullToAbsent
+          ? const Value.absent()
+          : Value(ingredientsJson),
     );
   }
 
@@ -997,9 +1155,16 @@ class Recipe extends DataClass implements Insertable<Recipe> {
     return Recipe(
       id: serializer.fromJson<int>(json['id']),
       name: serializer.fromJson<String?>(json['name']),
+      description: serializer.fromJson<String?>(json['description']),
       instructions: serializer.fromJson<String?>(json['instructions']),
       prepTime: serializer.fromJson<int?>(json['prepTime']),
+      cookTime: serializer.fromJson<int?>(json['cookTime']),
+      servings: serializer.fromJson<int?>(json['servings']),
       favorite: serializer.fromJson<bool?>(json['favorite']),
+      imageUrl: serializer.fromJson<String?>(json['imageUrl']),
+      rating: serializer.fromJson<double?>(json['rating']),
+      tagsJson: serializer.fromJson<String?>(json['tagsJson']),
+      ingredientsJson: serializer.fromJson<String?>(json['ingredientsJson']),
     );
   }
   @override
@@ -1008,35 +1173,68 @@ class Recipe extends DataClass implements Insertable<Recipe> {
     return <String, dynamic>{
       'id': serializer.toJson<int>(id),
       'name': serializer.toJson<String?>(name),
+      'description': serializer.toJson<String?>(description),
       'instructions': serializer.toJson<String?>(instructions),
       'prepTime': serializer.toJson<int?>(prepTime),
+      'cookTime': serializer.toJson<int?>(cookTime),
+      'servings': serializer.toJson<int?>(servings),
       'favorite': serializer.toJson<bool?>(favorite),
+      'imageUrl': serializer.toJson<String?>(imageUrl),
+      'rating': serializer.toJson<double?>(rating),
+      'tagsJson': serializer.toJson<String?>(tagsJson),
+      'ingredientsJson': serializer.toJson<String?>(ingredientsJson),
     };
   }
 
   Recipe copyWith(
           {int? id,
           Value<String?> name = const Value.absent(),
+          Value<String?> description = const Value.absent(),
           Value<String?> instructions = const Value.absent(),
           Value<int?> prepTime = const Value.absent(),
-          Value<bool?> favorite = const Value.absent()}) =>
+          Value<int?> cookTime = const Value.absent(),
+          Value<int?> servings = const Value.absent(),
+          Value<bool?> favorite = const Value.absent(),
+          Value<String?> imageUrl = const Value.absent(),
+          Value<double?> rating = const Value.absent(),
+          Value<String?> tagsJson = const Value.absent(),
+          Value<String?> ingredientsJson = const Value.absent()}) =>
       Recipe(
         id: id ?? this.id,
         name: name.present ? name.value : this.name,
+        description: description.present ? description.value : this.description,
         instructions:
             instructions.present ? instructions.value : this.instructions,
         prepTime: prepTime.present ? prepTime.value : this.prepTime,
+        cookTime: cookTime.present ? cookTime.value : this.cookTime,
+        servings: servings.present ? servings.value : this.servings,
         favorite: favorite.present ? favorite.value : this.favorite,
+        imageUrl: imageUrl.present ? imageUrl.value : this.imageUrl,
+        rating: rating.present ? rating.value : this.rating,
+        tagsJson: tagsJson.present ? tagsJson.value : this.tagsJson,
+        ingredientsJson: ingredientsJson.present
+            ? ingredientsJson.value
+            : this.ingredientsJson,
       );
   Recipe copyWithCompanion(RecipesCompanion data) {
     return Recipe(
       id: data.id.present ? data.id.value : this.id,
       name: data.name.present ? data.name.value : this.name,
+      description:
+          data.description.present ? data.description.value : this.description,
       instructions: data.instructions.present
           ? data.instructions.value
           : this.instructions,
       prepTime: data.prepTime.present ? data.prepTime.value : this.prepTime,
+      cookTime: data.cookTime.present ? data.cookTime.value : this.cookTime,
+      servings: data.servings.present ? data.servings.value : this.servings,
       favorite: data.favorite.present ? data.favorite.value : this.favorite,
+      imageUrl: data.imageUrl.present ? data.imageUrl.value : this.imageUrl,
+      rating: data.rating.present ? data.rating.value : this.rating,
+      tagsJson: data.tagsJson.present ? data.tagsJson.value : this.tagsJson,
+      ingredientsJson: data.ingredientsJson.present
+          ? data.ingredientsJson.value
+          : this.ingredientsJson,
     );
   }
 
@@ -1045,74 +1243,149 @@ class Recipe extends DataClass implements Insertable<Recipe> {
     return (StringBuffer('Recipe(')
           ..write('id: $id, ')
           ..write('name: $name, ')
+          ..write('description: $description, ')
           ..write('instructions: $instructions, ')
           ..write('prepTime: $prepTime, ')
-          ..write('favorite: $favorite')
+          ..write('cookTime: $cookTime, ')
+          ..write('servings: $servings, ')
+          ..write('favorite: $favorite, ')
+          ..write('imageUrl: $imageUrl, ')
+          ..write('rating: $rating, ')
+          ..write('tagsJson: $tagsJson, ')
+          ..write('ingredientsJson: $ingredientsJson')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode => Object.hash(id, name, instructions, prepTime, favorite);
+  int get hashCode => Object.hash(
+      id,
+      name,
+      description,
+      instructions,
+      prepTime,
+      cookTime,
+      servings,
+      favorite,
+      imageUrl,
+      rating,
+      tagsJson,
+      ingredientsJson);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
       (other is Recipe &&
           other.id == this.id &&
           other.name == this.name &&
+          other.description == this.description &&
           other.instructions == this.instructions &&
           other.prepTime == this.prepTime &&
-          other.favorite == this.favorite);
+          other.cookTime == this.cookTime &&
+          other.servings == this.servings &&
+          other.favorite == this.favorite &&
+          other.imageUrl == this.imageUrl &&
+          other.rating == this.rating &&
+          other.tagsJson == this.tagsJson &&
+          other.ingredientsJson == this.ingredientsJson);
 }
 
 class RecipesCompanion extends UpdateCompanion<Recipe> {
   final Value<int> id;
   final Value<String?> name;
+  final Value<String?> description;
   final Value<String?> instructions;
   final Value<int?> prepTime;
+  final Value<int?> cookTime;
+  final Value<int?> servings;
   final Value<bool?> favorite;
+  final Value<String?> imageUrl;
+  final Value<double?> rating;
+  final Value<String?> tagsJson;
+  final Value<String?> ingredientsJson;
   const RecipesCompanion({
     this.id = const Value.absent(),
     this.name = const Value.absent(),
+    this.description = const Value.absent(),
     this.instructions = const Value.absent(),
     this.prepTime = const Value.absent(),
+    this.cookTime = const Value.absent(),
+    this.servings = const Value.absent(),
     this.favorite = const Value.absent(),
+    this.imageUrl = const Value.absent(),
+    this.rating = const Value.absent(),
+    this.tagsJson = const Value.absent(),
+    this.ingredientsJson = const Value.absent(),
   });
   RecipesCompanion.insert({
     this.id = const Value.absent(),
     this.name = const Value.absent(),
+    this.description = const Value.absent(),
     this.instructions = const Value.absent(),
     this.prepTime = const Value.absent(),
+    this.cookTime = const Value.absent(),
+    this.servings = const Value.absent(),
     this.favorite = const Value.absent(),
+    this.imageUrl = const Value.absent(),
+    this.rating = const Value.absent(),
+    this.tagsJson = const Value.absent(),
+    this.ingredientsJson = const Value.absent(),
   });
   static Insertable<Recipe> custom({
     Expression<int>? id,
     Expression<String>? name,
+    Expression<String>? description,
     Expression<String>? instructions,
     Expression<int>? prepTime,
+    Expression<int>? cookTime,
+    Expression<int>? servings,
     Expression<bool>? favorite,
+    Expression<String>? imageUrl,
+    Expression<double>? rating,
+    Expression<String>? tagsJson,
+    Expression<String>? ingredientsJson,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
       if (name != null) 'name': name,
+      if (description != null) 'description': description,
       if (instructions != null) 'instructions': instructions,
       if (prepTime != null) 'prep_time': prepTime,
+      if (cookTime != null) 'cook_time': cookTime,
+      if (servings != null) 'servings': servings,
       if (favorite != null) 'favorite': favorite,
+      if (imageUrl != null) 'image_url': imageUrl,
+      if (rating != null) 'rating': rating,
+      if (tagsJson != null) 'tags_json': tagsJson,
+      if (ingredientsJson != null) 'ingredients_json': ingredientsJson,
     });
   }
 
   RecipesCompanion copyWith(
       {Value<int>? id,
       Value<String?>? name,
+      Value<String?>? description,
       Value<String?>? instructions,
       Value<int?>? prepTime,
-      Value<bool?>? favorite}) {
+      Value<int?>? cookTime,
+      Value<int?>? servings,
+      Value<bool?>? favorite,
+      Value<String?>? imageUrl,
+      Value<double?>? rating,
+      Value<String?>? tagsJson,
+      Value<String?>? ingredientsJson}) {
     return RecipesCompanion(
       id: id ?? this.id,
       name: name ?? this.name,
+      description: description ?? this.description,
       instructions: instructions ?? this.instructions,
       prepTime: prepTime ?? this.prepTime,
+      cookTime: cookTime ?? this.cookTime,
+      servings: servings ?? this.servings,
       favorite: favorite ?? this.favorite,
+      imageUrl: imageUrl ?? this.imageUrl,
+      rating: rating ?? this.rating,
+      tagsJson: tagsJson ?? this.tagsJson,
+      ingredientsJson: ingredientsJson ?? this.ingredientsJson,
     );
   }
 
@@ -1125,14 +1398,35 @@ class RecipesCompanion extends UpdateCompanion<Recipe> {
     if (name.present) {
       map['name'] = Variable<String>(name.value);
     }
+    if (description.present) {
+      map['description'] = Variable<String>(description.value);
+    }
     if (instructions.present) {
       map['instructions'] = Variable<String>(instructions.value);
     }
     if (prepTime.present) {
       map['prep_time'] = Variable<int>(prepTime.value);
     }
+    if (cookTime.present) {
+      map['cook_time'] = Variable<int>(cookTime.value);
+    }
+    if (servings.present) {
+      map['servings'] = Variable<int>(servings.value);
+    }
     if (favorite.present) {
       map['favorite'] = Variable<bool>(favorite.value);
+    }
+    if (imageUrl.present) {
+      map['image_url'] = Variable<String>(imageUrl.value);
+    }
+    if (rating.present) {
+      map['rating'] = Variable<double>(rating.value);
+    }
+    if (tagsJson.present) {
+      map['tags_json'] = Variable<String>(tagsJson.value);
+    }
+    if (ingredientsJson.present) {
+      map['ingredients_json'] = Variable<String>(ingredientsJson.value);
     }
     return map;
   }
@@ -1142,9 +1436,16 @@ class RecipesCompanion extends UpdateCompanion<Recipe> {
     return (StringBuffer('RecipesCompanion(')
           ..write('id: $id, ')
           ..write('name: $name, ')
+          ..write('description: $description, ')
           ..write('instructions: $instructions, ')
           ..write('prepTime: $prepTime, ')
-          ..write('favorite: $favorite')
+          ..write('cookTime: $cookTime, ')
+          ..write('servings: $servings, ')
+          ..write('favorite: $favorite, ')
+          ..write('imageUrl: $imageUrl, ')
+          ..write('rating: $rating, ')
+          ..write('tagsJson: $tagsJson, ')
+          ..write('ingredientsJson: $ingredientsJson')
           ..write(')'))
         .toString();
   }
@@ -3247,16 +3548,30 @@ typedef $$ProductsTableProcessedTableManager = ProcessedTableManager<
 typedef $$RecipesTableCreateCompanionBuilder = RecipesCompanion Function({
   Value<int> id,
   Value<String?> name,
+  Value<String?> description,
   Value<String?> instructions,
   Value<int?> prepTime,
+  Value<int?> cookTime,
+  Value<int?> servings,
   Value<bool?> favorite,
+  Value<String?> imageUrl,
+  Value<double?> rating,
+  Value<String?> tagsJson,
+  Value<String?> ingredientsJson,
 });
 typedef $$RecipesTableUpdateCompanionBuilder = RecipesCompanion Function({
   Value<int> id,
   Value<String?> name,
+  Value<String?> description,
   Value<String?> instructions,
   Value<int?> prepTime,
+  Value<int?> cookTime,
+  Value<int?> servings,
   Value<bool?> favorite,
+  Value<String?> imageUrl,
+  Value<double?> rating,
+  Value<String?> tagsJson,
+  Value<String?> ingredientsJson,
 });
 
 class $$RecipesTableFilterComposer
@@ -3274,14 +3589,36 @@ class $$RecipesTableFilterComposer
   ColumnFilters<String> get name => $composableBuilder(
       column: $table.name, builder: (column) => ColumnFilters(column));
 
+  ColumnFilters<String> get description => $composableBuilder(
+      column: $table.description, builder: (column) => ColumnFilters(column));
+
   ColumnFilters<String> get instructions => $composableBuilder(
       column: $table.instructions, builder: (column) => ColumnFilters(column));
 
   ColumnFilters<int> get prepTime => $composableBuilder(
       column: $table.prepTime, builder: (column) => ColumnFilters(column));
 
+  ColumnFilters<int> get cookTime => $composableBuilder(
+      column: $table.cookTime, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<int> get servings => $composableBuilder(
+      column: $table.servings, builder: (column) => ColumnFilters(column));
+
   ColumnFilters<bool> get favorite => $composableBuilder(
       column: $table.favorite, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get imageUrl => $composableBuilder(
+      column: $table.imageUrl, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<double> get rating => $composableBuilder(
+      column: $table.rating, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get tagsJson => $composableBuilder(
+      column: $table.tagsJson, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get ingredientsJson => $composableBuilder(
+      column: $table.ingredientsJson,
+      builder: (column) => ColumnFilters(column));
 }
 
 class $$RecipesTableOrderingComposer
@@ -3299,6 +3636,9 @@ class $$RecipesTableOrderingComposer
   ColumnOrderings<String> get name => $composableBuilder(
       column: $table.name, builder: (column) => ColumnOrderings(column));
 
+  ColumnOrderings<String> get description => $composableBuilder(
+      column: $table.description, builder: (column) => ColumnOrderings(column));
+
   ColumnOrderings<String> get instructions => $composableBuilder(
       column: $table.instructions,
       builder: (column) => ColumnOrderings(column));
@@ -3306,8 +3646,27 @@ class $$RecipesTableOrderingComposer
   ColumnOrderings<int> get prepTime => $composableBuilder(
       column: $table.prepTime, builder: (column) => ColumnOrderings(column));
 
+  ColumnOrderings<int> get cookTime => $composableBuilder(
+      column: $table.cookTime, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<int> get servings => $composableBuilder(
+      column: $table.servings, builder: (column) => ColumnOrderings(column));
+
   ColumnOrderings<bool> get favorite => $composableBuilder(
       column: $table.favorite, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get imageUrl => $composableBuilder(
+      column: $table.imageUrl, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<double> get rating => $composableBuilder(
+      column: $table.rating, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get tagsJson => $composableBuilder(
+      column: $table.tagsJson, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get ingredientsJson => $composableBuilder(
+      column: $table.ingredientsJson,
+      builder: (column) => ColumnOrderings(column));
 }
 
 class $$RecipesTableAnnotationComposer
@@ -3325,14 +3684,35 @@ class $$RecipesTableAnnotationComposer
   GeneratedColumn<String> get name =>
       $composableBuilder(column: $table.name, builder: (column) => column);
 
+  GeneratedColumn<String> get description => $composableBuilder(
+      column: $table.description, builder: (column) => column);
+
   GeneratedColumn<String> get instructions => $composableBuilder(
       column: $table.instructions, builder: (column) => column);
 
   GeneratedColumn<int> get prepTime =>
       $composableBuilder(column: $table.prepTime, builder: (column) => column);
 
+  GeneratedColumn<int> get cookTime =>
+      $composableBuilder(column: $table.cookTime, builder: (column) => column);
+
+  GeneratedColumn<int> get servings =>
+      $composableBuilder(column: $table.servings, builder: (column) => column);
+
   GeneratedColumn<bool> get favorite =>
       $composableBuilder(column: $table.favorite, builder: (column) => column);
+
+  GeneratedColumn<String> get imageUrl =>
+      $composableBuilder(column: $table.imageUrl, builder: (column) => column);
+
+  GeneratedColumn<double> get rating =>
+      $composableBuilder(column: $table.rating, builder: (column) => column);
+
+  GeneratedColumn<String> get tagsJson =>
+      $composableBuilder(column: $table.tagsJson, builder: (column) => column);
+
+  GeneratedColumn<String> get ingredientsJson => $composableBuilder(
+      column: $table.ingredientsJson, builder: (column) => column);
 }
 
 class $$RecipesTableTableManager extends RootTableManager<
@@ -3360,30 +3740,58 @@ class $$RecipesTableTableManager extends RootTableManager<
           updateCompanionCallback: ({
             Value<int> id = const Value.absent(),
             Value<String?> name = const Value.absent(),
+            Value<String?> description = const Value.absent(),
             Value<String?> instructions = const Value.absent(),
             Value<int?> prepTime = const Value.absent(),
+            Value<int?> cookTime = const Value.absent(),
+            Value<int?> servings = const Value.absent(),
             Value<bool?> favorite = const Value.absent(),
+            Value<String?> imageUrl = const Value.absent(),
+            Value<double?> rating = const Value.absent(),
+            Value<String?> tagsJson = const Value.absent(),
+            Value<String?> ingredientsJson = const Value.absent(),
           }) =>
               RecipesCompanion(
             id: id,
             name: name,
+            description: description,
             instructions: instructions,
             prepTime: prepTime,
+            cookTime: cookTime,
+            servings: servings,
             favorite: favorite,
+            imageUrl: imageUrl,
+            rating: rating,
+            tagsJson: tagsJson,
+            ingredientsJson: ingredientsJson,
           ),
           createCompanionCallback: ({
             Value<int> id = const Value.absent(),
             Value<String?> name = const Value.absent(),
+            Value<String?> description = const Value.absent(),
             Value<String?> instructions = const Value.absent(),
             Value<int?> prepTime = const Value.absent(),
+            Value<int?> cookTime = const Value.absent(),
+            Value<int?> servings = const Value.absent(),
             Value<bool?> favorite = const Value.absent(),
+            Value<String?> imageUrl = const Value.absent(),
+            Value<double?> rating = const Value.absent(),
+            Value<String?> tagsJson = const Value.absent(),
+            Value<String?> ingredientsJson = const Value.absent(),
           }) =>
               RecipesCompanion.insert(
             id: id,
             name: name,
+            description: description,
             instructions: instructions,
             prepTime: prepTime,
+            cookTime: cookTime,
+            servings: servings,
             favorite: favorite,
+            imageUrl: imageUrl,
+            rating: rating,
+            tagsJson: tagsJson,
+            ingredientsJson: ingredientsJson,
           ),
           withReferenceMapper: (p0) => p0
               .map((e) => (e.readTable(table), BaseReferences(db, table, e)))

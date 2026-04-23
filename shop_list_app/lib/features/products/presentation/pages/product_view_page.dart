@@ -11,6 +11,7 @@ import 'package:shop_list_app/features/products/presentation/providers/product_p
 import 'package:shop_list_app/features/products/presentation/widgets/create_product_bottom_sheet.dart';
 import 'package:shop_list_app/features/products/presentation/widgets/product_image_widget.dart';
 import 'package:shop_list_app/shared/widgets/display/circle_accent_avatar.dart';
+import 'package:shop_list_app/shared/widgets/list/accent_circle_list_card.dart';
 
 /// Lists all products using the same visual language as the category list:
 /// – Stack pattern: card body offset right + circular image/emoji overlay
@@ -177,121 +178,95 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
       ),
       confirmDismiss: (_) => _confirmDelete(product),
       onDismissed: (_) => _handleDeleteDismissed(product),
-      child: Stack(
-        children: [
-          // -- Card body (offset right) ---------------------------------
-          GestureDetector(
-            onTap: () => _viewProductDetails(product, cat),
-            onLongPress: () => showEditProductSheet(context, product),
-            child: Container(
-              width: double.infinity,
-              height: 96,
-              margin: const EdgeInsets.only(left: 56, bottom: 10),
-              decoration: BoxDecoration(
-                color: AppColors.surface,
-                borderRadius: BorderRadius.circular(18),
-                border: Border.all(color: AppColors.divider, width: 0.8),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.04),
-                    blurRadius: 8,
-                    offset: const Offset(0, 3),
-                  ),
-                ],
+      child: AccentCircleListCard(
+        accentColor: accentColor,
+        onTap: () => _viewProductDetails(product, cat),
+        onLongPress: () => showEditProductSheet(context, product),
+        circleChild: CircleAccentAvatar(
+          accentColor: accentColor,
+          size: 96,
+          child: ProductImageWidget(
+            photo: product.photo,
+            size: 96,
+            borderRadius: 48,
+            backgroundColor: Colors.transparent,
+          ),
+        ),
+        child: Padding(
+          padding:
+              const EdgeInsets.only(top: 10, bottom: 10, left: 50, right: 14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              // Product name
+              Text(
+                product.name ?? 'Unnamed product',
+                style: const TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16,
+                  color: AppColors.textPrimary,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                    top: 10, bottom: 10, left: 50, right: 14),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    // Product name
-                    Text(
-                      product.name ?? 'Unnamed product',
-                      style: const TextStyle(
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                        color: AppColors.textPrimary,
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Accent dot + category name + qty
+                  Flexible(
+                    child: Row(
                       children: [
-                        // Accent dot + category name + qty
-                        Flexible(
-                          child: Row(
-                            children: [
-                              Container(
-                                width: 10,
-                                height: 10,
-                                decoration: BoxDecoration(
-                                  color: accentColor,
-                                  shape: BoxShape.circle,
-                                ),
-                              ),
-                              const SizedBox(width: 6),
-                              Flexible(
-                                child: Text(
-                                  cat?.name ?? 'No category',
-                                  style: const TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 12,
-                                    color: AppColors.textSecondary,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              if (product.quantity != null ||
-                                  product.units != null) ...[
-                                const SizedBox(width: 8),
-                                Text(
-                                  '${product.quantity ?? 0} ${product.units ?? ''}',
-                                  style: const TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 12,
-                                    color: AppColors.textSecondary,
-                                  ),
-                                ),
-                              ],
-                            ],
+                        Container(
+                          width: 10,
+                          height: 10,
+                          decoration: BoxDecoration(
+                            color: accentColor,
+                            shape: BoxShape.circle,
                           ),
                         ),
-                        // Expiry badge OR chevron
-                        if (_isExpired(product.expirationDate))
-                          _expiryBadge('Expired', AppColors.error)
-                        else if (_isExpiringSoon(product.expirationDate))
-                          _expiryBadge(
-                              'Exp. ${_formatDate(product.expirationDate!)}',
-                              AppColors.accent)
-                        else
-                          const Icon(Icons.chevron_right,
-                              color: AppColors.textSecondary, size: 20),
+                        const SizedBox(width: 6),
+                        Flexible(
+                          child: Text(
+                            cat?.name ?? 'No category',
+                            style: const TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 12,
+                              color: AppColors.textSecondary,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        if (product.quantity != null ||
+                            product.units != null) ...[
+                          const SizedBox(width: 8),
+                          Text(
+                            '${product.quantity ?? 0} ${product.units ?? ''}',
+                            style: const TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 12,
+                              color: AppColors.textSecondary,
+                            ),
+                          ),
+                        ],
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                  // Expiry badge OR chevron
+                  if (_isExpired(product.expirationDate))
+                    _expiryBadge('Expired', AppColors.error)
+                  else if (_isExpiringSoon(product.expirationDate))
+                    _expiryBadge('Exp. ${_formatDate(product.expirationDate!)}',
+                        AppColors.accent)
+                  else
+                    const Icon(Icons.chevron_right,
+                        color: AppColors.textSecondary, size: 20),
+                ],
               ),
-            ),
+            ],
           ),
-          // -- Circular image overlay (left) ----------------------------
-          Positioned(
-            top: 6,
-            left: 0,
-            child: CircleAccentAvatar(
-              accentColor: accentColor,
-              child: ProductImageWidget(
-                photo: product.photo,
-                size: 84,
-                borderRadius: 42,
-                backgroundColor: Colors.transparent,
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

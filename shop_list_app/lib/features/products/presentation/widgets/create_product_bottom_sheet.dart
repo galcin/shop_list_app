@@ -231,7 +231,7 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
     final match = categories.where((c) => c.id == _selectedCategoryId);
     if (match.isEmpty) return 'Product name *  e.g. "Milk"';
     final name = match.first.name.toLowerCase();
-    const Map<String, String> _examples = {
+    const Map<String, String> examples = {
       'fruit': 'e.g. "Granny Smith Apple"',
       'vegetable': 'e.g. "Baby Spinach"',
       'dairy': 'e.g. "Full-cream Milk"',
@@ -263,7 +263,7 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
       'baby': 'e.g. "Nappy Size 3"',
       'pet': 'e.g. "Dry Dog Food"',
     };
-    for (final entry in _examples.entries) {
+    for (final entry in examples.entries) {
       if (name.contains(entry.key)) return 'Product name *  ${entry.value}';
     }
     // Fall back to capitalised category name as a generic hint.
@@ -644,7 +644,7 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
         _selectedUnit,
     ];
     return DropdownButtonFormField<String>(
-      value: units.contains(_selectedUnit) ? _selectedUnit : units.first,
+      initialValue: units.contains(_selectedUnit) ? _selectedUnit : units.first,
       decoration: _dropdownDecoration('Default Unit'),
       style: const TextStyle(
         fontFamily: 'Poppins',
@@ -680,7 +680,7 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
     _selectedCategoryId ??= categories.first.id;
 
     return DropdownButtonFormField<int>(
-      value: _selectedCategoryId,
+      initialValue: _selectedCategoryId,
       decoration: _dropdownDecoration('Category'),
       style: const TextStyle(
         fontFamily: 'Poppins',
