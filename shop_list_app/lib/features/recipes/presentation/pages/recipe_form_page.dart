@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/theme/colors.dart';
+import 'package:shop_list_app/features/products/domain/entities/product.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
+import 'package:shop_list_app/shared/widgets/product_picker_sheet.dart';
 
 /// 3-step form for creating or editing a recipe.
 class RecipeFormPage extends ConsumerStatefulWidget {
@@ -52,6 +54,7 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
                 ))
             .toList() ??
         [];
+    // selectedProduct starts null for pre-existing text entries
     _steps = (r?.instructionSteps ?? [])
         .map((s) => _StepDraft(ctrl: TextEditingController(text: s)))
         .toList();
@@ -487,11 +490,15 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
 // ── Ingredient draft state ────────────────────────────────────────────────────
 
 class _IngredientDraft {
+  /// The product linked from the catalogue. `null` means free-text entry.
+  Product? selectedProduct;
+
   final TextEditingController nameCtrl;
   final TextEditingController qtyCtrl;
   final TextEditingController unitCtrl;
 
   _IngredientDraft({
+    this.selectedProduct,
     required this.nameCtrl,
     required this.qtyCtrl,
     required this.unitCtrl,
@@ -512,7 +519,7 @@ class _IngredientDraft {
 
 // ── Ingredient row widget ─────────────────────────────────────────────────────
 
-class _IngredientRow extends StatelessWidget {
+class _IngredientRow extends StatefulWidget {
   const _IngredientRow({
     super.key,
     required this.draft,
@@ -523,35 +530,84 @@ class _IngredientRow extends StatelessWidget {
   final VoidCallback onRemove;
 
   @override
+  State<_IngredientRow> createState() => _IngredientRowState();
+}
+
+class _IngredientRowState extends State<_IngredientRow> {
+  _IngredientDraft get draft => widget.draft;
+
+  Future<void> _pickProduct() async {
+    final product = await showProductPickerSheet(context);
+    if (!mounted || product == null) return;
+    setState(() {
+      draft.selectedProduct = product;
+      draft.nameCtrl.text = product.name ?? '';
+      // Pre-fill unit from the product if the field is still empty
+      if (draft.unitCtrl.text.trim().isEmpty && product.units != null) {
+        draft.unitCtrl.text = product.units!;
+      }
+    });
+  }
+
+  void _clearProduct() {
+    setState(() {
+      draft.selectedProduct = null;
+      draft.nameCtrl.clear();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final linkedProduct = draft.selectedProduct;
+
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       color: AppColors.surfaceVariant,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        child: Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              flex: 3,
-              child: _inputField(draft.nameCtrl, 'Ingredient name…'),
+            // ── Product picker row ──────────────────────────────────────────
+            Row(
+              children: [
+                Expanded(
+                  child: linkedProduct != null
+                      ? _ProductChip(
+                          name: linkedProduct.name ?? '',
+                          onClear: _clearProduct,
+                        )
+                      : _PickerButton(
+                          hint: draft.nameCtrl.text.isNotEmpty
+                              ? draft.nameCtrl.text
+                              : 'Tap to choose product…',
+                          onTap: _pickProduct,
+                        ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.delete_outline,
+                      color: AppColors.error, size: 20),
+                  onPressed: widget.onRemove,
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                ),
+              ],
             ),
-            const SizedBox(width: 8),
-            Expanded(
-              child: _inputField(draft.qtyCtrl, 'Qty',
-                  inputType: TextInputType.number),
-            ),
-            const SizedBox(width: 8),
-            SizedBox(
-              width: 64,
-              child: _inputField(draft.unitCtrl, 'Unit'),
-            ),
-            IconButton(
-              icon: const Icon(Icons.delete_outline,
-                  color: AppColors.error, size: 20),
-              onPressed: onRemove,
-              padding: EdgeInsets.zero,
-              constraints: const BoxConstraints(),
+            const SizedBox(height: 8),
+            // ── Qty + Unit row ───────────────────────────────────────────────
+            Row(
+              children: [
+                Expanded(
+                  child: _inputField(draft.qtyCtrl, 'Qty',
+                      inputType: TextInputType.number),
+                ),
+                const SizedBox(width: 8),
+                SizedBox(
+                  width: 80,
+                  child: _inputField(draft.unitCtrl, 'Unit'),
+                ),
+              ],
             ),
           ],
         ),
@@ -591,6 +647,88 @@ class _IngredientRow extends StatelessWidget {
           ),
         ),
       );
+}
+
+/// Green chip shown when a product is linked.
+class _ProductChip extends StatelessWidget {
+  const _ProductChip({required this.name, required this.onClear});
+  final String name;
+  final VoidCallback onClear;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      decoration: BoxDecoration(
+        color: AppColors.primary.withOpacity(0.12),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: AppColors.primary.withOpacity(0.4)),
+      ),
+      child: Row(
+        children: [
+          const Icon(Icons.check_circle_outline,
+              color: AppColors.primary, size: 16),
+          const SizedBox(width: 6),
+          Expanded(
+            child: Text(
+              name,
+              style: const TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 13,
+                fontWeight: FontWeight.w500,
+                color: AppColors.textPrimary,
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          GestureDetector(
+            onTap: onClear,
+            child: const Icon(Icons.close,
+                color: AppColors.textSecondary, size: 16),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Dashed-style button shown when no product is linked.
+class _PickerButton extends StatelessWidget {
+  const _PickerButton({required this.hint, required this.onTap});
+  final String hint;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        decoration: BoxDecoration(
+          color: AppColors.surface,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: AppColors.divider),
+        ),
+        child: Row(
+          children: [
+            const Icon(Icons.search, color: AppColors.textSecondary, size: 16),
+            const SizedBox(width: 6),
+            Expanded(
+              child: Text(
+                hint,
+                style: const TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 13,
+                  color: AppColors.textSecondary,
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 // ── Instruction step draft state ──────────────────────────────────────────────
