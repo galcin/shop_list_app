@@ -11,6 +11,8 @@ import 'tables/recipe_table.dart';
 import 'tables/shopping_item_table.dart';
 import 'tables/shopping_list_table.dart';
 import 'tables/sync_queue_table.dart';
+import 'tables/meal_plan_table.dart';
+import 'tables/meal_slot_table.dart';
 
 part 'app_database.g.dart';
 
@@ -20,7 +22,9 @@ part 'app_database.g.dart';
   Recipes,
   SyncQueue,
   ShoppingLists,
-  ShoppingItems
+  ShoppingItems,
+  MealPlans,
+  MealSlots
 ])
 class AppDatabase extends _$AppDatabase {
   // Singleton pattern
@@ -40,7 +44,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.forTesting(super.executor);
 
   @override
-  int get schemaVersion => 7;
+  int get schemaVersion => 8;
 
   /// Step-by-step migration strategy.
   ///
@@ -172,6 +176,25 @@ class AppDatabase extends _$AppDatabase {
                 error: e);
           }
           AppLogger.instance.info('[DB] onUpgrade v5→v6 complete');
+        }
+
+        // v7 → v8: create meal_plans and meal_slots tables.
+        if (from < 8) {
+          try {
+            await m.createTable(mealPlans);
+            AppLogger.instance.info('[DB] Created meal_plans table');
+          } catch (e) {
+            AppLogger.instance
+                .warning('[DB] meal_plans already exists (skipped)', error: e);
+          }
+          try {
+            await m.createTable(mealSlots);
+            AppLogger.instance.info('[DB] Created meal_slots table');
+          } catch (e) {
+            AppLogger.instance
+                .warning('[DB] meal_slots already exists (skipped)', error: e);
+          }
+          AppLogger.instance.info('[DB] onUpgrade v7→v8 complete');
         }
       },
       // Runs after every open (new or upgraded) to verify integrity.
