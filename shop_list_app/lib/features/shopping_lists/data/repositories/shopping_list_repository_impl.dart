@@ -38,4 +38,8 @@ class ShoppingListRepositoryImpl implements IShoppingListRepository {
   Future<Map<int?, List<ShoppingItemEntity>>> getItemsGroupedByCategory(
           int listId) =>
       _dataSource.getItemsGroupedByCategory(listId);
+
+  @override
+  Future<void> addItems(List<ShoppingItemEntity> items) =>
+      _dataSource.addItems(items);
 }

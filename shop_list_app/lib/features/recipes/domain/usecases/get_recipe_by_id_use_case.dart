@@ -10,8 +10,9 @@ class GetRecipeByIdUseCase {
   Future<Either<Failure, Recipe>> call(int id) async {
     try {
       final recipe = await _repository.getRecipeById(id);
-      if (recipe == null)
+      if (recipe == null) {
         return const Left(NotFoundFailure('Recipe not found.'));
+      }
       return Right(recipe);
     } catch (e) {
       return Left(DatabaseFailure(e.toString()));

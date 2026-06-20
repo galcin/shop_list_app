@@ -116,6 +116,15 @@ class RecipeRepository implements IRecipeRepository {
     return row != null;
   }
 
+  @override
+  Future<List<model.Recipe>> getRecipesByIds(List<int> ids) async {
+    if (ids.isEmpty) return [];
+    final rows = await (_database.select(_database.recipes)
+          ..where((t) => t.id.isIn(ids)))
+        .get();
+    return rows.map(_fromRow).toList();
+  }
+
   // ── Helpers ───────────────────────────────────────────────────────────────
 
   model.Recipe _fromRow(Recipe row) {

@@ -131,4 +131,8 @@ class ShoppingListDetailNotifier
   Future<Either<Failure, Unit>> toggleChecked(int itemId) {
     return ref.read(toggleItemCheckedUseCaseProvider).call(itemId);
   }
+
+  Future<Either<Failure, Unit>> deleteList() {
+    return ref.read(deleteShoppingListUseCaseProvider).call(arg);
+  }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/database/tables/meal_slot_table.dart';
 import 'package:shop_list_app/features/meal_planning/domain/entities/meal_plan.dart';
 import 'package:shop_list_app/features/meal_planning/domain/entities/meal_slot.dart';
@@ -99,11 +100,11 @@ class MenuView extends ConsumerWidget {
       floatingActionButton: mealPlanAsync.when(
         data: (plan) {
           if (plan == null || plan.assignedRecipeCount == 0) return null;
-          return FloatingActionButton.extended(
+          return FloatingActionButton(
             backgroundColor: const Color(0xFFFF6B35),
+            foregroundColor: Colors.white,
             onPressed: () => _showGenerateListDialog(context, ref, plan),
-            icon: const Icon(Icons.shopping_cart),
-            label: const Text('Generate Shopping List'),
+            child: const Icon(Icons.shopping_cart),
           );
         },
         loading: () => null,
@@ -528,38 +529,43 @@ class MenuView extends ConsumerWidget {
       String listName) async {
     if (plan.id == null) return;
 
+    late BuildContext dialogContext;
+
     // Show loading indicator
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (context) => const Center(
-        child: Card(
-          color: Color(0xFF1E1E1E),
-          child: Padding(
-            padding: EdgeInsets.all(24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                CircularProgressIndicator(color: Color(0xFFFF6B35)),
-                SizedBox(height: 16),
-                Text(
-                  'Building your list…',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
+      builder: (ctx) {
+        dialogContext = ctx;
+        return const Center(
+          child: Card(
+            color: Color(0xFF1E1E1E),
+            child: Padding(
+              padding: EdgeInsets.all(24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  CircularProgressIndicator(color: Color(0xFFFF6B35)),
+                  SizedBox(height: 16),
+                  Text(
+                    'Building your list…',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
 
     try {
-      await ref
+      final int listId = await ref
           .read(weeklyMealPlanProvider.notifier)
           .generateShoppingList(planId: plan.id!, listName: listName);
 
-      if (context.mounted) {
-        Navigator.pop(context); // Close loading dialog
+      if (context.mounted && dialogContext.mounted) {
+        Navigator.of(dialogContext).pop(); // Close loading dialog
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Shopping list "$listName" created!'),
@@ -568,18 +574,28 @@ class MenuView extends ConsumerWidget {
               label: 'VIEW',
               textColor: Colors.white,
               onPressed: () {
-                // TODO: Navigate to shopping list detail
+                if (context.mounted) {
+                  Future.microtask(() {
+                    if (context.mounted) {
+                      GoRouter.of(context).push('/shopping/$listId');
+                    }
+                  });
+                }
               },
             ),
           ),
         );
       }
     } catch (e) {
-      if (context.mounted) {
-        Navigator.pop(context); // Close loading dialog
+      if (context.mounted && dialogContext.mounted) {
+        try {
+          Navigator.of(dialogContext).pop(); // Close loading dialog
+        } catch (_) {
+          // Dialog already closed
+        }
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Error: $e'),
+            content: Text('Error creating list: $e'),
             backgroundColor: Colors.red,
           ),
         );

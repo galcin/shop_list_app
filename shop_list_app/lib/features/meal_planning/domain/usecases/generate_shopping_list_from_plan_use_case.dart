@@ -30,17 +30,15 @@ class GenerateShoppingListFromPlanUseCase {
       throw Exception('No recipes assigned in this meal plan');
     }
 
-    // Fetch all recipes
-    final recipes = <Recipe>[];
-    for (final recipeId in recipeIds) {
-      final recipe = await _recipeRepository.getRecipeById(recipeId);
-      if (recipe != null) {
-        recipes.add(recipe);
-      }
-    }
+    // Fetch all recipes in a single query (not N queries)
+    final recipes = await _recipeRepository.getRecipesByIds(recipeIds);
 
     // Extract and aggregate ingredients
     final aggregatedIngredients = _aggregateIngredients(recipes);
+
+    if (aggregatedIngredients.isEmpty) {
+      throw Exception('No ingredients found in assigned recipes');
+    }
 
     // Create the shopping list
     final listId = await _shoppingListRepository.save(
@@ -50,18 +48,22 @@ class GenerateShoppingListFromPlanUseCase {
       ),
     );
 
-    // Add all aggregated ingredients as items
-    for (final ingredient in aggregatedIngredients) {
-      await _shoppingListRepository.addItem(
-        ShoppingItemEntity(
-          listId: listId,
-          name: ingredient.name,
-          quantity: ingredient.quantity,
-          unit: ingredient.unit,
-          createdAt: DateTime.now(),
-        ),
-      );
+    if (listId <= 0) {
+      throw Exception('Failed to create shopping list');
     }
+
+    // Add all aggregated ingredients as items in bulk (single transaction)
+    final itemsToAdd = aggregatedIngredients
+        .map((ingredient) => ShoppingItemEntity(
+              listId: listId,
+              name: ingredient.name,
+              quantity: ingredient.quantity,
+              unit: ingredient.unit,
+              createdAt: DateTime.now(),
+            ))
+        .toList();
+
+    await _shoppingListRepository.addItems(itemsToAdd);
 
     return listId;
   }

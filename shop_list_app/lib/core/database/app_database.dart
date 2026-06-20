@@ -5,14 +5,14 @@ import 'connection/connection.dart' as impl;
 import 'seeder/product_category_seeder.dart';
 import 'seeder/product_seeder.dart';
 import 'seeder/recipe_seeder.dart';
+import 'tables/meal_plan_table.dart';
+import 'tables/meal_slot_table.dart';
 import 'tables/product_category_table.dart';
 import 'tables/product_table.dart';
 import 'tables/recipe_table.dart';
 import 'tables/shopping_item_table.dart';
 import 'tables/shopping_list_table.dart';
 import 'tables/sync_queue_table.dart';
-import 'tables/meal_plan_table.dart';
-import 'tables/meal_slot_table.dart';
 
 part 'app_database.g.dart';
 

@@ -127,6 +127,30 @@ class ShoppingListDataSource {
     return map;
   }
 
+  /// Add multiple items to a shopping list in a single transaction.
+  Future<void> addItems(List<ShoppingItemEntity> items) async {
+    if (items.isEmpty) return;
+
+    await _db.transaction(() async {
+      final listId = items.first.listId;
+      for (final item in items) {
+        await _db.into(_db.shoppingItems).insert(
+              ShoppingItemsCompanion.insert(
+                listId: item.listId,
+                name: item.name,
+                productId: Value(item.productId),
+                quantity: Value(item.quantity),
+                unit: Value(item.unit),
+                categoryId: Value(item.categoryId),
+                sortOrder: Value(item.sortOrder),
+              ),
+            );
+      }
+      // Update list's updatedAt once after all inserts
+      await _updateListUpdatedAt(listId);
+    });
+  }
+
   // ── Private helpers ────────────────────────────────────────────────────────
 
   Future<void> _updateListUpdatedAt(int listId) async {

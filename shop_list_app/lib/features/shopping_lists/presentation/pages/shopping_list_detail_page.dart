@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
-import 'package:shop_list_app/shared/extensions/context_extensions.dart';
 import 'package:shop_list_app/features/shopping_lists/domain/entities/shopping_item_entity.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/providers/shopping_list_providers.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/widgets/add_item_bottom_sheet.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/widgets/shopping_item_tile.dart';
+import 'package:shop_list_app/shared/extensions/context_extensions.dart';
 
 class ShoppingListDetailPage extends ConsumerWidget {
   const ShoppingListDetailPage({super.key, required this.listId});
@@ -62,6 +62,12 @@ class ShoppingListDetailPage extends ConsumerWidget {
                     color: colors.onSurface,
                   ),
                 ),
+                actions: [
+                  IconButton(
+                    icon: const Icon(Icons.delete_outline),
+                    onPressed: () => _showDeleteDialog(context, ref, list),
+                  ),
+                ],
                 bottom: PreferredSize(
                   preferredSize: const Size.fromHeight(48),
                   child: Padding(
@@ -185,6 +191,44 @@ class ShoppingListDetailPage extends ConsumerWidget {
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
       builder: (_) => AddItemBottomSheet(listId: listId),
+    );
+  }
+
+  void _showDeleteDialog(BuildContext context, WidgetRef ref, dynamic list) {
+    final colors = context.colorScheme;
+    showDialog(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: const Text('Delete List?'),
+        content: Text(
+          'Are you sure you want to delete "${list.name}"? This action cannot be undone.',
+          style: TextStyle(color: colors.onSurface),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext),
+            child: Text('Cancel', style: TextStyle(color: colors.primary)),
+          ),
+          TextButton(
+            onPressed: () async {
+              Navigator.pop(dialogContext);
+              final result = await ref
+                  .read(shoppingListDetailProvider(listId).notifier)
+                  .deleteList();
+              if (!context.mounted) return;
+              result.fold(
+                (f) => ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text(f.message))),
+                (_) => Navigator.pop(context),
+              );
+            },
+            child: Text(
+              'Delete',
+              style: TextStyle(color: colors.error),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
