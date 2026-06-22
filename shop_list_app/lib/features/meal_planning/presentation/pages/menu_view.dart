@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -562,7 +564,15 @@ class MenuView extends ConsumerWidget {
     try {
       final int listId = await ref
           .read(weeklyMealPlanProvider.notifier)
-          .generateShoppingList(planId: plan.id!, listName: listName);
+          .generateShoppingList(planId: plan.id!, listName: listName)
+          .timeout(
+        const Duration(seconds: 30),
+        onTimeout: () {
+          throw TimeoutException(
+            'Shopping list generation took too long. Please try again.',
+          );
+        },
+      );
 
       if (context.mounted && dialogContext.mounted) {
         Navigator.of(dialogContext).pop(); // Close loading dialog
@@ -595,8 +605,9 @@ class MenuView extends ConsumerWidget {
         }
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Error creating list: $e'),
+            content: Text('Error creating list: ${e.toString()}'),
             backgroundColor: Colors.red,
+            duration: const Duration(seconds: 4),
           ),
         );
       }

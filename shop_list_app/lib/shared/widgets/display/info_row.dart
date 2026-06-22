@@ -34,7 +34,7 @@ class InfoRow extends StatelessWidget {
           width: 44,
           height: 44,
           decoration: BoxDecoration(
-            color: resolvedIconColor.withOpacity(0.1),
+            color: resolvedIconColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Icon(icon, size: 22, color: resolvedIconColor),

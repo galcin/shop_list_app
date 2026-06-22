@@ -127,15 +127,16 @@ class ShoppingListDataSource {
     return map;
   }
 
-  /// Add multiple items to a shopping list in a single transaction.
+  /// Add multiple items to a shopping list in a single batch transaction.
   Future<void> addItems(List<ShoppingItemEntity> items) async {
     if (items.isEmpty) return;
 
     await _db.transaction(() async {
       final listId = items.first.listId;
-      for (final item in items) {
-        await _db.into(_db.shoppingItems).insert(
-              ShoppingItemsCompanion.insert(
+
+      // Create companions for all items
+      final companions = items
+          .map((item) => ShoppingItemsCompanion.insert(
                 listId: item.listId,
                 name: item.name,
                 productId: Value(item.productId),
@@ -143,9 +144,14 @@ class ShoppingListDataSource {
                 unit: Value(item.unit),
                 categoryId: Value(item.categoryId),
                 sortOrder: Value(item.sortOrder),
-              ),
-            );
-      }
+              ))
+          .toList();
+
+      // Batch insert all items at once
+      await _db.batch((batch) {
+        batch.insertAll(_db.shoppingItems, companions);
+      });
+
       // Update list's updatedAt once after all inserts
       await _updateListUpdatedAt(listId);
     });

@@ -39,10 +39,10 @@ class ReorderableEmojiListTile extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: accentColor.withOpacity(0.3), width: 1),
+        border: Border.all(color: accentColor.withValues(alpha: 0.3), width: 1),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 6,
             offset: const Offset(0, 2),
           ),
@@ -53,7 +53,7 @@ class ReorderableEmojiListTile extends StatelessWidget {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: accentColor.withOpacity(0.15),
+            color: accentColor.withValues(alpha: 0.15),
             borderRadius: BorderRadius.circular(10),
           ),
           child: ClipRRect(
