@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/pantry/presentation/providers/pantry_providers.dart';
 import 'package:shop_list_app/features/product_category/presentation/providers/product_category_providers.dart';
-import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
 import 'package:shop_list_app/features/products/domain/entities/product.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
 
 class AddPantryItemBottomSheet extends ConsumerStatefulWidget {
   const AddPantryItemBottomSheet({super.key});

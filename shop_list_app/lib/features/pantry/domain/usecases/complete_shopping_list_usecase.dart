@@ -18,7 +18,7 @@ class CompleteShoppingListUseCase {
   ) async {
     try {
       if (items.isEmpty) {
-        return Right(0);
+        return const Right(0);
       }
 
       int addedCount = 0;
@@ -28,12 +28,12 @@ class CompleteShoppingListUseCase {
 
       for (final item in items) {
         // Find if an item with the same name and category already exists
-        final existingItem = existingItems.firstWhere(
+        final matchingItems = existingItems.where(
           (pItem) =>
               pItem.name.toLowerCase() == item.name.toLowerCase() &&
               pItem.categoryId == (item.categoryId ?? 1),
-          orElse: () => null as dynamic,
-        ) as PantryItem?;
+        );
+        final existingItem = matchingItems.isEmpty ? null : matchingItems.first;
 
         if (existingItem != null) {
           // Update existing item: add quantities

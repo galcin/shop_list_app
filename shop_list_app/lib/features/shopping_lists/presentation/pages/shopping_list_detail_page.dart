@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
 import 'package:shop_list_app/features/pantry/presentation/providers/pantry_providers.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
 import 'package:shop_list_app/features/shopping_lists/domain/entities/shopping_item_entity.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/providers/shopping_list_providers.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/widgets/add_item_bottom_sheet.dart';
@@ -21,6 +21,42 @@ class ShoppingListDetailPage extends ConsumerWidget {
 
     return Scaffold(
       backgroundColor: colors.surface,
+      bottomNavigationBar: detailAsync.when(
+        loading: () => const SizedBox.shrink(),
+        error: (_, __) => const SizedBox.shrink(),
+        data: (list) {
+          if (list == null || list.items.every((i) => !i.isChecked)) {
+            return const SizedBox.shrink();
+          }
+
+          return SafeArea(
+            top: false,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+              child: ElevatedButton.icon(
+                onPressed: () =>
+                    _handleCompleteShoppingList(context, ref, list),
+                icon: const Icon(Icons.check_circle_outline),
+                label: const Text(
+                  'Complete & Add to Pantry',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: colors.primary,
+                  foregroundColor: colors.onPrimary,
+                  minimumSize: const Size.fromHeight(52),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
+      ),
       body: detailAsync.when(
         loading: () =>
             Center(child: CircularProgressIndicator(color: colors.primary)),
@@ -64,16 +100,6 @@ class ShoppingListDetailPage extends ConsumerWidget {
                   ),
                 ),
                 actions: [
-                  if (list.items.isNotEmpty &&
-                      list.checkedCount == list.items.length)
-                    Tooltip(
-                      message: 'Add all items to Pantry',
-                      child: IconButton(
-                        icon: const Icon(Icons.check_circle_outline),
-                        onPressed: () =>
-                            _handleCompleteShoppingList(context, ref, list),
-                      ),
-                    ),
                   IconButton(
                     icon: const Icon(Icons.delete_outline),
                     onPressed: () => _showDeleteDialog(context, ref, list),
@@ -179,7 +205,7 @@ class ShoppingListDetailPage extends ConsumerWidget {
                 ],
               ],
               // Bottom padding so FAB doesn't obscure last item
-              const SliverToBoxAdapter(child: SizedBox(height: 80)),
+              const SliverToBoxAdapter(child: SizedBox(height: 96)),
             ],
           );
         },
@@ -205,13 +231,23 @@ class ShoppingListDetailPage extends ConsumerWidget {
       return;
     }
 
+    final checkedItems = (list.items as List<ShoppingItemEntity>)
+        .where((i) => i.isChecked)
+        .toList();
+    final uncheckedCount =
+        (list.items as List<ShoppingItemEntity>).length - checkedItems.length;
+
     // Show confirmation dialog
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (dialogContext) => AlertDialog(
         title: const Text('Complete Shopping List?'),
         content: Text(
-          'Add all ${list.items.length} items to your Pantry?',
+          checkedItems.isEmpty
+              ? 'No items are checked. The list will be closed without adding anything to your Pantry.'
+              : uncheckedCount > 0
+                  ? 'Add ${checkedItems.length} found item${checkedItems.length == 1 ? '' : 's'} to your Pantry? ($uncheckedCount item${uncheckedCount == 1 ? '' : 's'} not found will be skipped.)'
+                  : 'Add all ${checkedItems.length} item${checkedItems.length == 1 ? '' : 's'} to your Pantry?',
           style: TextStyle(color: context.colorScheme.onSurface),
         ),
         actions: [
@@ -235,11 +271,39 @@ class ShoppingListDetailPage extends ConsumerWidget {
 
     if (confirmed != true || !context.mounted) return;
 
+    // If nothing was checked, just close the list without adding to pantry
+    if (checkedItems.isEmpty) {
+      try {
+        await ref
+            .read(shoppingListDetailProvider(listId).notifier)
+            .deleteList();
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text('✅ Shopping list closed'),
+            backgroundColor: context.colorScheme.primary,
+            duration: const Duration(seconds: 2),
+          ),
+        );
+        Navigator.pop(context);
+      } catch (e) {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Error: $e'),
+              backgroundColor: context.colorScheme.error,
+            ),
+          );
+        }
+      }
+      return;
+    }
+
     try {
-      // Call the complete shopping list use case
+      // Call the complete shopping list use case with only checked items
       final result = await ref
           .read(completeShoppingListUseCaseProvider)
-          .call(list.items as List<ShoppingItemEntity>);
+          .call(checkedItems);
 
       if (!context.mounted) return;
 
@@ -264,7 +328,11 @@ class ShoppingListDetailPage extends ConsumerWidget {
             if (context.mounted) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('✅ Added $addedCount items to Pantry'),
+                  content: Text(
+                    addedCount > 0
+                        ? '✅ Added $addedCount item${addedCount == 1 ? '' : 's'} to Pantry'
+                        : '✅ Shopping list completed',
+                  ),
                   backgroundColor: context.colorScheme.primary,
                   duration: const Duration(seconds: 2),
                 ),

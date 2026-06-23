@@ -136,6 +136,11 @@ class PantryRepository implements IPantryRepository {
     }
   }
 
+  @override
+  Future<void> clearAll() async {
+    await _database.delete(_database.pantryItems).go();
+  }
+
   model.PantryItem _pantryItemFromRow(PantryItem row) {
     return model.PantryItem(
       id: row.id,

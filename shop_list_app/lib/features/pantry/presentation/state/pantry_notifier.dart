@@ -85,6 +85,13 @@ class PantryNotifier extends AsyncNotifier<List<PantryItem>> {
     }
   }
 
+  /// Clear all pantry items
+  Future<void> clearAll() async {
+    await ref.read(pantryRepositoryProvider).clearAll();
+    state = const AsyncData([]);
+    AppLogger.instance.info('[Pantry] All items cleared');
+  }
+
   Future<List<PantryItem>> _fetchAll() async {
     return await ref.read(pantryRepositoryProvider).getAll();
   }

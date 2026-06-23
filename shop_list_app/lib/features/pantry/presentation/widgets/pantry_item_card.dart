@@ -1,15 +1,19 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/pantry/domain/entities/pantry_item.dart';
 import 'package:shop_list_app/features/pantry/presentation/providers/pantry_providers.dart';
+import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart';
+import 'package:shop_list_app/features/product_category/presentation/providers/product_category_providers.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
+import 'package:shop_list_app/features/products/presentation/widgets/product_image_widget.dart';
+import 'package:shop_list_app/shared/widgets/display/circle_accent_avatar.dart';
+import 'package:shop_list_app/shared/widgets/list/accent_circle_list_card.dart';
 
 class PantryItemCard extends ConsumerStatefulWidget {
   final PantryItem item;
 
-  const PantryItemCard({
-    super.key,
-    required this.item,
-  });
+  const PantryItemCard({super.key, required this.item});
 
   @override
   ConsumerState<PantryItemCard> createState() => _PantryItemCardState();
@@ -18,195 +22,240 @@ class PantryItemCard extends ConsumerStatefulWidget {
 class _PantryItemCardState extends ConsumerState<PantryItemCard> {
   bool _isDeleting = false;
 
+  // -- Helpers ----------------------------------------------------------------
+
+  Color _accentColor(ProductCategory? cat) {
+    final hex = cat?.colorHex;
+    if (hex == null || hex.isEmpty) return AppColors.primary;
+    try {
+      final clean = hex.replaceFirst('#', '');
+      return Color(int.parse('FF$clean', radix: 16));
+    } catch (_) {
+      return AppColors.primary;
+    }
+  }
+
+  Widget _circleIcon(ProductCategory? cat, Color accent) {
+    if (cat?.imageName != null) {
+      return ClipOval(
+        child: Image.asset(
+          'assets/images/${cat!.imageName}',
+          width: 52,
+          height: 52,
+          fit: BoxFit.cover,
+          errorBuilder: (_, __, ___) => _emojiOrDefault(cat.iconName, accent),
+        ),
+      );
+    }
+    return _emojiOrDefault(cat?.iconName, accent);
+  }
+
+  Widget _emojiOrDefault(String? emoji, Color accent) {
+    if (emoji != null && emoji.isNotEmpty) {
+      return Center(child: Text(emoji, style: const TextStyle(fontSize: 30)));
+    }
+    return Icon(Icons.kitchen_outlined, color: accent, size: 30);
+  }
+
+  String _formatQty(double qty) =>
+      qty == qty.truncateToDouble() ? qty.toInt().toString() : qty.toString();
+
+  String _formatDate(DateTime date) =>
+      '${date.month.toString().padLeft(2, "0")}/${date.day.toString().padLeft(2, "0")}';
+
+  Widget _badge(String label, Color color) => Container(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+        decoration: BoxDecoration(
+          color: color.withOpacity(0.12),
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: color.withOpacity(0.4), width: 0.8),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 11,
+            fontWeight: FontWeight.w600,
+            color: color,
+          ),
+        ),
+      );
+
+  Widget _buildQuantityStepper() => Container(
+        decoration: BoxDecoration(
+          color: const Color(0xFF2A2A2A),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            InkWell(
+              onTap: _isDeleting ? null : _decreaseQuantity,
+              child: Padding(
+                padding: const EdgeInsets.all(6),
+                child: Icon(Icons.remove,
+                    size: 16,
+                    color: _isDeleting ? Colors.grey : Colors.white70),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 6),
+              child: Text(
+                _formatQty(widget.item.quantity),
+                style: const TextStyle(
+                    fontFamily: 'Poppins', fontSize: 13, color: Colors.white),
+              ),
+            ),
+            InkWell(
+              onTap: _isDeleting ? null : _increaseQuantity,
+              child: Padding(
+                padding: const EdgeInsets.all(6),
+                child: Icon(Icons.add,
+                    size: 16,
+                    color: _isDeleting ? Colors.grey : Colors.white70),
+              ),
+            ),
+          ],
+        ),
+      );
+
+  // -- Build ------------------------------------------------------------------
+
+  /// Returns the avatar child: product photo/emoji when the item is linked to
+  /// a product and that product has a photo, otherwise the category icon.
+  Widget _buildAvatarChild(
+      String? productPhoto, ProductCategory? cat, Color accent) {
+    if (productPhoto != null && productPhoto.isNotEmpty) {
+      return ProductImageWidget(
+        photo: productPhoto,
+        size: 52,
+        borderRadius: 26,
+        backgroundColor: Colors.transparent,
+      );
+    }
+    return _circleIcon(cat, accent);
+  }
+
   @override
   Widget build(BuildContext context) {
-    final opacity = widget.item.isOutOfStock ? 0.5 : 1.0;
+    final categories =
+        ref.watch(productCategoryListProvider).asData?.value ?? [];
+    final cat = categories.cast<ProductCategory?>().firstWhere(
+          (c) => c?.id == widget.item.categoryId,
+          orElse: () => null,
+        );
+    final accent = _accentColor(cat);
+
+    // Look up the linked product's photo (if any)
+    final products = ref.watch(productListProvider).asData?.value ?? [];
+    String? productPhoto;
+    if (widget.item.productId != null) {
+      for (final product in products) {
+        if (product.id == widget.item.productId) {
+          productPhoto = product.photo;
+          break;
+        }
+      }
+    }
 
     return Dismissible(
       key: Key('pantry-${widget.item.id}'),
       direction: DismissDirection.endToStart,
       background: Container(
-        alignment: Alignment.centerRight,
-        padding: const EdgeInsets.only(right: 16),
+        margin: const EdgeInsets.only(left: 56, bottom: 10),
         decoration: BoxDecoration(
-          color: Colors.red[400],
-          borderRadius: BorderRadius.circular(12),
+          color: AppColors.error.withOpacity(0.85),
+          borderRadius: BorderRadius.circular(18),
         ),
-        child: const Icon(Icons.delete_outline, color: Colors.white),
+        alignment: Alignment.centerRight,
+        padding: const EdgeInsets.only(right: 20),
+        child: const Icon(Icons.delete_outline, color: Colors.white, size: 22),
       ),
-      confirmDismiss: (direction) async {
-        return await _confirmDelete();
-      },
-      onDismissed: (_) async {
-        await _deleteItem();
-      },
-      child: Opacity(
-        opacity: opacity,
-        child: Container(
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: const Color(0xFF1E1E1E),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      widget.item.name,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
-                          ),
-                    ),
+      confirmDismiss: (_) => _confirmDelete(),
+      onDismissed: (_) => _deleteItem(),
+      child: AccentCircleListCard(
+        accentColor: accent,
+        circleChild: CircleAccentAvatar(
+          accentColor: accent,
+          size: 96,
+          child: _buildAvatarChild(productPhoto, cat, accent),
+        ),
+        child: Opacity(
+          opacity: widget.item.isOutOfStock ? 0.5 : 1.0,
+          child: Padding(
+            padding:
+                const EdgeInsets.only(top: 10, bottom: 10, left: 50, right: 14),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  widget.item.name,
+                  style: const TextStyle(
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16,
+                    color: AppColors.textPrimary,
                   ),
-                  _buildExpiryIndicator(context),
-                  const SizedBox(width: 12),
-                  Text(
-                    '${widget.item.quantity.toString()} ${widget.item.unit}',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Colors.grey[300],
-                        ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (widget.item.expiryDate != null) ...[
-                          Text(
-                            'Exp: ${_formatDate(widget.item.expiryDate!)} (${widget.item.daysUntilExpiry ?? 0} days)',
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: Colors.grey[400],
-                                    ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 10,
+                            height: 10,
+                            decoration: BoxDecoration(
+                                color: accent, shape: BoxShape.circle),
                           ),
-                        ] else ...[
+                          const SizedBox(width: 6),
+                          Flexible(
+                            child: Text(
+                              cat?.name ?? 'Pantry',
+                              style: const TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 12,
+                                color: AppColors.textSecondary,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
                           Text(
-                            'No expiry date',
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: Colors.grey[500],
-                                    ),
+                            '${_formatQty(widget.item.quantity)} ${widget.item.unit}',
+                            style: const TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 12,
+                              color: AppColors.textSecondary,
+                            ),
                           ),
                         ],
-                      ],
+                      ),
                     ),
-                  ),
-                  _buildQuantityStepper(context),
-                ],
-              ),
-              if (widget.item.isOutOfStock)
-                Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[700],
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    child: Text(
-                      'Out of stock',
-                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: Colors.white70,
-                          ),
-                    ),
-                  ),
+                    if (widget.item.isOutOfStock)
+                      _badge('Out of stock', Colors.grey)
+                    else if (widget.item.isExpired)
+                      _badge('Expired', AppColors.error)
+                    else if ((widget.item.daysUntilExpiry ?? 99) < 3)
+                      _badge('Exp. ${_formatDate(widget.item.expiryDate!)}',
+                          AppColors.accent)
+                    else
+                      _buildQuantityStepper(),
+                  ],
                 ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildExpiryIndicator(BuildContext context) {
-    Color indicatorColor;
-    String tooltip;
-
-    switch (widget.item.expiryStatus) {
-      case 'expired':
-        indicatorColor = Colors.red;
-        tooltip = 'Expired';
-        break;
-      case 'expiring-soon':
-        indicatorColor = Colors.amber;
-        tooltip = 'Expiring soon';
-        break;
-      case 'fresh':
-        indicatorColor = Colors.green;
-        tooltip = 'Fresh';
-        break;
-      default:
-        indicatorColor = Colors.grey;
-        tooltip = 'No expiry date';
-    }
-
-    return Tooltip(
-      message: tooltip,
-      child: Container(
-        width: 12,
-        height: 12,
-        decoration: BoxDecoration(
-          color: indicatorColor,
-          shape: BoxShape.circle,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildQuantityStepper(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFF2A2A2A),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          InkWell(
-            onTap: _isDeleting ? null : _decreaseQuantity,
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Icon(
-                Icons.remove,
-                size: 18,
-                color: _isDeleting ? Colors.grey : Colors.white70,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Text(
-              widget.item.quantity.toString(),
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Colors.white,
-                  ),
-            ),
-          ),
-          InkWell(
-            onTap: _isDeleting ? null : _increaseQuantity,
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Icon(
-                Icons.add,
-                size: 18,
-                color: _isDeleting ? Colors.grey : Colors.white70,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  // -- Actions ----------------------------------------------------------------
 
   Future<void> _increaseQuantity() async {
     await ref.read(pantryItemsProvider.notifier).updateQuantity(
@@ -237,9 +286,7 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, true),
-            style: TextButton.styleFrom(
-              foregroundColor: Colors.red,
-            ),
+            style: TextButton.styleFrom(foregroundColor: Colors.red),
             child: const Text('Remove'),
           ),
         ],
@@ -252,7 +299,6 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
     setState(() => _isDeleting = true);
     try {
       await ref.read(pantryItemsProvider.notifier).deleteItem(widget.item.id!);
-
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -265,20 +311,14 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: const Text('Failed to remove item'),
-            backgroundColor: Colors.red[400],
+          const SnackBar(
+            content: Text('Failed to remove item'),
+            backgroundColor: Colors.red,
           ),
         );
       }
     } finally {
-      if (mounted) {
-        setState(() => _isDeleting = false);
-      }
+      if (mounted) setState(() => _isDeleting = false);
     }
-  }
-
-  String _formatDate(DateTime date) {
-    return '${date.month.toString().padLeft(2, '0')}/${date.day.toString().padLeft(2, '0')}';
   }
 }

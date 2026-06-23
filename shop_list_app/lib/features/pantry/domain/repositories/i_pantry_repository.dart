@@ -21,4 +21,7 @@ abstract class IPantryRepository {
 
   /// Get a single pantry item by id
   Future<PantryItem?> getById(int id);
+
+  /// Permanently delete all pantry items
+  Future<void> clearAll();
 }

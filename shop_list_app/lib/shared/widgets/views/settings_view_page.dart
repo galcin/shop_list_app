@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/utils/app_logger.dart';
+import 'package:shop_list_app/features/pantry/presentation/providers/pantry_providers.dart';
 
-class SettingsView extends StatefulWidget {
+class SettingsView extends ConsumerStatefulWidget {
   const SettingsView({super.key});
 
   @override
-  State<SettingsView> createState() => _SettingsViewState();
+  ConsumerState<SettingsView> createState() => _SettingsViewState();
 }
 
-class _SettingsViewState extends State<SettingsView> {
+class _SettingsViewState extends ConsumerState<SettingsView> {
   String? _logPath;
   String? _logContent;
   bool _loading = false;
@@ -59,6 +61,52 @@ class _SettingsViewState extends State<SettingsView> {
             subtitle: const Text('Manage categories and products'),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => context.go('/settings/categories'),
+          ),
+          const Divider(),
+          const SizedBox(height: 8),
+          // ── Data management ─────────────────────────────────────────────
+          const Text(
+            'Data',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          ),
+          const SizedBox(height: 4),
+          ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: const Icon(Icons.delete_sweep_outlined, color: Colors.red),
+            title: const Text('Clear Pantry'),
+            subtitle: const Text('Remove all items from your pantry'),
+            onTap: () async {
+              final confirm = await showDialog<bool>(
+                context: context,
+                builder: (ctx) => AlertDialog(
+                  title: const Text('Clear Pantry'),
+                  content: const Text(
+                      'This will permanently delete all pantry items. This cannot be undone.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(ctx, false),
+                      child: const Text('Cancel'),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.pop(ctx, true),
+                      style: TextButton.styleFrom(foregroundColor: Colors.red),
+                      child: const Text('Clear All'),
+                    ),
+                  ],
+                ),
+              );
+              if (confirm == true && mounted) {
+                await ref.read(pantryItemsProvider.notifier).clearAll();
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Pantry cleared'),
+                      backgroundColor: Colors.green,
+                    ),
+                  );
+                }
+              }
+            },
           ),
           const Divider(),
           const SizedBox(height: 8),

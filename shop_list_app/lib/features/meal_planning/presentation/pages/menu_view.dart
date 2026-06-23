@@ -14,8 +14,8 @@ class MenuView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selectedWeek = ref.watch(selectedWeekProvider);
-    final mealPlanAsync = ref.watch(combinedSevenDayPlanProvider);
+    final selectedDate = ref.watch(selectedWeekProvider);
+    final mealPlanAsync = ref.watch(weeklyMealPlanProvider);
 
     return Scaffold(
       backgroundColor: const Color(0xFF121212),
@@ -32,15 +32,28 @@ class MenuView extends ConsumerWidget {
         ),
         actions: [
           IconButton(
-            icon:
-                const Icon(Icons.arrow_back_ios, color: Colors.white, size: 18),
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: () {
+                final today = DateTime.now();
+                final todayOnly = DateTime(today.year, today.month, today.day);
+                return selectedDate.isAfter(todayOnly)
+                    ? Colors.white
+                    : Colors.white38;
+              }(),
+              size: 18,
+            ),
             onPressed: () {
-              ref.read(selectedWeekProvider.notifier).goToPreviousWeek();
+              final today = DateTime.now();
+              final todayOnly = DateTime(today.year, today.month, today.day);
+              if (selectedDate.isAfter(todayOnly)) {
+                ref.read(selectedWeekProvider.notifier).goToPreviousDay();
+              }
             },
           ),
           Center(
             child: Text(
-              _getWeekRangeString(selectedWeek),
+              _getDateString(selectedDate),
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 13,
@@ -51,7 +64,7 @@ class MenuView extends ConsumerWidget {
             icon: const Icon(Icons.arrow_forward_ios,
                 color: Colors.white, size: 18),
             onPressed: () {
-              ref.read(selectedWeekProvider.notifier).goToNextWeek();
+              ref.read(selectedWeekProvider.notifier).goToNextDay();
             },
           ),
           PopupMenuButton<String>(
@@ -63,7 +76,12 @@ class MenuView extends ConsumerWidget {
                     .read(weeklyMealPlanProvider.notifier)
                     .duplicatePreviousWeek();
               } else if (value == 'clear') {
-                _showClearWeekDialog(context, ref, mealPlanAsync.value);
+                _showClearDayDialog(
+                  context,
+                  ref,
+                  mealPlanAsync.value,
+                  selectedDate,
+                );
               }
             },
             itemBuilder: (context) => [
@@ -74,28 +92,41 @@ class MenuView extends ConsumerWidget {
               ),
               const PopupMenuItem(
                 value: 'clear',
-                child: Text('Clear Week', style: TextStyle(color: Colors.red)),
+                child: Text('Clear Day', style: TextStyle(color: Colors.red)),
               ),
             ],
           ),
         ],
       ),
-      body: mealPlanAsync.when(
-        data: (plan) {
-          if (plan == null) {
-            return const Center(
-              child: CircularProgressIndicator(color: Color(0xFFFF6B35)),
-            );
+      body: GestureDetector(
+        onHorizontalDragEnd: (details) {
+          const threshold = 100.0;
+          final dx = details.primaryVelocity ?? 0;
+          final today = DateTime.now();
+          final todayOnly = DateTime(today.year, today.month, today.day);
+          if (dx < -threshold) {
+            ref.read(selectedWeekProvider.notifier).goToNextDay();
+          } else if (dx > threshold && selectedDate.isAfter(todayOnly)) {
+            ref.read(selectedWeekProvider.notifier).goToPreviousDay();
           }
-          return _buildWeekView(context, ref, plan, selectedWeek);
         },
-        loading: () => const Center(
-          child: CircularProgressIndicator(color: Color(0xFFFF6B35)),
-        ),
-        error: (error, stack) => Center(
-          child: Text(
-            'Error: $error',
-            style: const TextStyle(color: Colors.white),
+        child: mealPlanAsync.when(
+          data: (plan) {
+            if (plan == null) {
+              return const Center(
+                child: CircularProgressIndicator(color: Color(0xFFFF6B35)),
+              );
+            }
+            return _buildDayView(context, ref, plan, selectedDate);
+          },
+          loading: () => const Center(
+            child: CircularProgressIndicator(color: Color(0xFFFF6B35)),
+          ),
+          error: (error, stack) => Center(
+            child: Text(
+              'Error: $error',
+              style: const TextStyle(color: Colors.white),
+            ),
           ),
         ),
       ),
@@ -115,82 +146,21 @@ class MenuView extends ConsumerWidget {
     );
   }
 
-  Widget _buildWeekView(
-      BuildContext context, WidgetRef ref, MealPlan plan, DateTime weekStart) {
+  Widget _buildDayView(
+      BuildContext context, WidgetRef ref, MealPlan plan, DateTime date) {
     return Column(
       children: [
-        // Day selector row
-        _buildDaySelector(context, weekStart),
-        const SizedBox(height: 16),
-        // Meal slots for the week
+        const SizedBox(height: 12),
+        // Meal slots for the selected day
         Expanded(
-          child: ListView.builder(
+          child: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            itemCount: 7,
-            itemBuilder: (context, dayIndex) {
-              final date = weekStart.add(Duration(days: dayIndex));
-              return _buildDaySection(context, ref, plan, date);
-            },
+            children: [
+              _buildDaySection(context, ref, plan, date),
+            ],
           ),
         ),
       ],
-    );
-  }
-
-  Widget _buildDaySelector(BuildContext context, DateTime weekStart) {
-    final today = DateTime.now();
-
-    return SizedBox(
-      height: 60,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        itemCount: 7,
-        itemBuilder: (context, index) {
-          final date = weekStart.add(Duration(days: index));
-          final isToday = date.year == today.year &&
-              date.month == today.month &&
-              date.day == today.day;
-
-          // Get the short day name dynamically
-          final shortDayName = _getShortDayName(date);
-
-          return Container(
-            margin: const EdgeInsets.symmetric(horizontal: 4),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  shortDayName,
-                  style: TextStyle(
-                    color: isToday ? const Color(0xFFFF6B35) : Colors.grey,
-                    fontSize: 12,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Container(
-                  width: 40,
-                  height: 30,
-                  decoration: BoxDecoration(
-                    color:
-                        isToday ? const Color(0xFFFF6B35) : Colors.transparent,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Center(
-                    child: Text(
-                      '${date.day}',
-                      style: TextStyle(
-                        color: isToday ? Colors.white : Colors.grey,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
     );
   }
 
@@ -247,8 +217,9 @@ class MenuView extends ConsumerWidget {
         }
       },
       child: Container(
-        margin: const EdgeInsets.only(bottom: 12),
-        padding: const EdgeInsets.all(12),
+        margin: const EdgeInsets.only(bottom: 14),
+        constraints: const BoxConstraints(minHeight: 86),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         decoration: BoxDecoration(
           color: isEmpty ? Colors.transparent : const Color(0xFF1E1E1E),
           border: Border.all(
@@ -260,8 +231,8 @@ class MenuView extends ConsumerWidget {
         ),
         child: Row(
           children: [
-            Text(icon, style: const TextStyle(fontSize: 24)),
-            const SizedBox(width: 12),
+            Text(icon, style: const TextStyle(fontSize: 28)),
+            const SizedBox(width: 14),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -270,16 +241,16 @@ class MenuView extends ConsumerWidget {
                     label,
                     style: const TextStyle(
                       color: Color(0xFF9CA3AF),
-                      fontSize: 12,
+                      fontSize: 13,
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  const SizedBox(height: 6),
                   Text(
                     isEmpty ? '+ Tap to add' : slot.displayName ?? '',
                     style: TextStyle(
                       color: isEmpty ? const Color(0xFFFF6B35) : Colors.white,
-                      fontSize: 14,
-                      fontWeight: isEmpty ? FontWeight.normal : FontWeight.w500,
+                      fontSize: 16,
+                      fontWeight: isEmpty ? FontWeight.w400 : FontWeight.w600,
                     ),
                   ),
                 ],
@@ -349,9 +320,8 @@ class MenuView extends ConsumerWidget {
     return '${months[date.month - 1]} ${date.day}';
   }
 
-  String _getWeekRangeString(DateTime weekStart) {
-    final weekEnd = weekStart.add(const Duration(days: 6));
-    return '${_formatDate(weekStart)} – ${_formatDate(weekEnd)}';
+  String _getDateString(DateTime date) {
+    return '${_getShortDayName(date)}, ${_formatDate(date)}';
   }
 
   void _showRecipePicker(BuildContext context, WidgetRef ref, MealSlot slot) {
@@ -400,8 +370,8 @@ class MenuView extends ConsumerWidget {
     );
   }
 
-  void _showClearWeekDialog(
-      BuildContext context, WidgetRef ref, MealPlan? plan) {
+  void _showClearDayDialog(
+      BuildContext context, WidgetRef ref, MealPlan? plan, DateTime date) {
     if (plan == null) return;
 
     showDialog(
@@ -409,10 +379,10 @@ class MenuView extends ConsumerWidget {
       builder: (context) => AlertDialog(
         backgroundColor: const Color(0xFF1E1E1E),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Text('Clear the entire week?',
+        title: const Text('Clear this day?',
             style: TextStyle(color: Colors.white)),
         content: Text(
-          'All recipe assignments for ${plan.weekRangeString} will be removed. Shopping lists are not affected.',
+          'All recipe assignments for ${_getDateString(date)} will be removed. Shopping lists are not affected.',
           style: const TextStyle(color: Colors.grey),
         ),
         actions: [
@@ -423,7 +393,10 @@ class MenuView extends ConsumerWidget {
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              ref.read(weeklyMealPlanProvider.notifier).clearWeek(plan.id!);
+              ref.read(weeklyMealPlanProvider.notifier).clearDay(
+                    planId: plan.id!,
+                    date: date,
+                  );
             },
             child: const Text('Clear', style: TextStyle(color: Colors.red)),
           ),

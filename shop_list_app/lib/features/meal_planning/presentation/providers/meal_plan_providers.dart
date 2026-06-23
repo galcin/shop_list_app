@@ -87,6 +87,14 @@ class SelectedWeekNotifier extends StateNotifier<DateTime> {
     state = weekStart;
   }
 
+  void goToPreviousDay() {
+    state = state.subtract(const Duration(days: 1));
+  }
+
+  void goToNextDay() {
+    state = state.add(const Duration(days: 1));
+  }
+
   void goToPreviousWeek() {
     state = state.subtract(const Duration(days: 7));
   }
