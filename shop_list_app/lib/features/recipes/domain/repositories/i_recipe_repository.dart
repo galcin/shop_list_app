@@ -13,4 +13,7 @@ abstract class IRecipeRepository {
 
   /// Save (insert or update) a recipe. Returns the persisted recipe id.
   Future<int> saveRecipe(Recipe recipe);
+
+  /// Fetch multiple recipes by their IDs in a single query.
+  Future<List<Recipe>> getRecipesByIds(List<int> ids);
 }

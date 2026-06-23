@@ -81,7 +81,7 @@ final currentWeekStartProvider = Provider<DateTime>((ref) {
 
 /// State notifier to track which week the user is viewing.
 class SelectedWeekNotifier extends StateNotifier<DateTime> {
-  SelectedWeekNotifier(DateTime initialWeek) : super(initialWeek);
+  SelectedWeekNotifier(super.initialWeek);
 
   void goToWeek(DateTime weekStart) {
     state = weekStart;

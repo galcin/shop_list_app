@@ -1,3 +1,4 @@
+import 'package:shop_list_app/core/utils/app_logger.dart';
 import 'package:shop_list_app/features/meal_planning/domain/repositories/i_meal_plan_repository.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/domain/repositories/i_recipe_repository.dart';
@@ -23,47 +24,111 @@ class GenerateShoppingListFromPlanUseCase {
     required int planId,
     required String listName,
   }) async {
-    // Get all recipe IDs assigned in the plan
-    final recipeIds = await _mealPlanRepository.getAssignedRecipeIds(planId);
+    try {
+      AppLogger.instance.info(
+        'GenerateShoppingListFromPlanUseCase: Starting for planId=$planId',
+      );
 
-    if (recipeIds.isEmpty) {
-      throw Exception('No recipes assigned in this meal plan');
-    }
+      // Get all recipe IDs assigned in the plan
+      AppLogger.instance.info(
+        'GenerateShoppingListFromPlanUseCase: Fetching recipe IDs',
+      );
+      final recipeIds = await _mealPlanRepository.getAssignedRecipeIds(planId);
+      AppLogger.instance.info(
+        'GenerateShoppingListFromPlanUseCase: Found ${recipeIds.length} recipes',
+      );
 
-    // Fetch all recipes
-    final recipes = <Recipe>[];
-    for (final recipeId in recipeIds) {
-      final recipe = await _recipeRepository.getRecipeById(recipeId);
-      if (recipe != null) {
-        recipes.add(recipe);
+      if (recipeIds.isEmpty) {
+        throw Exception('No recipes assigned in this meal plan');
       }
-    }
 
-    // Extract and aggregate ingredients
-    final aggregatedIngredients = _aggregateIngredients(recipes);
+      // Fetch all recipes in a single query (not N queries)
+      AppLogger.instance.info(
+        'GenerateShoppingListFromPlanUseCase: Fetching recipe details for IDs: $recipeIds',
+      );
+      final recipes = await _recipeRepository.getRecipesByIds(recipeIds);
+      AppLogger.instance.info(
+        'GenerateShoppingListFromPlanUseCase: Got ${recipes.length} recipe details',
+      );
 
-    // Create the shopping list
-    final listId = await _shoppingListRepository.save(
-      ShoppingListEntity(
-        name: listName.trim().isEmpty ? 'Meal Plan Shopping List' : listName,
-        createdAt: DateTime.now(),
-      ),
-    );
+      if (recipes.isEmpty) {
+        throw Exception('Failed to fetch recipe details');
+      }
 
-    // Add all aggregated ingredients as items
-    for (final ingredient in aggregatedIngredients) {
-      await _shoppingListRepository.addItem(
-        ShoppingItemEntity(
-          listId: listId,
-          name: ingredient.name,
-          quantity: ingredient.quantity,
-          unit: ingredient.unit,
+      // Extract and aggregate ingredients
+      AppLogger.instance.info(
+        'GenerateShoppingListFromPlanUseCase: Aggregating ingredients',
+      );
+      final aggregatedIngredients = _aggregateIngredients(recipes);
+      AppLogger.instance.info(
+        'GenerateShoppingListFromPlanUseCase: Aggregated ${aggregatedIngredients.length} unique ingredients',
+      );
+
+      if (aggregatedIngredients.isEmpty) {
+        AppLogger.instance.info(
+          'GenerateShoppingListFromPlanUseCase: No ingredients found, but continuing',
+        );
+      }
+
+      // Create the shopping list
+      AppLogger.instance.info(
+        'GenerateShoppingListFromPlanUseCase: Creating shopping list with name: $listName',
+      );
+      final listId = await _shoppingListRepository.save(
+        ShoppingListEntity(
+          name: listName.trim().isEmpty ? 'Meal Plan Shopping List' : listName,
           createdAt: DateTime.now(),
         ),
       );
-    }
+      AppLogger.instance.info(
+        'GenerateShoppingListFromPlanUseCase: Created shopping list with id=$listId',
+      );
 
-    return listId;
+      if (listId <= 0) {
+        throw Exception('Failed to create shopping list');
+      }
+
+      // Add items if there are any
+      if (aggregatedIngredients.isNotEmpty) {
+        AppLogger.instance.info(
+          'GenerateShoppingListFromPlanUseCase: Adding ${aggregatedIngredients.length} items to shopping list',
+        );
+        final itemsToAdd = aggregatedIngredients.asMap().entries.map((entry) {
+          final index = entry.key;
+          final ingredient = entry.value;
+          return ShoppingItemEntity(
+            listId: listId,
+            name: ingredient.name,
+            quantity: ingredient.quantity,
+            unit: ingredient.unit,
+            createdAt: DateTime.now(),
+            sortOrder: index, // Use index as sort order
+          );
+        }).toList();
+
+        AppLogger.instance.info(
+          'GenerateShoppingListFromPlanUseCase: About to call addItems with ${itemsToAdd.length} items',
+        );
+        await _shoppingListRepository.addItems(itemsToAdd);
+        AppLogger.instance.info(
+          'GenerateShoppingListFromPlanUseCase: Successfully added all items',
+        );
+      } else {
+        AppLogger.instance.info(
+          'GenerateShoppingListFromPlanUseCase: No items to add (recipes had no ingredients)',
+        );
+      }
+
+      AppLogger.instance.info(
+        'GenerateShoppingListFromPlanUseCase: Complete! Returning listId=$listId',
+      );
+      return listId;
+    } catch (e) {
+      AppLogger.instance.error(
+        'GenerateShoppingListFromPlanUseCase: Error occurred: $e',
+      );
+      rethrow;
+    }
   }
 
   /// Aggregates ingredients from multiple recipes.

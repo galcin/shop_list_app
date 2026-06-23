@@ -63,7 +63,7 @@ class AppTheme {
       // ── Bottom Navigation ─────────────────────────────────────────────────
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: AppColors.surface,
-        indicatorColor: AppColors.primary.withOpacity(0.12),
+        indicatorColor: AppColors.primary.withValues(alpha: 0.12),
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           return TextStyle(
             fontFamily: 'Poppins',

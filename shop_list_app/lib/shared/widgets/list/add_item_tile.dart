@@ -24,7 +24,7 @@ class AddItemTile extends StatelessWidget {
           color: AppColors.surface,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: AppColors.primary.withOpacity(0.45),
+            color: AppColors.primary.withValues(alpha: 0.45),
             width: 1.5,
             strokeAlign: BorderSide.strokeAlignCenter,
           ),

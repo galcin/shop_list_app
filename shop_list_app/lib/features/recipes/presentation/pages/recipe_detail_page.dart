@@ -165,8 +165,9 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           onSelected: (v) {
-            if (v == 'edit')
+            if (v == 'edit') {
               context.push('/recipes/${recipe.id}/edit', extra: recipe);
+            }
             if (v == 'delete') _confirmDelete(recipe);
           },
           itemBuilder: (_) => [

@@ -9,8 +9,8 @@ import 'package:shop_list_app/features/recipes/domain/usecases/delete_recipe_use
 import 'package:shop_list_app/features/recipes/domain/usecases/get_all_recipes_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/get_recipe_by_id_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/save_recipe_use_case.dart';
-import 'package:shop_list_app/features/recipes/domain/usecases/search_recipes_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/scale_recipe_use_case.dart';
+import 'package:shop_list_app/features/recipes/domain/usecases/search_recipes_use_case.dart';
 
 // ── Infrastructure ────────────────────────────────────────────────────────────
 

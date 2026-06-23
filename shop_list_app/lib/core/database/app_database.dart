@@ -5,14 +5,15 @@ import 'connection/connection.dart' as impl;
 import 'seeder/product_category_seeder.dart';
 import 'seeder/product_seeder.dart';
 import 'seeder/recipe_seeder.dart';
+import 'tables/meal_plan_table.dart';
+import 'tables/meal_slot_table.dart';
+import 'tables/pantry_table.dart';
 import 'tables/product_category_table.dart';
 import 'tables/product_table.dart';
 import 'tables/recipe_table.dart';
 import 'tables/shopping_item_table.dart';
 import 'tables/shopping_list_table.dart';
 import 'tables/sync_queue_table.dart';
-import 'tables/meal_plan_table.dart';
-import 'tables/meal_slot_table.dart';
 
 part 'app_database.g.dart';
 
@@ -24,7 +25,8 @@ part 'app_database.g.dart';
   ShoppingLists,
   ShoppingItems,
   MealPlans,
-  MealSlots
+  MealSlots,
+  PantryItems
 ])
 class AppDatabase extends _$AppDatabase {
   // Singleton pattern
@@ -44,7 +46,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.forTesting(super.executor);
 
   @override
-  int get schemaVersion => 8;
+  int get schemaVersion => 9;
 
   /// Step-by-step migration strategy.
   ///
@@ -196,6 +198,19 @@ class AppDatabase extends _$AppDatabase {
           }
           AppLogger.instance.info('[DB] onUpgrade v7→v8 complete');
         }
+
+        // v8 → v9: create pantry_items table.
+        if (from < 9) {
+          try {
+            await m.createTable(pantryItems);
+            AppLogger.instance.info('[DB] Created pantry_items table');
+          } catch (e) {
+            AppLogger.instance.warning(
+                '[DB] pantry_items already exists (skipped)',
+                error: e);
+          }
+          AppLogger.instance.info('[DB] onUpgrade v8→v9 complete');
+        }
       },
       // Runs after every open (new or upgraded) to verify integrity.
       beforeOpen: (details) async {
@@ -286,6 +301,47 @@ class AppDatabase extends _$AppDatabase {
               AppLogger.instance
                   .info('[DB] Self-healed recipe column: ${entry.key}');
             }
+          }
+
+          // Self-heal: ensure pantry_items table exists (v9)
+          try {
+            final tableExists = await customSelect(
+              "SELECT name FROM sqlite_master WHERE type='table' AND name='pantry_items'",
+            ).get();
+
+            if (tableExists.isEmpty) {
+              AppLogger.instance.warning(
+                  '[DB] pantry_items table missing! Creating it now...');
+              // Create the pantry_items table using raw SQL
+              await customStatement('''
+                CREATE TABLE pantry_items (
+                  id INTEGER PRIMARY KEY AUTOINCREMENT,
+                  product_id INTEGER,
+                  name TEXT NOT NULL,
+                  quantity REAL NOT NULL,
+                  unit TEXT NOT NULL,
+                  category_id INTEGER NOT NULL,
+                  expiry_date INTEGER,
+                  purchased_date INTEGER NOT NULL,
+                  location TEXT,
+                  created_at INTEGER NOT NULL,
+                  updated_at INTEGER NOT NULL,
+                  is_synced INTEGER NOT NULL DEFAULT 0,
+                  is_deleted INTEGER NOT NULL DEFAULT 0,
+                  FOREIGN KEY (product_id) REFERENCES products (id),
+                  FOREIGN KEY (category_id) REFERENCES product_categories (id)
+                )
+              ''');
+              AppLogger.instance
+                  .info('[DB] Recovered: created pantry_items table');
+            } else {
+              AppLogger.instance.info('[DB] pantry_items table exists');
+            }
+          } catch (e, st) {
+            AppLogger.instance.warning(
+                '[DB] Error checking/creating pantry_items table',
+                error: e,
+                stackTrace: st);
           }
 
           AppLogger.instance.info('[DB] Self-heal complete');

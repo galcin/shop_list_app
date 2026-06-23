@@ -118,11 +118,11 @@ class _ProductPickerSheetState extends ConsumerState<ProductPickerSheet> {
               padding: EdgeInsets.symmetric(vertical: 24),
               child: Center(child: CircularProgressIndicator()),
             ),
-            error: (e, _) => Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
+            error: (e, _) => const Padding(
+              padding: EdgeInsets.symmetric(vertical: 16),
               child: Text('Could not load products',
-                  style: const TextStyle(
-                      fontFamily: 'Poppins', color: AppColors.error)),
+                  style:
+                      TextStyle(fontFamily: 'Poppins', color: AppColors.error)),
             ),
             data: (products) {
               final items = _filter(products);

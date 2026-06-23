@@ -498,7 +498,6 @@ class _IngredientDraft {
   final TextEditingController unitCtrl;
 
   _IngredientDraft({
-    this.selectedProduct,
     required this.nameCtrl,
     required this.qtyCtrl,
     required this.unitCtrl,

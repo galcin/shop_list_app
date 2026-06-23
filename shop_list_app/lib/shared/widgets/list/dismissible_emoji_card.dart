@@ -57,9 +57,10 @@ class DismissibleEmojiCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           child: Container(
             decoration: BoxDecoration(
-              color: accentColor.withOpacity(0.13),
+              color: accentColor.withValues(alpha: 0.13),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: accentColor.withOpacity(0.3), width: 1),
+              border: Border.all(
+                  color: accentColor.withValues(alpha: 0.3), width: 1),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
             child: Column(

@@ -31,4 +31,7 @@ abstract class IShoppingListRepository {
   /// Returns all items for a list grouped by [categoryId].
   Future<Map<int?, List<ShoppingItemEntity>>> getItemsGroupedByCategory(
       int listId);
+
+  /// Add multiple items to a list in a single transaction.
+  Future<void> addItems(List<ShoppingItemEntity> items);
 }

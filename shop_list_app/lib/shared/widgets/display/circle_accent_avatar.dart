@@ -60,7 +60,7 @@ class CircleAccentAvatar extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: accentColor.withOpacity(shadowOpacity),
+            color: accentColor.withValues(alpha: shadowOpacity),
             blurRadius: shadowBlurRadius,
             offset: shadowOffset,
           ),
