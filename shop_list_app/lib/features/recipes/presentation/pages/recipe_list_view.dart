@@ -8,7 +8,7 @@ import 'package:shop_list_app/shared/widgets/feedback/empty_state_widget.dart';
 import 'package:shop_list_app/shared/widgets/feedback/error_state_widget.dart';
 import 'package:shop_list_app/shared/widgets/feedback/loading_state_widget.dart';
 
-enum _RecipeFilter { all, favorites, recent }
+enum _RecipeFilter { all, favorites, recent, quickPrep }
 
 class RecipeListView extends ConsumerStatefulWidget {
   const RecipeListView({super.key});
@@ -46,6 +46,9 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
         // Recent = last 10 by id (descending)
         final sorted = [...recipes]..sort((a, b) => (b.id ?? 0) - (a.id ?? 0));
         return sorted.take(10).toList();
+      case _RecipeFilter.quickPrep:
+        // Quick prep = recipes with prep time <= 20 minutes
+        return recipes.where((r) => (r.prepTime ?? 0) <= 20).toList();
       case _RecipeFilter.all:
         return recipes;
     }
@@ -179,6 +182,7 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
       (_RecipeFilter.all, 'All'),
       (_RecipeFilter.favorites, '⭐ Faves'),
       (_RecipeFilter.recent, '🕐 Recent'),
+      (_RecipeFilter.quickPrep, '⚡ Quick (<20m)'),
     ];
     return SizedBox(
       height: 48,
