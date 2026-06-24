@@ -8,24 +8,25 @@ import 'package:shop_list_app/features/meal_planning/domain/entities/meal_plan.d
 import 'package:shop_list_app/features/meal_planning/domain/entities/meal_slot.dart';
 import 'package:shop_list_app/features/meal_planning/presentation/providers/meal_plan_providers.dart';
 import 'package:shop_list_app/features/meal_planning/presentation/widgets/recipe_picker_bottom_sheet.dart';
+import 'package:shop_list_app/features/meal_planning/presentation/widgets/recipes_by_pantry_modal.dart';
 
 class MenuView extends ConsumerWidget {
   const MenuView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+    final colors = theme.colorScheme;
     final selectedDate = ref.watch(selectedWeekProvider);
     final mealPlanAsync = ref.watch(weeklyMealPlanProvider);
 
     return Scaffold(
-      backgroundColor: const Color(0xFF121212),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF121212),
         elevation: 0,
-        title: const Text(
+        title: Text(
           'Meal Plan',
           style: TextStyle(
-            color: Colors.white,
+            color: colors.onSurface,
             fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
@@ -38,8 +39,8 @@ class MenuView extends ConsumerWidget {
                 final today = DateTime.now();
                 final todayOnly = DateTime(today.year, today.month, today.day);
                 return selectedDate.isAfter(todayOnly)
-                    ? Colors.white
-                    : Colors.white38;
+                    ? colors.onSurface
+                    : colors.onSurface.withValues(alpha: 0.38);
               }(),
               size: 18,
             ),
@@ -54,22 +55,22 @@ class MenuView extends ConsumerWidget {
           Center(
             child: Text(
               _getDateString(selectedDate),
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: colors.onSurface,
                 fontSize: 13,
               ),
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.arrow_forward_ios,
-                color: Colors.white, size: 18),
+            icon: Icon(Icons.arrow_forward_ios,
+                color: colors.onSurface, size: 18),
             onPressed: () {
               ref.read(selectedWeekProvider.notifier).goToNextDay();
             },
           ),
           PopupMenuButton<String>(
-            icon: const Icon(Icons.more_vert, color: Colors.white),
-            color: const Color(0xFF1E1E1E),
+            icon: Icon(Icons.more_vert, color: colors.onSurface),
+            color: colors.surface,
             onSelected: (value) {
               if (value == 'duplicate') {
                 ref
@@ -87,8 +88,7 @@ class MenuView extends ConsumerWidget {
             itemBuilder: (context) => [
               const PopupMenuItem(
                 value: 'duplicate',
-                child: Text('Copy from Previous Week',
-                    style: TextStyle(color: Colors.white)),
+                child: Text('Copy from Previous Week', style: TextStyle()),
               ),
               const PopupMenuItem(
                 value: 'clear',
@@ -125,7 +125,7 @@ class MenuView extends ConsumerWidget {
           error: (error, stack) => Center(
             child: Text(
               'Error: $error',
-              style: const TextStyle(color: Colors.white),
+              style: TextStyle(color: colors.onSurface),
             ),
           ),
         ),
@@ -134,6 +134,7 @@ class MenuView extends ConsumerWidget {
         data: (plan) {
           if (plan == null || plan.assignedRecipeCount == 0) return null;
           return FloatingActionButton(
+            heroTag: 'meal-plan-fab',
             backgroundColor: const Color(0xFFFF6B35),
             foregroundColor: Colors.white,
             onPressed: () => _showGenerateListDialog(context, ref, plan),
@@ -158,6 +159,25 @@ class MenuView extends ConsumerWidget {
             children: [
               _buildDaySection(context, ref, plan, date),
             ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton.icon(
+              onPressed: () => showRecipesByPantryModal(context),
+              icon: const Icon(Icons.search),
+              label: const Text('What can I cook?'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFFFF6B35),
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 14),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+            ),
           ),
         ),
       ],
@@ -202,6 +222,7 @@ class MenuView extends ConsumerWidget {
 
   Widget _buildMealSlot(
       BuildContext context, WidgetRef ref, MealSlot slot, MealType mealType) {
+    final colors = Theme.of(context).colorScheme;
     final isEmpty = slot.isEmpty;
     final icon = _getMealIcon(mealType);
     final label = _getMealLabel(mealType);
@@ -248,7 +269,8 @@ class MenuView extends ConsumerWidget {
                   Text(
                     isEmpty ? '+ Tap to add' : slot.displayName ?? '',
                     style: TextStyle(
-                      color: isEmpty ? const Color(0xFFFF6B35) : Colors.white,
+                      color:
+                          isEmpty ? const Color(0xFFFF6B35) : colors.onSurface,
                       fontSize: 16,
                       fontWeight: isEmpty ? FontWeight.w400 : FontWeight.w600,
                     ),
@@ -335,9 +357,10 @@ class MenuView extends ConsumerWidget {
 
   void _showSlotContextMenu(
       BuildContext context, WidgetRef ref, MealSlot slot) {
+    final colors = Theme.of(context).colorScheme;
     showModalBottomSheet(
       context: context,
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: colors.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
@@ -346,9 +369,9 @@ class MenuView extends ConsumerWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
-              leading: const Icon(Icons.edit, color: Colors.white),
-              title: const Text('Change Recipe',
-                  style: TextStyle(color: Colors.white)),
+              leading: Icon(Icons.edit, color: colors.onSurface),
+              title: Text('Change Recipe',
+                  style: TextStyle(color: colors.onSurface)),
               onTap: () {
                 Navigator.pop(context);
                 _showRecipePicker(context, ref, slot);
@@ -373,22 +396,25 @@ class MenuView extends ConsumerWidget {
   void _showClearDayDialog(
       BuildContext context, WidgetRef ref, MealPlan? plan, DateTime date) {
     if (plan == null) return;
+    final colors = Theme.of(context).colorScheme;
 
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: const Color(0xFF1E1E1E),
+        backgroundColor: colors.surface,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Text('Clear this day?',
-            style: TextStyle(color: Colors.white)),
+        title:
+            Text('Clear this day?', style: TextStyle(color: colors.onSurface)),
         content: Text(
           'All recipe assignments for ${_getDateString(date)} will be removed. Shopping lists are not affected.',
-          style: const TextStyle(color: Colors.grey),
+          style: TextStyle(color: colors.onSurface.withValues(alpha: 0.7)),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel', style: TextStyle(color: Colors.grey)),
+            child: Text('Cancel',
+                style:
+                    TextStyle(color: colors.onSurface.withValues(alpha: 0.7))),
           ),
           TextButton(
             onPressed: () {
@@ -408,13 +434,14 @@ class MenuView extends ConsumerWidget {
   void _showGenerateListDialog(
       BuildContext context, WidgetRef ref, MealPlan plan) {
     if (plan.id == null) return;
+    final colors = Theme.of(context).colorScheme;
 
     final listName = 'Week of ${_formatDate(plan.weekStartDate)}';
     final recipeCount = plan.assignedRecipeCount;
 
     showModalBottomSheet(
       context: context,
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: colors.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
@@ -428,7 +455,6 @@ class MenuView extends ConsumerWidget {
               const Text(
                 'Generate Shopping List',
                 style: TextStyle(
-                  color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
@@ -436,31 +462,34 @@ class MenuView extends ConsumerWidget {
               const SizedBox(height: 8),
               Text(
                 listName,
-                style: const TextStyle(
-                  color: Colors.grey,
+                style: TextStyle(
+                  color: colors.onSurface.withValues(alpha: 0.7),
                   fontSize: 14,
                 ),
               ),
-              const Divider(height: 24, color: Colors.grey),
+              Divider(
+                  height: 24, color: colors.onSurface.withValues(alpha: 0.3)),
               Row(
                 children: [
                   const Text('📚', style: TextStyle(fontSize: 24)),
                   const SizedBox(width: 12),
                   Text(
                     '$recipeCount recipes assigned',
-                    style: const TextStyle(color: Colors.white),
+                    style: TextStyle(color: colors.onSurface),
                   ),
                 ],
               ),
               const SizedBox(height: 12),
-              const Row(
+              Row(
                 children: [
-                  Text('🔗', style: TextStyle(fontSize: 24)),
-                  SizedBox(width: 12),
+                  const Text('🔗', style: TextStyle(fontSize: 24)),
+                  const SizedBox(width: 12),
                   Expanded(
                     child: Text(
                       'Duplicates will be merged automatically',
-                      style: TextStyle(color: Colors.grey),
+                      style: TextStyle(
+                        color: colors.onSurface.withValues(alpha: 0.7),
+                      ),
                     ),
                   ),
                 ],
@@ -490,8 +519,9 @@ class MenuView extends ConsumerWidget {
               const SizedBox(height: 8),
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child:
-                    const Text('Cancel', style: TextStyle(color: Colors.grey)),
+                child: Text('Cancel',
+                    style: TextStyle(
+                        color: colors.onSurface.withValues(alpha: 0.7))),
               ),
             ],
           ),
@@ -514,7 +544,7 @@ class MenuView extends ConsumerWidget {
         dialogContext = ctx;
         return const Center(
           child: Card(
-            color: Color(0xFF1E1E1E),
+            color: Colors.transparent,
             child: Padding(
               padding: EdgeInsets.all(24),
               child: Column(
@@ -524,7 +554,7 @@ class MenuView extends ConsumerWidget {
                   SizedBox(height: 16),
                   Text(
                     'Building your list…',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(),
                   ),
                 ],
               ),
@@ -549,20 +579,21 @@ class MenuView extends ConsumerWidget {
 
       if (context.mounted && dialogContext.mounted) {
         Navigator.of(dialogContext).pop(); // Close loading dialog
-        ScaffoldMessenger.of(context).showSnackBar(
+        final messenger = ScaffoldMessenger.of(context);
+        messenger.hideCurrentSnackBar();
+        messenger.showSnackBar(
           SnackBar(
             content: Text('Shopping list "$listName" created!'),
             backgroundColor: const Color(0xFF4CAF50),
+            behavior: SnackBarBehavior.floating,
+            duration: const Duration(seconds: 3),
             action: SnackBarAction(
               label: 'VIEW',
-              textColor: Colors.white,
+              textColor: Theme.of(context).colorScheme.onPrimary,
               onPressed: () {
+                messenger.hideCurrentSnackBar();
                 if (context.mounted) {
-                  Future.microtask(() {
-                    if (context.mounted) {
-                      GoRouter.of(context).push('/shopping/$listId');
-                    }
-                  });
+                  context.go('/shopping/$listId');
                 }
               },
             ),

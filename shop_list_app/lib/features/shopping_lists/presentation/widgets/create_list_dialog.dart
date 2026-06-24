@@ -35,16 +35,17 @@ class _CreateListDialogState extends State<CreateListDialog> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     final isRename = widget.initialName != null;
     return AlertDialog(
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: colors.surface,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       title: Text(
         isRename ? 'Rename list' : 'New list',
-        style: const TextStyle(
+        style: TextStyle(
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w600,
-          color: Colors.white,
+          color: colors.onSurface,
         ),
       ),
       content: TextField(
@@ -52,13 +53,15 @@ class _CreateListDialogState extends State<CreateListDialog> {
         autofocus: true,
         textCapitalization: TextCapitalization.sentences,
         onSubmitted: (_) => _submit(),
-        style: const TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+        style: TextStyle(color: colors.onSurface, fontFamily: 'Poppins'),
         decoration: InputDecoration(
           hintText: 'List name',
-          hintStyle:
-              const TextStyle(color: Colors.white38, fontFamily: 'Poppins'),
+          hintStyle: TextStyle(
+            color: colors.onSurface.withValues(alpha: 0.38),
+            fontFamily: 'Poppins',
+          ),
           filled: true,
-          fillColor: const Color(0xFF2A2A2A),
+          fillColor: colors.surfaceContainerHighest,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide.none,
@@ -68,9 +71,12 @@ class _CreateListDialogState extends State<CreateListDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text(
+          child: Text(
             'Cancel',
-            style: TextStyle(color: Colors.white54, fontFamily: 'Poppins'),
+            style: TextStyle(
+              color: colors.onSurface.withValues(alpha: 0.54),
+              fontFamily: 'Poppins',
+            ),
           ),
         ),
         TextButton(

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
+import 'package:shop_list_app/shared/extensions/context_extensions.dart';
 import 'package:shop_list_app/shared/widgets/feedback/empty_state_widget.dart';
 import 'package:shop_list_app/shared/widgets/feedback/error_state_widget.dart';
 import 'package:shop_list_app/shared/widgets/feedback/loading_state_widget.dart';
@@ -59,18 +60,19 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
     final filteredAsync = ref.watch(filteredRecipesProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.background,
-      appBar: _buildAppBar(),
+      backgroundColor: context.theme.scaffoldBackgroundColor,
+      appBar: _buildAppBar(context),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.primary,
-        onPressed: () => context.push('/recipes/new'),
-        child: const Icon(Icons.add, color: AppColors.onPrimary),
+        heroTag: 'recipes-fab',
+        backgroundColor: context.colorScheme.primary,
+        onPressed: () => GoRouter.of(context).push('/recipes/new'),
+        child: Icon(Icons.add, color: context.colorScheme.onPrimary),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (_searchExpanded) _buildSearchBar(),
-          _buildFilterChips(),
+          if (_searchExpanded) _buildSearchBar(context),
+          _buildFilterChips(context),
           Expanded(
             child: filteredAsync.when(
               loading: () => const LoadingStateWidget(),
@@ -100,7 +102,8 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
                   itemCount: visible.length,
                   itemBuilder: (ctx, i) => _RecipeCard(
                     recipe: visible[i],
-                    onTap: () => context.push('/recipes/${visible[i].id}'),
+                    onTap: () =>
+                        GoRouter.of(ctx).push('/recipes/${visible[i].id}'),
                   ),
                 );
               },
@@ -111,14 +114,14 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
     );
   }
 
-  AppBar _buildAppBar() {
+  AppBar _buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.surface,
+      backgroundColor: context.colorScheme.surface,
       elevation: 0,
-      title: const Text(
+      title: Text(
         'Recipes',
         style: TextStyle(
-          color: AppColors.textPrimary,
+          color: context.colorScheme.onSurface,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.w700,
           fontSize: 22,
@@ -129,7 +132,7 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
         IconButton(
           icon: Icon(
             _searchExpanded ? Icons.search_off : Icons.search,
-            color: AppColors.textPrimary,
+            color: context.colorScheme.onSurface,
           ),
           onPressed: _toggleSearch,
         ),
@@ -138,22 +141,25 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
     );
   }
 
-  Widget _buildSearchBar() {
+  Widget _buildSearchBar(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
       child: TextField(
         controller: _searchController,
         autofocus: true,
-        style: const TextStyle(
-            fontFamily: 'Poppins', color: AppColors.textPrimary),
+        style: TextStyle(
+            fontFamily: 'Poppins', color: context.colorScheme.onSurface),
         decoration: InputDecoration(
           hintText: 'Search recipes…',
-          hintStyle: const TextStyle(
-              fontFamily: 'Poppins', color: AppColors.textSecondary),
-          prefixIcon: const Icon(Icons.search, color: AppColors.textSecondary),
+          hintStyle: TextStyle(
+              fontFamily: 'Poppins',
+              color: context.colorScheme.onSurfaceVariant),
+          prefixIcon:
+              Icon(Icons.search, color: context.colorScheme.onSurfaceVariant),
           suffixIcon: _searchController.text.isNotEmpty
               ? IconButton(
-                  icon: const Icon(Icons.clear, color: AppColors.textSecondary),
+                  icon: Icon(Icons.clear,
+                      color: context.colorScheme.onSurfaceVariant),
                   onPressed: () {
                     _searchController.clear();
                     ref.read(recipeSearchQueryProvider.notifier).state = '';
@@ -161,7 +167,7 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
                 )
               : null,
           filled: true,
-          fillColor: AppColors.surfaceVariant,
+          fillColor: context.colorScheme.surfaceContainerHighest,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),
             borderSide: BorderSide.none,
@@ -177,7 +183,7 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
     );
   }
 
-  Widget _buildFilterChips() {
+  Widget _buildFilterChips(BuildContext context) {
     const chips = [
       (_RecipeFilter.all, 'All'),
       (_RecipeFilter.favorites, '⭐ Faves'),
@@ -199,13 +205,15 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w500,
-                  color: active ? AppColors.onPrimary : AppColors.textBody,
+                  color: active
+                      ? context.colorScheme.onPrimary
+                      : context.colorScheme.onSurface,
                   fontSize: 13,
                 ),
               ),
               selected: active,
-              selectedColor: AppColors.primary,
-              backgroundColor: AppColors.surfaceVariant,
+              selectedColor: context.colorScheme.primary,
+              backgroundColor: context.colorScheme.surfaceContainerHighest,
               shape: const StadiumBorder(),
               side: BorderSide.none,
               onSelected: (_) => setState(() => _filter = entry.$1),
@@ -238,8 +246,8 @@ class _RecipeCard extends StatelessWidget {
             recipe.imageUrl != null && recipe.imageUrl!.isNotEmpty
                 ? Image.network(recipe.imageUrl!,
                     fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => _fallbackBg())
-                : _fallbackBg(),
+                    errorBuilder: (_, __, ___) => _fallbackBg(context))
+                : _fallbackBg(context),
             // Gradient overlay.
             const DecoratedBox(
               decoration: BoxDecoration(
@@ -311,12 +319,12 @@ class _RecipeCard extends StatelessWidget {
     );
   }
 
-  Widget _fallbackBg() {
+  Widget _fallbackBg(BuildContext context) {
     return Container(
-      color: AppColors.surfaceVariant,
-      child: const Center(
+      color: context.colorScheme.surfaceContainerHighest,
+      child: Center(
         child: Icon(Icons.restaurant_menu,
-            color: AppColors.textSecondary, size: 40),
+            color: context.colorScheme.onSurfaceVariant, size: 40),
       ),
     );
   }

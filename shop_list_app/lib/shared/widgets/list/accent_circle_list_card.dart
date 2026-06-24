@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_list_app/core/theme/colors.dart';
 
 /// A reusable list card that uses the Stack pattern:
 /// a circular avatar overlapping the left edge of a card body.
@@ -58,6 +57,7 @@ class AccentCircleListCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Stack(
       children: [
         // ── Card body (offset right) ─────────────────────────────────
@@ -69,16 +69,19 @@ class AccentCircleListCard extends StatelessWidget {
             height: height,
             margin: EdgeInsets.only(left: circleLeftOffset, bottom: 10),
             decoration: BoxDecoration(
-              color: AppColors.surface,
+              color: theme.colorScheme.surface,
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(borderRadius),
                 bottomRight: Radius.circular(borderRadius),
               ),
               // No left border - the circle covers that edge cleanly.
-              border: const Border(
-                top: BorderSide(color: AppColors.divider, width: 0.8),
-                right: BorderSide(color: AppColors.divider, width: 0.8),
-                bottom: BorderSide(color: AppColors.divider, width: 0.8),
+              border: Border(
+                top: BorderSide(
+                    color: theme.colorScheme.outlineVariant, width: 0.8),
+                right: BorderSide(
+                    color: theme.colorScheme.outlineVariant, width: 0.8),
+                bottom: BorderSide(
+                    color: theme.colorScheme.outlineVariant, width: 0.8),
               ),
               boxShadow: [
                 BoxShadow(

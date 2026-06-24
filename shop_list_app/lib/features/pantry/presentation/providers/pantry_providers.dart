@@ -10,6 +10,8 @@ import 'package:shop_list_app/features/pantry/domain/usecases/update_pantry_item
 import 'package:shop_list_app/features/pantry/domain/usecases/watch_expiring_soon_usecase.dart';
 import 'package:shop_list_app/features/pantry/domain/usecases/watch_pantry_items_usecase.dart';
 import 'package:shop_list_app/features/pantry/presentation/state/pantry_notifier.dart';
+import 'package:shop_list_app/features/product_category/presentation/providers/product_category_providers.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
 
 // Infrastructure Providers
 final pantryRepositoryProvider = Provider<IPantryRepository>((ref) {
@@ -43,7 +45,11 @@ final watchExpiringSoonUseCaseProvider =
 
 final completeShoppingListUseCaseProvider =
     Provider<CompleteShoppingListUseCase>((ref) {
-  return CompleteShoppingListUseCase(ref.watch(pantryRepositoryProvider));
+  return CompleteShoppingListUseCase(
+    ref.watch(pantryRepositoryProvider),
+    ref.watch(productRepositoryProvider),
+    ref.watch(productCategoryRepositoryProvider),
+  );
 });
 
 // UI State Providers

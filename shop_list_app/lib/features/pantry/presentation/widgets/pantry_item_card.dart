@@ -81,9 +81,9 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
         ),
       );
 
-  Widget _buildQuantityStepper() => Container(
+  Widget _buildQuantityStepper(BuildContext context) => Container(
         decoration: BoxDecoration(
-          color: const Color(0xFF2A2A2A),
+          color: Theme.of(context).colorScheme.surfaceContainerHighest,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Row(
@@ -95,15 +95,19 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
                 padding: const EdgeInsets.all(6),
                 child: Icon(Icons.remove,
                     size: 16,
-                    color: _isDeleting ? Colors.grey : Colors.white70),
+                    color: _isDeleting
+                        ? Theme.of(context).colorScheme.onSurfaceVariant
+                        : Theme.of(context).colorScheme.onSurface),
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6),
               child: Text(
                 _formatQty(widget.item.quantity),
-                style: const TextStyle(
-                    fontFamily: 'Poppins', fontSize: 13, color: Colors.white),
+                style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 13,
+                    color: Theme.of(context).colorScheme.onSurface),
               ),
             ),
             InkWell(
@@ -112,7 +116,9 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
                 padding: const EdgeInsets.all(6),
                 child: Icon(Icons.add,
                     size: 16,
-                    color: _isDeleting ? Colors.grey : Colors.white70),
+                    color: _isDeleting
+                        ? Theme.of(context).colorScheme.onSurfaceVariant
+                        : Theme.of(context).colorScheme.onSurface),
               ),
             ),
           ],
@@ -164,7 +170,7 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
       background: Container(
         margin: const EdgeInsets.only(left: 56, bottom: 10),
         decoration: BoxDecoration(
-          color: AppColors.error.withOpacity(0.85),
+          color: Theme.of(context).colorScheme.error.withOpacity(0.85),
           borderRadius: BorderRadius.circular(18),
         ),
         alignment: Alignment.centerRight,
@@ -191,11 +197,11 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
               children: [
                 Text(
                   widget.item.name,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w700,
                     fontSize: 16,
-                    color: AppColors.textPrimary,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
@@ -216,10 +222,12 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
                           Flexible(
                             child: Text(
                               cat?.name ?? 'Pantry',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 12,
-                                color: AppColors.textSecondary,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onSurfaceVariant,
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -227,10 +235,12 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
                           const SizedBox(width: 8),
                           Text(
                             '${_formatQty(widget.item.quantity)} ${widget.item.unit}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 12,
-                              color: AppColors.textSecondary,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurfaceVariant,
                             ),
                           ),
                         ],
@@ -239,12 +249,12 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
                     if (widget.item.isOutOfStock)
                       _badge('Out of stock', Colors.grey)
                     else if (widget.item.isExpired)
-                      _badge('Expired', AppColors.error)
+                      _badge('Expired', Theme.of(context).colorScheme.error)
                     else if ((widget.item.daysUntilExpiry ?? 99) < 3)
                       _badge('Exp. ${_formatDate(widget.item.expiryDate!)}',
-                          AppColors.accent)
+                          Theme.of(context).colorScheme.primary)
                     else
-                      _buildQuantityStepper(),
+                      _buildQuantityStepper(context),
                   ],
                 ),
               ],
@@ -274,20 +284,48 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
   }
 
   Future<bool> _confirmDelete() async {
+    final theme = Theme.of(context);
     final confirm = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Remove Item'),
-        content: Text('Remove "${widget.item.name}" from pantry?'),
+        backgroundColor: theme.colorScheme.surface,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Text(
+          'Remove Item',
+          style: TextStyle(
+            color: theme.colorScheme.onSurface,
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        content: Text(
+          'Remove "${widget.item.name}" from pantry?',
+          style: TextStyle(
+            color: theme.colorScheme.onSurface,
+            fontFamily: 'Poppins',
+          ),
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancel'),
+            child: Text(
+              'Cancel',
+              style: TextStyle(
+                color: theme.colorScheme.onSurfaceVariant,
+                fontFamily: 'Poppins',
+              ),
+            ),
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, true),
-            style: TextButton.styleFrom(foregroundColor: Colors.red),
-            child: const Text('Remove'),
+            child: Text(
+              'Remove',
+              style: TextStyle(
+                color: theme.colorScheme.error,
+                fontWeight: FontWeight.w600,
+                fontFamily: 'Poppins',
+              ),
+            ),
           ),
         ],
       ),
@@ -300,10 +338,14 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
     try {
       await ref.read(pantryItemsProvider.notifier).deleteItem(widget.item.id!);
       if (mounted) {
+        final theme = Theme.of(context);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Removed "${widget.item.name}"'),
-            backgroundColor: Colors.green[400],
+            content: Text(
+              'Removed "${widget.item.name}"',
+              style: TextStyle(color: theme.colorScheme.onInverseSurface),
+            ),
+            backgroundColor: theme.colorScheme.primary,
             duration: const Duration(seconds: 2),
           ),
         );

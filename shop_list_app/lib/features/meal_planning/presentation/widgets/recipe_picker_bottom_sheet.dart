@@ -24,12 +24,13 @@ class _RecipePickerBottomSheetState
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     final recipesAsync = ref.watch(recipeListProvider);
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.75,
-      decoration: const BoxDecoration(
-        color: Color(0xFF1E1E1E),
+      decoration: BoxDecoration(
+        color: colors.surface,
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
       child: Column(
@@ -49,8 +50,8 @@ class _RecipePickerBottomSheetState
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Text(
               'Select — ${_getMealLabel(widget.slot.mealType)}',
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: colors.onSurface,
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
               ),
@@ -60,13 +61,15 @@ class _RecipePickerBottomSheetState
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: TextField(
-              style: const TextStyle(color: Colors.white),
+              style: TextStyle(color: colors.onSurface),
               decoration: InputDecoration(
                 hintText: 'Search recipes...',
-                hintStyle: const TextStyle(color: Colors.grey),
-                prefixIcon: const Icon(Icons.search, color: Colors.grey),
+                hintStyle:
+                    TextStyle(color: colors.onSurface.withValues(alpha: 0.6)),
+                prefixIcon: Icon(Icons.search,
+                    color: colors.onSurface.withValues(alpha: 0.6)),
                 filled: true,
-                fillColor: const Color(0xFF2A2A2A),
+                fillColor: colors.surfaceContainerHighest,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(24),
                   borderSide: BorderSide.none,
@@ -106,7 +109,7 @@ class _RecipePickerBottomSheetState
                   itemBuilder: (context, index) {
                     final recipe = filteredRecipes[index];
                     return Card(
-                      color: const Color(0xFF2A2A2A),
+                      color: colors.surfaceContainerHighest,
                       margin: const EdgeInsets.only(bottom: 8),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -127,7 +130,7 @@ class _RecipePickerBottomSheetState
                                     width: 60,
                                     height: 60,
                                     decoration: BoxDecoration(
-                                      color: const Color(0xFF3A3A3A),
+                                      color: colors.surface,
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     child: const Icon(Icons.restaurant,
@@ -139,7 +142,7 @@ class _RecipePickerBottomSheetState
                                 width: 60,
                                 height: 60,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF3A3A3A),
+                                  color: colors.surface,
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: const Icon(Icons.restaurant,
@@ -147,8 +150,8 @@ class _RecipePickerBottomSheetState
                               ),
                         title: Text(
                           recipe.name ?? 'Untitled Recipe',
-                          style: const TextStyle(
-                            color: Colors.white,
+                          style: TextStyle(
+                            color: colors.onSurface,
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
@@ -158,8 +161,9 @@ class _RecipePickerBottomSheetState
                                 recipe.description!,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  color: Colors.grey,
+                                style: TextStyle(
+                                  color:
+                                      colors.onSurface.withValues(alpha: 0.7),
                                   fontSize: 12,
                                 ),
                               )

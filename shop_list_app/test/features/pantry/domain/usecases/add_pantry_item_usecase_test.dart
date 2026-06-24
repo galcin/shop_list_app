@@ -32,6 +32,9 @@ class MockIPantryRepository implements IPantryRepository {
   @override
   Stream<List<PantryItem>> watchExpiringSoon({required int days}) =>
       throw UnimplementedError();
+
+  @override
+  Future<void> clearAll() async => throw UnimplementedError();
 }
 
 void main() {

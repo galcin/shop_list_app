@@ -34,23 +34,24 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
     final filteredProducts = ref.watch(filteredProductsProvider);
     final categories =
         ref.watch(productCategoryListProvider).asData?.value ?? [];
+    final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: theme.colorScheme.surface,
       appBar: AppBar(
-        backgroundColor: AppColors.surface,
+        backgroundColor: theme.colorScheme.surface,
         elevation: 0,
         leading: Navigator.canPop(context)
             ? IconButton(
-                icon: const Icon(Icons.arrow_back_ios,
-                    color: AppColors.textPrimary, size: 20),
+                icon: Icon(Icons.arrow_back_ios,
+                    color: theme.colorScheme.onSurface, size: 20),
                 onPressed: () => Navigator.pop(context),
               )
             : null,
-        title: const Text(
+        title: Text(
           'All Products',
           style: TextStyle(
-            color: AppColors.textPrimary,
+            color: theme.colorScheme.onSurface,
             fontWeight: FontWeight.w700,
             fontSize: 22,
             fontFamily: 'Poppins',
@@ -59,25 +60,26 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
         centerTitle: false,
         actions: [
           PopupMenuButton<String>(
-            color: AppColors.surface,
-            icon: const Icon(Icons.more_vert, color: AppColors.textPrimary),
+            color: theme.colorScheme.surface,
+            icon: Icon(Icons.more_vert, color: theme.colorScheme.onSurface),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             onSelected: (v) {
               if (v == 'filter') _showFilterDialog(categories);
             },
             itemBuilder: (_) => [
-              const PopupMenuItem(
+              PopupMenuItem(
                 value: 'filter',
                 child: Row(
                   children: [
                     Icon(Icons.filter_list,
-                        size: 18, color: AppColors.textPrimary),
-                    SizedBox(width: 10),
+                        size: 18, color: theme.colorScheme.onSurface),
+                    const SizedBox(width: 10),
                     Text(
                       'Filter by Category',
                       style: TextStyle(
-                          fontFamily: 'Poppins', color: AppColors.textPrimary),
+                          fontFamily: 'Poppins',
+                          color: theme.colorScheme.onSurface),
                     ),
                   ],
                 ),
@@ -87,29 +89,32 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
         ],
       ),
       body: asyncProducts.when(
-        loading: () => const Center(
-          child: CircularProgressIndicator(color: AppColors.primary),
+        loading: () => Center(
+          child: CircularProgressIndicator(color: theme.colorScheme.primary),
         ),
         error: (err, _) => Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.error_outline, color: AppColors.error, size: 48),
+              Icon(Icons.error_outline,
+                  color: theme.colorScheme.error, size: 48),
               const SizedBox(height: 12),
               Text(
                 err.toString(),
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                    fontFamily: 'Poppins', color: AppColors.textSecondary),
+                style: TextStyle(
+                    fontFamily: 'Poppins',
+                    color: theme.colorScheme.onSurfaceVariant),
               ),
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () => ref.invalidate(productListProvider),
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primary),
-                child: const Text('Retry',
+                    backgroundColor: theme.colorScheme.primary),
+                child: Text('Retry',
                     style: TextStyle(
-                        color: AppColors.onPrimary, fontFamily: 'Poppins')),
+                        color: theme.colorScheme.onPrimary,
+                        fontFamily: 'Poppins')),
               ),
             ],
           ),
@@ -127,13 +132,14 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'products-fab',
         onPressed: () {
           final selectedCategoryId = ref.read(productSelectedCategoryProvider);
           showCreateProductSheet(context,
               initialCategoryId: selectedCategoryId);
         },
-        backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.onPrimary,
+        backgroundColor: theme.colorScheme.primary,
+        foregroundColor: theme.colorScheme.onPrimary,
         tooltip: 'Add Product',
         elevation: 4,
         child: const Icon(Icons.add),
@@ -161,7 +167,8 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
   ) {
     final match = categories.where((c) => c.id == product.productCategoryId);
     final cat = match.isNotEmpty ? match.first : null;
-    final accentColor = _parseColor(cat?.colorHex) ?? AppColors.primary;
+    final accentColor =
+        _parseColor(cat?.colorHex) ?? Theme.of(context).colorScheme.primary;
 
     return Dismissible(
       key: ValueKey(product.id),
@@ -169,7 +176,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
       background: Container(
         margin: const EdgeInsets.only(left: 56, bottom: 10),
         decoration: BoxDecoration(
-          color: AppColors.error.withOpacity(0.85),
+          color: Theme.of(context).colorScheme.error.withOpacity(0.85),
           borderRadius: BorderRadius.circular(18),
         ),
         alignment: Alignment.centerRight,
@@ -202,11 +209,11 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
               // Product name
               Text(
                 product.name ?? 'Unnamed product',
-                style: const TextStyle(
+                style: TextStyle(
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w700,
                   fontSize: 16,
-                  color: AppColors.textPrimary,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -230,10 +237,12 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
                         Flexible(
                           child: Text(
                             cat?.name ?? 'No category',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 12,
-                              color: AppColors.textSecondary,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurfaceVariant,
                             ),
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -243,10 +252,12 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
                           const SizedBox(width: 8),
                           Text(
                             '${product.quantity ?? 0} ${product.units ?? ''}',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 12,
-                              color: AppColors.textSecondary,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurfaceVariant,
                             ),
                           ),
                         ],
@@ -255,13 +266,14 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
                   ),
                   // Expiry badge OR chevron
                   if (_isExpired(product.expirationDate))
-                    _expiryBadge('Expired', AppColors.error)
+                    _expiryBadge('Expired', Theme.of(context).colorScheme.error)
                   else if (_isExpiringSoon(product.expirationDate))
                     _expiryBadge('Exp. ${_formatDate(product.expirationDate!)}',
                         AppColors.accent)
                   else
-                    const Icon(Icons.chevron_right,
-                        color: AppColors.textSecondary, size: 20),
+                    Icon(Icons.chevron_right,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        size: 20),
                 ],
               ),
             ],
@@ -306,6 +318,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
   }
 
   Widget _buildChip(int? catId, String label) {
+    final theme = Theme.of(context);
     final selected = ref.watch(productSelectedCategoryProvider) == catId;
     return Padding(
       padding: const EdgeInsets.only(right: 8),
@@ -316,10 +329,14 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
           duration: const Duration(milliseconds: 200),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
           decoration: BoxDecoration(
-            color: selected ? AppColors.primary : AppColors.surfaceVariant,
+            color: selected
+                ? theme.colorScheme.primary
+                : theme.colorScheme.surfaceContainerHighest,
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
-              color: selected ? AppColors.primary : AppColors.border,
+              color: selected
+                  ? theme.colorScheme.primary
+                  : theme.colorScheme.outline,
               width: 1,
             ),
           ),
@@ -329,7 +346,9 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
               fontFamily: 'Poppins',
               fontSize: 13,
               fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
-              color: selected ? AppColors.onPrimary : AppColors.textBody,
+              color: selected
+                  ? theme.colorScheme.onPrimary
+                  : theme.colorScheme.onSurface,
             ),
           ),
         ),
@@ -338,20 +357,21 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
   }
 
   Widget _buildSearchBar() {
+    final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
       child: TextField(
         decoration: InputDecoration(
           hintText: 'Search products',
-          hintStyle: const TextStyle(
+          hintStyle: TextStyle(
             fontFamily: 'Poppins',
-            color: AppColors.textSecondary,
+            color: theme.colorScheme.onSurfaceVariant,
             fontSize: 14,
           ),
-          prefixIcon: const Icon(Icons.search,
-              color: AppColors.textSecondary, size: 20),
+          prefixIcon: Icon(Icons.search,
+              color: theme.colorScheme.onSurfaceVariant, size: 20),
           filled: true,
-          fillColor: AppColors.surfaceVariant,
+          fillColor: theme.colorScheme.surfaceContainerHighest,
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           border: OutlineInputBorder(
@@ -364,7 +384,8 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
-            borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
+            borderSide:
+                BorderSide(color: theme.colorScheme.primary, width: 1.5),
           ),
         ),
         onChanged: (v) =>
@@ -374,6 +395,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
   }
 
   Widget _buildEmptyState() {
+    final theme = Theme.of(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -382,29 +404,29 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
             width: 110,
             height: 110,
             decoration: BoxDecoration(
-              color: AppColors.primary.withOpacity(0.1),
+              color: theme.colorScheme.primary.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.shopping_basket_outlined,
-                size: 52, color: AppColors.primary),
+            child: Icon(Icons.shopping_basket_outlined,
+                size: 52, color: theme.colorScheme.primary),
           ),
           const SizedBox(height: 20),
-          const Text(
+          Text(
             'No products found',
             style: TextStyle(
               fontFamily: 'Poppins',
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: AppColors.textPrimary,
+              color: theme.colorScheme.onSurface,
             ),
           ),
           const SizedBox(height: 8),
-          const Text(
+          Text(
             'Add your first product to get started',
             style: TextStyle(
               fontFamily: 'Poppins',
               fontSize: 14,
-              color: AppColors.textSecondary,
+              color: theme.colorScheme.onSurfaceVariant,
             ),
           ),
         ],
@@ -431,16 +453,17 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
   }
 
   Future<bool> _confirmDelete(prod_model.Product product) async {
+    final theme = Theme.of(context);
     return await showDialog<bool>(
           context: context,
           builder: (_) => AlertDialog(
-            backgroundColor: AppColors.surface,
+            backgroundColor: theme.colorScheme.surface,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             title: Text(
               'Delete "${product.name}"?',
-              style: const TextStyle(
-                color: AppColors.textPrimary,
+              style: TextStyle(
+                color: theme.colorScheme.onSurface,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w600,
               ),
@@ -448,15 +471,16 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context, false),
-                child: const Text('Cancel',
+                child: Text('Cancel',
                     style: TextStyle(
-                        color: AppColors.textSecondary, fontFamily: 'Poppins')),
+                        color: theme.colorScheme.onSurfaceVariant,
+                        fontFamily: 'Poppins')),
               ),
               TextButton(
                 onPressed: () => Navigator.pop(context, true),
-                child: const Text('Delete',
+                child: Text('Delete',
                     style: TextStyle(
-                        color: AppColors.error,
+                        color: theme.colorScheme.error,
                         fontWeight: FontWeight.w600,
                         fontFamily: 'Poppins')),
               ),
@@ -496,31 +520,33 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
   }
 
   void _showFilterDialog(List<cat_model.ProductCategory> categories) {
+    final theme = Theme.of(context);
     final selectedCategoryId = ref.read(productSelectedCategoryProvider);
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: AppColors.surface,
+        backgroundColor: theme.colorScheme.surface,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Text(
+        title: Text(
           'Filter by Category',
           style: TextStyle(
             fontFamily: 'Poppins',
             fontWeight: FontWeight.w600,
-            color: AppColors.textPrimary,
+            color: theme.colorScheme.onSurface,
           ),
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
-              title: const Text('All Categories',
+              title: Text('All Categories',
                   style: TextStyle(
-                      fontFamily: 'Poppins', color: AppColors.textPrimary)),
+                      fontFamily: 'Poppins',
+                      color: theme.colorScheme.onSurface)),
               leading: Radio<int?>(
                 value: null,
                 groupValue: selectedCategoryId,
-                activeColor: AppColors.primary,
+                activeColor: theme.colorScheme.primary,
                 onChanged: (v) {
                   ref.read(productSelectedCategoryProvider.notifier).state = v;
                   Navigator.pop(context);
@@ -530,12 +556,13 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
             ...categories.map(
               (cat) => ListTile(
                 title: Text(cat.name,
-                    style: const TextStyle(
-                        fontFamily: 'Poppins', color: AppColors.textPrimary)),
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: theme.colorScheme.onSurface)),
                 leading: Radio<int?>(
                   value: cat.id,
                   groupValue: selectedCategoryId,
-                  activeColor: AppColors.primary,
+                  activeColor: theme.colorScheme.primary,
                   onChanged: (v) {
                     ref.read(productSelectedCategoryProvider.notifier).state =
                         v;
@@ -549,9 +576,9 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Close',
+            child: Text('Close',
                 style: TextStyle(
-                    color: AppColors.primary,
+                    color: theme.colorScheme.primary,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w600)),
           ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shop_list_app/core/utils/app_logger.dart';
+import 'package:shop_list_app/core/theme/app_theme.dart';
+import 'package:shop_list_app/core/theme/theme_simple.dart';
 import 'package:shop_list_app/features/pantry/presentation/providers/pantry_providers.dart';
 
 class SettingsView extends ConsumerStatefulWidget {
@@ -13,41 +13,46 @@ class SettingsView extends ConsumerStatefulWidget {
 }
 
 class _SettingsViewState extends ConsumerState<SettingsView> {
-  String? _logPath;
-  String? _logContent;
-  bool _loading = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _logPath = AppLogger.instance.logFilePath;
-    // Auto-load log content as soon as the page opens.
-    _viewLog();
-  }
-
-  Future<void> _viewLog() async {
-    setState(() => _loading = true);
-    final content = await AppLogger.instance.readAll();
-    setState(() {
-      _logContent = content.isEmpty
-          ? '(log is empty — make sure the app was fully restarted, not just hot-reloaded)'
-          : content;
-      _loading = false;
-    });
-  }
-
-  Future<void> _clearLog() async {
-    await AppLogger.instance.clear();
-    setState(() => _logContent = '(log cleared)');
-  }
-
   @override
   Widget build(BuildContext context) {
+    final selectedTheme = ref.watch(appThemeProvider);
+
     return Scaffold(
       appBar: AppBar(title: const Text('Settings')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          const Text(
+            'Appearance',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          ),
+          const SizedBox(height: 4),
+          SegmentedButton<AppThemeType>(
+            segments: const [
+              ButtonSegment<AppThemeType>(
+                value: AppThemeType.dark,
+                icon: Icon(Icons.dark_mode_outlined),
+                label: Text('Dark'),
+              ),
+              ButtonSegment<AppThemeType>(
+                value: AppThemeType.light,
+                icon: Icon(Icons.light_mode_outlined),
+                label: Text('Light'),
+              ),
+              ButtonSegment<AppThemeType>(
+                value: AppThemeType.green,
+                icon: Icon(Icons.eco_outlined),
+                label: Text('Green'),
+              ),
+            ],
+            selected: {selectedTheme},
+            onSelectionChanged: (selection) {
+              final themeType = selection.first;
+              ref.read(appThemeProvider.notifier).setTheme(themeType);
+            },
+          ),
+          const Divider(),
+          const SizedBox(height: 8),
           // ── Catalogue ──────────────────────────────────────────────────
           const Text(
             'Catalogue',
@@ -110,69 +115,18 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
           ),
           const Divider(),
           const SizedBox(height: 8),
-          // ── Diagnostics ─────────────────────────────────────────────────
+          // ── Diagnostics ──────────────────────────────────────────────────
           const Text('Diagnostics',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
           const SizedBox(height: 8),
           ListTile(
             contentPadding: EdgeInsets.zero,
-            title: const Text('Log file path'),
-            subtitle: Text(
-              _logPath ?? '(not yet initialised — perform a full restart)',
-              style: const TextStyle(fontSize: 12),
-            ),
-            trailing: _logPath != null
-                ? IconButton(
-                    icon: const Icon(Icons.copy),
-                    tooltip: 'Copy path',
-                    onPressed: () {
-                      Clipboard.setData(ClipboardData(text: _logPath!));
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                            content: Text('Path copied to clipboard')),
-                      );
-                    },
-                  )
-                : null,
+            leading: const Icon(Icons.bug_report_outlined),
+            title: const Text('View Logs'),
+            subtitle: const Text('Application diagnostics and logs'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => context.push('/settings/diagnostics'),
           ),
-          Row(
-            children: [
-              FilledButton.icon(
-                onPressed: _loading ? null : _viewLog,
-                icon: const Icon(Icons.refresh),
-                label: const Text('Refresh'),
-              ),
-              const SizedBox(width: 12),
-              OutlinedButton.icon(
-                onPressed: _clearLog,
-                icon: const Icon(Icons.delete_outline),
-                label: const Text('Clear Log'),
-              ),
-            ],
-          ),
-          if (_loading)
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 12),
-              child: Center(child: CircularProgressIndicator()),
-            ),
-          if (_logContent != null) ...[
-            const SizedBox(height: 16),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.black87,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: SelectableText(
-                _logContent!,
-                style: const TextStyle(
-                    fontFamily: 'monospace',
-                    fontSize: 11,
-                    color: Colors.greenAccent),
-              ),
-            ),
-          ],
         ],
       ),
     );

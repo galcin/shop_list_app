@@ -278,12 +278,13 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
     final categories =
         ref.watch(productCategoryListProvider).asData?.value ?? [];
     final mq = MediaQuery.of(context);
+    final theme = Theme.of(context);
 
     return Padding(
       padding: EdgeInsets.only(bottom: mq.viewInsets.bottom),
       child: Container(
-        decoration: const BoxDecoration(
-          color: Color(0xFFFFFFFF),
+        decoration: BoxDecoration(
+          color: theme.colorScheme.surface,
           borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
         ),
         padding: const EdgeInsets.fromLTRB(24, 16, 24, 32),
@@ -298,7 +299,7 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
                   width: 40,
                   height: 4,
                   decoration: BoxDecoration(
-                    color: const Color(0xFFDBDBDB),
+                    color: theme.colorScheme.outline.withOpacity(0.3),
                     borderRadius: BorderRadius.circular(2),
                   ),
                 ),
@@ -307,8 +308,8 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
               // Title
               Text(
                 _isEditing ? 'Edit Product' : 'New Product',
-                style: const TextStyle(
-                  color: Color(0xFF181725),
+                style: TextStyle(
+                  color: theme.colorScheme.onSurface,
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'Poppins',
@@ -326,18 +327,18 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
               TextField(
                 controller: _nameCtrl,
                 autofocus: !_isEditing,
-                style: const TextStyle(
-                  color: Color(0xFF181725),
+                style: TextStyle(
+                  color: theme.colorScheme.onSurface,
                   fontFamily: 'Poppins',
                 ),
                 decoration: InputDecoration(
                   hintText: _hintForCategory(categories),
-                  hintStyle: const TextStyle(
-                    color: Color(0xFF7C7C7C),
+                  hintStyle: TextStyle(
+                    color: theme.colorScheme.onSurfaceVariant,
                     fontFamily: 'Poppins',
                   ),
                   filled: true,
-                  fillColor: const Color(0xFFF2F3F2),
+                  fillColor: theme.colorScheme.surfaceContainerHighest,
                   errorText: _nameError,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -349,13 +350,13 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
-                    borderSide:
-                        const BorderSide(color: Color(0xFF53B175), width: 1.5),
+                    borderSide: BorderSide(
+                        color: theme.colorScheme.primary, width: 1.5),
                   ),
                   errorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                     borderSide:
-                        const BorderSide(color: Color(0xFFF3603F), width: 1.5),
+                        BorderSide(color: theme.colorScheme.error, width: 1.5),
                   ),
                 ),
                 onChanged: (_) {
@@ -378,10 +379,10 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
                 height: 56,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF53B175),
-                    foregroundColor: Colors.white,
+                    backgroundColor: theme.colorScheme.primary,
+                    foregroundColor: theme.colorScheme.onPrimary,
                     disabledBackgroundColor:
-                        const Color(0xFF53B175).withOpacity(0.6),
+                        theme.colorScheme.primary.withOpacity(0.6),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18),
                     ),
@@ -411,6 +412,7 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
   // ── Photo section ─────────────────────────────────────────────────────────────
 
   Widget _buildPhotoSection() {
+    final theme = Theme.of(context);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -421,10 +423,10 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
             width: 88,
             height: 88,
             decoration: BoxDecoration(
-              color: const Color(0xFFF2F3F2),
+              color: theme.colorScheme.surfaceContainerHighest,
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
-                color: const Color(0xFFDBDBDB),
+                color: theme.colorScheme.outline.withOpacity(0.3),
                 width: 1.5,
               ),
             ),
@@ -439,13 +441,13 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 'Product Photo / Icon',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xFF181725),
+                  color: theme.colorScheme.onSurface,
                 ),
               ),
               const SizedBox(height: 8),
@@ -643,15 +645,16 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
       if (_selectedUnit.isNotEmpty && !_kUnits.contains(_selectedUnit))
         _selectedUnit,
     ];
+    final theme = Theme.of(context);
     return DropdownButtonFormField<String>(
       initialValue: units.contains(_selectedUnit) ? _selectedUnit : units.first,
       decoration: _dropdownDecoration('Default Unit'),
-      style: const TextStyle(
+      style: TextStyle(
         fontFamily: 'Poppins',
-        color: Color(0xFF181725),
+        color: theme.colorScheme.onSurface,
         fontSize: 14,
       ),
-      dropdownColor: Colors.white,
+      dropdownColor: theme.colorScheme.surface,
       items:
           units.map((u) => DropdownMenuItem(value: u, child: Text(u))).toList(),
       onChanged: (v) {
@@ -661,13 +664,14 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
   }
 
   Widget _buildCategoryDropdown(List<ProductCategory> categories) {
+    final theme = Theme.of(context);
     if (categories.isEmpty) {
       return TextField(
         enabled: false,
         decoration: _dropdownDecoration('Category').copyWith(
           hintText: 'No categories',
-          hintStyle:
-              const TextStyle(fontFamily: 'Poppins', color: Color(0xFF7C7C7C)),
+          hintStyle: TextStyle(
+              fontFamily: 'Poppins', color: theme.colorScheme.onSurfaceVariant),
         ),
       );
     }
@@ -682,12 +686,12 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
     return DropdownButtonFormField<int>(
       initialValue: _selectedCategoryId,
       decoration: _dropdownDecoration('Category'),
-      style: const TextStyle(
+      style: TextStyle(
         fontFamily: 'Poppins',
-        color: Color(0xFF181725),
+        color: theme.colorScheme.onSurface,
         fontSize: 14,
       ),
-      dropdownColor: Colors.white,
+      dropdownColor: theme.colorScheme.surface,
       isExpanded: true,
       items: categories.map((cat) {
         final emoji = cat.iconName ?? cat.photo ?? '';
@@ -716,15 +720,16 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
   }
 
   InputDecoration _dropdownDecoration(String label) {
+    final theme = Theme.of(context);
     return InputDecoration(
       labelText: label,
-      labelStyle: const TextStyle(
+      labelStyle: TextStyle(
         fontFamily: 'Poppins',
-        color: Color(0xFF7C7C7C),
+        color: theme.colorScheme.onSurfaceVariant,
         fontSize: 13,
       ),
       filled: true,
-      fillColor: const Color(0xFFF2F3F2),
+      fillColor: theme.colorScheme.surfaceContainerHighest,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(15),
         borderSide: BorderSide.none,
@@ -735,7 +740,7 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(15),
-        borderSide: const BorderSide(color: Color(0xFF53B175), width: 1.5),
+        borderSide: BorderSide(color: theme.colorScheme.primary, width: 1.5),
       ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
     );
@@ -746,7 +751,7 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
   void _showPhotoSourceSheet() {
     showModalBottomSheet(
       context: context,
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
+import 'package:shop_list_app/shared/extensions/context_extensions.dart';
 import 'package:shop_list_app/shared/widgets/feedback/error_state_widget.dart';
 import 'package:shop_list_app/shared/widgets/feedback/loading_state_widget.dart';
 
@@ -96,7 +97,7 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
           }
         },
         (_) {
-          if (mounted) context.pop();
+          if (mounted) GoRouter.of(context).pop();
         },
       );
     }
@@ -123,13 +124,13 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
             : recipe;
 
         return Scaffold(
-          backgroundColor: AppColors.background,
+          backgroundColor: context.theme.scaffoldBackgroundColor,
           body: CustomScrollView(
             slivers: [
               _buildSliverAppBar(recipe),
               SliverToBoxAdapter(
-                  child: _buildContent(
-                      recipe, scaled, originalServings, currentServings)),
+                  child: _buildContent(context, recipe, scaled,
+                      originalServings, currentServings)),
             ],
           ),
         );
@@ -138,19 +139,20 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
   }
 
   Widget _buildSliverAppBar(Recipe recipe) {
+    final ctx = context;
     return SliverAppBar(
       expandedHeight: 260,
       pinned: true,
-      backgroundColor: AppColors.surface,
+      backgroundColor: context.colorScheme.surface,
       leading: IconButton(
-        icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-        onPressed: () => context.pop(),
+        icon: Icon(Icons.arrow_back_ios, color: context.colorScheme.onSurface),
+        onPressed: () => GoRouter.of(context).pop(),
       ),
       actions: [
         IconButton(
           icon: Icon(
             recipe.favorite == true ? Icons.star : Icons.star_border,
-            color: AppColors.accent,
+            color: context.colorScheme.secondary,
           ),
           onPressed: () async {
             final updated =
@@ -160,34 +162,36 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
           },
         ),
         PopupMenuButton<String>(
-          icon: const Icon(Icons.more_vert, color: Colors.white),
-          color: AppColors.surface,
+          icon: Icon(Icons.more_vert, color: context.colorScheme.onSurface),
+          color: context.colorScheme.surface,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           onSelected: (v) {
             if (v == 'edit') {
-              context.push('/recipes/${recipe.id}/edit', extra: recipe);
+              GoRouter.of(context)
+                  .push('/recipes/${recipe.id}/edit', extra: recipe);
             }
             if (v == 'delete') _confirmDelete(recipe);
           },
-          itemBuilder: (_) => [
-            const PopupMenuItem(
+          itemBuilder: (ctx) => [
+            PopupMenuItem(
               value: 'edit',
               child: Row(children: [
                 Icon(Icons.edit_outlined,
-                    size: 18, color: AppColors.textPrimary),
-                SizedBox(width: 10),
-                Text('Edit', style: TextStyle(fontFamily: 'Poppins')),
+                    size: 18, color: ctx.colorScheme.onSurface),
+                const SizedBox(width: 10),
+                Text('Edit', style: const TextStyle(fontFamily: 'Poppins')),
               ]),
             ),
-            const PopupMenuItem(
+            PopupMenuItem(
               value: 'delete',
               child: Row(children: [
-                Icon(Icons.delete_outline, size: 18, color: AppColors.error),
-                SizedBox(width: 10),
+                Icon(Icons.delete_outline,
+                    size: 18, color: ctx.colorScheme.error),
+                const SizedBox(width: 10),
                 Text('Delete',
                     style: TextStyle(
-                        fontFamily: 'Poppins', color: AppColors.error)),
+                        fontFamily: 'Poppins', color: ctx.colorScheme.error)),
               ]),
             ),
           ],
@@ -199,8 +203,9 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
           children: [
             recipe.imageUrl != null && recipe.imageUrl!.isNotEmpty
                 ? Image.network(recipe.imageUrl!,
-                    fit: BoxFit.cover, errorBuilder: (_, __, ___) => _heroBg())
-                : _heroBg(),
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => _heroBg(context))
+                : _heroBg(context),
             const DecoratedBox(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -217,20 +222,20 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
     );
   }
 
-  Widget _heroBg() => Container(
-        color: AppColors.surfaceVariant,
-        child: const Center(
+  Widget _heroBg(BuildContext context) => Container(
+        color: context.colorScheme.surfaceContainerHighest,
+        child: Center(
           child: Icon(Icons.restaurant_menu,
-              color: AppColors.textSecondary, size: 64),
+              color: context.colorScheme.onSurfaceVariant, size: 64),
         ),
       );
 
-  Widget _buildContent(
-      Recipe recipe, Recipe scaled, int originalServings, int currentServings) {
+  Widget _buildContent(BuildContext context, Recipe recipe, Recipe scaled,
+      int originalServings, int currentServings) {
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.surface,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      decoration: BoxDecoration(
+        color: context.colorScheme.surface,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -260,7 +265,7 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
               padding: const EdgeInsets.fromLTRB(20, 4, 20, 0),
               child: Row(
                 children: [
-                  const Icon(Icons.star, color: Colors.amber, size: 16),
+                  const Icon(Icons.star, color: AppColors.rating, size: 16),
                   const SizedBox(width: 4),
                   Text(
                     recipe.rating!.toStringAsFixed(1),

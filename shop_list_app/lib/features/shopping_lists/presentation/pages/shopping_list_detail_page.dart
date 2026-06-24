@@ -211,6 +211,7 @@ class ShoppingListDetailPage extends ConsumerWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'shopping-detail-fab',
         backgroundColor: colors.primary,
         foregroundColor: colors.onPrimary,
         onPressed: () => _showAddItemSheet(context),

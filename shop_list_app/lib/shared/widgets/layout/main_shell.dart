@@ -22,7 +22,11 @@ class MainShell extends ConsumerWidget {
       body: navigationShell,
       bottomNavigationBar: AppNavigationBar(
         selectedIndex: currentIndex,
-        onDestinationSelected: _onDestinationSelected,
+        onDestinationSelected: (index) {
+          final messenger = ScaffoldMessenger.maybeOf(context);
+          messenger?.removeCurrentSnackBar();
+          _onDestinationSelected(index);
+        },
         destinations: const [
           NavigationDestination(
             key: Key('nav_plan'),

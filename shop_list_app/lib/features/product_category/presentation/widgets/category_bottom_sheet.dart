@@ -117,10 +117,11 @@ class _CategorySheetState extends ConsumerState<_CategorySheet> {
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
+    final theme = Theme.of(context);
     return Container(
       margin: EdgeInsets.only(bottom: mq.viewInsets.bottom),
-      decoration: const BoxDecoration(
-        color: Color(0xFFFFFFFF),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surface,
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
       padding: const EdgeInsets.fromLTRB(24, 16, 24, 32),
@@ -134,7 +135,7 @@ class _CategorySheetState extends ConsumerState<_CategorySheet> {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: const Color(0xFFDBDBDB),
+                color: theme.colorScheme.outline.withOpacity(0.3),
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -143,8 +144,8 @@ class _CategorySheetState extends ConsumerState<_CategorySheet> {
           // Title
           Text(
             _isEditing ? 'Edit Category' : 'New Category',
-            style: const TextStyle(
-              color: Color(0xFF181725),
+            style: TextStyle(
+              color: theme.colorScheme.onSurface,
               fontSize: 18,
               fontWeight: FontWeight.w600,
               fontFamily: 'Poppins',
@@ -155,18 +156,18 @@ class _CategorySheetState extends ConsumerState<_CategorySheet> {
           TextField(
             controller: _nameCtrl,
             autofocus: !_isEditing,
-            style: const TextStyle(
-              color: Color(0xFF181725),
+            style: TextStyle(
+              color: theme.colorScheme.onSurface,
               fontFamily: 'Poppins',
             ),
             decoration: InputDecoration(
               hintText: 'Category name *  e.g. "Dairy"',
-              hintStyle: const TextStyle(
-                color: Color(0xFF7C7C7C),
+              hintStyle: TextStyle(
+                color: theme.colorScheme.onSurfaceVariant,
                 fontFamily: 'Poppins',
               ),
               filled: true,
-              fillColor: const Color(0xFFF2F3F2),
+              fillColor: theme.colorScheme.surfaceContainerHighest,
               errorText: _nameError,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
@@ -179,7 +180,7 @@ class _CategorySheetState extends ConsumerState<_CategorySheet> {
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
                 borderSide:
-                    const BorderSide(color: Color(0xFF53B175), width: 1.5),
+                    BorderSide(color: theme.colorScheme.primary, width: 1.5),
               ),
             ),
             onChanged: (_) {
@@ -188,10 +189,10 @@ class _CategorySheetState extends ConsumerState<_CategorySheet> {
           ),
           const SizedBox(height: 20),
           // Colour swatches
-          const Text(
+          Text(
             'Colour',
             style: TextStyle(
-              color: Color(0xFF7C7C7C),
+              color: theme.colorScheme.onSurfaceVariant,
               fontSize: 13,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w500,
@@ -213,7 +214,7 @@ class _CategorySheetState extends ConsumerState<_CategorySheet> {
                     color: color,
                     shape: BoxShape.circle,
                     border: selected
-                        ? Border.all(color: const Color(0xFF53B175), width: 3)
+                        ? Border.all(color: theme.colorScheme.primary, width: 3)
                         : null,
                   ),
                 ),
@@ -222,10 +223,10 @@ class _CategorySheetState extends ConsumerState<_CategorySheet> {
           ),
           const SizedBox(height: 20),
           // Emoji / icon picker
-          const Text(
+          Text(
             'Icon',
             style: TextStyle(
-              color: Color(0xFF7C7C7C),
+              color: theme.colorScheme.onSurfaceVariant,
               fontSize: 13,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w500,
@@ -243,11 +244,11 @@ class _CategorySheetState extends ConsumerState<_CategorySheet> {
                   padding: const EdgeInsets.all(6),
                   decoration: BoxDecoration(
                     color: selected
-                        ? const Color(0xFF53B175).withOpacity(0.12)
+                        ? theme.colorScheme.primary.withOpacity(0.12)
                         : Colors.transparent,
                     borderRadius: BorderRadius.circular(8),
                     border: selected
-                        ? Border.all(color: const Color(0xFF53B175), width: 2)
+                        ? Border.all(color: theme.colorScheme.primary, width: 2)
                         : null,
                   ),
                   child: Text(emoji, style: const TextStyle(fontSize: 24)),
@@ -262,19 +263,19 @@ class _CategorySheetState extends ConsumerState<_CategorySheet> {
             child: ElevatedButton(
               onPressed: _saving ? null : _save,
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF53B175),
-                foregroundColor: Colors.white,
+                backgroundColor: theme.colorScheme.primary,
+                foregroundColor: theme.colorScheme.onPrimary,
                 elevation: 0,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16)),
                 padding: const EdgeInsets.symmetric(vertical: 16),
               ),
               child: _saving
-                  ? const SizedBox(
+                  ? SizedBox(
                       height: 20,
                       width: 20,
                       child: CircularProgressIndicator(
-                          strokeWidth: 2, color: Colors.white),
+                          strokeWidth: 2, color: theme.colorScheme.onPrimary),
                     )
                   : Text(
                       _isEditing ? 'Save Changes' : '+ Create Category',

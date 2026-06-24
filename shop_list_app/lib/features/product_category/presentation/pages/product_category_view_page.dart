@@ -32,16 +32,17 @@ class _ProductCategoryViewPageState
   @override
   Widget build(BuildContext context) {
     final asyncValue = ref.watch(productCategoryListProvider);
+    final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: theme.colorScheme.surface,
       appBar: AppBar(
-        backgroundColor: AppColors.surface,
+        backgroundColor: theme.colorScheme.surface,
         elevation: 0,
-        title: const Text(
+        title: Text(
           'Categories',
           style: TextStyle(
-            color: AppColors.textPrimary,
+            color: theme.colorScheme.onSurface,
             fontWeight: FontWeight.w700,
             fontSize: 22,
             fontFamily: 'Poppins',
@@ -50,8 +51,8 @@ class _ProductCategoryViewPageState
         centerTitle: false,
         actions: [
           PopupMenuButton<String>(
-            color: AppColors.surface,
-            icon: const Icon(Icons.more_vert, color: AppColors.textPrimary),
+            color: theme.colorScheme.surface,
+            icon: Icon(Icons.more_vert, color: theme.colorScheme.onSurface),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             onSelected: (v) {
@@ -64,8 +65,8 @@ class _ProductCategoryViewPageState
                 value: 'reorder',
                 child: Text(
                   _reorderMode ? 'Done Reordering' : 'Reorder',
-                  style: const TextStyle(
-                    color: AppColors.textPrimary,
+                  style: TextStyle(
+                    color: theme.colorScheme.onSurface,
                     fontFamily: 'Poppins',
                   ),
                 ),
@@ -112,7 +113,7 @@ class _ProductCategoryViewPageState
                           key: ValueKey(category.id),
                           index: i,
                           accentColor: _parseColor(category.colorHex) ??
-                              AppColors.primary,
+                              Theme.of(context).colorScheme.primary,
                           emoji: category.iconName ?? category.photo ?? '??',
                           imageName: category.imageName,
                           title: category.name,
@@ -125,8 +126,8 @@ class _ProductCategoryViewPageState
                         itemBuilder: (ctx, index) {
                           final cat = categories[index];
 
-                          final accentColor =
-                              _parseColor(cat.colorHex) ?? AppColors.primary;
+                          final accentColor = _parseColor(cat.colorHex) ??
+                              Theme.of(context).colorScheme.primary;
                           final emoji = cat.iconName ?? cat.photo ?? '?';
                           // Stack pattern from movies_ui:
                           // card body is offset right, emoji image overlaid on the left
@@ -137,7 +138,10 @@ class _ProductCategoryViewPageState
                               margin:
                                   const EdgeInsets.only(left: 56, bottom: 10),
                               decoration: BoxDecoration(
-                                color: AppColors.error.withOpacity(0.85),
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .error
+                                    .withOpacity(0.85),
                                 borderRadius: BorderRadius.circular(18),
                               ),
                               alignment: Alignment.centerRight,
@@ -172,8 +176,9 @@ class _ProductCategoryViewPageState
         },
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.onPrimary,
+        heroTag: 'categories-fab',
+        backgroundColor: theme.colorScheme.primary,
+        foregroundColor: theme.colorScheme.onPrimary,
         tooltip: 'Add Category',
         elevation: 4,
         onPressed: () => showCreateCategorySheet(context),
@@ -185,6 +190,7 @@ class _ProductCategoryViewPageState
   // ── Helpers ────────────────────────────────────────────────────────────────
 
   Widget _buildAllProductsBanner() {
+    final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 10, 16, 4),
       child: GestureDetector(
@@ -195,17 +201,17 @@ class _ProductCategoryViewPageState
         child: Container(
           height: 52,
           decoration: BoxDecoration(
-            color: AppColors.primary.withOpacity(0.08),
+            color: theme.colorScheme.primary.withOpacity(0.08),
             borderRadius: BorderRadius.circular(14),
-            border:
-                Border.all(color: AppColors.primary.withOpacity(0.3), width: 1),
+            border: Border.all(
+                color: theme.colorScheme.primary.withOpacity(0.3), width: 1),
           ),
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: const Row(
+          child: Row(
             children: [
               Icon(Icons.inventory_2_outlined,
-                  color: AppColors.primary, size: 20),
-              SizedBox(width: 10),
+                  color: theme.colorScheme.primary, size: 20),
+              const SizedBox(width: 10),
               Expanded(
                 child: Text(
                   'All Products',
@@ -213,11 +219,12 @@ class _ProductCategoryViewPageState
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w600,
                     fontSize: 14,
-                    color: AppColors.primary,
+                    color: theme.colorScheme.primary,
                   ),
                 ),
               ),
-              Icon(Icons.chevron_right, color: AppColors.primary, size: 20),
+              Icon(Icons.chevron_right,
+                  color: theme.colorScheme.primary, size: 20),
             ],
           ),
         ),
@@ -241,16 +248,17 @@ class _ProductCategoryViewPageState
 
     if (!mounted) return false;
 
+    final theme = Theme.of(context);
     return await showDialog<bool>(
           context: context,
           builder: (_) => AlertDialog(
-            backgroundColor: AppColors.surface,
+            backgroundColor: theme.colorScheme.surface,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             title: Text(
               'Delete "${category.name}"?',
-              style: const TextStyle(
-                color: AppColors.textPrimary,
+              style: TextStyle(
+                color: theme.colorScheme.onSurface,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w600,
               ),
@@ -259,8 +267,8 @@ class _ProductCategoryViewPageState
                 ? Text(
                     'This category has $productCount product(s).\n'
                     'They will become uncategorised.',
-                    style: const TextStyle(
-                      color: AppColors.textBody,
+                    style: TextStyle(
+                      color: theme.colorScheme.onSurface,
                       fontFamily: 'Poppins',
                     ),
                   )
@@ -268,15 +276,16 @@ class _ProductCategoryViewPageState
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context, false),
-                child: const Text('Cancel',
+                child: Text('Cancel',
                     style: TextStyle(
-                        color: AppColors.textSecondary, fontFamily: 'Poppins')),
+                        color: theme.colorScheme.onSurfaceVariant,
+                        fontFamily: 'Poppins')),
               ),
               TextButton(
                 onPressed: () => Navigator.pop(context, true),
-                child: const Text('Delete',
+                child: Text('Delete',
                     style: TextStyle(
-                        color: AppColors.error,
+                        color: theme.colorScheme.error,
                         fontWeight: FontWeight.w600,
                         fontFamily: 'Poppins')),
               ),
@@ -291,13 +300,14 @@ class _ProductCategoryViewPageState
         .read(productCategoryListProvider.notifier)
         .deleteCategory(category.id, force: true);
 
+    final theme = Theme.of(context);
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('"${category.name}" deleted'),
         duration: const Duration(seconds: 4),
         action: SnackBarAction(
           label: 'Undo',
-          textColor: AppColors.primary,
+          textColor: theme.colorScheme.primary,
           onPressed: () {
             ref.read(productCategoryListProvider.notifier).createCategory(
                   name: category.name,

@@ -2,10 +2,12 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/core/error/failures.dart';
 import 'package:shop_list_app/core/providers/core_providers.dart';
+import 'package:shop_list_app/features/pantry/presentation/providers/pantry_providers.dart';
 import 'package:shop_list_app/features/recipes/data/repositories/recipe_repository.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/domain/repositories/i_recipe_repository.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/delete_recipe_use_case.dart';
+import 'package:shop_list_app/features/recipes/domain/usecases/find_recipes_by_pantry_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/get_all_recipes_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/get_recipe_by_id_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/save_recipe_use_case.dart';
@@ -42,6 +44,11 @@ final searchRecipesUseCaseProvider = Provider<SearchRecipesUseCase>((ref) {
 
 final scaleRecipeUseCaseProvider = Provider<ScaleRecipeUseCase>((ref) {
   return const ScaleRecipeUseCase();
+});
+
+final findRecipesByPantryUseCaseProvider =
+    Provider<FindRecipesByPantryUseCase>((ref) {
+  return FindRecipesByPantryUseCase(ref.watch(recipeRepositoryProvider));
 });
 
 // ── UI state ──────────────────────────────────────────────────────────────────
@@ -113,4 +120,17 @@ final filteredRecipesProvider =
         .where((r) => (r.name ?? '').toLowerCase().contains(query))
         .toList();
   });
+});
+
+// ── Derived data: recipes by pantry ──────────────────────────────────────────
+
+final recipesByPantryProvider = FutureProvider.autoDispose((ref) async {
+  final pantryAsync = ref.watch(pantryItemsProvider);
+  final useCase = ref.watch(findRecipesByPantryUseCaseProvider);
+
+  return pantryAsync.when(
+    data: (pantryItems) => useCase.call(pantryItems),
+    loading: () => Future.value([]),
+    error: (e, st) => Future.value([]),
+  );
 });

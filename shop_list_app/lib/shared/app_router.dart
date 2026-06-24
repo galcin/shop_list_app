@@ -11,6 +11,7 @@ import 'package:shop_list_app/features/shopping_lists/presentation/pages/shoppin
 import 'package:shop_list_app/features/shopping_lists/presentation/pages/shopping_lists_page.dart';
 import 'package:shop_list_app/main.dart' show SplashScreen;
 import 'package:shop_list_app/shared/widgets/layout/main_shell.dart';
+import 'package:shop_list_app/shared/widgets/views/diagnostics_page.dart';
 import 'package:shop_list_app/shared/widgets/views/settings_view_page.dart';
 
 /// Application-level [GoRouter] instance.
@@ -117,6 +118,10 @@ final appRouter = GoRouter(
                 GoRoute(
                   path: 'categories',
                   builder: (context, state) => const ProductCategoryViewPage(),
+                ),
+                GoRoute(
+                  path: 'diagnostics',
+                  builder: (context, state) => const DiagnosticsPage(),
                 ),
               ],
             ),

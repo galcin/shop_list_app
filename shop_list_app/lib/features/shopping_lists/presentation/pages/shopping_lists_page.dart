@@ -74,6 +74,7 @@ class ShoppingListsPage extends ConsumerWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'shopping-fab',
         backgroundColor: colors.primary,
         foregroundColor: colors.onPrimary,
         onPressed: () => _showCreateDialog(context, ref),

@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/database/app_database.dart';
 import 'package:shop_list_app/core/navigation/app_route.dart';
+import 'package:shop_list_app/core/theme/theme_simple.dart';
 import 'package:shop_list_app/core/utils/app_logger.dart';
 
 import 'app.dart';
@@ -13,6 +14,9 @@ void main(List<String> args) async {
 
   // Initialise file logger first so all subsequent errors are captured.
   await AppLogger.instance.init();
+
+  // Initialize theme BEFORE creating ProviderScope
+  await initializeTheme();
 
   // Capture Flutter framework errors (widget build errors, etc.).
   FlutterError.onError = (FlutterErrorDetails details) {

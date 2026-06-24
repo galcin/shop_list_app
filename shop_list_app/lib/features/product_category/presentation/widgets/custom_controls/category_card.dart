@@ -24,6 +24,7 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return AccentCircleListCard(
       accentColor: accentColor,
       circleChild: circleChild,
@@ -38,11 +39,11 @@ class CategoryCard extends StatelessWidget {
           children: [
             Text(
               category.name,
-              style: const TextStyle(
+              style: TextStyle(
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w700,
                 fontSize: 16,
-                color: AppColors.textPrimary,
+                color: theme.colorScheme.onSurface,
               ),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -64,17 +65,17 @@ class CategoryCard extends StatelessWidget {
                     const SizedBox(width: 6),
                     Text(
                       category.colorHex ?? 'default',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontFamily: 'Poppins',
                         fontSize: 12,
-                        color: AppColors.textSecondary,
+                        color: theme.colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ],
                 ),
-                const Icon(
+                Icon(
                   Icons.chevron_right,
-                  color: AppColors.textSecondary,
+                  color: theme.colorScheme.onSurfaceVariant,
                   size: 20,
                 ),
               ],

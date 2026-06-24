@@ -8,6 +8,7 @@ import 'package:shop_list_app/features/pantry/presentation/providers/pantry_prov
 import 'package:shop_list_app/features/pantry/presentation/widgets/pantry_item_card.dart';
 import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart';
 import 'package:shop_list_app/features/product_category/presentation/providers/product_category_providers.dart';
+import 'package:shop_list_app/shared/extensions/context_extensions.dart';
 
 class PantryPage extends ConsumerStatefulWidget {
   const PantryPage({super.key});
@@ -25,14 +26,14 @@ class _PantryPageState extends ConsumerState<PantryPage> {
     final expiringSoonCount = ref.watch(expiringSoonCountProvider);
 
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: context.theme.scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: AppColors.surface,
+        backgroundColor: context.colorScheme.surface,
         elevation: 0,
-        title: const Text(
+        title: Text(
           'Pantry',
           style: TextStyle(
-            color: AppColors.textPrimary,
+            color: context.colorScheme.onSurface,
             fontWeight: FontWeight.w700,
             fontSize: 22,
             fontFamily: 'Poppins',
@@ -45,20 +46,27 @@ class _PantryPageState extends ConsumerState<PantryPage> {
         error: (error, stack) {
           AppLogger.instance.error('Error loading pantry items',
               error: error, stackTrace: stack);
+          final theme = Theme.of(context);
           return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.error_outline,
-                    size: 48, color: AppColors.error),
+                Icon(Icons.error_outline,
+                    size: 48, color: theme.colorScheme.error),
                 const SizedBox(height: 16),
-                Text('Error loading pantry: $error'),
+                Text(
+                  'Error loading pantry: $error',
+                  style: TextStyle(color: theme.colorScheme.onSurface),
+                ),
                 const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () => ref.invalidate(pantryItemsProvider),
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary),
-                  child: const Text('Retry'),
+                      backgroundColor: theme.colorScheme.primary),
+                  child: Text(
+                    'Retry',
+                    style: TextStyle(color: theme.colorScheme.onPrimary),
+                  ),
                 ),
               ],
             ),
@@ -66,29 +74,30 @@ class _PantryPageState extends ConsumerState<PantryPage> {
         },
         data: (items) {
           if (items.isEmpty) {
+            final theme = Theme.of(context);
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.inbox_outlined,
-                      size: 64, color: AppColors.textSecondary),
+                  Icon(Icons.inbox_outlined,
+                      size: 64, color: theme.colorScheme.onSurfaceVariant),
                   const SizedBox(height: 16),
-                  const Text(
+                  Text(
                     'Your pantry is empty',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.textPrimary,
+                      color: theme.colorScheme.onSurface,
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const Text(
+                  Text(
                     'Add items to track your inventory',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 14,
-                      color: AppColors.textSecondary,
+                      color: theme.colorScheme.onSurfaceVariant,
                     ),
                   ),
                 ],
@@ -142,31 +151,34 @@ class _PantryPageState extends ConsumerState<PantryPage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'pantry-fab',
         onPressed: () => _showAddItemSheet(context),
-        backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.onPrimary,
+        backgroundColor: context.colorScheme.primary,
+        foregroundColor: context.colorScheme.onPrimary,
         child: const Icon(Icons.add),
       ),
     );
   }
 
   Widget _buildExpiringAlertBanner(BuildContext context, int count) {
+    final theme = Theme.of(context);
     return Container(
       margin: const EdgeInsets.all(16),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFF2A1F16),
+        color: theme.colorScheme.primary.withOpacity(0.08),
         borderRadius: BorderRadius.circular(12),
-        border: const Border(
+        border: Border(
           left: BorderSide(
-            color: AppColors.accent,
+            color: theme.colorScheme.primary,
             width: 4,
           ),
         ),
       ),
       child: Row(
         children: [
-          const Icon(Icons.warning_outlined, color: AppColors.accent, size: 20),
+          Icon(Icons.warning_outlined,
+              color: theme.colorScheme.primary, size: 20),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
@@ -174,16 +186,16 @@ class _PantryPageState extends ConsumerState<PantryPage> {
               children: [
                 Text(
                   '$count items expiring within 3 days',
-                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: Colors.white,
-                      ),
+                  style: theme.textTheme.titleSmall?.copyWith(
+                    color: theme.colorScheme.onSurface,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   'Tap to view →',
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.grey[400],
-                      ),
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
                 ),
               ],
             ),
@@ -227,11 +239,11 @@ class _PantryPageState extends ConsumerState<PantryPage> {
                 Expanded(
                   child: Text(
                     category.name,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w600,
                       fontSize: 15,
-                      color: AppColors.textPrimary,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
                 ),

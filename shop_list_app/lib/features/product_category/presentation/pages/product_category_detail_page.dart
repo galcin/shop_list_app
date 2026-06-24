@@ -32,7 +32,8 @@ class _ProductCategoryDetailPageState
 
   // ── Helpers ────────────────────────────────────────────────────────────────
 
-  Color get _accentColor => _parseColor(category.colorHex) ?? AppColors.primary;
+  Color get _accentColor =>
+      _parseColor(category.colorHex) ?? Theme.of(context).colorScheme.primary;
 
   Color? _parseColor(String? hex) {
     if (hex == null || hex.isEmpty) return null;
@@ -47,21 +48,22 @@ class _ProductCategoryDetailPageState
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: theme.colorScheme.surface,
       appBar: AppBar(
-        backgroundColor: AppColors.surface,
+        backgroundColor: theme.colorScheme.surface,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios,
-              color: AppColors.textPrimary, size: 20),
+          icon: Icon(Icons.arrow_back_ios,
+              color: theme.colorScheme.onSurface, size: 20),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           category.name,
-          style: const TextStyle(
+          style: TextStyle(
             fontFamily: 'Poppins',
-            color: AppColors.textPrimary,
+            color: theme.colorScheme.onSurface,
             fontWeight: FontWeight.w600,
             fontSize: 20,
           ),
@@ -69,11 +71,11 @@ class _ProductCategoryDetailPageState
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.edit_outlined, color: AppColors.textPrimary),
+            icon: Icon(Icons.edit_outlined, color: theme.colorScheme.onSurface),
             onPressed: () => showEditCategorySheet(context, category),
           ),
           IconButton(
-            icon: const Icon(Icons.delete_outline, color: AppColors.error),
+            icon: Icon(Icons.delete_outline, color: theme.colorScheme.error),
             onPressed: _deleteCategory,
           ),
         ],
@@ -85,13 +87,17 @@ class _ProductCategoryDetailPageState
               category: category, accentColor: _accentColor),
           CategoryDetailHeaderPoster(
               category: category, accentColor: _accentColor),
-          const Divider(indent: 16, endIndent: 16, color: AppColors.divider),
+          Divider(
+              indent: 16,
+              endIndent: 16,
+              color: theme.colorScheme.outlineVariant),
           CategoryProductsSection(categoryId: category.id),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.onPrimary,
+        heroTag: 'category-detail-fab',
+        backgroundColor: theme.colorScheme.primary,
+        foregroundColor: theme.colorScheme.onPrimary,
         elevation: 4,
         tooltip: 'Add product to this category',
         onPressed: () => showCreateProductSheet(
@@ -106,34 +112,36 @@ class _ProductCategoryDetailPageState
   // ── Delete ─────────────────────────────────────────────────────────────────
 
   void _deleteCategory() {
+    final theme = Theme.of(context);
     showDialog<void>(
       context: context,
       builder: (_) => AlertDialog(
-        backgroundColor: AppColors.surface,
+        backgroundColor: theme.colorScheme.surface,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Text(
+        title: Text(
           'Delete Category',
           style: TextStyle(
             fontFamily: 'Poppins',
             fontWeight: FontWeight.w600,
-            color: AppColors.textPrimary,
+            color: theme.colorScheme.onSurface,
           ),
         ),
         content: Text(
           'Are you sure you want to delete "${category.name}"?\n\n'
           'This may affect its products.',
-          style: const TextStyle(
+          style: TextStyle(
             fontFamily: 'Poppins',
-            color: AppColors.textBody,
+            color: theme.colorScheme.onSurface,
           ),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text(
+            child: Text(
               'Cancel',
               style: TextStyle(
-                  color: AppColors.textSecondary, fontFamily: 'Poppins'),
+                  color: theme.colorScheme.onSurfaceVariant,
+                  fontFamily: 'Poppins'),
             ),
           ),
           ElevatedButton(
@@ -158,8 +166,8 @@ class _ProductCategoryDetailPageState
               );
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.error,
-              foregroundColor: AppColors.onPrimary,
+              backgroundColor: theme.colorScheme.error,
+              foregroundColor: theme.colorScheme.onError,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12)),
               textStyle: const TextStyle(fontFamily: 'Poppins'),

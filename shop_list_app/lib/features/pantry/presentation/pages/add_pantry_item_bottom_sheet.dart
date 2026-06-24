@@ -42,10 +42,11 @@ class _AddPantryItemBottomSheetState
   Widget build(BuildContext context) {
     final categoriesAsync = ref.watch(productCategoryListProvider);
     final productsAsync = ref.watch(productListProvider);
+    final colors = Theme.of(context).colorScheme;
 
     return Container(
-      decoration: const BoxDecoration(
-        color: Color(0xFF1E1E1E),
+      decoration: BoxDecoration(
+        color: colors.surface,
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
       child: SingleChildScrollView(
@@ -117,8 +118,11 @@ class _AddPantryItemBottomSheetState
                       focusNode,
                       onFieldSubmitted,
                     ) {
-                      // Sync the controller with our name controller
-                      _nameController = textEditingController;
+                      // Sync the autocomplete controller with our name controller
+                      textEditingController.text = _nameController.text;
+                      textEditingController.addListener(() {
+                        _nameController.text = textEditingController.text;
+                      });
                       return TextField(
                         controller: textEditingController,
                         focusNode: focusNode,

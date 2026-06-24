@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_list_app/core/database/app_database.dart';
+import 'package:shop_list_app/core/theme/colors.dart';
 
 class ListTileComponent extends StatelessWidget {
   final Product item;
@@ -10,7 +11,7 @@ class ListTileComponent extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(5),
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.blueAccent),
+          border: Border.all(color: AppColors.primary),
           borderRadius: BorderRadius.circular(20)),
       child: ListTile(
         leading: const Icon(Icons.image_not_supported_outlined),
