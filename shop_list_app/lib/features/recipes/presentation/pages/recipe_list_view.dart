@@ -94,10 +94,9 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
                 return GridView.builder(
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 96),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
+                    crossAxisCount: 1,
                     crossAxisSpacing: 12,
-                    mainAxisSpacing: 12,
-                    childAspectRatio: 1.05,
+                    mainAxisSpacing: 20,
                   ),
                   itemCount: visible.length,
                   itemBuilder: (ctx, i) => _RecipeCard(
