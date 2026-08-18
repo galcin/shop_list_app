@@ -31,6 +31,9 @@ class RecipeSeeder {
             ? Value(r['servings'] as int)
             : const Value.absent(),
         favorite: const Value(false),
+        imageUrl: r['imageUrl'] != null
+            ? Value(r['imageUrl'] as String)
+            : const Value.absent(),
         ingredientsJson: Value(jsonEncode(ingredients)),
       );
     }).toList();
@@ -56,6 +59,18 @@ class RecipeSeeder {
                   r.ingredientsJson.isNull()))
             .write(RecipesCompanion(
           ingredientsJson: recipe.ingredientsJson,
+        ));
+      }
+
+      // Backfill imageUrl for existing recipes that have none.
+      if (existingNames.contains(recipe.name.value) &&
+          recipe.imageUrl.present &&
+          recipe.imageUrl.value != null) {
+        await (database.update(database.recipes)
+              ..where((r) =>
+                  r.name.equals(recipe.name.value!) & r.imageUrl.isNull()))
+            .write(RecipesCompanion(
+          imageUrl: recipe.imageUrl,
         ));
       }
     }

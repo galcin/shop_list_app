@@ -28,6 +28,7 @@
     "name": "Spaghetti Bolognese",
     "instructions": "Brown 400g minced beef with a chopped onion and 2 garlic cloves. Add a can of crushed tomatoes, 2 tbsp tomato paste, salt, pepper, and dried oregano. Simmer for 20 minutes. Cook spaghetti al dente, drain, and serve topped with the sauce and grated Parmesan.",
     "prepTime": 35,
+    "imageUrl": "assets/images/recipes/pasta_bolognese.jpg",
     "ingredients": [
       { "name": "Minced Beef", "quantity": "400", "unit": "g" },
       { "name": "Spaghetti", "quantity": "320", "unit": "g" },
@@ -147,6 +148,7 @@
     "name": "Pasta Carbonara",
     "instructions": "Boil spaghetti in salted water. Meanwhile, cook bacon in a pan until lightly browned. In a bowl, whisk eggs with sour cream and grated Parmesan. Drain pasta and immediately toss with the bacon, egg mixture, salt, and pepper. Finish with extra Parmesan.",
     "prepTime": 20,
+    "imageUrl": "assets/images/recipes/pasta_carbonara.jpg",
     "ingredients": [
       { "name": "Spaghetti", "quantity": "250", "unit": "g" },
       { "name": "Bacon", "quantity": "150", "unit": "g" },
@@ -367,6 +369,134 @@
       { "name": "Olive Oil", "quantity": "3", "unit": "tbsp" },
       { "name": "Sweet Paprika", "quantity": "1", "unit": "tsp" },
       { "name": "Thyme", "quantity": "to taste", "unit": "" },
+      { "name": "Salt", "quantity": "to taste", "unit": "" },
+      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "name": "Penne Quattro Formaggi",
+    "instructions": "Boil 250g penne according to package instructions, about 8 minutes until al dente. Separately, prepare the sauce. Melt butter in a pan and add cream, salt and pepper to taste. Cut the cheeses into small pieces if not already grated, and when the cream starts to boil, add them to the pan. Mix everything for 5 minutes until all ingredients have melted and combined perfectly. Let the sauce thicken for 2-3 more minutes on low heat. Add the penne using two spatulas and mix well. Sprinkle with oregano before serving.",
+    "prepTime": 25,
+    "imageUrl": "assets/images/recipes/penne-quattro-formaggi.jpg",
+    "ingredients": [
+      { "name": "Penne", "quantity": "250", "unit": "g" },
+      { "name": "Heavy Cream", "quantity": "250", "unit": "g" },
+      { "name": "Parmesan", "quantity": "70", "unit": "g" },
+      { "name": "Mozzarella", "quantity": "70", "unit": "g" },
+      { "name": "Gorgonzola", "quantity": "70", "unit": "g" },
+      { "name": "Olive Oil", "quantity": "1", "unit": "tbsp" },
+      { "name": "Butter", "quantity": "1", "unit": "tsp" },
+      { "name": "Dried Oregano", "quantity": "1", "unit": "tsp" },
+      { "name": "Salt", "quantity": "to taste", "unit": "" },
+      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "name": "Pasta Arrabiata",
+    "instructions": "Boil spaghetti in salted water for about 8 minutes until al dente, then rinse under cold water. Separately, prepare the sauce. Clean the hot peppers from seeds, slice them into 2-3 cm pieces and put them in a pan with 4-5 tbsp oil. Add finely chopped garlic and let everything sauté for 3 minutes. Deglaze with a little water and add the tomato sauce. In 10 minutes the arrabiata sauce is almost ready. Add lemon juice, parmesan and 2 tbsp olive oil. Mix the pasta with the sauce and serve with grated parmesan on top.",
+    "prepTime": 25,
+    "imageUrl": "assets/images/recipes/pasta-arrabiata.jpg",
+    "ingredients": [
+      { "name": "Spaghetti", "quantity": "500", "unit": "g" },
+      { "name": "Hot Peppers", "quantity": "4", "unit": "pcs" },
+      { "name": "Garlic", "quantity": "4", "unit": "cloves" },
+      { "name": "Tomato Sauce", "quantity": "450", "unit": "g" },
+      { "name": "Parmesan", "quantity": "2", "unit": "tbsp" },
+      { "name": "Olive Oil", "quantity": "6", "unit": "tbsp" },
+      { "name": "Lemon Juice", "quantity": "1", "unit": "tbsp" },
+      { "name": "Water", "quantity": "50", "unit": "ml" },
+      { "name": "Salt", "quantity": "to taste", "unit": "" },
+      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "name": "Pasta with Chicken and Pesto",
+    "instructions": "Remove chicken from refrigerator 30 minutes before cooking to reach room temperature. Boil the pasta and prepare the pesto sauce. Using a blender, blend raw basil, cashews, garlic, parmesan, 2 tbsp olive oil, lemon juice, salt and pepper to taste. This process should take no more than 10 minutes. When the pesto sauce is ready, lightly brush the chicken breast pieces with it and let them reach room temperature for 20-30 minutes. Using a suitable pan, heat 2 tbsp olive oil and cook the meat until fully fried. Add cherry tomatoes and sauté for 5 minutes. When the chicken breast is ready, cut it into thin pieces and mix with the pasta, sauce, and cherry tomatoes. Serve with grated parmesan on top.",
+    "prepTime": 35,
+    "imageUrl": "assets/images/recipes/pasta-chicken-pesto.jpg",
+    "ingredients": [
+      { "name": "Spaghetti", "quantity": "200", "unit": "g" },
+      { "name": "Cherry Tomatoes", "quantity": "200", "unit": "g" },
+      { "name": "Chicken Breast", "quantity": "100", "unit": "g" },
+      { "name": "Cashews", "quantity": "60", "unit": "g" },
+      { "name": "Parmesan", "quantity": "60", "unit": "g" },
+      { "name": "Fresh Basil", "quantity": "1", "unit": "bunch" },
+      { "name": "Garlic", "quantity": "1", "unit": "cloves" },
+      { "name": "Lemon Juice", "quantity": "1", "unit": "lemon" },
+      { "name": "Olive Oil", "quantity": "4", "unit": "tbsp" },
+      { "name": "Salt", "quantity": "to taste", "unit": "" },
+      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "name": "Pasta with Shrimp",
+    "instructions": "Boil water and when it starts to boil, add the pasta. Separately, peel the shrimp by first removing the head, then the shell and intestine. Don't throw away the remains; boil them in a little water just to cover them. Let them boil for a few minutes, then pour the broth into a glass separately as you will need it later. While the shrimp are boiling, heat oil, butter, garlic, and finely chopped hot pepper in a pan. Mix gently for 3 minutes. Add the shrimp and let them sauté for 2 minutes. When the shrimp turn pink, add a glass of the broth and let everything boil for 3-4 minutes. Then add lemon juice, salt and pepper. Mix well and finally add the pasta and parsley to the pan. Serve with grated parmesan on top and a glass of white wine.",
+    "prepTime": 30,
+    "imageUrl": "assets/images/recipes/pasta-shrimp.jpg",
+    "ingredients": [
+      { "name": "Pasta", "quantity": "250", "unit": "g" },
+      { "name": "Fresh Shrimp", "quantity": "500", "unit": "g" },
+      { "name": "Garlic", "quantity": "3", "unit": "cloves" },
+      { "name": "Hot Pepper", "quantity": "1", "unit": "pcs" },
+      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
+      { "name": "Butter", "quantity": "50", "unit": "g" },
+      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
+      { "name": "Lemon Juice", "quantity": "1", "unit": "lemon" },
+      { "name": "Parmesan", "quantity": "30", "unit": "g" },
+      { "name": "Salt", "quantity": "to taste", "unit": "" },
+      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "name": "Pasta with Garlic and Hot Pepper",
+    "instructions": "First, boil the spaghetti according to package instructions, then slice the pepper and garlic, and finely chop the parsley. Sauté the garlic and pepper for a few minutes. Add 2 ladles of the water in which the pasta was boiled, then add the finely chopped parsley. Leave the pan on the heat for a few minutes and finally add the cooked pasta to the pan. Season the pasta with salt and other spices such as basil. Mix everything well and serve the spaghetti with grated parmesan on top.",
+    "prepTime": 20,
+    "imageUrl": "assets/images/recipes/pasta-garlic-hot-pepper.jpg",
+    "ingredients": [
+      { "name": "Spaghetti", "quantity": "250", "unit": "g" },
+      { "name": "Hot Pepper", "quantity": "1", "unit": "pcs" },
+      { "name": "Garlic", "quantity": "5", "unit": "cloves" },
+      { "name": "Parmesan", "quantity": "70", "unit": "g" },
+      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
+      { "name": "Olive Oil", "quantity": "3", "unit": "tbsp" },
+      { "name": "Fresh Basil", "quantity": "handful", "unit": "" },
+      { "name": "Salt", "quantity": "to taste", "unit": "" },
+      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "name": "Baked Salmon with Asparagus",
+    "instructions": "Preheat the oven and grease a baking tray with olive oil. Place the salmon fillets and season with salt and pepper. Mix olive oil, garlic, herbs, and juice from half a lemon. Pour this sauce over the salmon fillets, ensuring it covers all surfaces. Wash the asparagus and cut off the woody stems. Arrange asparagus in the tray and drizzle with olive oil. Place asparagus around the edges with salmon in the center. Slice the remaining lemon thinly and cover each piece of salmon with a slice. Bake for 12-15 minutes or until the fish is opaque and flaky when tested with a fork. Garnish with fresh thyme or parsley and serve alongside the asparagus.",
+    "prepTime": 30,
+    "imageUrl": "assets/images/recipes/baked-salmon-asparagus.jpg",
+    "ingredients": [
+      { "name": "Salmon Fillets", "quantity": "500", "unit": "g" },
+      { "name": "Fresh Asparagus", "quantity": "300", "unit": "g" },
+      { "name": "Extra-Virgin Olive Oil", "quantity": "4", "unit": "tbsp" },
+      { "name": "Garlic", "quantity": "2", "unit": "cloves" },
+      { "name": "Lemon", "quantity": "1", "unit": "pcs" },
+      { "name": "Mixed Herbs", "quantity": "1", "unit": "tsp" },
+      { "name": "Fresh Thyme", "quantity": "handful", "unit": "" },
+      { "name": "Salt", "quantity": "to taste", "unit": "" },
+      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "name": "Baked Salmon with Vegetables",
+    "instructions": "Remove salmon from refrigerator and let it reach room temperature for about 15 minutes. Preheat the oven. In a small bowl, mix melted butter and lemon juice. Using a brush, apply the butter mixture over the salmon fillets in a baking dish. Sprinkle with chopped garlic, salt, and pepper. Bake for 12 to 15 minutes. Meanwhile, cut the vegetables according to their density so they cook evenly. Cauliflower can remain medium-sized florets, while broccoli should be separated into smaller florets. Place vegetables with cut side down in another baking tray and drizzle with olive oil. Do not overcrowd the tray. Bake vegetables for 30 minutes. When done, sprinkle with fresh parsley and dill for extra flavor. Serve the salmon alongside the roasted vegetables.",
+    "prepTime": 30,
+    "imageUrl": "assets/images/recipes/baked-salmon-vegetables.jpg",
+    "ingredients": [
+      { "name": "Salmon Fillets", "quantity": "500", "unit": "g" },
+      { "name": "Butter", "quantity": "30", "unit": "g" },
+      { "name": "Lemon Juice", "quantity": "1", "unit": "lemon" },
+      { "name": "Garlic", "quantity": "3", "unit": "cloves" },
+      { "name": "Broccoli", "quantity": "200", "unit": "g" },
+      { "name": "Cauliflower", "quantity": "200", "unit": "g" },
+      { "name": "Zucchini", "quantity": "150", "unit": "g" },
+      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
+      { "name": "Fresh Dill", "quantity": "1", "unit": "bunch" },
+      { "name": "Olive Oil", "quantity": "3", "unit": "tbsp" },
       { "name": "Salt", "quantity": "to taste", "unit": "" },
       { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
     ]

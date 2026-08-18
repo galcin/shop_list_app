@@ -120,22 +120,9 @@ class _RecipePickerBottomSheetState
                                 recipe.imageUrl!.isNotEmpty
                             ? ClipRRect(
                                 borderRadius: BorderRadius.circular(8),
-                                child: Image.network(
+                                child: _buildRecipeImage(
                                   recipe.imageUrl!,
-                                  width: 60,
-                                  height: 60,
-                                  fit: BoxFit.cover,
-                                  errorBuilder: (context, error, stackTrace) =>
-                                      Container(
-                                    width: 60,
-                                    height: 60,
-                                    decoration: BoxDecoration(
-                                      color: colors.surface,
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    child: const Icon(Icons.restaurant,
-                                        color: Colors.grey),
-                                  ),
+                                  colors,
                                 ),
                               )
                             : Container(
@@ -209,5 +196,41 @@ class _RecipePickerBottomSheetState
   String _getMealLabel(dynamic mealType) {
     final typeStr = mealType.toString().split('.').last;
     return typeStr[0].toUpperCase() + typeStr.substring(1);
+  }
+
+  Widget _buildRecipeImage(String imageUrl, ColorScheme colors) {
+    if (imageUrl.startsWith('assets/')) {
+      return Image.asset(
+        imageUrl,
+        width: 60,
+        height: 60,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) => Container(
+          width: 60,
+          height: 60,
+          decoration: BoxDecoration(
+            color: colors.surface,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: const Icon(Icons.restaurant, color: Colors.grey),
+        ),
+      );
+    } else {
+      return Image.network(
+        imageUrl,
+        width: 60,
+        height: 60,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) => Container(
+          width: 60,
+          height: 60,
+          decoration: BoxDecoration(
+            color: colors.surface,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: const Icon(Icons.restaurant, color: Colors.grey),
+        ),
+      );
+    }
   }
 }

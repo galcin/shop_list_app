@@ -244,9 +244,7 @@ class _RecipeCard extends StatelessWidget {
           children: [
             // Background image or fallback colour.
             recipe.imageUrl != null && recipe.imageUrl!.isNotEmpty
-                ? Image.network(recipe.imageUrl!,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => _fallbackBg(context))
+                ? _buildImage(recipe.imageUrl!, context)
                 : _fallbackBg(context),
             // Gradient overlay.
             const DecoratedBox(
@@ -317,6 +315,31 @@ class _RecipeCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _buildImage(String imageUrl, BuildContext context) {
+    // Debug: Print the image URL to console
+    debugPrint('Loading image from: $imageUrl');
+
+    if (imageUrl.startsWith('assets/')) {
+      return Image.asset(
+        imageUrl,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) {
+          debugPrint('Error loading asset image: $imageUrl - $error');
+          return _fallbackBg(context);
+        },
+      );
+    } else {
+      return Image.network(
+        imageUrl,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) {
+          debugPrint('Error loading network image: $imageUrl - $error');
+          return _fallbackBg(context);
+        },
+      );
+    }
   }
 
   Widget _fallbackBg(BuildContext context) {

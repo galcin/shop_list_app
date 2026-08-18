@@ -146,6 +146,10 @@ class _PantryPageState extends ConsumerState<PantryPage> {
                   childCount: groupedItems.length,
                 ),
               ),
+              // Bottom padding to prevent FAB overlap
+              const SliverPadding(
+                padding: EdgeInsets.only(bottom: 80),
+              ),
             ],
           );
         },

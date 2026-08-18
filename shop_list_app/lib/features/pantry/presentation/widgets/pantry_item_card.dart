@@ -37,11 +37,12 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
 
   Widget _circleIcon(ProductCategory? cat, Color accent) {
     if (cat?.imageName != null) {
-      return ClipOval(
+      return Container(
+        color: accent.withOpacity(0.08),
         child: Image.asset(
           'assets/images/${cat!.imageName}',
-          width: 52,
-          height: 52,
+          width: 84,
+          height: 84,
           fit: BoxFit.cover,
           errorBuilder: (_, __, ___) => _emojiOrDefault(cat.iconName, accent),
         ),
@@ -51,10 +52,14 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
   }
 
   Widget _emojiOrDefault(String? emoji, Color accent) {
-    if (emoji != null && emoji.isNotEmpty) {
-      return Center(child: Text(emoji, style: const TextStyle(fontSize: 30)));
-    }
-    return Icon(Icons.kitchen_outlined, color: accent, size: 30);
+    return Container(
+      color: accent.withOpacity(0.08),
+      child: Center(
+        child: emoji != null && emoji.isNotEmpty
+            ? Text(emoji, style: const TextStyle(fontSize: 40))
+            : Icon(Icons.kitchen_outlined, color: accent, size: 40),
+      ),
+    );
   }
 
   String _formatQty(double qty) =>
@@ -132,11 +137,14 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
   Widget _buildAvatarChild(
       String? productPhoto, ProductCategory? cat, Color accent) {
     if (productPhoto != null && productPhoto.isNotEmpty) {
-      return ProductImageWidget(
-        photo: productPhoto,
-        size: 52,
-        borderRadius: 26,
-        backgroundColor: Colors.transparent,
+      return Container(
+        color: accent.withOpacity(0.08),
+        child: ProductImageWidget(
+          photo: productPhoto,
+          size: 84,
+          borderRadius: 42,
+          backgroundColor: Colors.transparent,
+        ),
       );
     }
     return _circleIcon(cat, accent);
@@ -180,10 +188,11 @@ class _PantryItemCardState extends ConsumerState<PantryItemCard> {
       confirmDismiss: (_) => _confirmDelete(),
       onDismissed: (_) => _deleteItem(),
       child: AccentCircleListCard(
+        height: 84,
         accentColor: accent,
         circleChild: CircleAccentAvatar(
           accentColor: accent,
-          size: 96,
+          size: 84,
           child: _buildAvatarChild(productPhoto, cat, accent),
         ),
         child: Opacity(

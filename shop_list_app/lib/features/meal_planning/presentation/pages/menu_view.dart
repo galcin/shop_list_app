@@ -9,6 +9,8 @@ import 'package:shop_list_app/features/meal_planning/domain/entities/meal_slot.d
 import 'package:shop_list_app/features/meal_planning/presentation/providers/meal_plan_providers.dart';
 import 'package:shop_list_app/features/meal_planning/presentation/widgets/recipe_picker_bottom_sheet.dart';
 import 'package:shop_list_app/features/meal_planning/presentation/widgets/recipes_by_pantry_modal.dart';
+import 'package:shop_list_app/shared/widgets/display/circle_accent_avatar.dart';
+import 'package:shop_list_app/shared/widgets/list/accent_circle_list_card.dart';
 
 class MenuView extends ConsumerWidget {
   const MenuView({super.key});
@@ -130,20 +132,6 @@ class MenuView extends ConsumerWidget {
           ),
         ),
       ),
-      floatingActionButton: mealPlanAsync.when(
-        data: (plan) {
-          if (plan == null || plan.assignedRecipeCount == 0) return null;
-          return FloatingActionButton(
-            heroTag: 'meal-plan-fab',
-            backgroundColor: const Color(0xFFFF6B35),
-            foregroundColor: Colors.white,
-            onPressed: () => _showGenerateListDialog(context, ref, plan),
-            child: const Icon(Icons.shopping_cart),
-          );
-        },
-        loading: () => null,
-        error: (_, __) => null,
-      ),
     );
   }
 
@@ -163,22 +151,59 @@ class MenuView extends ConsumerWidget {
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-          child: SizedBox(
-            width: double.infinity,
-            child: ElevatedButton.icon(
-              onPressed: () => showRecipesByPantryModal(context),
-              icon: const Icon(Icons.search),
-              label: const Text('What can I cook?'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFFF6B35),
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 14),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+          child: plan.assignedRecipeCount > 0
+              ? Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton.icon(
+                        onPressed: () => showRecipesByPantryModal(context),
+                        icon: const Icon(Icons.search, size: 18),
+                        label: const Text('What can I cook?'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFFF6B35),
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: ElevatedButton.icon(
+                        onPressed: () =>
+                            _showGenerateListDialog(context, ref, plan),
+                        icon: const Icon(Icons.shopping_cart, size: 18),
+                        label: const Text('Generate List'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF53B175),
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              : SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton.icon(
+                    onPressed: () => showRecipesByPantryModal(context),
+                    icon: const Icon(Icons.search),
+                    label: const Text('What can I cook?'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFFF6B35),
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          ),
         ),
       ],
     );
@@ -226,62 +251,156 @@ class MenuView extends ConsumerWidget {
     final isEmpty = slot.isEmpty;
     final icon = _getMealIcon(mealType);
     final label = _getMealLabel(mealType);
+    final accentColor = _getMealAccentColor(mealType);
 
-    return GestureDetector(
-      onTap: () {
-        if (isEmpty) {
-          // TODO: Open recipe picker
-          _showRecipePicker(context, ref, slot);
-        } else {
-          // Show context menu
-          _showSlotContextMenu(context, ref, slot);
-        }
-      },
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 14),
-        constraints: const BoxConstraints(minHeight: 86),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-        decoration: BoxDecoration(
-          color: isEmpty ? Colors.transparent : const Color(0xFF1E1E1E),
-          border: Border.all(
-            color: isEmpty ? const Color(0xFFFF6B35) : Colors.transparent,
-            width: 1,
-            style: isEmpty ? BorderStyle.solid : BorderStyle.none,
-          ),
-          borderRadius: BorderRadius.circular(14),
-        ),
-        child: Row(
-          children: [
-            Text(icon, style: const TextStyle(fontSize: 28)),
-            const SizedBox(width: 14),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    label,
-                    style: const TextStyle(
-                      color: Color(0xFF9CA3AF),
-                      fontSize: 13,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: GestureDetector(
+        onTap: () {
+          if (isEmpty) {
+            _showRecipePicker(context, ref, slot);
+          } else {
+            _showSlotContextMenu(context, ref, slot);
+          }
+        },
+        child: isEmpty
+            ? _buildEmptySlot(icon, label, accentColor)
+            : AccentCircleListCard(
+                height: 84,
+                accentColor: accentColor,
+                circleChild: CircleAccentAvatar(
+                  accentColor: accentColor,
+                  size: 84,
+                  child: Container(
+                    color: accentColor.withOpacity(0.08),
+                    child: Center(
+                      child: Text(icon, style: const TextStyle(fontSize: 40)),
                     ),
                   ),
-                  const SizedBox(height: 6),
-                  Text(
-                    isEmpty ? '+ Tap to add' : slot.displayName ?? '',
-                    style: TextStyle(
-                      color:
-                          isEmpty ? const Color(0xFFFF6B35) : colors.onSurface,
-                      fontSize: 16,
-                      fontWeight: isEmpty ? FontWeight.w400 : FontWeight.w600,
-                    ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      top: 10, bottom: 10, left: 50, right: 14),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        slot.displayName ?? '',
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          color: colors.onSurface,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: accentColor,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                              const SizedBox(width: 6),
+                              Text(
+                                label,
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 12,
+                                  color: colors.onSurfaceVariant,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.chevron_right,
+                            color: colors.onSurfaceVariant,
+                            size: 20,
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
+      ),
+    );
+  }
+
+  Widget _buildEmptySlot(String icon, String label, Color accentColor) {
+    return AccentCircleListCard(
+      height: 84,
+      accentColor: accentColor,
+      circleChild: CircleAccentAvatar(
+        accentColor: accentColor,
+        size: 84,
+        child: Container(
+          color: accentColor.withOpacity(0.08),
+          child: Center(
+            child: Text(icon, style: const TextStyle(fontSize: 40)),
+          ),
+        ),
+      ),
+      child: Padding(
+        padding:
+            const EdgeInsets.only(top: 10, bottom: 10, left: 50, right: 14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              '+ Tap to add',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w600,
+                fontSize: 16,
+                color: accentColor,
+              ),
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 10,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    color: accentColor,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                const SizedBox(width: 6),
+                Text(
+                  label,
+                  style: const TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 12,
+                    color: Color(0xFF9CA3AF),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
       ),
     );
+  }
+
+  Color _getMealAccentColor(MealType mealType) {
+    switch (mealType) {
+      case MealType.breakfast:
+        return const Color(0xFFFFB84D); // Warm orange for morning
+      case MealType.lunch:
+        return const Color(0xFF53B175); // Green for lunch
+      case MealType.dinner:
+        return const Color(0xFF9C27B0); // Purple for dinner
+    }
   }
 
   String _getMealIcon(MealType mealType) {

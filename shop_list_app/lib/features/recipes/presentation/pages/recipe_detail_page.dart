@@ -202,9 +202,7 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
           fit: StackFit.expand,
           children: [
             recipe.imageUrl != null && recipe.imageUrl!.isNotEmpty
-                ? Image.network(recipe.imageUrl!,
-                    fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => _heroBg(context))
+                ? _buildHeroImage(recipe.imageUrl!, context)
                 : _heroBg(context),
             const DecoratedBox(
               decoration: BoxDecoration(
@@ -220,6 +218,22 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
         ),
       ),
     );
+  }
+
+  Widget _buildHeroImage(String imageUrl, BuildContext context) {
+    if (imageUrl.startsWith('assets/')) {
+      return Image.asset(
+        imageUrl,
+        fit: BoxFit.cover,
+        errorBuilder: (_, __, ___) => _heroBg(context),
+      );
+    } else {
+      return Image.network(
+        imageUrl,
+        fit: BoxFit.cover,
+        errorBuilder: (_, __, ___) => _heroBg(context),
+      );
+    }
   }
 
   Widget _heroBg(BuildContext context) => Container(
