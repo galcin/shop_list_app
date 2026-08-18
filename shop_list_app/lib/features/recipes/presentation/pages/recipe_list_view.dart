@@ -97,7 +97,7 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
                     crossAxisCount: 2,
                     crossAxisSpacing: 12,
                     mainAxisSpacing: 12,
-                    childAspectRatio: 3 / 4,
+                    childAspectRatio: 1.05,
                   ),
                   itemCount: visible.length,
                   itemBuilder: (ctx, i) => _RecipeCard(
@@ -325,6 +325,8 @@ class _RecipeCard extends StatelessWidget {
       return Image.asset(
         imageUrl,
         fit: BoxFit.cover,
+        cacheHeight: 400, // Limit decoded image height to save memory
+        cacheWidth: 400, // Limit decoded image width to save memory
         errorBuilder: (context, error, stackTrace) {
           debugPrint('Error loading asset image: $imageUrl - $error');
           return _fallbackBg(context);

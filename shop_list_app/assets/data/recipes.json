@@ -500,5 +500,98 @@
       { "name": "Salt", "quantity": "to taste", "unit": "" },
       { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
     ]
+  },
+  {
+    "name": "Classic Beef Soup",
+    "instructions": "Wash and clean the vegetables, then cut the carrots into rounds, and dice the celery, bell pepper, and potatoes. Finely chop the onion. Put approximately 4 liters of water in a pot and add the diced beef. Let the meat boil until foam forms on top (approximately 20 minutes), which you will remove with a skimmer. Let the meat boil for another 20-30 minutes, removing foam occasionally. Once no more foam forms, add the onion, carrots, and celery and let them boil for another 20-30 minutes. Then add the bell pepper, peas, and potatoes and let them boil for 15 minutes. Once cooked, add the tomato juice, a little salt and olive oil, and let the soup boil for another 15 minutes. When the soup is ready, add the chopped parsley and serve.",
+    "prepTime": 90,
+    "imageUrl": "assets/images/recipes/classic-beef-soup.jpg",
+    "ingredients": [
+      { "name": "Beef", "quantity": "650", "unit": "g" },
+      { "name": "Tomato Juice", "quantity": "400", "unit": "ml" },
+      { "name": "Carrots", "quantity": "2", "unit": "pcs" },
+      { "name": "Onion", "quantity": "2", "unit": "pcs" },
+      { "name": "Potatoes", "quantity": "3", "unit": "pcs" },
+      { "name": "Bell Pepper", "quantity": "1", "unit": "pcs" },
+      { "name": "Celery", "quantity": "1", "unit": "pcs" },
+      { "name": "Peas", "quantity": "100", "unit": "g" },
+      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
+      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
+      { "name": "Salt", "quantity": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "name": "Sour Beef Soup",
+    "instructions": "Start by putting the beef on the bone to boil in cold water with salt. Boil the meat over low heat while removing the foam that forms on the surface. Optionally, to cook the beef faster, you can use a pressure cooker. Meanwhile, prepare the root vegetables. Clean, wash and finely chop the onion, and cut the carrots, celery, and parsley root into cubes. Once no more foam forms, pierce the meat with a fork to see if it's cooked more than halfway. You should encounter some resistance. Then add the root vegetables. Let the soup boil over low heat while you prepare the remaining vegetables. Cut the pepper into cubes, peel and cube the potatoes. Once the root vegetables start to soften, add the pepper, peas, and finely chopped white cabbage. Meanwhile, check if the meat is cooked. When the fork goes in easily, remove it from the pot, let it cool slightly, then cut into cubes. Put the meat back in the pot. When the vegetables are almost cooked, add the potatoes. Once they're cooked, add the tomatoes that you've previously scalded, peeled, and cubed. Boil the bors separately and add it to the soup. Let the contents come to two boils and remove the pot from heat. Add salt and pepper to taste, as well as finely chopped lovage. Serve with a little sour cream.",
+    "prepTime": 120,
+    "imageUrl": "assets/images/recipes/sour-beef-soup.jpg",
+    "ingredients": [
+      { "name": "Beef with Bone", "quantity": "1000", "unit": "g" },
+      { "name": "Carrots", "quantity": "2", "unit": "pcs" },
+      { "name": "Celery", "quantity": "1", "unit": "pcs" },
+      { "name": "Onion", "quantity": "2", "unit": "pcs" },
+      { "name": "Parsley Root", "quantity": "1", "unit": "pcs" },
+      { "name": "White Cabbage", "quantity": "200", "unit": "g" },
+      { "name": "Frozen Peas", "quantity": "200", "unit": "g" },
+      { "name": "Bell Peppers", "quantity": "2", "unit": "pcs" },
+      { "name": "Potatoes", "quantity": "2", "unit": "pcs" },
+      { "name": "Tomatoes", "quantity": "2", "unit": "pcs" },
+      { "name": "Fresh Lovage", "quantity": "1", "unit": "bunch" },
+      { "name": "Bors", "quantity": "to taste", "unit": "" },
+      { "name": "Salt", "quantity": "to taste", "unit": "" },
+      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "name": "Transylvanian Veal Soup with Sour Cream",
+    "instructions": "Start by putting the veal to boil together with the veal bones in a pot with cold water, salt, and a few peppercorns. Let the meat boil for approximately 45 minutes, during which you will skim constantly until the broth remains clear. Meanwhile, wash and clean the vegetables. Cut the potatoes into cubes, carrots into rounds, parsnip, parsley root, and celery into cubes, and finely chop the onion. Add two tablespoons of oil to a pan and briefly sauté the carrots. When the meat is almost cooked, remove it from the pot and cut into cubes. Strain the soup separately into another pot, add the veal and prepared vegetables. Let everything boil and add celery and parsley leaves. You can add water if the broth has reduced. When the veal soup boils, add the thyme sprig, bay leaf, pepper, and a little ground cumin. Then add two level tablespoons of sweet paprika and tomato juice. Let everything boil until the vegetables are soft. Season with more salt if needed. When the veal soup is cooked, remove the celery leaves and thyme sprig. Prepare the egg yolk and sour cream mixture to finish the soup. Mix the sour cream with the egg yolks and 2 tablespoons of soup until the mixture thins, then add it to the soup and mix well. Optionally, add a little lemon juice to taste.",
+    "prepTime": 75,
+    "imageUrl": "assets/images/recipes/transylvanian-veal-soup.jpg",
+    "ingredients": [
+      { "name": "Veal", "quantity": "500", "unit": "g" },
+      { "name": "Tomato Juice", "quantity": "200", "unit": "ml" },
+      { "name": "Carrots", "quantity": "3", "unit": "pcs" },
+      { "name": "Parsnip", "quantity": "1", "unit": "pcs" },
+      { "name": "Parsley Root", "quantity": "1", "unit": "pcs" },
+      { "name": "Celery Root", "quantity": "0.5", "unit": "pcs" },
+      { "name": "Onion", "quantity": "1", "unit": "pcs" },
+      { "name": "Potatoes", "quantity": "3", "unit": "pcs" },
+      { "name": "Celery Leaves", "quantity": "handful", "unit": "" },
+      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
+      { "name": "Thyme", "quantity": "1", "unit": "sprig" },
+      { "name": "Bay Leaf", "quantity": "1", "unit": "pcs" },
+      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
+      { "name": "Sweet Paprika", "quantity": "2", "unit": "tbsp" },
+      { "name": "Cumin", "quantity": "0.5", "unit": "tsp" },
+      { "name": "Veal Bones", "quantity": "200", "unit": "g" },
+      { "name": "Egg Yolks", "quantity": "3", "unit": "pcs" },
+      { "name": "Sour Cream", "quantity": "450", "unit": "g" },
+      { "name": "Lemon Juice", "quantity": "to taste", "unit": "" },
+      { "name": "Salt", "quantity": "to taste", "unit": "" },
+      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+    ]
+  },
+  {
+    "name": "Country-Style Beef Soup",
+    "instructions": "Remove the meat from the bone and wash it well, then cut it into cubes. Put the cubed meat and bones to boil in a pot with water and salt for approximately one hour. Skim constantly until the broth remains clear. The meat should be soft when pierced with a fork. Meanwhile, prepare the vegetables and remove the bones from the pot. Wash, clean, and cut the carrots, onion, potatoes, bell pepper, parsnip root, and celery. Finely chop the white cabbage. Add the cut vegetables to the pot where the meat is boiling (without potatoes), along with the peas and green beans. Let the soup boil over low heat. When the vegetables and meat are tender, add the potatoes and let them boil for approximately 20 minutes. Then add the tomatoes in broth and bors to taste, depending on how sour you want the soup to be. Let it come to a few boils and add salt to taste. When ready, remove the pot from heat and add finely chopped lovage and parsley.",
+    "prepTime": 90,
+    "imageUrl": "assets/images/recipes/country-beef-soup.jpg",
+    "ingredients": [
+      { "name": "Beef with Bone", "quantity": "1000", "unit": "g" },
+      { "name": "Carrots", "quantity": "2", "unit": "pcs" },
+      { "name": "Onion", "quantity": "1", "unit": "pcs" },
+      { "name": "Potatoes", "quantity": "2", "unit": "pcs" },
+      { "name": "Bell Pepper", "quantity": "1", "unit": "pcs" },
+      { "name": "Parsnip Root", "quantity": "1", "unit": "pcs" },
+      { "name": "Celery", "quantity": "200", "unit": "g" },
+      { "name": "Peas", "quantity": "100", "unit": "g" },
+      { "name": "Green Beans", "quantity": "150", "unit": "g" },
+      { "name": "White Cabbage", "quantity": "200", "unit": "g" },
+      { "name": "Tomatoes in Broth", "quantity": "400", "unit": "g" },
+      { "name": "Fresh Lovage", "quantity": "1", "unit": "bunch" },
+      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
+      { "name": "Bors", "quantity": "to taste", "unit": "" },
+      { "name": "Salt", "quantity": "to taste", "unit": "" }
+    ]
   }
 ]

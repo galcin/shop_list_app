@@ -205,6 +205,8 @@ class _RecipePickerBottomSheetState
         width: 60,
         height: 60,
         fit: BoxFit.cover,
+        cacheHeight: 120, // 2x for retina displays
+        cacheWidth: 120, // 2x for retina displays
         errorBuilder: (context, error, stackTrace) => Container(
           width: 60,
           height: 60,

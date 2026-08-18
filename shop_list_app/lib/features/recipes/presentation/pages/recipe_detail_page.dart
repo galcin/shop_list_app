@@ -225,6 +225,8 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
       return Image.asset(
         imageUrl,
         fit: BoxFit.cover,
+        cacheHeight: 800, // Limit decoded image height
+        cacheWidth: 800, // Limit decoded image width
         errorBuilder: (_, __, ___) => _heroBg(context),
       );
     } else {
