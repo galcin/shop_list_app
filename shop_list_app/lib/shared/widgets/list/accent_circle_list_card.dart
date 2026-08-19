@@ -46,7 +46,10 @@ class AccentCircleListCard extends StatelessWidget {
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
 
-  /// Height of both the card and the circle.
+  /// Minimum height of the card body and the (fixed) diameter of the circle.
+  /// If [child]'s content needs more vertical space than this (e.g. a longer
+  /// wrapped description or a larger accessibility text scale), the card body
+  /// grows taller automatically instead of overflowing.
   final double height;
 
   /// Corner radius applied to the top-right / bottom-right of the card.
@@ -66,7 +69,7 @@ class AccentCircleListCard extends StatelessWidget {
           onLongPress: onLongPress,
           child: Container(
             width: double.infinity,
-            height: height,
+            constraints: BoxConstraints(minHeight: height),
             margin: EdgeInsets.only(left: circleLeftOffset, bottom: 10),
             decoration: BoxDecoration(
               color: theme.colorScheme.surface,

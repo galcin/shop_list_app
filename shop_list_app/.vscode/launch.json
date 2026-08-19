@@ -8,7 +8,6 @@
             "name": "shop_list_app (Android)",
             "request": "launch",
             "type": "dart",
-            "deviceId": "emulator-5554",
             "flutterMode": "debug"
         }
     ]

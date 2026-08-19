@@ -20,6 +20,9 @@ class RecipeSeeder {
           (r['ingredients'] as List<dynamic>).cast<Map<String, dynamic>>();
       return RecipesCompanion.insert(
         name: Value(r['name'] as String),
+        description: r['description'] != null
+            ? Value(r['description'] as String)
+            : const Value.absent(),
         instructions: Value(r['instructions'] as String? ?? ''),
         prepTime: r['prepTime'] != null
             ? Value(r['prepTime'] as int)
@@ -71,6 +74,18 @@ class RecipeSeeder {
                   r.name.equals(recipe.name.value!) & r.imageUrl.isNull()))
             .write(RecipesCompanion(
           imageUrl: recipe.imageUrl,
+        ));
+      }
+
+      // Backfill description for existing recipes that have none.
+      if (existingNames.contains(recipe.name.value) &&
+          recipe.description.present &&
+          recipe.description.value != null) {
+        await (database.update(database.recipes)
+              ..where((r) =>
+                  r.name.equals(recipe.name.value!) & r.description.isNull()))
+            .write(RecipesCompanion(
+          description: recipe.description,
         ));
       }
     }

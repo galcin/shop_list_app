@@ -5,9 +5,11 @@ import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
 import 'package:shop_list_app/shared/extensions/context_extensions.dart';
+import 'package:shop_list_app/shared/widgets/display/circle_accent_avatar.dart';
 import 'package:shop_list_app/shared/widgets/feedback/empty_state_widget.dart';
 import 'package:shop_list_app/shared/widgets/feedback/error_state_widget.dart';
 import 'package:shop_list_app/shared/widgets/feedback/loading_state_widget.dart';
+import 'package:shop_list_app/shared/widgets/list/accent_circle_list_card.dart';
 
 enum _RecipeFilter { all, favorites, recent, quickPrep }
 
@@ -91,13 +93,8 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
                         : 'Try different keywords or clear the filter',
                   );
                 }
-                return GridView.builder(
+                return ListView.builder(
                   padding: const EdgeInsets.fromLTRB(16, 8, 16, 96),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1,
-                    crossAxisSpacing: 12,
-                    mainAxisSpacing: 20,
-                  ),
                   itemCount: visible.length,
                   itemBuilder: (ctx, i) => _RecipeCard(
                     recipe: visible[i],
@@ -224,7 +221,7 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
   }
 }
 
-// ── Recipe Grid Card ──────────────────────────────────────────────────────────
+// ── Recipe List Card (circle avatar + rectangle body) ─────────────────────────
 
 class _RecipeCard extends StatelessWidget {
   const _RecipeCard({required this.recipe, required this.onTap});
@@ -234,81 +231,82 @@ class _RecipeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    final accentColor = context.colorScheme.primary;
+
+    return AccentCircleListCard(
+      accentColor: accentColor,
       onTap: onTap,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16),
-        child: Stack(
-          fit: StackFit.expand,
+      height: 112,
+      circleChild: CircleAccentAvatar(
+        accentColor: accentColor,
+        size: 112,
+        child: recipe.imageUrl != null && recipe.imageUrl!.isNotEmpty
+            ? _buildImage(recipe.imageUrl!, context)
+            : _fallbackBg(context),
+      ),
+      child: Padding(
+        padding:
+            const EdgeInsets.only(top: 10, bottom: 10, left: 58, right: 14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Background image or fallback colour.
-            recipe.imageUrl != null && recipe.imageUrl!.isNotEmpty
-                ? _buildImage(recipe.imageUrl!, context)
-                : _fallbackBg(context),
-            // Gradient overlay.
-            const DecoratedBox(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [Colors.transparent, Color(0xCC000000)],
-                  stops: [0.5, 1.0],
-                ),
+            // Recipe name — slightly bigger than the description.
+            Text(
+              recipe.name ?? 'Untitled',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w700,
+                fontSize: 16,
+                color: context.colorScheme.onSurface,
               ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
-            // Text overlay at the bottom.
-            Positioned(
-              left: 10,
-              right: 10,
-              bottom: 10,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
+            if ((recipe.description ?? '').isNotEmpty) ...[
+              const SizedBox(height: 3),
+              Text(
+                recipe.description!,
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 13,
+                  color: context.colorScheme.onSurfaceVariant,
+                ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+            const SizedBox(height: 6),
+            Row(
+              children: [
+                if (recipe.rating != null) ...[
+                  const Icon(Icons.star, color: Colors.amber, size: 13),
+                  const SizedBox(width: 3),
                   Text(
-                    recipe.name ?? 'Untitled',
-                    style: const TextStyle(
-                      color: Colors.white,
+                    recipe.rating!.toStringAsFixed(1),
+                    style: TextStyle(
                       fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 13,
+                      fontSize: 11,
+                      color: context.colorScheme.onSurfaceVariant,
                     ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
                   ),
-                  const SizedBox(height: 4),
-                  Row(
-                    children: [
-                      if (recipe.rating != null) ...[
-                        const Icon(Icons.star, color: Colors.amber, size: 12),
-                        const SizedBox(width: 2),
-                        Text(
-                          recipe.rating!.toStringAsFixed(1),
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Poppins',
-                            fontSize: 11,
-                          ),
-                        ),
-                        const SizedBox(width: 6),
-                      ],
-                      if (recipe.totalTime > 0) ...[
-                        const Icon(Icons.access_time,
-                            color: Colors.white70, size: 12),
-                        const SizedBox(width: 2),
-                        Text(
-                          '${recipe.totalTime}m',
-                          style: const TextStyle(
-                            color: Colors.white70,
-                            fontFamily: 'Poppins',
-                            fontSize: 11,
-                          ),
-                        ),
-                      ],
-                    ],
+                  const SizedBox(width: 10),
+                ],
+                if (recipe.totalTime > 0) ...[
+                  Icon(Icons.access_time,
+                      size: 13, color: context.colorScheme.onSurfaceVariant),
+                  const SizedBox(width: 3),
+                  Text(
+                    '${recipe.totalTime}m',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 11,
+                      color: context.colorScheme.onSurfaceVariant,
+                    ),
                   ),
                 ],
-              ),
+              ],
             ),
           ],
         ),
@@ -348,7 +346,7 @@ class _RecipeCard extends StatelessWidget {
       color: context.colorScheme.surfaceContainerHighest,
       child: Center(
         child: Icon(Icons.restaurant_menu,
-            color: context.colorScheme.onSurfaceVariant, size: 40),
+            color: context.colorScheme.onSurfaceVariant, size: 36),
       ),
     );
   }
