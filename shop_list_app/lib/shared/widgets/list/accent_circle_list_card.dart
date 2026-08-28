@@ -101,7 +101,13 @@ class AccentCircleListCard extends StatelessWidget {
         Positioned(
           top: 0,
           left: 0,
-          child: circleChild,
+          child: onTap != null
+              ? GestureDetector(
+                  onTap: onTap,
+                  onLongPress: onLongPress,
+                  child: circleChild,
+                )
+              : circleChild,
         ),
       ],
     );

@@ -867,6 +867,12 @@ class $RecipesTable extends Recipes with TableInfo<$RecipesTable, Recipe> {
   late final GeneratedColumn<String> description = GeneratedColumn<String>(
       'description', aliasedName, true,
       type: DriftSqlType.string, requiredDuringInsert: false);
+  static const VerificationMeta _categoryMeta =
+      const VerificationMeta('category');
+  @override
+  late final GeneratedColumn<String> category = GeneratedColumn<String>(
+      'category', aliasedName, true,
+      type: DriftSqlType.string, requiredDuringInsert: false);
   static const VerificationMeta _instructionsMeta =
       const VerificationMeta('instructions');
   @override
@@ -928,6 +934,7 @@ class $RecipesTable extends Recipes with TableInfo<$RecipesTable, Recipe> {
         id,
         name,
         description,
+        category,
         instructions,
         prepTime,
         cookTime,
@@ -960,6 +967,10 @@ class $RecipesTable extends Recipes with TableInfo<$RecipesTable, Recipe> {
           _descriptionMeta,
           description.isAcceptableOrUnknown(
               data['description']!, _descriptionMeta));
+    }
+    if (data.containsKey('category')) {
+      context.handle(_categoryMeta,
+          category.isAcceptableOrUnknown(data['category']!, _categoryMeta));
     }
     if (data.containsKey('instructions')) {
       context.handle(
@@ -1016,6 +1027,8 @@ class $RecipesTable extends Recipes with TableInfo<$RecipesTable, Recipe> {
           .read(DriftSqlType.string, data['${effectivePrefix}name']),
       description: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}description']),
+      category: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}category']),
       instructions: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}instructions']),
       prepTime: attachedDatabase.typeMapping
@@ -1047,6 +1060,7 @@ class Recipe extends DataClass implements Insertable<Recipe> {
   final int id;
   final String? name;
   final String? description;
+  final String? category;
   final String? instructions;
   final int? prepTime;
   final int? cookTime;
@@ -1064,6 +1078,7 @@ class Recipe extends DataClass implements Insertable<Recipe> {
       {required this.id,
       this.name,
       this.description,
+      this.category,
       this.instructions,
       this.prepTime,
       this.cookTime,
@@ -1082,6 +1097,9 @@ class Recipe extends DataClass implements Insertable<Recipe> {
     }
     if (!nullToAbsent || description != null) {
       map['description'] = Variable<String>(description);
+    }
+    if (!nullToAbsent || category != null) {
+      map['category'] = Variable<String>(category);
     }
     if (!nullToAbsent || instructions != null) {
       map['instructions'] = Variable<String>(instructions);
@@ -1120,6 +1138,9 @@ class Recipe extends DataClass implements Insertable<Recipe> {
       description: description == null && nullToAbsent
           ? const Value.absent()
           : Value(description),
+      category: category == null && nullToAbsent
+          ? const Value.absent()
+          : Value(category),
       instructions: instructions == null && nullToAbsent
           ? const Value.absent()
           : Value(instructions),
@@ -1156,6 +1177,7 @@ class Recipe extends DataClass implements Insertable<Recipe> {
       id: serializer.fromJson<int>(json['id']),
       name: serializer.fromJson<String?>(json['name']),
       description: serializer.fromJson<String?>(json['description']),
+      category: serializer.fromJson<String?>(json['category']),
       instructions: serializer.fromJson<String?>(json['instructions']),
       prepTime: serializer.fromJson<int?>(json['prepTime']),
       cookTime: serializer.fromJson<int?>(json['cookTime']),
@@ -1174,6 +1196,7 @@ class Recipe extends DataClass implements Insertable<Recipe> {
       'id': serializer.toJson<int>(id),
       'name': serializer.toJson<String?>(name),
       'description': serializer.toJson<String?>(description),
+      'category': serializer.toJson<String?>(category),
       'instructions': serializer.toJson<String?>(instructions),
       'prepTime': serializer.toJson<int?>(prepTime),
       'cookTime': serializer.toJson<int?>(cookTime),
@@ -1190,6 +1213,7 @@ class Recipe extends DataClass implements Insertable<Recipe> {
           {int? id,
           Value<String?> name = const Value.absent(),
           Value<String?> description = const Value.absent(),
+          Value<String?> category = const Value.absent(),
           Value<String?> instructions = const Value.absent(),
           Value<int?> prepTime = const Value.absent(),
           Value<int?> cookTime = const Value.absent(),
@@ -1203,6 +1227,7 @@ class Recipe extends DataClass implements Insertable<Recipe> {
         id: id ?? this.id,
         name: name.present ? name.value : this.name,
         description: description.present ? description.value : this.description,
+        category: category.present ? category.value : this.category,
         instructions:
             instructions.present ? instructions.value : this.instructions,
         prepTime: prepTime.present ? prepTime.value : this.prepTime,
@@ -1222,6 +1247,7 @@ class Recipe extends DataClass implements Insertable<Recipe> {
       name: data.name.present ? data.name.value : this.name,
       description:
           data.description.present ? data.description.value : this.description,
+      category: data.category.present ? data.category.value : this.category,
       instructions: data.instructions.present
           ? data.instructions.value
           : this.instructions,
@@ -1244,6 +1270,7 @@ class Recipe extends DataClass implements Insertable<Recipe> {
           ..write('id: $id, ')
           ..write('name: $name, ')
           ..write('description: $description, ')
+          ..write('category: $category, ')
           ..write('instructions: $instructions, ')
           ..write('prepTime: $prepTime, ')
           ..write('cookTime: $cookTime, ')
@@ -1262,6 +1289,7 @@ class Recipe extends DataClass implements Insertable<Recipe> {
       id,
       name,
       description,
+      category,
       instructions,
       prepTime,
       cookTime,
@@ -1278,6 +1306,7 @@ class Recipe extends DataClass implements Insertable<Recipe> {
           other.id == this.id &&
           other.name == this.name &&
           other.description == this.description &&
+          other.category == this.category &&
           other.instructions == this.instructions &&
           other.prepTime == this.prepTime &&
           other.cookTime == this.cookTime &&
@@ -1293,6 +1322,7 @@ class RecipesCompanion extends UpdateCompanion<Recipe> {
   final Value<int> id;
   final Value<String?> name;
   final Value<String?> description;
+  final Value<String?> category;
   final Value<String?> instructions;
   final Value<int?> prepTime;
   final Value<int?> cookTime;
@@ -1306,6 +1336,7 @@ class RecipesCompanion extends UpdateCompanion<Recipe> {
     this.id = const Value.absent(),
     this.name = const Value.absent(),
     this.description = const Value.absent(),
+    this.category = const Value.absent(),
     this.instructions = const Value.absent(),
     this.prepTime = const Value.absent(),
     this.cookTime = const Value.absent(),
@@ -1320,6 +1351,7 @@ class RecipesCompanion extends UpdateCompanion<Recipe> {
     this.id = const Value.absent(),
     this.name = const Value.absent(),
     this.description = const Value.absent(),
+    this.category = const Value.absent(),
     this.instructions = const Value.absent(),
     this.prepTime = const Value.absent(),
     this.cookTime = const Value.absent(),
@@ -1334,6 +1366,7 @@ class RecipesCompanion extends UpdateCompanion<Recipe> {
     Expression<int>? id,
     Expression<String>? name,
     Expression<String>? description,
+    Expression<String>? category,
     Expression<String>? instructions,
     Expression<int>? prepTime,
     Expression<int>? cookTime,
@@ -1348,6 +1381,7 @@ class RecipesCompanion extends UpdateCompanion<Recipe> {
       if (id != null) 'id': id,
       if (name != null) 'name': name,
       if (description != null) 'description': description,
+      if (category != null) 'category': category,
       if (instructions != null) 'instructions': instructions,
       if (prepTime != null) 'prep_time': prepTime,
       if (cookTime != null) 'cook_time': cookTime,
@@ -1364,6 +1398,7 @@ class RecipesCompanion extends UpdateCompanion<Recipe> {
       {Value<int>? id,
       Value<String?>? name,
       Value<String?>? description,
+      Value<String?>? category,
       Value<String?>? instructions,
       Value<int?>? prepTime,
       Value<int?>? cookTime,
@@ -1377,6 +1412,7 @@ class RecipesCompanion extends UpdateCompanion<Recipe> {
       id: id ?? this.id,
       name: name ?? this.name,
       description: description ?? this.description,
+      category: category ?? this.category,
       instructions: instructions ?? this.instructions,
       prepTime: prepTime ?? this.prepTime,
       cookTime: cookTime ?? this.cookTime,
@@ -1400,6 +1436,9 @@ class RecipesCompanion extends UpdateCompanion<Recipe> {
     }
     if (description.present) {
       map['description'] = Variable<String>(description.value);
+    }
+    if (category.present) {
+      map['category'] = Variable<String>(category.value);
     }
     if (instructions.present) {
       map['instructions'] = Variable<String>(instructions.value);
@@ -1437,6 +1476,7 @@ class RecipesCompanion extends UpdateCompanion<Recipe> {
           ..write('id: $id, ')
           ..write('name: $name, ')
           ..write('description: $description, ')
+          ..write('category: $category, ')
           ..write('instructions: $instructions, ')
           ..write('prepTime: $prepTime, ')
           ..write('cookTime: $cookTime, ')
@@ -5057,6 +5097,7 @@ typedef $$RecipesTableCreateCompanionBuilder = RecipesCompanion Function({
   Value<int> id,
   Value<String?> name,
   Value<String?> description,
+  Value<String?> category,
   Value<String?> instructions,
   Value<int?> prepTime,
   Value<int?> cookTime,
@@ -5071,6 +5112,7 @@ typedef $$RecipesTableUpdateCompanionBuilder = RecipesCompanion Function({
   Value<int> id,
   Value<String?> name,
   Value<String?> description,
+  Value<String?> category,
   Value<String?> instructions,
   Value<int?> prepTime,
   Value<int?> cookTime,
@@ -5119,6 +5161,9 @@ class $$RecipesTableFilterComposer
 
   ColumnFilters<String> get description => $composableBuilder(
       column: $table.description, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get category => $composableBuilder(
+      column: $table.category, builder: (column) => ColumnFilters(column));
 
   ColumnFilters<String> get instructions => $composableBuilder(
       column: $table.instructions, builder: (column) => ColumnFilters(column));
@@ -5188,6 +5233,9 @@ class $$RecipesTableOrderingComposer
   ColumnOrderings<String> get description => $composableBuilder(
       column: $table.description, builder: (column) => ColumnOrderings(column));
 
+  ColumnOrderings<String> get category => $composableBuilder(
+      column: $table.category, builder: (column) => ColumnOrderings(column));
+
   ColumnOrderings<String> get instructions => $composableBuilder(
       column: $table.instructions,
       builder: (column) => ColumnOrderings(column));
@@ -5235,6 +5283,9 @@ class $$RecipesTableAnnotationComposer
 
   GeneratedColumn<String> get description => $composableBuilder(
       column: $table.description, builder: (column) => column);
+
+  GeneratedColumn<String> get category =>
+      $composableBuilder(column: $table.category, builder: (column) => column);
 
   GeneratedColumn<String> get instructions => $composableBuilder(
       column: $table.instructions, builder: (column) => column);
@@ -5311,6 +5362,7 @@ class $$RecipesTableTableManager extends RootTableManager<
             Value<int> id = const Value.absent(),
             Value<String?> name = const Value.absent(),
             Value<String?> description = const Value.absent(),
+            Value<String?> category = const Value.absent(),
             Value<String?> instructions = const Value.absent(),
             Value<int?> prepTime = const Value.absent(),
             Value<int?> cookTime = const Value.absent(),
@@ -5325,6 +5377,7 @@ class $$RecipesTableTableManager extends RootTableManager<
             id: id,
             name: name,
             description: description,
+            category: category,
             instructions: instructions,
             prepTime: prepTime,
             cookTime: cookTime,
@@ -5339,6 +5392,7 @@ class $$RecipesTableTableManager extends RootTableManager<
             Value<int> id = const Value.absent(),
             Value<String?> name = const Value.absent(),
             Value<String?> description = const Value.absent(),
+            Value<String?> category = const Value.absent(),
             Value<String?> instructions = const Value.absent(),
             Value<int?> prepTime = const Value.absent(),
             Value<int?> cookTime = const Value.absent(),
@@ -5353,6 +5407,7 @@ class $$RecipesTableTableManager extends RootTableManager<
             id: id,
             name: name,
             description: description,
+            category: category,
             instructions: instructions,
             prepTime: prepTime,
             cookTime: cookTime,

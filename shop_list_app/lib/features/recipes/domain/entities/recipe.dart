@@ -49,6 +49,7 @@ class Recipe {
   final int? id;
   final String? name;
   final String? description;
+  final String? category;
 
   /// Newline-separated cooking steps stored as a single string.
   final String? instructions;
@@ -65,6 +66,7 @@ class Recipe {
     this.id,
     this.name,
     this.description,
+    this.category,
     this.instructions,
     this.prepTime,
     this.cookTime,
@@ -118,6 +120,7 @@ class Recipe {
       id: json['id'] as int?,
       name: json['name'] as String?,
       description: json['description'] as String?,
+      category: json['category'] as String?,
       instructions: json['instructions'] as String?,
       prepTime: json['prepTime'] as int?,
       cookTime: json['cookTime'] as int?,
@@ -134,6 +137,7 @@ class Recipe {
         'id': id,
         'name': name,
         'description': description,
+        'category': category,
         'instructions': instructions,
         'prepTime': prepTime,
         'cookTime': cookTime,
@@ -154,6 +158,7 @@ class Recipe {
     int? id,
     String? name,
     String? description,
+    String? category,
     String? instructions,
     int? prepTime,
     int? cookTime,
@@ -168,6 +173,7 @@ class Recipe {
         id: id ?? this.id,
         name: name ?? this.name,
         description: description ?? this.description,
+        category: category ?? this.category,
         instructions: instructions ?? this.instructions,
         prepTime: prepTime ?? this.prepTime,
         cookTime: cookTime ?? this.cookTime,

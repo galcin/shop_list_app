@@ -4,6 +4,7 @@ class Recipes extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get name => text().nullable()();
   TextColumn get description => text().nullable()();
+  TextColumn get category => text().nullable()();
   TextColumn get instructions => text().nullable()();
   IntColumn get prepTime => integer().nullable()(); // minutes
   IntColumn get cookTime => integer().nullable()(); // minutes

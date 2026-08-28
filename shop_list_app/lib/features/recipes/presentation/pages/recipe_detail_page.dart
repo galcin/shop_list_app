@@ -422,40 +422,49 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
   Widget _buildIngredientsTab(Recipe scaled) {
     final ingredients = scaled.ingredients ?? [];
     if (ingredients.isEmpty) {
-      return const Center(
+      return Center(
         child: Text(
           'No ingredients added yet.',
-          style:
-              TextStyle(fontFamily: 'Poppins', color: AppColors.textSecondary),
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            color: Theme.of(context).textTheme.bodyMedium?.color,
+          ),
         ),
       );
     }
     return ListView.separated(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.fromLTRB(
+          20, 20, 20, MediaQuery.of(context).padding.bottom + 80),
       itemCount: ingredients.length,
-      separatorBuilder: (_, __) =>
-          const Divider(height: 1, color: AppColors.divider),
+      separatorBuilder: (_, __) => Divider(
+        height: 1,
+        color: Theme.of(context).dividerColor,
+      ),
       itemBuilder: (_, i) {
         final ing = ingredients[i];
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 8),
           child: Row(
             children: [
-              const Icon(Icons.circle, size: 8, color: AppColors.primary),
+              Icon(Icons.circle,
+                  size: 8, color: Theme.of(context).colorScheme.primary),
               const SizedBox(width: 12),
               Expanded(
                 child: Text(
                   ing.name,
-                  style: const TextStyle(
-                      fontFamily: 'Poppins', color: AppColors.textPrimary),
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    color: Theme.of(context).textTheme.bodyLarge?.color,
+                  ),
                 ),
               ),
               Text(
                 '${ing.quantity}${ing.unit.isNotEmpty ? ' ${ing.unit}' : ''}',
-                style: const TextStyle(
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textBody),
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w600,
+                  color: Theme.of(context).textTheme.bodyMedium?.color,
+                ),
               ),
             ],
           ),
@@ -467,16 +476,19 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
   Widget _buildInstructionsTab(Recipe recipe) {
     final steps = recipe.instructionSteps;
     if (steps.isEmpty) {
-      return const Center(
+      return Center(
         child: Text(
           'No instructions added yet.',
-          style:
-              TextStyle(fontFamily: 'Poppins', color: AppColors.textSecondary),
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            color: Theme.of(context).textTheme.bodyMedium?.color,
+          ),
         ),
       );
     }
     return ListView.builder(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.fromLTRB(
+          20, 20, 20, MediaQuery.of(context).padding.bottom + 80),
       itemCount: steps.length,
       itemBuilder: (_, i) => Padding(
         padding: const EdgeInsets.only(bottom: 16),
@@ -486,8 +498,8 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
             Container(
               width: 28,
               height: 28,
-              decoration: const BoxDecoration(
-                color: AppColors.primary,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
                 shape: BoxShape.circle,
               ),
               alignment: Alignment.center,
@@ -506,9 +518,9 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   steps[i],
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontFamily: 'Poppins',
-                      color: AppColors.textBody,
+                      color: Theme.of(context).textTheme.bodyMedium?.color,
                       height: 1.5),
                 ),
               ),
@@ -522,20 +534,25 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
   Widget _buildNotesTab(Recipe recipe) {
     final desc = recipe.description ?? '';
     if (desc.isEmpty) {
-      return const Center(
+      return Center(
         child: Text(
           'No notes added yet.',
-          style:
-              TextStyle(fontFamily: 'Poppins', color: AppColors.textSecondary),
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            color: Theme.of(context).textTheme.bodyMedium?.color,
+          ),
         ),
       );
     }
-    return Padding(
-      padding: const EdgeInsets.all(20),
+    return SingleChildScrollView(
+      padding: EdgeInsets.fromLTRB(
+          20, 20, 20, MediaQuery.of(context).padding.bottom + 80),
       child: Text(
         desc,
-        style: const TextStyle(
-            fontFamily: 'Poppins', color: AppColors.textBody, height: 1.6),
+        style: TextStyle(
+            fontFamily: 'Poppins',
+            color: Theme.of(context).textTheme.bodyMedium?.color,
+            height: 1.6),
       ),
     );
   }

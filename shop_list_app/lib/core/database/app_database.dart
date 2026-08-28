@@ -46,7 +46,7 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.forTesting(super.executor);
 
   @override
-  int get schemaVersion => 9;
+  int get schemaVersion => 10;
 
   /// Step-by-step migration strategy.
   ///
@@ -211,6 +211,20 @@ class AppDatabase extends _$AppDatabase {
           }
           AppLogger.instance.info('[DB] onUpgrade v8→v9 complete');
         }
+
+        // v9 → v10: add category column to recipes table.
+        if (from < 10) {
+          try {
+            await customStatement(
+                'ALTER TABLE recipes ADD COLUMN category TEXT');
+            AppLogger.instance.info('[DB] Added column category to recipes');
+          } catch (e) {
+            AppLogger.instance.warning(
+                '[DB] Column category already exists in recipes (skipped)',
+                error: e);
+          }
+          AppLogger.instance.info('[DB] onUpgrade v9→v10 complete');
+        }
       },
       // Runs after every open (new or upgraded) to verify integrity.
       beforeOpen: (details) async {
@@ -293,13 +307,20 @@ class AppDatabase extends _$AppDatabase {
             'rating': 'REAL',
             'tags_json': 'TEXT',
             'ingredients_json': 'TEXT',
+            'category': 'TEXT',
           };
           for (final entry in recipeColsToAdd.entries) {
             if (!recipeColsResult.contains(entry.key)) {
-              await customStatement(
-                  'ALTER TABLE recipes ADD COLUMN ${entry.key} ${entry.value}');
-              AppLogger.instance
-                  .info('[DB] Self-healed recipe column: ${entry.key}');
+              try {
+                await customStatement(
+                    'ALTER TABLE recipes ADD COLUMN ${entry.key} ${entry.value}');
+                AppLogger.instance
+                    .info('[DB] Self-healed recipe column: ${entry.key}');
+              } catch (e) {
+                AppLogger.instance.warning(
+                    '[DB] Column ${entry.key} already exists (skipped)',
+                    error: e);
+              }
             }
           }
 

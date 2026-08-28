@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shop_list_app/core/theme/colors.dart';
+import 'package:shop_list_app/core/database/app_database.dart' hide Recipe;
+import 'package:shop_list_app/core/database/seeder/force_category_update.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
 import 'package:shop_list_app/shared/extensions/context_extensions.dart';
@@ -13,6 +14,15 @@ import 'package:shop_list_app/shared/widgets/list/accent_circle_list_card.dart';
 
 enum _RecipeFilter { all, favorites, recent, quickPrep }
 
+const List<String> _categories = [
+  'All Categories',
+  'Breakfast',
+  'Soups',
+  'Salads',
+  'Main Courses',
+  'Side Dishes',
+];
+
 class RecipeListView extends ConsumerStatefulWidget {
   const RecipeListView({super.key});
 
@@ -23,7 +33,29 @@ class RecipeListView extends ConsumerStatefulWidget {
 class _RecipeListViewState extends ConsumerState<RecipeListView> {
   bool _searchExpanded = false;
   _RecipeFilter _filter = _RecipeFilter.all;
+  String _selectedCategory = 'All Categories';
   final _searchController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    // Force update categories on first build
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      debugPrint('[RecipeListView] Starting force category update...');
+      try {
+        await ForceCategoryUpdate.updateAllCategories(AppDatabase.instance);
+        debugPrint(
+            '[RecipeListView] Force update complete, invalidating provider');
+        // Refresh the list after update
+        if (mounted) {
+          ref.invalidate(recipeListProvider);
+        }
+      } catch (e, st) {
+        debugPrint('[RecipeListView] Error in force update: $e');
+        debugPrint('Stack trace: $st');
+      }
+    });
+  }
 
   @override
   void dispose() {
@@ -42,18 +74,37 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
   }
 
   List<Recipe> _applyFilter(List<Recipe> recipes) {
+    // Debug: Log first 5 recipe categories
+    debugPrint('=== Filter Debug ===');
+    debugPrint('Selected category: $_selectedCategory');
+    debugPrint('Total recipes: ${recipes.length}');
+    if (recipes.isNotEmpty) {
+      debugPrint('First 5 recipes:');
+      for (var i = 0; i < recipes.length.clamp(0, 5); i++) {
+        debugPrint('  - ${recipes[i].name}: category="${recipes[i].category}"');
+      }
+    }
+
+    // First apply the category filter
+    var filtered = recipes;
+    if (_selectedCategory != 'All Categories') {
+      filtered = recipes.where((r) => r.category == _selectedCategory).toList();
+      debugPrint('Filtered to ${filtered.length} recipes');
+    }
+
+    // Then apply the quick filter
     switch (_filter) {
       case _RecipeFilter.favorites:
-        return recipes.where((r) => r.favorite == true).toList();
+        return filtered.where((r) => r.favorite == true).toList();
       case _RecipeFilter.recent:
         // Recent = last 10 by id (descending)
-        final sorted = [...recipes]..sort((a, b) => (b.id ?? 0) - (a.id ?? 0));
+        final sorted = [...filtered]..sort((a, b) => (b.id ?? 0) - (a.id ?? 0));
         return sorted.take(10).toList();
       case _RecipeFilter.quickPrep:
         // Quick prep = recipes with prep time <= 20 minutes
-        return recipes.where((r) => (r.prepTime ?? 0) <= 20).toList();
+        return filtered.where((r) => (r.prepTime ?? 0) <= 20).toList();
       case _RecipeFilter.all:
-        return recipes;
+        return filtered;
     }
   }
 
@@ -74,6 +125,7 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (_searchExpanded) _buildSearchBar(context),
+          _buildCategoryDropdown(context),
           _buildFilterChips(context),
           Expanded(
             child: filteredAsync.when(
@@ -125,6 +177,31 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
       ),
       centerTitle: false,
       actions: [
+        // Temporary: Fix categories button
+        IconButton(
+          icon: Icon(Icons.build, color: Colors.orange),
+          tooltip: 'Fix Categories',
+          onPressed: () async {
+            debugPrint('[Button] ===== FIX CATEGORIES BUTTON PRESSED =====');
+            try {
+              debugPrint('[Button] About to call ForceCategoryUpdate...');
+              await ForceCategoryUpdate.updateAllCategories(
+                  AppDatabase.instance);
+              debugPrint('[Button] ForceCategoryUpdate completed');
+              ref.invalidate(recipeListProvider);
+              debugPrint('[Button] Provider invalidated');
+              if (mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                      content: Text('Categories updated! Check console.')),
+                );
+              }
+            } catch (e, st) {
+              debugPrint('[Button] ERROR: $e');
+              debugPrint('[Button] Stack trace: $st');
+            }
+          },
+        ),
         IconButton(
           icon: Icon(
             _searchExpanded ? Icons.search_off : Icons.search,
@@ -175,6 +252,48 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
           ref.read(recipeSearchQueryProvider.notifier).state = v;
           setState(() {}); // Refresh clear button visibility.
         },
+      ),
+    );
+  }
+
+  Widget _buildCategoryDropdown(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        decoration: BoxDecoration(
+          color: context.colorScheme.surfaceContainerHighest,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: DropdownButtonHideUnderline(
+          child: DropdownButton<String>(
+            value: _selectedCategory,
+            isExpanded: true,
+            icon: Icon(Icons.arrow_drop_down,
+                color: context.colorScheme.onSurface),
+            style: TextStyle(
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w500,
+              color: context.colorScheme.onSurface,
+              fontSize: 14,
+            ),
+            dropdownColor: context.colorScheme.surfaceContainerHighest,
+            borderRadius: BorderRadius.circular(12),
+            items: _categories.map((String category) {
+              return DropdownMenuItem<String>(
+                value: category,
+                child: Text(category),
+              );
+            }).toList(),
+            onChanged: (String? newValue) {
+              if (newValue != null) {
+                setState(() {
+                  _selectedCategory = newValue;
+                });
+              }
+            },
+          ),
+        ),
       ),
     );
   }
