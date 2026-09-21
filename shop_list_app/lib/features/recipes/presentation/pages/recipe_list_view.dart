@@ -179,7 +179,7 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
       actions: [
         // Temporary: Fix categories button
         IconButton(
-          icon: Icon(Icons.build, color: Colors.orange),
+          icon: const Icon(Icons.build, color: Colors.orange),
           tooltip: 'Fix Categories',
           onPressed: () async {
             debugPrint('[Button] ===== FIX CATEGORIES BUTTON PRESSED =====');

@@ -180,7 +180,7 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
                 Icon(Icons.edit_outlined,
                     size: 18, color: ctx.colorScheme.onSurface),
                 const SizedBox(width: 10),
-                Text('Edit', style: const TextStyle(fontFamily: 'Poppins')),
+                const Text('Edit', style: TextStyle(fontFamily: 'Poppins')),
               ]),
             ),
             PopupMenuItem(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/core/error/failures.dart';
-import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart';
 import 'package:shop_list_app/features/product_category/presentation/pages/product_category_detail_page.dart';
 import 'package:shop_list_app/features/product_category/presentation/providers/product_category_providers.dart';

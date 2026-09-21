@@ -31,7 +31,7 @@ class _RecipePickerBottomSheetState
       height: MediaQuery.of(context).size.height * 0.75,
       decoration: BoxDecoration(
         color: colors.surface,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
       ),
       child: Column(
         children: [

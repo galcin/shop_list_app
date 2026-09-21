@@ -7,7 +7,7 @@ import 'app_theme.dart';
 class AppThemeNotifier extends StateNotifier<AppThemeType> {
   static const _prefKey = 'app_theme_type';
 
-  AppThemeNotifier(AppThemeType initial) : super(initial) {
+  AppThemeNotifier(super.initial) {
     print('[NOTIFIER] Created with state: $state');
   }
 

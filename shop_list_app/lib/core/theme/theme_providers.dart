@@ -9,7 +9,7 @@ class AppThemeController extends StateNotifier<AppThemeType> {
   static AppThemeType _savedTheme = AppThemeType.light;
 
   AppThemeController() : super(_savedTheme) {
-    print('[THEME_INIT] Controller created with theme: ${state}');
+    print('[THEME_INIT] Controller created with theme: $state');
   }
 
   Future<void> setTheme(AppThemeType themeType) async {

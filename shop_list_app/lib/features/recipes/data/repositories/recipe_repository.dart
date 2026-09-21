@@ -52,7 +52,7 @@ class RecipeRepository implements IRecipeRepository {
                 ? jsonEncode(recipe.ingredients!.map((i) => i.toMap()).toList())
                 : null),
             category: recipe.category != null
-                ? Value(recipe.category!)
+                ? Value(recipe.category)
                 : const Value.absent(),
           ),
         );
@@ -79,7 +79,7 @@ class RecipeRepository implements IRecipeRepository {
             ? jsonEncode(recipe.ingredients!.map((i) => i.toMap()).toList())
             : null),
         category: recipe.category != null
-            ? Value(recipe.category!)
+            ? Value(recipe.category)
             : const Value.absent(),
       ),
     );

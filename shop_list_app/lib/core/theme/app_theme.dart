@@ -579,19 +579,19 @@ class AppTheme {
       colorScheme: cs,
       scaffoldBackgroundColor: AppColors.greenBackgroundDark,
       fontFamily: 'Poppins',
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.greenSurfaceDark,
         foregroundColor: Colors.white,
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: true,
-        titleTextStyle: const TextStyle(
+        titleTextStyle: TextStyle(
           fontFamily: 'Poppins',
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: AppColors.greenSurfaceDark,

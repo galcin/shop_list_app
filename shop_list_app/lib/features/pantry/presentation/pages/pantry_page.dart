@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/core/utils/app_logger.dart';
 import 'package:shop_list_app/features/pantry/domain/entities/pantry_item.dart';
 import 'package:shop_list_app/features/pantry/presentation/pages/add_pantry_item_bottom_sheet.dart';
