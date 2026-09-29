@@ -1,3 +1,5 @@
+import 'package:dartz/dartz.dart';
+import 'package:shop_list_app/core/error/failures.dart';
 import 'package:shop_list_app/features/meal_planning/domain/entities/meal_plan.dart';
 import 'package:shop_list_app/features/meal_planning/domain/repositories/i_meal_plan_repository.dart';
 
@@ -7,7 +9,12 @@ class GetOrCreateWeeklyPlanUseCase {
 
   final IMealPlanRepository _repository;
 
-  Future<MealPlan> call(DateTime weekStart) async {
-    return await _repository.getOrCreateWeeklyPlan(weekStart);
+  Future<Either<Failure, MealPlan>> call(DateTime weekStart) async {
+    try {
+      final plan = await _repository.getOrCreateWeeklyPlan(weekStart);
+      return Right(plan);
+    } catch (e) {
+      return Left(DatabaseFailure(e.toString()));
+    }
   }
 }

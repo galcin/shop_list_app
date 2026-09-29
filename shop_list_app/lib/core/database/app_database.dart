@@ -1,5 +1,6 @@
 import 'package:drift/drift.dart';
 import 'package:shop_list_app/core/utils/app_logger.dart';
+import 'package:shop_list_app/features/meal_planning/domain/entities/meal_type.dart';
 
 import 'connection/connection.dart' as impl;
 import 'seeder/product_category_seeder.dart';

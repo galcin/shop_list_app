@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shop_list_app/core/database/app_database.dart' hide PantryItem;
+import 'package:shop_list_app/core/providers/core_providers.dart';
 import 'package:shop_list_app/features/pantry/data/repositories/pantry_repository.dart';
 import 'package:shop_list_app/features/pantry/domain/entities/pantry_item.dart';
 import 'package:shop_list_app/features/pantry/domain/repositories/i_pantry_repository.dart';
@@ -14,8 +14,14 @@ import 'package:shop_list_app/features/product_category/presentation/providers/p
 import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
 
 // Infrastructure Providers
+//
+// NOTE: Uses the shared `databaseProvider` (see core/providers/core_providers.dart)
+// rather than `AppDatabase.instance` directly, so the database instance can be
+// overridden in tests/widget tests via ProviderScope(overrides: [...]) and so
+// wiring stays consistent with every other feature (products, product_category,
+// recipes, shopping_lists, meal_planning).
 final pantryRepositoryProvider = Provider<IPantryRepository>((ref) {
-  return PantryRepository(AppDatabase.instance);
+  return PantryRepository(ref.watch(databaseProvider));
 });
 
 // Use Case Providers

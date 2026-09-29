@@ -1,3 +1,5 @@
+import 'package:dartz/dartz.dart';
+import 'package:shop_list_app/core/error/failures.dart';
 import 'package:shop_list_app/core/utils/app_logger.dart';
 import 'package:shop_list_app/features/meal_planning/domain/repositories/i_meal_plan_repository.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
@@ -19,80 +21,44 @@ class GenerateShoppingListFromPlanUseCase {
   final IShoppingListRepository _shoppingListRepository;
 
   /// Creates a shopping list from a meal plan.
-  /// Returns the ID of the newly created shopping list.
-  Future<int> call({
+  /// Returns the id of the newly created shopping list on [Right], or a
+  /// [ValidationFailure]/[DatabaseFailure] on [Left].
+  Future<Either<Failure, int>> call({
     required int planId,
     required String listName,
   }) async {
     try {
-      AppLogger.instance.info(
-        'GenerateShoppingListFromPlanUseCase: Starting for planId=$planId',
-      );
-
-      // Get all recipe IDs assigned in the plan
-      AppLogger.instance.info(
-        'GenerateShoppingListFromPlanUseCase: Fetching recipe IDs',
-      );
       final recipeIds = await _mealPlanRepository.getAssignedRecipeIds(planId);
-      AppLogger.instance.info(
-        'GenerateShoppingListFromPlanUseCase: Found ${recipeIds.length} recipes',
-      );
 
       if (recipeIds.isEmpty) {
-        throw Exception('No recipes assigned in this meal plan');
+        return const Left(
+            ValidationFailure('No recipes assigned in this meal plan'));
       }
 
       // Fetch all recipes in a single query (not N queries)
-      AppLogger.instance.info(
-        'GenerateShoppingListFromPlanUseCase: Fetching recipe details for IDs: $recipeIds',
-      );
       final recipes = await _recipeRepository.getRecipesByIds(recipeIds);
-      AppLogger.instance.info(
-        'GenerateShoppingListFromPlanUseCase: Got ${recipes.length} recipe details',
-      );
 
       if (recipes.isEmpty) {
-        throw Exception('Failed to fetch recipe details');
+        return const Left(DatabaseFailure('Failed to fetch recipe details'));
       }
 
       // Extract and aggregate ingredients
-      AppLogger.instance.info(
-        'GenerateShoppingListFromPlanUseCase: Aggregating ingredients',
-      );
       final aggregatedIngredients = _aggregateIngredients(recipes);
-      AppLogger.instance.info(
-        'GenerateShoppingListFromPlanUseCase: Aggregated ${aggregatedIngredients.length} unique ingredients',
-      );
-
-      if (aggregatedIngredients.isEmpty) {
-        AppLogger.instance.info(
-          'GenerateShoppingListFromPlanUseCase: No ingredients found, but continuing',
-        );
-      }
 
       // Create the shopping list
-      AppLogger.instance.info(
-        'GenerateShoppingListFromPlanUseCase: Creating shopping list with name: $listName',
-      );
       final listId = await _shoppingListRepository.save(
         ShoppingListEntity(
           name: listName.trim().isEmpty ? 'Meal Plan Shopping List' : listName,
           createdAt: DateTime.now(),
         ),
       );
-      AppLogger.instance.info(
-        'GenerateShoppingListFromPlanUseCase: Created shopping list with id=$listId',
-      );
 
       if (listId <= 0) {
-        throw Exception('Failed to create shopping list');
+        return const Left(DatabaseFailure('Failed to create shopping list'));
       }
 
       // Add items if there are any
       if (aggregatedIngredients.isNotEmpty) {
-        AppLogger.instance.info(
-          'GenerateShoppingListFromPlanUseCase: Adding ${aggregatedIngredients.length} items to shopping list',
-        );
         final itemsToAdd = aggregatedIngredients.asMap().entries.map((entry) {
           final index = entry.key;
           final ingredient = entry.value;
@@ -106,28 +72,15 @@ class GenerateShoppingListFromPlanUseCase {
           );
         }).toList();
 
-        AppLogger.instance.info(
-          'GenerateShoppingListFromPlanUseCase: About to call addItems with ${itemsToAdd.length} items',
-        );
         await _shoppingListRepository.addItems(itemsToAdd);
-        AppLogger.instance.info(
-          'GenerateShoppingListFromPlanUseCase: Successfully added all items',
-        );
-      } else {
-        AppLogger.instance.info(
-          'GenerateShoppingListFromPlanUseCase: No items to add (recipes had no ingredients)',
-        );
       }
 
-      AppLogger.instance.info(
-        'GenerateShoppingListFromPlanUseCase: Complete! Returning listId=$listId',
-      );
-      return listId;
+      return Right(listId);
     } catch (e) {
       AppLogger.instance.error(
         'GenerateShoppingListFromPlanUseCase: Error occurred: $e',
       );
-      rethrow;
+      return Left(DatabaseFailure(e.toString()));
     }
   }
 

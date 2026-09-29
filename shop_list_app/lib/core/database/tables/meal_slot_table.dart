@@ -1,13 +1,7 @@
 import 'package:drift/drift.dart';
 import 'package:shop_list_app/core/database/tables/meal_plan_table.dart';
 import 'package:shop_list_app/core/database/tables/recipe_table.dart';
-
-/// Meal types for a given day.
-enum MealType {
-  breakfast,
-  lunch,
-  dinner,
-}
+import 'package:shop_list_app/features/meal_planning/domain/entities/meal_type.dart';
 
 /// Stores individual meal slots (breakfast/lunch/dinner) for each day in a plan.
 class MealSlots extends Table {

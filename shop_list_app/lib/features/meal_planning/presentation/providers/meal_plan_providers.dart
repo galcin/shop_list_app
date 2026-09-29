@@ -129,6 +129,18 @@ DateTime _getWeekStart(DateTime date) {
   return DateTime(weekStart.year, weekStart.month, weekStart.day);
 }
 
+/// Unwraps the `Either<Failure, MealPlan>` result of
+/// [GetOrCreateWeeklyPlanUseCase], throwing on failure so the surrounding
+/// Stream/StreamNotifier surfaces it as a proper `AsyncValue.error` state.
+Future<MealPlan> _getOrCreateWeeklyPlan(Ref ref, DateTime weekStart) async {
+  final result =
+      await ref.read(getOrCreateWeeklyPlanUseCaseProvider).call(weekStart);
+  return result.fold(
+    (failure) => throw Exception(failure.message),
+    (plan) => plan,
+  );
+}
+
 // ── Combined meal plan for 7-day view ─────────────────────────────────────────
 
 /// A provider that combines slots from multiple weeks to provide
@@ -143,9 +155,9 @@ final combinedSevenDayPlanProvider = StreamProvider<MealPlan?>((ref) async* {
   final needsTwoWeeks = currentWeekStart != nextWeekStart;
 
   // Ensure both weeks exist
-  await ref.read(getOrCreateWeeklyPlanUseCaseProvider).call(currentWeekStart);
+  await _getOrCreateWeeklyPlan(ref, currentWeekStart);
   if (needsTwoWeeks) {
-    await ref.read(getOrCreateWeeklyPlanUseCaseProvider).call(nextWeekStart);
+    await _getOrCreateWeeklyPlan(ref, nextWeekStart);
   }
 
   // Watch current week
@@ -162,9 +174,7 @@ final combinedSevenDayPlanProvider = StreamProvider<MealPlan?>((ref) async* {
     } else {
       // Need to combine data from both weeks
       // Get next week's plan synchronously
-      final nextPlan = await ref
-          .read(getOrCreateWeeklyPlanUseCaseProvider)
-          .call(nextWeekStart);
+      final nextPlan = await _getOrCreateWeeklyPlan(ref, nextWeekStart);
 
       // Combine slots from both weeks
       final combinedSlots = <MealSlot>[
@@ -199,11 +209,11 @@ class WeeklyMealPlanNotifier extends StreamNotifier<MealPlan?> {
     final nextWeekStart = _getWeekStart(endDate);
 
     // Ensure plan exists for the current week
-    await ref.read(getOrCreateWeeklyPlanUseCaseProvider).call(currentWeekStart);
+    await _getOrCreateWeeklyPlan(ref, currentWeekStart);
 
     // If the 7-day view crosses into next week, ensure that week exists too
     if (currentWeekStart != nextWeekStart) {
-      await ref.read(getOrCreateWeeklyPlanUseCaseProvider).call(nextWeekStart);
+      await _getOrCreateWeeklyPlan(ref, nextWeekStart);
     }
 
     // Watch the current week's plan
@@ -214,38 +224,43 @@ class WeeklyMealPlanNotifier extends StreamNotifier<MealPlan?> {
     required int slotId,
     required int recipeId,
   }) async {
-    await ref.read(assignRecipeToSlotUseCaseProvider).call(
+    final result = await ref.read(assignRecipeToSlotUseCaseProvider).call(
           slotId: slotId,
           recipeId: recipeId,
         );
+    result.fold((failure) => throw Exception(failure.message), (_) {});
   }
 
   Future<void> clearSlot(int slotId) async {
-    await ref.read(clearMealSlotUseCaseProvider).call(slotId);
+    final result = await ref.read(clearMealSlotUseCaseProvider).call(slotId);
+    result.fold((failure) => throw Exception(failure.message), (_) {});
   }
 
   Future<void> clearDay({
     required int planId,
     required DateTime date,
   }) async {
-    await ref.read(clearDayUseCaseProvider).call(
+    final result = await ref.read(clearDayUseCaseProvider).call(
           planId: planId,
           date: date,
         );
+    result.fold((failure) => throw Exception(failure.message), (_) {});
   }
 
   Future<void> clearWeek(int planId) async {
-    await ref.read(clearWeekUseCaseProvider).call(planId);
+    final result = await ref.read(clearWeekUseCaseProvider).call(planId);
+    result.fold((failure) => throw Exception(failure.message), (_) {});
   }
 
   Future<void> duplicatePreviousWeek() async {
     final currentWeek = ref.read(selectedWeekProvider);
     final previousWeek = currentWeek.subtract(const Duration(days: 7));
 
-    await ref.read(duplicateMealPlanUseCaseProvider).call(
+    final result = await ref.read(duplicateMealPlanUseCaseProvider).call(
           sourceWeekStart: previousWeek,
           targetWeekStart: currentWeek,
         );
+    result.fold((failure) => throw Exception(failure.message), (_) {});
   }
 
   /// Generate a shopping list from the current meal plan.
@@ -253,9 +268,14 @@ class WeeklyMealPlanNotifier extends StreamNotifier<MealPlan?> {
     required int planId,
     required String listName,
   }) async {
-    return await ref.read(generateShoppingListFromPlanUseCaseProvider).call(
-          planId: planId,
-          listName: listName,
-        );
+    final result =
+        await ref.read(generateShoppingListFromPlanUseCaseProvider).call(
+              planId: planId,
+              listName: listName,
+            );
+    return result.fold(
+      (failure) => throw Exception(failure.message),
+      (listId) => listId,
+    );
   }
 }

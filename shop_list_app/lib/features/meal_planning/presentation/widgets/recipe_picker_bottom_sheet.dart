@@ -161,14 +161,24 @@ class _RecipePickerBottomSheetState
                         ),
                         onTap: () async {
                           if (recipe.id != null) {
-                            await ref
-                                .read(weeklyMealPlanProvider.notifier)
-                                .assignRecipe(
-                                  slotId: widget.slot.id!,
-                                  recipeId: recipe.id!,
+                            try {
+                              await ref
+                                  .read(weeklyMealPlanProvider.notifier)
+                                  .assignRecipe(
+                                    slotId: widget.slot.id!,
+                                    recipeId: recipe.id!,
+                                  );
+                              if (context.mounted) {
+                                Navigator.pop(context);
+                              }
+                            } catch (e) {
+                              if (context.mounted) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                      content:
+                                          Text('Could not assign recipe: $e')),
                                 );
-                            if (context.mounted) {
-                              Navigator.pop(context);
+                              }
                             }
                           }
                         },

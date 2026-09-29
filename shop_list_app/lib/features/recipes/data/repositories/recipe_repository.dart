@@ -2,6 +2,7 @@
 
 import 'package:drift/drift.dart';
 import 'package:shop_list_app/core/database/app_database.dart';
+import 'package:shop_list_app/core/database/seeder/force_category_update.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart'
     as model;
 import 'package:shop_list_app/features/recipes/domain/repositories/i_recipe_repository.dart';
@@ -10,6 +11,11 @@ class RecipeRepository implements IRecipeRepository {
   final AppDatabase _database;
 
   RecipeRepository(this._database);
+
+  @override
+  Future<void> fixMissingCategories() {
+    return ForceCategoryUpdate.updateAllCategories(_database);
+  }
 
   @override
   Future<List<model.Recipe>> getAllRecipes() async {

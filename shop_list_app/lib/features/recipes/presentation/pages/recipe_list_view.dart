@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shop_list_app/core/database/app_database.dart' hide Recipe;
-import 'package:shop_list_app/core/database/seeder/force_category_update.dart';
+import 'package:shop_list_app/core/utils/app_logger.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
 import 'package:shop_list_app/shared/extensions/context_extensions.dart';
@@ -39,21 +38,20 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
   @override
   void initState() {
     super.initState();
-    // Force update categories on first build
+    // Backfill/repair recipe categories on first build via the use case
+    // (never touch the database directly from presentation).
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      debugPrint('[RecipeListView] Starting force category update...');
-      try {
-        await ForceCategoryUpdate.updateAllCategories(AppDatabase.instance);
-        debugPrint(
-            '[RecipeListView] Force update complete, invalidating provider');
-        // Refresh the list after update
-        if (mounted) {
-          ref.invalidate(recipeListProvider);
-        }
-      } catch (e, st) {
-        debugPrint('[RecipeListView] Error in force update: $e');
-        debugPrint('Stack trace: $st');
-      }
+      final result = await ref.read(fixRecipeCategoriesUseCaseProvider).call();
+      result.fold(
+        (failure) => AppLogger.instance.error(
+            '[RecipeListView] Category backfill failed: ${failure.message}'),
+        (_) {
+          // Refresh the list after a successful backfill.
+          if (mounted) {
+            ref.invalidate(recipeListProvider);
+          }
+        },
+      );
     });
   }
 
@@ -74,22 +72,10 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
   }
 
   List<Recipe> _applyFilter(List<Recipe> recipes) {
-    // Debug: Log first 5 recipe categories
-    debugPrint('=== Filter Debug ===');
-    debugPrint('Selected category: $_selectedCategory');
-    debugPrint('Total recipes: ${recipes.length}');
-    if (recipes.isNotEmpty) {
-      debugPrint('First 5 recipes:');
-      for (var i = 0; i < recipes.length.clamp(0, 5); i++) {
-        debugPrint('  - ${recipes[i].name}: category="${recipes[i].category}"');
-      }
-    }
-
     // First apply the category filter
     var filtered = recipes;
     if (_selectedCategory != 'All Categories') {
       filtered = recipes.where((r) => r.category == _selectedCategory).toList();
-      debugPrint('Filtered to ${filtered.length} recipes');
     }
 
     // Then apply the quick filter
@@ -182,24 +168,26 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
           icon: const Icon(Icons.build, color: Colors.orange),
           tooltip: 'Fix Categories',
           onPressed: () async {
-            debugPrint('[Button] ===== FIX CATEGORIES BUTTON PRESSED =====');
-            try {
-              debugPrint('[Button] About to call ForceCategoryUpdate...');
-              await ForceCategoryUpdate.updateAllCategories(
-                  AppDatabase.instance);
-              debugPrint('[Button] ForceCategoryUpdate completed');
-              ref.invalidate(recipeListProvider);
-              debugPrint('[Button] Provider invalidated');
-              if (mounted) {
+            final result =
+                await ref.read(fixRecipeCategoriesUseCaseProvider).call();
+            if (!mounted) return;
+            result.fold(
+              (failure) {
+                AppLogger.instance.error(
+                    '[RecipeListView] Manual category fix failed: ${failure.message}');
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                      content: Text('Categories updated! Check console.')),
+                  SnackBar(
+                      content: Text(
+                          'Failed to update categories: ${failure.message}')),
                 );
-              }
-            } catch (e, st) {
-              debugPrint('[Button] ERROR: $e');
-              debugPrint('[Button] Stack trace: $st');
-            }
+              },
+              (_) {
+                ref.invalidate(recipeListProvider);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Categories updated.')),
+                );
+              },
+            );
           },
         ),
         IconButton(

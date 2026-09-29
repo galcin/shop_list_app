@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:shop_list_app/core/database/tables/meal_slot_table.dart';
+import 'package:shop_list_app/features/meal_planning/domain/entities/meal_type.dart';
 
 /// A single meal slot (breakfast, lunch, or dinner) for a specific day.
 class MealSlot extends Equatable {

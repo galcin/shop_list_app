@@ -16,4 +16,9 @@ abstract class IRecipeRepository {
 
   /// Fetch multiple recipes by their IDs in a single query.
   Future<List<Recipe>> getRecipesByIds(List<int> ids);
+
+  /// Backfills/repairs the `category` field for known recipes whose category
+  /// is missing or stale. This is a one-off data-repair operation; the actual
+  /// persistence logic lives in the data layer where Drift access belongs.
+  Future<void> fixMissingCategories();
 }

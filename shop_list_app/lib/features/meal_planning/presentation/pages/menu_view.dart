@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shop_list_app/core/database/tables/meal_slot_table.dart';
 import 'package:shop_list_app/features/meal_planning/domain/entities/meal_plan.dart';
 import 'package:shop_list_app/features/meal_planning/domain/entities/meal_slot.dart';
+import 'package:shop_list_app/features/meal_planning/domain/entities/meal_type.dart';
 import 'package:shop_list_app/features/meal_planning/presentation/providers/meal_plan_providers.dart';
 import 'package:shop_list_app/features/meal_planning/presentation/widgets/recipe_picker_bottom_sheet.dart';
 import 'package:shop_list_app/features/meal_planning/presentation/widgets/recipes_by_pantry_modal.dart';
@@ -73,11 +73,20 @@ class MenuView extends ConsumerWidget {
           PopupMenuButton<String>(
             icon: Icon(Icons.more_vert, color: colors.onSurface),
             color: colors.surface,
-            onSelected: (value) {
+            onSelected: (value) async {
               if (value == 'duplicate') {
-                ref
-                    .read(weeklyMealPlanProvider.notifier)
-                    .duplicatePreviousWeek();
+                try {
+                  await ref
+                      .read(weeklyMealPlanProvider.notifier)
+                      .duplicatePreviousWeek();
+                } catch (e) {
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                          content: Text('Could not copy previous week: $e')),
+                    );
+                  }
+                }
               } else if (value == 'clear') {
                 _showClearDayDialog(
                   context,
@@ -500,9 +509,19 @@ class MenuView extends ConsumerWidget {
               leading: const Icon(Icons.clear, color: Colors.red),
               title:
                   const Text('Clear Slot', style: TextStyle(color: Colors.red)),
-              onTap: () {
+              onTap: () async {
                 Navigator.pop(context);
-                ref.read(weeklyMealPlanProvider.notifier).clearSlot(slot.id!);
+                try {
+                  await ref
+                      .read(weeklyMealPlanProvider.notifier)
+                      .clearSlot(slot.id!);
+                } catch (e) {
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Could not clear slot: $e')),
+                    );
+                  }
+                }
               },
             ),
             const SizedBox(height: 8),
@@ -536,12 +555,20 @@ class MenuView extends ConsumerWidget {
                     TextStyle(color: colors.onSurface.withValues(alpha: 0.7))),
           ),
           TextButton(
-            onPressed: () {
+            onPressed: () async {
               Navigator.pop(context);
-              ref.read(weeklyMealPlanProvider.notifier).clearDay(
-                    planId: plan.id!,
-                    date: date,
+              try {
+                await ref.read(weeklyMealPlanProvider.notifier).clearDay(
+                      planId: plan.id!,
+                      date: date,
+                    );
+              } catch (e) {
+                if (context.mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Could not clear day: $e')),
                   );
+                }
+              }
             },
             child: const Text('Clear', style: TextStyle(color: Colors.red)),
           ),

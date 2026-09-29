@@ -54,6 +54,9 @@ dev_dependencies:
   freezed: ^2.4.5
   json_serializable: ^6.8.0
 
+  # Dev tooling (recipe placeholder image generation script under tool/)
+  image: ^4.2.0
+
   # Testing
   mockito: ^5.4.2
   integration_test:
