@@ -309,6 +309,8 @@ Ingredient list updates live (no animation needed, just instant rerender):
 
 Reset button: small grey text button `↺ Reset to 4` visible when count ≠ original.
 
+> **See also:** [US-E8.5: Household Size & Smart Ingredient Scaling](E8-settings-data-management.md#us-e85-household-size--smart-ingredient-scaling) builds on this story — it defaults the serving stepper above to the user's global household-size setting instead of the recipe's authored serving count.
+
 ---
 
 _See [\_index.md](_index.md) for the full epic list._

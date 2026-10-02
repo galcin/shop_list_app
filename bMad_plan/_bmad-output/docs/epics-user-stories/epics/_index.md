@@ -26,7 +26,7 @@ Every story cuts through **all layers** (DB → Domain → Repository → Use Ca
 | E5   | [E5-recipe-management-feature.md](E5-recipe-management-feature.md)   | 5       | 26     | P0       | Sprint 3–4   |
 | E6   | [E6-meal-planning-feature.md](E6-meal-planning-feature.md)           | 4       | 22     | P0       | Sprint 4–5   |
 | E7   | [E7-pantry-inventory-feature.md](E7-pantry-inventory-feature.md)     | 3       | 16     | P0       | Sprint 5     |
-| E8   | [E8-settings-data-management.md](E8-settings-data-management.md)     | 4       | 17     | P0       | Sprint 6     |
+| E8   | [E8-settings-data-management.md](E8-settings-data-management.md)     | 7       | 30     | P0       | Sprint 6     |
 | E9   | [E9-sync-engine-queue.md](E9-sync-engine-queue.md)                   | 7       | 35     | P1       | Sprint 7–8   |
 | E10  | [E10-cloud-backend-integration.md](E10-cloud-backend-integration.md) | 8       | 40     | P1       | Sprint 8–10  |
 | E11  | [E11-authentication-security.md](E11-authentication-security.md)     | 6       | 29     | P1       | Sprint 10–11 |
@@ -35,7 +35,7 @@ Every story cuts through **all layers** (DB → Domain → Repository → Use Ca
 | E14  | [E14-performance-optimisation.md](E14-performance-optimisation.md)   | 6       | 26     | P1       | Sprint 14–15 |
 | E15  | [E15-testing-quality-assurance.md](E15-testing-quality-assurance.md) | 8       | 32     | P0       | Ongoing      |
 
-**MVP (E1–E8):** ~141 story points ≈ 7 sprints × 2 weeks = **14 weeks** for 2 developers
+**MVP (E1–E8):** ~154 story points ≈ 7 sprints × 2 weeks = **14 weeks** for 2 developers
 
 ---
 
@@ -64,7 +64,7 @@ Every story cuts through **all layers** (DB → Domain → Repository → Use Ca
 | 3      | Shopping List P1 features           | E4 P1–P2  | ~12    |
 | 4      | Recipes                             | E5        | ~26    |
 | 5      | Meal Planning                       | E6        | ~22    |
-| 6      | Pantry + Settings                   | E7, E8    | ~33    |
+| 6      | Pantry + Settings                   | E7, E8    | ~46    |
 | 7      | Bug fixes, polish, QA               | E15       | ~20    |
 
 ### v1.1 — Cloud Sync & Auth (E9–E12)

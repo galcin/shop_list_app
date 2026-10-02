@@ -1,11 +1,11 @@
-﻿# Epics and User Stories  Vertical Slice Approach
+﻿# Epics and User Stories Vertical Slice Approach
 
 ## Flutter Shopping List & Meal Planning App
 
 **Document Version:** 5.0
 **Date:** March 3, 2026
 **Author:** BMad Team
-**Status:** Development Ready  Vertical Slice Redesign
+**Status:** Development Ready Vertical Slice Redesign
 **Approach:** Clean Architecture + Offline-First + Riverpod + Drift + **Vertical Slices**
 **Related Documents:** [Architecture](architecture-shopping-list-app.md), [PRD](prd-shopping-list-app.md), [UX Design](ux-design-shopping-list-app.md)
 
@@ -13,13 +13,13 @@
 
 ## Why Vertical Slices?
 
-The previous document organised work into **horizontal layers** (Data Layer  Domain Layer  Presentation Layer). Each layer epic had to be completed before the next, and no story produced a UI-testable result.
+The previous document organised work into **horizontal layers** (Data Layer Domain Layer Presentation Layer). Each layer epic had to be completed before the next, and no story produced a UI-testable result.
 
-This revision adopts **vertical slices**: every story cuts through **all layers** (Database  Domain Entity  Repository  Use Case  State Provider  UI Page) for a single feature or workflow. The result is that each completed story can be:
+This revision adopts **vertical slices**: every story cuts through **all layers** (Database Domain Entity Repository Use Case State Provider UI Page) for a single feature or workflow. The result is that each completed story can be:
 
--  **Demo'd in the running app** immediately
--  **Tested from the UI** (widget tests, integration tests, manual QA)
--  **Integrated end-to-end** without waiting for other layers
+- **Demo'd in the running app** immediately
+- **Tested from the UI** (widget tests, integration tests, manual QA)
+- **Integrated end-to-end** without waiting for other layers
 
 ### Vertical Slice Anatomy
 
@@ -50,7 +50,7 @@ Every story follows this delivery checklist:
       Application Layer (Use Cases)         Business operations, validation
 
         Domain Layer                        Entities, Repository Interfaces
-    (pure Dart, zero dependencies)       
+    (pure Dart, zero dependencies)
 
          Data Layer                         Drift tables, Models, DataSources, Repo Impl
 
@@ -62,65 +62,65 @@ Every story follows this delivery checklist:
 ## Story Point Scale
 
 | Points | Effort          |
-|--------|-----------------|
-| 1      | 12 hours       |
+| ------ | --------------- |
+| 1      | 12 hours        |
 | 2      | Half day        |
 | 3      | Full day        |
-| 5      | 23 days        |
-| 8      | 35 days        |
+| 5      | 23 days         |
+| 8      | 35 days         |
 | 13     | Needs splitting |
 
 ## Priority Levels
 
-| Level | Meaning                         |
-|-------|---------------------------------|
-| P0    | MVP blocker                     |
-| P1    | Core feature for product fit    |
-| P2    | Important enhancement           |
-| P3    | Nice-to-have, future release    |
+| Level | Meaning                      |
+| ----- | ---------------------------- |
+| P0    | MVP blocker                  |
+| P1    | Core feature for product fit |
+| P2    | Important enhancement        |
+| P3    | Nice-to-have, future release |
 
 ---
 
 ## Current Implementation Status (March 2026)
 
-| Area                          | Status                                                                          |
-|-------------------------------|---------------------------------------------------------------------------------|
-| E0  Foundation               |  ~90% Done  skip re-implementation                                           |
-| Product Category (data+UI)    |  Partial  table, entity, repo, pages exist; no use cases; no Riverpod wiring |
-| Product (data+UI)             |  Partial  table, entity, repo, pages exist; no use cases; no Riverpod wiring |
-| Recipes (data+partial UI)     |  Partial  table, entity, repo, list UI exist; no use cases                  |
-| Meal Planning                 |  UI skeleton only  no data layer yet                                         |
-| Shopping Lists                |  Not started                                                                   |
-| Pantry                        |  Not started                                                                   |
+| Area                       | Status                                                                     |
+| -------------------------- | -------------------------------------------------------------------------- |
+| E0 Foundation              | ~90% Done skip re-implementation                                           |
+| Product Category (data+UI) | Partial table, entity, repo, pages exist; no use cases; no Riverpod wiring |
+| Product (data+UI)          | Partial table, entity, repo, pages exist; no use cases; no Riverpod wiring |
+| Recipes (data+partial UI)  | Partial table, entity, repo, list UI exist; no use cases                   |
+| Meal Planning              | UI skeleton only no data layer yet                                         |
+| Shopping Lists             | Not started                                                                |
+| Pantry                     | Not started                                                                |
 
 ---
 
 ## Epic Summary
 
-| Epic | Name                            | Stories | Points | Priority | Sprint     |
-|------|---------------------------------|---------|--------|----------|------------|
-| E0   | Foundation & Infrastructure     | 7       | 34     | P0       |  Done    |
-| E1   | App Shell & Navigation          | 2       | 7      | P0       | Sprint 1   |
-| E2   | Product Category Feature        | 3       | 14     | P0       | Sprint 1   |
-| E3   | Product Feature                 | 3       | 15     | P0       | Sprint 2   |
-| E4   | Shopping List Feature           | 5       | 24     | P0       | Sprint 23 |
-| E5   | Recipe Management Feature       | 5       | 26     | P0       | Sprint 34 |
-| E6   | Meal Planning Feature           | 4       | 22     | P0       | Sprint 45 |
-| E7   | Pantry Inventory Feature        | 3       | 16     | P0       | Sprint 5   |
-| E8   | Settings & Data Management      | 4       | 17     | P0       | Sprint 6   |
-| E9   | Sync Engine & Queue             | 7       | 35     | P1       | Sprint 78 |
-| E10  | Cloud Backend Integration       | 8       | 40     | P1       | Sprint 810|
-| E11  | Authentication & Security       | 6       | 29     | P1       | Sprint 1011|
-| E12  | Family & Collaboration          | 6       | 27     | P2       | Sprint 1112|
-| E13  | Smart Features & AI             | 7       | 38     | P2       | Sprint 1214|
-| E14  | Performance & Optimisation      | 6       | 26     | P1       | Sprint 1415|
-| E15  | Testing & Quality Assurance     | 8       | 32     | P0       | Ongoing    |
+| Epic | Name                        | Stories | Points | Priority | Sprint      |
+| ---- | --------------------------- | ------- | ------ | -------- | ----------- |
+| E0   | Foundation & Infrastructure | 7       | 34     | P0       | Done        |
+| E1   | App Shell & Navigation      | 2       | 7      | P0       | Sprint 1    |
+| E2   | Product Category Feature    | 3       | 14     | P0       | Sprint 1    |
+| E3   | Product Feature             | 3       | 15     | P0       | Sprint 2    |
+| E4   | Shopping List Feature       | 5       | 24     | P0       | Sprint 23   |
+| E5   | Recipe Management Feature   | 5       | 26     | P0       | Sprint 34   |
+| E6   | Meal Planning Feature       | 4       | 22     | P0       | Sprint 45   |
+| E7   | Pantry Inventory Feature    | 3       | 16     | P0       | Sprint 5    |
+| E8   | Settings & Data Management  | 4       | 17     | P0       | Sprint 6    |
+| E9   | Sync Engine & Queue         | 7       | 35     | P1       | Sprint 78   |
+| E10  | Cloud Backend Integration   | 8       | 40     | P1       | Sprint 810  |
+| E11  | Authentication & Security   | 6       | 29     | P1       | Sprint 1011 |
+| E12  | Family & Collaboration      | 6       | 27     | P2       | Sprint 1112 |
+| E13  | Smart Features & AI         | 7       | 38     | P2       | Sprint 1214 |
+| E14  | Performance & Optimisation  | 6       | 26     | P1       | Sprint 1415 |
+| E15  | Testing & Quality Assurance | 8       | 32     | P0       | Ongoing     |
 
-**MVP (E1E8):** ~141 story points  67 sprints (2 devs, 2-week sprints)
+**MVP (E1E8):** ~141 story points 67 sprints (2 devs, 2-week sprints)
 
 ---
 
-## EPIC E0: Foundation & Infrastructure ( NEARLY COMPLETE  SKIP)
+## EPIC E0: Foundation & Infrastructure ( NEARLY COMPLETE SKIP)
 
 Core architecture, Drift setup, error handling, theme, utils, and CI/CD are already implemented.
 Complete any remaining gaps (e.g., CI/CD pipeline) as minor tasks, not new stories.
@@ -146,13 +146,13 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer   | Deliverable                                                                   |
-|---------|-------------------------------------------------------------------------------|
-| Domain  | `AppRoute` enum: `shopping`, `recipes`, `mealPlanning`, `pantry`, `settings` |
-| State   | `NavigationNotifier` (Riverpod `StateNotifier`) holding current route         |
-| UI      | `MainShell` widget with `NavigationBar` + `IndexedStack` children             |
-| Routes  | GoRouter wiring all top-level pages                                           |
-| Tests   | Widget test: tapping each nav item shows correct page                         |
+| Layer  | Deliverable                                                                  |
+| ------ | ---------------------------------------------------------------------------- |
+| Domain | `AppRoute` enum: `shopping`, `recipes`, `mealPlanning`, `pantry`, `settings` |
+| State  | `NavigationNotifier` (Riverpod `StateNotifier`) holding current route        |
+| UI     | `MainShell` widget with `NavigationBar` + `IndexedStack` children            |
+| Routes | GoRouter wiring all top-level pages                                          |
+| Tests  | Widget test: tapping each nav item shows correct page                        |
 
 **Acceptance Criteria:**
 
@@ -175,13 +175,13 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer | Deliverable                                                           |
-|-------|-----------------------------------------------------------------------|
-| UI    | `EmptyStateWidget(icon, title, subtitle, action?)` component          |
-| UI    | `ErrorStateWidget(message, onRetry?)` component                       |
-| UI    | `LoadingStateWidget` (shimmer skeleton)                               |
-| UI    | `AsyncValueWidget<T>` helper that wraps Riverpod `AsyncValue`         |
-| Tests | Widget tests for each component covering all states                   |
+| Layer | Deliverable                                                   |
+| ----- | ------------------------------------------------------------- |
+| UI    | `EmptyStateWidget(icon, title, subtitle, action?)` component  |
+| UI    | `ErrorStateWidget(message, onRetry?)` component               |
+| UI    | `LoadingStateWidget` (shimmer skeleton)                       |
+| UI    | `AsyncValueWidget<T>` helper that wraps Riverpod `AsyncValue` |
+| Tests | Widget tests for each component covering all states           |
 
 **Acceptance Criteria:**
 
@@ -195,11 +195,11 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 ## EPIC E2: Product Category Feature
 
-**Goal:** Users can manage product categories (e.g., "Dairy", "Produce"). This is the first complete vertical slice  from Drift table through to CRUD UI.
+**Goal:** Users can manage product categories (e.g., "Dairy", "Produce"). This is the first complete vertical slice from Drift table through to CRUD UI.
 
 **Story Count:** 3 | **Total Points:** 14 | **Priority:** P0
 
-> **Note:** Table, entity, repository, and UI pages for `ProductCategory` already exist. These stories focus on **wiring everything together correctly**  adding use cases, Riverpod providers, proper state management  so the feature is fully testable end-to-end.
+> **Note:** Table, entity, repository, and UI pages for `ProductCategory` already exist. These stories focus on **wiring everything together correctly** adding use cases, Riverpod providers, proper state management so the feature is fully testable end-to-end.
 
 ---
 
@@ -213,23 +213,23 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer      | Deliverable                                                                                     |
-|------------|-------------------------------------------------------------------------------------------------|
-| DB         | `ProductCategoryTable` (exists)  verify: `id`, `name`, `colorHex`, `iconName`, `sortOrder`, `createdAt`, `updatedAt` |
-| Domain     | `ProductCategory` entity (exists)  verify `copyWith`, `Equatable`                             |
-| Domain     | `IProductCategoryRepository` (exists)  verify `watchAll()`, `save()`                          |
-| Data       | `ProductCategoryDataSource` (Drift DAO)  verify `watchAll()`, `insert()`                      |
-| Data       | `ProductCategoryRepositoryImpl`  verify exception  Failure conversion                         |
-| Use Cases  | `WatchProductCategoriesUseCase`  `Stream<Either<Failure, List<ProductCategory>>>`              |
-| Use Cases  | `CreateProductCategoryUseCase(name, colorHex?, iconName?)`  validates non-empty name, generates UUID, saves |
-| Providers  | `productCategoryRepositoryProvider`, `watchCategoriesProvider`, `createCategoryProvider`        |
-| State      | `ProductCategoryListNotifier extends AsyncNotifier<List<ProductCategory>>`                      |
-| UI         | `ProductCategoryViewPage`  list via `AsyncValueWidget` + FAB to add                           |
-| UI         | `CreateCategoryBottomSheet`  text field + colour picker + save button                          |
-| Tests      | Unit: `CreateProductCategoryUseCase` with empty name  `ValidationFailure`                     |
-| Tests      | Unit: repository `save()` calls data source and returns entity                                  |
-| Tests      | Widget: `ProductCategoryViewPage` renders 3 mocked categories                                  |
-| Tests      | Integration: create category via UI  appears in list                                           |
+| Layer     | Deliverable                                                                                                         |
+| --------- | ------------------------------------------------------------------------------------------------------------------- |
+| DB        | `ProductCategoryTable` (exists) verify: `id`, `name`, `colorHex`, `iconName`, `sortOrder`, `createdAt`, `updatedAt` |
+| Domain    | `ProductCategory` entity (exists) verify `copyWith`, `Equatable`                                                    |
+| Domain    | `IProductCategoryRepository` (exists) verify `watchAll()`, `save()`                                                 |
+| Data      | `ProductCategoryDataSource` (Drift DAO) verify `watchAll()`, `insert()`                                             |
+| Data      | `ProductCategoryRepositoryImpl` verify exception Failure conversion                                                 |
+| Use Cases | `WatchProductCategoriesUseCase` `Stream<Either<Failure, List<ProductCategory>>>`                                    |
+| Use Cases | `CreateProductCategoryUseCase(name, colorHex?, iconName?)` validates non-empty name, generates UUID, saves          |
+| Providers | `productCategoryRepositoryProvider`, `watchCategoriesProvider`, `createCategoryProvider`                            |
+| State     | `ProductCategoryListNotifier extends AsyncNotifier<List<ProductCategory>>`                                          |
+| UI        | `ProductCategoryViewPage` list via `AsyncValueWidget` + FAB to add                                                  |
+| UI        | `CreateCategoryBottomSheet` text field + colour picker + save button                                                |
+| Tests     | Unit: `CreateProductCategoryUseCase` with empty name `ValidationFailure`                                            |
+| Tests     | Unit: repository `save()` calls data source and returns entity                                                      |
+| Tests     | Widget: `ProductCategoryViewPage` renders 3 mocked categories                                                       |
+| Tests     | Integration: create category via UI appears in list                                                                 |
 
 **Acceptance Criteria:**
 
@@ -238,7 +238,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Tapping FAB opens `CreateCategoryBottomSheet`
 - [ ] Submitting an empty name shows inline validation error (no toast)
 - [ ] Created category appears at bottom of list immediately (reactive stream)
-- [ ] Integration test: create  verify in list  pass
+- [ ] Integration test: create verify in list pass
 
 ---
 
@@ -253,16 +253,16 @@ Refer to the original document version 4.0 for E0 story details if needed.
 **Vertical Slice Deliverables:**
 
 | Layer     | Deliverable                                                                              |
-|-----------|------------------------------------------------------------------------------------------|
-| Use Cases | `UpdateProductCategoryUseCase(id, name, colorHex?, iconName?)`  validates, updates      |
-| Use Cases | `DeleteProductCategoryUseCase(id)`  checks if products use this category, warns or blocks |
-| Providers | `updateCategoryProvider`, `deleteCategoryProvider`                                        |
+| --------- | ---------------------------------------------------------------------------------------- |
+| Use Cases | `UpdateProductCategoryUseCase(id, name, colorHex?, iconName?)` validates, updates        |
+| Use Cases | `DeleteProductCategoryUseCase(id)` checks if products use this category, warns or blocks |
+| Providers | `updateCategoryProvider`, `deleteCategoryProvider`                                       |
 | UI        | Swipe-to-delete on list tile (with undo snackbar, 4 seconds)                             |
 | UI        | Long-press or trailing icon opens `EditCategoryBottomSheet` (pre-filled form)            |
-| UI        | Confirmation dialog if category has products assigned                                     |
-| Tests     | Unit: `DeleteProductCategoryUseCase` with products assigned  `ConflictFailure`          |
-| Tests     | Widget: swipe tile  confirmation dialog appears                                         |
-| Tests     | Integration: edit name  updated in list; delete  removed from list                    |
+| UI        | Confirmation dialog if category has products assigned                                    |
+| Tests     | Unit: `DeleteProductCategoryUseCase` with products assigned `ConflictFailure`            |
+| Tests     | Widget: swipe tile confirmation dialog appears                                           |
+| Tests     | Integration: edit name updated in list; delete removed from list                         |
 
 **Acceptance Criteria:**
 
@@ -285,27 +285,27 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                |
-|-----------|----------------------------------------------------------------------------|
-| DB        | Ensure `sortOrder` column exists on `ProductCategoryTable`                 |
-| Use Cases | `ReorderProductCategoriesUseCase(orderedIds)`  bulk updates `sortOrder`   |
-| Providers | `reorderCategoriesProvider`                                                |
-| UI        | `ReorderableListView` in `ProductCategoryViewPage` with drag handles       |
-| Tests     | Unit: reorder use case assigns correct sort indices                        |
-| Tests     | Widget: drag tile  list reorders visually                                 |
+| Layer     | Deliverable                                                            |
+| --------- | ---------------------------------------------------------------------- |
+| DB        | Ensure `sortOrder` column exists on `ProductCategoryTable`             |
+| Use Cases | `ReorderProductCategoriesUseCase(orderedIds)` bulk updates `sortOrder` |
+| Providers | `reorderCategoriesProvider`                                            |
+| UI        | `ReorderableListView` in `ProductCategoryViewPage` with drag handles   |
+| Tests     | Unit: reorder use case assigns correct sort indices                    |
+| Tests     | Widget: drag tile list reorders visually                               |
 
 **Acceptance Criteria:**
 
 - [ ] Drag handle visible on each category row
 - [ ] Dragging updates order immediately (optimistic UI)
-- [ ] Sort order persisted  reopening app shows same order
+- [ ] Sort order persisted reopening app shows same order
 - [ ] Works on touch (mobile) and mouse (desktop/web)
 
 ---
 
 ## EPIC E3: Product Feature
 
-**Goal:** Users can manage the product catalogue  individual products that belong to categories. Products are the building blocks of shopping lists and pantry entries.
+**Goal:** Users can manage the product catalogue individual products that belong to categories. Products are the building blocks of shopping lists and pantry entries.
 
 **Story Count:** 3 | **Total Points:** 15 | **Priority:** P0
 
@@ -323,20 +323,20 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                                |
-|-----------|--------------------------------------------------------------------------------------------|
-| DB        | `ProductTable` (exists)  verify: `id`, `name`, `defaultUnit`, `categoryId` (FK), `barcode?`, `imageUrl?`, `createdAt`, `updatedAt` |
-| Domain    | `Product` entity (exists)  verify business methods and `Equatable`                       |
-| Domain    | `IProductRepository`  `watchAll()`, `watchByCategory(id)`, `save()`                      |
-| Data      | `ProductDataSource` (Drift DAO) + `ProductRepositoryImpl`                                 |
-| Use Cases | `WatchProductsUseCase`, `CreateProductUseCase(name, unit, categoryId)`                    |
-| Providers | `productRepositoryProvider`, `watchProductsProvider`, `createProductProvider`             |
-| State     | `ProductListNotifier extends AsyncNotifier<List<Product>>`                                |
-| UI        | `ProductViewPage` (exists)  wire to Riverpod stream; products grouped by category        |
-| UI        | `CreateProductBottomSheet`  name field, unit dropdown, category picker                   |
-| Tests     | Unit: `CreateProductUseCase` validates non-empty name and valid `categoryId`              |
-| Tests     | Widget: `ProductViewPage` renders products grouped by category                            |
-| Tests     | Integration: create product  appears in correct category group                           |
+| Layer     | Deliverable                                                                                                                       |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| DB        | `ProductTable` (exists) verify: `id`, `name`, `defaultUnit`, `categoryId` (FK), `barcode?`, `imageUrl?`, `createdAt`, `updatedAt` |
+| Domain    | `Product` entity (exists) verify business methods and `Equatable`                                                                 |
+| Domain    | `IProductRepository` `watchAll()`, `watchByCategory(id)`, `save()`                                                                |
+| Data      | `ProductDataSource` (Drift DAO) + `ProductRepositoryImpl`                                                                         |
+| Use Cases | `WatchProductsUseCase`, `CreateProductUseCase(name, unit, categoryId)`                                                            |
+| Providers | `productRepositoryProvider`, `watchProductsProvider`, `createProductProvider`                                                     |
+| State     | `ProductListNotifier extends AsyncNotifier<List<Product>>`                                                                        |
+| UI        | `ProductViewPage` (exists) wire to Riverpod stream; products grouped by category                                                  |
+| UI        | `CreateProductBottomSheet` name field, unit dropdown, category picker                                                             |
+| Tests     | Unit: `CreateProductUseCase` validates non-empty name and valid `categoryId`                                                      |
+| Tests     | Widget: `ProductViewPage` renders products grouped by category                                                                    |
+| Tests     | Integration: create product appears in correct category group                                                                     |
 
 **Acceptance Criteria:**
 
@@ -345,7 +345,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] FAB opens create form
 - [ ] Category picker shows existing categories from E2
 - [ ] Created product appears in correct group immediately (reactive stream)
-- [ ] Integration test: create  verify grouping
+- [ ] Integration test: create verify grouping
 
 ---
 
@@ -359,15 +359,15 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                     |
-|-----------|---------------------------------------------------------------------------------|
-| Use Cases | `UpdateProductUseCase(id, name?, unit?, categoryId?)`                           |
-| Use Cases | `DeleteProductUseCase(id)`  soft delete                                        |
-| UI        | `ProductDetailPage` (exists)  wire edit/delete actions                         |
-| UI        | Edit form pre-filled; save updates list reactively                               |
-| UI        | Swipe-to-delete with undo snackbar                                               |
-| Tests     | Unit: `UpdateProductUseCase` merges only provided fields                        |
-| Tests     | Integration: edit  delete  verify state                                       |
+| Layer     | Deliverable                                              |
+| --------- | -------------------------------------------------------- |
+| Use Cases | `UpdateProductUseCase(id, name?, unit?, categoryId?)`    |
+| Use Cases | `DeleteProductUseCase(id)` soft delete                   |
+| UI        | `ProductDetailPage` (exists) wire edit/delete actions    |
+| UI        | Edit form pre-filled; save updates list reactively       |
+| UI        | Swipe-to-delete with undo snackbar                       |
+| Tests     | Unit: `UpdateProductUseCase` merges only provided fields |
+| Tests     | Integration: edit delete verify state                    |
 
 **Acceptance Criteria:**
 
@@ -388,17 +388,17 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                   |
-|-----------|-------------------------------------------------------------------------------|
-| Data      | `searchProducts(query)` Drift query  case-insensitive LIKE on `name`        |
-| Use Cases | `SearchProductsUseCase(query)`                                                |
-| Use Cases | `FilterProductsByCategoryUseCase(categoryId?)`                                |
-| State     | `ProductSearchNotifier`  `query` + `selectedCategory` + debounce 300 ms     |
-| UI        | Search bar at top of `ProductViewPage`                                        |
-| UI        | Category filter chips below search bar                                        |
-| UI        | Results update in real time as user types                                     |
-| Tests     | Unit: search use case returns correct subset                                  |
-| Tests     | Widget: typing "mil" filters to "Milk"                                        |
+| Layer     | Deliverable                                                            |
+| --------- | ---------------------------------------------------------------------- |
+| Data      | `searchProducts(query)` Drift query case-insensitive LIKE on `name`    |
+| Use Cases | `SearchProductsUseCase(query)`                                         |
+| Use Cases | `FilterProductsByCategoryUseCase(categoryId?)`                         |
+| State     | `ProductSearchNotifier` `query` + `selectedCategory` + debounce 300 ms |
+| UI        | Search bar at top of `ProductViewPage`                                 |
+| UI        | Category filter chips below search bar                                 |
+| UI        | Results update in real time as user types                              |
+| Tests     | Unit: search use case returns correct subset                           |
+| Tests     | Widget: typing "mil" filters to "Milk"                                 |
 
 **Acceptance Criteria:**
 
@@ -407,7 +407,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Search + category combination works correctly
 - [ ] "No results" empty state shown
 - [ ] Clearing search restores full list
-- [ ] Widget test: type "mil"  only "Milk" visible
+- [ ] Widget test: type "mil" only "Milk" visible
 
 ---
 
@@ -419,7 +419,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 ---
 
-### US-E4.1: Shopping Lists Overview  Create & Delete Lists
+### US-E4.1: Shopping Lists Overview Create & Delete Lists
 
 **As a** user
 **I want to** see all my shopping lists and create new ones
@@ -429,22 +429,22 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                                    |
-|-----------|------------------------------------------------------------------------------------------------|
-| DB        | `ShoppingListsTable`: `id`, `name`, `createdAt`, `updatedAt`, `isSynced`, `isDeleted`         |
+| Layer     | Deliverable                                                                                                |
+| --------- | ---------------------------------------------------------------------------------------------------------- |
+| DB        | `ShoppingListsTable`: `id`, `name`, `createdAt`, `updatedAt`, `isSynced`, `isDeleted`                      |
 | Domain    | `ShoppingList` entity: `id`, `name`, `items List<ShoppingItem>`, `createdAt`; computed `completionPercent` |
-| Domain    | `IShoppingListRepository`: `watchAll()`, `save()`, `delete(id)`, `watchById(id)`              |
-| Data      | `ShoppingListDataSource` (Drift DAO) + `ShoppingListRepositoryImpl`                           |
-| Use Cases | `WatchShoppingListsUseCase`, `CreateShoppingListUseCase(name)`, `DeleteShoppingListUseCase(id)` |
-| Providers | `shoppingListRepositoryProvider`, `shoppingListsProvider` (StreamProvider)                    |
-| State     | `ShoppingListsNotifier`                                                                       |
-| UI        | `ShoppingListsPage`  card per list showing name, item count, completion bar                  |
-| UI        | FAB  `CreateListDialog` (single name text field)                                             |
-| UI        | Long-press card  context menu: Rename / Delete                                               |
-| UI        | Delete confirmation showing item count                                                        |
-| Tests     | Unit: `CreateShoppingListUseCase` rejects empty name                                          |
-| Tests     | Widget: list card shows completion percentage bar                                             |
-| Tests     | Integration: create list  card appears; delete list  card removed                          |
+| Domain    | `IShoppingListRepository`: `watchAll()`, `save()`, `delete(id)`, `watchById(id)`                           |
+| Data      | `ShoppingListDataSource` (Drift DAO) + `ShoppingListRepositoryImpl`                                        |
+| Use Cases | `WatchShoppingListsUseCase`, `CreateShoppingListUseCase(name)`, `DeleteShoppingListUseCase(id)`            |
+| Providers | `shoppingListRepositoryProvider`, `shoppingListsProvider` (StreamProvider)                                 |
+| State     | `ShoppingListsNotifier`                                                                                    |
+| UI        | `ShoppingListsPage` card per list showing name, item count, completion bar                                 |
+| UI        | FAB `CreateListDialog` (single name text field)                                                            |
+| UI        | Long-press card context menu: Rename / Delete                                                              |
+| UI        | Delete confirmation showing item count                                                                     |
+| Tests     | Unit: `CreateShoppingListUseCase` rejects empty name                                                       |
+| Tests     | Widget: list card shows completion percentage bar                                                          |
+| Tests     | Integration: create list card appears; delete list card removed                                            |
 
 **Acceptance Criteria:**
 
@@ -452,10 +452,10 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Each card shows name, item count, and completion bar
 - [ ] FAB opens inline dialog to name the new list
 - [ ] New list card appears immediately
-- [ ] Long-press  context menu with Rename and Delete
+- [ ] Long-press context menu with Rename and Delete
 - [ ] Delete shows confirmation with item count; undo available for 5 seconds
 - [ ] Empty state shown when no lists exist
-- [ ] Integration test: create  delete  verify state
+- [ ] Integration test: create delete verify state
 
 ---
 
@@ -469,20 +469,20 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                                    |
-|-----------|------------------------------------------------------------------------------------------------|
-| DB        | `ShoppingItemsTable`: `id`, `listId` (FK), `productId` (FK nullable), `name`, `quantity`, `unit`, `isChecked`, `categoryId`, `sortOrder`, `createdAt` |
-| Domain    | `ShoppingItem` entity + `toggleChecked()`, `copyWith()`                                        |
-| Domain    | `IShoppingListRepository` extended with add/remove/update item methods                        |
-| Data      | `ShoppingItemDataSource` with JOIN queries                                                    |
+| Layer     | Deliverable                                                                                                                                                 |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DB        | `ShoppingItemsTable`: `id`, `listId` (FK), `productId` (FK nullable), `name`, `quantity`, `unit`, `isChecked`, `categoryId`, `sortOrder`, `createdAt`       |
+| Domain    | `ShoppingItem` entity + `toggleChecked()`, `copyWith()`                                                                                                     |
+| Domain    | `IShoppingListRepository` extended with add/remove/update item methods                                                                                      |
+| Data      | `ShoppingItemDataSource` with JOIN queries                                                                                                                  |
 | Use Cases | `AddItemToListUseCase(listId, name, qty, unit, categoryId?)`, `RemoveItemFromListUseCase(listId, itemId)`, `UpdateItemUseCase(listId, itemId, qty?, unit?)` |
-| State     | `ShoppingListDetailNotifier(listId)`  streams items in real time                            |
-| UI        | `ShoppingListDetailPage`  item list; FAB opens `AddItemBottomSheet`                         |
-| UI        | `AddItemBottomSheet`  product catalogue picker OR free-text, quantity + unit                 |
-| UI        | Swipe-to-delete item with undo                                                                |
-| Tests     | Unit: `AddItemUseCase` handles product reference and free-text correctly                      |
-| Tests     | Widget: `ShoppingListDetailPage` renders items from stream                                   |
-| Tests     | Integration: open list  add item  item appears in list                                     |
+| State     | `ShoppingListDetailNotifier(listId)` streams items in real time                                                                                             |
+| UI        | `ShoppingListDetailPage` item list; FAB opens `AddItemBottomSheet`                                                                                          |
+| UI        | `AddItemBottomSheet` product catalogue picker OR free-text, quantity + unit                                                                                 |
+| UI        | Swipe-to-delete item with undo                                                                                                                              |
+| Tests     | Unit: `AddItemUseCase` handles product reference and free-text correctly                                                                                    |
+| Tests     | Widget: `ShoppingListDetailPage` renders items from stream                                                                                                  |
+| Tests     | Integration: open list add item item appears in list                                                                                                        |
 
 **Acceptance Criteria:**
 
@@ -491,7 +491,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Added item appears at bottom of list immediately
 - [ ] Quantity and unit visible on each item row
 - [ ] Swipe-left deletes item (with undo for 4 seconds)
-- [ ] Integration test: add  delete  verify
+- [ ] Integration test: add delete verify
 
 ---
 
@@ -505,16 +505,16 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                     |
-|-----------|---------------------------------------------------------------------------------|
-| Use Cases | `ToggleItemCheckedUseCase(listId, itemId)`  flips `isChecked`, updates DB     |
-| State     | `ShoppingListDetailNotifier` handles optimistic toggle                          |
-| UI        | Animated checkbox on each list tile (check + strikethrough text + fade)        |
-| UI        | Checked items collapse to a "Done (N)" section at the bottom                   |
-| UI        | App bar counter "3 / 7 items" updates live                                     |
-| Tests     | Unit: toggle use case flips `isChecked`                                         |
-| Tests     | Widget: tap checkbox  text is struck-through                                   |
-| Tests     | Integration: check 2 of 4 items  completion bar shows 50%                     |
+| Layer     | Deliverable                                                              |
+| --------- | ------------------------------------------------------------------------ |
+| Use Cases | `ToggleItemCheckedUseCase(listId, itemId)` flips `isChecked`, updates DB |
+| State     | `ShoppingListDetailNotifier` handles optimistic toggle                   |
+| UI        | Animated checkbox on each list tile (check + strikethrough text + fade)  |
+| UI        | Checked items collapse to a "Done (N)" section at the bottom             |
+| UI        | App bar counter "3 / 7 items" updates live                               |
+| Tests     | Unit: toggle use case flips `isChecked`                                  |
+| Tests     | Widget: tap checkbox text is struck-through                              |
+| Tests     | Integration: check 2 of 4 items completion bar shows 50%                 |
 
 **Acceptance Criteria:**
 
@@ -522,7 +522,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Checked items move to a collapsed "Done" section at the bottom
 - [ ] App bar shows item counter and updates live
 - [ ] Tapping a checked item unchecks it and moves it back to the main list
-- [ ] Integration test: check items  verify completion %
+- [ ] Integration test: check items verify completion %
 
 ---
 
@@ -536,19 +536,19 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                           |
-|-----------|---------------------------------------------------------------------------------------|
-| Use Cases | `GetItemsGroupedByCategoryUseCase(listId)`  `Map<String, List<ShoppingItem>>`       |
-| State     | Toggle `flat` / `grouped` view mode in `ShoppingListDetailNotifier`                  |
-| UI        | Segmented button (Flat / By Category) in app bar                                     |
-| UI        | Grouped view: sticky section header per category                                      |
-| UI        | Uncategorised items under "Other"                                                     |
-| Tests     | Unit: grouping use case organises mixed-category items correctly                      |
-| Tests     | Widget: grouped view renders section headers                                          |
+| Layer     | Deliverable                                                                  |
+| --------- | ---------------------------------------------------------------------------- |
+| Use Cases | `GetItemsGroupedByCategoryUseCase(listId)` `Map<String, List<ShoppingItem>>` |
+| State     | Toggle `flat` / `grouped` view mode in `ShoppingListDetailNotifier`          |
+| UI        | Segmented button (Flat / By Category) in app bar                             |
+| UI        | Grouped view: sticky section header per category                             |
+| UI        | Uncategorised items under "Other"                                            |
+| Tests     | Unit: grouping use case organises mixed-category items correctly             |
+| Tests     | Widget: grouped view renders section headers                                 |
 
 **Acceptance Criteria:**
 
-- [ ] Toggle in app bar switches flat  grouped views
+- [ ] Toggle in app bar switches flat grouped views
 - [ ] Grouped view shows category names as sticky section headers
 - [ ] Items without a category appear under "Other"
 - [ ] Checking items works identically in both views
@@ -566,12 +566,12 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                           |
-|-----------|-----------------------------------------------------------------------|
-| Use Cases | `RenameShoppingListUseCase(id, newName)`  validates non-empty        |
+| Layer     | Deliverable                                                              |
+| --------- | ------------------------------------------------------------------------ |
+| Use Cases | `RenameShoppingListUseCase(id, newName)` validates non-empty             |
 | UI        | Rename dialog pre-filled with current name (triggered from context menu) |
-| Tests     | Unit: rename use case rejects empty name                              |
-| Tests     | Integration: rename  verify new name on card in overview             |
+| Tests     | Unit: rename use case rejects empty name                                 |
+| Tests     | Integration: rename verify new name on card in overview                  |
 
 **Acceptance Criteria:**
 
@@ -579,7 +579,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Dialog shows current name pre-filled
 - [ ] Empty name shows validation error
 - [ ] Saving updates card name immediately
-- [ ] Integration test: rename  verify new label on card
+- [ ] Integration test: rename verify new label on card
 
 ---
 
@@ -604,19 +604,19 @@ Refer to the original document version 4.0 for E0 story details if needed.
 **Vertical Slice Deliverables:**
 
 | Layer     | Deliverable                                                                                  |
-|-----------|----------------------------------------------------------------------------------------------|
-| DB        | `RecipesTable` (exists)  verify all columns; `IngredientsTable` as child table or JSON column |
-| Domain    | `Recipe` entity (exists)  verify `Ingredient` value object, `scaleServings()`, `totalTime` |
-| Domain    | `IRecipeRepository`  `watchAll()`, `getById(id)`, `save()`, `delete(id)`, `search(query)`  |
-| Data      | `RecipeDataSource` (Drift DAO) + `RecipeRepositoryImpl` (exists  verify exception mapping) |
-| Use Cases | `WatchRecipesUseCase`, `GetRecipeByIdUseCase(id)`                                           |
-| Providers | `recipeRepositoryProvider`, `recipesProvider` (StreamProvider), `recipeDetailProvider(id)` |
+| --------- | -------------------------------------------------------------------------------------------- |
+| DB        | `RecipesTable` (exists) verify all columns; `IngredientsTable` as child table or JSON column |
+| Domain    | `Recipe` entity (exists) verify `Ingredient` value object, `scaleServings()`, `totalTime`    |
+| Domain    | `IRecipeRepository` `watchAll()`, `getById(id)`, `save()`, `delete(id)`, `search(query)`     |
+| Data      | `RecipeDataSource` (Drift DAO) + `RecipeRepositoryImpl` (exists verify exception mapping)    |
+| Use Cases | `WatchRecipesUseCase`, `GetRecipeByIdUseCase(id)`                                            |
+| Providers | `recipeRepositoryProvider`, `recipesProvider` (StreamProvider), `recipeDetailProvider(id)`   |
 | State     | `RecipeListNotifier`                                                                         |
-| UI        | `RecipeListPage` (exists)  wire to Riverpod stream                                         |
-| UI        | `RecipeDetailPage`  title, image, time badges, ingredient list, instruction steps          |
-| Tests     | Widget: `RecipeListPage` renders 3 mocked recipes                                           |
-| Tests     | Widget: `RecipeDetailPage` shows ingredients and instruction steps                          |
-| Tests     | Integration: open Recipes tab  tap recipe  verify detail page                            |
+| UI        | `RecipeListPage` (exists) wire to Riverpod stream                                            |
+| UI        | `RecipeDetailPage` title, image, time badges, ingredient list, instruction steps             |
+| Tests     | Widget: `RecipeListPage` renders 3 mocked recipes                                            |
+| Tests     | Widget: `RecipeDetailPage` shows ingredients and instruction steps                           |
+| Tests     | Integration: open Recipes tab tap recipe verify detail page                                  |
 
 **Acceptance Criteria:**
 
@@ -625,7 +625,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Detail page shows ingredients with quantities and units
 - [ ] Detail page shows numbered instruction steps
 - [ ] Loading state shown while recipes load from DB
-- [ ] Integration test: launch app  Recipes tab  tap recipe  verify detail
+- [ ] Integration test: launch app Recipes tab tap recipe verify detail
 
 ---
 
@@ -639,20 +639,20 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                                        |
-|-----------|----------------------------------------------------------------------------------------------------|
-| Use Cases | `SaveRecipeUseCase(recipe)`  validates non-empty title + at least 1 ingredient, generates UUID, sets timestamps |
-| Use Cases | `ValidateRecipeUseCase(recipe)`  `Either<ValidationFailure, Recipe>`                             |
-| State     | `RecipeFormNotifier`  manages multi-section form draft state                                      |
-| UI        | `RecipeFormPage`  3 sections: (1) basics, (2) ingredients, (3) instructions                      |
-| UI        | `IngredientInputRow`  name typeahead from product catalogue, quantity, unit selector             |
-| UI        | `InstructionStepList`  numbered, reorderable, add/remove steps                                   |
-| UI        | Save button in app bar  spinner while saving                                                     |
-| UI        | Edit mode: `RecipeDetailPage` "Edit" button  `RecipeFormPage` pre-filled                        |
-| Tests     | Unit: `SaveRecipeUseCase` rejects empty title                                                     |
-| Tests     | Unit: `SaveRecipeUseCase` sets `createdAt` on new recipe                                         |
-| Tests     | Widget: ingredient typeahead suggests matching products                                            |
-| Tests     | Integration: fill form  save  appears in recipe list  open detail                             |
+| Layer     | Deliverable                                                                                                    |
+| --------- | -------------------------------------------------------------------------------------------------------------- |
+| Use Cases | `SaveRecipeUseCase(recipe)` validates non-empty title + at least 1 ingredient, generates UUID, sets timestamps |
+| Use Cases | `ValidateRecipeUseCase(recipe)` `Either<ValidationFailure, Recipe>`                                            |
+| State     | `RecipeFormNotifier` manages multi-section form draft state                                                    |
+| UI        | `RecipeFormPage` 3 sections: (1) basics, (2) ingredients, (3) instructions                                     |
+| UI        | `IngredientInputRow` name typeahead from product catalogue, quantity, unit selector                            |
+| UI        | `InstructionStepList` numbered, reorderable, add/remove steps                                                  |
+| UI        | Save button in app bar spinner while saving                                                                    |
+| UI        | Edit mode: `RecipeDetailPage` "Edit" button `RecipeFormPage` pre-filled                                        |
+| Tests     | Unit: `SaveRecipeUseCase` rejects empty title                                                                  |
+| Tests     | Unit: `SaveRecipeUseCase` sets `createdAt` on new recipe                                                       |
+| Tests     | Widget: ingredient typeahead suggests matching products                                                        |
+| Tests     | Integration: fill form save appears in recipe list open detail                                                 |
 
 **Acceptance Criteria:**
 
@@ -663,7 +663,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Saving with empty title shows inline error on title field
 - [ ] Must have at least 1 ingredient (or warning shown)
 - [ ] After save, navigates back to list; new recipe appears
-- [ ] Integration test: full form fill  save  verify in list  check detail
+- [ ] Integration test: full form fill save verify in list check detail
 
 ---
 
@@ -677,14 +677,14 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                          |
-|-----------|--------------------------------------------------------------------------------------|
-| Use Cases | `DeleteRecipeUseCase(id)`  soft delete; returns `ConflictFailure` if in a meal plan |
-| UI        | Delete option in `RecipeDetailPage` overflow menu                                    |
-| UI        | Confirmation dialog: "Remove [name] from your recipes?"                              |
-| UI        | If recipe is in meal plan: "This recipe is in your meal plan. Delete anyway?"        |
+| Layer     | Deliverable                                                                           |
+| --------- | ------------------------------------------------------------------------------------- |
+| Use Cases | `DeleteRecipeUseCase(id)` soft delete; returns `ConflictFailure` if in a meal plan    |
+| UI        | Delete option in `RecipeDetailPage` overflow menu                                     |
+| UI        | Confirmation dialog: "Remove [name] from your recipes?"                               |
+| UI        | If recipe is in meal plan: "This recipe is in your meal plan. Delete anyway?"         |
 | Tests     | Unit: delete use case returns `ConflictFailure` when recipe is in an active meal plan |
-| Tests     | Integration: delete recipe  no longer in list                                       |
+| Tests     | Integration: delete recipe no longer in list                                          |
 
 **Acceptance Criteria:**
 
@@ -705,16 +705,16 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                          |
-|-----------|--------------------------------------------------------------------------------------|
-| Data      | `searchRecipes(query)` Drift query  searches title + description                   |
-| Data      | `filterByTags(tags)`  JSON contains search on `tagsJson` column                    |
-| Use Cases | `SearchRecipesUseCase(query, tags?)`  combined search + filter                     |
-| State     | `RecipeSearchNotifier`  query + tag filters + 300 ms debounce                      |
-| UI        | Search bar in `RecipeListPage` (collapses by default, expands on search icon tap)   |
-| UI        | Tag filter chips below search bar (filled from `WatchAllTagsUseCase`)               |
-| Tests     | Unit: search returns only recipes whose title contains query                        |
-| Tests     | Widget: typing "pasta" filters to pasta recipes                                     |
+| Layer     | Deliverable                                                                       |
+| --------- | --------------------------------------------------------------------------------- |
+| Data      | `searchRecipes(query)` Drift query searches title + description                   |
+| Data      | `filterByTags(tags)` JSON contains search on `tagsJson` column                    |
+| Use Cases | `SearchRecipesUseCase(query, tags?)` combined search + filter                     |
+| State     | `RecipeSearchNotifier` query + tag filters + 300 ms debounce                      |
+| UI        | Search bar in `RecipeListPage` (collapses by default, expands on search icon tap) |
+| UI        | Tag filter chips below search bar (filled from `WatchAllTagsUseCase`)             |
+| Tests     | Unit: search returns only recipes whose title contains query                      |
+| Tests     | Widget: typing "pasta" filters to pasta recipes                                   |
 
 **Acceptance Criteria:**
 
@@ -737,16 +737,16 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                          |
-|-----------|--------------------------------------------------------------------------------------|
-| Domain    | `Recipe.scaleServings(newServings)` (verify on entity)                              |
-| Use Cases | `ScaleRecipeUseCase(recipe, newServings)`  scaled `Recipe` in memory (not saved)   |
-| State     | `servingCountProvider(recipeId)`  session-only overridable state                   |
-| UI        | Serving stepper (`` / count / `+`) in `RecipeDetailPage` header                   |
-| UI        | Ingredient quantities update live as serving count changes                           |
-| UI        | Reset button restores original serving count                                         |
-| Tests     | Unit: `ScaleRecipeUseCase`  2 cups flour for 4 servings  3 cups for 6           |
-| Tests     | Widget: tap `+`  ingredient quantities update                                      |
+| Layer     | Deliverable                                                                     |
+| --------- | ------------------------------------------------------------------------------- |
+| Domain    | `Recipe.scaleServings(newServings)` (verify on entity)                          |
+| Use Cases | `ScaleRecipeUseCase(recipe, newServings)` scaled `Recipe` in memory (not saved) |
+| State     | `servingCountProvider(recipeId)` session-only overridable state                 |
+| UI        | Serving stepper (``/ count /`+`) in `RecipeDetailPage` header                   |
+| UI        | Ingredient quantities update live as serving count changes                      |
+| UI        | Reset button restores original serving count                                    |
+| Tests     | Unit: `ScaleRecipeUseCase` 2 cups flour for 4 servings 3 cups for 6             |
+| Tests     | Widget: tap `+` ingredient quantities update                                    |
 
 **Acceptance Criteria:**
 
@@ -778,32 +778,32 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                                   |
-|-----------|-----------------------------------------------------------------------------------------------|
-| DB        | `MealPlansTable`: `id`, `weekStartDate`, `createdAt`                                         |
+| Layer     | Deliverable                                                                                                                                 |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| DB        | `MealPlansTable`: `id`, `weekStartDate`, `createdAt`                                                                                        |
 | DB        | `MealSlotsTable`: `id`, `planId` (FK), `date`, `mealType` (enum: breakfast/lunch/dinner), `recipeId` (FK nullable), `customName` (nullable) |
-| Domain    | `MealPlan` entity + `MealSlot` value object                                                  |
-| Domain    | `IMealPlanRepository`: `watchByWeek(weekStart)`, `save()`, `clearSlot(slotId)`              |
-| Data      | `MealPlanDataSource` + `MealPlanRepositoryImpl`                                              |
-| Use Cases | `GetOrCreateWeeklyPlanUseCase(weekStart)`  creates plan if none exists for that week        |
-| Use Cases | `WatchWeeklyPlanUseCase(weekStart)`                                                          |
-| Providers | `mealPlanRepositoryProvider`, `weeklyPlanProvider(weekStart)`                                |
-| State     | `MealPlanNotifier(weekStart)`                                                                |
-| UI        | Wire existing `MenuView` / `CalendarComponent` to Riverpod stream                           |
-| UI        | Week navigation (prev/next week arrows)                                                      |
-| UI        | Empty slot shows "+" placeholder; filled slot shows recipe name + thumbnail                  |
-| Tests     | Unit: `GetOrCreateWeeklyPlanUseCase` creates plan for a new week                            |
-| Tests     | Widget: calendar shows 7 days  3 meal types grid                                           |
-| Tests     | Integration: navigate to Meal Planning tab  see empty week grid                            |
+| Domain    | `MealPlan` entity + `MealSlot` value object                                                                                                 |
+| Domain    | `IMealPlanRepository`: `watchByWeek(weekStart)`, `save()`, `clearSlot(slotId)`                                                              |
+| Data      | `MealPlanDataSource` + `MealPlanRepositoryImpl`                                                                                             |
+| Use Cases | `GetOrCreateWeeklyPlanUseCase(weekStart)` creates plan if none exists for that week                                                         |
+| Use Cases | `WatchWeeklyPlanUseCase(weekStart)`                                                                                                         |
+| Providers | `mealPlanRepositoryProvider`, `weeklyPlanProvider(weekStart)`                                                                               |
+| State     | `MealPlanNotifier(weekStart)`                                                                                                               |
+| UI        | Wire existing `MenuView` / `CalendarComponent` to Riverpod stream                                                                           |
+| UI        | Week navigation (prev/next week arrows)                                                                                                     |
+| UI        | Empty slot shows "+" placeholder; filled slot shows recipe name + thumbnail                                                                 |
+| Tests     | Unit: `GetOrCreateWeeklyPlanUseCase` creates plan for a new week                                                                            |
+| Tests     | Widget: calendar shows 7 days 3 meal types grid                                                                                             |
+| Tests     | Integration: navigate to Meal Planning tab see empty week grid                                                                              |
 
 **Acceptance Criteria:**
 
 - [ ] Meal Planning tab shows current week by default
-- [ ] 7 columns (days)  3 rows (breakfast/lunch/dinner) grid
+- [ ] 7 columns (days) 3 rows (breakfast/lunch/dinner) grid
 - [ ] Empty slots show "+" tap target
-- [ ] Week header shows date range (e.g., "Mar 3  Mar 9")
+- [ ] Week header shows date range (e.g., "Mar 3 Mar 9")
 - [ ] Prev/Next arrows navigate between weeks
-- [ ] Integration test: open tab  grid renders correctly
+- [ ] Integration test: open tab grid renders correctly
 
 ---
 
@@ -817,16 +817,16 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                               |
-|-----------|-------------------------------------------------------------------------------------------|
-| Use Cases | `AssignRecipeToSlotUseCase(slotId, recipeId)`  upserts slot with recipe reference       |
-| Use Cases | `ClearMealSlotUseCase(slotId)`  sets recipeId to null                                   |
-| UI        | Tapping empty slot opens `RecipePickerBottomSheet` (searchable recipe list)              |
-| UI        | Tapping filled slot shows context menu: "Change Recipe" / "Clear Slot"                   |
-| UI        | After assignment, slot shows recipe thumbnail and name                                    |
-| Tests     | Unit: `AssignRecipeToSlotUseCase` stores `recipeId` on correct slot                     |
-| Tests     | Widget: recipe picker renders recipes from stream                                        |
-| Tests     | Integration: tap slot  pick recipe  slot shows recipe name                            |
+| Layer     | Deliverable                                                                      |
+| --------- | -------------------------------------------------------------------------------- |
+| Use Cases | `AssignRecipeToSlotUseCase(slotId, recipeId)` upserts slot with recipe reference |
+| Use Cases | `ClearMealSlotUseCase(slotId)` sets recipeId to null                             |
+| UI        | Tapping empty slot opens `RecipePickerBottomSheet` (searchable recipe list)      |
+| UI        | Tapping filled slot shows context menu: "Change Recipe" / "Clear Slot"           |
+| UI        | After assignment, slot shows recipe thumbnail and name                           |
+| Tests     | Unit: `AssignRecipeToSlotUseCase` stores `recipeId` on correct slot              |
+| Tests     | Widget: recipe picker renders recipes from stream                                |
+| Tests     | Integration: tap slot pick recipe slot shows recipe name                         |
 
 **Acceptance Criteria:**
 
@@ -836,7 +836,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Slot immediately shows assigned recipe name (+ thumbnail if available)
 - [ ] Tapping a filled slot shows context menu (Change / Clear)
 - [ ] Clearing a slot resets it to the "+" placeholder
-- [ ] Integration test: assign  verify slot displays recipe name
+- [ ] Integration test: assign verify slot displays recipe name
 
 ---
 
@@ -850,17 +850,17 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                                          |
-|-----------|------------------------------------------------------------------------------------------------------|
-| Use Cases | `GenerateShoppingListFromPlanUseCase(planId, listName)`  collects ingredients from all assigned recipes, aggregates quantities by ingredient name + unit, creates a new `ShoppingList` |
-| Domain    | Aggregation rule: same name + same unit  sum quantities; different units kept separate             |
-| State     | `GenerateListNotifier`  loading / error / success states                                           |
-| UI        | "Generate Shopping List" button at bottom of meal plan screen                                       |
-| UI        | Confirmation sheet: shows recipe count + estimated item count                                       |
-| UI        | On success: navigate to the newly created shopping list detail page                                 |
-| Tests     | Unit: aggregation merges "2 cups flour" + "1 cup flour"  "3 cups flour"                          |
-| Tests     | Unit: "2 cups" + "1 tsp" kept as separate items (different units)                                  |
-| Tests     | Integration: plan with 2 recipes  generate  shopping list created with all ingredients           |
+| Layer     | Deliverable                                                                                                                                                                           |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Use Cases | `GenerateShoppingListFromPlanUseCase(planId, listName)` collects ingredients from all assigned recipes, aggregates quantities by ingredient name + unit, creates a new `ShoppingList` |
+| Domain    | Aggregation rule: same name + same unit sum quantities; different units kept separate                                                                                                 |
+| State     | `GenerateListNotifier` loading / error / success states                                                                                                                               |
+| UI        | "Generate Shopping List" button at bottom of meal plan screen                                                                                                                         |
+| UI        | Confirmation sheet: shows recipe count + estimated item count                                                                                                                         |
+| UI        | On success: navigate to the newly created shopping list detail page                                                                                                                   |
+| Tests     | Unit: aggregation merges "2 cups flour" + "1 cup flour" "3 cups flour"                                                                                                                |
+| Tests     | Unit: "2 cups" + "1 tsp" kept as separate items (different units)                                                                                                                     |
+| Tests     | Integration: plan with 2 recipes generate shopping list created with all ingredients                                                                                                  |
 
 **Acceptance Criteria:**
 
@@ -869,7 +869,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Generated list is named after the week (e.g., "Week of Mar 3")
 - [ ] Duplicate ingredients (same name + unit) are combined
 - [ ] After generation, navigation goes to the new shopping list detail page
-- [ ] Integration test: assign recipes  generate list  verify aggregated items
+- [ ] Integration test: assign recipes generate list verify aggregated items
 
 ---
 
@@ -883,15 +883,15 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                              |
-|-----------|------------------------------------------------------------------------------------------|
-| Use Cases | `DuplicateMealPlanUseCase(sourceWeekStart, targetWeekStart)`  copies slot assignments  |
-| Use Cases | `ClearDayUseCase(planId, date)`  removes all 3 slot assignments for a given day        |
-| Use Cases | `ClearWeekUseCase(planId)`  removes all assignments for the week                       |
-| UI        | Week header overflow menu: "Copy from Previous Week" / "Clear Week"                     |
-| UI        | Day column long-press: "Clear Day"                                                       |
-| Tests     | Unit: duplicate use case copies all slot assignments to target week                     |
-| Tests     | Integration: duplicate previous plan  current week shows same recipes                  |
+| Layer     | Deliverable                                                                          |
+| --------- | ------------------------------------------------------------------------------------ |
+| Use Cases | `DuplicateMealPlanUseCase(sourceWeekStart, targetWeekStart)` copies slot assignments |
+| Use Cases | `ClearDayUseCase(planId, date)` removes all 3 slot assignments for a given day       |
+| Use Cases | `ClearWeekUseCase(planId)` removes all assignments for the week                      |
+| UI        | Week header overflow menu: "Copy from Previous Week" / "Clear Week"                  |
+| UI        | Day column long-press: "Clear Day"                                                   |
+| Tests     | Unit: duplicate use case copies all slot assignments to target week                  |
+| Tests     | Integration: duplicate previous plan current week shows same recipes                 |
 
 **Acceptance Criteria:**
 
@@ -921,22 +921,22 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                                   |
-|-----------|-----------------------------------------------------------------------------------------------|
+| Layer     | Deliverable                                                                                                                                                                                                       |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | DB        | `PantryItemsTable`: `id`, `productId` (FK nullable), `name`, `quantity`, `unit`, `categoryId`, `expiryDate` (nullable), `purchasedDate`, `location` (nullable), `createdAt`, `updatedAt`, `isSynced`, `isDeleted` |
-| Domain    | `PantryItem` entity: `isExpired`, `daysUntilExpiry`, `copyWith()`                            |
-| Domain    | `IPantryRepository`: `watchAll()`, `save()`, `delete(id)`, `watchExpiringSoon(days)`         |
-| Data      | `PantryDataSource` + `PantryRepositoryImpl`                                                  |
-| Use Cases | `WatchPantryItemsUseCase`, `AddPantryItemUseCase(name, qty, unit, categoryId?, expiryDate?)` |
-| Use Cases | `DeletePantryItemUseCase(id)`                                                                |
-| Providers | `pantryRepositoryProvider`, `pantryItemsProvider`                                            |
-| State     | `PantryNotifier`                                                                              |
-| UI        | `PantryPage`  items grouped by category; FAB to add                                         |
-| UI        | `AddPantryItemBottomSheet`  name (from catalogue or free-text), qty, unit, expiry date picker |
-| UI        | Swipe-to-delete with undo                                                                     |
-| Tests     | Unit: `AddPantryItemUseCase` rejects quantity  0                                           |
-| Tests     | Widget: pantry page renders items grouped by category                                        |
-| Tests     | Integration: add item  appears in pantry list                                               |
+| Domain    | `PantryItem` entity: `isExpired`, `daysUntilExpiry`, `copyWith()`                                                                                                                                                 |
+| Domain    | `IPantryRepository`: `watchAll()`, `save()`, `delete(id)`, `watchExpiringSoon(days)`                                                                                                                              |
+| Data      | `PantryDataSource` + `PantryRepositoryImpl`                                                                                                                                                                       |
+| Use Cases | `WatchPantryItemsUseCase`, `AddPantryItemUseCase(name, qty, unit, categoryId?, expiryDate?)`                                                                                                                      |
+| Use Cases | `DeletePantryItemUseCase(id)`                                                                                                                                                                                     |
+| Providers | `pantryRepositoryProvider`, `pantryItemsProvider`                                                                                                                                                                 |
+| State     | `PantryNotifier`                                                                                                                                                                                                  |
+| UI        | `PantryPage` items grouped by category; FAB to add                                                                                                                                                                |
+| UI        | `AddPantryItemBottomSheet` name (from catalogue or free-text), qty, unit, expiry date picker                                                                                                                      |
+| UI        | Swipe-to-delete with undo                                                                                                                                                                                         |
+| Tests     | Unit: `AddPantryItemUseCase` rejects quantity 0                                                                                                                                                                   |
+| Tests     | Widget: pantry page renders items grouped by category                                                                                                                                                             |
+| Tests     | Integration: add item appears in pantry list                                                                                                                                                                      |
 
 **Acceptance Criteria:**
 
@@ -944,33 +944,33 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] FAB opens add-item form with optional expiry date picker
 - [ ] Item row shows: name, quantity + unit, expiry date (if set)
 - [ ] Swipe-to-delete with undo snackbar
-- [ ] Integration test: add  verify  delete  verify removed
+- [ ] Integration test: add verify delete verify removed
 
 ---
 
 ### US-E7.2: Quick Quantity Adjustment
 
 **As a** user
-**I want to** quickly update the quantity of a pantry item by tapping + or 
+**I want to** quickly update the quantity of a pantry item by tapping + or
 **So that** I can update my pantry without opening a full edit form
 
 **Story Points:** 4 | **Priority:** P1 | **Dependencies:** US-E7.1
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                        |
-|-----------|------------------------------------------------------------------------------------|
-| Use Cases | `UpdatePantryItemQuantityUseCase(id, newQuantity)`  clamps to minimum 0          |
-| State     | Optimistic update in `PantryNotifier`                                              |
-| UI        | Inline stepper (`` / qty / `+`) on each pantry item row                          |
-| UI        | Quantity = 0  item dims with "Out of stock" badge (not deleted automatically)    |
-| UI        | Tapping item row (not stepper)  `EditPantryItemPage` (full edit form)            |
-| Tests     | Unit: update use case clamps quantity to 0 minimum                                |
-| Tests     | Widget: tap `+` increases displayed quantity; tap `` decreases                   |
+| Layer     | Deliverable                                                                  |
+| --------- | ---------------------------------------------------------------------------- |
+| Use Cases | `UpdatePantryItemQuantityUseCase(id, newQuantity)` clamps to minimum 0       |
+| State     | Optimistic update in `PantryNotifier`                                        |
+| UI        | Inline stepper (``/ qty /`+`) on each pantry item row                        |
+| UI        | Quantity = 0 item dims with "Out of stock" badge (not deleted automatically) |
+| UI        | Tapping item row (not stepper) `EditPantryItemPage` (full edit form)         |
+| Tests     | Unit: update use case clamps quantity to 0 minimum                           |
+| Tests     | Widget: tap `+` increases displayed quantity; tap `` decreases               |
 
 **Acceptance Criteria:**
 
-- [ ] Each pantry row has visible `` and `+` buttons
+- [ ] Each pantry row has visible ``and`+` buttons
 - [ ] Quantity updates instantly (optimistic)
 - [ ] Quantity cannot go below 0
 - [ ] Items at 0 show a visual "Out of stock" indicator
@@ -988,26 +988,26 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                                   |
-|-----------|-----------------------------------------------------------------------------------------------|
-| Domain    | `PantryItem.expiryStatus` enum: `fresh`, `expiringSoon` (< 3 days), `expired`                |
-| Use Cases | `WatchExpiringSoonUseCase(withinDays: 3)`  stream of items expiring within N days           |
-| Providers | `expiringSoonProvider`                                                                        |
-| UI        | Badge on Pantry nav tab showing count of expiring items                                      |
-| UI        | "Expiring Soon" collapsible banner at top of pantry page                                     |
-| UI        | Colour-coded expiry chips on item rows: yellow = expiring soon, red = expired                |
-| UI        | "Show expiring only" filter chip                                                              |
-| Tests     | Unit: `WatchExpiringSoonUseCase` returns only items within threshold                         |
-| Tests     | Widget: badge shows correct count                                                            |
-| Tests     | Integration: add item with expiry tomorrow  badge shows 1                                   |
+| Layer     | Deliverable                                                                      |
+| --------- | -------------------------------------------------------------------------------- |
+| Domain    | `PantryItem.expiryStatus` enum: `fresh`, `expiringSoon` (< 3 days), `expired`    |
+| Use Cases | `WatchExpiringSoonUseCase(withinDays: 3)` stream of items expiring within N days |
+| Providers | `expiringSoonProvider`                                                           |
+| UI        | Badge on Pantry nav tab showing count of expiring items                          |
+| UI        | "Expiring Soon" collapsible banner at top of pantry page                         |
+| UI        | Colour-coded expiry chips on item rows: yellow = expiring soon, red = expired    |
+| UI        | "Show expiring only" filter chip                                                 |
+| Tests     | Unit: `WatchExpiringSoonUseCase` returns only items within threshold             |
+| Tests     | Widget: badge shows correct count                                                |
+| Tests     | Integration: add item with expiry tomorrow badge shows 1                         |
 
 **Acceptance Criteria:**
 
 - [ ] Nav tab badge shows expiring item count (hidden when 0)
-- [ ] "Expiring Soon" banner appears when  1 item expires within 3 days
+- [ ] "Expiring Soon" banner appears when 1 item expires within 3 days
 - [ ] Item rows show colour-coded expiry chip
 - [ ] "Show expiring only" filter chip toggles filtered view
-- [ ] Integration test: add item expiring tomorrow  badge shows 1
+- [ ] Integration test: add item expiring tomorrow badge shows 1
 
 ---
 
@@ -1015,7 +1015,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Goal:** Users can configure the app, export their data, and restore from a backup.
 
-**Story Count:** 4 | **Total Points:** 17 | **Priority:** P0
+**Story Count:** 7 | **Total Points:** 30 | **Priority:** P0
 
 ---
 
@@ -1029,18 +1029,18 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                    |
-|-----------|--------------------------------------------------------------------------------|
-| Data      | `SharedPreferences`-based `SettingsDataSource` with typed getters/setters      |
-| Domain    | `AppSettings` value object: `themeMode`, `defaultServings`, `currency`        |
-| Use Cases | `SaveSettingsUseCase(AppSettings)`                                             |
-| Providers | `settingsProvider` (persisted `StateNotifier`)                                 |
-| UI        | `SettingsPage` (exists as `settings_view_page.dart`)  wire it to providers   |
-| UI        | Theme toggle (System / Light / Dark)  applies immediately                    |
-| UI        | Default servings number picker                                                 |
-| UI        | About section (app version, open-source licences)                             |
-| Tests     | Unit: `SaveSettingsUseCase` persists and reads correctly                       |
-| Tests     | Widget: toggling dark mode updates theme immediately in widget tree            |
+| Layer     | Deliverable                                                               |
+| --------- | ------------------------------------------------------------------------- |
+| Data      | `SharedPreferences`-based `SettingsDataSource` with typed getters/setters |
+| Domain    | `AppSettings` value object: `themeMode`, `defaultServings`, `currency`    |
+| Use Cases | `SaveSettingsUseCase(AppSettings)`                                        |
+| Providers | `settingsProvider` (persisted `StateNotifier`)                            |
+| UI        | `SettingsPage` (exists as `settings_view_page.dart`) wire it to providers |
+| UI        | Theme toggle (System / Light / Dark) applies immediately                  |
+| UI        | Default servings number picker                                            |
+| UI        | About section (app version, open-source licences)                         |
+| Tests     | Unit: `SaveSettingsUseCase` persists and reads correctly                  |
+| Tests     | Widget: toggling dark mode updates theme immediately in widget tree       |
 
 **Acceptance Criteria:**
 
@@ -1061,16 +1061,16 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                                |
-|-----------|--------------------------------------------------------------------------------------------|
-| Use Cases | `ExportDataUseCase()`  queries all repositories, builds `AppExportDto` with schema version |
+| Layer     | Deliverable                                                                               |
+| --------- | ----------------------------------------------------------------------------------------- |
+| Use Cases | `ExportDataUseCase()` queries all repositories, builds `AppExportDto` with schema version |
 | Data      | `AppExportDto` (freezed model containing all top-level entities)                          |
 | Use Cases | Serialises dto to JSON; writes file to `getApplicationDocumentsDirectory()`               |
-| UI        | "Export Data" row in Settings  triggers export + shows share/save dialog                 |
-| UI        | Progress indicator during export                                                           |
-| UI        | Success: "Exported 42 recipes, 15 lists..." snackbar + OS share sheet                    |
+| UI        | "Export Data" row in Settings triggers export + shows share/save dialog                   |
+| UI        | Progress indicator during export                                                          |
+| UI        | Success: "Exported 42 recipes, 15 lists..." snackbar + OS share sheet                     |
 | Tests     | Unit: export dto serialises all entities to valid JSON                                    |
-| Tests     | Integration: export  read JSON file  verify recipe count matches DB                    |
+| Tests     | Integration: export read JSON file verify recipe count matches DB                         |
 
 **Acceptance Criteria:**
 
@@ -1078,7 +1078,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Progress indicator shown while export runs
 - [ ] On success, OS share sheet opens with the exported JSON file
 - [ ] JSON file is human-readable and includes `"export_version": 1`
-- [ ] Integration test: export  read file  verify recipe count matches
+- [ ] Integration test: export read file verify recipe count matches
 
 ---
 
@@ -1092,16 +1092,16 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                                                   |
-|-----------|-----------------------------------------------------------------------------------------------|
-| Use Cases | `ImportDataUseCase(filePath)`  reads JSON, validates schema version, upserts all entities   |
-| Use Cases | Conflict rule: existing record not overwritten when import has an older `updatedAt`          |
-| UI        | "Import Data" row in Settings  file picker (JSON files only)                                |
-| UI        | Preview sheet: "Found 42 recipes, 15 lists. Import will merge with existing data."           |
-| UI        | Confirm  progress indicator  success summary                                               |
-| Tests     | Unit: `ImportDataUseCase` rejects invalid JSON schema gracefully                             |
-| Tests     | Unit: existing record not overwritten when import data has older `updatedAt`                |
-| Tests     | Integration: export  wipe DB  import  verify all data restored                           |
+| Layer     | Deliverable                                                                              |
+| --------- | ---------------------------------------------------------------------------------------- |
+| Use Cases | `ImportDataUseCase(filePath)` reads JSON, validates schema version, upserts all entities |
+| Use Cases | Conflict rule: existing record not overwritten when import has an older `updatedAt`      |
+| UI        | "Import Data" row in Settings file picker (JSON files only)                              |
+| UI        | Preview sheet: "Found 42 recipes, 15 lists. Import will merge with existing data."       |
+| UI        | Confirm progress indicator success summary                                               |
+| Tests     | Unit: `ImportDataUseCase` rejects invalid JSON schema gracefully                         |
+| Tests     | Unit: existing record not overwritten when import data has older `updatedAt`             |
+| Tests     | Integration: export wipe DB import verify all data restored                              |
 
 **Acceptance Criteria:**
 
@@ -1109,7 +1109,7 @@ Refer to the original document version 4.0 for E0 story details if needed.
 - [ ] Preview sheet shows entity counts before committing
 - [ ] Import merges (upserts) without duplicating unchanged records
 - [ ] Invalid file shows user-friendly error (no crash)
-- [ ] Integration test: export  import  verify data
+- [ ] Integration test: export import verify data
 
 ---
 
@@ -1123,13 +1123,13 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 **Vertical Slice Deliverables:**
 
-| Layer     | Deliverable                                                               |
-|-----------|---------------------------------------------------------------------------|
-| Use Cases | `ClearAllDataUseCase()`  truncates all tables respecting FK order        |
-| UI        | "Danger Zone" section in Settings with a red "Clear All Data" button      |
-| UI        | Two-step confirmation: first dialog + second requires typing "DELETE"     |
-| Tests     | Unit: clear use case deletes records from all tables                      |
-| Tests     | Integration: add data  clear  verify empty states on all tabs           |
+| Layer     | Deliverable                                                           |
+| --------- | --------------------------------------------------------------------- |
+| Use Cases | `ClearAllDataUseCase()` truncates all tables respecting FK order      |
+| UI        | "Danger Zone" section in Settings with a red "Clear All Data" button  |
+| UI        | Two-step confirmation: first dialog + second requires typing "DELETE" |
+| Tests     | Unit: clear use case deletes records from all tables                  |
+| Tests     | Integration: add data clear verify empty states on all tabs           |
 
 **Acceptance Criteria:**
 
@@ -1140,15 +1140,132 @@ Refer to the original document version 4.0 for E0 story details if needed.
 
 ---
 
+### US-E8.5: Household Size & Smart Ingredient Scaling
+
+**As a** user
+**I want to** set how many people I usually cook for as a global setting
+**So that** recipe ingredients and generated shopping-list quantities automatically scale to my household without me adjusting every recipe by hand
+
+**Story Points:** 5 | **Priority:** P1 | **Dependencies:** US-E8.1, US-E5.5
+
+> **Note:** Upgrades the "Default servings number picker" from US-E8.1 into a first-class `householdSize` setting that actively drives recipe scaling (US-E5.5) and meal-plan shopping-list generation (US-E6.3), rather than only being a cosmetic default.
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                                                                                        |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Domain    | `AppSettings.householdSize` (int, replaces/renames `defaultServings`; validated range 1–12)                                                                        |
+| Use Cases | `SaveSettingsUseCase` — persists `householdSize` (existing use case, extended)                                                                                     |
+| Use Cases | `ScaleRecipeToHouseholdUseCase(recipe)` — wraps `ScaleRecipeUseCase` (US-E5.5), using `householdSize` as the target serving count                                  |
+| Providers | `householdSizeProvider` — derived from `settingsProvider`                                                                                                          |
+| Providers | `servingCountProvider(recipeId)` (US-E5.5) — default initial value changed from `recipe.servings` to `householdSize` unless manually overridden in-session         |
+| UI        | Settings row relabelled "Household size" — stepper, min 1 / max 12, helper text explaining its effect                                                              |
+| UI        | `RecipeDetailPage` header — serving stepper opens pre-set to household size; badge shown when scaled ("Scaled for 6 · recipe default 4")                           |
+| UI        | `RecipeDetailPage` — "Reset" restores the recipe's authored default (not the household size); "Use my household size" quick action reappears after manual override |
+| UI        | "Generate Shopping List" sheet (US-E6.3) — adds a "Scale to my household size" toggle, on by default                                                               |
+| Tests     | Unit: `ScaleRecipeToHouseholdUseCase` scales a 4-serving recipe to the configured household size                                                                   |
+| Tests     | Unit: `GenerateShoppingListFromPlanUseCase` aggregates household-scaled quantities when the toggle is on                                                           |
+| Tests     | Widget: recipe authored for 4 servings with household size = 6 shows scaled quantities and the "Scaled for 6" badge                                                |
+| Tests     | Integration: set household size → open recipe → verify auto-scaled ingredients → generate shopping list → verify scaled totals                                     |
+
+**Acceptance Criteria:**
+
+- [ ] Settings has a "Household size" stepper (default 4, min 1, max 12) with explanatory helper text
+- [ ] Household size persists across app restarts
+- [ ] Opening any recipe detail page automatically scales ingredient quantities to the household size instead of the recipe's authored serving count
+- [ ] A small inline badge indicates when quantities have been auto-scaled, showing both current and original serving counts
+- [ ] The user can still manually override the serving count for a single viewing session (US-E5.5); doing so surfaces a "Use my household size" quick action to revert
+- [ ] "Reset" always restores the recipe's original authored quantities, never silently re-applies the household size
+- [ ] Generating a shopping list from a meal plan (US-E6.3) scales ingredient quantities to the household size by default, with an explicit toggle to fall back to each recipe's original authored quantities
+- [ ] Changing household size in Settings affects scaling immediately for anything opened afterwards — no recipe data is rewritten in the DB
+- [ ] Integration test: change household size → open a recipe → verify scaled quantities → generate a shopping list → verify aggregated quantities reflect the household size
+
+---
+
+### US-E8.6: Multi-Language Support (Localization)
+
+**As a** user
+**I want to** use the app in my preferred language
+**So that** I can read recipes, ingredients, and the whole interface in a language I'm comfortable with
+
+**Story Points:** 5 | **Priority:** P1 | **Dependencies:** US-E8.1
+
+> **Note:** The app is currently English-only with hardcoded strings. Introduces Flutter's standard localization pipeline (`flutter_localizations` + `intl`, ARB files) and migrates user-facing strings, then adds a language picker to Settings. Launch scope: **English, Spanish, Portuguese**; recipe/product seed data translation is out of scope (tracked separately).
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                                                  |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Infra     | `flutter_localizations` SDK dependency + `intl` package; `generate: true` in `pubspec.yaml`; `l10n.yaml` config              |
+| Infra     | `lib/l10n/app_en.arb` (source of truth), `app_es.arb`, `app_pt.arb` — generated `AppLocalizations` via `flutter gen-l10n`    |
+| Domain    | `AppSettings.localeCode` (nullable String; `null` = "follow system")                                                         |
+| Use Cases | `SaveSettingsUseCase` — persists `localeCode` (existing use case, extended)                                                  |
+| Providers | `localeProvider` — derived from `settingsProvider`; resolves `null` → system locale                                          |
+| App Shell | `MaterialApp.router` wired with `localizationsDelegates`, `supportedLocales`, `locale:` bound to `localeProvider`            |
+| Refactor  | Migrate hardcoded strings across app shell, Settings, Shopping List, Recipes, Meal Planning, Pantry UI to `AppLocalizations` |
+| Refactor  | Date/number formatting routed through `intl` respecting the active locale                                                    |
+| UI        | "Language" row in Settings → bottom sheet picker: System default / English / Español / Português                             |
+| UI        | Changing language updates the UI immediately (no restart required)                                                           |
+| Tests     | Unit: `SaveSettingsUseCase` persists and reads `localeCode` correctly                                                        |
+| Tests     | Unit: `localeProvider` falls back to system locale when `localeCode` is `null`                                               |
+| Tests     | Widget: switching to Spanish updates visible Settings page strings immediately                                               |
+
+**Acceptance Criteria:**
+
+- [ ] Settings has a "Language" row showing current selection; tapping opens a picker (System default + supported languages)
+- [ ] Selecting a language updates all visible translated screens immediately, no restart required
+- [ ] Selected language persists across app restarts
+- [ ] "System default" follows the OS locale
+- [ ] All static UI strings are externalized to ARB files — no hardcoded English strings remain in migrated screens
+- [ ] Dates and numbers format according to the active locale's conventions
+- [ ] Unsupported system locale falls back to English without crashing
+- [ ] Integration test: switch language in Settings → navigate across tabs → verify translated strings appear
+
+---
+
+### US-E8.7: "Buy Me a Coffee" Support Link
+
+**As a** user who enjoys the app
+**I want to** find a simple way to support its development
+**So that** I can show appreciation and help fund continued work on the app
+
+**Story Points:** 3 | **Priority:** P2 | **Dependencies:** US-E8.1
+
+> **Note:** Lightweight, external-link-based donation entry point (Buy Me a Coffee / Ko-fi style) — **no in-app payment processing, no IAP/store billing** in scope. Opens the creator's external donation page via `url_launcher`.
+
+**Vertical Slice Deliverables:**
+
+| Layer     | Deliverable                                                                                                         |
+| --------- | ------------------------------------------------------------------------------------------------------------------- |
+| Core      | `AppLinks`/`AppConstants` entry for the support URL (e.g. `https://buymeacoffee.com/<handle>`), easily configurable |
+| Data      | `url_launcher` package dependency (if not already present)                                                          |
+| Use Cases | `OpenSupportLinkUseCase()` — wraps `url_launcher`, returns `Either<Failure, void>` on launch failure                |
+| UI        | "☕ Buy Me a Coffee" row in Settings, under a new "About & Support" section                                         |
+| UI        | Tapping opens the configured URL in an external browser / custom tab                                                |
+| UI        | Graceful failure: shows a `SnackBar` ("Couldn't open the link") instead of crashing if no handler available         |
+| Tests     | Unit: `OpenSupportLinkUseCase` returns `Left(LaunchFailure)` when the URL can't be launched                         |
+| Tests     | Widget: tapping the Settings row triggers the launch call with the correct configured URL                           |
+
+**Acceptance Criteria:**
+
+- [ ] Settings has a visible "Buy Me a Coffee" row (About & Support section)
+- [ ] Tapping it opens the external donation page via the OS/browser; no payment is ever handled inside the app
+- [ ] The destination URL is defined in one central constant, easy to update
+- [ ] Link failure shows a friendly error instead of a crash
+- [ ] No effect on app functionality, data, or any paywall/entitlement — purely informational/goodwill
+- [ ] Works on both Android and iOS
+
+---
+
 ## PHASE 4 (Post-MVP): Cloud Sync & Collaboration
 
 ### Epic E9: Sync Engine & Queue
 
-Each story is a vertical slice  sync logic change + UI indicator confirming it works:
+Each story is a vertical slice sync logic change + UI indicator confirming it works:
 
 - **US-E9.1:** Sync Queue Implementation (table + DAO + queue manager + status indicator in app bar)
 - **US-E9.2:** Sync Coordinator (triggers sync + shows "Syncing" badge)
-- **US-E9.3:** Conflict Resolver  Last-Write-Wins (engine + conflict notification toast)
+- **US-E9.3:** Conflict Resolver Last-Write-Wins (engine + conflict notification toast)
 - **US-E9.4:** Operational Transform for Lists (merge algorithm + live collaborative cursor)
 - **US-E9.5:** Network Change Listener (offline banner appears/disappears on connectivity change)
 - **US-E9.6:** Background Sync Job (platform background task + last-synced timestamp in Settings)
@@ -1160,36 +1277,36 @@ Each story is a vertical slice  sync logic change + UI indicator confirming it w
 
 Each story includes the data-source implementation AND a visible UI confirmation (synced badge, cloud icon):
 
-- US-E10.1: Choose Backend (Firebase or Supabase)  ADR document + scaffolded remote client
-- US-E10.2: Remote Data Sources for all Entities  recipe, shopping list, meal plan, pantry
+- US-E10.1: Choose Backend (Firebase or Supabase) ADR document + scaffolded remote client
+- US-E10.2: Remote Data Sources for all Entities recipe, shopping list, meal plan, pantry
 - US-E10.3: Cloud Functions for Recipe Import
-- US-E10.4: Image Upload & Optimisation  upload flow + progress indicator
+- US-E10.4: Image Upload & Optimisation upload flow + progress indicator
 - US-E10.5: API Client with Retry Logic
-- US-E10.6: Database Migration to Cloud  migration wizard UI
+- US-E10.6: Database Migration to Cloud migration wizard UI
 - US-E10.7: Differential Sync Implementation
-- US-E10.8: Real-time Updates  WebSocket/Stream + live "edited by" indicator
+- US-E10.8: Real-time Updates WebSocket/Stream + live "edited by" indicator
 
 ---
 
 ### Epic E11: Authentication & Security
 
-- US-E11.1: Email/Password Authentication  full sign-up/sign-in/sign-out flow with UI
-- US-E11.2: Google Sign-In  one-tap button + account avatar in Settings
-- US-E11.3: Token Management  refresh logic + session expiry notification
-- US-E11.4: Secure Storage  Keychain/Keystore integration
-- US-E11.5: Row-Level Security Policies  backend policies + verified via integration test
+- US-E11.1: Email/Password Authentication full sign-up/sign-in/sign-out flow with UI
+- US-E11.2: Google Sign-In one-tap button + account avatar in Settings
+- US-E11.3: Token Management refresh logic + session expiry notification
+- US-E11.4: Secure Storage Keychain/Keystore integration
+- US-E11.5: Row-Level Security Policies backend policies + verified via integration test
 - US-E11.6: Data Encryption for Sensitive Fields
 
 ---
 
 ### Epic E12: Family & Collaboration
 
-- US-E12.1: Create Family Group  group creation form + shareable invite link
-- US-E12.2: Invite Members  invite link flow + acceptance screen
-- US-E12.3: Share Shopping List  share toggle on list detail + shared indicator chip
-- US-E12.4: Real-time Collaborative Editing  live presence dots on shared list
-- US-E12.5: User Roles & Permissions  role picker in group management screen
-- US-E12.6: Activity Feed  feed page showing recent changes by family members
+- US-E12.1: Create Family Group group creation form + shareable invite link
+- US-E12.2: Invite Members invite link flow + acceptance screen
+- US-E12.3: Share Shopping List share toggle on list detail + shared indicator chip
+- US-E12.4: Real-time Collaborative Editing live presence dots on shared list
+- US-E12.5: User Roles & Permissions role picker in group management screen
+- US-E12.6: Activity Feed feed page showing recent changes by family members
 
 ---
 
@@ -1199,13 +1316,13 @@ Each story includes the data-source implementation AND a visible UI confirmation
 
 Each story is a full vertical slice from ML/API integration to UI exposure:
 
-- **US-E13.1:** Recipe Import from URL  URL input field  scraper  new recipe pre-filled in form  save
-- **US-E13.2:** Barcode Scanner for Pantry  camera scan  product lookup  pre-fill add-pantry-item form
-- **US-E13.3:** Smart Category Inference  ML category suggestion chip on add-item forms (accept/reject)
-- **US-E13.4:** Recipe Recommendations  recommendation engine  "Suggested for this week" section in meal plan
-- **US-E13.5:** Nutrition Calculation  per-recipe nutrition API  nutrition card on recipe detail page
-- **US-E13.6:** Voice Input for Items  mic button on AddItem sheet  speech-to-text fills name field
-- **US-E13.7:** Ingredient Recognition from Image  camera button on recipe form  ML-parsed ingredient list pre-fill
+- **US-E13.1:** Recipe Import from URL URL input field scraper new recipe pre-filled in form save
+- **US-E13.2:** Barcode Scanner for Pantry camera scan product lookup pre-fill add-pantry-item form
+- **US-E13.3:** Smart Category Inference ML category suggestion chip on add-item forms (accept/reject)
+- **US-E13.4:** Recipe Recommendations recommendation engine "Suggested for this week" section in meal plan
+- **US-E13.5:** Nutrition Calculation per-recipe nutrition API nutrition card on recipe detail page
+- **US-E13.6:** Voice Input for Items mic button on AddItem sheet speech-to-text fills name field
+- **US-E13.7:** Ingredient Recognition from Image camera button on recipe form ML-parsed ingredient list pre-fill
 
 ---
 
@@ -1213,7 +1330,7 @@ Each story is a full vertical slice from ML/API integration to UI exposure:
 
 - US-E14.1: Pagination for Recipe List (cursor-based, infinite scroll)
 - US-E14.2: Image Caching with `cached_network_image`
-- US-E14.3: Database Query Optimisation  add indexes, measure with `EXPLAIN QUERY PLAN`
+- US-E14.3: Database Query Optimisation add indexes, measure with `EXPLAIN QUERY PLAN`
 - US-E14.4: Image Compression on Upload
 - US-E14.5: Lazy Loading for Meal Calendar (load adjacent weeks on demand)
 - US-E14.6: Performance Monitoring Integration (Firebase Performance or Sentry)
@@ -1222,12 +1339,12 @@ Each story is a full vertical slice from ML/API integration to UI exposure:
 
 ## EPIC E15: Testing & Quality Assurance (Ongoing)
 
-- **US-E15.1:** Unit Test Suite  target 70% coverage across all use cases and entities
-- **US-E15.2:** Widget Test Suite  all pages tested with mocked Riverpod providers
+- **US-E15.1:** Unit Test Suite target 70% coverage across all use cases and entities
+- **US-E15.2:** Widget Test Suite all pages tested with mocked Riverpod providers
 - **US-E15.3:** Integration Tests for Critical Flows: E2.1, E4.3, E5.2, E6.3
 - **US-E15.4:** E2E Tests with `patrol` or `flutter_driver`
-- **US-E15.5:** Accessibility Tests  screen reader labels, contrast ratios
-- **US-E15.6:** Performance Regression Tests  DB with 1 000+ records
+- **US-E15.5:** Accessibility Tests screen reader labels, contrast ratios
+- **US-E15.6:** Performance Regression Tests DB with 1 000+ records
 - **US-E15.7:** Beta Testing Programme
 - **US-E15.8:** Crash Monitoring (Sentry)
 
@@ -1239,38 +1356,39 @@ Each story is a full vertical slice from ML/API integration to UI exposure:
 
 **Scope:** Complete offline-first app, all core features testable end-to-end from the UI
 
-| Sprint | Focus                                   | Epics        | Points |
-|--------|-----------------------------------------|--------------|--------|
-| 1      | App Shell + Product Categories          | E1, E2       | ~21    |
-| 2      | Products + Shopping List foundation     | E3, E4 P0   | ~38    |
-| 3      | Shopping List P1 features               | E4 P1P2     | ~12    |
-| 4      | Recipes                                 | E5           | ~26    |
-| 5      | Meal Planning                           | E6           | ~22    |
-| 6      | Pantry + Settings                       | E7, E8       | ~33    |
-| 7      | Bug fixes, polish, QA sprint            | E15          | ~20    |
+| Sprint | Focus                               | Epics     | Points |
+| ------ | ----------------------------------- | --------- | ------ |
+| 1      | App Shell + Product Categories      | E1, E2    | ~21    |
+| 2      | Products + Shopping List foundation | E3, E4 P0 | ~38    |
+| 3      | Shopping List P1 features           | E4 P1P2   | ~12    |
+| 4      | Recipes                             | E5        | ~26    |
+| 5      | Meal Planning                       | E6        | ~22    |
+| 6      | Pantry + Settings                   | E7, E8    | ~33    |
+| 7      | Bug fixes, polish, QA sprint        | E15       | ~20    |
 
-**Estimated Duration:** 7 sprints  2 weeks = **14 weeks** for 2 developers
+**Estimated Duration:** 7 sprints 2 weeks = **14 weeks** for 2 developers
 
-### v1.1  Cloud Sync & Auth (Epics E9E12)
-### v1.2  Smart Features & Performance (Epics E13E14)
+### v1.1 Cloud Sync & Auth (Epics E9E12)
+
+### v1.2 Smart Features & Performance (Epics E13E14)
 
 ---
 
 ## Appendix: Technology Stack
 
-| Concern           | Technology                                     |
-|-------------------|------------------------------------------------|
-| Framework         | Flutter 3.16+                                  |
-| Language          | Dart 3.2+                                      |
-| State Management  | Riverpod 2.x (`AsyncNotifier`, `StreamProvider`) |
-| Local Database    | Drift 2.x (type-safe SQLite)                   |
-| Functional        | Dartz (`Either<Failure, T>`)                   |
-| JSON / Models     | freezed + json_serializable                    |
-| Navigation        | GoRouter                                       |
-| Settings          | shared_preferences                             |
-| Testing           | flutter_test, mockito, integration_test, patrol |
-| CI/CD             | GitHub Actions                                 |
+| Concern          | Technology                                       |
+| ---------------- | ------------------------------------------------ |
+| Framework        | Flutter 3.16+                                    |
+| Language         | Dart 3.2+                                        |
+| State Management | Riverpod 2.x (`AsyncNotifier`, `StreamProvider`) |
+| Local Database   | Drift 2.x (type-safe SQLite)                     |
+| Functional       | Dartz (`Either<Failure, T>`)                     |
+| JSON / Models    | freezed + json_serializable                      |
+| Navigation       | GoRouter                                         |
+| Settings         | shared_preferences                               |
+| Testing          | flutter_test, mockito, integration_test, patrol  |
+| CI/CD            | GitHub Actions                                   |
 
 ---
 
-**Document End  Version 5.0 (Vertical Slice Approach)**
+**Document End Version 5.0 (Vertical Slice Approach)**
