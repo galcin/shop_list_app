@@ -11,10 +11,26 @@
     "prepTime": 10,
     "imageUrl": "assets/images/recipes/egg-omelet.jpg",
     "ingredients": [
-      { "name": "Eggs", "quantity": "2", "unit": "pcs" },
-      { "name": "Butter", "quantity": "1", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Eggs",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Butter",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -29,13 +45,41 @@
     "prepTime": 50,
     "imageUrl": "assets/images/recipes/chicken-soup.jpg",
     "ingredients": [
-      { "name": "Chicken", "quantity": "500", "unit": "g" },
-      { "name": "Carrots", "quantity": "2", "unit": "pcs" },
-      { "name": "Celery", "quantity": "2", "unit": "stalks" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Noodles", "quantity": "100", "unit": "g" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Chicken",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Celery",
+        "quantity": "2",
+        "unit": "stalks"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Noodles",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -51,16 +95,56 @@
     "prepTime": 35,
     "imageUrl": "assets/images/recipes/pasta_bolognese.jpg",
     "ingredients": [
-      { "name": "Minced Beef", "quantity": "400", "unit": "g" },
-      { "name": "Spaghetti", "quantity": "320", "unit": "g" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Garlic", "quantity": "2", "unit": "cloves" },
-      { "name": "Crushed Tomatoes", "quantity": "400", "unit": "g" },
-      { "name": "Tomato Paste", "quantity": "2", "unit": "tbsp" },
-      { "name": "Dried Oregano", "quantity": "1", "unit": "tsp" },
-      { "name": "Parmesan", "quantity": "40", "unit": "g" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Minced Beef",
+        "quantity": "400",
+        "unit": "g"
+      },
+      {
+        "name": "Spaghetti",
+        "quantity": "320",
+        "unit": "g"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "2",
+        "unit": "cloves"
+      },
+      {
+        "name": "Crushed Tomatoes",
+        "quantity": "400",
+        "unit": "g"
+      },
+      {
+        "name": "Tomato Paste",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Dried Oregano",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Parmesan",
+        "quantity": "40",
+        "unit": "g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -75,14 +159,46 @@
     "prepTime": 30,
     "imageUrl": "assets/images/recipes/tomato-basil-soup.jpg",
     "ingredients": [
-      { "name": "Tomatoes", "quantity": "600", "unit": "g" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Garlic", "quantity": "2", "unit": "cloves" },
-      { "name": "Vegetable Broth", "quantity": "400", "unit": "ml" },
-      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Fresh Basil", "quantity": "handful", "unit": "" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Tomatoes",
+        "quantity": "600",
+        "unit": "g"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "2",
+        "unit": "cloves"
+      },
+      {
+        "name": "Vegetable Broth",
+        "quantity": "400",
+        "unit": "ml"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Fresh Basil",
+        "quantity": "handful",
+        "unit": ""
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -97,13 +213,41 @@
     "prepTime": 20,
     "imageUrl": "assets/images/recipes/banana-pancakes.jpg",
     "ingredients": [
-      { "name": "Bananas", "quantity": "2", "unit": "pcs" },
-      { "name": "Eggs", "quantity": "2", "unit": "pcs" },
-      { "name": "Flour", "quantity": "0.5", "unit": "cup" },
-      { "name": "Milk", "quantity": "0.5", "unit": "cup" },
-      { "name": "Butter", "quantity": "1", "unit": "tbsp" },
-      { "name": "Honey", "quantity": "2", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "pinch", "unit": "" }
+      {
+        "name": "Bananas",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Eggs",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Flour",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Milk",
+        "quantity": "0.5",
+        "unit": "cup"
+      },
+      {
+        "name": "Butter",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Honey",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "pinch",
+        "unit": ""
+      }
     ]
   },
   {
@@ -117,9 +261,21 @@
     "prepTime": 10,
     "imageUrl": "assets/images/recipes/grilled-cheese-sandwich.jpg",
     "ingredients": [
-      { "name": "Bread", "quantity": "2", "unit": "slices" },
-      { "name": "Cheese", "quantity": "2", "unit": "slices" },
-      { "name": "Butter", "quantity": "1", "unit": "tbsp" }
+      {
+        "name": "Bread",
+        "quantity": "2",
+        "unit": "slices"
+      },
+      {
+        "name": "Cheese",
+        "quantity": "2",
+        "unit": "slices"
+      },
+      {
+        "name": "Butter",
+        "quantity": "1",
+        "unit": "tbsp"
+      }
     ]
   },
   {
@@ -134,15 +290,51 @@
     "prepTime": 25,
     "imageUrl": "assets/images/recipes/chicken-stir-fry.jpg",
     "ingredients": [
-      { "name": "Chicken Breast", "quantity": "500", "unit": "g" },
-      { "name": "Bell Peppers", "quantity": "2", "unit": "pcs" },
-      { "name": "Carrots", "quantity": "1", "unit": "pcs" },
-      { "name": "Broccoli", "quantity": "150", "unit": "g" },
-      { "name": "Soy Sauce", "quantity": "3", "unit": "tbsp" },
-      { "name": "Oyster Sauce", "quantity": "1", "unit": "tbsp" },
-      { "name": "Sesame Oil", "quantity": "1", "unit": "tsp" },
-      { "name": "Vegetable Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Steamed Rice", "quantity": "2", "unit": "cups" }
+      {
+        "name": "Chicken Breast",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "name": "Bell Peppers",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Broccoli",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "name": "Soy Sauce",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Oyster Sauce",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Sesame Oil",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Vegetable Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Steamed Rice",
+        "quantity": "2",
+        "unit": "cups"
+      }
     ]
   },
   {
@@ -157,12 +349,36 @@
     "prepTime": 15,
     "imageUrl": "assets/images/recipes/apple-cinnamon-oatmeal.jpg",
     "ingredients": [
-      { "name": "Rolled Oats", "quantity": "1", "unit": "cup" },
-      { "name": "Milk", "quantity": "2", "unit": "cups" },
-      { "name": "Apples", "quantity": "1", "unit": "pcs" },
-      { "name": "Cinnamon", "quantity": "1", "unit": "tsp" },
-      { "name": "Honey", "quantity": "1", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "pinch", "unit": "" }
+      {
+        "name": "Rolled Oats",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Milk",
+        "quantity": "2",
+        "unit": "cups"
+      },
+      {
+        "name": "Apples",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Cinnamon",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Honey",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "pinch",
+        "unit": ""
+      }
     ]
   },
   {
@@ -177,19 +393,71 @@
     "prepTime": 45,
     "imageUrl": "assets/images/recipes/vegetable-stew.jpg",
     "ingredients": [
-      { "name": "Potatoes", "quantity": "2", "unit": "pcs" },
-      { "name": "Carrots", "quantity": "2", "unit": "pcs" },
-      { "name": "Celery", "quantity": "2", "unit": "stalks" },
-      { "name": "Zucchini", "quantity": "1", "unit": "pcs" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Garlic", "quantity": "2", "unit": "cloves" },
-      { "name": "Diced Tomatoes", "quantity": "400", "unit": "g" },
-      { "name": "Vegetable Broth", "quantity": "600", "unit": "ml" },
-      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Dried Thyme", "quantity": "1", "unit": "tsp" },
-      { "name": "Dried Rosemary", "quantity": "1", "unit": "tsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Potatoes",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Celery",
+        "quantity": "2",
+        "unit": "stalks"
+      },
+      {
+        "name": "Zucchini",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "2",
+        "unit": "cloves"
+      },
+      {
+        "name": "Diced Tomatoes",
+        "quantity": "400",
+        "unit": "g"
+      },
+      {
+        "name": "Vegetable Broth",
+        "quantity": "600",
+        "unit": "ml"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Dried Thyme",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Dried Rosemary",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -204,13 +472,41 @@
     "prepTime": 10,
     "imageUrl": "assets/images/recipes/caprese-salad.jpg",
     "ingredients": [
-      { "name": "Tomatoes", "quantity": "3", "unit": "pcs" },
-      { "name": "Fresh Mozzarella", "quantity": "200", "unit": "g" },
-      { "name": "Fresh Basil", "quantity": "handful", "unit": "" },
-      { "name": "Extra-Virgin Olive Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Balsamic Glaze", "quantity": "1", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Tomatoes",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Fresh Mozzarella",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Fresh Basil",
+        "quantity": "handful",
+        "unit": ""
+      },
+      {
+        "name": "Extra-Virgin Olive Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Balsamic Glaze",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -225,13 +521,41 @@
     "prepTime": 20,
     "imageUrl": "assets/images/recipes/pasta_carbonara.jpg",
     "ingredients": [
-      { "name": "Spaghetti", "quantity": "250", "unit": "g" },
-      { "name": "Bacon", "quantity": "150", "unit": "g" },
-      { "name": "Eggs", "quantity": "2", "unit": "pcs" },
-      { "name": "Sour Cream", "quantity": "3", "unit": "tbsp" },
-      { "name": "Parmesan", "quantity": "50", "unit": "g" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Spaghetti",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Bacon",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "name": "Eggs",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Sour Cream",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Parmesan",
+        "quantity": "50",
+        "unit": "g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -246,12 +570,36 @@
     "prepTime": 20,
     "imageUrl": "assets/images/recipes/pasta-tomato-mushroom-sauce.jpg",
     "ingredients": [
-      { "name": "Pasta", "quantity": "250", "unit": "g" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Mushrooms", "quantity": "200", "unit": "g" },
-      { "name": "Tomato Sauce", "quantity": "350", "unit": "g" },
-      { "name": "Parmesan", "quantity": "30", "unit": "g" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Pasta",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Mushrooms",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Tomato Sauce",
+        "quantity": "350",
+        "unit": "g"
+      },
+      {
+        "name": "Parmesan",
+        "quantity": "30",
+        "unit": "g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -265,12 +613,36 @@
     "prepTime": 10,
     "imageUrl": "assets/images/recipes/green-salad-tuna-corn.jpg",
     "ingredients": [
-      { "name": "Lettuce", "quantity": "1", "unit": "head" },
-      { "name": "Canned Tuna", "quantity": "160", "unit": "g" },
-      { "name": "Canned Corn", "quantity": "140", "unit": "g" },
-      { "name": "Olive Oil", "quantity": "3", "unit": "tbsp" },
-      { "name": "Lemon Juice", "quantity": "0.5", "unit": "lemon" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Lettuce",
+        "quantity": "1",
+        "unit": "head"
+      },
+      {
+        "name": "Canned Tuna",
+        "quantity": "160",
+        "unit": "g"
+      },
+      {
+        "name": "Canned Corn",
+        "quantity": "140",
+        "unit": "g"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": "0.5",
+        "unit": "lemon"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -284,11 +656,31 @@
     "prepTime": 15,
     "imageUrl": "assets/images/recipes/cheese-herb-omelet.jpg",
     "ingredients": [
-      { "name": "Eggs", "quantity": "4", "unit": "pcs" },
-      { "name": "Cheese", "quantity": "80", "unit": "g" },
-      { "name": "Fresh Herbs", "quantity": "handful", "unit": "" },
-      { "name": "Extra-Virgin Olive Oil", "quantity": "1", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Eggs",
+        "quantity": "4",
+        "unit": "pcs"
+      },
+      {
+        "name": "Cheese",
+        "quantity": "80",
+        "unit": "g"
+      },
+      {
+        "name": "Fresh Herbs",
+        "quantity": "handful",
+        "unit": ""
+      },
+      {
+        "name": "Extra-Virgin Olive Oil",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -303,10 +695,26 @@
     "prepTime": 25,
     "imageUrl": "assets/images/recipes/asian-rice-chicken.jpg",
     "ingredients": [
-      { "name": "Rice", "quantity": "200", "unit": "g" },
-      { "name": "Chicken Breast", "quantity": "300", "unit": "g" },
-      { "name": "Soy Sauce", "quantity": "to taste", "unit": "" },
-      { "name": "Vegetable Oil", "quantity": "2", "unit": "tbsp" }
+      {
+        "name": "Rice",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Chicken Breast",
+        "quantity": "300",
+        "unit": "g"
+      },
+      {
+        "name": "Soy Sauce",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Vegetable Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      }
     ]
   },
   {
@@ -320,11 +728,31 @@
     "prepTime": 35,
     "imageUrl": "assets/images/recipes/turkey-breast-vegetables.jpg",
     "ingredients": [
-      { "name": "Turkey Breast", "quantity": "400", "unit": "g" },
-      { "name": "Frozen Vegetables", "quantity": "400", "unit": "g" },
-      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Turkey Breast",
+        "quantity": "400",
+        "unit": "g"
+      },
+      {
+        "name": "Frozen Vegetables",
+        "quantity": "400",
+        "unit": "g"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -339,11 +767,31 @@
     "prepTime": 30,
     "imageUrl": "assets/images/recipes/cream-mushroom-soup.jpg",
     "ingredients": [
-      { "name": "Champignon Mushrooms", "quantity": "1000", "unit": "g" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Cooking Cream", "quantity": "200", "unit": "ml" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Champignon Mushrooms",
+        "quantity": "1000",
+        "unit": "g"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Cooking Cream",
+        "quantity": "200",
+        "unit": "ml"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -358,13 +806,41 @@
     "prepTime": 35,
     "imageUrl": "assets/images/recipes/chicken-cheese-puff-pastry-braid.jpg",
     "ingredients": [
-      { "name": "Puff Pastry Dough", "quantity": "400", "unit": "g" },
-      { "name": "Chicken Breast", "quantity": "300", "unit": "g" },
-      { "name": "Canned Mushrooms", "quantity": "200", "unit": "g" },
-      { "name": "Cheese", "quantity": "100", "unit": "g" },
-      { "name": "Egg", "quantity": "1", "unit": "pcs" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Puff Pastry Dough",
+        "quantity": "400",
+        "unit": "g"
+      },
+      {
+        "name": "Chicken Breast",
+        "quantity": "300",
+        "unit": "g"
+      },
+      {
+        "name": "Canned Mushrooms",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Cheese",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -378,13 +854,41 @@
     "prepTime": 15,
     "imageUrl": "assets/images/recipes/flatbread-pizza.jpg",
     "ingredients": [
-      { "name": "Flatbread", "quantity": "2", "unit": "pcs" },
-      { "name": "Tomato Sauce", "quantity": "150", "unit": "g" },
-      { "name": "Bacon", "quantity": "80", "unit": "g" },
-      { "name": "Mushrooms", "quantity": "100", "unit": "g" },
-      { "name": "Olives", "quantity": "50", "unit": "g" },
-      { "name": "Canned Corn", "quantity": "80", "unit": "g" },
-      { "name": "Cheese", "quantity": "120", "unit": "g" }
+      {
+        "name": "Flatbread",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Tomato Sauce",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "name": "Bacon",
+        "quantity": "80",
+        "unit": "g"
+      },
+      {
+        "name": "Mushrooms",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "name": "Olives",
+        "quantity": "50",
+        "unit": "g"
+      },
+      {
+        "name": "Canned Corn",
+        "quantity": "80",
+        "unit": "g"
+      },
+      {
+        "name": "Cheese",
+        "quantity": "120",
+        "unit": "g"
+      }
     ]
   },
   {
@@ -398,13 +902,41 @@
     "prepTime": 20,
     "imageUrl": "assets/images/recipes/chicken-skewers-pan.jpg",
     "ingredients": [
-      { "name": "Chicken Breast", "quantity": "400", "unit": "g" },
-      { "name": "Red Bell Pepper", "quantity": "1", "unit": "pcs" },
-      { "name": "Mushrooms", "quantity": "100", "unit": "g" },
-      { "name": "Cherry Tomatoes", "quantity": "100", "unit": "g" },
-      { "name": "Olives", "quantity": "50", "unit": "g" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Chicken Breast",
+        "quantity": "400",
+        "unit": "g"
+      },
+      {
+        "name": "Red Bell Pepper",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Mushrooms",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "name": "Cherry Tomatoes",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "name": "Olives",
+        "quantity": "50",
+        "unit": "g"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -417,13 +949,38 @@
     ],
     "prepTime": 15,
     "ingredients": [
-      { "name": "Bread", "quantity": "2", "unit": "slices" },
-      { "name": "Butter", "quantity": "1", "unit": "tbsp" },
-      { "name": "Pressed Ham", "quantity": "80", "unit": "g" },
-      { "name": "Cheese", "quantity": "80", "unit": "g" },
-      { "name": "Lettuce", "quantity": "handful", "unit": "" },
-      { "name": "Cucumber", "quantity": "0.5", "unit": "pcs" }
-    ]
+      {
+        "name": "Bread",
+        "quantity": "2",
+        "unit": "slices"
+      },
+      {
+        "name": "Butter",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Pressed Ham",
+        "quantity": "80",
+        "unit": "g"
+      },
+      {
+        "name": "Cheese",
+        "quantity": "80",
+        "unit": "g"
+      },
+      {
+        "name": "Lettuce",
+        "quantity": "handful",
+        "unit": ""
+      },
+      {
+        "name": "Cucumber",
+        "quantity": "0.5",
+        "unit": "pcs"
+      }
+    ],
+    "imageUrl": "assets/images/recipes_ai/crispy-sandwich.jpg"
   },
   {
     "name": "French Potato Pudding",
@@ -436,11 +993,31 @@
     "prepTime": 40,
     "imageUrl": "assets/images/recipes/french-potato-pudding.jpg",
     "ingredients": [
-      { "name": "Potatoes", "quantity": "500", "unit": "g" },
-      { "name": "Telemea Cheese", "quantity": "150", "unit": "g" },
-      { "name": "Eggs", "quantity": "2", "unit": "pcs" },
-      { "name": "Butter", "quantity": "30", "unit": "g" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Potatoes",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "name": "Telemea Cheese",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "name": "Eggs",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Butter",
+        "quantity": "30",
+        "unit": "g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -454,11 +1031,31 @@
     "prepTime": 20,
     "imageUrl": "assets/images/recipes/rice-mexican-vegetables.jpg",
     "ingredients": [
-      { "name": "Long-Grain Rice", "quantity": "200", "unit": "g" },
-      { "name": "Mixed Vegetables", "quantity": "300", "unit": "g" },
-      { "name": "Butter", "quantity": "20", "unit": "g" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Long-Grain Rice",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Mixed Vegetables",
+        "quantity": "300",
+        "unit": "g"
+      },
+      {
+        "name": "Butter",
+        "quantity": "20",
+        "unit": "g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -476,15 +1073,51 @@
     "servings": 4,
     "imageUrl": "assets/images/recipes/chicken-mushrooms-cream-sauce.jpg",
     "ingredients": [
-      { "name": "Chicken Breast", "quantity": "2", "unit": "pcs" },
-      { "name": "White Mushrooms", "quantity": "200", "unit": "g" },
-      { "name": "Brown Mushrooms", "quantity": "200", "unit": "g" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Heavy Cream", "quantity": "400", "unit": "ml" },
-      { "name": "Sunflower Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Chicken Breast",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "White Mushrooms",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Brown Mushrooms",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Heavy Cream",
+        "quantity": "400",
+        "unit": "ml"
+      },
+      {
+        "name": "Sunflower Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Fresh Parsley",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -501,18 +1134,66 @@
     "servings": 5,
     "imageUrl": "assets/images/recipes/pork-potato-stew.jpg",
     "ingredients": [
-      { "name": "Pork Neck", "quantity": "1000", "unit": "g" },
-      { "name": "Smoked Bacon", "quantity": "200", "unit": "g" },
-      { "name": "Potatoes", "quantity": "500", "unit": "g" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Carrot", "quantity": "1", "unit": "pcs" },
-      { "name": "Tomato Sauce", "quantity": "100", "unit": "g" },
-      { "name": "Garlic", "quantity": "3", "unit": "cloves" },
-      { "name": "Clear Broth or Water", "quantity": "500", "unit": "ml" },
-      { "name": "Flour", "quantity": "100", "unit": "g" },
-      { "name": "Bay Leaf", "quantity": "1", "unit": "pcs" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Pork Neck",
+        "quantity": "1000",
+        "unit": "g"
+      },
+      {
+        "name": "Smoked Bacon",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Potatoes",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Carrot",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Tomato Sauce",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "3",
+        "unit": "cloves"
+      },
+      {
+        "name": "Clear Broth or Water",
+        "quantity": "500",
+        "unit": "ml"
+      },
+      {
+        "name": "Flour",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "name": "Bay Leaf",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -530,20 +1211,76 @@
     "servings": 5,
     "imageUrl": "assets/images/recipes/oven-baked-chicken-potatoes.jpg",
     "ingredients": [
-      { "name": "Chicken Thighs", "quantity": "1500", "unit": "g" },
-      { "name": "Potatoes", "quantity": "1000", "unit": "g" },
-      { "name": "Onion", "quantity": "4", "unit": "pcs" },
-      { "name": "Garlic (for sauce)", "quantity": "5", "unit": "cloves" },
-      { "name": "Garlic (whole head)", "quantity": "1", "unit": "head" },
-      { "name": "Asparagus", "quantity": "1", "unit": "bunch" },
-      { "name": "Milk", "quantity": "200", "unit": "ml" },
-      { "name": "Sunflower Oil", "quantity": "200", "unit": "ml" },
-      { "name": "Tomato Paste", "quantity": "2", "unit": "tbsp" },
-      { "name": "Olive Oil", "quantity": "3", "unit": "tbsp" },
-      { "name": "Sweet Paprika", "quantity": "1", "unit": "tsp" },
-      { "name": "Thyme", "quantity": "to taste", "unit": "" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Chicken Thighs",
+        "quantity": "1500",
+        "unit": "g"
+      },
+      {
+        "name": "Potatoes",
+        "quantity": "1000",
+        "unit": "g"
+      },
+      {
+        "name": "Onion",
+        "quantity": "4",
+        "unit": "pcs"
+      },
+      {
+        "name": "Garlic (for sauce)",
+        "quantity": "5",
+        "unit": "cloves"
+      },
+      {
+        "name": "Garlic (whole head)",
+        "quantity": "1",
+        "unit": "head"
+      },
+      {
+        "name": "Asparagus",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Milk",
+        "quantity": "200",
+        "unit": "ml"
+      },
+      {
+        "name": "Sunflower Oil",
+        "quantity": "200",
+        "unit": "ml"
+      },
+      {
+        "name": "Tomato Paste",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Sweet Paprika",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Thyme",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -558,16 +1295,56 @@
     "prepTime": 25,
     "imageUrl": "assets/images/recipes/penne-quattro-formaggi.jpg",
     "ingredients": [
-      { "name": "Penne", "quantity": "250", "unit": "g" },
-      { "name": "Heavy Cream", "quantity": "250", "unit": "g" },
-      { "name": "Parmesan", "quantity": "70", "unit": "g" },
-      { "name": "Mozzarella", "quantity": "70", "unit": "g" },
-      { "name": "Gorgonzola", "quantity": "70", "unit": "g" },
-      { "name": "Olive Oil", "quantity": "1", "unit": "tbsp" },
-      { "name": "Butter", "quantity": "1", "unit": "tsp" },
-      { "name": "Dried Oregano", "quantity": "1", "unit": "tsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Penne",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Heavy Cream",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Parmesan",
+        "quantity": "70",
+        "unit": "g"
+      },
+      {
+        "name": "Mozzarella",
+        "quantity": "70",
+        "unit": "g"
+      },
+      {
+        "name": "Gorgonzola",
+        "quantity": "70",
+        "unit": "g"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Butter",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Dried Oregano",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -582,16 +1359,56 @@
     "prepTime": 25,
     "imageUrl": "assets/images/recipes/pasta-arrabiata.jpg",
     "ingredients": [
-      { "name": "Spaghetti", "quantity": "500", "unit": "g" },
-      { "name": "Hot Peppers", "quantity": "4", "unit": "pcs" },
-      { "name": "Garlic", "quantity": "4", "unit": "cloves" },
-      { "name": "Tomato Sauce", "quantity": "450", "unit": "g" },
-      { "name": "Parmesan", "quantity": "2", "unit": "tbsp" },
-      { "name": "Olive Oil", "quantity": "6", "unit": "tbsp" },
-      { "name": "Lemon Juice", "quantity": "1", "unit": "tbsp" },
-      { "name": "Water", "quantity": "50", "unit": "ml" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Spaghetti",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "name": "Hot Peppers",
+        "quantity": "4",
+        "unit": "pcs"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "4",
+        "unit": "cloves"
+      },
+      {
+        "name": "Tomato Sauce",
+        "quantity": "450",
+        "unit": "g"
+      },
+      {
+        "name": "Parmesan",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "6",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Water",
+        "quantity": "50",
+        "unit": "ml"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -606,17 +1423,61 @@
     "prepTime": 35,
     "imageUrl": "assets/images/recipes/pasta-chicken-pesto.jpg",
     "ingredients": [
-      { "name": "Spaghetti", "quantity": "200", "unit": "g" },
-      { "name": "Cherry Tomatoes", "quantity": "200", "unit": "g" },
-      { "name": "Chicken Breast", "quantity": "100", "unit": "g" },
-      { "name": "Cashews", "quantity": "60", "unit": "g" },
-      { "name": "Parmesan", "quantity": "60", "unit": "g" },
-      { "name": "Fresh Basil", "quantity": "1", "unit": "bunch" },
-      { "name": "Garlic", "quantity": "1", "unit": "cloves" },
-      { "name": "Lemon Juice", "quantity": "1", "unit": "lemon" },
-      { "name": "Olive Oil", "quantity": "4", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Spaghetti",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Cherry Tomatoes",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Chicken Breast",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "name": "Cashews",
+        "quantity": "60",
+        "unit": "g"
+      },
+      {
+        "name": "Parmesan",
+        "quantity": "60",
+        "unit": "g"
+      },
+      {
+        "name": "Fresh Basil",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "1",
+        "unit": "cloves"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": "1",
+        "unit": "lemon"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "4",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -631,17 +1492,61 @@
     "prepTime": 30,
     "imageUrl": "assets/images/recipes/pasta-shrimp.jpg",
     "ingredients": [
-      { "name": "Pasta", "quantity": "250", "unit": "g" },
-      { "name": "Fresh Shrimp", "quantity": "500", "unit": "g" },
-      { "name": "Garlic", "quantity": "3", "unit": "cloves" },
-      { "name": "Hot Pepper", "quantity": "1", "unit": "pcs" },
-      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Butter", "quantity": "50", "unit": "g" },
-      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
-      { "name": "Lemon Juice", "quantity": "1", "unit": "lemon" },
-      { "name": "Parmesan", "quantity": "30", "unit": "g" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Pasta",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Fresh Shrimp",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "3",
+        "unit": "cloves"
+      },
+      {
+        "name": "Hot Pepper",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Butter",
+        "quantity": "50",
+        "unit": "g"
+      },
+      {
+        "name": "Fresh Parsley",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": "1",
+        "unit": "lemon"
+      },
+      {
+        "name": "Parmesan",
+        "quantity": "30",
+        "unit": "g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -655,15 +1560,51 @@
     "prepTime": 20,
     "imageUrl": "assets/images/recipes/pasta-garlic-hot-pepper.jpg",
     "ingredients": [
-      { "name": "Spaghetti", "quantity": "250", "unit": "g" },
-      { "name": "Hot Pepper", "quantity": "1", "unit": "pcs" },
-      { "name": "Garlic", "quantity": "5", "unit": "cloves" },
-      { "name": "Parmesan", "quantity": "70", "unit": "g" },
-      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
-      { "name": "Olive Oil", "quantity": "3", "unit": "tbsp" },
-      { "name": "Fresh Basil", "quantity": "handful", "unit": "" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Spaghetti",
+        "quantity": "250",
+        "unit": "g"
+      },
+      {
+        "name": "Hot Pepper",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "5",
+        "unit": "cloves"
+      },
+      {
+        "name": "Parmesan",
+        "quantity": "70",
+        "unit": "g"
+      },
+      {
+        "name": "Fresh Parsley",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Fresh Basil",
+        "quantity": "handful",
+        "unit": ""
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -679,15 +1620,51 @@
     "prepTime": 30,
     "imageUrl": "assets/images/recipes/baked-salmon-asparagus.jpg",
     "ingredients": [
-      { "name": "Salmon Fillets", "quantity": "500", "unit": "g" },
-      { "name": "Fresh Asparagus", "quantity": "300", "unit": "g" },
-      { "name": "Extra-Virgin Olive Oil", "quantity": "4", "unit": "tbsp" },
-      { "name": "Garlic", "quantity": "2", "unit": "cloves" },
-      { "name": "Lemon", "quantity": "1", "unit": "pcs" },
-      { "name": "Mixed Herbs", "quantity": "1", "unit": "tsp" },
-      { "name": "Fresh Thyme", "quantity": "handful", "unit": "" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Salmon Fillets",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "name": "Fresh Asparagus",
+        "quantity": "300",
+        "unit": "g"
+      },
+      {
+        "name": "Extra-Virgin Olive Oil",
+        "quantity": "4",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "2",
+        "unit": "cloves"
+      },
+      {
+        "name": "Lemon",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Mixed Herbs",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Fresh Thyme",
+        "quantity": "handful",
+        "unit": ""
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -702,18 +1679,66 @@
     "prepTime": 30,
     "imageUrl": "assets/images/recipes/baked-salmon-vegetables.jpg",
     "ingredients": [
-      { "name": "Salmon Fillets", "quantity": "500", "unit": "g" },
-      { "name": "Butter", "quantity": "30", "unit": "g" },
-      { "name": "Lemon Juice", "quantity": "1", "unit": "lemon" },
-      { "name": "Garlic", "quantity": "3", "unit": "cloves" },
-      { "name": "Broccoli", "quantity": "200", "unit": "g" },
-      { "name": "Cauliflower", "quantity": "200", "unit": "g" },
-      { "name": "Zucchini", "quantity": "150", "unit": "g" },
-      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
-      { "name": "Fresh Dill", "quantity": "1", "unit": "bunch" },
-      { "name": "Olive Oil", "quantity": "3", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Salmon Fillets",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "name": "Butter",
+        "quantity": "30",
+        "unit": "g"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": "1",
+        "unit": "lemon"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "3",
+        "unit": "cloves"
+      },
+      {
+        "name": "Broccoli",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Cauliflower",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Zucchini",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "name": "Fresh Parsley",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Fresh Dill",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -729,17 +1754,61 @@
     "prepTime": 90,
     "imageUrl": "assets/images/recipes/classic-beef-soup.jpg",
     "ingredients": [
-      { "name": "Beef", "quantity": "650", "unit": "g" },
-      { "name": "Tomato Juice", "quantity": "400", "unit": "ml" },
-      { "name": "Carrots", "quantity": "2", "unit": "pcs" },
-      { "name": "Onion", "quantity": "2", "unit": "pcs" },
-      { "name": "Potatoes", "quantity": "3", "unit": "pcs" },
-      { "name": "Bell Pepper", "quantity": "1", "unit": "pcs" },
-      { "name": "Celery", "quantity": "1", "unit": "pcs" },
-      { "name": "Peas", "quantity": "100", "unit": "g" },
-      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
-      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Beef",
+        "quantity": "650",
+        "unit": "g"
+      },
+      {
+        "name": "Tomato Juice",
+        "quantity": "400",
+        "unit": "ml"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Onion",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Potatoes",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Bell Pepper",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Celery",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Peas",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "name": "Fresh Parsley",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -756,20 +1825,76 @@
     "prepTime": 120,
     "imageUrl": "assets/images/recipes/sour-beef-soup.jpg",
     "ingredients": [
-      { "name": "Beef with Bone", "quantity": "1000", "unit": "g" },
-      { "name": "Carrots", "quantity": "2", "unit": "pcs" },
-      { "name": "Celery", "quantity": "1", "unit": "pcs" },
-      { "name": "Onion", "quantity": "2", "unit": "pcs" },
-      { "name": "Parsley Root", "quantity": "1", "unit": "pcs" },
-      { "name": "White Cabbage", "quantity": "200", "unit": "g" },
-      { "name": "Frozen Peas", "quantity": "200", "unit": "g" },
-      { "name": "Bell Peppers", "quantity": "2", "unit": "pcs" },
-      { "name": "Potatoes", "quantity": "2", "unit": "pcs" },
-      { "name": "Tomatoes", "quantity": "2", "unit": "pcs" },
-      { "name": "Fresh Lovage", "quantity": "1", "unit": "bunch" },
-      { "name": "Bors", "quantity": "to taste", "unit": "" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Beef with Bone",
+        "quantity": "1000",
+        "unit": "g"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Celery",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Onion",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Parsley Root",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "White Cabbage",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Frozen Peas",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Bell Peppers",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Potatoes",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Tomatoes",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Fresh Lovage",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Bors",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -785,27 +1910,111 @@
     "prepTime": 75,
     "imageUrl": "assets/images/recipes/transylvanian-veal-soup.jpg",
     "ingredients": [
-      { "name": "Veal", "quantity": "500", "unit": "g" },
-      { "name": "Tomato Juice", "quantity": "200", "unit": "ml" },
-      { "name": "Carrots", "quantity": "3", "unit": "pcs" },
-      { "name": "Parsnip", "quantity": "1", "unit": "pcs" },
-      { "name": "Parsley Root", "quantity": "1", "unit": "pcs" },
-      { "name": "Celery Root", "quantity": "0.5", "unit": "pcs" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Potatoes", "quantity": "3", "unit": "pcs" },
-      { "name": "Celery Leaves", "quantity": "handful", "unit": "" },
-      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
-      { "name": "Thyme", "quantity": "1", "unit": "sprig" },
-      { "name": "Bay Leaf", "quantity": "1", "unit": "pcs" },
-      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Sweet Paprika", "quantity": "2", "unit": "tbsp" },
-      { "name": "Cumin", "quantity": "0.5", "unit": "tsp" },
-      { "name": "Veal Bones", "quantity": "200", "unit": "g" },
-      { "name": "Egg Yolks", "quantity": "3", "unit": "pcs" },
-      { "name": "Sour Cream", "quantity": "450", "unit": "g" },
-      { "name": "Lemon Juice", "quantity": "to taste", "unit": "" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Veal",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "name": "Tomato Juice",
+        "quantity": "200",
+        "unit": "ml"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Parsnip",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Parsley Root",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Celery Root",
+        "quantity": "0.5",
+        "unit": "pcs"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Potatoes",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Celery Leaves",
+        "quantity": "handful",
+        "unit": ""
+      },
+      {
+        "name": "Fresh Parsley",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Thyme",
+        "quantity": "1",
+        "unit": "sprig"
+      },
+      {
+        "name": "Bay Leaf",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Sweet Paprika",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Cumin",
+        "quantity": "0.5",
+        "unit": "tsp"
+      },
+      {
+        "name": "Veal Bones",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Egg Yolks",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Sour Cream",
+        "quantity": "450",
+        "unit": "g"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -820,21 +2029,81 @@
     "prepTime": 90,
     "imageUrl": "assets/images/recipes/country-beef-soup.jpg",
     "ingredients": [
-      { "name": "Beef with Bone", "quantity": "1000", "unit": "g" },
-      { "name": "Carrots", "quantity": "2", "unit": "pcs" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Potatoes", "quantity": "2", "unit": "pcs" },
-      { "name": "Bell Pepper", "quantity": "1", "unit": "pcs" },
-      { "name": "Parsnip Root", "quantity": "1", "unit": "pcs" },
-      { "name": "Celery", "quantity": "200", "unit": "g" },
-      { "name": "Peas", "quantity": "100", "unit": "g" },
-      { "name": "Green Beans", "quantity": "150", "unit": "g" },
-      { "name": "White Cabbage", "quantity": "200", "unit": "g" },
-      { "name": "Tomatoes in Broth", "quantity": "400", "unit": "g" },
-      { "name": "Fresh Lovage", "quantity": "1", "unit": "bunch" },
-      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
-      { "name": "Bors", "quantity": "to taste", "unit": "" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Beef with Bone",
+        "quantity": "1000",
+        "unit": "g"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Potatoes",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Bell Pepper",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Parsnip Root",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Celery",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Peas",
+        "quantity": "100",
+        "unit": "g"
+      },
+      {
+        "name": "Green Beans",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "name": "White Cabbage",
+        "quantity": "200",
+        "unit": "g"
+      },
+      {
+        "name": "Tomatoes in Broth",
+        "quantity": "400",
+        "unit": "g"
+      },
+      {
+        "name": "Fresh Lovage",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Fresh Parsley",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Bors",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -851,20 +2120,76 @@
     "servings": 5,
     "imageUrl": "assets/images/recipes/classic-tomato-soup.jpg",
     "ingredients": [
-      { "name": "Tomatoes", "quantity": "2000", "unit": "g" },
-      { "name": "Carrots", "quantity": "3", "unit": "pcs" },
-      { "name": "Onion", "quantity": "2", "unit": "pcs" },
-      { "name": "Celery", "quantity": "1", "unit": "pcs" },
-      { "name": "Parsnip", "quantity": "1", "unit": "pcs" },
-      { "name": "Red Bell Pepper", "quantity": "1", "unit": "pcs" },
-      { "name": "Green Bell Pepper", "quantity": "1", "unit": "pcs" },
-      { "name": "Garlic", "quantity": "1", "unit": "cloves" },
-      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Bay Leaf", "quantity": "2", "unit": "pcs" },
-      { "name": "Fresh Thyme", "quantity": "1", "unit": "sprig" },
-      { "name": "Fresh Basil", "quantity": "1", "unit": "sprig" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Tomatoes",
+        "quantity": "2000",
+        "unit": "g"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Onion",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Celery",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Parsnip",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Red Bell Pepper",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Green Bell Pepper",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "1",
+        "unit": "cloves"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Bay Leaf",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Fresh Thyme",
+        "quantity": "1",
+        "unit": "sprig"
+      },
+      {
+        "name": "Fresh Basil",
+        "quantity": "1",
+        "unit": "sprig"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -882,18 +2207,66 @@
     "servings": 5,
     "imageUrl": "assets/images/recipes/tomato-soup-homemade-noodles.jpg",
     "ingredients": [
-      { "name": "Tomatoes", "quantity": "1000", "unit": "g" },
-      { "name": "Carrots", "quantity": "3", "unit": "pcs" },
-      { "name": "Bell Pepper", "quantity": "1", "unit": "pcs" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Celery", "quantity": "1", "unit": "pcs" },
-      { "name": "Parsnip", "quantity": "1", "unit": "pcs" },
-      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Egg", "quantity": "1", "unit": "pcs" },
-      { "name": "Flour", "quantity": "150", "unit": "g" },
-      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Tomatoes",
+        "quantity": "1000",
+        "unit": "g"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Bell Pepper",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Celery",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Parsnip",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Egg",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Flour",
+        "quantity": "150",
+        "unit": "g"
+      },
+      {
+        "name": "Fresh Parsley",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -910,16 +2283,56 @@
     "servings": 5,
     "imageUrl": "assets/images/recipes/tomato-soup-semolina-dumplings.jpg",
     "ingredients": [
-      { "name": "Tomato Juice", "quantity": "900", "unit": "ml" },
-      { "name": "Carrots", "quantity": "3", "unit": "pcs" },
-      { "name": "Onion", "quantity": "2", "unit": "pcs" },
-      { "name": "Garlic", "quantity": "3", "unit": "cloves" },
-      { "name": "Fresh Parsley", "quantity": "1", "unit": "bunch" },
-      { "name": "Olive Oil", "quantity": "4", "unit": "tbsp" },
-      { "name": "Eggs", "quantity": "2", "unit": "pcs" },
-      { "name": "Semolina", "quantity": "8", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Tomato Juice",
+        "quantity": "900",
+        "unit": "ml"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Onion",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "3",
+        "unit": "cloves"
+      },
+      {
+        "name": "Fresh Parsley",
+        "quantity": "1",
+        "unit": "bunch"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "4",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Eggs",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Semolina",
+        "quantity": "8",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -937,18 +2350,66 @@
     "servings": 5,
     "imageUrl": "assets/images/recipes/cream-of-tomato-soup.jpg",
     "ingredients": [
-      { "name": "Tomatoes", "quantity": "500", "unit": "g" },
-      { "name": "Carrots", "quantity": "3", "unit": "pcs" },
-      { "name": "Onion", "quantity": "2", "unit": "pcs" },
-      { "name": "Garlic", "quantity": "3", "unit": "cloves" },
-      { "name": "Bell Pepper", "quantity": "1", "unit": "pcs" },
-      { "name": "Parsnip", "quantity": "1", "unit": "pcs" },
-      { "name": "Celery", "quantity": "1", "unit": "pcs" },
-      { "name": "Zucchini", "quantity": "1", "unit": "pcs" },
-      { "name": "Potatoes", "quantity": "3", "unit": "pcs" },
-      { "name": "Olive Oil", "quantity": "3", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Tomatoes",
+        "quantity": "500",
+        "unit": "g"
+      },
+      {
+        "name": "Carrots",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Onion",
+        "quantity": "2",
+        "unit": "pcs"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "3",
+        "unit": "cloves"
+      },
+      {
+        "name": "Bell Pepper",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Parsnip",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Celery",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Zucchini",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Potatoes",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "3",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -965,14 +2426,46 @@
     "servings": 4,
     "imageUrl": "assets/images/recipes/tomato-soup-with-garlic.jpg",
     "ingredients": [
-      { "name": "Tomatoes", "quantity": "800", "unit": "g" },
-      { "name": "Onion", "quantity": "1", "unit": "pcs" },
-      { "name": "Garlic", "quantity": "5", "unit": "cloves" },
-      { "name": "Fresh Basil", "quantity": "2", "unit": "sprigs" },
-      { "name": "Dried Thyme", "quantity": "1", "unit": "tsp" },
-      { "name": "Olive Oil", "quantity": "2", "unit": "tbsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Tomatoes",
+        "quantity": "800",
+        "unit": "g"
+      },
+      {
+        "name": "Onion",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "5",
+        "unit": "cloves"
+      },
+      {
+        "name": "Fresh Basil",
+        "quantity": "2",
+        "unit": "sprigs"
+      },
+      {
+        "name": "Dried Thyme",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -989,18 +2482,66 @@
     "servings": 4,
     "imageUrl": "assets/images/recipes/gazpacho.jpg",
     "ingredients": [
-      { "name": "Tomatoes", "quantity": "1000", "unit": "g" },
-      { "name": "Cucumbers", "quantity": "3", "unit": "pcs" },
-      { "name": "Bell Pepper", "quantity": "1", "unit": "pcs" },
-      { "name": "Onion", "quantity": "0.5", "unit": "pcs" },
-      { "name": "Garlic", "quantity": "1", "unit": "cloves" },
-      { "name": "Olive Oil", "quantity": "7", "unit": "tbsp" },
-      { "name": "Water", "quantity": "1", "unit": "cup" },
-      { "name": "Dried Oregano", "quantity": "0.5", "unit": "tsp" },
-      { "name": "Lemon Juice", "quantity": "2", "unit": "tbsp" },
-      { "name": "Bread", "quantity": "2", "unit": "slices" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" },
-      { "name": "Black Pepper", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Tomatoes",
+        "quantity": "1000",
+        "unit": "g"
+      },
+      {
+        "name": "Cucumbers",
+        "quantity": "3",
+        "unit": "pcs"
+      },
+      {
+        "name": "Bell Pepper",
+        "quantity": "1",
+        "unit": "pcs"
+      },
+      {
+        "name": "Onion",
+        "quantity": "0.5",
+        "unit": "pcs"
+      },
+      {
+        "name": "Garlic",
+        "quantity": "1",
+        "unit": "cloves"
+      },
+      {
+        "name": "Olive Oil",
+        "quantity": "7",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Water",
+        "quantity": "1",
+        "unit": "cup"
+      },
+      {
+        "name": "Dried Oregano",
+        "quantity": "0.5",
+        "unit": "tsp"
+      },
+      {
+        "name": "Lemon Juice",
+        "quantity": "2",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Bread",
+        "quantity": "2",
+        "unit": "slices"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      },
+      {
+        "name": "Black Pepper",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   },
   {
@@ -1016,13 +2557,41 @@
     "servings": 3,
     "imageUrl": "assets/images/recipes/turkish-tomato-soup.jpg",
     "ingredients": [
-      { "name": "Flour", "quantity": "1", "unit": "tbsp" },
-      { "name": "Vegetable Oil", "quantity": "1", "unit": "tbsp" },
-      { "name": "Tomato Juice", "quantity": "900", "unit": "g" },
-      { "name": "Milk", "quantity": "200", "unit": "ml" },
-      { "name": "Dried Basil", "quantity": "1", "unit": "tsp" },
-      { "name": "Dried Oregano", "quantity": "1", "unit": "tsp" },
-      { "name": "Salt", "quantity": "to taste", "unit": "" }
+      {
+        "name": "Flour",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Vegetable Oil",
+        "quantity": "1",
+        "unit": "tbsp"
+      },
+      {
+        "name": "Tomato Juice",
+        "quantity": "900",
+        "unit": "g"
+      },
+      {
+        "name": "Milk",
+        "quantity": "200",
+        "unit": "ml"
+      },
+      {
+        "name": "Dried Basil",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Dried Oregano",
+        "quantity": "1",
+        "unit": "tsp"
+      },
+      {
+        "name": "Salt",
+        "quantity": "to taste",
+        "unit": ""
+      }
     ]
   }
 ]

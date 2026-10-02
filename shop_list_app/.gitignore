@@ -39,3 +39,6 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+
+# Local secrets for dev-tool scripts (e.g. Replicate API token). Never commit.
+tool/.env

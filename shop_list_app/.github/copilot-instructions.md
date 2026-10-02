@@ -152,3 +152,17 @@ flutter test
   Verified: `flutter pub get` resolved `image: ^4.2.0` (got 4.8.0), and a manual test run
   (`dart run tool/generate_recipe_image.dart --name "Test Recipe Image" ...`) produced a 33.8KB
   JPEG, comfortably under the 50KB budget.
+- 2026-09-29: Ran [tool/generate_recipe_image_ai.dart](../tool/generate_recipe_image_ai.dart)
+  (`--all --no-json`, repeated 4x) to backfill real AI-generated photos for all 44 recipes in
+  [assets/data/recipes.json](../assets/data/recipes.json) into
+  [assets/images/recipes_ai/](../assets/images/recipes_ai/) (recipes.json's `imageUrl` fields were
+  left untouched, still pointing at `assets/images/recipes/`). Along the way found and fixed two
+  bugs in the script: (1) Pollinations.ai now returns HTTP 402 for anonymous requests that include
+  `nologo=true` (that flag now requires a registered account) — removed the param from the image
+  request URL; (2) added retry-with-backoff (4 attempts, 5/10/15s) for transient 402/429/5xx
+  responses and a 16s inter-request delay in `--all` mode to respect Pollinations' anonymous
+  ~1-req/15s rate limit — the first `response.drain<List<int>>()` attempt at implementing this had
+  a bug (drain's generic is the _return_ type, not an element-stream cast, so passing `List<int>`
+  with no `futureValue` threw `type 'Null' is not a subtype of type 'List<int>'`); fixed by using
+  `response.drain<void>()`. After the fixes, 4 sequential `--all --no-json` runs (each one only
+  retrying files still missing) got all 44 images generated successfully.
