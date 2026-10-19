@@ -152,6 +152,25 @@ flutter test
   Verified: `flutter pub get` resolved `image: ^4.2.0` (got 4.8.0), and a manual test run
   (`dart run tool/generate_recipe_image.dart --name "Test Recipe Image" ...`) produced a 33.8KB
   JPEG, comfortably under the 50KB budget.
+- 2026-10-02: Audited implementation status against
+  `../../bMad_plan/_bmad-output/docs/epics-user-stories/epics/` (E0-E15, v5.0 vertical-slice
+  plan). Summary — **MVP epics E0-E7 are essentially complete** (full domain/data/presentation
+  vertical slices exist for product_category, products, shopping_lists, recipes, meal_planning,
+  pantry, plus app shell/navigation and core empty/error/loading widgets). **E8 (Settings & Data
+  Management) is the biggest MVP gap**: `SettingsView` only has a Dark/Light/Green theme toggle,
+  a "manage categories" link, "Clear Pantry", and a diagnostics link — missing `AppSettings`
+  domain object, household-size setting (and its recipe/shopping-list scaling wiring), JSON
+  export/import, "Clear All Data", multi-language/localization, and the Buy-Me-a-Coffee link (all
+  of US-E8.2 through US-E8.7). Minor gaps in E3-E7: no explicit `UpdateProductCategoryUseCase`/etc
+  confirmed wired end-to-end in UI for a couple of edit flows, and category-reorder (US-E2.3,
+  P2) not verified. Post-MVP epics **E9-E12 (sync engine, cloud backend, auth, family sharing)
+  are not started** beyond the `SyncQueueTable` schema stub from E0. **E13 (Smart Features/AI)**
+  is partially started: `FindRecipesByPantryUseCase` (pantry-based recipe matching, ~US-E13.2)
+  exists, but smart text parsing (US-E13.1) and predictive list generation (US-E13.3) do not.
+  **E14 (performance)** and **E15 (testing)** have no dedicated indexing/pagination/golden-test
+  infra yet, though substantial inline unit/widget tests already exist per-feature under
+  `test/features/`. Full story-by-story breakdown was given directly to the user in chat rather
+  than a new markdown doc.
 - 2026-09-29: Ran [tool/generate_recipe_image_ai.dart](../tool/generate_recipe_image_ai.dart)
   (`--all --no-json`, repeated 4x) to backfill real AI-generated photos for all 44 recipes in
   [assets/data/recipes.json](../assets/data/recipes.json) into
