@@ -1,0 +1,259 @@
+{
+  "recipes": [
+    {
+      "title": "Chia Pudding",
+      "cuisine": "International",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "Make-ahead chia seed pudding sweetened with maple syrup and flavored with vanilla.",
+      "ingredients": [
+        "3 tbsp chia seeds",
+        "1 cup almond milk",
+        "1 tbsp maple syrup",
+        "1/2 tsp vanilla extract"
+      ],
+      "steps": [
+        "Whisk chia seeds with milk, maple and vanilla, refrigerate at least 2 hours or overnight, stir before serving." 
+      ]
+    },
+    {
+      "title": "Tomato and Mozzarella Toast",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "Simple bruschetta-style toast topped with tomato and mozzarella.",
+      "ingredients": [
+        "1 slice bread",
+        "1 tomato sliced",
+        "50 g mozzarella",
+        "1 tbsp basil chopped",
+        "1 tsp olive oil",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Toast bread, top with tomato and mozzarella, drizzle with oil and basil and season to serve." 
+      ]
+    },
+    {
+      "title": "Baked Falafel Bowl",
+      "cuisine": "Middle Eastern",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Crispy baked falafel with rice, hummus and salad for a nutritious bowl.",
+      "ingredients": [
+        "6 baked falafel balls",
+        "1 cup cooked rice",
+        "1/2 cup hummus",
+        "1/2 cucumber chopped",
+        "1/2 tomato chopped",
+        "1 tbsp tahini"
+      ],
+      "steps": [
+        "Assemble rice, falafel, hummus and vegetables in a bowl and drizzle with tahini." 
+      ]
+    },
+    {
+      "title": "Herbed Potato Salad",
+      "cuisine": "German",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 4,
+      "meal_type": "salad",
+      "description": "Warm or cold potato salad tossed with mustard, herbs and oil.",
+      "ingredients": [
+        "800 g potatoes boiled and chopped",
+        "2 tbsp olive oil",
+        "1 tbsp mustard",
+        "1 tbsp chopped dill",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Toss warm potatoes with oil, mustard and herbs; season to taste and serve warm or chilled." 
+      ]
+    },
+    {
+      "title": "Citrus Chicken Salad",
+      "cuisine": "American",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "salad",
+      "description": "Bright salad with grilled chicken, mixed greens and orange segments.",
+      "ingredients": [
+        "1 cooked chicken breast sliced",
+        "2 cups mixed greens",
+        "1 orange segmented",
+        "1/4 avocado sliced",
+        "2 tbsp vinaigrette"
+      ],
+      "steps": [
+        "Combine ingredients and toss with vinaigrette, serve immediately." 
+      ]
+    },
+    {
+      "title": "Cucumber Yogurt Salad",
+      "cuisine": "Middle Eastern",
+      "dietary_tags": ["vegetarian", "gluten-free"],
+      "servings": 2,
+      "meal_type": "salad",
+      "description": "Cooling cucumber salad dressed in yogurt, lemon and dill.",
+      "ingredients": [
+        "1 cucumber diced",
+        "1/2 cup plain yogurt",
+        "1 tbsp lemon juice",
+        "1 tbsp chopped dill",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Mix ingredients and chill briefly before serving." 
+      ]
+    },
+    {
+      "title": "Roasted Veggie Bowl",
+      "cuisine": "Mediterranean",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Roasted seasonal vegetables served over quinoa with tahini dressing.",
+      "ingredients": [
+        "2 cups roasted vegetables",
+        "1 cup cooked quinoa",
+        "1 tbsp tahini",
+        "1 tbsp lemon juice",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Assemble quinoa and roasted vegetables, drizzle with tahini and lemon and serve." 
+      ]
+    },
+    {
+      "title": "Ratatouille",
+      "cuisine": "French",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 3,
+      "meal_type": "main_course",
+      "description": "Slow-cooked medley of eggplant, zucchini, peppers and tomatoes.",
+      "ingredients": [
+        "1 eggplant diced",
+        "2 zucchinis diced",
+        "2 tomatoes chopped",
+        "1 onion chopped",
+        "2 tbsp olive oil",
+        "1 tsp thyme"
+      ],
+      "steps": [
+        "Sauté onion, add other vegetables and simmer until tender; season and serve." 
+      ]
+    },
+    {
+      "title": "Roasted Carrots",
+      "cuisine": "American",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "side",
+      "description": "Oven-roasted carrots glazed with a touch of honey and olive oil.",
+      "ingredients": [
+        "500 g carrots, peeled and halved",
+        "1 tbsp olive oil",
+        "1 tsp honey (optional)",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Toss carrots with oil, honey and seasonings; roast at 200°C/400°F for 20–25 minutes." 
+      ]
+    },
+    {
+      "title": "Crispy Potato Hash",
+      "cuisine": "American",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "breakfast",
+      "description": "Pan-fried diced potatoes with onions and paprika until crispy.",
+      "ingredients": [
+        "400 g potatoes diced",
+        "1 onion chopped",
+        "2 tbsp oil",
+        "1/2 tsp paprika",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Cook potatoes in oil until crisp and golden, add onions and season and serve." 
+      ]
+    },
+    {
+      "title": "Courgette Fritters",
+      "cuisine": "Mediterranean",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "appetizer",
+      "description": "Savory fritters made from shredded courgette (zucchini) and pan-fried until crisp.",
+      "ingredients": [
+        "2 courgettes grated",
+        "1 egg",
+        "3 tbsp flour",
+        "1 tbsp chopped parsley",
+        "Salt and pepper",
+        "Oil for frying"
+      ],
+      "steps": [
+        "Mix ingredients, form small patties and pan-fry in oil until golden both sides; drain and serve." 
+      ]
+    },
+    {
+      "title": "Stuffed Bell Peppers",
+      "cuisine": "Mediterranean",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Bell peppers stuffed with rice, beans and vegetables and baked until tender.",
+      "ingredients": [
+        "2 bell peppers halved and seeded",
+        "1 cup cooked rice",
+        "1/2 cup black beans",
+        "1/2 cup corn",
+        "1/2 cup shredded cheese",
+        "1 tbsp salsa"
+      ],
+      "steps": [
+        "Mix rice with beans, corn and salsa, stuff peppers, top with cheese and bake until peppers are tender." 
+      ]
+    },
+    {
+      "title": "Pesto Pasta Salad (Batch 5)",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 4,
+      "meal_type": "salad",
+      "description": "A make-ahead pasta salad tossed with bright basil pesto and veggies.",
+      "ingredients": [
+        "300 g cooked short pasta",
+        "3 tbsp pesto",
+        "1/2 cup cherry tomatoes",
+        "1/2 cup peas",
+        "1 tbsp olive oil",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Combine all ingredients in a bowl, toss and chill before serving." 
+      ]
+    },
+    {
+      "title": "Pesto Pasta (Simple)",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Quick pasta tossed with store-bought pesto and optional chicken or vegetables.",
+      "ingredients": [
+        "180 g pasta",
+        "2 tbsp pesto",
+        "1 tbsp olive oil",
+        "Parmesan to serve"
+      ],
+      "steps": [
+        "Cook pasta, reserve some cooking water, toss with pesto adding water to loosen and serve with Parmesan." 
+      ]
+    }
+  ]
+}

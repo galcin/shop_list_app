@@ -1,0 +1,313 @@
+{
+  "recipes": [
+    {
+      "title": "Chickpea Curry",
+      "cuisine": "Indian",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 3,
+      "meal_type": "main_course",
+      "description": "Hearty chickpea curry simmered with spices and coconut milk.",
+      "ingredients": [
+        "1 can chickpeas, drained",
+        "1 onion, chopped",
+        "2 garlic cloves, minced",
+        "1 tbsp curry powder",
+        "1 cup coconut milk",
+        "1 tbsp oil",
+        "Salt to taste"
+      ],
+      "steps": [
+        "Sauté onion and garlic in oil until soft.",
+        "Add curry powder, chickpeas and coconut milk; simmer 10–15 minutes.",
+        "Season and serve with rice."
+      ]
+    },
+    {
+      "title": "Red Lentil Dhal",
+      "cuisine": "Indian",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 3,
+      "meal_type": "main_course",
+      "description": "Creamy spiced red lentils, comforting and quick to make.",
+      "ingredients": [
+        "1 cup red lentils",
+        "1 onion, chopped",
+        "2 garlic cloves, minced",
+        "1 tbsp curry powder",
+        "2 cups water or stock",
+        "1 tbsp oil",
+        "Salt to taste"
+      ],
+      "steps": [
+        "Sauté onion and garlic, add curry powder then lentils and water; simmer until soft.",
+        "Adjust seasoning and serve with rice or naan." 
+      ]
+    },
+    {
+      "title": "Eggplant Curry",
+      "cuisine": "Indian",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Cubed eggplant simmered in a spiced tomato-coconut sauce.",
+      "ingredients": [
+        "1 eggplant, cubed",
+        "1 onion, chopped",
+        "2 garlic cloves",
+        "1 tbsp curry powder",
+        "1 cup coconut milk",
+        "1 tbsp oil",
+        "Salt"
+      ],
+      "steps": [
+        "Sauté onion and garlic, add eggplant and spices, pour coconut milk and simmer until tender.",
+        "Serve with rice." 
+      ]
+    },
+    {
+      "title": "Red Beans and Rice",
+      "cuisine": "Caribbean",
+      "dietary_tags": ["vegan"],
+      "servings": 3,
+      "meal_type": "main_course",
+      "description": "Comforting rice cooked with flavored red beans and aromatics.",
+      "ingredients": [
+        "1 cup rice",
+        "1 cup red beans (cooked or canned)",
+        "1/2 onion, chopped",
+        "1 garlic clove",
+        "1 tsp thyme",
+        "1 tbsp oil",
+        "Salt"
+      ],
+      "steps": [
+        "Sauté onion and garlic, add beans and rice and cook with water until rice is tender.",
+        "Season to taste and serve." 
+      ]
+    },
+    {
+      "title": "Rice and Beans",
+      "cuisine": "Caribbean",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Simple staple of rice served with seasoned beans.",
+      "ingredients": [
+        "1 cup rice",
+        "1 cup black beans",
+        "1/2 onion",
+        "1 garlic clove",
+        "1 tbsp oil",
+        "Salt and cumin to taste"
+      ],
+      "steps": [
+        "Sauté onion and garlic, add beans and rice and cook with water until rice is done.",
+        "Season and serve." 
+      ]
+    },
+    {
+      "title": "Vegetable Paella (Batch 4)",
+      "cuisine": "Spanish",
+      "dietary_tags": ["vegan"],
+      "servings": 3,
+      "meal_type": "main_course",
+      "description": "Saffron and paprika flavored rice with mixed vegetables.",
+      "ingredients": [
+        "1 cup rice",
+        "1/2 cup peas",
+        "1/2 cup artichoke hearts",
+        "1/2 cup bell peppers",
+        "2 cups vegetable broth",
+        "1 tsp smoked paprika"
+      ],
+      "steps": [
+        "Sauté vegetables, add rice and paprika, pour broth and simmer until rice absorbs liquid.",
+        "Let rest briefly and serve." 
+      ]
+    },
+    {
+      "title": "Baked Falafel Bowl",
+      "cuisine": "Middle Eastern",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Oven-baked falafel served with rice, hummus, and salad for a balanced bowl.",
+      "ingredients": [
+        "6 baked falafel balls",
+        "1 cup cooked rice",
+        "1/2 cup hummus",
+        "1/2 cucumber, chopped",
+        "1/2 tomato, chopped",
+        "1 tbsp tahini"
+      ],
+      "steps": [
+        "Assemble bowls with rice, falafel, hummus, and chopped vegetables and drizzle with tahini." 
+      ]
+    },
+    {
+      "title": "Baked Ricotta Toast",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "Toasted bread topped with creamy ricotta and fresh tomatoes.",
+      "ingredients": [
+        "1 slice bread",
+        "2 tbsp ricotta",
+        "1/2 tomato sliced",
+        "1 tsp olive oil",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Toast bread, spread ricotta, top with tomato slices, drizzle oil and season." 
+      ]
+    },
+    {
+      "title": "Baked Oatmeal",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 4,
+      "meal_type": "breakfast",
+      "description": "Comforting baked oat dish with fruit and spices, great for meal prep.",
+      "ingredients": [
+        "2 cups rolled oats",
+        "1 apple chopped",
+        "1 cup milk",
+        "1 egg",
+        "2 tbsp maple syrup",
+        "1 tsp cinnamon"
+      ],
+      "steps": [
+        "Mix all ingredients, pour into a baking dish and bake at 180°C/350°F for 25–30 minutes until set." 
+      ]
+    },
+    {
+      "title": "Coconut Pancakes",
+      "cuisine": "Thai",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "breakfast",
+      "description": "Fluffy pancakes with coconut milk for a tropical twist.",
+      "ingredients": [
+        "1 cup flour",
+        "1/2 cup coconut milk",
+        "1 egg",
+        "1 tbsp sugar",
+        "1 tsp baking powder",
+        "1 tbsp oil"
+      ],
+      "steps": [
+        "Mix wet and dry ingredients separately, combine to form batter, cook pancakes on a hot skillet until golden." 
+      ]
+    },
+    {
+      "title": "Baked Potatoes with Cheese",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian", "gluten-free"],
+      "servings": 2,
+      "meal_type": "side",
+      "description": "Crispy-skinned baked potatoes topped with cheese, butter and sour cream.",
+      "ingredients": [
+        "2 large baking potatoes",
+        "1/2 cup shredded cheddar",
+        "2 tbsp butter",
+        "1/4 cup sour cream",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Bake potatoes at 200°C/400°F for 45–60 minutes until tender, split open and top with butter, cheese and sour cream." 
+      ]
+    },
+    {
+      "title": "Baked Apples with Cinnamon",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "dessert",
+      "description": "Apples cored and filled with brown sugar and cinnamon then baked until tender.",
+      "ingredients": [
+        "2 apples, cored",
+        "2 tbsp brown sugar",
+        "1 tsp cinnamon",
+        "1 tbsp butter"
+      ],
+      "steps": [
+        "Preheat oven to 180°C/350°F.",
+        "Fill apples with sugar and cinnamon, dot with butter and bake 25–30 minutes until soft." 
+      ]
+    },
+    {
+      "title": "Coconut Rice Pudding",
+      "cuisine": "Thai",
+      "dietary_tags": ["vegetarian", "dairy-free"],
+      "servings": 2,
+      "meal_type": "dessert",
+      "description": "Creamy rice pudding simmered in coconut milk and lightly sweetened.",
+      "ingredients": [
+        "1/2 cup short-grain rice",
+        "1 cup coconut milk",
+        "1 cup water",
+        "2 tbsp sugar",
+        "1/2 tsp vanilla"
+      ],
+      "steps": [
+        "Combine rice, coconut milk, water and sugar, simmer until rice is tender and mixture is creamy." 
+      ]
+    },
+    {
+      "title": "Mango Smoothie",
+      "cuisine": "International",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "beverage",
+      "description": "Refreshing mango and banana smoothie blended with plant milk.",
+      "ingredients": [
+        "1 mango peeled and chopped",
+        "1 banana",
+        "1 cup plant milk",
+        "1 tbsp maple syrup (optional)"
+      ],
+      "steps": [
+        "Blend all ingredients until smooth and serve chilled." 
+      ]
+    },
+    {
+      "title": "Miso Soup",
+      "cuisine": "Japanese",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "soup",
+      "description": "Light umami-rich soup with miso paste, tofu and seaweed.",
+      "ingredients": [
+        "2 cups dashi or water",
+        "2 tbsp miso paste",
+        "100 g tofu, cubed",
+        "1 tbsp wakame seaweed soaked",
+        "1 scallion sliced"
+      ],
+      "steps": [
+        "Heat dashi but do not boil, dissolve miso in a little warm liquid then stir back in.",
+        "Add tofu and wakame to warm broth and serve garnished with scallion." 
+      ]
+    },
+    {
+      "title": "Soba Noodle Salad",
+      "cuisine": "Japanese",
+      "dietary_tags": ["vegan"],
+      "servings": 2,
+      "meal_type": "salad",
+      "description": "Cool soba noodles tossed with cucumber, carrot and a sesame-soy dressing.",
+      "ingredients": [
+        "180 g soba noodles",
+        "1/2 cucumber sliced",
+        "1 carrot julienned",
+        "2 tbsp soy sauce",
+        "1 tbsp sesame oil",
+        "1 tbsp rice vinegar"
+      ],
+      "steps": [
+        "Cook noodles, rinse under cold water and toss with vegetables and dressing; chill before serving." 
+      ]
+    }
+  ]
+}

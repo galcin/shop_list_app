@@ -1,0 +1,403 @@
+{
+  "recipes": [
+    {
+      "title": "Spaghetti Aglio e Olio",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Simple pasta with garlic, olive oil, chili flakes and parsley.",
+      "ingredients": [
+        "200 g spaghetti",
+        "3 garlic cloves, sliced",
+        "3 tbsp olive oil",
+        "1/2 tsp chili flakes",
+        "1 tbsp chopped parsley",
+        "Salt to taste"
+      ],
+      "steps": [
+        "Cook spaghetti until al dente.",
+        "Sauté garlic in olive oil until fragrant, add chili flakes.",
+        "Toss pasta with garlic oil and parsley, season and serve."
+      ]
+    },
+    {
+      "title": "Lemon Garlic Salmon",
+      "cuisine": "Mediterranean",
+      "dietary_tags": ["pescatarian", "gluten-free"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Roasted salmon with lemon and garlic served with vegetables.",
+      "ingredients": [
+        "2 salmon fillets",
+        "1 tbsp olive oil",
+        "1 lemon, zested and juiced",
+        "2 garlic cloves, minced",
+        "1 cup broccoli florets",
+        "Salt and pepper to taste"
+      ],
+      "steps": [
+        "Preheat oven to 200°C/400°F.",
+        "Place salmon and broccoli on a baking tray; drizzle with oil, lemon, garlic, salt and pepper.",
+        "Bake 12-18 minutes until salmon is cooked through."
+      ]
+    },
+    {
+      "title": "Chicken Stir-Fry",
+      "cuisine": "Chinese",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Quick stir-fry with chicken and mixed vegetables in a savory sauce.",
+      "ingredients": [
+        "250 g chicken breast, sliced",
+        "1 cup bell peppers, sliced",
+        "1 cup broccoli florets",
+        "1 carrot, sliced",
+        "2 tbsp soy sauce",
+        "1 tsp sesame oil",
+        "1 tsp grated ginger",
+        "1 tbsp oil"
+      ],
+      "steps": [
+        "Heat oil in a wok and stir-fry chicken until cooked through.",
+        "Add vegetables and ginger, stir-fry until tender-crisp.",
+        "Add soy sauce and sesame oil, toss to combine, and serve over rice."
+      ]
+    },
+    {
+      "title": "Beef Tacos",
+      "cuisine": "Mexican",
+      "dietary_tags": ["none"],
+      "servings": 3,
+      "meal_type": "main_course",
+      "description": "Seasoned ground beef served in taco shells with fresh toppings.",
+      "ingredients": [
+        "300 g ground beef",
+        "6 taco shells",
+        "1/2 cup shredded lettuce",
+        "1/2 cup diced tomatoes",
+        "1/4 cup salsa",
+        "1/2 cup grated cheese"
+      ],
+      "steps": [
+        "Cook beef with taco seasoning until browned.",
+        "Fill taco shells with beef and top with lettuce, tomatoes, salsa, and cheese."
+      ]
+    },
+    {
+      "title": "Baked Pesto Chicken",
+      "cuisine": "Italian",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Chicken breasts topped with pesto and baked with tomatoes and mozzarella.",
+      "ingredients": [
+        "2 chicken breasts",
+        "2 tbsp pesto",
+        "1/2 cup cherry tomatoes",
+        "1/4 cup shredded mozzarella",
+        "1 tbsp olive oil",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Preheat oven to 200°C/400°F.",
+        "Place chicken in a baking dish, spread pesto over each, add tomatoes and mozzarella.",
+        "Bake 20-25 minutes until chicken is cooked through."
+      ]
+    },
+    {
+      "title": "Tomato Basil Soup",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegan"],
+      "servings": 3,
+      "meal_type": "soup",
+      "description": "Comforting pureed tomato soup brightened with fresh basil.",
+      "ingredients": [
+        "6 tomatoes or 800 g canned tomatoes",
+        "1 small onion, chopped",
+        "2 garlic cloves, minced",
+        "2 tbsp olive oil",
+        "2 cups vegetable broth",
+        "Handful fresh basil leaves",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Sauté onion and garlic in oil until soft.",
+        "Add tomatoes and broth, simmer 15 minutes.",
+        "Blend until smooth, stir in basil, season, and serve."
+      ]
+    },
+    {
+      "title": "Chicken Noodle Soup",
+      "cuisine": "American",
+      "dietary_tags": ["none"],
+      "servings": 4,
+      "meal_type": "soup",
+      "description": "Classic, soothing soup with chicken, vegetables, and noodles.",
+      "ingredients": [
+        "4 cups chicken stock",
+        "1 cooked chicken breast, shredded",
+        "1 cup egg noodles",
+        "2 carrots, sliced",
+        "2 celery stalks, sliced",
+        "1 onion, chopped",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Sauté onion, carrots, and celery until softened.",
+        "Add stock and bring to a boil, add noodles and chicken, simmer until noodles are tender.",
+        "Season and serve hot."
+      ]
+    },
+    {
+      "title": "Lentil Soup",
+      "cuisine": "Mediterranean",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 4,
+      "meal_type": "soup",
+      "description": "Nutritious lentil soup flavored with garlic, cumin, and vegetables.",
+      "ingredients": [
+        "1 cup lentils",
+        "1 carrot, diced",
+        "1 onion, chopped",
+        "2 garlic cloves, minced",
+        "4 cups vegetable broth",
+        "1 tsp ground cumin",
+        "1 tbsp olive oil",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Sauté onion, carrot, and garlic in olive oil until soft.",
+        "Add lentils, broth, and cumin; simmer until lentils are tender (20–25 minutes).",
+        "Season and serve."
+      ]
+    },
+    {
+      "title": "Minestrone",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegan"],
+      "servings": 4,
+      "meal_type": "soup",
+      "description": "Hearty vegetable soup with beans and small pasta, a one-pot meal.",
+      "ingredients": [
+        "1 tbsp olive oil",
+        "1 onion, chopped",
+        "1 carrot, diced",
+        "1 celery stalk, diced",
+        "1 zucchini, diced",
+        "1 cup canned tomatoes",
+        "1 cup beans",
+        "4 cups vegetable broth",
+        "1 cup small pasta",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Sauté onion, carrot, and celery in oil until tender.",
+        "Add remaining vegetables, tomatoes, broth, and pasta; simmer until pasta is cooked.",
+        "Season and serve."
+      ]
+    },
+    {
+      "title": "Garlic Roasted Potatoes",
+      "cuisine": "French",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 4,
+      "meal_type": "side",
+      "description": "Crispy roasted potatoes with garlic and herbs.",
+      "ingredients": [
+        "700 g potatoes, cubed",
+        "3 tbsp olive oil",
+        "4 garlic cloves, minced",
+        "1 tbsp chopped rosemary",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Preheat oven to 200°C/400°F.",
+        "Toss potatoes with oil, garlic, rosemary, salt and pepper.",
+        "Roast until golden and crisp, about 30–35 minutes, stirring once."
+      ]
+    },
+    {
+      "title": "Sweet Potato Fries",
+      "cuisine": "American",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "side",
+      "description": "Oven-baked sweet potato fries seasoned with smoked paprika.",
+      "ingredients": [
+        "2 medium sweet potatoes, cut into fries",
+        "2 tbsp olive oil",
+        "1 tsp smoked paprika",
+        "Salt to taste"
+      ],
+      "steps": [
+        "Preheat oven to 220°C/425°F.",
+        "Toss fries with oil, paprika, and salt.",
+        "Bake on a single layer for 20–25 minutes, flipping once, until crisp."
+      ]
+    },
+    {
+      "title": "Honey Soy Green Beans",
+      "cuisine": "Asian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "side",
+      "description": "Green beans sautéed in a sweet and savory honey-soy glaze.",
+      "ingredients": [
+        "300 g green beans",
+        "1 tbsp soy sauce",
+        "1 tbsp honey",
+        "1 tsp sesame oil",
+        "1 garlic clove, minced"
+      ],
+      "steps": [
+        "Blanch green beans until bright green and slightly tender.",
+        "Sauté garlic in sesame oil, add beans, soy sauce and honey; toss to coat."
+      ]
+    },
+    {
+      "title": "Air Fryer Brussels Sprouts",
+      "cuisine": "Belgian",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "side",
+      "description": "Crispy air-fried brussels sprouts with a tangy balsamic finish.",
+      "ingredients": [
+        "400 g brussels sprouts, halved",
+        "2 tbsp olive oil",
+        "1 tbsp balsamic vinegar",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Toss sprouts with oil, salt, and pepper.",
+        "Air fry at 200°C/400°F for 12–15 minutes until crispy, shaking halfway.",
+        "Drizzle balsamic and serve."
+      ]
+    },
+    {
+      "title": "Garlic Butter Shrimp",
+      "cuisine": "Mediterranean",
+      "dietary_tags": ["pescatarian", "gluten-free"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Quick sautéed shrimp in garlic butter and lemon.",
+      "ingredients": [
+        "300 g shrimp, peeled and deveined",
+        "2 tbsp butter",
+        "3 garlic cloves, minced",
+        "1 tbsp lemon juice",
+        "2 tbsp chopped parsley",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Melt butter in a skillet, add garlic and cook briefly.",
+        "Add shrimp and cook 2–3 minutes per side until opaque.",
+        "Stir in lemon and parsley and serve immediately."
+      ]
+    },
+    {
+      "title": "Shrimp Tacos",
+      "cuisine": "Mexican",
+      "dietary_tags": ["pescatarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Spiced shrimp in warm tortillas topped with cabbage slaw and lime.",
+      "ingredients": [
+        "250 g shrimp",
+        "6 small tortillas",
+        "1 cup shredded cabbage",
+        "1/4 cup mayonnaise",
+        "1 tbsp lime juice",
+        "1 tsp chili powder",
+        "Salt"
+      ],
+      "steps": [
+        "Toss shrimp with chili powder and salt then cook in oil until done.",
+        "Mix cabbage with mayo and lime for slaw.",
+        "Assemble tacos with shrimp and slaw, serve with lime wedges."
+      ]
+    },
+    {
+      "title": "Beef Tacos Bowl",
+      "cuisine": "Mexican",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "All the taco flavors served over rice for an easy bowl meal.",
+      "ingredients": [
+        "250 g ground beef",
+        "1 cup cooked rice",
+        "1/2 cup black beans",
+        "1/2 cup corn",
+        "1/4 cup salsa",
+        "1/2 avocado, sliced",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Cook beef with taco seasoning until browned.",
+        "Assemble bowls with rice, beans, corn, beef, salsa and avocado."
+      ]
+    },
+    {
+      "title": "Chicken Quesadilla",
+      "cuisine": "Mexican",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Cheesy tortilla filled with cooked chicken and veggies, toasted until golden.",
+      "ingredients": [
+        "4 flour tortillas",
+        "2 cups shredded cheese",
+        "1 cup cooked shredded chicken",
+        "1/2 cup corn",
+        "1/4 cup salsa"
+      ],
+      "steps": [
+        "Place filling on half of a tortilla, fold and cook on a skillet until cheese melts and tortilla is golden.",
+        "Slice into wedges and serve with salsa."
+      ]
+    },
+    {
+      "title": "Chicken Fried Rice",
+      "cuisine": "Chinese",
+      "dietary_tags": ["none"],
+      "servings": 3,
+      "meal_type": "main_course",
+      "description": "Stir-fried rice with chicken, egg, and vegetables using leftover rice.",
+      "ingredients": [
+        "3 cups cooked rice",
+        "200 g cooked chicken, diced",
+        "2 eggs",
+        "1 cup frozen peas and carrots",
+        "3 tbsp soy sauce",
+        "1 tbsp oil"
+      ],
+      "steps": [
+        "Scramble eggs in a wok and set aside.",
+        "Stir-fry vegetables in oil, add rice and chicken, and toss with soy sauce.",
+        "Fold in scrambled eggs and serve hot."
+      ]
+    },
+    {
+      "title": "Egg Fried Rice",
+      "cuisine": "Chinese",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Simple fried rice with eggs and vegetables for a quick meal.",
+      "ingredients": [
+        "2 cups cooked rice",
+        "2 eggs",
+        "1/2 cup peas",
+        "1/2 cup diced carrots",
+        "2 tbsp soy sauce",
+        "1 tbsp oil"
+      ],
+      "steps": [
+        "Heat oil, scramble eggs and set aside.",
+        "Stir-fry veggies, add rice and soy sauce, then fold in eggs and serve." 
+      ]
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "recipes": [
+    {
+      "title": "Classic French Toast",
+      "cuisine": "French",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "breakfast",
+      "description": "Soft, golden slices of bread soaked in a cinnamon-vanilla egg mixture and pan-fried until tender.",
+      "ingredients": [
+        "2 large eggs",
+        "1/2 cup milk",
+        "1/2 tsp vanilla extract",
+        "2 slices bread",
+        "1 tbsp butter",
+        "1 tbsp maple syrup",
+        "1/4 tsp ground cinnamon"
+      ],
+      "steps": [
+        "Whisk eggs, milk, vanilla, and cinnamon in a shallow bowl.",
+        "Heat butter in a skillet over medium heat.",
+        "Dip each bread slice into the egg mixture, coating both sides.",
+        "Cook 2–3 minutes per side until golden brown.",
+        "Serve warm with maple syrup."
+      ]
+    },
+    {
+      "title": "Scrambled Eggs with Herbs",
+      "cuisine": "International",
+      "dietary_tags": ["vegetarian", "gluten-free"],
+      "servings": 2,
+      "meal_type": "breakfast",
+      "description": "Fluffy scrambled eggs finished with fresh herbs.",
+      "ingredients": [
+        "4 large eggs",
+        "1 tbsp milk",
+        "1 tbsp butter",
+        "1 tbsp chopped chives",
+        "1 tbsp chopped parsley",
+        "1/4 tsp salt",
+        "1/8 tsp black pepper"
+      ],
+      "steps": [
+        "Whisk eggs, milk, salt, and pepper.",
+        "Melt butter in a non-stick pan over low heat.",
+        "Pour eggs in and stir gently until curds form and eggs are set but still soft.",
+        "Fold in herbs and serve immediately."
+      ]
+    },
+    {
+      "title": "Overnight Oats with Berries",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "No-cook creamy oats soaked overnight and topped with fresh berries.",
+      "ingredients": [
+        "1/2 cup rolled oats",
+        "1/2 cup milk (or plant milk)",
+        "1/2 cup yogurt",
+        "1/2 cup mixed berries",
+        "1 tbsp chia seeds",
+        "1 tsp honey"
+      ],
+      "steps": [
+        "Combine oats, milk, yogurt, chia, and honey in a jar.",
+        "Stir, cover, and refrigerate overnight.",
+        "Top with berries and serve chilled."
+      ]
+    },
+    {
+      "title": "Avocado Toast with Poached Egg",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "Creamy mashed avocado on toast topped with a runny poached egg for richness.",
+      "ingredients": [
+        "1 slice whole grain bread",
+        "1/2 avocado",
+        "1 egg",
+        "1 tsp lemon juice",
+        "1 tsp olive oil",
+        "1/4 tsp salt",
+        "1/8 tsp black pepper"
+      ],
+      "steps": [
+        "Toast the bread until crisp.",
+        "Mash avocado with lemon juice, salt, and pepper.",
+        "Spread avocado on toast and drizzle with olive oil.",
+        "Poach the egg to desired doneness and place on top.",
+        "Serve immediately."
+      ]
+    },
+    {
+      "title": "Banana Pancakes",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "breakfast",
+      "description": "Naturally sweet pancakes made with banana and eggs for a quick breakfast.",
+      "ingredients": [
+        "2 ripe bananas",
+        "2 eggs",
+        "1/2 tsp baking powder (optional)",
+        "1/2 tsp cinnamon",
+        "1 tsp butter",
+        "1 tbsp maple syrup"
+      ],
+      "steps": [
+        "Mash bananas and mix with eggs and baking powder until combined.",
+        "Heat butter in a skillet over medium heat and pour batter to form pancakes.",
+        "Cook until bubbles form, flip, and cook until golden.",
+        "Serve with maple syrup."
+      ]
+    },
+    {
+      "title": "Greek Yogurt Parfait",
+      "cuisine": "Greek",
+      "dietary_tags": ["vegetarian", "gluten-free"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "Layers of creamy yogurt, crunchy granola, and fresh fruit.",
+      "ingredients": [
+        "1 cup Greek yogurt",
+        "1/2 cup mixed berries",
+        "2 tbsp granola",
+        "1 tbsp honey"
+      ],
+      "steps": [
+        "Layer yogurt, berries, and granola in a glass.",
+        "Drizzle honey on top and serve immediately."
+      ]
+    },
+    {
+      "title": "Cinnamon Oatmeal",
+      "cuisine": "American",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "Warm oats flavored with cinnamon and sweetened to taste.",
+      "ingredients": [
+        "1/2 cup oats",
+        "1 cup water",
+        "1/2 cup plant milk",
+        "1/2 tsp ground cinnamon",
+        "1 tsp maple syrup"
+      ],
+      "steps": [
+        "Combine oats, water, and milk in a saucepan and bring to a simmer.",
+        "Cook until thickened, stir in cinnamon and maple syrup, and serve."
+      ]
+    },
+    {
+      "title": "Peanut Butter Banana Toast",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "Toasted bread spread with peanut butter and topped with banana slices.",
+      "ingredients": [
+        "1 slice bread",
+        "2 tbsp peanut butter",
+        "1 banana, sliced",
+        "1 tsp chia seeds (optional)"
+      ],
+      "steps": [
+        "Toast bread, spread with peanut butter, top with banana slices and chia seeds."
+      ]
+    },
+    {
+      "title": "Veggie Omelet",
+      "cuisine": "French",
+      "dietary_tags": ["vegetarian", "gluten-free"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "Egg omelet filled with sautéed vegetables and folded to perfection.",
+      "ingredients": [
+        "2 large eggs",
+        "1/4 cup spinach",
+        "1/4 cup sliced mushrooms",
+        "1/4 cup diced bell pepper",
+        "1 tbsp butter",
+        "Salt and pepper to taste"
+      ],
+      "steps": [
+        "Sauté vegetables in butter until tender.",
+        "Beat eggs and pour into pan, cook until edges set.",
+        "Add vegetables to one half, fold omelet, and serve."
+      ]
+    },
+    {
+      "title": "Classic Grilled Cheese",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 1,
+      "meal_type": "lunch",
+      "description": "Golden toasted bread with melted cheese inside — a warm comfort classic.",
+      "ingredients": [
+        "2 slices bread",
+        "2 slices cheddar cheese",
+        "1 tbsp butter"
+      ],
+      "steps": [
+        "Butter the bread, place cheese between slices and grill until golden and cheese melts.",
+        "Slice and serve warm."
+      ]
+    },
+    {
+      "title": "BLT Sandwich",
+      "cuisine": "American",
+      "dietary_tags": ["none"],
+      "servings": 1,
+      "meal_type": "lunch",
+      "description": "Crispy bacon, fresh lettuce, and ripe tomato layered between toasted bread.",
+      "ingredients": [
+        "2 slices bread",
+        "3 slices bacon, cooked",
+        "2 lettuce leaves",
+        "2 tomato slices",
+        "1 tbsp mayonnaise"
+      ],
+      "steps": [
+        "Toast bread, spread mayo, layer bacon, lettuce, and tomato, then serve."
+      ]
+    },
+    {
+      "title": "Turkey Club Sandwich",
+      "cuisine": "American",
+      "dietary_tags": ["none"],
+      "servings": 1,
+      "meal_type": "lunch",
+      "description": "Triple-decker sandwich with turkey, bacon, tomato, and lettuce.",
+      "ingredients": [
+        "3 slices bread, toasted",
+        "3-4 slices turkey",
+        "2 slices bacon, cooked",
+        "1 leaf lettuce",
+        "2 tomato slices",
+        "1 tbsp mayonnaise"
+      ],
+      "steps": [
+        "Assemble layers with mayo, turkey, bacon, lettuce, and tomato; secure with toothpicks and slice."
+      ]
+    },
+    {
+      "title": "Chicken Caesar Wrap",
+      "cuisine": "American",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "lunch",
+      "description": "Portable wrap with grilled chicken, romaine lettuce, Caesar dressing, and Parmesan.",
+      "ingredients": [
+        "2 large tortillas",
+        "1 cooked chicken breast, sliced",
+        "2 cups romaine lettuce, chopped",
+        "1/4 cup Caesar dressing",
+        "2 tbsp grated Parmesan",
+        "1/4 cup croutons (optional)"
+      ],
+      "steps": [
+        "Toss chicken with lettuce, dressing, and Parmesan.",
+        "Place filling in tortillas, roll tightly, and slice in half."
+      ]
+    },
+    {
+      "title": "Tuna Salad Sandwich",
+      "cuisine": "American",
+      "dietary_tags": ["pescatarian"],
+      "servings": 2,
+      "meal_type": "lunch",
+      "description": "Classic tuna salad mixed with mayo and celery served between bread slices.",
+      "ingredients": [
+        "1 can tuna, drained",
+        "2 tbsp mayonnaise",
+        "1 celery stalk, chopped",
+        "1 tsp mustard",
+        "Salt and pepper to taste",
+        "4 slices bread"
+      ],
+      "steps": [
+        "Mix tuna, mayo, celery, and mustard; season to taste.",
+        "Spread onto bread and serve."
+      ]
+    },
+    {
+      "title": "Quinoa Chickpea Salad",
+      "cuisine": "Mediterranean",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "salad",
+      "description": "Lemony quinoa salad with chickpeas and crisp vegetables — great warm or cold.",
+      "ingredients": [
+        "1 cup cooked quinoa",
+        "1/2 cup canned chickpeas, rinsed",
+        "1/2 cucumber, diced",
+        "1/2 tomato, diced",
+        "1 tbsp olive oil",
+        "1 tbsp lemon juice",
+        "Salt and pepper to taste"
+      ],
+      "steps": [
+        "Combine all ingredients, toss with olive oil and lemon juice, season and serve."
+      ]
+    },
+    {
+      "title": "Caprese Salad",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian", "gluten-free"],
+      "servings": 2,
+      "meal_type": "salad",
+      "description": "Simple Italian salad of tomatoes, fresh mozzarella, and basil with olive oil.",
+      "ingredients": [
+        "2 large tomatoes, sliced",
+        "200 g fresh mozzarella, sliced",
+        "Fresh basil leaves",
+        "2 tbsp extra virgin olive oil",
+        "1 tbsp balsamic glaze (optional)",
+        "Salt and pepper to taste"
+      ],
+      "steps": [
+        "Arrange tomato and mozzarella slices, tuck basil leaves between, drizzle with oil and balsamic, season and serve."
+      ]
+    },
+    {
+      "title": "Greek Salad",
+      "cuisine": "Greek",
+      "dietary_tags": ["vegetarian", "gluten-free"],
+      "servings": 2,
+      "meal_type": "salad",
+      "description": "Crisp salad with cucumber, tomato, red onion, olives, and feta cheese.",
+      "ingredients": [
+        "1 cucumber, chopped",
+        "2 tomatoes, chopped",
+        "1/2 red onion, thinly sliced",
+        "100 g feta cheese, crumbled",
+        "8-10 olives",
+        "2 tbsp olive oil",
+        "1 tbsp red wine vinegar",
+        "1 tsp dried oregano",
+        "Salt and pepper to taste"
+      ],
+      "steps": [
+        "Combine ingredients and toss with oil, vinegar, oregano, salt, and pepper; serve chilled."
+      ]
+    }
+  ]
+}

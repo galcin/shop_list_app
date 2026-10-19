@@ -1,0 +1,348 @@
+{
+  "recipes": [
+    {
+      "title": "Pasta al Pomodoro",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Pasta tossed with fresh tomato sauce, garlic and basil.",
+      "ingredients": [
+        "180 g pasta",
+        "1 cup tomato sauce",
+        "2 garlic cloves, minced",
+        "2 tbsp olive oil",
+        "Handful fresh basil",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Cook pasta until al dente.",
+        "Sauté garlic in oil, add tomato sauce and simmer briefly.",
+        "Toss pasta with sauce and basil and serve."
+      ]
+    },
+    {
+      "title": "Pasta Primavera",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Pasta with a medley of fresh vegetables and olive oil or light cream.",
+      "ingredients": [
+        "180 g pasta",
+        "1 cup mixed seasonal vegetables",
+        "2 tbsp olive oil",
+        "1/4 cup grated Parmesan",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Cook pasta and set aside.",
+        "Sauté vegetables in oil until tender, toss with pasta and Parmesan and serve." 
+      ]
+    },
+    {
+      "title": "Pesto Pasta Salad",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 4,
+      "meal_type": "salad",
+      "description": "Cold pasta salad tossed with pesto, cherry tomatoes and peas.",
+      "ingredients": [
+        "300 g short pasta cooked and cooled",
+        "3 tbsp pesto",
+        "1/2 cup cherry tomatoes halved",
+        "1/2 cup peas",
+        "1 tbsp olive oil",
+        "Salt and pepper"
+      ],
+      "steps": [
+        "Toss pasta with pesto, tomatoes, peas and oil.",
+        "Chill and serve." 
+      ]
+    },
+    {
+      "title": "Margherita Pizza",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Classic pizza topped with tomato, fresh mozzarella and basil.",
+      "ingredients": [
+        "1 pizza base",
+        "1/2 cup tomato sauce",
+        "150 g fresh mozzarella",
+        "Fresh basil leaves",
+        "1 tbsp olive oil",
+        "Salt"
+      ],
+      "steps": [
+        "Preheat oven as directed.",
+        "Top base with sauce, mozzarella and basil, drizzle oil and bake until golden." 
+      ]
+    },
+    {
+      "title": "Cheesy Baked Ziti",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 4,
+      "meal_type": "main_course",
+      "description": "Baked pasta layered with ricotta and melted mozzarella.",
+      "ingredients": [
+        "250 g ziti",
+        "2 cups marinara sauce",
+        "1 cup ricotta",
+        "1 cup shredded mozzarella",
+        "Fresh basil"
+      ],
+      "steps": [
+        "Mix pasta with marinara and ricotta, top with mozzarella and bake until bubbly." 
+      ]
+    },
+    {
+      "title": "Eggplant Parmesan",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 3,
+      "meal_type": "main_course",
+      "description": "Baked breaded eggplant with marinara and melted cheese.",
+      "ingredients": [
+        "2 eggplants, sliced",
+        "2 eggs, beaten",
+        "1 cup breadcrumbs",
+        "2 cups marinara sauce",
+        "2 cups mozzarella",
+        "Olive oil for frying or brushing"
+      ],
+      "steps": [
+        "Coat eggplant in egg and breadcrumbs and bake or fry until golden.",
+        "Layer with marinara and cheese and bake until cheese melts." 
+      ]
+    },
+    {
+      "title": "Mushroom Risotto",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Creamy Arborio rice cooked with mushrooms and stock until silky.",
+      "ingredients": [
+        "1 cup Arborio rice",
+        "1 cup sliced mushrooms",
+        "1/2 onion, chopped",
+        "3 cups vegetable stock warm",
+        "1/4 cup grated Parmesan",
+        "1 tbsp butter"
+      ],
+      "steps": [
+        "Sauté onion and mushrooms, add rice and gradually add stock stirring until creamy.",
+        "Finish with butter and Parmesan and serve." 
+      ]
+    },
+    {
+      "title": "Potato Gnocchi with Butter",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Soft gnocchi tossed in brown butter and sage for an elegant dish.",
+      "ingredients": [
+        "300 g potato gnocchi",
+        "2 tbsp butter",
+        "6 sage leaves",
+        "1 tbsp grated Parmesan"
+      ],
+      "steps": [
+        "Cook gnocchi until they float, drain.",
+        "Brown butter in a pan, add sage, toss gnocchi in butter and finish with Parmesan." 
+      ]
+    },
+    {
+      "title": "Pancetta Pasta",
+      "cuisine": "Italian",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Pasta with crispy pancetta, garlic and creamy sauce.",
+      "ingredients": [
+        "180 g pasta",
+        "80 g pancetta or bacon",
+        "2 garlic cloves",
+        "1/2 cup cream",
+        "1/4 cup Parmesan"
+      ],
+      "steps": [
+        "Cook pancetta until crisp, add garlic, cream and toss with pasta and Parmesan." 
+      ]
+    },
+    {
+      "title": "Pesto Chicken Pasta",
+      "cuisine": "Italian",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Pasta tossed with tender chicken and bright basil pesto.",
+      "ingredients": [
+        "180 g pasta",
+        "150 g cooked chicken, sliced",
+        "2 tbsp pesto",
+        "1 tbsp olive oil",
+        "1/4 cup peas (optional)"
+      ],
+      "steps": [
+        "Cook pasta, toss with pesto, chicken and peas, loosen with pasta water if needed." 
+      ]
+    },
+    {
+      "title": "Cheesy Spinach Pasta",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Creamy pasta with wilted spinach and melted cheese.",
+      "ingredients": [
+        "180 g pasta",
+        "2 cups spinach",
+        "1/2 cup cream",
+        "1/2 cup grated Parmesan",
+        "1 tbsp butter"
+      ],
+      "steps": [
+        "Cook pasta, wilt spinach in butter, add cream, combine with pasta and cheese." 
+      ]
+    },
+    {
+      "title": "Burrito Bowl",
+      "cuisine": "Mexican",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Deconstructed burrito served over rice with beans, meat and salsa.",
+      "ingredients": [
+        "1 cup cooked rice",
+        "200 g cooked chicken or beef",
+        "1/2 cup black beans",
+        "1/2 cup corn",
+        "1/2 avocado sliced",
+        "Salsa to serve"
+      ],
+      "steps": [
+        "Assemble rice, beans, meat, corn and avocado in bowls and top with salsa." 
+      ]
+    },
+    {
+      "title": "Easy Beef Burrito",
+      "cuisine": "Mexican",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Quick burritos with seasoned beef, rice and beans rolled in tortillas.",
+      "ingredients": [
+        "4 large tortillas",
+        "300 g ground beef",
+        "1 cup cooked rice",
+        "1/2 cup black beans",
+        "1/2 cup shredded cheese",
+        "Salsa"
+      ],
+      "steps": [
+        "Cook beef with seasoning, then assemble tortillas with rice, beans, beef and cheese; fold and serve." 
+      ]
+    },
+    {
+      "title": "Cheesy Quesadilla",
+      "cuisine": "Mexican",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Toasted tortillas filled with melted cheese and optional beans or veggies.",
+      "ingredients": [
+        "4 flour tortillas",
+        "2 cups shredded cheese",
+        "1/2 cup black beans (optional)",
+        "1/4 cup corn (optional)",
+        "Salsa to serve"
+      ],
+      "steps": [
+        "Place cheese on half a tortilla, add extras, fold and toast in a dry skillet until golden." 
+      ]
+    },
+    {
+      "title": "Pineapple Fried Rice",
+      "cuisine": "Thai",
+      "dietary_tags": ["vegan"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Sweet-savory fried rice with pineapple and vegetables, optionally egg.",
+      "ingredients": [
+        "2 cups cooked rice",
+        "1 cup pineapple chunks",
+        "1 carrot diced",
+        "1/4 cup peas",
+        "1 tbsp soy sauce",
+        "1 tbsp oil",
+        "1 egg (optional)"
+      ],
+      "steps": [
+        "Sauté vegetables, add rice and pineapple, stir in soy sauce and fry until heated; add scrambled egg if using." 
+      ]
+    },
+    {
+      "title": "Vegetable Paella",
+      "cuisine": "Spanish",
+      "dietary_tags": ["vegan"],
+      "servings": 3,
+      "meal_type": "main_course",
+      "description": "Saffron-scented rice with assorted vegetables and a slightly smoky flavor.",
+      "ingredients": [
+        "2 cups short-grain rice",
+        "1 onion, chopped",
+        "1 red pepper, sliced",
+        "1 cup peas",
+        "2 cups vegetable broth",
+        "1 tsp smoked paprika",
+        "Olive oil"
+      ],
+      "steps": [
+        "Sauté onion and pepper, add rice and paprika, pour in broth and simmer without stirring until rice is cooked." 
+      ]
+    },
+    {
+      "title": "Vegetable Paella (Quick)",
+      "cuisine": "Spanish",
+      "dietary_tags": ["vegan"],
+      "servings": 3,
+      "meal_type": "main_course",
+      "description": "A quick version of paella using frozen vegetables and quick-cook rice.",
+      "ingredients": [
+        "2 cups quick-cook rice",
+        "1 cup frozen mixed vegetables",
+        "1 tsp smoked paprika",
+        "2 cups vegetable broth",
+        "1 tbsp olive oil"
+      ],
+      "steps": [
+        "Sauté vegetables in oil, add rice and broth and paprika and simmer until rice is tender." 
+      ]
+    },
+    {
+      "title": "Tofu Stir-Fry",
+      "cuisine": "Chinese",
+      "dietary_tags": ["vegan"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Crispy tofu with mixed vegetables in a savory sauce.",
+      "ingredients": [
+        "300 g firm tofu, cubed",
+        "2 cups mixed vegetables",
+        "2 tbsp soy sauce",
+        "1 tbsp sesame oil",
+        "1 tbsp oil",
+        "1 tsp grated ginger"
+      ],
+      "steps": [
+        "Pan-fry tofu until golden, set aside.",
+        "Stir-fry vegetables, add tofu and sauce and serve over rice." 
+      ]
+    }
+  ]
+}
