@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shop_list_app/core/utils/app_logger.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
+import 'package:shop_list_app/features/recipes/presentation/widgets/recipe_image.dart';
 import 'package:shop_list_app/shared/extensions/context_extensions.dart';
 import 'package:shop_list_app/shared/widgets/display/circle_accent_avatar.dart';
 import 'package:shop_list_app/shared/widgets/feedback/empty_state_widget.dart';
@@ -13,14 +13,7 @@ import 'package:shop_list_app/shared/widgets/list/accent_circle_list_card.dart';
 
 enum _RecipeFilter { all, favorites, recent, quickPrep }
 
-const List<String> _categories = [
-  'All Categories',
-  'Breakfast',
-  'Soups',
-  'Salads',
-  'Main Courses',
-  'Side Dishes',
-];
+const String _kAllCategories = 'All Categories';
 
 class RecipeListView extends ConsumerStatefulWidget {
   const RecipeListView({super.key});
@@ -32,28 +25,7 @@ class RecipeListView extends ConsumerStatefulWidget {
 class _RecipeListViewState extends ConsumerState<RecipeListView> {
   bool _searchExpanded = false;
   _RecipeFilter _filter = _RecipeFilter.all;
-  String _selectedCategory = 'All Categories';
   final _searchController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    // Backfill/repair recipe categories on first build via the use case
-    // (never touch the database directly from presentation).
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      final result = await ref.read(fixRecipeCategoriesUseCaseProvider).call();
-      result.fold(
-        (failure) => AppLogger.instance.error(
-            '[RecipeListView] Category backfill failed: ${failure.message}'),
-        (_) {
-          // Refresh the list after a successful backfill.
-          if (mounted) {
-            ref.invalidate(recipeListProvider);
-          }
-        },
-      );
-    });
-  }
 
   @override
   void dispose() {
@@ -72,25 +44,20 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
   }
 
   List<Recipe> _applyFilter(List<Recipe> recipes) {
-    // First apply the category filter
-    var filtered = recipes;
-    if (_selectedCategory != 'All Categories') {
-      filtered = recipes.where((r) => r.category == _selectedCategory).toList();
-    }
-
-    // Then apply the quick filter
     switch (_filter) {
       case _RecipeFilter.favorites:
-        return filtered.where((r) => r.favorite == true).toList();
+        return recipes.where((r) => r.favorite).toList();
       case _RecipeFilter.recent:
         // Recent = last 10 by id (descending)
-        final sorted = [...filtered]..sort((a, b) => (b.id ?? 0) - (a.id ?? 0));
+        final sorted = [...recipes]..sort((a, b) => (b.id ?? 0) - (a.id ?? 0));
         return sorted.take(10).toList();
       case _RecipeFilter.quickPrep:
-        // Quick prep = recipes with prep time <= 20 minutes
-        return filtered.where((r) => (r.prepTime ?? 0) <= 20).toList();
+        // Quick prep = recipes with total time <= 20 minutes
+        return recipes
+            .where((r) => r.totalTime > 0 && r.totalTime <= 20)
+            .toList();
       case _RecipeFilter.all:
-        return filtered;
+        return recipes;
     }
   }
 
@@ -149,47 +116,41 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
   }
 
   AppBar _buildAppBar(BuildContext context) {
+    final count = ref.watch(recipeListProvider).asData?.value.length;
     return AppBar(
       backgroundColor: context.colorScheme.surface,
       elevation: 0,
-      title: Text(
-        'Recipes',
-        style: TextStyle(
-          color: context.colorScheme.onSurface,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.w700,
-          fontSize: 22,
-        ),
+      title: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text(
+            'Recipes',
+            style: TextStyle(
+              color: context.colorScheme.onSurface,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w700,
+              fontSize: 22,
+            ),
+          ),
+          if (count != null) ...[
+            const SizedBox(width: 8),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Text(
+                '$count',
+                style: TextStyle(
+                  color: context.colorScheme.onSurfaceVariant,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14,
+                ),
+              ),
+            ),
+          ],
+        ],
       ),
       centerTitle: false,
       actions: [
-        // Temporary: Fix categories button
-        IconButton(
-          icon: const Icon(Icons.build, color: Colors.orange),
-          tooltip: 'Fix Categories',
-          onPressed: () async {
-            final result =
-                await ref.read(fixRecipeCategoriesUseCaseProvider).call();
-            if (!mounted) return;
-            result.fold(
-              (failure) {
-                AppLogger.instance.error(
-                    '[RecipeListView] Manual category fix failed: ${failure.message}');
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      content: Text(
-                          'Failed to update categories: ${failure.message}')),
-                );
-              },
-              (_) {
-                ref.invalidate(recipeListProvider);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Categories updated.')),
-                );
-              },
-            );
-          },
-        ),
         IconButton(
           icon: Icon(
             _searchExpanded ? Icons.search_off : Icons.search,
@@ -211,7 +172,7 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
         style: TextStyle(
             fontFamily: 'Poppins', color: context.colorScheme.onSurface),
         decoration: InputDecoration(
-          hintText: 'Search recipes…',
+          hintText: 'Search recipes or ingredients…',
           hintStyle: TextStyle(
               fontFamily: 'Poppins',
               color: context.colorScheme.onSurfaceVariant),
@@ -224,6 +185,7 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
                   onPressed: () {
                     _searchController.clear();
                     ref.read(recipeSearchQueryProvider.notifier).state = '';
+                    setState(() {});
                   },
                 )
               : null,
@@ -245,6 +207,14 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
   }
 
   Widget _buildCategoryDropdown(BuildContext context) {
+    final categories =
+        ref.watch(recipeCategoriesProvider).asData?.value ?? const <String>[];
+    final selected = ref.watch(recipeCategoryFilterProvider);
+    final items = [_kAllCategories, ...categories];
+    final value = selected != null && categories.contains(selected)
+        ? selected
+        : _kAllCategories;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Container(
@@ -255,7 +225,7 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
         ),
         child: DropdownButtonHideUnderline(
           child: DropdownButton<String>(
-            value: _selectedCategory,
+            value: value,
             isExpanded: true,
             icon: Icon(Icons.arrow_drop_down,
                 color: context.colorScheme.onSurface),
@@ -267,18 +237,14 @@ class _RecipeListViewState extends ConsumerState<RecipeListView> {
             ),
             dropdownColor: context.colorScheme.surfaceContainerHighest,
             borderRadius: BorderRadius.circular(12),
-            items: _categories.map((String category) {
-              return DropdownMenuItem<String>(
-                value: category,
-                child: Text(category),
-              );
-            }).toList(),
-            onChanged: (String? newValue) {
-              if (newValue != null) {
-                setState(() {
-                  _selectedCategory = newValue;
-                });
-              }
+            items: items
+                .map((c) => DropdownMenuItem<String>(value: c, child: Text(c)))
+                .toList(),
+            onChanged: (newValue) {
+              ref.read(recipeCategoryFilterProvider.notifier).state =
+                  newValue == null || newValue == _kAllCategories
+                      ? null
+                      : newValue;
             },
           ),
         ),
@@ -347,9 +313,12 @@ class _RecipeCard extends StatelessWidget {
       circleChild: CircleAccentAvatar(
         accentColor: accentColor,
         size: 112,
-        child: recipe.imageUrl != null && recipe.imageUrl!.isNotEmpty
-            ? _buildImage(recipe.imageUrl!, context)
-            : _fallbackBg(context),
+        child: RecipeImage(
+          recipe: recipe,
+          width: 112,
+          height: 112,
+          cacheSize: 400,
+        ),
       ),
       child: Padding(
         padding:
@@ -358,17 +327,25 @@ class _RecipeCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Recipe name — slightly bigger than the description.
-            Text(
-              recipe.name ?? 'Untitled',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w700,
-                fontSize: 16,
-                color: context.colorScheme.onSurface,
-              ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    recipe.name ?? 'Untitled',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                      color: context.colorScheme.onSurface,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                if (recipe.favorite)
+                  Icon(Icons.star,
+                      size: 16, color: context.colorScheme.secondary),
+              ],
             ),
             if ((recipe.description ?? '').isNotEmpty) ...[
               const SizedBox(height: 3),
@@ -387,19 +364,6 @@ class _RecipeCard extends StatelessWidget {
             const SizedBox(height: 6),
             Row(
               children: [
-                if (recipe.rating != null) ...[
-                  const Icon(Icons.star, color: Colors.amber, size: 13),
-                  const SizedBox(width: 3),
-                  Text(
-                    recipe.rating!.toStringAsFixed(1),
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 11,
-                      color: context.colorScheme.onSurfaceVariant,
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                ],
                 if (recipe.totalTime > 0) ...[
                   Icon(Icons.access_time,
                       size: 13, color: context.colorScheme.onSurfaceVariant),
@@ -412,48 +376,35 @@ class _RecipeCard extends StatelessWidget {
                       color: context.colorScheme.onSurfaceVariant,
                     ),
                   ),
+                  const SizedBox(width: 10),
                 ],
+                if (recipe.servings != null) ...[
+                  Icon(Icons.restaurant_outlined,
+                      size: 13, color: context.colorScheme.onSurfaceVariant),
+                  const SizedBox(width: 3),
+                  Text(
+                    '${recipe.servings}',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 11,
+                      color: context.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                ],
+                if (recipe.ingredients.isNotEmpty)
+                  Text(
+                    '${recipe.ingredients.length} ingredients',
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 11,
+                      color: context.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
               ],
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildImage(String imageUrl, BuildContext context) {
-    // Debug: Print the image URL to console
-    debugPrint('Loading image from: $imageUrl');
-
-    if (imageUrl.startsWith('assets/')) {
-      return Image.asset(
-        imageUrl,
-        fit: BoxFit.cover,
-        cacheHeight: 400, // Limit decoded image height to save memory
-        cacheWidth: 400, // Limit decoded image width to save memory
-        errorBuilder: (context, error, stackTrace) {
-          debugPrint('Error loading asset image: $imageUrl - $error');
-          return _fallbackBg(context);
-        },
-      );
-    } else {
-      return Image.network(
-        imageUrl,
-        fit: BoxFit.cover,
-        errorBuilder: (context, error, stackTrace) {
-          debugPrint('Error loading network image: $imageUrl - $error');
-          return _fallbackBg(context);
-        },
-      );
-    }
-  }
-
-  Widget _fallbackBg(BuildContext context) {
-    return Container(
-      color: context.colorScheme.surfaceContainerHighest,
-      child: Center(
-        child: Icon(Icons.restaurant_menu,
-            color: context.colorScheme.onSurfaceVariant, size: 36),
       ),
     );
   }

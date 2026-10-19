@@ -1,7 +1,7 @@
 // product_image_widget.dart
 //
-// Renders a product photo (local file path) or emoji icon, falling back to a
-// default shopping-bag icon when the photo field is empty.
+// Renders a product photo (bundled asset or local file path) or emoji icon,
+// falling back to a default shopping-bag icon when the photo field is empty.
 import 'dart:io';
 import 'package:flutter/material.dart';
 
@@ -24,6 +24,8 @@ class ProductImageWidget extends StatelessWidget {
     this.borderRadius = 12,
     this.backgroundColor,
   });
+
+  bool get _isAssetPath => photo != null && photo!.startsWith('assets/');
 
   bool get _isFilePath =>
       photo != null && (photo!.startsWith('/') || photo!.startsWith('file://'));
@@ -52,6 +54,19 @@ class ProductImageWidget extends StatelessWidget {
           size: size * 0.5,
           color: const Color(0xFFDBDBDB),
         ),
+      );
+    }
+
+    if (_isAssetPath) {
+      final cache = (size * 2).round();
+      return Image.asset(
+        photo!,
+        fit: BoxFit.cover,
+        width: size,
+        height: size,
+        cacheWidth: cache,
+        cacheHeight: cache,
+        errorBuilder: (_, __, ___) => _fallbackIcon(),
       );
     }
 

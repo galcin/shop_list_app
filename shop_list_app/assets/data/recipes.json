@@ -1,5 +1,6 @@
 [
   {
+    "key": "egg-omelet",
     "name": "Egg Omelet",
     "category": "Breakfast",
     "description": "A quick and fluffy 2-egg omelet, simply seasoned and cooked in butter.",
@@ -8,32 +9,38 @@
       "Heat butter in a pan over medium heat, pour in the eggs and cook until set.",
       "Fold the omelet and serve hot."
     ],
-    "prepTime": 10,
+    "prepTime": 5,
+    "cookTime": 5,
+    "servings": 1,
+    "tags": [
+      "quick",
+      "vegetarian",
+      "high-protein"
+    ],
     "imageUrl": "assets/images/recipes/egg-omelet.jpg",
     "ingredients": [
       {
-        "name": "Eggs",
-        "quantity": "2",
+        "product": "Eggs",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Butter",
-        "quantity": "1",
+        "product": "Butter",
+        "quantity": 1,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "chicken-soup",
     "name": "Chicken Soup",
     "category": "Soups",
     "description": "A comforting, hearty broth-based soup with tender chicken and vegetables.",
@@ -42,47 +49,53 @@
       "Reduce heat and simmer for 45 minutes. Season with salt and pepper.",
       "Add noodles if desired and cook until tender."
     ],
-    "prepTime": 50,
+    "prepTime": 15,
+    "cookTime": 45,
+    "servings": 6,
+    "tags": [
+      "comfort-food",
+      "romanian"
+    ],
     "imageUrl": "assets/images/recipes/chicken-soup.jpg",
     "ingredients": [
       {
+        "product": "Whole Chicken",
         "name": "Chicken",
-        "quantity": "500",
+        "quantity": 500,
         "unit": "g"
       },
       {
-        "name": "Carrots",
-        "quantity": "2",
+        "product": "Carrots",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Celery",
-        "quantity": "2",
-        "unit": "stalks"
+        "product": "Celery",
+        "quantity": 2,
+        "unit": "stalk"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Noodles",
-        "quantity": "100",
+        "product": "Noodles",
+        "quantity": 100,
         "unit": "g"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "spaghetti-bolognese",
     "name": "Spaghetti Bolognese",
     "category": "Main Courses",
     "description": "A classic Italian pasta dish with a rich, slow-simmered beef and tomato sauce.",
@@ -92,62 +105,67 @@
       "Meanwhile, cook spaghetti according to package instructions until al dente, then drain.",
       "Serve the spaghetti topped with the sauce and grated Parmesan."
     ],
-    "prepTime": 35,
+    "prepTime": 10,
+    "cookTime": 30,
+    "servings": 4,
+    "tags": [
+      "italian",
+      "kid-friendly"
+    ],
     "imageUrl": "assets/images/recipes/pasta_bolognese.jpg",
     "ingredients": [
       {
-        "name": "Minced Beef",
-        "quantity": "400",
+        "product": "Minced Beef",
+        "quantity": 400,
         "unit": "g"
       },
       {
-        "name": "Spaghetti",
-        "quantity": "320",
+        "product": "Spaghetti",
+        "quantity": 320,
         "unit": "g"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Garlic",
-        "quantity": "2",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 2,
+        "unit": "clove"
       },
       {
-        "name": "Crushed Tomatoes",
-        "quantity": "400",
+        "product": "Crushed Tomatoes",
+        "quantity": 400,
         "unit": "g"
       },
       {
-        "name": "Tomato Paste",
-        "quantity": "2",
+        "product": "Tomato Paste",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Dried Oregano",
-        "quantity": "1",
+        "product": "Dried Oregano",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
-        "name": "Parmesan",
-        "quantity": "40",
+        "product": "Parmesan",
+        "quantity": 40,
         "unit": "g"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "tomato-basil-soup",
     "name": "Tomato Basil Soup",
     "category": "Soups",
     "description": "A creamy, blended tomato soup infused with fresh basil, perfect with crusty bread.",
@@ -156,52 +174,56 @@
       "Add 600g chopped tomatoes and 400ml vegetable broth. Simmer for 20 minutes.",
       "Blend until smooth, then stir in fresh basil, salt, and pepper. Serve with crusty bread."
     ],
-    "prepTime": 30,
+    "prepTime": 10,
+    "cookTime": 25,
+    "servings": 4,
+    "tags": [
+      "vegetarian",
+      "italian"
+    ],
     "imageUrl": "assets/images/recipes/tomato-basil-soup.jpg",
     "ingredients": [
       {
-        "name": "Tomatoes",
-        "quantity": "600",
+        "product": "Tomatoes",
+        "quantity": 600,
         "unit": "g"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Garlic",
-        "quantity": "2",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 2,
+        "unit": "clove"
       },
       {
-        "name": "Vegetable Broth",
-        "quantity": "400",
+        "product": "Vegetable Broth",
+        "quantity": 400,
         "unit": "ml"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "2",
+        "product": "Olive Oil",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Fresh Basil",
-        "quantity": "handful",
-        "unit": ""
+        "product": "Fresh Basil",
+        "note": "handful"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "banana-pancakes",
     "name": "Banana Pancakes",
     "category": "Breakfast",
     "description": "Soft, fluffy pancakes made with ripe mashed bananas, great for breakfast.",
@@ -210,47 +232,54 @@
       "Heat a lightly buttered pan over medium heat. Pour small ladles of batter and cook until bubbles form, then flip.",
       "Cook until golden on both sides. Serve with honey or maple syrup."
     ],
-    "prepTime": 20,
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 2,
+    "tags": [
+      "quick",
+      "vegetarian",
+      "kid-friendly"
+    ],
     "imageUrl": "assets/images/recipes/banana-pancakes.jpg",
     "ingredients": [
       {
-        "name": "Bananas",
-        "quantity": "2",
+        "product": "Bananas",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Eggs",
-        "quantity": "2",
+        "product": "Eggs",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Flour",
-        "quantity": "0.5",
+        "product": "Flour",
+        "quantity": 0.5,
         "unit": "cup"
       },
       {
-        "name": "Milk",
-        "quantity": "0.5",
+        "product": "Milk",
+        "quantity": 0.5,
         "unit": "cup"
       },
       {
-        "name": "Butter",
-        "quantity": "1",
+        "product": "Butter",
+        "quantity": 1,
         "unit": "tbsp"
       },
       {
-        "name": "Honey",
-        "quantity": "2",
+        "product": "Honey",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "pinch",
-        "unit": ""
+        "product": "Salt",
+        "note": "pinch"
       }
     ]
   },
   {
+    "key": "grilled-cheese-sandwich",
     "name": "Grilled Cheese Sandwich",
     "category": "Breakfast",
     "description": "A golden, crispy buttered sandwich oozing with melted cheese.",
@@ -258,27 +287,35 @@
       "Butter one side of each of 2 bread slices. Place one slice butter-side-down in a pan over medium heat.",
       "Layer with 2 slices of cheese and top with the second slice butter-side-up. Cook 3 minutes per side until golden and the cheese has melted. Serve immediately."
     ],
-    "prepTime": 10,
+    "prepTime": 5,
+    "cookTime": 8,
+    "servings": 1,
+    "tags": [
+      "quick",
+      "vegetarian",
+      "kid-friendly"
+    ],
     "imageUrl": "assets/images/recipes/grilled-cheese-sandwich.jpg",
     "ingredients": [
       {
-        "name": "Bread",
-        "quantity": "2",
-        "unit": "slices"
+        "product": "Bread",
+        "quantity": 2,
+        "unit": "slice"
       },
       {
-        "name": "Cheese",
-        "quantity": "2",
-        "unit": "slices"
+        "product": "Cheese",
+        "quantity": 2,
+        "unit": "slice"
       },
       {
-        "name": "Butter",
-        "quantity": "1",
+        "product": "Butter",
+        "quantity": 1,
         "unit": "tbsp"
       }
     ]
   },
   {
+    "key": "chicken-stir-fry",
     "name": "Chicken Stir-Fry",
     "category": "Main Courses",
     "description": "A quick, colorful stir-fry of chicken and crisp vegetables in a savory soy-sesame sauce.",
@@ -287,57 +324,66 @@
       "Add sliced bell peppers, carrots, and broccoli. Stir-fry for 4 minutes.",
       "Mix 3 tbsp soy sauce, 1 tbsp oyster sauce, and 1 tsp sesame oil; pour over vegetables. Toss well and serve over steamed rice."
     ],
-    "prepTime": 25,
+    "prepTime": 15,
+    "cookTime": 12,
+    "servings": 2,
+    "tags": [
+      "asian",
+      "quick",
+      "high-protein"
+    ],
     "imageUrl": "assets/images/recipes/chicken-stir-fry.jpg",
     "ingredients": [
       {
-        "name": "Chicken Breast",
-        "quantity": "500",
+        "product": "Chicken Breast",
+        "quantity": 500,
         "unit": "g"
       },
       {
-        "name": "Bell Peppers",
-        "quantity": "2",
+        "product": "Bell Peppers",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Carrots",
-        "quantity": "1",
+        "product": "Carrots",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Broccoli",
-        "quantity": "150",
+        "product": "Broccoli",
+        "quantity": 150,
         "unit": "g"
       },
       {
-        "name": "Soy Sauce",
-        "quantity": "3",
+        "product": "Soy Sauce",
+        "quantity": 3,
         "unit": "tbsp"
       },
       {
-        "name": "Oyster Sauce",
-        "quantity": "1",
+        "product": "Oyster Sauce",
+        "quantity": 1,
         "unit": "tbsp"
       },
       {
-        "name": "Sesame Oil",
-        "quantity": "1",
+        "product": "Sesame Oil",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
-        "name": "Vegetable Oil",
-        "quantity": "2",
+        "product": "Vegetable Oil",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
+        "product": "Rice",
         "name": "Steamed Rice",
-        "quantity": "2",
-        "unit": "cups"
+        "quantity": 2,
+        "unit": "cup"
       }
     ]
   },
   {
+    "key": "apple-cinnamon-oatmeal",
     "name": "Apple Cinnamon Oatmeal",
     "category": "Breakfast",
     "description": "Warm, creamy oatmeal sweetened with honey and spiced with cinnamon and fresh apple.",
@@ -346,42 +392,49 @@
       "Dice 1 apple and add it along with 1 tsp cinnamon and a pinch of salt. Cook 2 more minutes.",
       "Sweeten with honey and serve warm."
     ],
-    "prepTime": 15,
+    "prepTime": 5,
+    "cookTime": 10,
+    "servings": 2,
+    "tags": [
+      "quick",
+      "vegetarian",
+      "healthy"
+    ],
     "imageUrl": "assets/images/recipes/apple-cinnamon-oatmeal.jpg",
     "ingredients": [
       {
-        "name": "Rolled Oats",
-        "quantity": "1",
+        "product": "Rolled Oats",
+        "quantity": 1,
         "unit": "cup"
       },
       {
-        "name": "Milk",
-        "quantity": "2",
-        "unit": "cups"
+        "product": "Milk",
+        "quantity": 2,
+        "unit": "cup"
       },
       {
-        "name": "Apples",
-        "quantity": "1",
+        "product": "Apples",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Cinnamon",
-        "quantity": "1",
+        "product": "Cinnamon",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
-        "name": "Honey",
-        "quantity": "1",
+        "product": "Honey",
+        "quantity": 1,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "pinch",
-        "unit": ""
+        "product": "Salt",
+        "note": "pinch"
       }
     ]
   },
   {
+    "key": "vegetable-stew",
     "name": "Vegetable Stew",
     "category": "Soups",
     "description": "A hearty, slow-simmered stew loaded with root vegetables in a savory tomato broth.",
@@ -390,77 +443,84 @@
       "Add diced potatoes, carrots, celery, and zucchini. Pour in 600ml vegetable broth and a can of diced tomatoes.",
       "Season with thyme, rosemary, salt, and pepper. Simmer 30 minutes until vegetables are tender."
     ],
-    "prepTime": 45,
+    "prepTime": 15,
+    "cookTime": 35,
+    "servings": 4,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "one-pot"
+    ],
     "imageUrl": "assets/images/recipes/vegetable-stew.jpg",
     "ingredients": [
       {
-        "name": "Potatoes",
-        "quantity": "2",
+        "product": "Potatoes",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Carrots",
-        "quantity": "2",
+        "product": "Carrots",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Celery",
-        "quantity": "2",
-        "unit": "stalks"
+        "product": "Celery",
+        "quantity": 2,
+        "unit": "stalk"
       },
       {
-        "name": "Zucchini",
-        "quantity": "1",
+        "product": "Zucchini",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Garlic",
-        "quantity": "2",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 2,
+        "unit": "clove"
       },
       {
+        "product": "Crushed Tomatoes",
         "name": "Diced Tomatoes",
-        "quantity": "400",
+        "quantity": 400,
         "unit": "g"
       },
       {
-        "name": "Vegetable Broth",
-        "quantity": "600",
+        "product": "Vegetable Broth",
+        "quantity": 600,
         "unit": "ml"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "2",
+        "product": "Olive Oil",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Dried Thyme",
-        "quantity": "1",
+        "product": "Dried Thyme",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
-        "name": "Dried Rosemary",
-        "quantity": "1",
+        "product": "Dried Rosemary",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "caprese-salad",
     "name": "Caprese Salad",
     "category": "Salads",
     "description": "A fresh Italian salad of tomatoes, mozzarella, and basil drizzled with olive oil and balsamic.",
@@ -470,46 +530,53 @@
       "Drizzle with extra-virgin olive oil and balsamic glaze. Season with salt and freshly ground black pepper."
     ],
     "prepTime": 10,
+    "cookTime": 0,
+    "servings": 2,
+    "tags": [
+      "italian",
+      "vegetarian",
+      "no-cook",
+      "quick"
+    ],
     "imageUrl": "assets/images/recipes/caprese-salad.jpg",
     "ingredients": [
       {
-        "name": "Tomatoes",
-        "quantity": "3",
+        "product": "Tomatoes",
+        "quantity": 3,
         "unit": "pcs"
       },
       {
-        "name": "Fresh Mozzarella",
-        "quantity": "200",
+        "product": "Fresh Mozzarella",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Fresh Basil",
-        "quantity": "handful",
-        "unit": ""
+        "product": "Fresh Basil",
+        "note": "handful"
       },
       {
+        "product": "Olive Oil",
         "name": "Extra-Virgin Olive Oil",
-        "quantity": "2",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Balsamic Glaze",
-        "quantity": "1",
+        "product": "Balsamic Glaze",
+        "quantity": 1,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "pasta-carbonara",
     "name": "Pasta Carbonara",
     "category": "Main Courses",
     "description": "A creamy Italian pasta with crispy bacon, eggs, and Parmesan.",
@@ -518,47 +585,52 @@
       "Meanwhile, cook bacon in a pan until lightly browned. In a bowl, whisk eggs with sour cream and grated Parmesan.",
       "Drain pasta and immediately toss with the bacon and egg mixture. Season with salt and pepper. Finish with extra Parmesan."
     ],
-    "prepTime": 20,
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 4,
+    "tags": [
+      "italian",
+      "quick"
+    ],
     "imageUrl": "assets/images/recipes/pasta_carbonara.jpg",
     "ingredients": [
       {
-        "name": "Spaghetti",
-        "quantity": "250",
+        "product": "Spaghetti",
+        "quantity": 250,
         "unit": "g"
       },
       {
-        "name": "Bacon",
-        "quantity": "150",
+        "product": "Bacon",
+        "quantity": 150,
         "unit": "g"
       },
       {
-        "name": "Eggs",
-        "quantity": "2",
+        "product": "Eggs",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Sour Cream",
-        "quantity": "3",
+        "product": "Sour Cream",
+        "quantity": 3,
         "unit": "tbsp"
       },
       {
-        "name": "Parmesan",
-        "quantity": "50",
+        "product": "Parmesan",
+        "quantity": 50,
         "unit": "g"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "pasta-with-tomato-and-mushroom-sauce",
     "name": "Pasta with Tomato and Mushroom Sauce",
     "category": "Main Courses",
     "description": "A comforting pasta tossed in a savory tomato and mushroom sauce.",
@@ -567,42 +639,48 @@
       "Sauté a chopped onion in oil, then add mushrooms and cook until tender. Stir in tomato sauce and simmer until creamy.",
       "Drain pasta and mix with the sauce. Sprinkle with grated Parmesan to serve."
     ],
-    "prepTime": 20,
+    "prepTime": 10,
+    "cookTime": 25,
+    "servings": 4,
+    "tags": [
+      "italian",
+      "vegetarian"
+    ],
     "imageUrl": "assets/images/recipes/pasta-tomato-mushroom-sauce.jpg",
     "ingredients": [
       {
-        "name": "Pasta",
-        "quantity": "250",
+        "product": "Pasta",
+        "quantity": 250,
         "unit": "g"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Mushrooms",
-        "quantity": "200",
+        "product": "Mushrooms",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Tomato Sauce",
-        "quantity": "350",
+        "product": "Tomato Sauce",
+        "quantity": 350,
         "unit": "g"
       },
       {
-        "name": "Parmesan",
-        "quantity": "30",
+        "product": "Parmesan",
+        "quantity": 30,
         "unit": "g"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "green-salad-with-tuna-and-corn",
     "name": "Green Salad with Tuna and Corn",
     "category": "Salads",
     "description": "A light, refreshing salad with lettuce, tuna, and sweet corn.",
@@ -611,41 +689,49 @@
       "Drizzle with olive oil and freshly squeezed lemon juice. Season with salt and toss gently to combine."
     ],
     "prepTime": 10,
+    "cookTime": 0,
+    "servings": 2,
+    "tags": [
+      "quick",
+      "no-cook",
+      "healthy"
+    ],
     "imageUrl": "assets/images/recipes/green-salad-tuna-corn.jpg",
     "ingredients": [
       {
-        "name": "Lettuce",
-        "quantity": "1",
+        "product": "Lettuce",
+        "quantity": 1,
         "unit": "head"
       },
       {
-        "name": "Canned Tuna",
-        "quantity": "160",
+        "product": "Canned Tuna",
+        "quantity": 160,
         "unit": "g"
       },
       {
-        "name": "Canned Corn",
-        "quantity": "140",
+        "product": "Canned Corn",
+        "quantity": 140,
         "unit": "g"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "3",
+        "product": "Olive Oil",
+        "quantity": 3,
         "unit": "tbsp"
       },
       {
+        "product": "Lemon",
         "name": "Lemon Juice",
-        "quantity": "0.5",
-        "unit": "lemon"
+        "quantity": 0.5,
+        "unit": "pcs"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "cheese-and-herb-omelet",
     "name": "Cheese and Herb Omelet",
     "category": "Breakfast",
     "description": "A fluffy omelet packed with melted cheese and fresh herbs.",
@@ -653,37 +739,43 @@
       "Beat 3–4 eggs in a deep bowl. Stir in grated cheese and finely chopped fresh herbs (spring onion, green garlic, or dill). Season with salt.",
       "Heat a drizzle of extra-virgin olive oil in a pan, pour in the mixture, and cook over medium heat for about 15 minutes until set."
     ],
-    "prepTime": 15,
+    "prepTime": 5,
+    "cookTime": 6,
+    "servings": 1,
+    "tags": [
+      "quick",
+      "vegetarian"
+    ],
     "imageUrl": "assets/images/recipes/cheese-herb-omelet.jpg",
     "ingredients": [
       {
-        "name": "Eggs",
-        "quantity": "4",
+        "product": "Eggs",
+        "quantity": 4,
         "unit": "pcs"
       },
       {
-        "name": "Cheese",
-        "quantity": "80",
+        "product": "Cheese",
+        "quantity": 80,
         "unit": "g"
       },
       {
-        "name": "Fresh Herbs",
-        "quantity": "handful",
-        "unit": ""
+        "product": "Fresh Herbs",
+        "note": "handful"
       },
       {
+        "product": "Olive Oil",
         "name": "Extra-Virgin Olive Oil",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "asian-style-rice-with-chicken",
     "name": "Asian-Style Rice with Chicken",
     "category": "Main Courses",
     "description": "Fragrant rice paired with grilled chicken and a splash of soy sauce.",
@@ -692,32 +784,38 @@
       "Meanwhile, grill chicken breast on a grill pan until cooked through. Dice the chicken into small cubes.",
       "When rice is done, mix with the chicken and drizzle soy sauce to taste."
     ],
-    "prepTime": 25,
+    "prepTime": 15,
+    "cookTime": 25,
+    "servings": 4,
+    "tags": [
+      "asian",
+      "one-pot"
+    ],
     "imageUrl": "assets/images/recipes/asian-rice-chicken.jpg",
     "ingredients": [
       {
-        "name": "Rice",
-        "quantity": "200",
+        "product": "Rice",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Chicken Breast",
-        "quantity": "300",
+        "product": "Chicken Breast",
+        "quantity": 300,
         "unit": "g"
       },
       {
-        "name": "Soy Sauce",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Soy Sauce",
+        "note": "to taste"
       },
       {
-        "name": "Vegetable Oil",
-        "quantity": "2",
+        "product": "Vegetable Oil",
+        "quantity": 2,
         "unit": "tbsp"
       }
     ]
   },
   {
+    "key": "turkey-breast-on-a-bed-of-vegetables",
     "name": "Turkey Breast on a Bed of Vegetables",
     "category": "Main Courses",
     "description": "Oven-baked turkey breast served over a bed of roasted vegetables.",
@@ -725,37 +823,42 @@
       "Line a baking tray with parchment paper. Spread frozen vegetables over it and drizzle with olive oil, salt, and pepper.",
       "Lay turkey breast slices on top and season with salt. Bake in a preheated oven until the turkey is golden and cooked through."
     ],
-    "prepTime": 35,
+    "prepTime": 15,
+    "cookTime": 40,
+    "servings": 4,
+    "tags": [
+      "healthy",
+      "baked"
+    ],
     "imageUrl": "assets/images/recipes/turkey-breast-vegetables.jpg",
     "ingredients": [
       {
-        "name": "Turkey Breast",
-        "quantity": "400",
+        "product": "Turkey Breast",
+        "quantity": 400,
         "unit": "g"
       },
       {
-        "name": "Frozen Vegetables",
-        "quantity": "400",
+        "product": "Frozen Vegetables",
+        "quantity": 400,
         "unit": "g"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "2",
+        "product": "Olive Oil",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "cream-of-mushroom-soup",
     "name": "Cream of Mushroom Soup",
     "category": "Soups",
     "description": "A smooth, velvety mushroom soup blended with cream.",
@@ -764,37 +867,43 @@
       "Drain the mushrooms and place them in a blender together with the onion and cooking cream. Blend until smooth and creamy.",
       "Season with salt and pepper to taste."
     ],
-    "prepTime": 30,
+    "prepTime": 10,
+    "cookTime": 25,
+    "servings": 4,
+    "tags": [
+      "vegetarian",
+      "comfort-food"
+    ],
     "imageUrl": "assets/images/recipes/cream-mushroom-soup.jpg",
     "ingredients": [
       {
+        "product": "Mushrooms",
         "name": "Champignon Mushrooms",
-        "quantity": "1000",
+        "quantity": 1000,
         "unit": "g"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Cooking Cream",
-        "quantity": "200",
+        "product": "Cooking Cream",
+        "quantity": 200,
         "unit": "ml"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "chicken-and-cheese-puff-pastry-braid",
     "name": "Chicken and Cheese Puff Pastry Braid",
     "category": "Main Courses",
     "description": "A golden, flaky pastry braid filled with chicken, mushrooms, and cheese.",
@@ -803,47 +912,53 @@
       "Place the chicken, canned mushrooms, and grated cheese down the center. Season with salt and pepper.",
       "Fold the dough over in a braid shape, brush the top with beaten egg, and bake until golden and crispy."
     ],
-    "prepTime": 35,
+    "prepTime": 20,
+    "cookTime": 30,
+    "servings": 4,
+    "tags": [
+      "baked",
+      "kid-friendly"
+    ],
     "imageUrl": "assets/images/recipes/chicken-cheese-puff-pastry-braid.jpg",
     "ingredients": [
       {
-        "name": "Puff Pastry Dough",
-        "quantity": "400",
+        "product": "Puff Pastry Dough",
+        "quantity": 400,
         "unit": "g"
       },
       {
-        "name": "Chicken Breast",
-        "quantity": "300",
+        "product": "Chicken Breast",
+        "quantity": 300,
         "unit": "g"
       },
       {
-        "name": "Canned Mushrooms",
-        "quantity": "200",
+        "product": "Canned Mushrooms",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Cheese",
-        "quantity": "100",
+        "product": "Cheese",
+        "quantity": 100,
         "unit": "g"
       },
       {
+        "product": "Eggs",
         "name": "Egg",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "flatbread-pizza",
     "name": "Flatbread Pizza",
     "category": "Main Courses",
     "description": "Quick and crispy flatbread pizzas topped with cheese and savory toppings.",
@@ -851,47 +966,55 @@
       "Place flatbreads on a parchment-lined baking tray. Spread tomato sauce over each one.",
       "Top with bacon, mushrooms, olives, and corn to taste. Sprinkle generously with grated cheese. Bake in a preheated oven until the cheese is melted and bubbly."
     ],
-    "prepTime": 15,
+    "prepTime": 10,
+    "cookTime": 12,
+    "servings": 2,
+    "tags": [
+      "quick",
+      "italian",
+      "kid-friendly"
+    ],
     "imageUrl": "assets/images/recipes/flatbread-pizza.jpg",
     "ingredients": [
       {
-        "name": "Flatbread",
-        "quantity": "2",
+        "product": "Flatbread",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Tomato Sauce",
-        "quantity": "150",
+        "product": "Tomato Sauce",
+        "quantity": 150,
         "unit": "g"
       },
       {
-        "name": "Bacon",
-        "quantity": "80",
+        "product": "Bacon",
+        "quantity": 80,
         "unit": "g"
       },
       {
-        "name": "Mushrooms",
-        "quantity": "100",
+        "product": "Mushrooms",
+        "quantity": 100,
         "unit": "g"
       },
       {
-        "name": "Olives",
-        "quantity": "50",
+        "product": "Olives",
+        "quantity": 50,
         "unit": "g"
       },
       {
-        "name": "Canned Corn",
-        "quantity": "80",
+        "product": "Canned Corn",
+        "quantity": 80,
         "unit": "g"
       },
       {
-        "name": "Cheese",
-        "quantity": "120",
+        "product": "Cheese",
+        "quantity": 120,
         "unit": "g"
       }
     ]
   },
   {
+    "key": "chicken-skewers-in-a-pan",
     "name": "Chicken Skewers in a Pan",
     "category": "Main Courses",
     "description": "Juicy chicken and vegetable skewers pan-grilled to perfection.",
@@ -899,47 +1022,54 @@
       "Thread cubed chicken breast, red bell pepper, mushrooms, cherry tomatoes, olives, and onion onto skewer sticks. Season with a pinch of salt.",
       "Cook the skewers in a grill pan, turning occasionally, until the chicken is browned and cooked through."
     ],
-    "prepTime": 20,
+    "prepTime": 15,
+    "cookTime": 15,
+    "servings": 2,
+    "tags": [
+      "quick",
+      "high-protein"
+    ],
     "imageUrl": "assets/images/recipes/chicken-skewers-pan.jpg",
     "ingredients": [
       {
-        "name": "Chicken Breast",
-        "quantity": "400",
+        "product": "Chicken Breast",
+        "quantity": 400,
         "unit": "g"
       },
       {
+        "product": "Bell Peppers",
         "name": "Red Bell Pepper",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Mushrooms",
-        "quantity": "100",
+        "product": "Mushrooms",
+        "quantity": 100,
         "unit": "g"
       },
       {
-        "name": "Cherry Tomatoes",
-        "quantity": "100",
+        "product": "Cherry Tomatoes",
+        "quantity": 100,
         "unit": "g"
       },
       {
-        "name": "Olives",
-        "quantity": "50",
+        "product": "Olives",
+        "quantity": 50,
         "unit": "g"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "crispy-sandwich",
     "name": "Crispy Sandwich",
     "category": "Breakfast",
     "description": "A toasted, oven-baked sandwich stuffed with ham, cheese, and fresh veggies.",
@@ -947,42 +1077,47 @@
       "Toast 2 slices of bread, then spread with butter. Layer with pressed ham and plenty of cheese slices.",
       "Add fresh lettuce and sliced cucumber for freshness. Top with grated cheese and bake in the oven on a flat tray for about 10 minutes until the cheese has melted."
     ],
-    "prepTime": 15,
+    "prepTime": 5,
+    "cookTime": 8,
+    "servings": 1,
+    "tags": [
+      "quick"
+    ],
+    "imageUrl": "assets/images/recipes_ai/crispy-sandwich.jpg",
     "ingredients": [
       {
-        "name": "Bread",
-        "quantity": "2",
-        "unit": "slices"
+        "product": "Bread",
+        "quantity": 2,
+        "unit": "slice"
       },
       {
-        "name": "Butter",
-        "quantity": "1",
+        "product": "Butter",
+        "quantity": 1,
         "unit": "tbsp"
       },
       {
-        "name": "Pressed Ham",
-        "quantity": "80",
+        "product": "Pressed Ham",
+        "quantity": 80,
         "unit": "g"
       },
       {
-        "name": "Cheese",
-        "quantity": "80",
+        "product": "Cheese",
+        "quantity": 80,
         "unit": "g"
       },
       {
-        "name": "Lettuce",
-        "quantity": "handful",
-        "unit": ""
+        "product": "Lettuce",
+        "note": "handful"
       },
       {
-        "name": "Cucumber",
-        "quantity": "0.5",
+        "product": "Cucumber",
+        "quantity": 0.5,
         "unit": "pcs"
       }
-    ],
-    "imageUrl": "assets/images/recipes_ai/crispy-sandwich.jpg"
+    ]
   },
   {
+    "key": "french-potato-pudding",
     "name": "French Potato Pudding",
     "category": "Side Dishes",
     "description": "A baked potato and cheese casserole enriched with eggs and butter.",
@@ -990,37 +1125,44 @@
       "Wash and dice potatoes into small cubes; boil until tender.",
       "Transfer to an oven-safe dish and mix with grated telemea cheese, well-beaten eggs, butter, and a pinch of salt. Bake in the oven until the top is nicely browned."
     ],
-    "prepTime": 40,
+    "prepTime": 20,
+    "cookTime": 45,
+    "servings": 4,
+    "tags": [
+      "french",
+      "vegetarian",
+      "baked"
+    ],
     "imageUrl": "assets/images/recipes/french-potato-pudding.jpg",
     "ingredients": [
       {
-        "name": "Potatoes",
-        "quantity": "500",
+        "product": "Potatoes",
+        "quantity": 500,
         "unit": "g"
       },
       {
-        "name": "Telemea Cheese",
-        "quantity": "150",
+        "product": "Telemea Cheese",
+        "quantity": 150,
         "unit": "g"
       },
       {
-        "name": "Eggs",
-        "quantity": "2",
+        "product": "Eggs",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Butter",
-        "quantity": "30",
+        "product": "Butter",
+        "quantity": 30,
         "unit": "g"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "rice-with-mexican-vegetables",
     "name": "Rice with Mexican Vegetables",
     "category": "Side Dishes",
     "description": "Fluffy rice tossed with buttery sautéed mixed vegetables.",
@@ -1028,37 +1170,45 @@
       "Boil long-grain rice in salted water until cooked. Meanwhile, sauté fresh or frozen mixed vegetables in a pan with a knob of butter until tender.",
       "Combine the cooked rice and vegetables, season with salt and pepper, and serve hot."
     ],
-    "prepTime": 20,
+    "prepTime": 10,
+    "cookTime": 25,
+    "servings": 4,
+    "tags": [
+      "mexican",
+      "vegetarian",
+      "vegan"
+    ],
     "imageUrl": "assets/images/recipes/rice-mexican-vegetables.jpg",
     "ingredients": [
       {
+        "product": "Rice",
         "name": "Long-Grain Rice",
-        "quantity": "200",
+        "quantity": 200,
         "unit": "g"
       },
       {
+        "product": "Frozen Vegetables",
         "name": "Mixed Vegetables",
-        "quantity": "300",
+        "quantity": 300,
         "unit": "g"
       },
       {
-        "name": "Butter",
-        "quantity": "20",
+        "product": "Butter",
+        "quantity": 20,
         "unit": "g"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "chicken-with-mushrooms-in-cream-sauce",
     "name": "Chicken with Mushrooms in Cream Sauce",
     "category": "Main Courses",
     "description": "Tender chicken and mushrooms simmered in a rich, creamy sauce.",
@@ -1068,59 +1218,62 @@
       "Pour in 400 ml of heavy cream and cook for a few minutes until the sauce thickens slightly.",
       "Add the chicken back and stir well. Sprinkle with freshly chopped parsley, cover with a lid, and leave for 2-3 minutes. Serve warm."
     ],
-    "prepTime": 35,
+    "prepTime": 15,
     "cookTime": 25,
     "servings": 4,
+    "tags": [
+      "comfort-food"
+    ],
     "imageUrl": "assets/images/recipes/chicken-mushrooms-cream-sauce.jpg",
     "ingredients": [
       {
-        "name": "Chicken Breast",
-        "quantity": "2",
+        "product": "Chicken Breast",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
+        "product": "Mushrooms",
         "name": "White Mushrooms",
-        "quantity": "200",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Brown Mushrooms",
-        "quantity": "200",
+        "product": "Brown Mushrooms",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Heavy Cream",
-        "quantity": "400",
+        "product": "Heavy Cream",
+        "quantity": 400,
         "unit": "ml"
       },
       {
-        "name": "Sunflower Oil",
-        "quantity": "2",
+        "product": "Sunflower Oil",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Fresh Parsley",
-        "quantity": "1",
+        "product": "Fresh Parsley",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "pork-and-potato-stew",
     "name": "Pork and Potato Stew",
     "category": "Main Courses",
     "description": "A slow-cooked stew of pork, bacon, and potatoes in a savory tomato broth.",
@@ -1130,73 +1283,79 @@
       "Add the tomato sauce, browned meat, and 500 ml of clear broth or water. Season with salt, pepper, and a bay leaf. Cover and cook over low heat for 1 hour. Add the diced potatoes and cook for another 20 minutes or until tender. Serve warm."
     ],
     "prepTime": 20,
-    "cookTime": 80,
-    "servings": 5,
+    "cookTime": 60,
+    "servings": 4,
+    "tags": [
+      "romanian",
+      "comfort-food",
+      "one-pot"
+    ],
     "imageUrl": "assets/images/recipes/pork-potato-stew.jpg",
     "ingredients": [
       {
-        "name": "Pork Neck",
-        "quantity": "1000",
+        "product": "Pork Neck",
+        "quantity": 1000,
         "unit": "g"
       },
       {
-        "name": "Smoked Bacon",
-        "quantity": "200",
+        "product": "Smoked Bacon",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Potatoes",
-        "quantity": "500",
+        "product": "Potatoes",
+        "quantity": 500,
         "unit": "g"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
+        "product": "Carrots",
         "name": "Carrot",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Tomato Sauce",
-        "quantity": "100",
+        "product": "Tomato Sauce",
+        "quantity": 100,
         "unit": "g"
       },
       {
-        "name": "Garlic",
-        "quantity": "3",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 3,
+        "unit": "clove"
       },
       {
+        "product": "Vegetable Broth",
         "name": "Clear Broth or Water",
-        "quantity": "500",
+        "quantity": 500,
         "unit": "ml"
       },
       {
-        "name": "Flour",
-        "quantity": "100",
+        "product": "Flour",
+        "quantity": 100,
         "unit": "g"
       },
       {
-        "name": "Bay Leaf",
-        "quantity": "1",
+        "product": "Bay Leaf",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "oven-baked-chicken-with-potatoes",
     "name": "Oven-Baked Chicken with Potatoes",
     "category": "Main Courses",
     "description": "Chicken thighs roasted over seasoned potatoes with a garlicky, creamy sauce.",
@@ -1206,84 +1365,89 @@
       "Blend the garlic (5 cloves), milk, sunflower oil, tomato paste, paprika, thyme, salt, and pepper until you get a smooth sauce.",
       "Place the chicken thighs over the potatoes, pour the sauce over the meat, and tuck in the asparagus and the whole garlic head. Bake at 220°C for 60 minutes. Serve immediately."
     ],
-    "prepTime": 20,
+    "prepTime": 15,
     "cookTime": 60,
-    "servings": 5,
+    "servings": 4,
+    "tags": [
+      "baked",
+      "romanian"
+    ],
     "imageUrl": "assets/images/recipes/oven-baked-chicken-potatoes.jpg",
     "ingredients": [
       {
-        "name": "Chicken Thighs",
-        "quantity": "1500",
+        "product": "Chicken Thighs",
+        "quantity": 1500,
         "unit": "g"
       },
       {
-        "name": "Potatoes",
-        "quantity": "1000",
+        "product": "Potatoes",
+        "quantity": 1000,
         "unit": "g"
       },
       {
-        "name": "Onion",
-        "quantity": "4",
+        "product": "Onion",
+        "quantity": 4,
         "unit": "pcs"
       },
       {
+        "product": "Garlic",
         "name": "Garlic (for sauce)",
-        "quantity": "5",
-        "unit": "cloves"
+        "quantity": 5,
+        "unit": "clove"
       },
       {
+        "product": "Garlic",
         "name": "Garlic (whole head)",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "head"
       },
       {
-        "name": "Asparagus",
-        "quantity": "1",
+        "product": "Asparagus",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
-        "name": "Milk",
-        "quantity": "200",
+        "product": "Milk",
+        "quantity": 200,
         "unit": "ml"
       },
       {
-        "name": "Sunflower Oil",
-        "quantity": "200",
+        "product": "Sunflower Oil",
+        "quantity": 200,
         "unit": "ml"
       },
       {
-        "name": "Tomato Paste",
-        "quantity": "2",
+        "product": "Tomato Paste",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "3",
+        "product": "Olive Oil",
+        "quantity": 3,
         "unit": "tbsp"
       },
       {
-        "name": "Sweet Paprika",
-        "quantity": "1",
+        "product": "Sweet Paprika",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
+        "product": "Dried Thyme",
         "name": "Thyme",
-        "quantity": "to taste",
-        "unit": ""
+        "note": "to taste"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "penne-quattro-formaggi",
     "name": "Penne Quattro Formaggi",
     "category": "Main Courses",
     "description": "A rich, cheesy penne pasta made with four kinds of melted cheese.",
@@ -1292,62 +1456,68 @@
       "Separately, prepare the sauce. Melt butter in a pan and add cream, salt and pepper to taste. Cut the cheeses into small pieces if not already grated, and when the cream starts to boil, add them to the pan. Mix everything for 5 minutes until all ingredients have melted and combined perfectly.",
       "Let the sauce thicken for 2-3 more minutes on low heat. Add the penne using two spatulas and mix well. Sprinkle with oregano before serving."
     ],
-    "prepTime": 25,
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 4,
+    "tags": [
+      "italian",
+      "vegetarian"
+    ],
     "imageUrl": "assets/images/recipes/penne-quattro-formaggi.jpg",
     "ingredients": [
       {
-        "name": "Penne",
-        "quantity": "250",
+        "product": "Penne",
+        "quantity": 250,
         "unit": "g"
       },
       {
-        "name": "Heavy Cream",
-        "quantity": "250",
+        "product": "Heavy Cream",
+        "quantity": 250,
         "unit": "g"
       },
       {
-        "name": "Parmesan",
-        "quantity": "70",
+        "product": "Parmesan",
+        "quantity": 70,
         "unit": "g"
       },
       {
+        "product": "Fresh Mozzarella",
         "name": "Mozzarella",
-        "quantity": "70",
+        "quantity": 70,
         "unit": "g"
       },
       {
-        "name": "Gorgonzola",
-        "quantity": "70",
+        "product": "Gorgonzola",
+        "quantity": 70,
         "unit": "g"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "1",
+        "product": "Olive Oil",
+        "quantity": 1,
         "unit": "tbsp"
       },
       {
-        "name": "Butter",
-        "quantity": "1",
+        "product": "Butter",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
-        "name": "Dried Oregano",
-        "quantity": "1",
+        "product": "Dried Oregano",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "pasta-arrabiata",
     "name": "Pasta Arrabiata",
     "category": "Main Courses",
     "description": "A spicy Italian pasta with a fiery tomato and hot pepper sauce.",
@@ -1356,62 +1526,70 @@
       "Separately, prepare the sauce. Clean the hot peppers from seeds, slice them into 2-3 cm pieces and put them in a pan with 4-5 tbsp oil. Add finely chopped garlic and let everything sauté for 3 minutes. Deglaze with a little water and add the tomato sauce.",
       "In 10 minutes the arrabiata sauce is almost ready. Add lemon juice, parmesan and 2 tbsp olive oil. Mix the pasta with the sauce and serve with grated parmesan on top."
     ],
-    "prepTime": 25,
+    "prepTime": 10,
+    "cookTime": 20,
+    "servings": 4,
+    "tags": [
+      "italian",
+      "vegan",
+      "spicy"
+    ],
     "imageUrl": "assets/images/recipes/pasta-arrabiata.jpg",
     "ingredients": [
       {
-        "name": "Spaghetti",
-        "quantity": "500",
+        "product": "Spaghetti",
+        "quantity": 500,
         "unit": "g"
       },
       {
+        "product": "Chili Pepper",
         "name": "Hot Peppers",
-        "quantity": "4",
+        "quantity": 4,
         "unit": "pcs"
       },
       {
-        "name": "Garlic",
-        "quantity": "4",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 4,
+        "unit": "clove"
       },
       {
-        "name": "Tomato Sauce",
-        "quantity": "450",
+        "product": "Tomato Sauce",
+        "quantity": 450,
         "unit": "g"
       },
       {
-        "name": "Parmesan",
-        "quantity": "2",
+        "product": "Parmesan",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "6",
+        "product": "Olive Oil",
+        "quantity": 6,
         "unit": "tbsp"
       },
       {
+        "product": "Lemon",
         "name": "Lemon Juice",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "tbsp"
       },
       {
-        "name": "Water",
-        "quantity": "50",
+        "product": "Water",
+        "quantity": 50,
         "unit": "ml"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "pasta-with-chicken-and-pesto",
     "name": "Pasta with Chicken and Pesto",
     "category": "Main Courses",
     "description": "Pasta tossed with grilled chicken, homemade basil pesto, and cherry tomatoes.",
@@ -1420,67 +1598,73 @@
       "When the pesto sauce is ready, lightly brush the chicken breast pieces with it and let them reach room temperature for 20-30 minutes. Using a suitable pan, heat 2 tbsp olive oil and cook the meat until fully fried. Add cherry tomatoes and sauté for 5 minutes.",
       "When the chicken breast is ready, cut it into thin pieces and mix with the pasta, sauce, and cherry tomatoes. Serve with grated parmesan on top."
     ],
-    "prepTime": 35,
+    "prepTime": 10,
+    "cookTime": 20,
+    "servings": 4,
+    "tags": [
+      "italian",
+      "quick"
+    ],
     "imageUrl": "assets/images/recipes/pasta-chicken-pesto.jpg",
     "ingredients": [
       {
-        "name": "Spaghetti",
-        "quantity": "200",
+        "product": "Spaghetti",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Cherry Tomatoes",
-        "quantity": "200",
+        "product": "Cherry Tomatoes",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Chicken Breast",
-        "quantity": "100",
+        "product": "Chicken Breast",
+        "quantity": 100,
         "unit": "g"
       },
       {
-        "name": "Cashews",
-        "quantity": "60",
+        "product": "Cashews",
+        "quantity": 60,
         "unit": "g"
       },
       {
-        "name": "Parmesan",
-        "quantity": "60",
+        "product": "Parmesan",
+        "quantity": 60,
         "unit": "g"
       },
       {
-        "name": "Fresh Basil",
-        "quantity": "1",
+        "product": "Fresh Basil",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
-        "name": "Garlic",
-        "quantity": "1",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 1,
+        "unit": "clove"
       },
       {
+        "product": "Lemon",
         "name": "Lemon Juice",
-        "quantity": "1",
-        "unit": "lemon"
+        "quantity": 1,
+        "unit": "pcs"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "4",
+        "product": "Olive Oil",
+        "quantity": 4,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "pasta-with-shrimp",
     "name": "Pasta with Shrimp",
     "category": "Main Courses",
     "description": "A garlicky shrimp pasta finished with lemon and white wine flavors.",
@@ -1489,67 +1673,75 @@
       "While the shrimp broth is cooking, heat oil, butter, garlic, and finely chopped hot pepper in a pan. Mix gently for 3 minutes. Add the shrimp and let them sauté for 2 minutes. When the shrimp turn pink, add a glass of the broth and let everything boil for 3-4 minutes.",
       "Add lemon juice, salt and pepper. Mix well and finally add the pasta and parsley to the pan. Serve with grated parmesan on top and a glass of white wine."
     ],
-    "prepTime": 30,
+    "prepTime": 10,
+    "cookTime": 15,
+    "servings": 4,
+    "tags": [
+      "italian",
+      "quick"
+    ],
     "imageUrl": "assets/images/recipes/pasta-shrimp.jpg",
     "ingredients": [
       {
-        "name": "Pasta",
-        "quantity": "250",
+        "product": "Pasta",
+        "quantity": 250,
         "unit": "g"
       },
       {
+        "product": "Shrimp",
         "name": "Fresh Shrimp",
-        "quantity": "500",
+        "quantity": 500,
         "unit": "g"
       },
       {
-        "name": "Garlic",
-        "quantity": "3",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 3,
+        "unit": "clove"
       },
       {
+        "product": "Chili Pepper",
         "name": "Hot Pepper",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "2",
+        "product": "Olive Oil",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Butter",
-        "quantity": "50",
+        "product": "Butter",
+        "quantity": 50,
         "unit": "g"
       },
       {
-        "name": "Fresh Parsley",
-        "quantity": "1",
+        "product": "Fresh Parsley",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
+        "product": "Lemon",
         "name": "Lemon Juice",
-        "quantity": "1",
-        "unit": "lemon"
+        "quantity": 1,
+        "unit": "pcs"
       },
       {
-        "name": "Parmesan",
-        "quantity": "30",
+        "product": "Parmesan",
+        "quantity": 30,
         "unit": "g"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "pasta-with-garlic-and-hot-pepper",
     "name": "Pasta with Garlic and Hot Pepper",
     "category": "Main Courses",
     "description": "A simple, spicy pasta tossed in garlic, hot pepper, and olive oil.",
@@ -1557,57 +1749,64 @@
       "Boil the spaghetti according to package instructions. Meanwhile, slice the pepper and garlic, and finely chop the parsley. Sauté the garlic and pepper in olive oil for a few minutes.",
       "Add 2 ladles of the pasta cooking water, then add the finely chopped parsley. Leave the pan on the heat for a few minutes and finally add the cooked pasta to the pan. Season with salt and basil. Mix everything well and serve with grated parmesan on top."
     ],
-    "prepTime": 20,
+    "prepTime": 5,
+    "cookTime": 15,
+    "servings": 2,
+    "tags": [
+      "italian",
+      "vegan",
+      "quick",
+      "spicy"
+    ],
     "imageUrl": "assets/images/recipes/pasta-garlic-hot-pepper.jpg",
     "ingredients": [
       {
-        "name": "Spaghetti",
-        "quantity": "250",
+        "product": "Spaghetti",
+        "quantity": 250,
         "unit": "g"
       },
       {
+        "product": "Chili Pepper",
         "name": "Hot Pepper",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Garlic",
-        "quantity": "5",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 5,
+        "unit": "clove"
       },
       {
-        "name": "Parmesan",
-        "quantity": "70",
+        "product": "Parmesan",
+        "quantity": 70,
         "unit": "g"
       },
       {
-        "name": "Fresh Parsley",
-        "quantity": "1",
+        "product": "Fresh Parsley",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "3",
+        "product": "Olive Oil",
+        "quantity": 3,
         "unit": "tbsp"
       },
       {
-        "name": "Fresh Basil",
-        "quantity": "handful",
-        "unit": ""
+        "product": "Fresh Basil",
+        "note": "handful"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "baked-salmon-with-asparagus",
     "name": "Baked Salmon with Asparagus",
     "category": "Main Courses",
     "description": "Oven-baked salmon fillets with a garlicky lemon-herb sauce and roasted asparagus.",
@@ -1617,57 +1816,64 @@
       "Wash the asparagus and cut off the woody stems. Arrange asparagus around the edges with salmon in the center and drizzle with olive oil. Slice the remaining lemon thinly and cover each piece of salmon with a slice.",
       "Bake for 12-15 minutes or until the fish is opaque and flaky when tested with a fork. Garnish with fresh thyme or parsley and serve alongside the asparagus."
     ],
-    "prepTime": 30,
+    "prepTime": 10,
+    "cookTime": 20,
+    "servings": 2,
+    "tags": [
+      "healthy",
+      "baked",
+      "high-protein"
+    ],
     "imageUrl": "assets/images/recipes/baked-salmon-asparagus.jpg",
     "ingredients": [
       {
-        "name": "Salmon Fillets",
-        "quantity": "500",
+        "product": "Salmon Fillets",
+        "quantity": 500,
         "unit": "g"
       },
       {
+        "product": "Asparagus",
         "name": "Fresh Asparagus",
-        "quantity": "300",
+        "quantity": 300,
         "unit": "g"
       },
       {
+        "product": "Olive Oil",
         "name": "Extra-Virgin Olive Oil",
-        "quantity": "4",
+        "quantity": 4,
         "unit": "tbsp"
       },
       {
-        "name": "Garlic",
-        "quantity": "2",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 2,
+        "unit": "clove"
       },
       {
-        "name": "Lemon",
-        "quantity": "1",
+        "product": "Lemon",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Mixed Herbs",
-        "quantity": "1",
+        "product": "Mixed Herbs",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
-        "name": "Fresh Thyme",
-        "quantity": "handful",
-        "unit": ""
+        "product": "Fresh Thyme",
+        "note": "handful"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "baked-salmon-with-vegetables",
     "name": "Baked Salmon with Vegetables",
     "category": "Main Courses",
     "description": "Buttery baked salmon served alongside a medley of roasted vegetables.",
@@ -1676,72 +1882,78 @@
       "Using a brush, apply the butter mixture over the salmon fillets in a baking dish. Sprinkle with chopped garlic, salt, and pepper. Bake for 12 to 15 minutes.",
       "Meanwhile, cut the vegetables according to their density so they cook evenly. Cauliflower can remain medium-sized florets, while broccoli should be separated into smaller florets. Place vegetables with cut side down in another baking tray and drizzle with olive oil. Bake vegetables for 30 minutes. When done, sprinkle with fresh parsley and dill. Serve the salmon alongside the roasted vegetables."
     ],
-    "prepTime": 30,
+    "prepTime": 15,
+    "cookTime": 25,
+    "servings": 2,
+    "tags": [
+      "healthy",
+      "baked"
+    ],
     "imageUrl": "assets/images/recipes/baked-salmon-vegetables.jpg",
     "ingredients": [
       {
-        "name": "Salmon Fillets",
-        "quantity": "500",
+        "product": "Salmon Fillets",
+        "quantity": 500,
         "unit": "g"
       },
       {
-        "name": "Butter",
-        "quantity": "30",
+        "product": "Butter",
+        "quantity": 30,
         "unit": "g"
       },
       {
+        "product": "Lemon",
         "name": "Lemon Juice",
-        "quantity": "1",
-        "unit": "lemon"
+        "quantity": 1,
+        "unit": "pcs"
       },
       {
-        "name": "Garlic",
-        "quantity": "3",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 3,
+        "unit": "clove"
       },
       {
-        "name": "Broccoli",
-        "quantity": "200",
+        "product": "Broccoli",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Cauliflower",
-        "quantity": "200",
+        "product": "Cauliflower",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Zucchini",
-        "quantity": "150",
+        "product": "Zucchini",
+        "quantity": 150,
         "unit": "g"
       },
       {
-        "name": "Fresh Parsley",
-        "quantity": "1",
+        "product": "Fresh Parsley",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
-        "name": "Fresh Dill",
-        "quantity": "1",
+        "product": "Fresh Dill",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "3",
+        "product": "Olive Oil",
+        "quantity": 3,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "classic-beef-soup",
     "name": "Classic Beef Soup",
     "category": "Soups",
     "description": "A traditional, hearty beef and vegetable soup simmered until tender.",
@@ -1751,67 +1963,74 @@
       "Once no more foam forms, add the onion, carrots, and celery and let them boil for another 20-30 minutes. Then add the bell pepper, peas, and potatoes and let them boil for 15 minutes.",
       "Once cooked, add the tomato juice, a little salt and olive oil, and let the soup boil for another 15 minutes. When the soup is ready, add the chopped parsley and serve."
     ],
-    "prepTime": 90,
+    "prepTime": 20,
+    "cookTime": 120,
+    "servings": 6,
+    "tags": [
+      "romanian",
+      "comfort-food"
+    ],
     "imageUrl": "assets/images/recipes/classic-beef-soup.jpg",
     "ingredients": [
       {
-        "name": "Beef",
-        "quantity": "650",
+        "product": "Beef",
+        "quantity": 650,
         "unit": "g"
       },
       {
-        "name": "Tomato Juice",
-        "quantity": "400",
+        "product": "Tomato Juice",
+        "quantity": 400,
         "unit": "ml"
       },
       {
-        "name": "Carrots",
-        "quantity": "2",
+        "product": "Carrots",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Onion",
-        "quantity": "2",
+        "product": "Onion",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Potatoes",
-        "quantity": "3",
+        "product": "Potatoes",
+        "quantity": 3,
         "unit": "pcs"
       },
       {
+        "product": "Bell Peppers",
         "name": "Bell Pepper",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Celery",
-        "quantity": "1",
+        "product": "Celery",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Peas",
-        "quantity": "100",
+        "product": "Peas",
+        "quantity": 100,
         "unit": "g"
       },
       {
-        "name": "Fresh Parsley",
-        "quantity": "1",
+        "product": "Fresh Parsley",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "2",
+        "product": "Olive Oil",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "sour-beef-soup",
     "name": "Sour Beef Soup",
     "category": "Soups",
     "description": "A tangy Romanian-style beef soup soured with bors and topped with sour cream.",
@@ -1822,82 +2041,87 @@
       "When the vegetables are almost cooked, add the potatoes. Once they're cooked, add the tomatoes that you've previously scalded, peeled, and cubed.",
       "Boil the bors separately and add it to the soup. Let the contents come to two boils and remove the pot from heat. Add salt and pepper to taste, as well as finely chopped lovage. Serve with a little sour cream."
     ],
-    "prepTime": 120,
+    "prepTime": 20,
+    "cookTime": 90,
+    "servings": 6,
+    "tags": [
+      "romanian"
+    ],
     "imageUrl": "assets/images/recipes/sour-beef-soup.jpg",
     "ingredients": [
       {
-        "name": "Beef with Bone",
-        "quantity": "1000",
+        "product": "Beef with Bone",
+        "quantity": 1000,
         "unit": "g"
       },
       {
-        "name": "Carrots",
-        "quantity": "2",
+        "product": "Carrots",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Celery",
-        "quantity": "1",
+        "product": "Celery",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Onion",
-        "quantity": "2",
+        "product": "Onion",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Parsley Root",
-        "quantity": "1",
+        "product": "Parsley Root",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
+        "product": "Cabbage",
         "name": "White Cabbage",
-        "quantity": "200",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Frozen Peas",
-        "quantity": "200",
+        "product": "Frozen Peas",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Bell Peppers",
-        "quantity": "2",
+        "product": "Bell Peppers",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Potatoes",
-        "quantity": "2",
+        "product": "Potatoes",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Tomatoes",
-        "quantity": "2",
+        "product": "Tomatoes",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Fresh Lovage",
-        "quantity": "1",
+        "product": "Fresh Lovage",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
+        "product": "Borș",
         "name": "Bors",
-        "quantity": "to taste",
-        "unit": ""
+        "note": "to taste"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "transylvanian-veal-soup-with-sour-cream",
     "name": "Transylvanian Veal Soup with Sour Cream",
     "category": "Soups",
     "description": "A rich veal soup finished with an egg yolk and sour cream mixture.",
@@ -1907,117 +2131,122 @@
       "When the meat is almost cooked, remove it from the pot and cut into cubes. Strain the soup separately into another pot, add the veal and prepared vegetables. Let everything boil and add celery and parsley leaves. When the veal soup boils, add the thyme sprig, bay leaf, pepper, and a little ground cumin. Then add two level tablespoons of sweet paprika and tomato juice. Let everything boil until the vegetables are soft.",
       "When the veal soup is cooked, remove the celery leaves and thyme sprig. Prepare the egg yolk and sour cream mixture: Mix the sour cream with the egg yolks and 2 tablespoons of soup until the mixture thins, then add it to the soup and mix well. Optionally, add a little lemon juice to taste."
     ],
-    "prepTime": 75,
+    "prepTime": 20,
+    "cookTime": 90,
+    "servings": 6,
+    "tags": [
+      "romanian"
+    ],
     "imageUrl": "assets/images/recipes/transylvanian-veal-soup.jpg",
     "ingredients": [
       {
-        "name": "Veal",
-        "quantity": "500",
+        "product": "Veal",
+        "quantity": 500,
         "unit": "g"
       },
       {
-        "name": "Tomato Juice",
-        "quantity": "200",
+        "product": "Tomato Juice",
+        "quantity": 200,
         "unit": "ml"
       },
       {
-        "name": "Carrots",
-        "quantity": "3",
+        "product": "Carrots",
+        "quantity": 3,
         "unit": "pcs"
       },
       {
-        "name": "Parsnip",
-        "quantity": "1",
+        "product": "Parsnip",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Parsley Root",
-        "quantity": "1",
+        "product": "Parsley Root",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Celery Root",
-        "quantity": "0.5",
+        "product": "Celery Root",
+        "quantity": 0.5,
         "unit": "pcs"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Potatoes",
-        "quantity": "3",
+        "product": "Potatoes",
+        "quantity": 3,
         "unit": "pcs"
       },
       {
-        "name": "Celery Leaves",
-        "quantity": "handful",
-        "unit": ""
+        "product": "Celery Leaves",
+        "note": "handful"
       },
       {
-        "name": "Fresh Parsley",
-        "quantity": "1",
+        "product": "Fresh Parsley",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
+        "product": "Dried Thyme",
         "name": "Thyme",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "sprig"
       },
       {
-        "name": "Bay Leaf",
-        "quantity": "1",
+        "product": "Bay Leaf",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "2",
+        "product": "Olive Oil",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Sweet Paprika",
-        "quantity": "2",
+        "product": "Sweet Paprika",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Cumin",
-        "quantity": "0.5",
+        "product": "Cumin",
+        "quantity": 0.5,
         "unit": "tsp"
       },
       {
-        "name": "Veal Bones",
-        "quantity": "200",
+        "product": "Veal Bones",
+        "quantity": 200,
         "unit": "g"
       },
       {
+        "product": "Eggs",
         "name": "Egg Yolks",
-        "quantity": "3",
+        "quantity": 3,
         "unit": "pcs"
       },
       {
-        "name": "Sour Cream",
-        "quantity": "450",
+        "product": "Sour Cream",
+        "quantity": 450,
         "unit": "g"
       },
       {
+        "product": "Lemon",
         "name": "Lemon Juice",
-        "quantity": "to taste",
-        "unit": ""
+        "note": "to taste"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "country-style-beef-soup",
     "name": "Country-Style Beef Soup",
     "category": "Soups",
     "description": "A rustic, vegetable-packed beef soup with a tangy tomato and bors broth.",
@@ -2026,87 +2255,97 @@
       "Meanwhile, prepare the vegetables and remove the bones from the pot. Wash, clean, and cut the carrots, onion, potatoes, bell pepper, parsnip root, and celery. Finely chop the white cabbage. Add the cut vegetables to the pot where the meat is boiling (without potatoes), along with the peas and green beans. Let the soup boil over low heat.",
       "When the vegetables and meat are tender, add the potatoes and let them boil for approximately 20 minutes. Then add the tomatoes in broth and bors to taste. Let it come to a few boils and add salt to taste. When ready, remove the pot from heat and add finely chopped lovage and parsley."
     ],
-    "prepTime": 90,
+    "prepTime": 20,
+    "cookTime": 100,
+    "servings": 6,
+    "tags": [
+      "romanian",
+      "comfort-food"
+    ],
     "imageUrl": "assets/images/recipes/country-beef-soup.jpg",
     "ingredients": [
       {
-        "name": "Beef with Bone",
-        "quantity": "1000",
+        "product": "Beef with Bone",
+        "quantity": 1000,
         "unit": "g"
       },
       {
-        "name": "Carrots",
-        "quantity": "2",
+        "product": "Carrots",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Potatoes",
-        "quantity": "2",
+        "product": "Potatoes",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
+        "product": "Bell Peppers",
         "name": "Bell Pepper",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
+        "product": "Parsnip",
         "name": "Parsnip Root",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Celery",
-        "quantity": "200",
+        "product": "Celery",
+        "quantity": 200,
         "unit": "g"
       },
       {
-        "name": "Peas",
-        "quantity": "100",
+        "product": "Peas",
+        "quantity": 100,
         "unit": "g"
       },
       {
-        "name": "Green Beans",
-        "quantity": "150",
+        "product": "Green Beans",
+        "quantity": 150,
         "unit": "g"
       },
       {
+        "product": "Cabbage",
         "name": "White Cabbage",
-        "quantity": "200",
+        "quantity": 200,
         "unit": "g"
       },
       {
+        "product": "Crushed Tomatoes",
         "name": "Tomatoes in Broth",
-        "quantity": "400",
+        "quantity": 400,
         "unit": "g"
       },
       {
-        "name": "Fresh Lovage",
-        "quantity": "1",
+        "product": "Fresh Lovage",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
-        "name": "Fresh Parsley",
-        "quantity": "1",
+        "product": "Fresh Parsley",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
+        "product": "Borș",
         "name": "Bors",
-        "quantity": "to taste",
-        "unit": ""
+        "note": "to taste"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "classic-tomato-soup",
     "name": "Classic Tomato Soup",
     "category": "Soups",
     "description": "A traditional Romanian tomato soup made with fresh tomatoes and root vegetables.",
@@ -2115,84 +2354,88 @@
       "Meanwhile, peel and finely dice the carrots, onions, celery, parsnip, both bell peppers, and garlic. In a large pot, sauté all the diced vegetables over low heat until softened, then add 250 ml of water.",
       "Once the tomatoes have finished boiling, remove them, discard the herbs, and blend the tomatoes into a smooth paste. Add the tomato paste to the sautéed vegetables and top up with water. Simmer until the soup reaches the desired consistency, then season with salt and pepper. Serve with sour cream and chopped fresh herbs on top."
     ],
-    "prepTime": 20,
-    "cookTime": 40,
-    "servings": 5,
+    "prepTime": 10,
+    "cookTime": 30,
+    "servings": 4,
+    "tags": [
+      "vegetarian"
+    ],
     "imageUrl": "assets/images/recipes/classic-tomato-soup.jpg",
     "ingredients": [
       {
-        "name": "Tomatoes",
-        "quantity": "2000",
+        "product": "Tomatoes",
+        "quantity": 2000,
         "unit": "g"
       },
       {
-        "name": "Carrots",
-        "quantity": "3",
+        "product": "Carrots",
+        "quantity": 3,
         "unit": "pcs"
       },
       {
-        "name": "Onion",
-        "quantity": "2",
+        "product": "Onion",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Celery",
-        "quantity": "1",
+        "product": "Celery",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Parsnip",
-        "quantity": "1",
+        "product": "Parsnip",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
+        "product": "Bell Peppers",
         "name": "Red Bell Pepper",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
+        "product": "Bell Peppers",
         "name": "Green Bell Pepper",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Garlic",
-        "quantity": "1",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 1,
+        "unit": "clove"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "2",
+        "product": "Olive Oil",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Bay Leaf",
-        "quantity": "2",
+        "product": "Bay Leaf",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Fresh Thyme",
-        "quantity": "1",
+        "product": "Fresh Thyme",
+        "quantity": 1,
         "unit": "sprig"
       },
       {
-        "name": "Fresh Basil",
-        "quantity": "1",
+        "product": "Fresh Basil",
+        "quantity": 1,
         "unit": "sprig"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "tomato-soup-with-homemade-noodles",
     "name": "Tomato Soup with Homemade Noodles",
     "category": "Soups",
     "description": "A hearty tomato soup made even more satisfying with fresh, hand-cut egg noodles.",
@@ -2202,74 +2445,79 @@
       "Roll the rested dough into a thin sheet, let it dry for 30 minutes, then roll it up and slice into thin strips to make the noodles.",
       "Sprinkle the noodles into the simmering soup like rain, stirring so they don't stick together, and cook for 10 minutes. Season with salt, pepper, and chopped fresh parsley before serving."
     ],
-    "prepTime": 40,
-    "cookTime": 30,
-    "servings": 5,
+    "prepTime": 20,
+    "cookTime": 35,
+    "servings": 4,
+    "tags": [
+      "romanian",
+      "vegetarian"
+    ],
     "imageUrl": "assets/images/recipes/tomato-soup-homemade-noodles.jpg",
     "ingredients": [
       {
-        "name": "Tomatoes",
-        "quantity": "1000",
+        "product": "Tomatoes",
+        "quantity": 1000,
         "unit": "g"
       },
       {
-        "name": "Carrots",
-        "quantity": "3",
+        "product": "Carrots",
+        "quantity": 3,
         "unit": "pcs"
       },
       {
+        "product": "Bell Peppers",
         "name": "Bell Pepper",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Celery",
-        "quantity": "1",
+        "product": "Celery",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Parsnip",
-        "quantity": "1",
+        "product": "Parsnip",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "2",
+        "product": "Olive Oil",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
+        "product": "Eggs",
         "name": "Egg",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Flour",
-        "quantity": "150",
+        "product": "Flour",
+        "quantity": 150,
         "unit": "g"
       },
       {
-        "name": "Fresh Parsley",
-        "quantity": "1",
+        "product": "Fresh Parsley",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "tomato-soup-with-semolina-dumplings",
     "name": "Tomato Soup with Semolina Dumplings",
     "category": "Soups",
     "description": "A well-known meatless Romanian soup, tangy and filling thanks to fluffy semolina dumplings.",
@@ -2280,62 +2528,66 @@
     ],
     "prepTime": 15,
     "cookTime": 35,
-    "servings": 5,
+    "servings": 4,
+    "tags": [
+      "romanian",
+      "vegetarian",
+      "kid-friendly"
+    ],
     "imageUrl": "assets/images/recipes/tomato-soup-semolina-dumplings.jpg",
     "ingredients": [
       {
-        "name": "Tomato Juice",
-        "quantity": "900",
+        "product": "Tomato Juice",
+        "quantity": 900,
         "unit": "ml"
       },
       {
-        "name": "Carrots",
-        "quantity": "3",
+        "product": "Carrots",
+        "quantity": 3,
         "unit": "pcs"
       },
       {
-        "name": "Onion",
-        "quantity": "2",
+        "product": "Onion",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Garlic",
-        "quantity": "3",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 3,
+        "unit": "clove"
       },
       {
-        "name": "Fresh Parsley",
-        "quantity": "1",
+        "product": "Fresh Parsley",
+        "quantity": 1,
         "unit": "bunch"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "4",
+        "product": "Olive Oil",
+        "quantity": 4,
         "unit": "tbsp"
       },
       {
-        "name": "Eggs",
-        "quantity": "2",
+        "product": "Eggs",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Semolina",
-        "quantity": "8",
+        "product": "Semolina",
+        "quantity": 8,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "cream-of-tomato-soup",
     "name": "Cream of Tomato Soup",
     "category": "Soups",
     "description": "A tangy, velvety blended tomato soup packed with root vegetables and potatoes.",
@@ -2345,74 +2597,77 @@
       "When the vegetables are fully cooked, remove them from the broth and blend them into a fine paste as well. Mix this vegetable paste back into the broth, then stir in the tomato paste.",
       "Let the cream soup simmer for a few minutes, then season with salt, pepper, and other spices to taste. Serve with a few croutons, sour cream, and chopped parsley."
     ],
-    "prepTime": 20,
-    "cookTime": 35,
-    "servings": 5,
+    "prepTime": 10,
+    "cookTime": 30,
+    "servings": 4,
+    "tags": [
+      "vegetarian"
+    ],
     "imageUrl": "assets/images/recipes/cream-of-tomato-soup.jpg",
     "ingredients": [
       {
-        "name": "Tomatoes",
-        "quantity": "500",
+        "product": "Tomatoes",
+        "quantity": 500,
         "unit": "g"
       },
       {
-        "name": "Carrots",
-        "quantity": "3",
+        "product": "Carrots",
+        "quantity": 3,
         "unit": "pcs"
       },
       {
-        "name": "Onion",
-        "quantity": "2",
+        "product": "Onion",
+        "quantity": 2,
         "unit": "pcs"
       },
       {
-        "name": "Garlic",
-        "quantity": "3",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 3,
+        "unit": "clove"
       },
       {
+        "product": "Bell Peppers",
         "name": "Bell Pepper",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Parsnip",
-        "quantity": "1",
+        "product": "Parsnip",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Celery",
-        "quantity": "1",
+        "product": "Celery",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Zucchini",
-        "quantity": "1",
+        "product": "Zucchini",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Potatoes",
-        "quantity": "3",
+        "product": "Potatoes",
+        "quantity": 3,
         "unit": "pcs"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "3",
+        "product": "Olive Oil",
+        "quantity": 3,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "tomato-soup-with-garlic",
     "name": "Tomato Soup with Garlic",
     "category": "Soups",
     "description": "A fragrant tomato soup infused with plenty of garlic, basil, and thyme.",
@@ -2424,51 +2679,54 @@
     "prepTime": 10,
     "cookTime": 30,
     "servings": 4,
+    "tags": [
+      "vegetarian",
+      "vegan"
+    ],
     "imageUrl": "assets/images/recipes/tomato-soup-with-garlic.jpg",
     "ingredients": [
       {
-        "name": "Tomatoes",
-        "quantity": "800",
+        "product": "Tomatoes",
+        "quantity": 800,
         "unit": "g"
       },
       {
-        "name": "Onion",
-        "quantity": "1",
+        "product": "Onion",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Garlic",
-        "quantity": "5",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 5,
+        "unit": "clove"
       },
       {
-        "name": "Fresh Basil",
-        "quantity": "2",
-        "unit": "sprigs"
+        "product": "Fresh Basil",
+        "quantity": 2,
+        "unit": "sprig"
       },
       {
-        "name": "Dried Thyme",
-        "quantity": "1",
+        "product": "Dried Thyme",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "2",
+        "product": "Olive Oil",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "gazpacho",
     "name": "Gazpacho",
     "category": "Soups",
     "description": "A refreshing, chilled Spanish-style tomato and vegetable soup, perfect for hot summer days.",
@@ -2477,74 +2735,81 @@
       "Place all the vegetables in a blender and blend until the mixture becomes a smooth paste. Add the soaked bread slices, lemon juice, olive oil, salt, and freshly ground pepper, then continue blending until fully combined.",
       "Chill the gazpacho in the refrigerator for a few hours before serving with a few croutons or grated parmesan on top."
     ],
-    "prepTime": 20,
+    "prepTime": 15,
     "cookTime": 0,
     "servings": 4,
+    "tags": [
+      "no-cook",
+      "vegan",
+      "summer"
+    ],
     "imageUrl": "assets/images/recipes/gazpacho.jpg",
     "ingredients": [
       {
-        "name": "Tomatoes",
-        "quantity": "1000",
+        "product": "Tomatoes",
+        "quantity": 1000,
         "unit": "g"
       },
       {
+        "product": "Cucumber",
         "name": "Cucumbers",
-        "quantity": "3",
+        "quantity": 3,
         "unit": "pcs"
       },
       {
+        "product": "Bell Peppers",
         "name": "Bell Pepper",
-        "quantity": "1",
+        "quantity": 1,
         "unit": "pcs"
       },
       {
-        "name": "Onion",
-        "quantity": "0.5",
+        "product": "Onion",
+        "quantity": 0.5,
         "unit": "pcs"
       },
       {
-        "name": "Garlic",
-        "quantity": "1",
-        "unit": "cloves"
+        "product": "Garlic",
+        "quantity": 1,
+        "unit": "clove"
       },
       {
-        "name": "Olive Oil",
-        "quantity": "7",
+        "product": "Olive Oil",
+        "quantity": 7,
         "unit": "tbsp"
       },
       {
-        "name": "Water",
-        "quantity": "1",
+        "product": "Water",
+        "quantity": 1,
         "unit": "cup"
       },
       {
-        "name": "Dried Oregano",
-        "quantity": "0.5",
+        "product": "Dried Oregano",
+        "quantity": 0.5,
         "unit": "tsp"
       },
       {
+        "product": "Lemon",
         "name": "Lemon Juice",
-        "quantity": "2",
+        "quantity": 2,
         "unit": "tbsp"
       },
       {
-        "name": "Bread",
-        "quantity": "2",
-        "unit": "slices"
+        "product": "Bread",
+        "quantity": 2,
+        "unit": "slice"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       },
       {
-        "name": "Black Pepper",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Black Pepper",
+        "note": "to taste"
       }
     ]
   },
   {
+    "key": "turkish-tomato-soup",
     "name": "Turkish Tomato Soup",
     "category": "Soups",
     "description": "A simple, quick tomato soup thickened with a light flour roux and finished with milk.",
@@ -2552,45 +2817,48 @@
       "Heat the oil in a suitably sized pot. Add the flour and let it brown lightly for 2-3 minutes, stirring constantly. Pour the tomato juice over the flour and oil mixture and let it cook until it comes to a boil.",
       "Once the juice starts boiling, add the salt, dried basil, and dried oregano. Lower the heat and slowly pour in the milk, stirring carefully with a wooden spoon. Let the soup cook for another 5-10 minutes, then serve with a few spoonfuls of grated cheese on top."
     ],
-    "prepTime": 5,
-    "cookTime": 15,
-    "servings": 3,
+    "prepTime": 10,
+    "cookTime": 30,
+    "servings": 4,
+    "tags": [
+      "vegetarian",
+      "middle-eastern"
+    ],
     "imageUrl": "assets/images/recipes/turkish-tomato-soup.jpg",
     "ingredients": [
       {
-        "name": "Flour",
-        "quantity": "1",
+        "product": "Flour",
+        "quantity": 1,
         "unit": "tbsp"
       },
       {
-        "name": "Vegetable Oil",
-        "quantity": "1",
+        "product": "Vegetable Oil",
+        "quantity": 1,
         "unit": "tbsp"
       },
       {
-        "name": "Tomato Juice",
-        "quantity": "900",
+        "product": "Tomato Juice",
+        "quantity": 900,
         "unit": "g"
       },
       {
-        "name": "Milk",
-        "quantity": "200",
+        "product": "Milk",
+        "quantity": 200,
         "unit": "ml"
       },
       {
-        "name": "Dried Basil",
-        "quantity": "1",
+        "product": "Dried Basil",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
-        "name": "Dried Oregano",
-        "quantity": "1",
+        "product": "Dried Oregano",
+        "quantity": 1,
         "unit": "tsp"
       },
       {
-        "name": "Salt",
-        "quantity": "to taste",
-        "unit": ""
+        "product": "Salt",
+        "note": "to taste"
       }
     ]
   }

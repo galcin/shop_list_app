@@ -1,0 +1,1058 @@
+{
+  "category": "Side Dishes",
+  "recipes": [
+    {
+      "key": "creamy-mashed-potatoes",
+      "name": "Creamy Mashed Potatoes (Piure de Cartofi)",
+      "category": "Side Dishes",
+      "description": "Fluffy potatoes beaten with warm milk and butter, finished with a whisper of nutmeg.",
+      "instructions": [
+        "Peel the potatoes, cut them into even chunks and place in a pot of cold salted water.",
+        "Bring to a boil and simmer for 18-20 minutes until a knife slides in with no resistance.",
+        "Meanwhile warm the milk with the butter in a small pan until the butter melts.",
+        "Drain the potatoes well and let them steam dry in the pot for a minute.",
+        "Mash thoroughly, then beat in the warm milk and butter until smooth and fluffy.",
+        "Season with salt, white pepper and a pinch of nutmeg; serve hot."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["vegetarian", "comfort-food", "kid-friendly", "gluten-free"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 1, "unit": "kg" },
+        { "product": "Milk", "quantity": 200, "unit": "ml" },
+        { "product": "Butter", "quantity": 80, "unit": "g" },
+        { "product": "Nutmeg", "quantity": 1, "unit": "pinch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "White Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "crispy-roast-potatoes-rosemary",
+      "name": "Crispy Roast Potatoes with Rosemary",
+      "category": "Side Dishes",
+      "description": "Parboiled, roughed-up potatoes roasted in hot oil until shatteringly crisp with garlic and rosemary.",
+      "instructions": [
+        "Preheat the oven to 220°C and put a roasting tray with the oil inside to heat up.",
+        "Peel the potatoes, cut into large chunks and parboil in salted water for 8 minutes.",
+        "Drain and shake the colander hard to rough up the edges of each piece.",
+        "Carefully tip the potatoes into the hot oil and turn to coat.",
+        "Roast for 25 minutes, turn the potatoes, add the garlic cloves and rosemary, then roast 20 minutes more until deep golden.",
+        "Season generously with salt and pepper and serve immediately."
+      ],
+      "prepTime": 15,
+      "cookTime": 50,
+      "servings": 6,
+      "tags": ["vegan", "baked", "holiday", "comfort-food"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 1.2, "unit": "kg" },
+        { "product": "Sunflower Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove", "note": "unpeeled" },
+        { "product": "Fresh Rosemary", "quantity": 3, "unit": "sprig" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "baked-paprika-potato-wedges",
+      "name": "Baked Paprika Potato Wedges",
+      "category": "Side Dishes",
+      "description": "Skin-on wedges tossed in olive oil, paprika and oregano, baked until crisp outside and fluffy inside.",
+      "instructions": [
+        "Preheat the oven to 200°C and line a baking tray with baking paper.",
+        "Scrub the potatoes and cut each into 6-8 wedges, leaving the skin on.",
+        "Toss the wedges with olive oil, paprika, garlic powder, oregano, salt and pepper until evenly coated.",
+        "Spread in a single layer, skin side down where possible.",
+        "Bake for 30-35 minutes, turning once, until golden and crisp at the edges."
+      ],
+      "prepTime": 10,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["vegan", "baked", "kid-friendly", "budget"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 1, "unit": "kg" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Sweet Paprika", "quantity": 2, "unit": "tsp" },
+        { "product": "Garlic Powder", "quantity": 1, "unit": "tsp" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Black Pepper", "quantity": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "hasselback-potatoes",
+      "name": "Hasselback Potatoes",
+      "category": "Side Dishes",
+      "description": "Thinly sliced fan potatoes basted with garlic-thyme butter and crowned with crisp Parmesan.",
+      "instructions": [
+        "Preheat the oven to 200°C.",
+        "Place each potato between two wooden spoon handles and slice thinly across, stopping before you cut through.",
+        "Melt the butter with the olive oil, crushed garlic and thyme leaves.",
+        "Set the potatoes in a baking dish, brush with half the butter and season with salt.",
+        "Bake for 30 minutes, brush with the remaining butter so it seeps between the slices, and bake 25 minutes more.",
+        "Scatter over the Parmesan and bake 5 more minutes until golden and crisp."
+      ],
+      "prepTime": 20,
+      "cookTime": 60,
+      "servings": 4,
+      "tags": ["vegetarian", "baked", "holiday", "comfort-food"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 8, "unit": "pcs", "note": "medium, even-sized" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Fresh Thyme", "quantity": 4, "unit": "sprig" },
+        { "product": "Parmesan", "quantity": 40, "unit": "g", "note": "finely grated" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "potato-dauphinoise",
+      "name": "Potato Dauphinoise",
+      "category": "Side Dishes",
+      "description": "Layers of thin potato slices baked slowly in garlic-infused cream under a golden Gruyère crust.",
+      "instructions": [
+        "Preheat the oven to 160°C and butter a deep baking dish.",
+        "Peel the potatoes and slice them 3 mm thick with a mandoline or sharp knife.",
+        "Bring the cream, milk, crushed garlic, nutmeg, salt and white pepper to a simmer in a wide pan.",
+        "Add the potato slices and simmer gently for 10 minutes, stirring now and then so they do not stick.",
+        "Transfer to the dish, level the top and scatter over the grated cheese.",
+        "Bake for 60-65 minutes until the potatoes are tender and the top is deeply golden; rest 10 minutes before serving."
+      ],
+      "prepTime": 20,
+      "cookTime": 75,
+      "servings": 6,
+      "tags": ["french", "vegetarian", "baked", "comfort-food"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 1.2, "unit": "kg", "note": "waxy variety" },
+        { "product": "Heavy Cream", "quantity": 300, "unit": "ml" },
+        { "product": "Milk", "quantity": 200, "unit": "ml" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Emmental", "name": "Gruyère", "quantity": 100, "unit": "g", "note": "grated" },
+        { "product": "Butter", "quantity": 20, "unit": "g", "note": "for the dish" },
+        { "product": "Nutmeg", "quantity": 1, "unit": "pinch" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "White Pepper", "quantity": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "cartofi-taranesti",
+      "name": "Cartofi Țărănești (Country-Style Potatoes with Smoked Bacon)",
+      "category": "Side Dishes",
+      "description": "Romanian pan-fried potatoes with smoky bacon, onion, garlic and sweet paprika, finished with parsley.",
+      "instructions": [
+        "Boil the potatoes in their skins for 15 minutes until just tender, then cool, peel and cut into thick slices.",
+        "Dice the bacon and fry it in the oil in a large pan over medium heat until the fat renders and it turns golden.",
+        "Add the chopped onion and cook for 5 minutes until soft.",
+        "Add the potato slices in a single layer and fry without stirring too often until browned on both sides.",
+        "Stir in the crushed garlic and paprika, cook for 1 minute, then season with salt and pepper.",
+        "Scatter with chopped parsley and serve hot."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["romanian", "comfort-food", "budget"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 1, "unit": "kg" },
+        { "product": "Smoked Bacon", "quantity": 150, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "cartofi-natur-cu-marar",
+      "name": "Cartofi Natur cu Mărar (Buttered Potatoes with Dill)",
+      "category": "Side Dishes",
+      "description": "Simple boiled potatoes tossed in melted butter and a generous handful of fresh dill.",
+      "instructions": [
+        "Peel the potatoes and cut any large ones in half so they are all a similar size.",
+        "Cook in boiling salted water for 18-20 minutes until tender, then drain well.",
+        "Return the potatoes to the hot pot, add the butter and shake gently to coat.",
+        "Scatter over the chopped dill, season with salt and serve warm."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "quick", "gluten-free"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 1, "unit": "kg", "note": "small or new potatoes" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "crispy-sweet-potato-fries",
+      "name": "Crispy Sweet Potato Fries",
+      "category": "Side Dishes",
+      "description": "Oven-baked sweet potato batons dusted with cornstarch and smoked paprika for extra crunch.",
+      "instructions": [
+        "Preheat the oven to 220°C and line two baking trays with baking paper.",
+        "Peel the sweet potatoes and cut into 1 cm thick sticks; pat them very dry.",
+        "Toss with the cornstarch until lightly coated, then add the oil, smoked paprika, garlic powder and salt.",
+        "Spread out in a single layer with space between the fries.",
+        "Bake for 15 minutes, flip, and bake 12-15 minutes more until crisp at the edges; cool 5 minutes before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["vegan", "baked", "gluten-free", "kid-friendly"],
+      "ingredients": [
+        { "product": "Sweet Potatoes", "quantity": 800, "unit": "g" },
+        { "product": "Cornstarch", "quantity": 2, "unit": "tbsp" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Garlic Powder", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "mamaliga",
+      "name": "Mămăligă (Romanian Polenta)",
+      "category": "Side Dishes",
+      "description": "Golden cornmeal porridge stirred until thick, the classic Romanian partner for stews, cheese and sour cream.",
+      "instructions": [
+        "Bring the water and salt to a rolling boil in a heavy pot.",
+        "Pour the cornmeal in a thin steady stream while whisking constantly to prevent lumps.",
+        "Reduce the heat to low and cook for 25-30 minutes, stirring often with a wooden spoon, until it pulls away from the sides.",
+        "Stir in the butter, then turn out onto a board or into a bowl.",
+        "Let it set for 2 minutes and cut into wedges with a string or knife."
+      ],
+      "prepTime": 5,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "gluten-free", "budget"],
+      "ingredients": [
+        { "product": "Cornmeal", "quantity": 300, "unit": "g" },
+        { "product": "Water", "quantity": 1.2, "unit": "l" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Butter", "quantity": 30, "unit": "g" }
+      ]
+    },
+    {
+      "key": "varza-calita",
+      "name": "Varză Călită (Romanian Braised Cabbage)",
+      "category": "Side Dishes",
+      "description": "Shredded cabbage slowly braised with onion, tomato paste, thyme and dill until sweet and silky.",
+      "instructions": [
+        "Remove the outer leaves and core from the cabbage, then shred it finely.",
+        "Soften the chopped onions in the oil in a large pot over medium heat for 8 minutes.",
+        "Add the cabbage in batches with a pinch of salt, stirring until it wilts enough to fit.",
+        "Stir in the tomato paste, thyme, dill and bay leaves, and add a splash of water.",
+        "Cover and braise over low heat for 45-50 minutes, stirring occasionally, until very tender and lightly caramelised.",
+        "Season with salt and plenty of black pepper before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 60,
+      "servings": 6,
+      "tags": ["romanian", "vegan", "budget", "one-pot"],
+      "ingredients": [
+        { "product": "Cabbage", "quantity": 1, "unit": "head", "note": "about 1.5 kg" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Sunflower Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Tomato Paste", "quantity": 2, "unit": "tbsp" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Dried Dill", "quantity": 1, "unit": "tsp" },
+        { "product": "Bay Leaf", "quantity": 2, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste, be generous" }
+      ]
+    },
+    {
+      "key": "fasole-batuta",
+      "name": "Fasole Bătută (Romanian White Bean Purée)",
+      "category": "Side Dishes",
+      "description": "Smooth white bean purée beaten with garlic and oil, topped with sweet caramelised paprika onions.",
+      "instructions": [
+        "Soak the beans overnight, then drain and boil in fresh water with the bay leaves for 60-90 minutes until very soft.",
+        "Drain, reserving a cup of the cooking liquid, and discard the bay leaves.",
+        "Blend the beans with the crushed garlic, half the oil and a little cooking liquid until smooth and creamy; season with salt.",
+        "Slice the onions thinly and fry slowly in the remaining oil for 15 minutes until golden and sweet.",
+        "Stir the paprika into the onions off the heat.",
+        "Spread the purée in a dish and spoon the paprika onions on top."
+      ],
+      "prepTime": 15,
+      "cookTime": 90,
+      "servings": 6,
+      "tags": ["romanian", "vegan", "budget", "high-protein"],
+      "ingredients": [
+        { "product": "Dried Beans", "quantity": 400, "unit": "g", "note": "soaked overnight" },
+        { "product": "Onion", "quantity": 3, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Sunflower Oil", "quantity": 100, "unit": "ml" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Bay Leaf", "quantity": 2, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mancare-de-spanac",
+      "name": "Mâncare de Spanac (Romanian Garlicky Spinach)",
+      "category": "Side Dishes",
+      "description": "Wilted spinach bound in a light milk and flour sauce with plenty of garlic, a Romanian spring staple.",
+      "instructions": [
+        "Wash the spinach well, blanch in boiling salted water for 1 minute, drain and chop roughly.",
+        "Soften the finely chopped onion in the oil over medium heat for 5 minutes.",
+        "Sprinkle in the flour and stir for 1 minute, then gradually whisk in the milk to make a smooth sauce.",
+        "Add the spinach and crushed garlic and simmer for 8-10 minutes, stirring, until thick.",
+        "Season with salt and pepper; serve warm, traditionally with a fried egg on top."
+      ],
+      "prepTime": 15,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "healthy", "budget"],
+      "ingredients": [
+        { "product": "Spinach", "quantity": 1, "unit": "kg" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Sunflower Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Flour", "quantity": 2, "unit": "tbsp" },
+        { "product": "Milk", "quantity": 200, "unit": "ml" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "muraturi-rapide",
+      "name": "Murături Rapide (Quick Pickled Vegetables)",
+      "category": "Side Dishes",
+      "description": "Crunchy cucumber, carrot and cauliflower in a sweet-sour brine with garlic and mustard seeds, ready in a day.",
+      "instructions": [
+        "Cut the cucumbers into spears, the carrots into sticks and the cauliflower into small florets.",
+        "Pack the vegetables tightly into clean jars with the peeled garlic cloves and bay leaves.",
+        "Bring the water, vinegar, sugar, salt and mustard seeds to a boil, stirring to dissolve.",
+        "Pour the hot brine over the vegetables to cover them completely.",
+        "Seal, cool to room temperature and refrigerate for at least 24 hours before eating; keeps 2 weeks."
+      ],
+      "prepTime": 20,
+      "cookTime": 5,
+      "servings": 8,
+      "tags": ["romanian", "vegan", "meal-prep", "healthy"],
+      "ingredients": [
+        { "product": "Cucumber", "quantity": 2, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Cauliflower", "quantity": 0.5, "unit": "head" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Water", "quantity": 500, "unit": "ml" },
+        { "product": "Vinegar", "quantity": 250, "unit": "ml" },
+        { "product": "Sugar", "quantity": 30, "unit": "g" },
+        { "product": "Salt", "quantity": 1.5, "unit": "tbsp" },
+        { "product": "Mustard Seeds", "quantity": 1, "unit": "tsp" },
+        { "product": "Bay Leaf", "quantity": 2, "unit": "pcs" }
+      ]
+    },
+    {
+      "key": "sote-de-ciuperci",
+      "name": "Sote de Ciuperci (Garlic Mushroom Sauté)",
+      "category": "Side Dishes",
+      "description": "Mushrooms seared in butter until golden, then tossed with garlic and a shower of parsley.",
+      "instructions": [
+        "Wipe the mushrooms clean and halve or quarter them depending on size.",
+        "Heat the oil and butter in a large pan over high heat until foaming.",
+        "Add the mushrooms in a single layer and leave undisturbed for 3 minutes so they brown, then stir and cook 5 minutes more.",
+        "Add the crushed garlic and cook for 1 minute until fragrant.",
+        "Season with salt and pepper, stir in the chopped parsley and serve."
+      ],
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "quick", "low-carb"],
+      "ingredients": [
+        { "product": "Mushrooms", "quantity": 600, "unit": "g" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Sunflower Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "dovlecei-pane",
+      "name": "Dovlecei Pane (Breaded Fried Zucchini)",
+      "category": "Side Dishes",
+      "description": "Zucchini rounds coated in flour, egg and breadcrumbs, fried golden and served with cool sour cream.",
+      "instructions": [
+        "Slice the zucchini into 1 cm rounds, salt them lightly and leave 10 minutes, then pat dry.",
+        "Set up three plates: flour seasoned with salt and pepper, beaten eggs, and breadcrumbs.",
+        "Coat each slice in flour, dip in egg, then press into the breadcrumbs.",
+        "Heat the oil in a wide pan over medium heat and fry the slices in batches for 2-3 minutes per side until golden.",
+        "Drain on paper towels and serve warm with sour cream."
+      ],
+      "prepTime": 15,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "summer", "kid-friendly"],
+      "ingredients": [
+        { "product": "Zucchini", "quantity": 3, "unit": "pcs" },
+        { "product": "Flour", "quantity": 100, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Breadcrumbs", "quantity": 150, "unit": "g" },
+        { "product": "Sunflower Oil", "quantity": 150, "unit": "ml", "note": "for frying" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g", "note": "for serving" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "conopida-pane",
+      "name": "Conopidă Pane (Breaded Cauliflower)",
+      "category": "Side Dishes",
+      "description": "Tender cauliflower florets in a crisp paprika breadcrumb crust, fried until golden brown.",
+      "instructions": [
+        "Break the cauliflower into medium florets and boil in salted water for 5 minutes; drain and cool slightly.",
+        "Mix the breadcrumbs with the paprika; season the flour with salt and pepper; beat the eggs in a bowl.",
+        "Roll each floret in flour, dip in egg and coat well in the breadcrumbs.",
+        "Heat the oil in a deep pan over medium heat and fry the florets in batches for 3-4 minutes, turning, until golden.",
+        "Drain on paper towels, sprinkle with a little salt and serve hot."
+      ],
+      "prepTime": 15,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "kid-friendly", "comfort-food"],
+      "ingredients": [
+        { "product": "Cauliflower", "quantity": 1, "unit": "head" },
+        { "product": "Flour", "quantity": 100, "unit": "g" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Breadcrumbs", "quantity": 150, "unit": "g" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Sunflower Oil", "quantity": 150, "unit": "ml", "note": "for frying" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "fasole-verde-cu-usturoi",
+      "name": "Fasole Verde cu Usturoi (Green Beans with Garlic)",
+      "category": "Side Dishes",
+      "description": "Blanched green beans tossed with raw garlic, oil, dill and a splash of vinegar, served warm or cold.",
+      "instructions": [
+        "Trim the green beans and cook in boiling salted water for 6-8 minutes until tender but still bright.",
+        "Drain and rinse briefly under cold water to stop the cooking.",
+        "Crush the garlic with a pinch of salt and whisk with the oil and vinegar.",
+        "Toss the warm beans with the garlic dressing and the chopped dill.",
+        "Taste for salt and serve warm or at room temperature."
+      ],
+      "prepTime": 10,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "healthy", "quick"],
+      "ingredients": [
+        { "product": "Green Beans", "quantity": 600, "unit": "g" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Sunflower Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mazare-sote",
+      "name": "Mazăre Sote (Buttered Peas with Dill)",
+      "category": "Side Dishes",
+      "description": "Sweet green peas simmered briefly with soft onion and butter, finished with fresh dill.",
+      "instructions": [
+        "Melt the butter in a saucepan and soften the finely chopped onion for 5 minutes without browning.",
+        "Add the peas and the broth, bring to a simmer and cook for 6-8 minutes until the peas are tender.",
+        "Let most of the liquid bubble away so the peas are glossy, not soupy.",
+        "Season with salt and pepper and stir in the chopped dill just before serving."
+      ],
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "quick", "kid-friendly"],
+      "ingredients": [
+        { "product": "Frozen Peas", "quantity": 500, "unit": "g" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Vegetable Broth", "quantity": 100, "unit": "ml" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "zacusca-de-casa",
+      "name": "Zacuscă de Casă (Roasted Eggplant and Pepper Spread)",
+      "category": "Side Dishes",
+      "description": "Slow-cooked spread of roasted eggplant, kapia peppers and onion in tomato, Romania's autumn pantry classic.",
+      "instructions": [
+        "Roast the eggplants and peppers over a flame or under a hot grill until the skins are blackened; cover and let steam 15 minutes.",
+        "Peel both, drain the eggplants well and chop everything finely.",
+        "Cook the finely chopped onions in the oil in a large heavy pot over medium heat for 15 minutes until soft and golden.",
+        "Add the peppers, eggplant, tomato paste, bay leaves, sugar, salt and pepper.",
+        "Simmer uncovered over low heat for 60-90 minutes, stirring often, until thick and the oil rises to the surface.",
+        "Remove the bay leaves, spoon into sterilised jars and seal while hot."
+      ],
+      "prepTime": 45,
+      "cookTime": 120,
+      "servings": 8,
+      "tags": ["romanian", "vegan", "meal-prep", "baked"],
+      "ingredients": [
+        { "product": "Eggplant", "quantity": 2, "unit": "kg" },
+        { "product": "Kapia Peppers", "quantity": 1.5, "unit": "kg" },
+        { "product": "Onion", "quantity": 1, "unit": "kg" },
+        { "product": "Sunflower Oil", "quantity": 250, "unit": "ml" },
+        { "product": "Tomato Paste", "quantity": 200, "unit": "g" },
+        { "product": "Bay Leaf", "quantity": 3, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 2, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tbsp" },
+        { "product": "Black Pepper", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "honey-roasted-carrots-thyme",
+      "name": "Honey-Roasted Carrots with Thyme",
+      "category": "Side Dishes",
+      "description": "Whole carrots roasted until caramelised at the edges in honey, olive oil and fresh thyme.",
+      "instructions": [
+        "Preheat the oven to 200°C.",
+        "Peel the carrots and halve lengthways any that are thick so they cook evenly.",
+        "Toss with the olive oil, honey, thyme leaves, salt and pepper on a baking tray.",
+        "Roast for 25-30 minutes, turning halfway, until tender and sticky at the edges."
+      ],
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["vegetarian", "baked", "holiday", "gluten-free"],
+      "ingredients": [
+        { "product": "Carrots", "quantity": 800, "unit": "g" },
+        { "product": "Honey", "quantity": 2, "unit": "tbsp" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Fresh Thyme", "quantity": 4, "unit": "sprig" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "roasted-broccoli-garlic-lemon",
+      "name": "Roasted Broccoli with Garlic and Lemon",
+      "category": "Side Dishes",
+      "description": "High-heat roasted broccoli with crispy charred tips, sliced garlic, chili flakes and lemon zest.",
+      "instructions": [
+        "Preheat the oven to 220°C.",
+        "Cut the broccoli into even florets and toss with the olive oil, sliced garlic, chili flakes and salt.",
+        "Spread on a baking tray in a single layer, cut sides down.",
+        "Roast for 18-20 minutes until the edges are crisp and lightly charred.",
+        "Grate over the lemon zest, squeeze over the juice and serve."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["vegan", "healthy", "quick", "low-carb"],
+      "ingredients": [
+        { "product": "Broccoli", "quantity": 2, "unit": "head" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove", "note": "thinly sliced" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs", "note": "zest and juice" },
+        { "product": "Chili Flakes", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "spiced-roasted-cauliflower",
+      "name": "Spiced Roasted Cauliflower",
+      "category": "Side Dishes",
+      "description": "Cauliflower florets roasted in cumin, turmeric and smoked paprika until golden, finished with lemon and parsley.",
+      "instructions": [
+        "Preheat the oven to 210°C.",
+        "Cut the cauliflower into bite-sized florets.",
+        "Mix the olive oil with the cumin, turmeric, smoked paprika and salt, and toss the florets in it until well coated.",
+        "Spread on a baking tray and roast for 25-30 minutes, turning once, until golden and tender with crisp edges.",
+        "Squeeze over the lemon juice and scatter with chopped parsley."
+      ],
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["vegan", "middle-eastern", "baked", "low-carb"],
+      "ingredients": [
+        { "product": "Cauliflower", "quantity": 1, "unit": "head" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Turmeric", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "grilled-zucchini-mint-lemon",
+      "name": "Grilled Zucchini with Mint and Lemon",
+      "category": "Side Dishes",
+      "description": "Charred zucchini ribbons dressed with olive oil, lemon, garlic and torn fresh mint.",
+      "instructions": [
+        "Slice the zucchini lengthways into 5 mm ribbons and brush lightly with a little of the olive oil.",
+        "Heat a grill pan over high heat and grill the slices for 2-3 minutes per side until marked and tender.",
+        "Whisk the remaining olive oil with the lemon juice, finely grated garlic, salt and pepper.",
+        "Layer the warm zucchini on a platter, spoon over the dressing and scatter with torn mint leaves.",
+        "Rest 10 minutes to let the flavours soak in before serving."
+      ],
+      "prepTime": 10,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["vegan", "grilled", "summer", "mediterranean"],
+      "ingredients": [
+        { "product": "Zucchini", "quantity": 4, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Mint", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "roasted-beetroot-balsamic-walnuts",
+      "name": "Roasted Beetroot with Balsamic and Walnuts",
+      "category": "Side Dishes",
+      "description": "Sweet roasted beetroot wedges glazed in balsamic vinegar and thyme, topped with toasted walnuts.",
+      "instructions": [
+        "Preheat the oven to 200°C.",
+        "Peel the beetroot and cut into wedges; toss with the olive oil, thyme leaves, salt and pepper.",
+        "Spread on a baking tray, cover with foil and roast for 30 minutes.",
+        "Uncover, drizzle with the balsamic vinegar and roast 15-20 minutes more until tender and glossy.",
+        "Toast the walnuts in a dry pan for 3 minutes, chop roughly and scatter over the beetroot."
+      ],
+      "prepTime": 15,
+      "cookTime": 50,
+      "servings": 4,
+      "tags": ["vegan", "baked", "healthy", "winter"],
+      "ingredients": [
+        { "product": "Beetroot", "quantity": 6, "unit": "pcs", "note": "medium" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Balsamic Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Fresh Thyme", "quantity": 3, "unit": "sprig" },
+        { "product": "Walnuts", "quantity": 50, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "roasted-pumpkin-sage-garlic",
+      "name": "Roasted Pumpkin with Sage and Garlic",
+      "category": "Side Dishes",
+      "description": "Caramelised pumpkin chunks roasted with whole garlic cloves and crisp sage, finished with pumpkin seeds.",
+      "instructions": [
+        "Preheat the oven to 200°C.",
+        "Cut the pumpkin into 3 cm chunks, leaving the skin on if it is thin.",
+        "Toss with the olive oil, unpeeled garlic cloves, salt and pepper and spread on a baking tray.",
+        "Roast for 25 minutes, then add the sage leaves and pumpkin seeds and roast 8-10 minutes more until the pumpkin is tender and the sage crisp.",
+        "Squeeze the soft garlic from its skins over the pumpkin before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["vegan", "baked", "winter", "healthy"],
+      "ingredients": [
+        { "product": "Pumpkin", "quantity": 1, "unit": "kg" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove", "note": "unpeeled" },
+        { "product": "Fresh Sage", "quantity": 8, "unit": "leaf" },
+        { "product": "Pumpkin Seeds", "quantity": 30, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "roasted-brussels-sprouts-bacon",
+      "name": "Roasted Brussels Sprouts with Bacon",
+      "category": "Side Dishes",
+      "description": "Halved sprouts roasted with bacon until crisp and caramelised, finished with a drizzle of balsamic glaze.",
+      "instructions": [
+        "Preheat the oven to 210°C.",
+        "Trim the sprouts, halve them and toss with the olive oil, salt and pepper.",
+        "Spread cut side down on a baking tray and scatter over the chopped bacon.",
+        "Roast for 25-30 minutes, shaking the tray once, until the sprouts are browned and the bacon is crisp.",
+        "Drizzle with balsamic glaze and serve hot."
+      ],
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["baked", "holiday", "low-carb", "winter"],
+      "ingredients": [
+        { "product": "Brussels Sprouts", "quantity": 600, "unit": "g" },
+        { "product": "Bacon", "quantity": 120, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Balsamic Glaze", "quantity": 1, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "braised-red-cabbage-apples",
+      "name": "Braised Red Cabbage with Apples",
+      "category": "Side Dishes",
+      "description": "Sweet-sour red cabbage slow-cooked with apple, cider vinegar, brown sugar and warm spices.",
+      "instructions": [
+        "Quarter the cabbage, remove the core and shred finely; peel, core and dice the apples.",
+        "Melt the butter in a large pot and soften the sliced red onion for 5 minutes.",
+        "Add the cabbage, apples, vinegar, brown sugar, cloves, bay leaf and a good pinch of salt; stir well.",
+        "Cover and cook over low heat for 60-75 minutes, stirring occasionally, until the cabbage is very tender.",
+        "Remove the cloves and bay leaf, taste and adjust with more salt or vinegar."
+      ],
+      "prepTime": 15,
+      "cookTime": 75,
+      "servings": 6,
+      "tags": ["vegetarian", "winter", "holiday", "one-pot"],
+      "ingredients": [
+        { "product": "Red Cabbage", "quantity": 1, "unit": "head" },
+        { "product": "Apples", "quantity": 2, "unit": "pcs" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Apple Cider Vinegar", "quantity": 3, "unit": "tbsp" },
+        { "product": "Brown Sugar", "quantity": 30, "unit": "g" },
+        { "product": "Cloves", "quantity": 3, "unit": "pcs" },
+        { "product": "Bay Leaf", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "steakhouse-creamed-spinach",
+      "name": "Steakhouse Creamed Spinach",
+      "category": "Side Dishes",
+      "description": "Rich spinach folded into a nutmeg-scented cream sauce with Parmesan, the classic steak companion.",
+      "instructions": [
+        "Wilt the spinach in a large pan over high heat, drain in a colander and squeeze out as much liquid as possible; chop roughly.",
+        "Melt the butter in the same pan, add the crushed garlic and cook 1 minute.",
+        "Stir in the flour and cook for 1 minute, then whisk in the milk and cream until smooth and thickened.",
+        "Add the spinach, Parmesan and nutmeg and heat through for 3-4 minutes.",
+        "Season with salt and pepper and serve hot."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["american", "vegetarian", "comfort-food", "low-carb"],
+      "ingredients": [
+        { "product": "Spinach", "quantity": 800, "unit": "g" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Flour", "quantity": 2, "unit": "tbsp" },
+        { "product": "Milk", "quantity": 250, "unit": "ml" },
+        { "product": "Heavy Cream", "quantity": 100, "unit": "ml" },
+        { "product": "Parmesan", "quantity": 40, "unit": "g" },
+        { "product": "Nutmeg", "quantity": 1, "unit": "pinch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "brown-sugar-glazed-carrots",
+      "name": "Brown Sugar Glazed Carrots",
+      "category": "Side Dishes",
+      "description": "Stovetop carrot coins simmered in butter and brown sugar until glossy, with a scatter of parsley.",
+      "instructions": [
+        "Peel the carrots and slice into 1 cm coins.",
+        "Put the carrots, butter, brown sugar, water and a pinch of salt in a wide pan.",
+        "Bring to a boil, cover and simmer for 8 minutes until almost tender.",
+        "Uncover and cook over high heat for 5-6 minutes, shaking the pan, until the liquid reduces to a shiny glaze.",
+        "Sprinkle with chopped parsley and serve."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["vegetarian", "kid-friendly", "quick", "gluten-free"],
+      "ingredients": [
+        { "product": "Carrots", "quantity": 700, "unit": "g" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Brown Sugar", "quantity": 30, "unit": "g" },
+        { "product": "Water", "quantity": 150, "unit": "ml" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "a pinch" }
+      ]
+    },
+    {
+      "key": "cheesy-garlic-bread",
+      "name": "Cheesy Garlic Bread",
+      "category": "Side Dishes",
+      "description": "A baguette slathered with garlic-parsley butter and Parmesan, baked until crunchy and golden.",
+      "instructions": [
+        "Preheat the oven to 200°C.",
+        "Mash the softened butter with the crushed garlic, chopped parsley, Parmesan and a pinch of salt.",
+        "Cut the baguette into thick slices without cutting all the way through the base.",
+        "Spread the garlic butter generously between the slices and over the top.",
+        "Wrap loosely in foil and bake for 10 minutes, then open the foil and bake 5 minutes more until crisp."
+      ],
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 6,
+      "tags": ["italian", "vegetarian", "quick", "kid-friendly"],
+      "ingredients": [
+        { "product": "Baguette", "quantity": 1, "unit": "pcs" },
+        { "product": "Butter", "quantity": 100, "unit": "g", "note": "softened" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Parmesan", "quantity": 40, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "yorkshire-puddings",
+      "name": "Yorkshire Puddings",
+      "category": "Side Dishes",
+      "description": "Tall, crisp, hollow batter puddings baked in smoking-hot oil, essential alongside a roast and gravy.",
+      "instructions": [
+        "Whisk the flour, eggs, milk and salt into a smooth batter and rest it for at least 30 minutes.",
+        "Preheat the oven to 230°C and pour a little oil into each cup of a 12-hole muffin tin.",
+        "Heat the tin in the oven for 10 minutes until the oil is smoking hot.",
+        "Quickly pour the batter into the cups, filling each about halfway, and return to the oven immediately.",
+        "Bake for 20-25 minutes without opening the door until puffed, deep golden and crisp; serve at once."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 6,
+      "tags": ["baked", "holiday", "vegetarian", "budget"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 140, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Milk", "quantity": 200, "unit": "ml" },
+        { "product": "Vegetable Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "corn-on-the-cob-chili-lime-butter",
+      "name": "Corn on the Cob with Chili-Lime Butter",
+      "category": "Side Dishes",
+      "description": "Sweet corn cobs boiled or grilled and rolled in zesty chili-lime butter with fresh coriander.",
+      "instructions": [
+        "Mash the softened butter with the lime zest, lime juice, chili powder and salt.",
+        "Husk the corn and boil in unsalted water for 8-10 minutes, or grill over high heat for 10 minutes, turning, until charred in spots.",
+        "Spread the chili-lime butter over the hot cobs so it melts and coats them.",
+        "Scatter with chopped coriander and serve with extra lime wedges."
+      ],
+      "prepTime": 10,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["mexican", "vegetarian", "summer", "grilled"],
+      "ingredients": [
+        { "product": "Corn", "quantity": 4, "unit": "pcs" },
+        { "product": "Butter", "quantity": 60, "unit": "g", "note": "softened" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs", "note": "zest and juice" },
+        { "product": "Chili Powder", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "homemade-smoky-baked-beans",
+      "name": "Homemade Smoky Baked Beans",
+      "category": "Side Dishes",
+      "description": "White beans simmered in a smoky, tangy tomato sauce with brown sugar and mustard, far better than the tin.",
+      "instructions": [
+        "Soften the finely chopped onion in the olive oil in a saucepan over medium heat for 6 minutes, then add the garlic for 1 minute.",
+        "Stir in the tomato sauce, brown sugar, mustard, smoked paprika and vinegar and bring to a simmer.",
+        "Drain and rinse the beans and add them to the sauce.",
+        "Simmer gently, uncovered, for 25-30 minutes, stirring now and then, until thick and glossy.",
+        "Season with salt and serve hot on toast or alongside eggs and sausages."
+      ],
+      "prepTime": 10,
+      "cookTime": 40,
+      "servings": 4,
+      "tags": ["american", "vegan", "budget", "one-pot"],
+      "ingredients": [
+        { "product": "Canned Beans", "name": "Cannellini beans", "quantity": 2, "unit": "can" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Tomato Sauce", "quantity": 400, "unit": "ml" },
+        { "product": "Brown Sugar", "quantity": 30, "unit": "g" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Apple Cider Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "crispy-polenta-fries-parmesan",
+      "name": "Crispy Polenta Fries with Parmesan",
+      "category": "Side Dishes",
+      "description": "Set polenta cut into batons and baked until golden and crunchy, dusted with Parmesan and rosemary.",
+      "instructions": [
+        "Bring the water and salt to a boil and whisk in the cornmeal; cook over low heat for 25 minutes, stirring often.",
+        "Beat in the butter and half the Parmesan, then spread 2 cm thick in an oiled tray and chill for at least 1 hour until firm.",
+        "Preheat the oven to 220°C and line a baking tray with baking paper.",
+        "Cut the set polenta into thick fries, brush with olive oil and sprinkle with rosemary.",
+        "Bake for 30-35 minutes, turning once, until golden and crisp; toss with the remaining Parmesan before serving."
+      ],
+      "prepTime": 20,
+      "cookTime": 60,
+      "servings": 4,
+      "tags": ["italian", "vegetarian", "baked", "gluten-free"],
+      "ingredients": [
+        { "product": "Cornmeal", "quantity": 250, "unit": "g" },
+        { "product": "Water", "quantity": 1, "unit": "l" },
+        { "product": "Parmesan", "quantity": 50, "unit": "g" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Dried Rosemary", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "crispy-onion-rings",
+      "name": "Crispy Onion Rings",
+      "category": "Side Dishes",
+      "description": "Thick onion rings in a crunchy paprika breadcrumb coating, deep-fried until golden brown.",
+      "instructions": [
+        "Peel the onions, slice into 1 cm rings and separate them.",
+        "Set up three bowls: flour mixed with paprika and salt, eggs beaten with the milk, and breadcrumbs.",
+        "Dust each ring in flour, dip in the egg mixture, then coat in breadcrumbs, pressing to stick.",
+        "Heat the oil in a deep pan to 180°C and fry the rings in batches for 2-3 minutes until golden.",
+        "Drain on paper towels, sprinkle with salt and serve hot."
+      ],
+      "prepTime": 20,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["american", "vegetarian", "kid-friendly", "comfort-food"],
+      "ingredients": [
+        { "product": "Onion", "quantity": 3, "unit": "pcs", "note": "large" },
+        { "product": "Flour", "quantity": 150, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Milk", "quantity": 150, "unit": "ml" },
+        { "product": "Breadcrumbs", "quantity": 200, "unit": "g" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Vegetable Oil", "quantity": 500, "unit": "ml", "note": "for deep-frying" }
+      ]
+    },
+    {
+      "key": "caramelised-onions",
+      "name": "Caramelised Onions",
+      "category": "Side Dishes",
+      "description": "Onions cooked low and slow in butter until deeply golden and jammy, finished with balsamic and thyme.",
+      "instructions": [
+        "Peel and thinly slice the onions.",
+        "Heat the butter and olive oil in a wide heavy pan over medium-low heat and add the onions with the salt.",
+        "Cook for 35-40 minutes, stirring every few minutes and scraping the bottom, until soft and deep golden brown.",
+        "Stir in the brown sugar, balsamic vinegar and thyme leaves and cook 5 minutes more until sticky.",
+        "Serve warm, or cool and keep refrigerated for up to a week."
+      ],
+      "prepTime": 10,
+      "cookTime": 45,
+      "servings": 4,
+      "tags": ["vegetarian", "meal-prep", "budget", "gluten-free"],
+      "ingredients": [
+        { "product": "Onion", "quantity": 6, "unit": "pcs", "note": "large" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Brown Sugar", "quantity": 15, "unit": "g" },
+        { "product": "Balsamic Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Fresh Thyme", "quantity": 2, "unit": "sprig" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "creamy-cauliflower-mash",
+      "name": "Creamy Cauliflower Mash",
+      "category": "Side Dishes",
+      "description": "Silky low-carb mash of steamed cauliflower blended with garlic, cream cheese and Parmesan.",
+      "instructions": [
+        "Cut the cauliflower into florets and steam or boil with the garlic cloves for 12-15 minutes until very tender.",
+        "Drain thoroughly and let it sit in the colander for 2 minutes so excess water evaporates.",
+        "Blend the cauliflower and garlic with the butter, cream cheese and Parmesan until smooth.",
+        "Season with salt and white pepper and serve hot."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["low-carb", "vegetarian", "gluten-free", "healthy"],
+      "ingredients": [
+        { "product": "Cauliflower", "quantity": 1, "unit": "head", "note": "large" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Cream Cheese", "quantity": 60, "unit": "g" },
+        { "product": "Parmesan", "quantity": 30, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "White Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "green-beans-almondine",
+      "name": "Green Beans Almondine",
+      "category": "Side Dishes",
+      "description": "Crisp-tender green beans tossed in nutty browned butter with toasted almonds, shallot and lemon.",
+      "instructions": [
+        "Trim the beans and cook in boiling salted water for 5 minutes until crisp-tender; drain and refresh in cold water.",
+        "Melt the butter in a large pan over medium heat and toast the almonds for 2-3 minutes until golden.",
+        "Add the finely chopped shallot and cook for 1 minute.",
+        "Add the beans and toss for 2 minutes until hot and coated in butter.",
+        "Squeeze over the lemon juice, season with salt and pepper and serve."
+      ],
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["french", "vegetarian", "quick", "holiday"],
+      "ingredients": [
+        { "product": "Green Beans", "quantity": 500, "unit": "g" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Almonds", "name": "Flaked almonds", "quantity": 50, "unit": "g" },
+        { "product": "Shallots", "quantity": 1, "unit": "pcs" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "minted-pea-puree",
+      "name": "Minted Pea Purée",
+      "category": "Side Dishes",
+      "description": "Bright green pea purée blitzed with butter, fresh mint, a splash of cream and lemon.",
+      "instructions": [
+        "Cook the peas in boiling salted water for 3-4 minutes until tender, then drain.",
+        "Blend the hot peas with the butter, mint leaves and cream until smooth, leaving a little texture if you like.",
+        "Add a squeeze of lemon juice and season with salt and pepper.",
+        "Return to the pan to warm through gently before serving."
+      ],
+      "prepTime": 5,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["vegetarian", "quick", "kid-friendly", "healthy"],
+      "ingredients": [
+        { "product": "Frozen Peas", "quantity": 500, "unit": "g" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Fresh Mint", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Cooking Cream", "quantity": 80, "unit": "ml" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "sage-and-onion-stuffing",
+      "name": "Sage and Onion Stuffing",
+      "category": "Side Dishes",
+      "description": "Buttery bread stuffing with soft onion, celery and fresh sage, baked until crisp on top and moist inside.",
+      "instructions": [
+        "Preheat the oven to 180°C and butter a baking dish.",
+        "Tear the bread into small pieces and spread on a tray to dry out for 10 minutes in the oven.",
+        "Melt the butter in a pan and cook the chopped onions and celery for 8-10 minutes until soft.",
+        "Toss the bread with the onion mixture, chopped sage and parsley, salt and pepper.",
+        "Beat the egg into the broth, pour over the bread and mix gently until everything is moistened.",
+        "Spoon into the dish and bake for 35-40 minutes until golden and crisp on top."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 6,
+      "tags": ["holiday", "baked", "comfort-food", "american"],
+      "ingredients": [
+        { "product": "Bread", "name": "Day-old bread", "quantity": 10, "unit": "slice" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Butter", "quantity": 80, "unit": "g" },
+        { "product": "Fresh Sage", "quantity": 8, "unit": "leaf" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Chicken Broth", "quantity": 250, "unit": "ml" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    }
+  ],
+  "newProducts": []
+}

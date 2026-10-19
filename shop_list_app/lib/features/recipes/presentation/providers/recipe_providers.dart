@@ -3,17 +3,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/core/error/failures.dart';
 import 'package:shop_list_app/core/providers/core_providers.dart';
 import 'package:shop_list_app/features/pantry/presentation/providers/pantry_providers.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
 import 'package:shop_list_app/features/recipes/data/repositories/recipe_repository.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/domain/repositories/i_recipe_repository.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/delete_recipe_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/find_recipes_by_pantry_use_case.dart';
-import 'package:shop_list_app/features/recipes/domain/usecases/fix_recipe_categories_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/get_all_recipes_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/get_recipe_by_id_use_case.dart';
+import 'package:shop_list_app/features/recipes/domain/usecases/get_recipe_categories_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/save_recipe_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/scale_recipe_use_case.dart';
 import 'package:shop_list_app/features/recipes/domain/usecases/search_recipes_use_case.dart';
+import 'package:shop_list_app/features/recipes/domain/usecases/toggle_favorite_recipe_use_case.dart';
 
 // ── Infrastructure ────────────────────────────────────────────────────────────
 
@@ -32,7 +34,10 @@ final getRecipeByIdUseCaseProvider = Provider<GetRecipeByIdUseCase>((ref) {
 });
 
 final saveRecipeUseCaseProvider = Provider<SaveRecipeUseCase>((ref) {
-  return SaveRecipeUseCase(ref.watch(recipeRepositoryProvider));
+  return SaveRecipeUseCase(
+    ref.watch(recipeRepositoryProvider),
+    ref.watch(productRepositoryProvider),
+  );
 });
 
 final deleteRecipeUseCaseProvider = Provider<DeleteRecipeUseCase>((ref) {
@@ -47,17 +52,19 @@ final scaleRecipeUseCaseProvider = Provider<ScaleRecipeUseCase>((ref) {
   return const ScaleRecipeUseCase();
 });
 
+final toggleFavoriteRecipeUseCaseProvider =
+    Provider<ToggleFavoriteRecipeUseCase>((ref) {
+  return ToggleFavoriteRecipeUseCase(ref.watch(recipeRepositoryProvider));
+});
+
+final getRecipeCategoriesUseCaseProvider =
+    Provider<GetRecipeCategoriesUseCase>((ref) {
+  return GetRecipeCategoriesUseCase(ref.watch(recipeRepositoryProvider));
+});
+
 final findRecipesByPantryUseCaseProvider =
     Provider<FindRecipesByPantryUseCase>((ref) {
   return FindRecipesByPantryUseCase(ref.watch(recipeRepositoryProvider));
-});
-
-/// One-off data-repair use case: backfills missing/stale recipe categories.
-/// Exposed as a provider so the presentation layer never touches the
-/// database or data-layer utilities directly.
-final fixRecipeCategoriesUseCaseProvider =
-    Provider<FixRecipeCategoriesUseCase>((ref) {
-  return FixRecipeCategoriesUseCase(ref.watch(recipeRepositoryProvider));
 });
 
 // ── UI state ──────────────────────────────────────────────────────────────────
@@ -65,6 +72,10 @@ final fixRecipeCategoriesUseCaseProvider =
 /// Search query typed by the user on the recipe list page.
 final recipeSearchQueryProvider =
     StateProvider.autoDispose<String>((ref) => '');
+
+/// Category selected on the recipe list page (null = all).
+final recipeCategoryFilterProvider =
+    StateProvider.autoDispose<String?>((ref) => null);
 
 /// Session-only serving count override per recipe id (key = recipe id).
 final servingCountProvider =
@@ -88,13 +99,36 @@ class RecipeListNotifier extends AsyncNotifier<List<Recipe>> {
 
   Future<Either<Failure, int>> saveRecipe(Recipe recipe) async {
     final result = await ref.read(saveRecipeUseCaseProvider).call(recipe);
-    if (result.isRight()) state = await AsyncValue.guard(_fetchAll);
+    if (result.isRight()) {
+      state = await AsyncValue.guard(_fetchAll);
+      ref.invalidate(recipeCategoriesProvider);
+    }
     return result;
   }
 
   Future<Either<Failure, bool>> deleteRecipe(int id) async {
     final result = await ref.read(deleteRecipeUseCaseProvider).call(id);
-    if (result.isRight()) state = await AsyncValue.guard(_fetchAll);
+    if (result.isRight()) {
+      state = await AsyncValue.guard(_fetchAll);
+      ref.invalidate(recipeCategoriesProvider);
+    }
+    return result;
+  }
+
+  Future<Either<Failure, bool>> toggleFavorite(Recipe recipe) async {
+    final id = recipe.id;
+    if (id == null) return const Left(ValidationFailure('Recipe not saved.'));
+    final result = await ref
+        .read(toggleFavoriteRecipeUseCaseProvider)
+        .call(id, !recipe.favorite);
+    if (result.isRight()) {
+      // Patch in place — no need to reload 500 recipes for one flag.
+      state = state.whenData((list) => [
+            for (final r in list)
+              if (r.id == id) r.copyWith(favorite: !recipe.favorite) else r,
+          ]);
+      ref.invalidate(recipeDetailProvider(id));
+    }
     return result;
   }
 }
@@ -115,19 +149,30 @@ class RecipeDetailNotifier extends AutoDisposeFamilyAsyncNotifier<Recipe, int> {
   }
 }
 
+// ── Categories ────────────────────────────────────────────────────────────────
+
+/// Distinct recipe categories, used for the filter dropdown and the form.
+final recipeCategoriesProvider = FutureProvider<List<String>>((ref) async {
+  final result = await ref.read(getRecipeCategoriesUseCaseProvider).call();
+  return result.fold((f) => throw f, (list) => list);
+});
+
 // ── Filtered list ─────────────────────────────────────────────────────────────
 
-/// Derives the filtered recipe list based on the current search query.
+/// Derives the filtered recipe list based on the search query and category.
 final filteredRecipesProvider =
     Provider.autoDispose<AsyncValue<List<Recipe>>>((ref) {
   final allAsync = ref.watch(recipeListProvider);
   final query = ref.watch(recipeSearchQueryProvider).trim().toLowerCase();
+  final category = ref.watch(recipeCategoryFilterProvider);
 
   return allAsync.whenData((recipes) {
-    if (query.isEmpty) return recipes;
-    return recipes
-        .where((r) => (r.name ?? '').toLowerCase().contains(query))
-        .toList();
+    return recipes.where((r) {
+      if (category != null && r.category != category) return false;
+      if (query.isEmpty) return true;
+      if ((r.name ?? '').toLowerCase().contains(query)) return true;
+      return r.ingredients.any((i) => i.name.toLowerCase().contains(query));
+    }).toList();
   });
 });
 

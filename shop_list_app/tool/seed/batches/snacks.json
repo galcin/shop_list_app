@@ -1,0 +1,830 @@
+{
+  "category": "Snacks & Appetizers",
+  "recipes": [
+    {
+      "key": "placinta-cu-branza-sarata",
+      "name": "Plăcintă cu Brânză Sărată (Salty Cheese Pie)",
+      "category": "Snacks & Appetizers",
+      "description": "Flaky phyllo layers filled with crumbled telemea, fresh cheese and dill, baked until golden and cut into squares.",
+      "instructions": [
+        "Preheat the oven to 180°C and brush a rectangular baking tray with melted butter.",
+        "Crumble the telemea into a bowl, mix in the cottage cheese, eggs, sour cream and chopped dill, and season with pepper.",
+        "Lay half of the phyllo sheets in the tray, brushing every second sheet with melted butter.",
+        "Spread the cheese filling evenly over the pastry, then cover with the remaining sheets, brushing each with butter.",
+        "Score the top into squares, brush with the last of the butter and bake for 35 to 40 minutes until deep golden.",
+        "Let the pie rest for 10 minutes before cutting along the scored lines and serving warm or at room temperature."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 8,
+      "tags": ["romanian", "vegetarian", "baked", "comfort-food"],
+      "ingredients": [
+        { "product": "Phyllo Dough", "quantity": 400, "unit": "g" },
+        { "product": "Telemea Cheese", "quantity": 300, "unit": "g" },
+        { "product": "Cottage Cheese", "quantity": 200, "unit": "g" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Sour Cream", "quantity": 100, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Butter", "quantity": 100, "unit": "g", "note": "melted, for brushing" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "pateuri-cu-branza",
+      "name": "Pateuri cu Brânză (Puff Pastry Cheese Pockets)",
+      "category": "Snacks & Appetizers",
+      "description": "Golden puff pastry triangles stuffed with salty telemea and dill, the classic Romanian bakery snack.",
+      "instructions": [
+        "Preheat the oven to 200°C and line a baking tray with baking paper.",
+        "Mash the telemea with a fork, mix in the cottage cheese, one egg and the chopped dill.",
+        "Roll out the puff pastry and cut it into 10 cm squares.",
+        "Place a spoonful of filling in the centre of each square, fold into a triangle and press the edges with a fork to seal.",
+        "Beat the second egg and brush it over the pastries, then sprinkle with sesame seeds.",
+        "Bake for 20 to 25 minutes until puffed and golden; serve warm."
+      ],
+      "prepTime": 20,
+      "cookTime": 25,
+      "servings": 6,
+      "tags": ["romanian", "vegetarian", "baked", "kid-friendly"],
+      "ingredients": [
+        { "product": "Puff Pastry Dough", "quantity": 500, "unit": "g" },
+        { "product": "Telemea Cheese", "quantity": 250, "unit": "g" },
+        { "product": "Cottage Cheese", "quantity": 100, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Sesame Seeds", "quantity": 1, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "saleuri-cheese-sticks",
+      "name": "Saleuri (Romanian Cheese Sticks)",
+      "category": "Snacks & Appetizers",
+      "description": "Crumbly, buttery cheese sticks with caraway seeds, the salty biscuit no Romanian party table is without.",
+      "instructions": [
+        "Rub the cold cubed butter into the flour with the salt until it resembles coarse breadcrumbs.",
+        "Add the grated cascaval, sour cream and one egg yolk and knead briefly into a smooth dough; chill for 30 minutes.",
+        "Preheat the oven to 180°C and line two trays with baking paper.",
+        "Roll the dough to 5 mm thickness and cut into 1 cm wide strips about 8 cm long.",
+        "Brush with the beaten remaining egg and sprinkle with caraway seeds and a little coarse salt.",
+        "Bake for 15 to 18 minutes until lightly golden and cool completely before serving."
+      ],
+      "prepTime": 45,
+      "cookTime": 18,
+      "servings": 8,
+      "tags": ["romanian", "vegetarian", "baked", "holiday"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 300, "unit": "g" },
+        { "product": "Butter", "quantity": 150, "unit": "g", "note": "cold, cubed" },
+        { "product": "Cascaval", "quantity": 150, "unit": "g", "note": "grated" },
+        { "product": "Sour Cream", "quantity": 100, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Caraway Seeds", "quantity": 2, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "covrigei-cu-sare",
+      "name": "Covrigei cu Sare (Salted Pretzel Rings)",
+      "category": "Snacks & Appetizers",
+      "description": "Chewy little bread rings with a glossy crust and a crunchy coat of coarse salt, perfect for dipping.",
+      "instructions": [
+        "Dissolve the yeast and sugar in the warm water and let it foam for 5 minutes.",
+        "Mix in the flour, salt and oil and knead for 8 minutes into a smooth, elastic dough; cover and rise for 1 hour.",
+        "Divide the dough into 16 pieces, roll each into a 20 cm rope and pinch the ends together to form rings.",
+        "Bring a large pot of water to a boil with the baking soda and boil the rings for 30 seconds on each side.",
+        "Drain, place on a lined tray, brush with beaten egg and sprinkle generously with coarse salt.",
+        "Bake at 220°C for 15 to 18 minutes until deep golden brown."
+      ],
+      "prepTime": 90,
+      "cookTime": 18,
+      "servings": 8,
+      "tags": ["romanian", "vegetarian", "baked", "budget"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 500, "unit": "g" },
+        { "product": "Yeast", "quantity": 7, "unit": "g", "note": "dry" },
+        { "product": "Water", "quantity": 300, "unit": "ml", "note": "lukewarm" },
+        { "product": "Sugar", "quantity": 1, "unit": "tsp" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Baking Soda", "quantity": 2, "unit": "tbsp", "note": "for the boiling water" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "quantity": 3, "unit": "tsp", "note": "1 tsp for dough, coarse salt for topping" }
+      ]
+    },
+    {
+      "key": "chiftelute-de-post",
+      "name": "Chifteluțe de Post (Vegan Vegetable Patties)",
+      "category": "Snacks & Appetizers",
+      "description": "Crisp golden patties of grated potato, carrot and mushroom with dill and garlic, fried until crunchy.",
+      "instructions": [
+        "Peel and coarsely grate the potatoes and carrots, then squeeze out as much liquid as possible.",
+        "Finely chop the onion and mushrooms and sauté them in a little oil until the moisture evaporates.",
+        "Combine the vegetables with the crushed garlic, chopped dill, breadcrumbs and flour; season well with salt and pepper.",
+        "Shape the mixture with wet hands into small flat patties.",
+        "Fry in hot sunflower oil for 3 to 4 minutes per side until deep golden and crisp.",
+        "Drain on paper towels and serve warm with mustard or a garlic sauce."
+      ],
+      "prepTime": 25,
+      "cookTime": 20,
+      "servings": 6,
+      "tags": ["romanian", "vegan", "budget", "comfort-food"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Mushrooms", "quantity": 200, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Breadcrumbs", "quantity": 80, "unit": "g" },
+        { "product": "Flour", "quantity": 3, "unit": "tbsp" },
+        { "product": "Sunflower Oil", "quantity": 100, "unit": "ml", "note": "for frying" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "bulz-polenta-balls",
+      "name": "Bulz (Polenta Balls with Cheese)",
+      "category": "Snacks & Appetizers",
+      "description": "Shepherd-style polenta balls hiding a molten telemea centre, baked with butter and served with sour cream.",
+      "instructions": [
+        "Bring the water to a boil with the salt, pour in the cornmeal in a thin stream while whisking, and cook for 25 minutes, stirring often.",
+        "Let the polenta cool until you can handle it, then grease your hands with a little butter.",
+        "Take a handful of polenta, flatten it, place a cube of telemea and a little chopped smoked bacon in the centre and close into a ball.",
+        "Arrange the balls in a buttered oven dish and dot with the remaining butter.",
+        "Bake at 200°C for 20 minutes until the surface is golden and the cheese has melted.",
+        "Serve hot with a spoonful of sour cream on top."
+      ],
+      "prepTime": 20,
+      "cookTime": 45,
+      "servings": 4,
+      "tags": ["romanian", "comfort-food", "baked", "gluten-free"],
+      "ingredients": [
+        { "product": "Cornmeal", "quantity": 300, "unit": "g" },
+        { "product": "Water", "quantity": 1.2, "unit": "l" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Telemea Cheese", "quantity": 250, "unit": "g", "note": "cut into cubes" },
+        { "product": "Smoked Bacon", "quantity": 100, "unit": "g", "note": "optional, finely chopped" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g", "note": "to serve" }
+      ]
+    },
+    {
+      "key": "oua-umplute",
+      "name": "Ouă Umplute (Romanian Deviled Eggs)",
+      "category": "Snacks & Appetizers",
+      "description": "Hard-boiled egg halves piped with a creamy mustard-mayo yolk filling, dusted with sweet paprika.",
+      "instructions": [
+        "Boil the eggs for 10 minutes, cool them in cold water and peel.",
+        "Halve the eggs lengthwise and pop the yolks into a bowl.",
+        "Mash the yolks with the mayonnaise, mustard, finely chopped pickle and parsley; season with salt and pepper.",
+        "Spoon or pipe the filling back into the egg whites.",
+        "Dust with sweet paprika, chill for 20 minutes and serve on a platter."
+      ],
+      "prepTime": 20,
+      "cookTime": 10,
+      "servings": 6,
+      "tags": ["romanian", "vegetarian", "holiday", "high-protein"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 8, "unit": "pcs" },
+        { "product": "Mayonnaise", "quantity": 4, "unit": "tbsp" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp" },
+        { "product": "Pickles", "quantity": 1, "unit": "pcs", "note": "finely chopped" },
+        { "product": "Fresh Parsley", "quantity": 2, "unit": "tbsp", "note": "chopped" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "rosii-umplute-salata-vinete",
+      "name": "Roșii Umplute cu Salată de Vinete (Tomatoes Stuffed with Eggplant Spread)",
+      "category": "Snacks & Appetizers",
+      "description": "Juicy summer tomatoes hollowed out and filled with creamy roasted eggplant spread, topped with olives.",
+      "instructions": [
+        "Cut a lid off each tomato and scoop out the seeds and pulp with a teaspoon; sprinkle the insides with salt and turn upside down for 10 minutes.",
+        "Mix the eggplant spread with the finely chopped red onion and half of the parsley.",
+        "Fill the tomatoes generously with the eggplant mixture.",
+        "Top each with an olive, a drizzle of olive oil and the remaining parsley.",
+        "Chill for 15 minutes and serve on a bed of lettuce leaves."
+      ],
+      "prepTime": 25,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "no-cook", "summer"],
+      "ingredients": [
+        { "product": "Tomatoes", "quantity": 8, "unit": "pcs", "note": "medium, firm" },
+        { "product": "Eggplant Spread", "quantity": 400, "unit": "g" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs", "note": "small" },
+        { "product": "Olives", "quantity": 8, "unit": "pcs", "note": "black, pitted" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Olive Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Lettuce", "quantity": 4, "unit": "leaf" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "cascaval-pane",
+      "name": "Cașcaval Pane (Breaded Fried Cheese)",
+      "category": "Snacks & Appetizers",
+      "description": "Thick slices of cascaval in a crunchy paprika breadcrumb coat, fried until the centre oozes.",
+      "instructions": [
+        "Cut the cascaval into 1.5 cm thick slices.",
+        "Set up three plates: flour, beaten eggs, and breadcrumbs mixed with paprika and pepper.",
+        "Coat each slice in flour, dip in egg, then press into the breadcrumbs; repeat the egg and breadcrumb layer for a tight seal.",
+        "Heat 1 cm of oil in a pan over medium-high heat.",
+        "Fry the slices for about 1 minute per side until golden, working quickly so the cheese does not leak.",
+        "Drain on paper towels and serve immediately with lemon wedges."
+      ],
+      "prepTime": 15,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "quick", "comfort-food"],
+      "ingredients": [
+        { "product": "Cascaval", "quantity": 400, "unit": "g" },
+        { "product": "Flour", "quantity": 80, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Breadcrumbs", "quantity": 150, "unit": "g" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Black Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Sunflower Oil", "quantity": 150, "unit": "ml", "note": "for frying" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs", "note": "cut into wedges" }
+      ]
+    },
+    {
+      "key": "zacusca-on-toast",
+      "name": "Zacuscă on Toast",
+      "category": "Snacks & Appetizers",
+      "description": "Toasted rye bread spread thick with smoky roasted pepper and eggplant zacuscă, finished with red onion rings.",
+      "instructions": [
+        "Toast the rye bread slices until crisp on both sides.",
+        "Rub each warm slice lightly with the cut side of the garlic clove and drizzle with olive oil.",
+        "Spread a generous layer of zacuscă on every slice.",
+        "Top with thin red onion rings, chopped parsley and a grind of black pepper.",
+        "Cut in halves and serve at room temperature."
+      ],
+      "prepTime": 10,
+      "cookTime": 5,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "quick", "budget"],
+      "ingredients": [
+        { "product": "Rye Bread", "quantity": 8, "unit": "slice" },
+        { "product": "Zacuscă", "quantity": 300, "unit": "g" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs", "note": "small, sliced into thin rings" },
+        { "product": "Fresh Parsley", "quantity": 2, "unit": "tbsp", "note": "chopped" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "langosi-fried-dough",
+      "name": "Langoși (Fried Dough with Cheese and Garlic)",
+      "category": "Snacks & Appetizers",
+      "description": "Puffy fried yeast dough discs rubbed with garlic and piled with sour cream and crumbled telemea.",
+      "instructions": [
+        "Dissolve the yeast and sugar in the warm milk and let it foam for 5 minutes.",
+        "Add the flour and salt and knead into a soft dough; cover and let it rise for 1 hour until doubled.",
+        "Divide into 8 balls and stretch each into a thin 15 cm disc with your hands.",
+        "Heat 2 cm of oil in a deep pan and fry the discs for 1 to 2 minutes per side until puffed and golden.",
+        "Drain on paper towels, then rub each hot langoș with a cut garlic clove.",
+        "Spread with sour cream, scatter crumbled telemea over the top and serve immediately."
+      ],
+      "prepTime": 80,
+      "cookTime": 15,
+      "servings": 8,
+      "tags": ["romanian", "vegetarian", "comfort-food", "budget"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 500, "unit": "g" },
+        { "product": "Yeast", "quantity": 7, "unit": "g", "note": "dry" },
+        { "product": "Milk", "quantity": 300, "unit": "ml", "note": "lukewarm" },
+        { "product": "Sugar", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Sunflower Oil", "quantity": 300, "unit": "ml", "note": "for frying" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Sour Cream", "quantity": 200, "unit": "g" },
+        { "product": "Telemea Cheese", "quantity": 200, "unit": "g", "note": "crumbled" }
+      ]
+    },
+    {
+      "key": "classic-tomato-bruschetta",
+      "name": "Classic Tomato Bruschetta",
+      "category": "Snacks & Appetizers",
+      "description": "Garlic-rubbed toasted baguette topped with ripe diced tomatoes, torn basil and good olive oil.",
+      "instructions": [
+        "Dice the tomatoes, discarding most of the seeds, and mix with torn basil, 2 tablespoons of olive oil, balsamic vinegar, salt and pepper; let stand 10 minutes.",
+        "Slice the baguette diagonally into 2 cm slices and brush with the remaining olive oil.",
+        "Toast the slices under a hot grill or in a pan until golden on both sides.",
+        "Rub each warm slice with the cut garlic clove.",
+        "Spoon the tomato mixture onto the toasts just before serving so they stay crisp."
+      ],
+      "prepTime": 15,
+      "cookTime": 5,
+      "servings": 4,
+      "tags": ["italian", "vegan", "quick", "summer"],
+      "ingredients": [
+        { "product": "Baguette", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 4, "unit": "pcs", "note": "ripe" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Fresh Basil", "quantity": 1, "unit": "handful" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Balsamic Vinegar", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "garlic-knots",
+      "name": "Garlic Knots",
+      "category": "Snacks & Appetizers",
+      "description": "Soft pizza-dough knots brushed with garlic butter and showered with parmesan and parsley.",
+      "instructions": [
+        "Preheat the oven to 200°C and line a tray with baking paper.",
+        "Roll the pizza dough into a rectangle and cut it into 12 strips about 2 cm wide.",
+        "Tie each strip loosely into a knot and arrange on the tray; let rest for 15 minutes.",
+        "Bake for 12 to 15 minutes until golden.",
+        "Meanwhile melt the butter with the crushed garlic and a pinch of salt over low heat for 2 minutes.",
+        "Brush the hot knots with the garlic butter and toss with grated parmesan and chopped parsley; serve with tomato sauce for dipping."
+      ],
+      "prepTime": 25,
+      "cookTime": 15,
+      "servings": 6,
+      "tags": ["italian", "vegetarian", "baked", "kid-friendly"],
+      "ingredients": [
+        { "product": "Pizza Dough", "quantity": 500, "unit": "g" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Parmesan", "quantity": 40, "unit": "g", "note": "grated" },
+        { "product": "Fresh Parsley", "quantity": 3, "unit": "tbsp", "note": "chopped" },
+        { "product": "Tomato Sauce", "quantity": 150, "unit": "ml", "note": "warm, for dipping" },
+        { "product": "Salt", "note": "a pinch" }
+      ]
+    },
+    {
+      "key": "cream-cheese-stuffed-mushrooms",
+      "name": "Cream Cheese Stuffed Mushrooms",
+      "category": "Snacks & Appetizers",
+      "description": "Brown mushroom caps filled with garlicky herbed cream cheese and a crunchy parmesan crumb, baked until bubbling.",
+      "instructions": [
+        "Preheat the oven to 200°C. Wipe the mushrooms, remove the stems and chop the stems finely.",
+        "Sauté the chopped stems and garlic in 1 tablespoon of olive oil for 3 minutes until soft.",
+        "Mix the cooked stems with the cream cheese, half the parmesan, half the breadcrumbs and the chopped parsley; season with salt and pepper.",
+        "Fill each mushroom cap with the mixture and place in an oiled baking dish.",
+        "Top with the remaining breadcrumbs and parmesan and drizzle with the rest of the olive oil.",
+        "Bake for 18 to 20 minutes until the mushrooms are tender and the tops are golden."
+      ],
+      "prepTime": 20,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["vegetarian", "baked", "low-carb", "holiday"],
+      "ingredients": [
+        { "product": "Brown Mushrooms", "quantity": 500, "unit": "g", "note": "large caps" },
+        { "product": "Cream Cheese", "quantity": 150, "unit": "g" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Parmesan", "quantity": 50, "unit": "g", "note": "grated" },
+        { "product": "Breadcrumbs", "quantity": 40, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 2, "unit": "tbsp", "note": "chopped" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mozzarella-sticks",
+      "name": "Crispy Mozzarella Sticks",
+      "category": "Snacks & Appetizers",
+      "description": "Double-breaded mozzarella batons fried until crunchy outside and stretchy inside, served with warm marinara.",
+      "instructions": [
+        "Cut the mozzarella into 1.5 cm thick batons and pat them dry.",
+        "Mix the breadcrumbs with oregano, garlic powder and a pinch of salt.",
+        "Coat each stick in flour, dip in beaten egg, then roll in breadcrumbs; repeat the egg and crumb layers once more.",
+        "Freeze the coated sticks for at least 30 minutes so they hold their shape.",
+        "Heat 3 cm of oil to 180°C and fry the sticks in batches for about 1 minute until golden.",
+        "Drain on paper towels and serve right away with warm tomato sauce."
+      ],
+      "prepTime": 45,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["american", "vegetarian", "kid-friendly", "comfort-food"],
+      "ingredients": [
+        { "product": "Fresh Mozzarella", "quantity": 400, "unit": "g", "note": "firm low-moisture block" },
+        { "product": "Flour", "quantity": 80, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Breadcrumbs", "quantity": 150, "unit": "g" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Garlic Powder", "quantity": 1, "unit": "tsp" },
+        { "product": "Vegetable Oil", "quantity": 500, "unit": "ml", "note": "for deep frying" },
+        { "product": "Tomato Sauce", "quantity": 200, "unit": "ml", "note": "warm, for dipping" },
+        { "product": "Salt", "note": "a pinch" }
+      ]
+    },
+    {
+      "key": "loaded-nachos",
+      "name": "Loaded Nachos",
+      "category": "Snacks & Appetizers",
+      "description": "A tray of tortilla chips buried under melted cheese, black beans, jalapeños and tomato, finished with sour cream.",
+      "instructions": [
+        "Preheat the oven to 200°C and spread the tortilla chips over a large baking tray.",
+        "Scatter the drained beans and half the grated cheese over the chips.",
+        "Top with the diced tomato, sliced chili pepper and the remaining cheese.",
+        "Bake for 8 to 10 minutes until the cheese is fully melted and bubbling.",
+        "Finish with sliced green onions, chopped coriander and spoonfuls of sour cream; serve straight from the tray."
+      ],
+      "prepTime": 10,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["mexican", "vegetarian", "quick", "spicy"],
+      "ingredients": [
+        { "product": "Tortilla Chips", "quantity": 1, "unit": "pack", "note": "about 200 g" },
+        { "product": "Cheese", "quantity": 200, "unit": "g", "note": "cheddar, grated" },
+        { "product": "Canned Beans", "quantity": 1, "unit": "can", "note": "black beans, drained" },
+        { "product": "Tomatoes", "quantity": 2, "unit": "pcs", "note": "diced" },
+        { "product": "Chili Pepper", "quantity": 1, "unit": "pcs", "note": "jalapeño, sliced" },
+        { "product": "Green Onions", "quantity": 3, "unit": "pcs" },
+        { "product": "Fresh Coriander", "quantity": 1, "unit": "handful" },
+        { "product": "Sour Cream", "quantity": 100, "unit": "g" }
+      ]
+    },
+    {
+      "key": "chicken-quesadilla-bites",
+      "name": "Chicken Quesadilla Bites",
+      "category": "Snacks & Appetizers",
+      "description": "Crisp golden tortilla wedges packed with spiced chicken, peppers and melted cheese, cut into bite-size triangles.",
+      "instructions": [
+        "Dice the chicken breast and bell pepper and fry in 1 tablespoon of oil with the cumin and a pinch of salt for 6 to 7 minutes until cooked.",
+        "Stir in the sliced green onions and remove from the heat.",
+        "Lay a tortilla in a dry pan, cover half with grated cheese, then the chicken mixture, then more cheese, and fold over.",
+        "Cook over medium heat for 2 to 3 minutes per side until golden and the cheese has melted; repeat with the remaining tortillas.",
+        "Let rest for 1 minute, cut each quesadilla into 4 wedges and serve with sour cream."
+      ],
+      "prepTime": 15,
+      "cookTime": 20,
+      "servings": 6,
+      "tags": ["mexican", "kid-friendly", "quick", "high-protein"],
+      "ingredients": [
+        { "product": "Tortillas", "quantity": 6, "unit": "pcs" },
+        { "product": "Chicken Breast", "quantity": 300, "unit": "g" },
+        { "product": "Cheese", "quantity": 250, "unit": "g", "note": "cheddar or gouda, grated" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs", "note": "red" },
+        { "product": "Green Onions", "quantity": 3, "unit": "pcs" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Vegetable Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Sour Cream", "quantity": 100, "unit": "g", "note": "to serve" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "baked-vegetable-spring-rolls",
+      "name": "Baked Vegetable Spring Rolls",
+      "category": "Snacks & Appetizers",
+      "description": "Crisp oven-baked phyllo rolls filled with ginger-soy cabbage, carrot and bean sprouts, no deep frying needed.",
+      "instructions": [
+        "Shred the cabbage and carrots finely and slice the green onions.",
+        "Stir-fry the vegetables with the grated ginger in 1 tablespoon of oil for 3 minutes, add the bean sprouts, soy sauce and sesame oil, cook 1 minute more and cool.",
+        "Preheat the oven to 200°C. Cut the phyllo sheets in half, brush each with oil and stack two halves.",
+        "Place 2 tablespoons of filling near one edge, fold in the sides and roll up tightly.",
+        "Arrange seam-side down on a lined tray and brush the tops with oil.",
+        "Bake for 18 to 20 minutes, turning once, until golden and crisp; serve with sweet chili sauce."
+      ],
+      "prepTime": 30,
+      "cookTime": 25,
+      "servings": 6,
+      "tags": ["asian", "vegan", "baked", "healthy"],
+      "ingredients": [
+        { "product": "Phyllo Dough", "quantity": 250, "unit": "g" },
+        { "product": "Cabbage", "quantity": 0.25, "unit": "head" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Bean Sprouts", "quantity": 150, "unit": "g" },
+        { "product": "Green Onions", "quantity": 3, "unit": "pcs" },
+        { "product": "Ginger", "quantity": 20, "unit": "g", "note": "grated" },
+        { "product": "Soy Sauce", "quantity": 2, "unit": "tbsp" },
+        { "product": "Sesame Oil", "quantity": 1, "unit": "tsp" },
+        { "product": "Vegetable Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Sweet Chili Sauce", "quantity": 4, "unit": "tbsp", "note": "for dipping" }
+      ]
+    },
+    {
+      "key": "buffalo-chicken-wings",
+      "name": "Buffalo Chicken Wings",
+      "category": "Snacks & Appetizers",
+      "description": "Oven-crisped wings tossed in a tangy, buttery hot sauce glaze and served with cool celery sticks.",
+      "instructions": [
+        "Preheat the oven to 220°C and set a rack over a lined baking tray.",
+        "Pat the wings completely dry and toss with the baking powder, garlic powder, salt and pepper.",
+        "Spread the wings on the rack in a single layer and bake for 40 to 45 minutes, turning halfway, until golden and crisp.",
+        "Melt the butter and whisk in the hot sauce to make the buffalo glaze.",
+        "Toss the hot wings in the sauce until coated.",
+        "Serve immediately with celery sticks on the side."
+      ],
+      "prepTime": 10,
+      "cookTime": 45,
+      "servings": 4,
+      "tags": ["american", "spicy", "baked", "high-protein"],
+      "ingredients": [
+        { "product": "Chicken Wings", "quantity": 1.2, "unit": "kg" },
+        { "product": "Baking Powder", "quantity": 1, "unit": "tbsp", "note": "for extra crispiness" },
+        { "product": "Garlic Powder", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Black Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Hot Sauce", "quantity": 120, "unit": "ml", "note": "cayenne-style buffalo hot sauce" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Celery", "quantity": 4, "unit": "stalk", "note": "cut into sticks" }
+      ]
+    },
+    {
+      "key": "loaded-potato-skins",
+      "name": "Loaded Potato Skins",
+      "category": "Snacks & Appetizers",
+      "description": "Twice-baked crispy potato boats filled with melted cheddar and crumbled bacon, topped with sour cream and chives.",
+      "instructions": [
+        "Bake the whole potatoes at 200°C for 50 minutes until tender, then cool slightly.",
+        "Fry the bacon until crisp, drain and crumble.",
+        "Halve the potatoes and scoop out most of the flesh, leaving a 1 cm shell.",
+        "Brush the shells inside and out with melted butter, season with salt and pepper and bake for 10 minutes until crisp.",
+        "Fill with grated cheese and bacon and return to the oven for 5 minutes until melted.",
+        "Top with sour cream and sliced green onions and serve hot."
+      ],
+      "prepTime": 15,
+      "cookTime": 65,
+      "servings": 4,
+      "tags": ["american", "comfort-food", "baked", "gluten-free"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 4, "unit": "pcs", "note": "large baking potatoes" },
+        { "product": "Bacon", "quantity": 150, "unit": "g" },
+        { "product": "Cheese", "quantity": 150, "unit": "g", "note": "cheddar, grated" },
+        { "product": "Butter", "quantity": 40, "unit": "g", "note": "melted" },
+        { "product": "Sour Cream", "quantity": 120, "unit": "g" },
+        { "product": "Green Onions", "quantity": 2, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mini-ham-and-cheese-quiches",
+      "name": "Mini Ham and Cheese Quiches",
+      "category": "Snacks & Appetizers",
+      "description": "Bite-size shortcrust tartlets filled with silky egg custard, diced ham, Emmental and chives.",
+      "instructions": [
+        "Preheat the oven to 190°C and grease a 12-hole muffin tin.",
+        "Roll out the pastry, cut 10 cm circles and press them into the muffin holes.",
+        "Whisk the eggs with the cream, nutmeg, salt and pepper.",
+        "Divide the diced ham, grated Emmental and chopped chives between the pastry cases.",
+        "Pour the egg mixture over the filling until each case is nearly full.",
+        "Bake for 20 to 25 minutes until the filling is set and golden; cool for 5 minutes before removing."
+      ],
+      "prepTime": 20,
+      "cookTime": 25,
+      "servings": 6,
+      "tags": ["french", "baked", "holiday", "meal-prep"],
+      "ingredients": [
+        { "product": "Shortcrust Pastry", "quantity": 400, "unit": "g" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Cooking Cream", "quantity": 200, "unit": "ml" },
+        { "product": "Pressed Ham", "quantity": 120, "unit": "g", "note": "diced" },
+        { "product": "Emmental", "quantity": 120, "unit": "g", "note": "grated" },
+        { "product": "Fresh Chives", "quantity": 2, "unit": "tbsp", "note": "chopped" },
+        { "product": "Nutmeg", "quantity": 1, "unit": "pinch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "sausage-rolls",
+      "name": "Sausage Rolls",
+      "category": "Snacks & Appetizers",
+      "description": "Flaky golden puff pastry wrapped around seasoned sausage meat with onion, thyme and a hint of mustard.",
+      "instructions": [
+        "Preheat the oven to 200°C and line a tray with baking paper.",
+        "Squeeze the sausage meat out of the casings and mix it with the finely chopped onion, thyme, mustard and pepper.",
+        "Cut the puff pastry into two long strips and shape half the meat into a log down the centre of each.",
+        "Brush one edge with beaten egg, fold the pastry over the meat and press to seal; cut each log into 6 pieces.",
+        "Place seam-side down on the tray, brush with egg and sprinkle with sesame seeds.",
+        "Bake for 25 to 30 minutes until puffed, golden and cooked through."
+      ],
+      "prepTime": 20,
+      "cookTime": 30,
+      "servings": 6,
+      "tags": ["baked", "kid-friendly", "holiday", "comfort-food"],
+      "ingredients": [
+        { "product": "Puff Pastry Dough", "quantity": 400, "unit": "g" },
+        { "product": "Sausages", "quantity": 6, "unit": "pcs", "note": "fresh pork sausages" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs", "note": "small, finely chopped" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs", "note": "beaten, for glazing" },
+        { "product": "Sesame Seeds", "quantity": 1, "unit": "tbsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "parmesan-herb-popcorn",
+      "name": "Parmesan Herb Popcorn",
+      "category": "Snacks & Appetizers",
+      "description": "Freshly popped corn tossed in melted butter, grated parmesan, rosemary and garlic for a savoury movie-night snack.",
+      "instructions": [
+        "Heat the oil in a large lidded pot over medium-high heat with 3 kernels inside.",
+        "When the test kernels pop, add the rest of the popcorn, cover and shake the pot occasionally until the popping slows to a few seconds apart.",
+        "Melt the butter in a small pan with the crushed rosemary and garlic powder.",
+        "Pour the popcorn into a large bowl, drizzle with the herb butter and toss well.",
+        "Sprinkle with the grated parmesan and salt, toss again and serve warm."
+      ],
+      "prepTime": 5,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["quick", "vegetarian", "gluten-free", "budget"],
+      "ingredients": [
+        { "product": "Popcorn", "quantity": 100, "unit": "g", "note": "kernels" },
+        { "product": "Vegetable Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Parmesan", "quantity": 50, "unit": "g", "note": "finely grated" },
+        { "product": "Dried Rosemary", "quantity": 1, "unit": "tsp", "note": "crushed" },
+        { "product": "Garlic Powder", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "crispy-roasted-chickpeas",
+      "name": "Crispy Roasted Chickpeas",
+      "category": "Snacks & Appetizers",
+      "description": "Crunchy oven-roasted chickpeas dusted with smoked paprika, cumin and garlic, a healthy swap for chips.",
+      "instructions": [
+        "Preheat the oven to 200°C. Drain and rinse the chickpeas and dry them very well on a kitchen towel.",
+        "Toss the chickpeas with the olive oil and spread on a lined baking tray in a single layer.",
+        "Roast for 25 minutes, shaking the tray halfway through.",
+        "Mix the smoked paprika, cumin, garlic powder and salt and sprinkle over the hot chickpeas; toss to coat.",
+        "Return to the oven for 5 more minutes, then cool on the tray so they crisp up fully."
+      ],
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["vegan", "healthy", "gluten-free", "high-protein"],
+      "ingredients": [
+        { "product": "Canned Chickpeas", "quantity": 2, "unit": "can" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Garlic Powder", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "crispy-kale-chips",
+      "name": "Crispy Kale Chips",
+      "category": "Snacks & Appetizers",
+      "description": "Paper-thin kale leaves baked with olive oil, lemon and sea salt until they shatter like chips.",
+      "instructions": [
+        "Preheat the oven to 150°C and line two trays with baking paper.",
+        "Strip the kale leaves from the tough stems, tear into chip-size pieces, wash and dry thoroughly.",
+        "Massage the leaves with the olive oil, lemon juice and garlic powder until lightly coated.",
+        "Spread in a single layer without overlapping and sprinkle with salt.",
+        "Bake for 15 to 20 minutes, rotating the trays once, until crisp but still green; cool for 3 minutes before eating."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["vegan", "healthy", "gluten-free", "low-carb"],
+      "ingredients": [
+        { "product": "Kale", "quantity": 250, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs", "note": "juice only" },
+        { "product": "Garlic Powder", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp", "note": "flaky sea salt" }
+      ]
+    },
+    {
+      "key": "caprese-skewers",
+      "name": "Caprese Skewers",
+      "category": "Snacks & Appetizers",
+      "description": "Cherry tomatoes, mini mozzarella balls and basil leaves threaded on picks and drizzled with balsamic glaze.",
+      "instructions": [
+        "Drain the mozzarella balls and pat them dry.",
+        "Thread a cherry tomato, a folded basil leaf and a mozzarella ball onto each cocktail stick or short skewer.",
+        "Arrange the skewers on a serving platter.",
+        "Drizzle with olive oil and balsamic glaze and season with flaky salt and pepper just before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["italian", "vegetarian", "no-cook", "summer"],
+      "ingredients": [
+        { "product": "Cherry Tomatoes", "quantity": 300, "unit": "g" },
+        { "product": "Fresh Mozzarella", "quantity": 250, "unit": "g", "note": "mini balls (bocconcini)" },
+        { "product": "Fresh Basil", "quantity": 1, "unit": "bunch" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Balsamic Glaze", "quantity": 2, "unit": "tbsp" },
+        { "product": "Toothpicks", "quantity": 1, "unit": "pack", "note": "cocktail sticks or short skewers" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "prosciutto-wrapped-melon",
+      "name": "Prosciutto-Wrapped Melon",
+      "category": "Snacks & Appetizers",
+      "description": "Sweet ripe melon wedges wrapped in salty prosciutto with fresh mint and a crack of black pepper.",
+      "instructions": [
+        "Halve the melon, scoop out the seeds and cut the flesh into 12 wedges, trimming off the rind.",
+        "Wrap each wedge with a slice of prosciutto, leaving the ends of the melon showing.",
+        "Arrange on a platter and tuck a mint leaf into each wrap.",
+        "Finish with a drizzle of balsamic glaze and freshly ground black pepper; serve chilled."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["italian", "no-cook", "summer", "gluten-free"],
+      "ingredients": [
+        { "product": "Melon", "quantity": 1, "unit": "pcs", "note": "ripe cantaloupe" },
+        { "product": "Prosciutto", "quantity": 150, "unit": "g", "note": "12 thin slices" },
+        { "product": "Fresh Mint", "quantity": 12, "unit": "leaf" },
+        { "product": "Balsamic Glaze", "quantity": 1, "unit": "tbsp" },
+        { "product": "Black Pepper", "note": "freshly ground, to taste" }
+      ]
+    },
+    {
+      "key": "smoked-salmon-blinis",
+      "name": "Smoked Salmon Blinis",
+      "category": "Snacks & Appetizers",
+      "description": "Fluffy little homemade pancakes topped with dill sour cream, folds of smoked salmon and lemon zest.",
+      "instructions": [
+        "Whisk the flour, baking powder and a pinch of salt, then beat in the egg and milk to make a thick, smooth batter.",
+        "Heat a little butter in a non-stick pan and drop in teaspoons of batter to make 5 cm blinis.",
+        "Cook for 1 minute until bubbles appear, flip and cook 30 seconds more; repeat with the remaining batter and cool.",
+        "Mix the sour cream with half the chopped dill and the lemon zest.",
+        "Top each blini with a dollop of dill cream, a fold of smoked salmon and a sprig of dill.",
+        "Finish with a squeeze of lemon juice and black pepper and serve within the hour."
+      ],
+      "prepTime": 20,
+      "cookTime": 15,
+      "servings": 6,
+      "tags": ["holiday", "high-protein", "french", "quick"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 120, "unit": "g" },
+        { "product": "Baking Powder", "quantity": 1, "unit": "tsp" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Milk", "quantity": 150, "unit": "ml" },
+        { "product": "Butter", "quantity": 20, "unit": "g", "note": "for frying" },
+        { "product": "Smoked Salmon", "quantity": 200, "unit": "g" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs", "note": "zest and juice" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "arancini",
+      "name": "Arancini (Fried Risotto Balls)",
+      "category": "Snacks & Appetizers",
+      "description": "Golden breadcrumbed balls of parmesan risotto with a molten mozzarella heart, a Sicilian street-food classic.",
+      "instructions": [
+        "Sauté the finely chopped onion in olive oil until soft, add the rice and stir for 1 minute.",
+        "Add the hot broth a ladle at a time, stirring until absorbed, for about 18 minutes until the rice is tender; stir in the parmesan and one egg, season, spread on a tray and chill for 1 hour.",
+        "With wet hands shape the cold risotto into golf-ball-size balls, pressing a cube of mozzarella into the centre of each and closing it over.",
+        "Roll the balls in flour, then the remaining beaten egg, then breadcrumbs.",
+        "Heat 4 cm of oil to 175°C and fry the arancini in batches for 3 to 4 minutes until deep golden.",
+        "Drain on paper towels and serve hot with warm tomato sauce."
+      ],
+      "prepTime": 90,
+      "cookTime": 35,
+      "servings": 6,
+      "tags": ["italian", "vegetarian", "comfort-food", "meal-prep"],
+      "ingredients": [
+        { "product": "Risotto Rice", "quantity": 300, "unit": "g" },
+        { "product": "Vegetable Broth", "quantity": 900, "unit": "ml", "note": "hot" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs", "note": "small" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Parmesan", "quantity": 80, "unit": "g", "note": "grated" },
+        { "product": "Fresh Mozzarella", "quantity": 150, "unit": "g", "note": "cut into small cubes" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Flour", "quantity": 60, "unit": "g" },
+        { "product": "Breadcrumbs", "quantity": 150, "unit": "g" },
+        { "product": "Vegetable Oil", "quantity": 700, "unit": "ml", "note": "for deep frying" }
+      ]
+    },
+    {
+      "key": "cucumber-tea-sandwiches",
+      "name": "Cucumber Tea Sandwiches",
+      "category": "Snacks & Appetizers",
+      "description": "Dainty crustless sandwiches of thin cucumber on herbed cream cheese, cool and crisp for an afternoon spread.",
+      "instructions": [
+        "Slice the cucumber paper-thin, sprinkle lightly with salt and let drain on paper towels for 10 minutes.",
+        "Beat the cream cheese with the softened butter, chopped dill and chives until smooth.",
+        "Spread the mixture on all the bread slices right to the edges.",
+        "Layer the cucumber slices over half of the bread, season with pepper and close with the remaining slices.",
+        "Trim off the crusts and cut each sandwich into 4 fingers or triangles; serve immediately or cover with a damp cloth until needed."
+      ],
+      "prepTime": 20,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["no-cook", "vegetarian", "quick", "summer"],
+      "ingredients": [
+        { "product": "Bread", "quantity": 12, "unit": "slice", "note": "soft white sandwich bread" },
+        { "product": "Cucumber", "quantity": 1, "unit": "pcs" },
+        { "product": "Cream Cheese", "quantity": 150, "unit": "g" },
+        { "product": "Butter", "quantity": 40, "unit": "g", "note": "softened" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "tbsp", "note": "chopped" },
+        { "product": "Fresh Chives", "quantity": 1, "unit": "tbsp", "note": "chopped" },
+        { "product": "Salt", "note": "a pinch" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    }
+  ],
+  "newProducts": []
+}

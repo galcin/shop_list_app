@@ -2,11 +2,14 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/core/error/failures.dart';
 import 'package:shop_list_app/core/providers/core_providers.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
+import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
 import 'package:shop_list_app/features/shopping_lists/data/datasources/shopping_list_data_source.dart';
 import 'package:shop_list_app/features/shopping_lists/data/repositories/shopping_list_repository_impl.dart';
 import 'package:shop_list_app/features/shopping_lists/domain/entities/shopping_list_entity.dart';
 import 'package:shop_list_app/features/shopping_lists/domain/repositories/i_shopping_list_repository.dart';
 import 'package:shop_list_app/features/shopping_lists/domain/usecases/add_item_to_list_use_case.dart';
+import 'package:shop_list_app/features/shopping_lists/domain/usecases/add_recipe_to_list_use_case.dart';
 import 'package:shop_list_app/features/shopping_lists/domain/usecases/create_shopping_list_use_case.dart';
 import 'package:shop_list_app/features/shopping_lists/domain/usecases/delete_shopping_list_use_case.dart';
 import 'package:shop_list_app/features/shopping_lists/domain/usecases/remove_item_from_list_use_case.dart';
@@ -64,6 +67,14 @@ final removeItemFromListUseCaseProvider =
 final toggleItemCheckedUseCaseProvider =
     Provider<ToggleItemCheckedUseCase>((ref) {
   return ToggleItemCheckedUseCase(ref.watch(shoppingListRepositoryProvider));
+});
+
+final addRecipeToListUseCaseProvider = Provider<AddRecipeToListUseCase>((ref) {
+  return AddRecipeToListUseCase(
+    ref.watch(recipeRepositoryProvider),
+    ref.watch(shoppingListRepositoryProvider),
+    ref.watch(productRepositoryProvider),
+  );
 });
 
 // ── Shopping lists overview notifier ─────────────────────────────────────────

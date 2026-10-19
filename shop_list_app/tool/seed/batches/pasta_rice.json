@@ -1,0 +1,1394 @@
+{
+  "category": "Pasta & Rice",
+  "recipes": [
+    {
+      "key": "pasta-alla-norma",
+      "name": "Pasta alla Norma",
+      "category": "Pasta & Rice",
+      "description": "Sicilian rigatoni with golden fried eggplant, garlicky tomato sauce, basil and salty grated ricotta.",
+      "instructions": [
+        "Cut the eggplant into 2 cm cubes, salt generously and leave to drain in a colander for 20 minutes, then pat dry.",
+        "Fry the eggplant in batches in 4 tbsp of olive oil until deep golden on all sides; drain on paper towels.",
+        "In the same pan, soften the sliced garlic in the remaining oil, add the crushed tomatoes and chili flakes and simmer for 15 minutes.",
+        "Cook the rigatoni in salted boiling water until al dente, reserving a cup of the cooking water.",
+        "Toss the pasta with the sauce, most of the eggplant and torn basil, loosening with a splash of pasta water.",
+        "Serve topped with the remaining eggplant, grated ricotta salata and more basil."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["italian", "vegetarian", "mediterranean", "summer"],
+      "ingredients": [
+        { "product": "Pasta", "name": "Rigatoni", "quantity": 400, "unit": "g" },
+        { "product": "Eggplant", "quantity": 2, "unit": "pcs" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Fresh Basil", "quantity": 1, "unit": "bunch" },
+        { "product": "Ricotta", "name": "Ricotta Salata (or aged ricotta)", "quantity": 100, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 6, "unit": "tbsp" },
+        { "product": "Chili Flakes", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "spaghetti-alla-puttanesca",
+      "name": "Spaghetti alla Puttanesca",
+      "category": "Pasta & Rice",
+      "description": "Bold Neapolitan spaghetti with anchovies, olives, capers and chili melted into a quick tomato sauce.",
+      "instructions": [
+        "Bring a large pot of salted water to the boil and cook the spaghetti until al dente.",
+        "Meanwhile warm the olive oil in a wide pan and melt the anchovies with the sliced garlic and chili flakes over low heat.",
+        "Add the crushed tomatoes, olives and rinsed capers and simmer for 10 minutes until slightly thickened.",
+        "Drain the spaghetti, reserving a little pasta water, and toss it through the sauce for a minute.",
+        "Finish with chopped parsley and serve immediately."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["italian", "quick", "spicy", "budget"],
+      "ingredients": [
+        { "product": "Spaghetti", "quantity": 400, "unit": "g" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Olives", "name": "Black olives, pitted", "quantity": 100, "unit": "g" },
+        { "product": "Capers", "quantity": 2, "unit": "tbsp" },
+        { "product": "Anchovies", "quantity": 6, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Chili Flakes", "quantity": 1, "unit": "tsp" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "bucatini-all-amatriciana",
+      "name": "Bucatini all'Amatriciana",
+      "category": "Pasta & Rice",
+      "description": "Roman bucatini with crisp guanciale, tomato and a snowfall of pecorino, finished with a kick of chili.",
+      "instructions": [
+        "Cut the guanciale into short strips and render it slowly in a dry pan with a teaspoon of oil until golden and crisp.",
+        "Lift out the crisp pieces, add the chili flakes to the fat, then pour in the white wine and let it bubble away.",
+        "Add the crushed tomatoes and simmer for 15 minutes until thick; return the guanciale to the pan.",
+        "Cook the bucatini in salted boiling water until al dente and drain, keeping a cup of the water.",
+        "Toss the pasta in the sauce with half the pecorino and a splash of pasta water until glossy.",
+        "Serve with the remaining pecorino and plenty of black pepper."
+      ],
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["italian", "comfort-food", "spicy"],
+      "ingredients": [
+        { "product": "Spaghetti", "name": "Bucatini", "quantity": 400, "unit": "g" },
+        { "product": "Pancetta", "name": "Guanciale or pancetta", "quantity": 150, "unit": "g" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "White Wine", "quantity": 80, "unit": "ml" },
+        { "product": "Chili Flakes", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Parmesan", "name": "Pecorino Romano, grated", "quantity": 80, "unit": "g" },
+        { "product": "Black Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Olive Oil", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "pasta-primavera",
+      "name": "Pasta Primavera",
+      "category": "Pasta & Rice",
+      "description": "Spring asparagus, zucchini, peas and cherry tomatoes tossed with farfalle in a light lemon-parmesan cream.",
+      "instructions": [
+        "Cook the farfalle in salted boiling water until al dente; add the peas for the last 2 minutes, then drain and reserve a cup of water.",
+        "Meanwhile heat the olive oil in a large pan and sauté the sliced asparagus and diced zucchini for 4 minutes.",
+        "Add the garlic and halved cherry tomatoes and cook for 2 more minutes until the tomatoes just soften.",
+        "Pour in the cream, lemon zest and juice, and let it bubble briefly.",
+        "Toss in the pasta and peas with the parmesan, loosening with pasta water, and season.",
+        "Scatter with torn basil and serve."
+      ],
+      "prepTime": 15,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["vegetarian", "italian", "healthy", "summer"],
+      "ingredients": [
+        { "product": "Pasta", "name": "Farfalle", "quantity": 400, "unit": "g" },
+        { "product": "Asparagus", "quantity": 1, "unit": "bunch" },
+        { "product": "Zucchini", "quantity": 1, "unit": "pcs" },
+        { "product": "Frozen Peas", "quantity": 150, "unit": "g" },
+        { "product": "Cherry Tomatoes", "quantity": 200, "unit": "g" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Cooking Cream", "quantity": 150, "unit": "ml" },
+        { "product": "Parmesan", "quantity": 60, "unit": "g" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "tuna-pasta-bake",
+      "name": "Tuna Pasta Bake",
+      "category": "Pasta & Rice",
+      "description": "Family-friendly penne baked with tuna, sweetcorn and tomato under a bubbling cheddar and mozzarella crust.",
+      "instructions": [
+        "Preheat the oven to 200°C and cook the penne in salted water for 2 minutes less than the packet says; drain.",
+        "Soften the chopped onion in olive oil, add the garlic and oregano, then pour in the crushed tomatoes and simmer for 10 minutes.",
+        "Stir in the drained tuna and sweetcorn, season, and fold in the pasta and half the cheddar.",
+        "Tip into a baking dish, top with the remaining cheddar and torn mozzarella.",
+        "Bake for 20-25 minutes until golden and bubbling, and rest for 5 minutes before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["kid-friendly", "budget", "baked", "comfort-food"],
+      "ingredients": [
+        { "product": "Penne", "quantity": 350, "unit": "g" },
+        { "product": "Canned Tuna", "quantity": 2, "unit": "can" },
+        { "product": "Canned Corn", "quantity": 1, "unit": "can" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Cheese", "name": "Grated cheddar", "quantity": 150, "unit": "g" },
+        { "product": "Fresh Mozzarella", "quantity": 125, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "spinach-ricotta-cannelloni",
+      "name": "Spinach and Ricotta Cannelloni",
+      "category": "Pasta & Rice",
+      "description": "Pasta rolls filled with creamy spinach and ricotta, baked in passata with melted mozzarella and parmesan.",
+      "instructions": [
+        "Wilt the spinach in a large pan with the garlic and a little olive oil, cool, then squeeze out all the liquid and chop.",
+        "Mix the spinach with the ricotta, egg, half the parmesan, nutmeg, salt and pepper.",
+        "Season the passata with torn basil, salt and a drizzle of olive oil, and spread a third over the base of a baking dish.",
+        "Blanch the lasagne sheets briefly if dried, then spread filling along each sheet and roll into a tube; lay seam-side down in the dish.",
+        "Cover with the remaining passata, torn mozzarella and parmesan.",
+        "Bake at 190°C for 35-40 minutes until golden; rest 10 minutes before serving."
+      ],
+      "prepTime": 30,
+      "cookTime": 40,
+      "servings": 4,
+      "tags": ["vegetarian", "italian", "baked", "comfort-food"],
+      "ingredients": [
+        { "product": "Lasagna Sheets", "name": "Lasagne sheets, for rolling into cannelloni", "quantity": 12, "unit": "pcs" },
+        { "product": "Spinach", "quantity": 500, "unit": "g" },
+        { "product": "Ricotta", "quantity": 500, "unit": "g" },
+        { "product": "Parmesan", "quantity": 80, "unit": "g" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Nutmeg", "quantity": 0.25, "unit": "tsp" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Tomato Sauce", "name": "Passata", "quantity": 700, "unit": "ml" },
+        { "product": "Fresh Mozzarella", "quantity": 125, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "gnocchi-sage-butter",
+      "name": "Gnocchi with Sage Butter",
+      "category": "Pasta & Rice",
+      "description": "Pillowy gnocchi in nutty brown butter with crisp sage leaves, lemon and shaved parmesan, ready in 15 minutes.",
+      "instructions": [
+        "Bring a large pot of salted water to the boil for the gnocchi.",
+        "Melt the butter in a wide pan over medium heat with the whole garlic clove and the sage leaves.",
+        "Cook until the butter foams, smells nutty and turns light brown and the sage is crisp, then take off the heat and discard the garlic.",
+        "Drop the gnocchi into the boiling water and lift them out with a slotted spoon as soon as they float.",
+        "Toss the gnocchi in the sage butter with a squeeze of lemon and a spoonful of cooking water.",
+        "Serve with grated parmesan and black pepper."
+      ],
+      "prepTime": 5,
+      "cookTime": 10,
+      "servings": 2,
+      "tags": ["quick", "vegetarian", "italian", "comfort-food"],
+      "ingredients": [
+        { "product": "Gnocchi", "quantity": 500, "unit": "g" },
+        { "product": "Butter", "quantity": 80, "unit": "g" },
+        { "product": "Fresh Sage", "name": "Sage leaves", "quantity": 12, "unit": "leaf" },
+        { "product": "Parmesan", "quantity": 50, "unit": "g" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Black Pepper", "note": "freshly ground, to taste" },
+        { "product": "Salt", "note": "for the cooking water" }
+      ]
+    },
+    {
+      "key": "gnocchi-al-pomodoro",
+      "name": "Gnocchi al Pomodoro",
+      "category": "Pasta & Rice",
+      "description": "Soft potato gnocchi in a sweet, slow-simmered tomato and basil sauce with melting pockets of mozzarella.",
+      "instructions": [
+        "Soften the finely chopped onion in olive oil over low heat for 8 minutes, then add the garlic for 1 minute.",
+        "Pour in the passata, add a pinch of sugar and salt, and simmer gently for 15 minutes with a few basil leaves.",
+        "Cook the gnocchi in salted boiling water until they float, then lift them straight into the sauce.",
+        "Fold through the torn mozzarella and remaining basil so the cheese just begins to melt.",
+        "Serve with grated parmesan."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["vegetarian", "italian", "kid-friendly", "quick"],
+      "ingredients": [
+        { "product": "Gnocchi", "quantity": 800, "unit": "g" },
+        { "product": "Tomato Sauce", "name": "Passata", "quantity": 500, "unit": "ml" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Fresh Basil", "quantity": 1, "unit": "bunch" },
+        { "product": "Fresh Mozzarella", "quantity": 125, "unit": "g" },
+        { "product": "Parmesan", "quantity": 40, "unit": "g" },
+        { "product": "Sugar", "quantity": 1, "unit": "pinch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "pesto-gnocchi-green-beans",
+      "name": "Pesto Gnocchi with Green Beans",
+      "category": "Pasta & Rice",
+      "description": "Gnocchi and crisp-tender green beans coated in basil pesto with blistered cherry tomatoes and toasted pine nuts.",
+      "instructions": [
+        "Toast the pine nuts in a dry pan until golden and set aside.",
+        "Boil the trimmed green beans in salted water for 4 minutes, then add the gnocchi and cook until they float; drain, keeping a little water.",
+        "Meanwhile sear the cherry tomatoes in olive oil in a large pan until they blister and split.",
+        "Add the gnocchi and beans to the pan, take off the heat and stir in the pesto with a splash of cooking water.",
+        "Serve with pine nuts, grated parmesan and black pepper."
+      ],
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["quick", "vegetarian", "italian", "summer"],
+      "ingredients": [
+        { "product": "Gnocchi", "quantity": 800, "unit": "g" },
+        { "product": "Green Beans", "quantity": 200, "unit": "g" },
+        { "product": "Pesto", "quantity": 5, "unit": "tbsp" },
+        { "product": "Cherry Tomatoes", "quantity": 200, "unit": "g" },
+        { "product": "Pine Nuts", "quantity": 30, "unit": "g" },
+        { "product": "Parmesan", "quantity": 40, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "orecchiette-sausage-broccoli",
+      "name": "Orecchiette with Sausage and Broccoli",
+      "category": "Pasta & Rice",
+      "description": "Puglian-style orecchiette with crumbled pork sausage, tender broccoli, garlic, chili and pecorino.",
+      "instructions": [
+        "Cut the broccoli into small florets and boil in salted water for 4 minutes; lift out and keep the water for the pasta.",
+        "Cook the orecchiette in the same water until al dente.",
+        "Meanwhile squeeze the sausage meat from its casings and brown it in olive oil, breaking it into crumbs.",
+        "Add the sliced garlic and chili flakes, pour in the wine and let it reduce by half.",
+        "Add the broccoli and crush it slightly into the sauce, then toss in the drained pasta with a splash of water.",
+        "Finish with grated cheese and serve."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["italian", "high-protein", "comfort-food", "quick"],
+      "ingredients": [
+        { "product": "Pasta", "name": "Orecchiette", "quantity": 400, "unit": "g" },
+        { "product": "Sausages", "name": "Italian-style pork sausages", "quantity": 4, "unit": "pcs" },
+        { "product": "Broccoli", "quantity": 1, "unit": "head" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Chili Flakes", "quantity": 1, "unit": "tsp" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "White Wine", "quantity": 100, "unit": "ml" },
+        { "product": "Parmesan", "name": "Pecorino or parmesan, grated", "quantity": 60, "unit": "g" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "lemon-ricotta-pasta",
+      "name": "Lemon Ricotta Pasta",
+      "category": "Pasta & Rice",
+      "description": "Silky no-cook sauce of ricotta, lemon zest and parmesan tossed with hot spaghetti and torn basil.",
+      "instructions": [
+        "Cook the spaghetti in salted boiling water until al dente, reserving a cup of the water.",
+        "Meanwhile whisk the ricotta in a large bowl with the lemon zest, lemon juice, grated garlic, parmesan, olive oil and black pepper.",
+        "Loosen the ricotta with a few spoonfuls of hot pasta water until it is creamy and pourable.",
+        "Add the drained spaghetti to the bowl and toss well, adding more water as needed to coat every strand.",
+        "Serve with torn basil, extra parmesan and a drizzle of olive oil."
+      ],
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["quick", "vegetarian", "italian", "summer"],
+      "ingredients": [
+        { "product": "Spaghetti", "quantity": 400, "unit": "g" },
+        { "product": "Ricotta", "quantity": 250, "unit": "g" },
+        { "product": "Lemon", "quantity": 2, "unit": "pcs" },
+        { "product": "Parmesan", "quantity": 60, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Black Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "creamy-mushroom-tagliatelle",
+      "name": "Creamy Mushroom Tagliatelle",
+      "category": "Pasta & Rice",
+      "description": "Ribbons of tagliatelle in a thyme-scented cream sauce with golden chestnut and button mushrooms.",
+      "instructions": [
+        "Slice the mushrooms and fry them in batches in butter over high heat until golden; set aside.",
+        "In the same pan soften the chopped shallots, add the garlic and thyme leaves, then deglaze with the white wine.",
+        "Return the mushrooms, pour in the cream and simmer for 3 minutes; season well.",
+        "Cook the tagliatelle in salted boiling water until al dente and drain, keeping a cup of water.",
+        "Toss the pasta in the sauce with the parmesan, loosening with pasta water.",
+        "Scatter with chopped parsley and serve."
+      ],
+      "prepTime": 15,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["vegetarian", "italian", "comfort-food"],
+      "ingredients": [
+        { "product": "Tagliatelle", "quantity": 400, "unit": "g" },
+        { "product": "Brown Mushrooms", "quantity": 300, "unit": "g" },
+        { "product": "Mushrooms", "quantity": 200, "unit": "g" },
+        { "product": "Shallots", "quantity": 2, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "White Wine", "quantity": 100, "unit": "ml" },
+        { "product": "Cooking Cream", "quantity": 200, "unit": "ml" },
+        { "product": "Parmesan", "quantity": 60, "unit": "g" },
+        { "product": "Fresh Thyme", "quantity": 3, "unit": "sprig" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "pasta-e-fagioli",
+      "name": "Pasta e Fagioli",
+      "category": "Pasta & Rice",
+      "description": "Hearty Italian one-pot of small pasta and cannellini beans in a rosemary tomato broth with pancetta.",
+      "instructions": [
+        "Fry the diced pancetta in olive oil until golden, then add the chopped onion, carrot and celery and soften for 8 minutes.",
+        "Stir in the garlic and rosemary, then add the crushed tomatoes and broth and bring to a simmer.",
+        "Add the drained beans and simmer for 15 minutes; mash a ladleful against the side of the pot to thicken.",
+        "Add the pasta directly to the pot and cook until al dente, adding water if it gets too thick.",
+        "Season, rest for 5 minutes and serve with grated parmesan and a drizzle of olive oil."
+      ],
+      "prepTime": 15,
+      "cookTime": 40,
+      "servings": 4,
+      "tags": ["italian", "one-pot", "comfort-food", "budget"],
+      "ingredients": [
+        { "product": "Pasta", "name": "Ditalini or other small pasta", "quantity": 200, "unit": "g" },
+        { "product": "Canned Beans", "name": "Cannellini beans", "quantity": 2, "unit": "can" },
+        { "product": "Pancetta", "quantity": 100, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Vegetable Broth", "quantity": 1, "unit": "l" },
+        { "product": "Dried Rosemary", "quantity": 1, "unit": "tsp" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Parmesan", "quantity": 50, "unit": "g" }
+      ]
+    },
+    {
+      "key": "orzo-roasted-vegetables",
+      "name": "Orzo with Roasted Vegetables and Feta",
+      "category": "Pasta & Rice",
+      "description": "Rice-shaped orzo tossed with oven-roasted peppers, zucchini and tomatoes, crumbled feta and lemon.",
+      "instructions": [
+        "Preheat the oven to 220°C; toss the chopped zucchini, peppers, red onion, cherry tomatoes and garlic with 3 tbsp oil, oregano and salt.",
+        "Roast on a large tray for 25-30 minutes until charred at the edges.",
+        "Cook the orzo in salted boiling water until al dente, drain and toss with the remaining oil.",
+        "Fold the roasted vegetables and their juices through the orzo with the lemon zest and juice.",
+        "Crumble over the feta, scatter with basil and serve warm or at room temperature."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["vegetarian", "mediterranean", "meal-prep", "summer"],
+      "ingredients": [
+        { "product": "Orzo", "quantity": 300, "unit": "g" },
+        { "product": "Zucchini", "quantity": 1, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 2, "unit": "pcs" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Cherry Tomatoes", "quantity": 250, "unit": "g" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Feta Cheese", "quantity": 150, "unit": "g" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "macaroane-cu-branza",
+      "name": "Macaroane cu Brânză (Sweet Baked Pasta with Cheese)",
+      "category": "Pasta & Rice",
+      "description": "Romanian comfort classic: macaroni baked with sweetened cottage cheese, eggs, raisins and lemon zest.",
+      "instructions": [
+        "Cook the macaroni in salted water until just tender, drain and toss with half the butter.",
+        "Beat the eggs with the sugar, vanilla sugar, lemon zest and a pinch of salt, then mix in the cottage cheese and sour cream.",
+        "Fold the cheese mixture and raisins through the warm macaroni.",
+        "Butter a baking dish, dust with breadcrumbs and spread the pasta mixture evenly; dot with the remaining butter.",
+        "Bake at 180°C for 40-45 minutes until set and golden on top.",
+        "Cool for 10 minutes, cut into squares and serve warm, dusted with sugar if you like."
+      ],
+      "prepTime": 15,
+      "cookTime": 45,
+      "servings": 6,
+      "tags": ["romanian", "vegetarian", "kid-friendly", "baked"],
+      "ingredients": [
+        { "product": "Macaroni", "quantity": 400, "unit": "g" },
+        { "product": "Cottage Cheese", "name": "Brânză de vaci (cottage cheese)", "quantity": 500, "unit": "g" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 100, "unit": "g" },
+        { "product": "Sour Cream", "quantity": 200, "unit": "g" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Raisins", "quantity": 80, "unit": "g" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Breadcrumbs", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "taitei-cu-nuca",
+      "name": "Tăiței cu Nucă (Noodles with Walnuts)",
+      "category": "Pasta & Rice",
+      "description": "Buttered egg noodles tossed with ground walnuts, sugar and lemon zest — a nostalgic Romanian sweet supper.",
+      "instructions": [
+        "Toast the walnuts in a dry pan for 3 minutes, cool, then grind coarsely and mix with the sugar, vanilla sugar and lemon zest.",
+        "Cook the noodles in lightly salted boiling water until tender and drain well.",
+        "Return the noodles to the pot with the butter and toss until glossy.",
+        "Add two-thirds of the walnut mixture and toss to coat.",
+        "Serve warm, sprinkled with the remaining walnut sugar."
+      ],
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "quick", "budget"],
+      "ingredients": [
+        { "product": "Noodles", "name": "Egg noodles (tăiței)", "quantity": 400, "unit": "g" },
+        { "product": "Walnuts", "quantity": 150, "unit": "g" },
+        { "product": "Sugar", "quantity": 80, "unit": "g" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "penne-alla-vodka",
+      "name": "Penne alla Vodka",
+      "category": "Pasta & Rice",
+      "description": "Penne in a blush-pink sauce of tomato paste, cream and a splash of vodka, with chili and parmesan.",
+      "instructions": [
+        "Soften the finely chopped onion in the butter and olive oil over low heat for 8 minutes, then add the garlic and chili flakes.",
+        "Stir in the tomato paste and cook for 3 minutes until it darkens to brick red.",
+        "Pour in the vodka and let it bubble for 2 minutes, then add the cream and simmer gently.",
+        "Cook the penne in salted boiling water until al dente, reserving a cup of the water.",
+        "Toss the pasta in the sauce with the parmesan and enough pasta water to make it glossy.",
+        "Serve with torn basil and extra parmesan."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["italian", "american", "comfort-food", "vegetarian"],
+      "ingredients": [
+        { "product": "Penne", "quantity": 400, "unit": "g" },
+        { "product": "Vodka", "quantity": 60, "unit": "ml" },
+        { "product": "Tomato Paste", "quantity": 4, "unit": "tbsp" },
+        { "product": "Heavy Cream", "quantity": 150, "unit": "ml" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Parmesan", "quantity": 60, "unit": "g" },
+        { "product": "Chili Flakes", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "fettuccine-alfredo",
+      "name": "Fettuccine Alfredo",
+      "category": "Pasta & Rice",
+      "description": "Rich, glossy fettuccine coated in butter, cream and a generous mountain of parmesan with a hint of nutmeg.",
+      "instructions": [
+        "Cook the fettuccine in salted boiling water until al dente, reserving a cup of the water.",
+        "Meanwhile melt the butter in a wide pan with the crushed garlic clove, pour in the cream and simmer for 3 minutes; discard the garlic.",
+        "Take the pan off the heat and whisk in the parmesan a handful at a time until smooth.",
+        "Add the drained pasta and toss, adding pasta water until the sauce coats every strand.",
+        "Season with nutmeg, black pepper and salt, scatter with parsley and serve at once."
+      ],
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["italian", "quick", "comfort-food", "vegetarian"],
+      "ingredients": [
+        { "product": "Tagliatelle", "name": "Fettuccine", "quantity": 400, "unit": "g" },
+        { "product": "Butter", "quantity": 80, "unit": "g" },
+        { "product": "Heavy Cream", "quantity": 250, "unit": "ml" },
+        { "product": "Parmesan", "quantity": 120, "unit": "g" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Nutmeg", "quantity": 1, "unit": "pinch" },
+        { "product": "Black Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Fresh Parsley", "note": "chopped, to garnish" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "linguine-with-mussels",
+      "name": "Linguine with Mussels",
+      "category": "Pasta & Rice",
+      "description": "Linguine tossed with mussels steamed open in white wine, garlic, chili and burst cherry tomatoes.",
+      "instructions": [
+        "Scrub the mussels, pull off the beards and discard any that stay open when tapped.",
+        "Heat the olive oil in a very large pan and sizzle the sliced garlic and chili flakes for 1 minute, then add the halved cherry tomatoes.",
+        "Pour in the wine, add the mussels, cover and steam for 4-5 minutes until they open; discard any that remain shut.",
+        "Cook the linguine in salted boiling water until al dente and drain, keeping a cup of the water.",
+        "Toss the linguine through the mussels and their juices with chopped parsley and lemon zest, adding pasta water if needed.",
+        "Serve with lemon wedges."
+      ],
+      "prepTime": 20,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["italian", "mediterranean", "summer", "high-protein"],
+      "ingredients": [
+        { "product": "Spaghetti", "name": "Linguine", "quantity": 400, "unit": "g" },
+        { "product": "Mussels", "quantity": 1, "unit": "kg" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "White Wine", "quantity": 150, "unit": "ml" },
+        { "product": "Cherry Tomatoes", "quantity": 250, "unit": "g" },
+        { "product": "Chili Flakes", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "pappardelle-slow-beef-ragu",
+      "name": "Pappardelle with Slow-Cooked Beef Ragù",
+      "category": "Pasta & Rice",
+      "description": "Wide pappardelle with beef braised for hours in red wine and tomato until it falls into shreds.",
+      "instructions": [
+        "Season the beef cubes and brown them in batches in olive oil in a heavy casserole; set aside.",
+        "Soften the finely chopped onion, carrot and celery in the same pot for 10 minutes, then add the garlic.",
+        "Return the beef, pour in the red wine and reduce by half, then add the crushed tomatoes, broth and bay leaves.",
+        "Cover and simmer very gently on the hob or in a 160°C oven for 2.5-3 hours until the beef shreds easily.",
+        "Shred the meat into the sauce with two forks, season and simmer uncovered to thicken if needed.",
+        "Cook the pappardelle until al dente, toss with the ragù and serve with grated parmesan."
+      ],
+      "prepTime": 20,
+      "cookTime": 180,
+      "servings": 6,
+      "tags": ["italian", "comfort-food", "winter", "holiday"],
+      "ingredients": [
+        { "product": "Tagliatelle", "name": "Pappardelle", "quantity": 500, "unit": "g" },
+        { "product": "Beef", "name": "Beef chuck, cubed", "quantity": 1, "unit": "kg" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Red Wine", "quantity": 250, "unit": "ml" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Beef Broth", "quantity": 500, "unit": "ml" },
+        { "product": "Bay Leaf", "quantity": 2, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Parmesan", "quantity": 60, "unit": "g" }
+      ]
+    },
+    {
+      "key": "salmon-dill-tagliatelle",
+      "name": "Salmon and Dill Tagliatelle",
+      "category": "Pasta & Rice",
+      "description": "Flaked pan-seared salmon folded into a lemony dill cream with peas and tagliatelle.",
+      "instructions": [
+        "Season the salmon and sear skin-side down in butter for 4 minutes, turn and cook 2 more minutes; set aside and flake, discarding the skin.",
+        "Soften the chopped shallots in the same pan, pour in the wine and reduce by half.",
+        "Add the cream, peas and lemon zest and simmer for 3 minutes.",
+        "Cook the tagliatelle in salted boiling water until al dente and drain, keeping a little water.",
+        "Toss the pasta in the sauce with the flaked salmon, chopped dill and a squeeze of lemon; season and serve."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["high-protein", "quick", "comfort-food"],
+      "ingredients": [
+        { "product": "Tagliatelle", "quantity": 400, "unit": "g" },
+        { "product": "Salmon Fillets", "quantity": 2, "unit": "pcs" },
+        { "product": "Shallots", "quantity": 2, "unit": "pcs" },
+        { "product": "White Wine", "quantity": 100, "unit": "ml" },
+        { "product": "Cooking Cream", "quantity": 200, "unit": "ml" },
+        { "product": "Frozen Peas", "quantity": 100, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "spaghetti-and-meatballs",
+      "name": "Spaghetti and Meatballs",
+      "category": "Pasta & Rice",
+      "description": "Juicy parmesan-laced meatballs simmered in a basil tomato sauce and piled onto spaghetti.",
+      "instructions": [
+        "Mix the minced meat with the breadcrumbs, egg, half the grated onion, 1 grated garlic clove, half the parmesan, salt and pepper; shape into 16 meatballs.",
+        "Brown the meatballs in olive oil in a wide pan on all sides, then remove.",
+        "Soften the remaining onion and garlic in the pan, add the crushed tomatoes and oregano and simmer for 10 minutes.",
+        "Return the meatballs to the sauce, cover and simmer for 20 minutes.",
+        "Cook the spaghetti until al dente, toss with some of the sauce and top with meatballs, basil and the remaining parmesan."
+      ],
+      "prepTime": 25,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["kid-friendly", "american", "italian", "comfort-food"],
+      "ingredients": [
+        { "product": "Spaghetti", "quantity": 400, "unit": "g" },
+        { "product": "Mixed Minced Meat", "quantity": 500, "unit": "g" },
+        { "product": "Breadcrumbs", "quantity": 50, "unit": "g" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Parmesan", "quantity": 60, "unit": "g" },
+        { "product": "Crushed Tomatoes", "quantity": 800, "unit": "g" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "spaghetti-zucchini-lemon-mint",
+      "name": "Spaghetti with Zucchini, Lemon and Mint",
+      "category": "Pasta & Rice",
+      "description": "Summery spaghetti with soft golden zucchini coins, garlic, lemon zest, fresh mint and parmesan.",
+      "instructions": [
+        "Slice the zucchini into thin coins and fry in the olive oil over medium-high heat until golden and soft, about 10 minutes.",
+        "Add the sliced garlic for the last minute and season with salt.",
+        "Cook the spaghetti in salted boiling water until al dente, reserving a cup of the water.",
+        "Toss the pasta into the zucchini with the lemon zest, lemon juice, parmesan and a splash of water, mashing some zucchini into a sauce.",
+        "Finish with torn mint and black pepper."
+      ],
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["vegetarian", "quick", "summer", "italian"],
+      "ingredients": [
+        { "product": "Spaghetti", "quantity": 400, "unit": "g" },
+        { "product": "Zucchini", "quantity": 3, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Parmesan", "quantity": 60, "unit": "g" },
+        { "product": "Fresh Mint", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Black Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "sesame-peanut-noodles",
+      "name": "Sesame Peanut Noodles",
+      "category": "Pasta & Rice",
+      "description": "Chilled egg noodles in a creamy peanut-sesame dressing with cucumber, spring onions and toasted sesame.",
+      "instructions": [
+        "Cook the noodles according to the packet, rinse under cold water and drain well.",
+        "Whisk the peanut butter with the soy sauce, sesame oil, rice vinegar, honey, grated garlic, grated ginger and hot sauce, adding warm water until pourable.",
+        "Cut the cucumber into matchsticks and slice the spring onions.",
+        "Toss the noodles with the dressing, most of the cucumber and spring onions.",
+        "Serve topped with the remaining vegetables and toasted sesame seeds."
+      ],
+      "prepTime": 15,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["asian", "quick", "vegetarian", "summer"],
+      "ingredients": [
+        { "product": "Noodles", "name": "Egg noodles", "quantity": 400, "unit": "g" },
+        { "product": "Peanut Butter", "quantity": 3, "unit": "tbsp" },
+        { "product": "Soy Sauce", "quantity": 4, "unit": "tbsp" },
+        { "product": "Sesame Oil", "quantity": 2, "unit": "tsp" },
+        { "product": "Rice Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Honey", "quantity": 1, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Ginger", "quantity": 15, "unit": "g" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Cucumber", "quantity": 1, "unit": "pcs" },
+        { "product": "Sesame Seeds", "quantity": 2, "unit": "tbsp" },
+        { "product": "Hot Sauce", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "singapore-noodles",
+      "name": "Singapore Noodles",
+      "category": "Pasta & Rice",
+      "description": "Curry-spiced rice vermicelli stir-fried with shrimp, ham, egg, peppers and bean sprouts.",
+      "instructions": [
+        "Soak the rice vermicelli in hot water until just pliable, drain and snip into shorter lengths.",
+        "Heat 1 tbsp oil in a wok, scramble the beaten eggs, break into pieces and set aside.",
+        "Stir-fry the shrimp for 2 minutes until pink, then remove.",
+        "Add the remaining oil, the garlic, sliced pepper and ham strips and stir-fry for 2 minutes.",
+        "Add the noodles, curry powder, turmeric and soy sauce and toss until evenly yellow and hot.",
+        "Return the eggs and shrimp with the bean sprouts and spring onions, toss for 1 minute and serve."
+      ],
+      "prepTime": 20,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["asian", "spicy", "quick", "high-protein"],
+      "ingredients": [
+        { "product": "Rice Noodles", "name": "Rice vermicelli", "quantity": 300, "unit": "g" },
+        { "product": "Shrimp", "quantity": 250, "unit": "g" },
+        { "product": "Pressed Ham", "name": "Ham, cut into strips", "quantity": 100, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Curry Powder", "quantity": 2, "unit": "tbsp" },
+        { "product": "Turmeric", "quantity": 1, "unit": "tsp" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Bean Sprouts", "quantity": 150, "unit": "g" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Soy Sauce", "quantity": 3, "unit": "tbsp" },
+        { "product": "Vegetable Oil", "quantity": 3, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "beef-udon-stir-fry",
+      "name": "Beef Udon Stir-Fry",
+      "category": "Pasta & Rice",
+      "description": "Chewy udon noodles tossed with seared sliced beef, bok choy and a glossy soy-oyster sauce.",
+      "instructions": [
+        "Cook the udon according to the packet, rinse briefly and drain.",
+        "Mix the soy sauce, oyster sauce, brown sugar and sesame oil in a small bowl.",
+        "Heat the oil in a wok until smoking and sear the thinly sliced beef in two batches for 1-2 minutes; remove.",
+        "Stir-fry the garlic, ginger and halved bok choy for 2 minutes until the greens wilt.",
+        "Add the noodles, beef and sauce and toss over high heat for 2 minutes until everything is coated.",
+        "Top with sliced spring onions and sesame seeds."
+      ],
+      "prepTime": 15,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["asian", "quick", "high-protein"],
+      "ingredients": [
+        { "product": "Ramen Noodles", "name": "Udon noodles", "quantity": 3, "unit": "pack" },
+        { "product": "Beef Steak", "name": "Sirloin, thinly sliced", "quantity": 400, "unit": "g" },
+        { "product": "Soy Sauce", "quantity": 3, "unit": "tbsp" },
+        { "product": "Oyster Sauce", "quantity": 2, "unit": "tbsp" },
+        { "product": "Brown Sugar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Sesame Oil", "quantity": 1, "unit": "tsp" },
+        { "product": "Bok Choy", "quantity": 2, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Ginger", "quantity": 15, "unit": "g" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Vegetable Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Sesame Seeds", "quantity": 1, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "mushroom-risotto",
+      "name": "Mushroom Risotto",
+      "category": "Pasta & Rice",
+      "description": "Creamy arborio risotto stirred with golden sautéed mushrooms, white wine, butter and parmesan.",
+      "instructions": [
+        "Fry the sliced mushrooms in half the butter and the olive oil over high heat until golden; season and set aside.",
+        "Keep the broth at a gentle simmer in a separate pan.",
+        "Soften the finely chopped onion and garlic in the remaining olive oil, add the rice and toast for 2 minutes until the edges turn translucent.",
+        "Pour in the wine and stir until absorbed, then add hot broth a ladle at a time, stirring, waiting for each to be absorbed.",
+        "After about 18 minutes, when the rice is creamy but still has bite, stir in the mushrooms.",
+        "Take off the heat and beat in the remaining butter and parmesan; rest 2 minutes, then serve with parsley."
+      ],
+      "prepTime": 10,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["italian", "vegetarian", "comfort-food", "winter"],
+      "ingredients": [
+        { "product": "Risotto Rice", "quantity": 320, "unit": "g" },
+        { "product": "Mushrooms", "quantity": 300, "unit": "g" },
+        { "product": "Brown Mushrooms", "quantity": 200, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "White Wine", "quantity": 120, "unit": "ml" },
+        { "product": "Vegetable Broth", "quantity": 1.2, "unit": "l" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Parmesan", "quantity": 80, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "pumpkin-sage-risotto",
+      "name": "Pumpkin and Sage Risotto",
+      "category": "Pasta & Rice",
+      "description": "Golden autumn risotto with sweet roasted pumpkin, crispy sage leaves and a whisper of nutmeg.",
+      "instructions": [
+        "Toss the diced pumpkin with 1 tbsp olive oil and salt and roast at 200°C for 25 minutes until soft and caramelised.",
+        "Fry the sage leaves in half the butter until crisp and set aside on paper.",
+        "Soften the chopped onion and garlic in the remaining oil, add the rice and toast for 2 minutes.",
+        "Add the wine, then hot broth one ladle at a time, stirring until each is absorbed, for about 18 minutes.",
+        "Mash half the pumpkin into the risotto and fold in the rest with the nutmeg.",
+        "Off the heat beat in the remaining butter and parmesan, then serve topped with crispy sage."
+      ],
+      "prepTime": 15,
+      "cookTime": 40,
+      "servings": 4,
+      "tags": ["italian", "vegetarian", "winter", "comfort-food"],
+      "ingredients": [
+        { "product": "Risotto Rice", "quantity": 320, "unit": "g" },
+        { "product": "Pumpkin", "quantity": 500, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "White Wine", "quantity": 120, "unit": "ml" },
+        { "product": "Vegetable Broth", "quantity": 1.2, "unit": "l" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Parmesan", "quantity": 80, "unit": "g" },
+        { "product": "Fresh Sage", "name": "Sage leaves", "quantity": 8, "unit": "leaf" },
+        { "product": "Nutmeg", "quantity": 1, "unit": "pinch" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "risotto-alla-milanese",
+      "name": "Risotto alla Milanese",
+      "category": "Pasta & Rice",
+      "description": "The Milanese classic: saffron-gold risotto finished with plenty of butter and parmesan.",
+      "instructions": [
+        "Steep the saffron in a ladle of hot broth for 10 minutes; keep the rest of the broth simmering.",
+        "Soften the very finely chopped onion in half the butter and the olive oil without colouring.",
+        "Add the rice and toast for 2 minutes, then pour in the wine and stir until absorbed.",
+        "Add hot broth a ladle at a time, stirring, until the rice is creamy with a slight bite, about 18 minutes; add the saffron broth halfway.",
+        "Off the heat beat in the remaining cold butter and parmesan vigorously until glossy.",
+        "Season, rest for 2 minutes and serve."
+      ],
+      "prepTime": 5,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["italian", "comfort-food", "gluten-free", "holiday"],
+      "ingredients": [
+        { "product": "Risotto Rice", "name": "Carnaroli or arborio rice", "quantity": 320, "unit": "g" },
+        { "product": "Saffron", "name": "Saffron threads", "quantity": 1, "unit": "pinch" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "White Wine", "quantity": 120, "unit": "ml" },
+        { "product": "Chicken Broth", "quantity": 1.2, "unit": "l" },
+        { "product": "Butter", "quantity": 80, "unit": "g" },
+        { "product": "Parmesan", "quantity": 80, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "seafood-risotto",
+      "name": "Seafood Risotto",
+      "category": "Pasta & Rice",
+      "description": "Risotto ai frutti di mare with shrimp, squid and mussels, white wine, cherry tomatoes and parsley.",
+      "instructions": [
+        "Clean the mussels and slice the squid into rings; keep the broth simmering.",
+        "Heat half the oil in a wide pan, add the mussels and a splash of wine, cover until they open, then remove and shell most of them, keeping the liquid.",
+        "Soften the shallots and garlic in the remaining oil, add the rice and toast for 2 minutes, then add the rest of the wine.",
+        "Add the mussel liquid and hot broth a ladle at a time, stirring, for about 15 minutes.",
+        "Stir in the squid, shrimp and halved cherry tomatoes and cook 3-4 minutes more until the seafood is just done.",
+        "Fold in the mussels, parsley, lemon zest and a drizzle of oil; season and serve."
+      ],
+      "prepTime": 20,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["italian", "mediterranean", "high-protein", "summer"],
+      "ingredients": [
+        { "product": "Risotto Rice", "quantity": 320, "unit": "g" },
+        { "product": "Shrimp", "quantity": 300, "unit": "g" },
+        { "product": "Squid", "quantity": 200, "unit": "g" },
+        { "product": "Mussels", "quantity": 300, "unit": "g" },
+        { "product": "Shallots", "quantity": 2, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "White Wine", "quantity": 150, "unit": "ml" },
+        { "product": "Vegetable Broth", "name": "Fish or vegetable stock", "quantity": 1.2, "unit": "l" },
+        { "product": "Cherry Tomatoes", "quantity": 150, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" }
+      ]
+    },
+    {
+      "key": "pea-mint-risotto",
+      "name": "Pea and Mint Risotto",
+      "category": "Pasta & Rice",
+      "description": "Bright green risotto with sweet peas, fresh mint and lemon, finished with butter and parmesan.",
+      "instructions": [
+        "Blend a third of the peas with a ladle of hot broth and half the mint into a smooth purée.",
+        "Soften the chopped onion and garlic in olive oil, add the rice and toast for 2 minutes.",
+        "Add the wine and stir until absorbed, then add hot broth a ladle at a time, stirring, for about 15 minutes.",
+        "Stir in the whole peas and the pea purée and cook for 3 more minutes.",
+        "Off the heat beat in the butter, parmesan, lemon zest and the remaining chopped mint.",
+        "Season and serve with a squeeze of lemon."
+      ],
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["vegetarian", "italian", "summer", "gluten-free"],
+      "ingredients": [
+        { "product": "Risotto Rice", "quantity": 320, "unit": "g" },
+        { "product": "Frozen Peas", "quantity": 300, "unit": "g" },
+        { "product": "Fresh Mint", "quantity": 1, "unit": "bunch" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "White Wine", "quantity": 120, "unit": "ml" },
+        { "product": "Vegetable Broth", "quantity": 1.2, "unit": "l" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Parmesan", "quantity": 70, "unit": "g" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "pilaf-cu-legume",
+      "name": "Pilaf cu Legume (Romanian Vegetable Pilaf)",
+      "category": "Pasta & Rice",
+      "description": "Fluffy Romanian rice pilaf with carrots, peppers, peas and a touch of tomato, finished with fresh dill.",
+      "instructions": [
+        "Soften the finely chopped onion in sunflower oil over medium heat for 5 minutes.",
+        "Add the grated carrots and diced pepper and cook for 5 more minutes, then stir in the garlic and tomato paste.",
+        "Add the rinsed rice and stir for 2 minutes until coated and glossy.",
+        "Pour in the hot broth, add the peas and salt, bring to a boil, then cover and cook on the lowest heat for 18 minutes.",
+        "Take off the heat and let it stand covered for 10 minutes.",
+        "Fluff with a fork and fold in the chopped dill and parsley."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "budget", "one-pot"],
+      "ingredients": [
+        { "product": "Rice", "name": "Long-grain rice", "quantity": 300, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Frozen Peas", "quantity": 150, "unit": "g" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Sunflower Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Vegetable Broth", "quantity": 700, "unit": "ml" },
+        { "product": "Tomato Paste", "quantity": 1, "unit": "tbsp" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "pilaf-cu-pui",
+      "name": "Pilaf cu Pui (Romanian Chicken Pilaf)",
+      "category": "Pasta & Rice",
+      "description": "Homestyle Romanian pilaf: browned chicken thighs cooked into rice with onion, carrot, pepper and parsley.",
+      "instructions": [
+        "Season the chicken thighs and brown them in sunflower oil in a deep pan until golden on both sides; set aside.",
+        "Soften the chopped onion, grated carrot and diced pepper in the same pan for 8 minutes, then add the garlic.",
+        "Stir in the rinsed rice and toast for 2 minutes.",
+        "Nestle the chicken into the rice, pour in the hot broth, add the bay leaf, salt and pepper and bring to a boil.",
+        "Cover and cook on very low heat for 20 minutes, or transfer to a 180°C oven, until the rice is tender and the chicken cooked through.",
+        "Rest covered for 10 minutes, then fluff and scatter with parsley."
+      ],
+      "prepTime": 15,
+      "cookTime": 45,
+      "servings": 4,
+      "tags": ["romanian", "comfort-food", "one-pot", "kid-friendly"],
+      "ingredients": [
+        { "product": "Chicken Thighs", "quantity": 4, "unit": "pcs" },
+        { "product": "Rice", "name": "Long-grain rice", "quantity": 300, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Sunflower Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Chicken Broth", "quantity": 750, "unit": "ml" },
+        { "product": "Bay Leaf", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "paella-mixta",
+      "name": "Paella Mixta (Chicken and Seafood Paella)",
+      "category": "Pasta & Rice",
+      "description": "Saffron-scented Spanish rice with chicken thighs, shrimp, mussels, peppers and peas, crisp at the base.",
+      "instructions": [
+        "Steep the saffron in a little hot broth; keep the rest of the broth hot.",
+        "Brown the seasoned chicken thighs in olive oil in a wide shallow pan for 8 minutes, then push to the edges.",
+        "Fry the diced pepper, then add the garlic, grated tomatoes and smoked paprika and cook to a thick sofrito.",
+        "Stir in the rice to coat, pour in the hot broth with the saffron, spread everything evenly and do not stir again.",
+        "Simmer briskly for 10 minutes, then lower the heat, add the peas, shrimp and mussels and cook 8-10 minutes more until the liquid is absorbed.",
+        "Raise the heat for 1 minute to crisp the base, cover with a cloth and rest for 5 minutes before serving."
+      ],
+      "prepTime": 25,
+      "cookTime": 45,
+      "servings": 6,
+      "tags": ["mediterranean", "one-pot", "holiday", "high-protein"],
+      "ingredients": [
+        { "product": "Risotto Rice", "name": "Paella (bomba) or arborio rice", "quantity": 400, "unit": "g" },
+        { "product": "Chicken Thighs", "quantity": 4, "unit": "pcs" },
+        { "product": "Shrimp", "quantity": 300, "unit": "g" },
+        { "product": "Mussels", "quantity": 400, "unit": "g" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Frozen Peas", "quantity": 100, "unit": "g" },
+        { "product": "Saffron", "quantity": 1, "unit": "pinch" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Chicken Broth", "quantity": 1, "unit": "l" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "spanish-chicken-and-rice",
+      "name": "Spanish Chicken and Rice (Arroz con Pollo)",
+      "category": "Pasta & Rice",
+      "description": "One-pan chicken thighs and chorizo baked into smoky paprika rice with peppers, tomato and peas.",
+      "instructions": [
+        "Season the chicken thighs and brown them skin-side down in olive oil in a large ovenproof pan; set aside.",
+        "Fry the sliced chorizo until it releases its oil, then add the chopped onion and pepper and soften for 6 minutes.",
+        "Add the garlic and smoked paprika, then the crushed tomatoes and the rice, stirring to coat.",
+        "Pour in the hot broth, season, and nestle the chicken on top.",
+        "Cover and simmer gently, or bake at 180°C, for 25 minutes; scatter the peas over for the final 5 minutes.",
+        "Rest for 5 minutes and serve from the pan."
+      ],
+      "prepTime": 15,
+      "cookTime": 45,
+      "servings": 4,
+      "tags": ["mediterranean", "one-pot", "comfort-food", "high-protein"],
+      "ingredients": [
+        { "product": "Chicken Thighs", "quantity": 6, "unit": "pcs" },
+        { "product": "Rice", "name": "Long-grain rice", "quantity": 300, "unit": "g" },
+        { "product": "Chorizo", "quantity": 100, "unit": "g" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Crushed Tomatoes", "quantity": 200, "unit": "g" },
+        { "product": "Smoked Paprika", "quantity": 2, "unit": "tsp" },
+        { "product": "Chicken Broth", "quantity": 700, "unit": "ml" },
+        { "product": "Frozen Peas", "quantity": 100, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "spanakorizo",
+      "name": "Spanakorizo (Greek Spinach Rice)",
+      "category": "Pasta & Rice",
+      "description": "Greek one-pot rice simmered with heaps of spinach, dill, spring onions and lemon, served with feta.",
+      "instructions": [
+        "Soften the chopped onion and spring onions in the olive oil for 5 minutes, then add the garlic.",
+        "Add the spinach in handfuls, letting each wilt before adding more.",
+        "Stir in the rinsed rice, pour in the hot broth and season with salt and pepper.",
+        "Cover and simmer gently for 18-20 minutes until the rice is tender and the liquid absorbed.",
+        "Stir in the chopped dill, lemon zest and juice and let stand covered for 5 minutes.",
+        "Serve warm with crumbled feta and a drizzle of olive oil."
+      ],
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["mediterranean", "vegetarian", "healthy", "one-pot"],
+      "ingredients": [
+        { "product": "Rice", "name": "Medium or long-grain rice", "quantity": 250, "unit": "g" },
+        { "product": "Spinach", "quantity": 500, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 5, "unit": "tbsp" },
+        { "product": "Vegetable Broth", "quantity": 600, "unit": "ml" },
+        { "product": "Feta Cheese", "quantity": 100, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "kedgeree",
+      "name": "Kedgeree",
+      "category": "Pasta & Rice",
+      "description": "Anglo-Indian curried basmati with flaked smoked mackerel, soft-boiled eggs, peas, parsley and lemon.",
+      "instructions": [
+        "Rinse the basmati and cook in salted water until just tender; drain and keep warm.",
+        "Boil the eggs for 7 minutes, cool in cold water, peel and quarter.",
+        "Melt the butter in a large pan and soften the chopped onion for 8 minutes, then stir in the curry powder and turmeric for 1 minute.",
+        "Add the rice and peas and toss until coated and hot.",
+        "Fold in the flaked smoked mackerel, most of the parsley and the lemon juice; season well.",
+        "Top with the eggs and remaining parsley and serve with lemon wedges."
+      ],
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["high-protein", "comfort-food", "gluten-free"],
+      "ingredients": [
+        { "product": "Basmati Rice", "quantity": 300, "unit": "g" },
+        { "product": "Mackerel", "name": "Smoked mackerel fillets", "quantity": 300, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Curry Powder", "quantity": 2, "unit": "tsp" },
+        { "product": "Turmeric", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Frozen Peas", "quantity": 100, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "coconut-rice-and-beans",
+      "name": "Caribbean Coconut Rice and Beans",
+      "category": "Pasta & Rice",
+      "description": "Fragrant rice cooked in coconut milk with kidney beans, thyme, allspice, spring onion and a whole chili.",
+      "instructions": [
+        "Rinse the rice until the water runs clear and drain the beans.",
+        "Put the rice, beans, coconut milk, water, sliced spring onions, crushed garlic, thyme sprigs, allspice and salt in a pot.",
+        "Add the whole chili without cutting it, and bring to a boil.",
+        "Cover tightly and cook on the lowest heat for 20 minutes until the liquid is absorbed.",
+        "Rest off the heat for 10 minutes, remove the chili and thyme stalks and fluff with a fork."
+      ],
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["vegan", "one-pot", "gluten-free", "budget"],
+      "ingredients": [
+        { "product": "Rice", "name": "Long-grain rice", "quantity": 300, "unit": "g" },
+        { "product": "Coconut Milk", "quantity": 400, "unit": "ml" },
+        { "product": "Canned Beans", "name": "Red kidney beans", "quantity": 1, "unit": "can" },
+        { "product": "Water", "quantity": 250, "unit": "ml" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Fresh Thyme", "quantity": 3, "unit": "sprig" },
+        { "product": "Chili Pepper", "name": "Whole red chili (or scotch bonnet)", "quantity": 1, "unit": "pcs" },
+        { "product": "Allspice", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "mujadara",
+      "name": "Mujadara (Lentils and Rice with Crispy Onions)",
+      "category": "Pasta & Rice",
+      "description": "Levantine comfort food of cumin-spiced lentils and rice heaped with sweet, deeply caramelised onions.",
+      "instructions": [
+        "Thinly slice the onions and fry slowly in the olive oil for 25-30 minutes, stirring, until deep brown and crisp at the edges; drain on paper.",
+        "Meanwhile simmer the lentils in the water for 15 minutes until almost tender.",
+        "Add the rinsed rice, cumin, cinnamon, salt, pepper and a spoonful of the onion oil to the lentils.",
+        "Cover and cook on low heat for 18 minutes until the rice is tender and the water absorbed; rest 10 minutes.",
+        "Fold half the onions through, pile the rest on top and serve with yogurt and parsley."
+      ],
+      "prepTime": 10,
+      "cookTime": 45,
+      "servings": 4,
+      "tags": ["middle-eastern", "vegetarian", "budget", "healthy"],
+      "ingredients": [
+        { "product": "Green Lentils", "name": "Brown or green lentils", "quantity": 200, "unit": "g" },
+        { "product": "Rice", "name": "Long-grain rice", "quantity": 200, "unit": "g" },
+        { "product": "Onion", "quantity": 4, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 6, "unit": "tbsp" },
+        { "product": "Cumin", "quantity": 1.5, "unit": "tsp" },
+        { "product": "Cinnamon", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Water", "quantity": 1, "unit": "l" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Black Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Yogurt", "quantity": 200, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "turkish-bulgur-pilaf",
+      "name": "Turkish Bulgur Pilaf",
+      "category": "Pasta & Rice",
+      "description": "Nutty coarse bulgur cooked with onion, pepper and tomato paste in butter, finished with parsley and mint.",
+      "instructions": [
+        "Melt the butter with the olive oil and soften the finely chopped onion and diced pepper for 6 minutes.",
+        "Stir in the tomato paste and paprika and cook for 1 minute, then add the chopped tomato.",
+        "Add the bulgur and stir for 2 minutes to coat the grains.",
+        "Pour in the hot broth, season with salt, bring to a boil, cover and cook on low heat for 12-15 minutes.",
+        "Rest off the heat, covered with a tea towel under the lid, for 10 minutes.",
+        "Fluff with a fork and fold through the chopped parsley and mint."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["middle-eastern", "vegetarian", "budget", "quick"],
+      "ingredients": [
+        { "product": "Bulgur", "name": "Coarse bulgur", "quantity": 300, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomato Paste", "quantity": 2, "unit": "tbsp" },
+        { "product": "Tomatoes", "quantity": 1, "unit": "pcs" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Vegetable Broth", "quantity": 600, "unit": "ml" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Fresh Mint", "quantity": 0.25, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "couscous-roasted-vegetables",
+      "name": "Couscous with Roasted Vegetables and Chickpeas",
+      "category": "Pasta & Rice",
+      "description": "Fluffy couscous piled with cumin-roasted peppers, eggplant, zucchini and chickpeas, with harissa and lemon.",
+      "instructions": [
+        "Preheat the oven to 220°C and cut the zucchini, eggplant, peppers and red onion into 3 cm chunks.",
+        "Toss the vegetables and drained chickpeas with 3 tbsp olive oil, cumin, smoked paprika and salt, and roast for 30 minutes, turning once.",
+        "Put the couscous in a bowl with the remaining oil and a pinch of salt, pour over 350 ml boiling water, cover and leave for 5 minutes.",
+        "Fluff the couscous with a fork and stir in the lemon zest and juice.",
+        "Pile the roasted vegetables over the couscous, dot with harissa and scatter with chopped coriander."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["vegan", "mediterranean", "meal-prep", "healthy"],
+      "ingredients": [
+        { "product": "Couscous", "quantity": 300, "unit": "g" },
+        { "product": "Zucchini", "quantity": 1, "unit": "pcs" },
+        { "product": "Eggplant", "quantity": 1, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 2, "unit": "pcs" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Canned Chickpeas", "quantity": 1, "unit": "can" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Harissa", "quantity": 1, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "mediterranean-quinoa-bowl",
+      "name": "Mediterranean Quinoa Bowl",
+      "category": "Pasta & Rice",
+      "description": "Lemony quinoa topped with chickpeas, cherry tomatoes, cucumber, avocado, feta and toasted pumpkin seeds.",
+      "instructions": [
+        "Rinse the quinoa, then simmer it in 500 ml salted water for 15 minutes until the germ spirals out; rest covered for 5 minutes and fluff.",
+        "Whisk the lemon juice and zest with the olive oil and salt, and toss half of it through the warm quinoa.",
+        "Halve the cherry tomatoes, dice the cucumber and avocado, and thinly slice the red onion.",
+        "Toast the pumpkin seeds in a dry pan for 2 minutes.",
+        "Divide the quinoa between bowls and arrange the vegetables, drained chickpeas and crumbled feta on top.",
+        "Drizzle with the remaining dressing and scatter with parsley and pumpkin seeds."
+      ],
+      "prepTime": 15,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["healthy", "vegetarian", "meal-prep", "gluten-free"],
+      "ingredients": [
+        { "product": "Quinoa", "quantity": 250, "unit": "g" },
+        { "product": "Canned Chickpeas", "quantity": 1, "unit": "can" },
+        { "product": "Cherry Tomatoes", "quantity": 250, "unit": "g" },
+        { "product": "Cucumber", "quantity": 1, "unit": "pcs" },
+        { "product": "Avocado", "quantity": 1, "unit": "pcs" },
+        { "product": "Feta Cheese", "quantity": 120, "unit": "g" },
+        { "product": "Red Onion", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Pumpkin Seeds", "quantity": 30, "unit": "g" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "hrisca-cu-ciuperci",
+      "name": "Hrișcă cu Ciuperci (Buckwheat with Mushrooms)",
+      "category": "Pasta & Rice",
+      "description": "Toasted buckwheat groats simmered in broth and folded with buttery mushrooms, onions and sour cream.",
+      "instructions": [
+        "Toast the rinsed buckwheat in a dry pot for 3 minutes until fragrant.",
+        "Pour in the hot broth, add salt, cover and simmer on low heat for 15 minutes until the liquid is absorbed; rest 5 minutes.",
+        "Meanwhile fry the sliced onions in the oil and half the butter for 8 minutes until golden.",
+        "Add the sliced mushrooms and cook over high heat until browned, then add the garlic and thyme for 1 minute.",
+        "Fold the mushrooms into the buckwheat with the remaining butter and the sour cream; season.",
+        "Serve scattered with chopped parsley."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "gluten-free", "budget"],
+      "ingredients": [
+        { "product": "Buckwheat", "name": "Buckwheat groats (hrișcă)", "quantity": 300, "unit": "g" },
+        { "product": "Mushrooms", "quantity": 400, "unit": "g" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Vegetable Broth", "quantity": 600, "unit": "ml" },
+        { "product": "Dried Thyme", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Sour Cream", "quantity": 100, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mamaliga-mushroom-ragout",
+      "name": "Mămăligă with Mushroom Ragout",
+      "category": "Pasta & Rice",
+      "description": "Soft Romanian polenta topped with a garlicky mushroom and dill ragout, sour cream and crumbled telemea.",
+      "instructions": [
+        "Bring the water to a boil with the salt, rain in the cornmeal while whisking and cook on low heat, stirring often, for 25-30 minutes until thick and pulling from the sides.",
+        "Beat half the butter into the mămăligă and keep warm.",
+        "Fry the chopped onion in the oil and remaining butter for 5 minutes, then add the sliced mushrooms and cook over high heat until golden.",
+        "Add the crushed garlic, season, and stir in 2 tbsp of the sour cream and the chopped dill.",
+        "Spoon the mămăligă into bowls, top with the mushroom ragout, the rest of the sour cream and crumbled telemea."
+      ],
+      "prepTime": 10,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "gluten-free", "comfort-food"],
+      "ingredients": [
+        { "product": "Cornmeal", "name": "Mălai (coarse cornmeal)", "quantity": 300, "unit": "g" },
+        { "product": "Water", "quantity": 1.2, "unit": "l" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Brown Mushrooms", "quantity": 400, "unit": "g" },
+        { "product": "Mushrooms", "quantity": 200, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Telemea Cheese", "quantity": 150, "unit": "g" }
+      ]
+    },
+    {
+      "key": "cajun-dirty-rice",
+      "name": "Cajun Dirty Rice",
+      "category": "Pasta & Rice",
+      "description": "Louisiana rice cooked with spiced pork, chicken livers, celery, green pepper and onion.",
+      "instructions": [
+        "Finely chop the chicken livers and brown them with the minced pork in a little oil, breaking up the meat, for 6 minutes.",
+        "Add the chopped onion, celery and green pepper and cook for 6 minutes until soft, then add the garlic.",
+        "Stir in the cayenne, smoked paprika, thyme and salt, then add the rinsed rice and coat in the spiced fat.",
+        "Pour in the hot broth, bring to a boil, cover and cook on the lowest heat for 18 minutes.",
+        "Rest for 10 minutes, fluff with a fork and stir through the sliced spring onions."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["american", "spicy", "one-pot", "budget"],
+      "ingredients": [
+        { "product": "Rice", "name": "Long-grain rice", "quantity": 300, "unit": "g" },
+        { "product": "Chicken Liver", "quantity": 200, "unit": "g" },
+        { "product": "Minced Pork", "quantity": 250, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Green Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Cayenne Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Chicken Broth", "quantity": 600, "unit": "ml" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Vegetable Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" }
+      ]
+    }
+  ],
+  "newProducts": [
+    {
+      "name": "Orzo",
+      "category": "Grains & Pasta",
+      "unit": "g",
+      "emoji": "🍝",
+      "aliases": ["orzo pasta", "risoni", "rice-shaped pasta"]
+    }
+  ]
+}

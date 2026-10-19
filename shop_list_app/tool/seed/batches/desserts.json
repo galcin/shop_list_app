@@ -1,0 +1,1464 @@
+{
+  "category": "Desserts",
+  "recipes": [
+    {
+      "key": "papanasi",
+      "name": "Papanași",
+      "category": "Desserts",
+      "description": "Fried cottage-cheese doughnuts topped with sour cream and sour cherry jam, crisp outside and fluffy inside.",
+      "instructions": [
+        "Mix cottage cheese, eggs, sugar, lemon zest, baking soda and a pinch of salt until smooth.",
+        "Work in the semolina and flour to form a soft, slightly sticky dough; rest 15 minutes.",
+        "With floured hands shape rings about 8 cm wide and small balls from the leftover dough.",
+        "Fry in hot oil over medium heat, 3 to 4 minutes per side, until deep golden.",
+        "Drain on paper, then top each ring with a ball, a spoon of sour cream and plenty of jam."
+      ],
+      "prepTime": 25,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["romanian", "comfort-food", "vegetarian", "kid-friendly"],
+      "ingredients": [
+        { "product": "Cottage Cheese", "quantity": 500, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 50, "unit": "g" },
+        { "product": "Semolina", "quantity": 60, "unit": "g" },
+        { "product": "Flour", "quantity": 200, "unit": "g" },
+        { "product": "Baking Soda", "quantity": 1, "unit": "tsp" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Sunflower Oil", "name": "Sunflower oil for frying", "quantity": 500, "unit": "ml" },
+        { "product": "Sour Cream", "quantity": 200, "unit": "g" },
+        { "product": "Jam", "name": "Sour cherry jam", "quantity": 8, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "cozonac-cu-nuca",
+      "name": "Cozonac cu Nucă",
+      "category": "Desserts",
+      "description": "Rich Romanian holiday sweet bread swirled with a walnut, cocoa and rum filling.",
+      "instructions": [
+        "Dissolve the yeast in warm milk with a spoon of sugar and let it foam for 10 minutes.",
+        "Beat the egg yolks with the remaining sugar, salt, lemon zest and rum extract, then combine with the flour and yeast mixture.",
+        "Knead for 15 minutes, gradually working in the soft butter, until smooth and elastic; cover and let rise until doubled, about 1.5 hours.",
+        "Whisk the egg whites to soft peaks and fold in ground walnuts, cocoa, 50 g sugar and raisins for the filling.",
+        "Divide the dough in two, roll each into a rectangle, spread with filling and roll up tightly, then twist the two rolls together.",
+        "Place in a lined loaf tin, let rise 45 minutes, brush with beaten egg and bake at 170 C for 45 to 50 minutes."
+      ],
+      "prepTime": 60,
+      "cookTime": 50,
+      "servings": 12,
+      "tags": ["romanian", "holiday", "baked", "vegetarian"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 600, "unit": "g" },
+        { "product": "Milk", "quantity": 250, "unit": "ml" },
+        { "product": "Yeast", "name": "Dry yeast", "quantity": 10, "unit": "g" },
+        { "product": "Sugar", "quantity": 200, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Butter", "quantity": 120, "unit": "g" },
+        { "product": "Walnuts", "name": "Ground walnuts", "quantity": 250, "unit": "g" },
+        { "product": "Cocoa Powder", "quantity": 2, "unit": "tbsp" },
+        { "product": "Raisins", "quantity": 50, "unit": "g" },
+        { "product": "Rum Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "placinta-cu-mere",
+      "name": "Plăcintă cu Mere",
+      "category": "Desserts",
+      "description": "Flaky phyllo pie filled with grated cinnamon apples, dusted with powdered sugar.",
+      "instructions": [
+        "Coarsely grate the apples, squeeze out excess juice and cook with sugar and cinnamon for 10 minutes until soft; stir in the breadcrumbs.",
+        "Butter a baking tray and layer half the phyllo sheets, brushing each with melted butter.",
+        "Spread the apple filling evenly and cover with the remaining sheets, buttering each one.",
+        "Score the top into squares and bake at 180 C for 35 to 40 minutes until golden.",
+        "Cool slightly and dust generously with powdered sugar before cutting."
+      ],
+      "prepTime": 25,
+      "cookTime": 40,
+      "servings": 8,
+      "tags": ["romanian", "baked", "vegetarian", "budget"],
+      "ingredients": [
+        { "product": "Phyllo Dough", "quantity": 400, "unit": "g" },
+        { "product": "Apples", "quantity": 6, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 120, "unit": "g" },
+        { "product": "Cinnamon", "quantity": 2, "unit": "tsp" },
+        { "product": "Breadcrumbs", "quantity": 3, "unit": "tbsp" },
+        { "product": "Butter", "name": "Melted butter", "quantity": 100, "unit": "g" },
+        { "product": "Powdered Sugar", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "placinta-cu-branza-dulce",
+      "name": "Plăcintă cu Brânză Dulce",
+      "category": "Desserts",
+      "description": "Crisp phyllo layers around a sweet vanilla cottage-cheese filling studded with raisins.",
+      "instructions": [
+        "Mix cottage cheese with eggs, sugar, vanilla sugar, semolina, raisins and lemon zest until creamy.",
+        "Line a buttered tray with half the phyllo sheets, brushing each with melted butter.",
+        "Spread the cheese filling and cover with the remaining buttered sheets, tucking in the edges.",
+        "Whisk sour cream with one egg and pour over the top so it soaks into the layers.",
+        "Bake at 180 C for 40 minutes until puffed and golden; cool before slicing."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 8,
+      "tags": ["romanian", "baked", "vegetarian", "comfort-food"],
+      "ingredients": [
+        { "product": "Phyllo Dough", "quantity": 400, "unit": "g" },
+        { "product": "Cottage Cheese", "quantity": 750, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 150, "unit": "g" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Semolina", "quantity": 3, "unit": "tbsp" },
+        { "product": "Raisins", "quantity": 80, "unit": "g" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Butter", "name": "Melted butter", "quantity": 100, "unit": "g" },
+        { "product": "Sour Cream", "quantity": 200, "unit": "g" }
+      ]
+    },
+    {
+      "key": "clatite-cu-dulceata",
+      "name": "Clătite cu Dulceață",
+      "category": "Desserts",
+      "description": "Thin Romanian crepes rolled around fruit jam and dusted with powdered sugar.",
+      "instructions": [
+        "Whisk eggs with sugar and salt, then add milk, sparkling water, vanilla and flour to make a thin, lump-free batter; rest 20 minutes.",
+        "Heat a lightly oiled non-stick pan and pour in a small ladle of batter, swirling to coat thinly.",
+        "Cook 1 minute until the edges lift, flip and cook 30 seconds more; repeat with the rest.",
+        "Spread each crepe with jam, roll or fold into quarters.",
+        "Dust with powdered sugar and serve warm."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["romanian", "quick", "kid-friendly", "vegetarian"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 250, "unit": "g" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Milk", "quantity": 400, "unit": "ml" },
+        { "product": "Water", "name": "Sparkling water", "quantity": 100, "unit": "ml" },
+        { "product": "Sugar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Jam", "quantity": 8, "unit": "tbsp" },
+        { "product": "Powdered Sugar", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "gogosi-pufoase",
+      "name": "Gogoși Pufoase",
+      "category": "Desserts",
+      "description": "Pillowy fried yeast doughnuts rolled in powdered sugar, best eaten warm.",
+      "instructions": [
+        "Dissolve yeast and a teaspoon of sugar in warm milk and leave 10 minutes until foamy.",
+        "Mix flour, remaining sugar, salt, egg yolks, vanilla and the yeast milk; knead 10 minutes, adding the soft butter at the end.",
+        "Cover and let rise in a warm place for 1 hour until doubled.",
+        "Roll out to 1.5 cm thick, cut rounds with a glass and let them rest 20 minutes.",
+        "Fry in oil at 170 C for 2 minutes per side until golden, drain on paper and roll in powdered sugar."
+      ],
+      "prepTime": 30,
+      "cookTime": 20,
+      "servings": 8,
+      "tags": ["romanian", "kid-friendly", "comfort-food", "vegetarian"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 500, "unit": "g" },
+        { "product": "Milk", "quantity": 250, "unit": "ml" },
+        { "product": "Yeast", "name": "Dry yeast", "quantity": 7, "unit": "g" },
+        { "product": "Sugar", "quantity": 60, "unit": "g" },
+        { "product": "Eggs", "name": "Egg yolks", "quantity": 2, "unit": "pcs" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Sunflower Oil", "name": "Sunflower oil for frying", "quantity": 750, "unit": "ml" },
+        { "product": "Powdered Sugar", "quantity": 80, "unit": "g" }
+      ]
+    },
+    {
+      "key": "salam-de-biscuiti",
+      "name": "Salam de Biscuiți",
+      "category": "Desserts",
+      "description": "No-bake chocolate biscuit log with walnuts, raisins and Turkish delight, sliced like a salami.",
+      "instructions": [
+        "Break the biscuits into small irregular pieces and dice the Turkish delight.",
+        "Melt butter with milk, sugar and cocoa in a saucepan, stirring until smooth; cool slightly and add rum extract.",
+        "Pour over the biscuits, walnuts, raisins and Turkish delight and mix until everything is coated.",
+        "Shape into a thick log on cling film, roll tightly and twist the ends.",
+        "Chill at least 4 hours, then dust with powdered sugar and cut into slices."
+      ],
+      "prepTime": 20,
+      "cookTime": 0,
+      "servings": 10,
+      "tags": ["romanian", "no-cook", "kid-friendly", "budget"],
+      "ingredients": [
+        { "product": "Biscuits", "name": "Plain biscuits", "quantity": 400, "unit": "g" },
+        { "product": "Butter", "quantity": 150, "unit": "g" },
+        { "product": "Milk", "quantity": 150, "unit": "ml" },
+        { "product": "Sugar", "quantity": 100, "unit": "g" },
+        { "product": "Cocoa Powder", "quantity": 4, "unit": "tbsp" },
+        { "product": "Walnuts", "quantity": 100, "unit": "g" },
+        { "product": "Raisins", "quantity": 50, "unit": "g" },
+        { "product": "Turkish Delight", "quantity": 100, "unit": "g" },
+        { "product": "Rum Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Powdered Sugar", "quantity": 1, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "negresa",
+      "name": "Negresă",
+      "category": "Desserts",
+      "description": "Dense, moist Romanian cocoa cake with walnuts, cut into squares and dusted with sugar.",
+      "instructions": [
+        "Whisk eggs with sugar until pale, then stir in oil, milk and vanilla.",
+        "Sift flour, cocoa, baking powder and salt and fold into the wet mixture.",
+        "Fold in the chopped walnuts and pour into a lined 25 cm square tin.",
+        "Bake at 180 C for 30 to 35 minutes until a skewer comes out with moist crumbs.",
+        "Cool in the tin, dust with powdered sugar and cut into squares."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 12,
+      "tags": ["romanian", "baked", "budget", "vegetarian"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 250, "unit": "g" },
+        { "product": "Sunflower Oil", "quantity": 150, "unit": "ml" },
+        { "product": "Milk", "quantity": 150, "unit": "ml" },
+        { "product": "Flour", "quantity": 250, "unit": "g" },
+        { "product": "Cocoa Powder", "quantity": 5, "unit": "tbsp" },
+        { "product": "Baking Powder", "quantity": 2, "unit": "tsp" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Walnuts", "quantity": 100, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Powdered Sugar", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "chec-marmorat-cu-cacao",
+      "name": "Chec Marmorat cu Cacao",
+      "category": "Desserts",
+      "description": "Classic Romanian marble loaf with swirls of vanilla and cocoa sponge, soft and buttery.",
+      "instructions": [
+        "Separate the eggs and whisk the whites with a pinch of salt to stiff peaks.",
+        "Beat yolks with sugar until creamy, add oil, milk and vanilla, then fold in flour and baking powder.",
+        "Gently fold in the egg whites, then transfer one third of the batter to a bowl and mix in the cocoa.",
+        "Alternate spoonfuls of light and dark batter in a lined loaf tin and swirl once with a knife.",
+        "Bake at 170 C for 45 to 50 minutes until a skewer comes out clean; cool before slicing."
+      ],
+      "prepTime": 20,
+      "cookTime": 50,
+      "servings": 10,
+      "tags": ["romanian", "baked", "kid-friendly", "vegetarian"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 5, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 200, "unit": "g" },
+        { "product": "Flour", "quantity": 250, "unit": "g" },
+        { "product": "Sunflower Oil", "quantity": 100, "unit": "ml" },
+        { "product": "Milk", "quantity": 80, "unit": "ml" },
+        { "product": "Baking Powder", "quantity": 2, "unit": "tsp" },
+        { "product": "Cocoa Powder", "quantity": 3, "unit": "tbsp" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "cremsnit",
+      "name": "Cremșnit",
+      "category": "Desserts",
+      "description": "Two crisp puff pastry sheets sandwiching a thick vanilla custard and whipped cream.",
+      "instructions": [
+        "Bake the puff pastry sheets between two trays at 200 C for 20 minutes until golden; cool.",
+        "Whisk egg yolks with sugar, cornstarch and 100 ml of the milk until smooth.",
+        "Heat the remaining milk with vanilla, pour over the yolk mixture, return to the pan and cook, stirring, until very thick.",
+        "Stir in the butter, cover with cling film and cool completely, then fold in the whipped heavy cream.",
+        "Spread the cream over one pastry sheet, top with the second, chill 4 hours and dust with powdered sugar before cutting."
+      ],
+      "prepTime": 30,
+      "cookTime": 30,
+      "servings": 12,
+      "tags": ["romanian", "baked", "holiday", "vegetarian"],
+      "ingredients": [
+        { "product": "Puff Pastry Dough", "quantity": 800, "unit": "g" },
+        { "product": "Milk", "quantity": 1, "unit": "l" },
+        { "product": "Eggs", "name": "Egg yolks", "quantity": 6, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 200, "unit": "g" },
+        { "product": "Cornstarch", "quantity": 6, "unit": "tbsp" },
+        { "product": "Vanilla Extract", "quantity": 2, "unit": "tsp" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Heavy Cream", "quantity": 300, "unit": "ml" },
+        { "product": "Powdered Sugar", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "savarina",
+      "name": "Savarină",
+      "category": "Desserts",
+      "description": "Light yeast cakes soaked in rum syrup, split and filled with whipped cream and jam.",
+      "instructions": [
+        "Dissolve yeast in warm milk with a teaspoon of sugar; mix with flour, eggs, 30 g sugar, salt and soft butter into a sticky batter.",
+        "Spoon into buttered muffin or savarin moulds, let rise 40 minutes and bake at 180 C for 20 minutes.",
+        "Boil water with the remaining sugar for 5 minutes, remove from heat and add rum extract and lemon juice.",
+        "Dip the warm cakes in the hot syrup until fully soaked, then drain on a rack.",
+        "Whip the cream with powdered sugar, split each cake open, fill with cream and finish with a spoon of jam."
+      ],
+      "prepTime": 40,
+      "cookTime": 25,
+      "servings": 8,
+      "tags": ["romanian", "baked", "holiday", "vegetarian"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 250, "unit": "g" },
+        { "product": "Milk", "quantity": 100, "unit": "ml" },
+        { "product": "Yeast", "name": "Dry yeast", "quantity": 7, "unit": "g" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Butter", "quantity": 80, "unit": "g" },
+        { "product": "Sugar", "quantity": 280, "unit": "g" },
+        { "product": "Water", "quantity": 500, "unit": "ml" },
+        { "product": "Rum Extract", "quantity": 2, "unit": "tsp" },
+        { "product": "Lemon", "name": "Lemon juice", "quantity": 1, "unit": "pcs" },
+        { "product": "Heavy Cream", "quantity": 400, "unit": "ml" },
+        { "product": "Powdered Sugar", "quantity": 40, "unit": "g" },
+        { "product": "Jam", "name": "Apricot jam", "quantity": 4, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "orez-cu-lapte",
+      "name": "Orez cu Lapte",
+      "category": "Desserts",
+      "description": "Creamy Romanian rice pudding simmered slowly in vanilla milk and finished with cinnamon.",
+      "instructions": [
+        "Rinse the rice and simmer it in the water for 10 minutes until the liquid is absorbed.",
+        "Add the milk, sugar, vanilla sugar and a pinch of salt and cook over low heat, stirring often, for 30 to 35 minutes until thick and creamy.",
+        "Stir in the butter and let rest 5 minutes.",
+        "Spoon into bowls and sprinkle with cinnamon; serve warm or chilled with a little jam."
+      ],
+      "prepTime": 5,
+      "cookTime": 45,
+      "servings": 4,
+      "tags": ["romanian", "comfort-food", "kid-friendly", "gluten-free"],
+      "ingredients": [
+        { "product": "Rice", "name": "Round-grain rice", "quantity": 200, "unit": "g" },
+        { "product": "Water", "quantity": 300, "unit": "ml" },
+        { "product": "Milk", "quantity": 1, "unit": "l" },
+        { "product": "Sugar", "quantity": 100, "unit": "g" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Butter", "quantity": 20, "unit": "g" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Jam", "note": "to serve" }
+      ]
+    },
+    {
+      "key": "gris-cu-lapte",
+      "name": "Griș cu Lapte",
+      "category": "Desserts",
+      "description": "Silky semolina pudding cooked in sweet vanilla milk and topped with a swirl of jam.",
+      "instructions": [
+        "Bring the milk to a simmer with sugar, vanilla sugar and a pinch of salt.",
+        "Pour in the semolina in a thin stream, whisking constantly to avoid lumps.",
+        "Cook over low heat for 5 to 7 minutes, stirring, until thick and creamy; stir in the butter.",
+        "Divide into bowls and top each with a spoon of jam or a dusting of cinnamon."
+      ],
+      "prepTime": 5,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["romanian", "quick", "kid-friendly", "budget"],
+      "ingredients": [
+        { "product": "Milk", "quantity": 1, "unit": "l" },
+        { "product": "Semolina", "quantity": 120, "unit": "g" },
+        { "product": "Sugar", "quantity": 80, "unit": "g" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Butter", "quantity": 20, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Jam", "quantity": 4, "unit": "tbsp" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "budinca-de-taitei",
+      "name": "Budincă de Tăiței",
+      "category": "Desserts",
+      "description": "Baked sweet noodle pudding with cottage cheese, raisins and lemon zest, golden on top.",
+      "instructions": [
+        "Cook the noodles in lightly salted water until just tender, drain and toss with half the butter.",
+        "Beat eggs with sugar and vanilla sugar, then mix in cottage cheese, sour cream, raisins and lemon zest.",
+        "Fold the noodles into the cheese mixture and pour into a buttered baking dish.",
+        "Dot the top with the remaining butter and bake at 180 C for 35 to 40 minutes until set and golden.",
+        "Cool 10 minutes, dust with powdered sugar and serve warm."
+      ],
+      "prepTime": 15,
+      "cookTime": 40,
+      "servings": 6,
+      "tags": ["romanian", "baked", "comfort-food", "vegetarian"],
+      "ingredients": [
+        { "product": "Noodles", "name": "Egg noodles", "quantity": 300, "unit": "g" },
+        { "product": "Cottage Cheese", "quantity": 400, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 120, "unit": "g" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g" },
+        { "product": "Raisins", "quantity": 80, "unit": "g" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Powdered Sugar", "quantity": 1, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "lapte-de-pasare",
+      "name": "Lapte de Pasăre",
+      "category": "Desserts",
+      "description": "Romanian floating islands: soft meringue clouds poached in milk over a silky vanilla custard.",
+      "instructions": [
+        "Separate the eggs and whisk the whites with 50 g sugar and a pinch of salt to firm, glossy peaks.",
+        "Bring the milk to a gentle simmer with the vanilla and drop in spoonfuls of meringue; poach 1 minute per side, then lift onto a plate.",
+        "Whisk the yolks with the remaining sugar, slowly pour in the hot milk and return to the pan.",
+        "Cook over low heat, stirring, until the custard coats the back of a spoon; do not let it boil.",
+        "Pour the custard into a serving dish, float the meringues on top and chill for 2 hours."
+      ],
+      "prepTime": 20,
+      "cookTime": 20,
+      "servings": 6,
+      "tags": ["romanian", "gluten-free", "comfort-food", "vegetarian"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 6, "unit": "pcs" },
+        { "product": "Milk", "quantity": 1, "unit": "l" },
+        { "product": "Sugar", "quantity": 180, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 2, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "cornulete-cu-gem",
+      "name": "Cornulețe cu Gem",
+      "category": "Desserts",
+      "description": "Tender crescent cookies made with sour cream dough, filled with jam and rolled in powdered sugar.",
+      "instructions": [
+        "Rub the cold butter into the flour until crumbly, then mix in sour cream, egg yolks, yeast, vanilla sugar and salt to form a soft dough.",
+        "Wrap and chill for at least 1 hour.",
+        "Divide into 4 pieces, roll each into a thin circle and cut into 12 triangles.",
+        "Put half a teaspoon of thick jam at the wide end of each triangle and roll up towards the tip.",
+        "Bake at 180 C for 15 to 18 minutes until lightly golden, then roll in powdered sugar while warm."
+      ],
+      "prepTime": 40,
+      "cookTime": 18,
+      "servings": 12,
+      "tags": ["romanian", "baked", "holiday", "kid-friendly"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 500, "unit": "g" },
+        { "product": "Butter", "quantity": 250, "unit": "g" },
+        { "product": "Sour Cream", "quantity": 200, "unit": "g" },
+        { "product": "Eggs", "name": "Egg yolks", "quantity": 2, "unit": "pcs" },
+        { "product": "Yeast", "name": "Dry yeast", "quantity": 7, "unit": "g" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Jam", "name": "Thick plum or apricot jam", "quantity": 10, "unit": "tbsp" },
+        { "product": "Powdered Sugar", "quantity": 100, "unit": "g" }
+      ]
+    },
+    {
+      "key": "prajitura-albinita",
+      "name": "Prăjitura Albinița",
+      "category": "Desserts",
+      "description": "Thin honey sheets layered with a smooth semolina and butter cream, softened overnight.",
+      "instructions": [
+        "Melt honey with butter and sugar, cool slightly, then mix in the egg, baking soda and enough flour to form a firm dough.",
+        "Divide into 3 pieces and roll each very thinly to fit a lined tray; bake each sheet at 180 C for 7 to 8 minutes.",
+        "Cook the semolina in the milk with the remaining sugar and lemon zest until thick, then cool completely.",
+        "Beat the soft butter until fluffy and gradually beat in the cooled semolina to make a smooth cream.",
+        "Spread half the cream on one sheet, add the second sheet and a thin layer of jam, then the rest of the cream and the top sheet.",
+        "Press lightly, refrigerate overnight and dust with powdered sugar before cutting into squares."
+      ],
+      "prepTime": 45,
+      "cookTime": 35,
+      "servings": 12,
+      "tags": ["romanian", "baked", "holiday", "vegetarian"],
+      "ingredients": [
+        { "product": "Honey", "quantity": 4, "unit": "tbsp" },
+        { "product": "Butter", "quantity": 300, "unit": "g" },
+        { "product": "Sugar", "quantity": 250, "unit": "g" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Baking Soda", "quantity": 1, "unit": "tsp" },
+        { "product": "Flour", "quantity": 450, "unit": "g" },
+        { "product": "Semolina", "quantity": 100, "unit": "g" },
+        { "product": "Milk", "quantity": 750, "unit": "ml" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Jam", "name": "Sour cherry jam", "quantity": 4, "unit": "tbsp" },
+        { "product": "Powdered Sugar", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "baklava-cu-nuci",
+      "name": "Baklava cu Nuci",
+      "category": "Desserts",
+      "description": "Layers of buttery phyllo and spiced walnuts soaked in a lemon-honey syrup.",
+      "instructions": [
+        "Pulse the walnuts with cinnamon and 50 g sugar until coarsely ground.",
+        "Butter a tray and layer 8 phyllo sheets, brushing each with melted butter; sprinkle with a third of the nuts.",
+        "Repeat twice more and finish with the remaining sheets, buttering each; cut into diamonds with a sharp knife.",
+        "Bake at 170 C for 45 to 50 minutes until crisp and golden.",
+        "Meanwhile boil water, remaining sugar, honey and lemon juice for 10 minutes; pour the hot syrup over the hot baklava.",
+        "Let it soak at room temperature for at least 6 hours before serving."
+      ],
+      "prepTime": 40,
+      "cookTime": 50,
+      "servings": 12,
+      "tags": ["middle-eastern", "romanian", "baked", "holiday"],
+      "ingredients": [
+        { "product": "Phyllo Dough", "quantity": 500, "unit": "g" },
+        { "product": "Walnuts", "quantity": 400, "unit": "g" },
+        { "product": "Butter", "name": "Melted butter", "quantity": 250, "unit": "g" },
+        { "product": "Sugar", "quantity": 300, "unit": "g" },
+        { "product": "Honey", "quantity": 4, "unit": "tbsp" },
+        { "product": "Water", "quantity": 300, "unit": "ml" },
+        { "product": "Lemon", "name": "Lemon juice", "quantity": 1, "unit": "pcs" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "tiramisu-classic",
+      "name": "Tiramisu",
+      "category": "Desserts",
+      "description": "Coffee-soaked ladyfingers layered with airy mascarpone cream and finished with cocoa.",
+      "instructions": [
+        "Brew strong coffee, stir in the rum and let it cool.",
+        "Whisk egg yolks with sugar over a pan of simmering water for 5 minutes until pale and thick, then cool.",
+        "Beat the mascarpone into the yolks, whip the cream to soft peaks and fold it in.",
+        "Dip ladyfingers briefly in the coffee and line a dish; spread half the cream on top and repeat.",
+        "Chill at least 6 hours and dust thickly with cocoa before serving."
+      ],
+      "prepTime": 30,
+      "cookTime": 0,
+      "servings": 8,
+      "tags": ["italian", "no-cook", "holiday", "vegetarian"],
+      "ingredients": [
+        { "product": "Mascarpone", "quantity": 500, "unit": "g" },
+        { "product": "Ladyfingers", "quantity": 30, "unit": "pcs" },
+        { "product": "Eggs", "name": "Egg yolks", "quantity": 4, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 100, "unit": "g" },
+        { "product": "Heavy Cream", "quantity": 250, "unit": "ml" },
+        { "product": "Coffee", "name": "Strong brewed coffee", "quantity": 300, "unit": "ml" },
+        { "product": "Rum", "quantity": 3, "unit": "tbsp" },
+        { "product": "Cocoa Powder", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "panna-cotta-raspberry",
+      "name": "Panna Cotta with Raspberry Sauce",
+      "category": "Desserts",
+      "description": "Wobbly vanilla cream set with gelatin and topped with a bright raspberry sauce.",
+      "instructions": [
+        "Soak the gelatin in cold water for 5 minutes.",
+        "Heat cream, milk, 80 g sugar and vanilla until steaming, remove from heat and dissolve the squeezed gelatin in it.",
+        "Pour into 6 glasses or moulds and refrigerate at least 4 hours until set.",
+        "Simmer raspberries with the remaining sugar and lemon juice for 5 minutes, then press through a sieve and cool.",
+        "Unmould or serve in the glasses with the raspberry sauce spooned over."
+      ],
+      "prepTime": 15,
+      "cookTime": 10,
+      "servings": 6,
+      "tags": ["italian", "gluten-free", "summer", "vegetarian"],
+      "ingredients": [
+        { "product": "Heavy Cream", "quantity": 500, "unit": "ml" },
+        { "product": "Milk", "quantity": 200, "unit": "ml" },
+        { "product": "Sugar", "quantity": 130, "unit": "g" },
+        { "product": "Gelatin", "quantity": 8, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 2, "unit": "tsp" },
+        { "product": "Raspberries", "quantity": 250, "unit": "g" },
+        { "product": "Lemon", "name": "Lemon juice", "quantity": 1, "unit": "pcs" }
+      ]
+    },
+    {
+      "key": "creme-brulee",
+      "name": "Crème Brûlée",
+      "category": "Desserts",
+      "description": "Rich vanilla custard with a crackling caramelised sugar crust you tap through with a spoon.",
+      "instructions": [
+        "Heat the cream with vanilla until just steaming.",
+        "Whisk egg yolks with 80 g sugar and a pinch of salt, then slowly whisk in the hot cream.",
+        "Strain into 6 ramekins set in a deep tray; pour hot water around them halfway up.",
+        "Bake at 150 C for 35 to 40 minutes until just set with a slight wobble; chill 4 hours.",
+        "Sprinkle each with a thin layer of the remaining sugar and caramelise with a torch or under a very hot grill."
+      ],
+      "prepTime": 15,
+      "cookTime": 40,
+      "servings": 6,
+      "tags": ["french", "gluten-free", "holiday", "vegetarian"],
+      "ingredients": [
+        { "product": "Heavy Cream", "quantity": 600, "unit": "ml" },
+        { "product": "Eggs", "name": "Egg yolks", "quantity": 6, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 140, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 2, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "chocolate-mousse",
+      "name": "Dark Chocolate Mousse",
+      "category": "Desserts",
+      "description": "Airy yet intense dark chocolate mousse made with whipped cream and whisked egg whites.",
+      "instructions": [
+        "Melt the chocolate with the butter over a pan of barely simmering water; cool slightly.",
+        "Stir the egg yolks and vanilla into the warm chocolate one at a time.",
+        "Whisk the egg whites with salt to soft peaks, add the sugar and whisk until glossy.",
+        "Whip the cream to soft peaks and fold into the chocolate, then fold in the egg whites in two additions.",
+        "Spoon into glasses and chill for at least 3 hours."
+      ],
+      "prepTime": 25,
+      "cookTime": 5,
+      "servings": 6,
+      "tags": ["french", "gluten-free", "holiday", "vegetarian"],
+      "ingredients": [
+        { "product": "Dark Chocolate", "quantity": 200, "unit": "g" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 40, "unit": "g" },
+        { "product": "Heavy Cream", "quantity": 200, "unit": "ml" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "baked-cheesecake",
+      "name": "Baked Vanilla Cheesecake",
+      "category": "Desserts",
+      "description": "Creamy New York-style cheesecake on a buttery biscuit base, baked low and slow.",
+      "instructions": [
+        "Crush the biscuits, mix with melted butter and press into a lined 23 cm springform tin; bake 10 minutes at 170 C.",
+        "Beat cream cheese with sugar and cornstarch until smooth, then beat in sour cream, vanilla and lemon zest.",
+        "Add the eggs one at a time on low speed, mixing just until combined.",
+        "Pour over the base and bake at 160 C for 60 to 70 minutes until the edges are set and the centre wobbles slightly.",
+        "Turn off the oven, leave the door ajar for 1 hour, then chill overnight before slicing."
+      ],
+      "prepTime": 25,
+      "cookTime": 80,
+      "servings": 12,
+      "tags": ["american", "baked", "holiday", "vegetarian"],
+      "ingredients": [
+        { "product": "Biscuits", "name": "Digestive biscuits", "quantity": 250, "unit": "g" },
+        { "product": "Butter", "name": "Melted butter", "quantity": 120, "unit": "g" },
+        { "product": "Cream Cheese", "quantity": 900, "unit": "g" },
+        { "product": "Sugar", "quantity": 220, "unit": "g" },
+        { "product": "Cornstarch", "quantity": 2, "unit": "tbsp" },
+        { "product": "Sour Cream", "quantity": 200, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Vanilla Extract", "quantity": 2, "unit": "tsp" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" }
+      ]
+    },
+    {
+      "key": "no-bake-strawberry-cheesecake",
+      "name": "No-Bake Strawberry Cheesecake",
+      "category": "Desserts",
+      "description": "Chilled cream cheese and whipped cream filling on a biscuit base, crowned with fresh strawberries.",
+      "instructions": [
+        "Crush biscuits, mix with melted butter and press firmly into a lined 23 cm springform tin; chill 20 minutes.",
+        "Soak gelatin in cold water, then dissolve it in 3 tablespoons of hot water.",
+        "Beat cream cheese with powdered sugar, vanilla and lemon juice until smooth, then whisk in the dissolved gelatin.",
+        "Whip the cream to soft peaks and fold into the cheese mixture; spread over the base.",
+        "Refrigerate at least 6 hours, then top with halved strawberries and a drizzle of warmed jam."
+      ],
+      "prepTime": 30,
+      "cookTime": 0,
+      "servings": 10,
+      "tags": ["no-cook", "summer", "kid-friendly", "vegetarian"],
+      "ingredients": [
+        { "product": "Biscuits", "name": "Digestive biscuits", "quantity": 250, "unit": "g" },
+        { "product": "Butter", "name": "Melted butter", "quantity": 120, "unit": "g" },
+        { "product": "Cream Cheese", "quantity": 600, "unit": "g" },
+        { "product": "Powdered Sugar", "quantity": 120, "unit": "g" },
+        { "product": "Heavy Cream", "quantity": 300, "unit": "ml" },
+        { "product": "Gelatin", "quantity": 8, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Lemon", "name": "Lemon juice", "quantity": 1, "unit": "pcs" },
+        { "product": "Strawberries", "quantity": 400, "unit": "g" },
+        { "product": "Jam", "name": "Strawberry jam", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "fudgy-brownies",
+      "name": "Fudgy Chocolate Brownies",
+      "category": "Desserts",
+      "description": "Dense, glossy-topped brownies made with real dark chocolate and toasted walnuts.",
+      "instructions": [
+        "Melt the chocolate and butter together, then cool for 5 minutes.",
+        "Whisk eggs with sugar and vanilla for 3 minutes until pale and thick.",
+        "Stir in the melted chocolate, then fold in flour, cocoa and salt until just combined; add the walnuts.",
+        "Pour into a lined 20 cm square tin and bake at 175 C for 25 to 28 minutes until the top is set but the centre is still soft.",
+        "Cool completely in the tin before cutting into squares."
+      ],
+      "prepTime": 15,
+      "cookTime": 28,
+      "servings": 12,
+      "tags": ["american", "baked", "comfort-food", "vegetarian"],
+      "ingredients": [
+        { "product": "Dark Chocolate", "quantity": 200, "unit": "g" },
+        { "product": "Butter", "quantity": 170, "unit": "g" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 220, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Flour", "quantity": 100, "unit": "g" },
+        { "product": "Cocoa Powder", "quantity": 2, "unit": "tbsp" },
+        { "product": "Walnuts", "quantity": 80, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "chocolate-chip-cookies",
+      "name": "Chocolate Chip Cookies",
+      "category": "Desserts",
+      "description": "Chewy brown-sugar cookies with crisp edges and pockets of melted chocolate chips.",
+      "instructions": [
+        "Cream the soft butter with brown sugar and white sugar until fluffy.",
+        "Beat in the egg and vanilla.",
+        "Mix flour, baking soda and salt, stir into the butter mixture, then fold in the chocolate chips.",
+        "Scoop heaped tablespoons onto lined trays, spacing well apart, and chill 15 minutes.",
+        "Bake at 180 C for 10 to 12 minutes until golden at the edges; cool on the tray 5 minutes."
+      ],
+      "prepTime": 15,
+      "cookTime": 12,
+      "servings": 12,
+      "tags": ["american", "baked", "kid-friendly", "quick"],
+      "ingredients": [
+        { "product": "Butter", "quantity": 170, "unit": "g" },
+        { "product": "Brown Sugar", "quantity": 150, "unit": "g" },
+        { "product": "Sugar", "quantity": 80, "unit": "g" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Vanilla Extract", "quantity": 2, "unit": "tsp" },
+        { "product": "Flour", "quantity": 280, "unit": "g" },
+        { "product": "Baking Soda", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Chocolate Chips", "quantity": 200, "unit": "g" }
+      ]
+    },
+    {
+      "key": "lemon-bars",
+      "name": "Lemon Bars",
+      "category": "Desserts",
+      "description": "Buttery shortbread base topped with a tangy baked lemon curd and a snowy dusting of sugar.",
+      "instructions": [
+        "Mix flour, 60 g powdered sugar and a pinch of salt, rub in the cold butter and press into a lined 20 cm square tin.",
+        "Bake the base at 180 C for 18 minutes until pale golden.",
+        "Whisk eggs with sugar, lemon zest, lemon juice and cornstarch until smooth.",
+        "Pour the filling over the hot base and bake 20 to 22 minutes more until just set.",
+        "Cool completely, chill 2 hours, dust with powdered sugar and cut into bars."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 12,
+      "tags": ["american", "baked", "summer", "vegetarian"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 200, "unit": "g" },
+        { "product": "Butter", "quantity": 150, "unit": "g" },
+        { "product": "Powdered Sugar", "quantity": 90, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 250, "unit": "g" },
+        { "product": "Lemon", "name": "Lemons (zest and juice)", "quantity": 3, "unit": "pcs" },
+        { "product": "Cornstarch", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "apple-crumble",
+      "name": "Apple Crumble",
+      "category": "Desserts",
+      "description": "Soft cinnamon apples under a crunchy oat and brown sugar crumble, perfect with custard or ice cream.",
+      "instructions": [
+        "Peel and chop the apples and toss with sugar, cinnamon and lemon juice in a baking dish.",
+        "Rub the cold butter into the flour until it looks like coarse crumbs, then stir in oats, brown sugar and salt.",
+        "Scatter the crumble evenly over the apples without pressing down.",
+        "Bake at 190 C for 35 to 40 minutes until the top is golden and the fruit bubbles.",
+        "Rest 10 minutes and serve warm with ice cream."
+      ],
+      "prepTime": 15,
+      "cookTime": 40,
+      "servings": 6,
+      "tags": ["comfort-food", "baked", "winter", "budget"],
+      "ingredients": [
+        { "product": "Apples", "quantity": 6, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 60, "unit": "g" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Lemon", "name": "Lemon juice", "quantity": 1, "unit": "pcs" },
+        { "product": "Flour", "quantity": 150, "unit": "g" },
+        { "product": "Butter", "quantity": 120, "unit": "g" },
+        { "product": "Rolled Oats", "quantity": 80, "unit": "g" },
+        { "product": "Brown Sugar", "quantity": 100, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Ice Cream", "note": "to serve" }
+      ]
+    },
+    {
+      "key": "banana-bread",
+      "name": "Banana Bread",
+      "category": "Desserts",
+      "description": "Moist, tender loaf made with very ripe bananas, brown sugar and a handful of walnuts.",
+      "instructions": [
+        "Mash the bananas thoroughly with a fork.",
+        "Whisk melted butter with brown sugar, eggs and vanilla, then stir in the bananas.",
+        "Fold in flour, baking soda, cinnamon and salt until just combined; add the walnuts.",
+        "Pour into a lined loaf tin and bake at 175 C for 55 to 60 minutes until a skewer comes out clean.",
+        "Cool in the tin 15 minutes before turning out."
+      ],
+      "prepTime": 15,
+      "cookTime": 60,
+      "servings": 10,
+      "tags": ["american", "baked", "kid-friendly", "budget"],
+      "ingredients": [
+        { "product": "Bananas", "name": "Very ripe bananas", "quantity": 3, "unit": "pcs" },
+        { "product": "Butter", "name": "Melted butter", "quantity": 100, "unit": "g" },
+        { "product": "Brown Sugar", "quantity": 150, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Flour", "quantity": 250, "unit": "g" },
+        { "product": "Baking Soda", "quantity": 1, "unit": "tsp" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Walnuts", "quantity": 80, "unit": "g" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "carrot-cake",
+      "name": "Carrot Cake with Cream Cheese Frosting",
+      "category": "Desserts",
+      "description": "Spiced carrot and walnut cake with a thick, tangy cream cheese frosting.",
+      "instructions": [
+        "Whisk eggs with sugar and oil until smooth, then stir in the grated carrots and vanilla.",
+        "Mix flour, baking powder, baking soda, cinnamon, nutmeg and salt and fold into the batter with the walnuts.",
+        "Divide between two lined 20 cm tins and bake at 175 C for 30 to 35 minutes; cool completely.",
+        "Beat cream cheese with soft butter and powdered sugar until smooth and fluffy.",
+        "Sandwich the layers with frosting, cover the top and sides and chill 1 hour before slicing."
+      ],
+      "prepTime": 30,
+      "cookTime": 35,
+      "servings": 12,
+      "tags": ["american", "baked", "holiday", "vegetarian"],
+      "ingredients": [
+        { "product": "Carrots", "name": "Grated carrots", "quantity": 4, "unit": "pcs" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 250, "unit": "g" },
+        { "product": "Sunflower Oil", "quantity": 200, "unit": "ml" },
+        { "product": "Flour", "quantity": 300, "unit": "g" },
+        { "product": "Baking Powder", "quantity": 2, "unit": "tsp" },
+        { "product": "Baking Soda", "quantity": 1, "unit": "tsp" },
+        { "product": "Cinnamon", "quantity": 2, "unit": "tsp" },
+        { "product": "Nutmeg", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Walnuts", "quantity": 100, "unit": "g" },
+        { "product": "Cream Cheese", "quantity": 300, "unit": "g" },
+        { "product": "Powdered Sugar", "quantity": 150, "unit": "g" }
+      ]
+    },
+    {
+      "key": "lemon-drizzle-cake",
+      "name": "Lemon Drizzle Cake",
+      "category": "Desserts",
+      "description": "Light lemon sponge soaked while warm with a crunchy sugar and lemon juice drizzle.",
+      "instructions": [
+        "Cream butter and sugar until pale, then beat in the eggs one at a time with the zest of both lemons.",
+        "Fold in flour, baking powder, salt and milk to make a soft batter.",
+        "Pour into a lined loaf tin and bake at 170 C for 45 to 50 minutes until golden and springy.",
+        "Mix the lemon juice with the powdered sugar and pour over the hot cake, pricking the top with a skewer first.",
+        "Cool completely in the tin so the drizzle sets into a crust."
+      ],
+      "prepTime": 15,
+      "cookTime": 50,
+      "servings": 10,
+      "tags": ["baked", "summer", "kid-friendly", "vegetarian"],
+      "ingredients": [
+        { "product": "Butter", "quantity": 200, "unit": "g" },
+        { "product": "Sugar", "quantity": 200, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Lemon", "name": "Lemons (zest and juice)", "quantity": 2, "unit": "pcs" },
+        { "product": "Flour", "quantity": 220, "unit": "g" },
+        { "product": "Baking Powder", "quantity": 2, "unit": "tsp" },
+        { "product": "Milk", "quantity": 3, "unit": "tbsp" },
+        { "product": "Powdered Sugar", "quantity": 100, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "victoria-sponge",
+      "name": "Victoria Sponge",
+      "category": "Desserts",
+      "description": "Two feather-light vanilla sponges filled with raspberry jam and softly whipped cream.",
+      "instructions": [
+        "Cream butter and sugar until very pale and fluffy.",
+        "Add the eggs one at a time with a spoon of flour each, then fold in the remaining flour, baking powder, vanilla and milk.",
+        "Divide between two lined 20 cm tins and bake at 180 C for 22 to 25 minutes until golden and springy.",
+        "Cool on a rack, then whip the cream with 1 tablespoon powdered sugar.",
+        "Spread jam on one sponge, top with cream and the second sponge, and dust with powdered sugar."
+      ],
+      "prepTime": 20,
+      "cookTime": 25,
+      "servings": 8,
+      "tags": ["baked", "holiday", "kid-friendly", "vegetarian"],
+      "ingredients": [
+        { "product": "Butter", "quantity": 225, "unit": "g" },
+        { "product": "Sugar", "quantity": 225, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Flour", "quantity": 225, "unit": "g" },
+        { "product": "Baking Powder", "quantity": 2, "unit": "tsp" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Milk", "quantity": 2, "unit": "tbsp" },
+        { "product": "Jam", "name": "Raspberry jam", "quantity": 6, "unit": "tbsp" },
+        { "product": "Heavy Cream", "quantity": 250, "unit": "ml" },
+        { "product": "Powdered Sugar", "quantity": 3, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "pavlova-berries",
+      "name": "Pavlova with Berries",
+      "category": "Desserts",
+      "description": "Crisp-shelled meringue with a marshmallowy centre, piled with whipped cream and fresh berries.",
+      "instructions": [
+        "Whisk the egg whites with salt to soft peaks, then add the sugar a spoon at a time until stiff and glossy.",
+        "Fold in cornstarch, vinegar and vanilla.",
+        "Spoon onto a lined tray in a 22 cm circle with a slight dip in the middle.",
+        "Bake at 120 C for 90 minutes, then turn off the oven and leave the pavlova inside to cool completely.",
+        "Whip the cream with powdered sugar, spread over the meringue and top with strawberries, raspberries and blueberries."
+      ],
+      "prepTime": 20,
+      "cookTime": 90,
+      "servings": 8,
+      "tags": ["gluten-free", "summer", "holiday", "vegetarian"],
+      "ingredients": [
+        { "product": "Eggs", "name": "Egg whites", "quantity": 5, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 250, "unit": "g" },
+        { "product": "Cornstarch", "quantity": 1, "unit": "tbsp" },
+        { "product": "Vinegar", "name": "White vinegar", "quantity": 1, "unit": "tsp" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Heavy Cream", "quantity": 350, "unit": "ml" },
+        { "product": "Powdered Sugar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Strawberries", "quantity": 200, "unit": "g" },
+        { "product": "Raspberries", "quantity": 125, "unit": "g" },
+        { "product": "Blueberries", "quantity": 125, "unit": "g" }
+      ]
+    },
+    {
+      "key": "chocolate-lava-cakes",
+      "name": "Chocolate Lava Cakes",
+      "category": "Desserts",
+      "description": "Individual dark chocolate cakes with a molten centre that flows out when cut.",
+      "instructions": [
+        "Butter 4 ramekins and dust with cocoa powder.",
+        "Melt the chocolate and butter together and cool slightly.",
+        "Whisk eggs, egg yolks, sugar and vanilla until pale, then fold in the chocolate, followed by the flour and salt.",
+        "Divide between the ramekins and bake at 200 C for 11 to 12 minutes until the edges are set but the centres jiggle.",
+        "Rest 1 minute, run a knife around the edge, invert onto plates and serve immediately with ice cream."
+      ],
+      "prepTime": 15,
+      "cookTime": 12,
+      "servings": 4,
+      "tags": ["french", "baked", "quick", "vegetarian"],
+      "ingredients": [
+        { "product": "Dark Chocolate", "quantity": 150, "unit": "g" },
+        { "product": "Butter", "quantity": 120, "unit": "g" },
+        { "product": "Eggs", "name": "Eggs plus 2 extra yolks", "quantity": 4, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 80, "unit": "g" },
+        { "product": "Flour", "quantity": 50, "unit": "g" },
+        { "product": "Cocoa Powder", "quantity": 1, "unit": "tbsp" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Ice Cream", "note": "to serve" }
+      ]
+    },
+    {
+      "key": "chocolate-layer-cake",
+      "name": "Chocolate Layer Cake",
+      "category": "Desserts",
+      "description": "Tall, moist cocoa sponge layered with a glossy dark chocolate ganache frosting.",
+      "instructions": [
+        "Whisk flour, sugar, cocoa, baking powder, baking soda and salt in a large bowl.",
+        "Add eggs, milk, oil and vanilla and beat until smooth, then stir in the hot coffee; the batter will be thin.",
+        "Divide between two lined 20 cm tins and bake at 175 C for 30 to 35 minutes; cool completely.",
+        "Heat the cream until steaming, pour over the chopped chocolate, rest 2 minutes and stir smooth; chill until spreadable.",
+        "Fill and frost the cake with the ganache and let it set 30 minutes before slicing."
+      ],
+      "prepTime": 30,
+      "cookTime": 35,
+      "servings": 12,
+      "tags": ["american", "baked", "holiday", "comfort-food"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 250, "unit": "g" },
+        { "product": "Sugar", "quantity": 350, "unit": "g" },
+        { "product": "Cocoa Powder", "quantity": 8, "unit": "tbsp" },
+        { "product": "Baking Powder", "quantity": 1.5, "unit": "tsp" },
+        { "product": "Baking Soda", "quantity": 1.5, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Milk", "quantity": 250, "unit": "ml" },
+        { "product": "Sunflower Oil", "quantity": 120, "unit": "ml" },
+        { "product": "Coffee", "name": "Hot brewed coffee", "quantity": 250, "unit": "ml" },
+        { "product": "Dark Chocolate", "quantity": 300, "unit": "g" },
+        { "product": "Heavy Cream", "quantity": 300, "unit": "ml" }
+      ]
+    },
+    {
+      "key": "sticky-toffee-pudding",
+      "name": "Sticky Toffee Pudding",
+      "category": "Desserts",
+      "description": "Warm date sponge drenched in a buttery brown sugar toffee sauce.",
+      "instructions": [
+        "Simmer the chopped dates in the water with baking soda for 3 minutes and set aside.",
+        "Cream 80 g butter with 150 g brown sugar, beat in the eggs and vanilla, then fold in the flour, baking powder and the date mixture.",
+        "Pour into a buttered baking dish and bake at 180 C for 30 to 35 minutes until springy.",
+        "Melt the remaining butter with the remaining brown sugar and the cream, simmer 3 minutes to a glossy sauce.",
+        "Prick the hot pudding, pour over half the sauce and serve with the rest and a scoop of ice cream."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 8,
+      "tags": ["comfort-food", "baked", "winter", "vegetarian"],
+      "ingredients": [
+        { "product": "Dates", "name": "Pitted dates", "quantity": 200, "unit": "g" },
+        { "product": "Water", "quantity": 250, "unit": "ml" },
+        { "product": "Baking Soda", "quantity": 1, "unit": "tsp" },
+        { "product": "Butter", "quantity": 180, "unit": "g" },
+        { "product": "Brown Sugar", "quantity": 350, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Flour", "quantity": 200, "unit": "g" },
+        { "product": "Baking Powder", "quantity": 1, "unit": "tsp" },
+        { "product": "Heavy Cream", "quantity": 200, "unit": "ml" },
+        { "product": "Ice Cream", "note": "to serve" }
+      ]
+    },
+    {
+      "key": "bread-pudding",
+      "name": "Cinnamon Raisin Bread Pudding",
+      "category": "Desserts",
+      "description": "Thrifty baked pudding of custard-soaked bread cubes with raisins and a crisp cinnamon-sugar top.",
+      "instructions": [
+        "Cut the bread into cubes and spread in a buttered baking dish with the raisins.",
+        "Whisk eggs with milk, cream, 100 g sugar, vanilla and half the cinnamon.",
+        "Pour the custard over the bread, press down gently and soak for 20 minutes.",
+        "Dot with butter and sprinkle with the remaining sugar mixed with cinnamon.",
+        "Bake at 175 C for 40 to 45 minutes until puffed and golden; serve warm."
+      ],
+      "prepTime": 15,
+      "cookTime": 45,
+      "servings": 6,
+      "tags": ["budget", "baked", "comfort-food", "vegetarian"],
+      "ingredients": [
+        { "product": "Bread", "name": "Day-old bread", "quantity": 10, "unit": "slice" },
+        { "product": "Raisins", "quantity": 80, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Milk", "quantity": 500, "unit": "ml" },
+        { "product": "Heavy Cream", "quantity": 200, "unit": "ml" },
+        { "product": "Sugar", "quantity": 130, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 2, "unit": "tsp" },
+        { "product": "Cinnamon", "quantity": 2, "unit": "tsp" },
+        { "product": "Butter", "quantity": 30, "unit": "g" }
+      ]
+    },
+    {
+      "key": "fresh-fruit-tart",
+      "name": "Fresh Fruit Tart",
+      "category": "Desserts",
+      "description": "Crisp shortcrust shell filled with vanilla pastry cream and topped with glossy fresh fruit.",
+      "instructions": [
+        "Line a 24 cm tart tin with the shortcrust pastry, prick the base, chill 15 minutes and blind bake at 180 C for 25 minutes until golden; cool.",
+        "Whisk egg yolks with sugar and cornstarch; heat the milk with vanilla and pour it over, whisking.",
+        "Return to the pan and cook, stirring, until thick; beat in the butter, cover and chill.",
+        "Spread the cold pastry cream in the tart shell and arrange sliced strawberries, kiwi and blueberries on top.",
+        "Warm the jam with a teaspoon of water and brush over the fruit to glaze; chill until serving."
+      ],
+      "prepTime": 35,
+      "cookTime": 35,
+      "servings": 8,
+      "tags": ["french", "summer", "baked", "vegetarian"],
+      "ingredients": [
+        { "product": "Shortcrust Pastry", "quantity": 350, "unit": "g" },
+        { "product": "Milk", "quantity": 500, "unit": "ml" },
+        { "product": "Eggs", "name": "Egg yolks", "quantity": 4, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 100, "unit": "g" },
+        { "product": "Cornstarch", "quantity": 4, "unit": "tbsp" },
+        { "product": "Vanilla Extract", "quantity": 2, "unit": "tsp" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Strawberries", "quantity": 250, "unit": "g" },
+        { "product": "Kiwi", "quantity": 2, "unit": "pcs" },
+        { "product": "Blueberries", "quantity": 125, "unit": "g" },
+        { "product": "Jam", "name": "Apricot jam for glaze", "quantity": 3, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "churros-chocolate-sauce",
+      "name": "Churros with Chocolate Sauce",
+      "category": "Desserts",
+      "description": "Crisp ridged fried dough sticks rolled in cinnamon sugar, served with thick hot chocolate dip.",
+      "instructions": [
+        "Bring water, butter, 1 tablespoon sugar and salt to a boil, add the flour all at once and stir into a smooth ball; cool 5 minutes.",
+        "Beat in the eggs one at a time until glossy, then transfer to a piping bag with a large star nozzle.",
+        "Pipe 10 cm lengths into oil heated to 180 C and fry 3 to 4 minutes until golden, turning once.",
+        "Drain and roll immediately in the remaining sugar mixed with cinnamon.",
+        "Heat the cream until steaming, pour over the chopped chocolate, stir smooth and serve alongside."
+      ],
+      "prepTime": 20,
+      "cookTime": 20,
+      "servings": 6,
+      "tags": ["kid-friendly", "comfort-food", "vegetarian", "quick"],
+      "ingredients": [
+        { "product": "Water", "quantity": 250, "unit": "ml" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Flour", "quantity": 150, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 100, "unit": "g" },
+        { "product": "Cinnamon", "quantity": 2, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Sunflower Oil", "name": "Sunflower oil for frying", "quantity": 750, "unit": "ml" },
+        { "product": "Dark Chocolate", "quantity": 150, "unit": "g" },
+        { "product": "Heavy Cream", "quantity": 150, "unit": "ml" }
+      ]
+    },
+    {
+      "key": "caramel-flan",
+      "name": "Caramel Flan",
+      "category": "Desserts",
+      "description": "Silky baked custard that unmoulds under a pool of amber caramel sauce.",
+      "instructions": [
+        "Melt 150 g sugar in a pan over medium heat without stirring until deep amber, then pour into a 20 cm round tin and swirl to coat the base.",
+        "Whisk eggs with the remaining sugar, then whisk in milk, condensed milk, vanilla and a pinch of salt.",
+        "Strain the custard over the caramel and set the tin in a deep tray of hot water.",
+        "Bake at 160 C for 50 to 60 minutes until set with a gentle wobble; cool and chill overnight.",
+        "Run a knife around the edge and invert onto a rimmed plate so the caramel flows over."
+      ],
+      "prepTime": 20,
+      "cookTime": 60,
+      "servings": 8,
+      "tags": ["gluten-free", "holiday", "comfort-food", "vegetarian"],
+      "ingredients": [
+        { "product": "Sugar", "quantity": 200, "unit": "g" },
+        { "product": "Eggs", "quantity": 5, "unit": "pcs" },
+        { "product": "Milk", "quantity": 500, "unit": "ml" },
+        { "product": "Condensed Milk", "quantity": 200, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 2, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "baked-apples-walnuts",
+      "name": "Baked Apples with Walnuts and Honey",
+      "category": "Desserts",
+      "description": "Whole apples stuffed with walnuts, raisins and cinnamon, baked until tender and glazed with honey.",
+      "instructions": [
+        "Core the apples from the top without cutting through the base and set them in a baking dish.",
+        "Mix chopped walnuts, raisins, brown sugar, cinnamon and soft butter and pack into the cavities.",
+        "Drizzle with honey and pour the water into the dish.",
+        "Bake at 180 C for 35 to 40 minutes, basting once, until the apples are soft but hold their shape.",
+        "Serve warm with the pan juices and a spoon of yogurt or ice cream."
+      ],
+      "prepTime": 15,
+      "cookTime": 40,
+      "servings": 4,
+      "tags": ["healthy", "baked", "winter", "gluten-free"],
+      "ingredients": [
+        { "product": "Apples", "quantity": 4, "unit": "pcs" },
+        { "product": "Walnuts", "quantity": 60, "unit": "g" },
+        { "product": "Raisins", "quantity": 40, "unit": "g" },
+        { "product": "Brown Sugar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Honey", "quantity": 3, "unit": "tbsp" },
+        { "product": "Water", "quantity": 100, "unit": "ml" },
+        { "product": "Yogurt", "note": "to serve" }
+      ]
+    },
+    {
+      "key": "red-wine-poached-pears",
+      "name": "Red Wine Poached Pears",
+      "category": "Desserts",
+      "description": "Whole pears poached in spiced red wine until ruby red, served with the syrupy reduction.",
+      "instructions": [
+        "Peel the pears, leaving the stalks on, and trim the bases so they stand upright.",
+        "Bring wine, sugar, orange zest and juice, cinnamon, star anise and cloves to a simmer in a pan that fits the pears snugly.",
+        "Add the pears and poach gently for 25 to 30 minutes, turning occasionally, until tender.",
+        "Lift out the pears and boil the liquid for 10 minutes until reduced to a syrup.",
+        "Serve the pears warm or chilled with the syrup and a spoon of mascarpone."
+      ],
+      "prepTime": 15,
+      "cookTime": 40,
+      "servings": 4,
+      "tags": ["french", "gluten-free", "winter", "holiday"],
+      "ingredients": [
+        { "product": "Pears", "name": "Firm pears", "quantity": 4, "unit": "pcs" },
+        { "product": "Red Wine", "quantity": 500, "unit": "ml" },
+        { "product": "Sugar", "quantity": 150, "unit": "g" },
+        { "product": "Oranges", "name": "Orange (zest and juice)", "quantity": 1, "unit": "pcs" },
+        { "product": "Cinnamon", "name": "Cinnamon stick", "quantity": 1, "unit": "pcs" },
+        { "product": "Star Anise", "quantity": 2, "unit": "pcs" },
+        { "product": "Cloves", "quantity": 4, "unit": "pcs" },
+        { "product": "Mascarpone", "quantity": 100, "unit": "g" }
+      ]
+    },
+    {
+      "key": "mango-lime-sorbet",
+      "name": "No-Churn Mango Lime Sorbet",
+      "category": "Desserts",
+      "description": "Three-ingredient frozen mango sorbet blended smooth with lime and honey, no ice cream maker needed.",
+      "instructions": [
+        "Peel and dice the mangoes, spread on a tray and freeze for at least 4 hours.",
+        "Blend the frozen mango with lime zest, lime juice, honey and a splash of water until completely smooth.",
+        "Serve immediately for a soft-serve texture, or freeze 1 hour more for firmer scoops.",
+        "Garnish with fresh mint leaves."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["vegan", "no-cook", "summer", "healthy"],
+      "ingredients": [
+        { "product": "Mango", "name": "Ripe mangoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Limes", "name": "Lime (zest and juice)", "quantity": 1, "unit": "pcs" },
+        { "product": "Honey", "quantity": 2, "unit": "tbsp" },
+        { "product": "Water", "quantity": 50, "unit": "ml" },
+        { "product": "Fresh Mint", "note": "a few leaves to garnish" }
+      ]
+    },
+    {
+      "key": "no-churn-vanilla-ice-cream",
+      "name": "No-Churn Vanilla Ice Cream",
+      "category": "Desserts",
+      "description": "Creamy vanilla ice cream from whipped cream and condensed milk, frozen without a machine.",
+      "instructions": [
+        "Whip the heavy cream with vanilla and a pinch of salt to firm peaks.",
+        "Gently fold in the condensed milk until no streaks remain.",
+        "Scrape into a loaf tin, cover with cling film and freeze at least 6 hours.",
+        "Soften 5 minutes at room temperature before scooping; serve with chocolate chips or fresh berries."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 8,
+      "tags": ["no-cook", "kid-friendly", "summer", "gluten-free"],
+      "ingredients": [
+        { "product": "Heavy Cream", "quantity": 600, "unit": "ml" },
+        { "product": "Condensed Milk", "quantity": 400, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 2, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Chocolate Chips", "quantity": 50, "unit": "g" }
+      ]
+    },
+    {
+      "key": "date-energy-balls",
+      "name": "Date and Oat Energy Balls",
+      "category": "Desserts",
+      "description": "No-bake bites of dates, oats, peanut butter and cocoa rolled in coconut, ready in 15 minutes.",
+      "instructions": [
+        "Soak the dates in hot water for 5 minutes if they are dry, then drain.",
+        "Blend dates, oats, peanut butter, cocoa, honey and a pinch of salt into a sticky paste.",
+        "Roll into walnut-sized balls with damp hands.",
+        "Roll in desiccated coconut and chill 30 minutes before eating; keep in the fridge for up to a week."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["healthy", "no-cook", "vegan", "meal-prep"],
+      "ingredients": [
+        { "product": "Dates", "name": "Pitted dates", "quantity": 200, "unit": "g" },
+        { "product": "Rolled Oats", "quantity": 100, "unit": "g" },
+        { "product": "Peanut Butter", "quantity": 3, "unit": "tbsp" },
+        { "product": "Cocoa Powder", "quantity": 2, "unit": "tbsp" },
+        { "product": "Honey", "quantity": 1, "unit": "tbsp" },
+        { "product": "Desiccated Coconut", "quantity": 40, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "chocolate-truffles",
+      "name": "Dark Chocolate Truffles",
+      "category": "Desserts",
+      "description": "Melt-in-the-mouth ganache truffles with a hint of rum, rolled in cocoa or chopped nuts.",
+      "instructions": [
+        "Finely chop the chocolate and place in a bowl.",
+        "Heat the cream until steaming, pour over the chocolate, wait 2 minutes and stir until smooth; add butter and rum.",
+        "Chill the ganache for 2 hours until firm enough to scoop.",
+        "Scoop teaspoons and quickly roll into balls with cold hands.",
+        "Roll half in cocoa powder and half in finely chopped hazelnuts; keep refrigerated."
+      ],
+      "prepTime": 25,
+      "cookTime": 5,
+      "servings": 10,
+      "tags": ["french", "holiday", "gluten-free", "no-cook"],
+      "ingredients": [
+        { "product": "Dark Chocolate", "quantity": 300, "unit": "g" },
+        { "product": "Heavy Cream", "quantity": 150, "unit": "ml" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Rum", "quantity": 1, "unit": "tbsp" },
+        { "product": "Cocoa Powder", "quantity": 3, "unit": "tbsp" },
+        { "product": "Hazelnuts", "quantity": 50, "unit": "g" }
+      ]
+    },
+    {
+      "key": "affogato",
+      "name": "Affogato",
+      "category": "Desserts",
+      "description": "A scoop of vanilla ice cream drowned in a shot of hot espresso, finished with shaved chocolate.",
+      "instructions": [
+        "Chill 4 small glasses or cups in the freezer for 10 minutes.",
+        "Place a generous scoop of vanilla ice cream in each glass.",
+        "Brew 4 shots of strong espresso.",
+        "Pour the hot coffee over the ice cream at the table and top with grated dark chocolate and a crushed biscuit."
+      ],
+      "prepTime": 5,
+      "cookTime": 5,
+      "servings": 4,
+      "tags": ["italian", "quick", "no-cook", "gluten-free"],
+      "ingredients": [
+        { "product": "Ice Cream", "name": "Vanilla ice cream", "quantity": 400, "unit": "g" },
+        { "product": "Coffee", "name": "Espresso", "quantity": 4, "unit": "pcs" },
+        { "product": "Dark Chocolate", "quantity": 20, "unit": "g" },
+        { "product": "Biscuits", "quantity": 4, "unit": "pcs" }
+      ]
+    },
+    {
+      "key": "classic-scones",
+      "name": "Classic Scones with Jam and Cream",
+      "category": "Desserts",
+      "description": "Tall, fluffy buttermilk scones served warm with strawberry jam and thick whipped cream.",
+      "instructions": [
+        "Mix flour, baking powder, sugar and salt, then rub in the cold butter until crumbly.",
+        "Stir in the buttermilk with a knife until a shaggy dough forms; do not overwork.",
+        "Pat out to 3 cm thick on a floured surface and cut 8 rounds with a 6 cm cutter.",
+        "Brush the tops with beaten egg and bake at 220 C for 12 to 14 minutes until risen and golden.",
+        "Whip the cream to firm peaks and serve the warm scones split with jam and cream."
+      ],
+      "prepTime": 15,
+      "cookTime": 14,
+      "servings": 8,
+      "tags": ["baked", "quick", "kid-friendly", "vegetarian"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 350, "unit": "g" },
+        { "product": "Baking Powder", "quantity": 4, "unit": "tsp" },
+        { "product": "Sugar", "quantity": 50, "unit": "g" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Butter", "name": "Cold butter", "quantity": 90, "unit": "g" },
+        { "product": "Buttermilk", "quantity": 200, "unit": "ml" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Jam", "name": "Strawberry jam", "quantity": 8, "unit": "tbsp" },
+        { "product": "Heavy Cream", "quantity": 200, "unit": "ml" }
+      ]
+    },
+    {
+      "key": "cinnamon-rolls",
+      "name": "Cinnamon Rolls with Cream Cheese Glaze",
+      "category": "Desserts",
+      "description": "Soft spiral buns swirled with brown sugar and cinnamon, topped with a tangy cream cheese glaze.",
+      "instructions": [
+        "Warm the milk, dissolve the yeast with a spoon of sugar and leave 10 minutes until foamy.",
+        "Mix flour, remaining sugar, salt, egg, 60 g melted butter and the yeast milk; knead 10 minutes until smooth, then let rise 1 hour.",
+        "Roll into a 30 by 40 cm rectangle, spread with 60 g soft butter and sprinkle with brown sugar and cinnamon.",
+        "Roll up tightly from the long side, cut into 12 slices and arrange in a buttered dish; rise 30 minutes.",
+        "Bake at 180 C for 22 to 25 minutes until golden.",
+        "Beat cream cheese with powdered sugar, vanilla and a splash of milk and spread over the warm rolls."
+      ],
+      "prepTime": 40,
+      "cookTime": 25,
+      "servings": 12,
+      "tags": ["american", "baked", "comfort-food", "kid-friendly"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 550, "unit": "g" },
+        { "product": "Milk", "quantity": 250, "unit": "ml" },
+        { "product": "Yeast", "name": "Dry yeast", "quantity": 7, "unit": "g" },
+        { "product": "Sugar", "quantity": 70, "unit": "g" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Butter", "quantity": 120, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Brown Sugar", "quantity": 150, "unit": "g" },
+        { "product": "Cinnamon", "quantity": 2, "unit": "tbsp" },
+        { "product": "Cream Cheese", "quantity": 120, "unit": "g" },
+        { "product": "Powdered Sugar", "quantity": 120, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "blueberry-muffins",
+      "name": "Blueberry Muffins",
+      "category": "Desserts",
+      "description": "Domed bakery-style muffins bursting with blueberries and a crunchy sugar top.",
+      "instructions": [
+        "Whisk flour, 180 g sugar, baking powder and salt in a bowl.",
+        "In another bowl whisk eggs, melted butter, yogurt, milk, vanilla and lemon zest.",
+        "Fold the wet into the dry until just combined, then gently fold in the blueberries.",
+        "Divide between 12 lined muffin cups, sprinkle with the remaining sugar and bake at 200 C for 20 to 22 minutes.",
+        "Cool 5 minutes in the tin, then transfer to a rack."
+      ],
+      "prepTime": 15,
+      "cookTime": 22,
+      "servings": 12,
+      "tags": ["american", "baked", "kid-friendly", "quick"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 300, "unit": "g" },
+        { "product": "Sugar", "quantity": 200, "unit": "g" },
+        { "product": "Baking Powder", "quantity": 3, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Butter", "name": "Melted butter", "quantity": 110, "unit": "g" },
+        { "product": "Yogurt", "quantity": 150, "unit": "g" },
+        { "product": "Milk", "quantity": 80, "unit": "ml" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Blueberries", "quantity": 250, "unit": "g" }
+      ]
+    },
+    {
+      "key": "peach-cobbler",
+      "name": "Peach Cobbler",
+      "category": "Desserts",
+      "description": "Juicy cinnamon peaches baked under a soft, golden biscuit-style topping.",
+      "instructions": [
+        "Slice the peaches and toss with 60 g sugar, cornstarch, lemon juice and cinnamon; spread in a buttered baking dish.",
+        "Mix flour, remaining sugar, baking powder and salt, rub in the cold butter, then stir in the milk to a thick batter.",
+        "Drop spoonfuls of batter over the peaches, leaving gaps for steam.",
+        "Sprinkle with brown sugar and bake at 190 C for 35 to 40 minutes until bubbling and golden.",
+        "Serve warm with vanilla ice cream."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 6,
+      "tags": ["american", "summer", "baked", "comfort-food"],
+      "ingredients": [
+        { "product": "Peaches", "name": "Ripe peaches", "quantity": 6, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 160, "unit": "g" },
+        { "product": "Cornstarch", "quantity": 1, "unit": "tbsp" },
+        { "product": "Lemon", "name": "Lemon juice", "quantity": 1, "unit": "pcs" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Flour", "quantity": 200, "unit": "g" },
+        { "product": "Baking Powder", "quantity": 2, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Butter", "name": "Cold butter", "quantity": 100, "unit": "g" },
+        { "product": "Milk", "quantity": 150, "unit": "ml" },
+        { "product": "Brown Sugar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Ice Cream", "note": "to serve" }
+      ]
+    },
+    {
+      "key": "oatmeal-raisin-cookies",
+      "name": "Oatmeal Raisin Cookies",
+      "category": "Desserts",
+      "description": "Soft, chewy oat cookies spiced with cinnamon and packed with plump raisins.",
+      "instructions": [
+        "Cream the soft butter with brown sugar and white sugar until light.",
+        "Beat in the egg and vanilla.",
+        "Stir in flour, baking soda, cinnamon and salt, then fold in the oats and raisins.",
+        "Drop heaped tablespoons onto lined trays and flatten slightly.",
+        "Bake at 180 C for 11 to 13 minutes until golden at the edges but still soft; cool on the tray."
+      ],
+      "prepTime": 15,
+      "cookTime": 13,
+      "servings": 12,
+      "tags": ["american", "baked", "kid-friendly", "budget"],
+      "ingredients": [
+        { "product": "Butter", "quantity": 150, "unit": "g" },
+        { "product": "Brown Sugar", "quantity": 150, "unit": "g" },
+        { "product": "Sugar", "quantity": 50, "unit": "g" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Flour", "quantity": 180, "unit": "g" },
+        { "product": "Baking Soda", "quantity": 1, "unit": "tsp" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Rolled Oats", "quantity": 200, "unit": "g" },
+        { "product": "Raisins", "quantity": 150, "unit": "g" }
+      ]
+    }
+  ],
+  "newProducts": []
+}

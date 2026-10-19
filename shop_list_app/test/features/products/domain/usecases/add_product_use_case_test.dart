@@ -31,11 +31,11 @@ class FakeProductRepository implements IProductRepository {
       throw UnimplementedError();
 
   @override
-  Future<List<Product>> getExpiringProducts(int days) async =>
+  Future<List<Product>> getProductsByIds(List<int> ids) async =>
       throw UnimplementedError();
 
   @override
-  Future<List<Product>> getExpiredProducts() async =>
+  Future<Product?> findByNameOrAlias(String name) async =>
       throw UnimplementedError();
 
   @override

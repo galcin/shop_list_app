@@ -1,0 +1,1317 @@
+{
+  "category": "Salads",
+  "recipes": [
+    {
+      "key": "salata-de-boeuf",
+      "name": "Salată de Boeuf",
+      "category": "Salads",
+      "description": "Romania's festive salad of diced beef, root vegetables, pickles and peas bound in creamy mustard mayonnaise.",
+      "instructions": [
+        "Simmer the beef in salted water for about 1 hour until tender, then cool and dice finely.",
+        "Boil the potatoes, carrots and parsnip in their skins until just tender; cool, peel and dice small.",
+        "Hard-boil the eggs, cool and chop two of them, keeping one for decoration.",
+        "Dice the pickles and drain the peas, then combine everything in a large bowl.",
+        "Stir the mustard into the mayonnaise and fold it gently through the salad; season with salt and pepper.",
+        "Smooth the top, decorate with sliced egg and strips of pickled pepper, and chill for at least 2 hours before serving."
+      ],
+      "prepTime": 40,
+      "cookTime": 60,
+      "servings": 6,
+      "tags": ["romanian", "holiday", "meal-prep", "comfort-food"],
+      "ingredients": [
+        { "product": "Beef", "quantity": 400, "unit": "g" },
+        { "product": "Potatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 3, "unit": "pcs" },
+        { "product": "Parsnip", "quantity": 1, "unit": "pcs" },
+        { "product": "Pickles", "quantity": 5, "unit": "pcs" },
+        { "product": "Canned Peas", "quantity": 1, "unit": "can" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Mayonnaise", "quantity": 8, "unit": "tbsp" },
+        { "product": "Mustard", "quantity": 2, "unit": "tsp" },
+        { "product": "Pickled Peppers", "quantity": 1, "unit": "pcs", "note": "for decoration" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-orientala",
+      "name": "Salată Orientală",
+      "category": "Salads",
+      "description": "Rustic Romanian potato salad with boiled eggs, red onion, black olives and pickles in a simple oil and vinegar dressing.",
+      "instructions": [
+        "Boil the potatoes in their skins until tender, about 20 minutes; cool slightly, peel and slice into thick rounds.",
+        "Hard-boil the eggs, cool them in cold water, then peel and cut into wedges.",
+        "Slice the red onion thinly and the pickles into rounds.",
+        "Layer the potatoes, onion, pickles, olives and eggs in a wide bowl.",
+        "Whisk the oil, vinegar, salt and pepper and pour over the salad while the potatoes are still warm.",
+        "Scatter with chopped parsley and let stand 15 minutes before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["romanian", "budget", "vegetarian", "comfort-food"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 1, "unit": "kg" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Pickles", "quantity": 3, "unit": "pcs" },
+        { "product": "Olives", "quantity": 100, "unit": "g", "note": "black, pitted" },
+        { "product": "Sunflower Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-vinete",
+      "name": "Salată de Vinete",
+      "category": "Salads",
+      "description": "Smoky Romanian roasted eggplant salad whipped with sunflower oil and finely chopped onion, perfect on fresh bread.",
+      "instructions": [
+        "Prick the eggplants and roast them on a grill pan, gas flame or under a hot broiler, turning, until the skin is charred and the flesh collapses, about 30 minutes.",
+        "Let them cool slightly, peel away the skin and leave the flesh in a colander for 30 minutes to drain the bitter juices.",
+        "Chop the eggplant very finely with a wooden or plastic knife until almost a paste.",
+        "Beat in the oil gradually with a wooden spoon until the mixture becomes pale and creamy.",
+        "Stir in the finely chopped onion and season with salt and a little lemon juice.",
+        "Chill for 1 hour and serve with sliced tomatoes and fresh bread."
+      ],
+      "prepTime": 20,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "summer", "grilled"],
+      "ingredients": [
+        { "product": "Eggplant", "quantity": 3, "unit": "pcs", "note": "large" },
+        { "product": "Sunflower Oil", "quantity": 6, "unit": "tbsp" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs", "note": "small" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Tomatoes", "quantity": 2, "unit": "pcs", "note": "for serving" },
+        { "product": "Bread", "quantity": 4, "unit": "slice", "note": "for serving" }
+      ]
+    },
+    {
+      "key": "salata-de-icre",
+      "name": "Salată de Icre",
+      "category": "Salads",
+      "description": "Silky Romanian fish roe spread emulsified with oil and brightened with lemon and finely chopped onion.",
+      "instructions": [
+        "Soak the bread in a little water, squeeze dry and mash into a paste in a bowl.",
+        "Add the roe and beat with a wooden spoon or hand mixer for 2 minutes until smooth.",
+        "Pour in the oil in a very thin stream while beating constantly, as for mayonnaise, until thick and pale.",
+        "Beat in the lemon juice a teaspoon at a time to lighten the mixture.",
+        "Fold in the finely chopped onion and season lightly with salt if needed.",
+        "Chill for 1 hour and serve on bread or toast, garnished with black olives."
+      ],
+      "prepTime": 20,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["romanian", "no-cook", "holiday", "high-protein"],
+      "ingredients": [
+        { "product": "Fish Roe", "quantity": 200, "unit": "g" },
+        { "product": "Sunflower Oil", "quantity": 300, "unit": "ml" },
+        { "product": "Bread", "quantity": 2, "unit": "slice", "note": "crusts removed" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs", "note": "small" },
+        { "product": "Olives", "quantity": 50, "unit": "g", "note": "for garnish" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-varza",
+      "name": "Salată de Varză",
+      "category": "Salads",
+      "description": "Crunchy Romanian white cabbage salad massaged with salt and tossed with dill, oil and a splash of vinegar.",
+      "instructions": [
+        "Remove the outer leaves and core of the cabbage and shred it as finely as possible.",
+        "Sprinkle with salt and massage firmly with your hands for 2 to 3 minutes until the cabbage softens and releases juice.",
+        "Grate the carrot and add it with the chopped dill.",
+        "Dress with the oil, vinegar and a pinch of pepper and toss well.",
+        "Rest for 15 minutes before serving alongside grilled meats or stews."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "budget", "no-cook"],
+      "ingredients": [
+        { "product": "Cabbage", "quantity": 0.5, "unit": "head" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Sunflower Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Vinegar", "quantity": 1.5, "unit": "tbsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-sfecla-cu-hrean",
+      "name": "Salată de Sfeclă cu Hrean",
+      "category": "Salads",
+      "description": "Earthy boiled beetroot grated with fiery fresh horseradish and sharpened with vinegar, a classic Romanian side.",
+      "instructions": [
+        "Scrub the beetroots and boil them whole in their skins for 45 to 60 minutes until a knife slides in easily.",
+        "Drain, cool under running water and rub off the skins.",
+        "Coarsely grate the beetroot into a bowl and finely grate the peeled horseradish over it.",
+        "Season with salt, sugar and vinegar, then stir in the oil and caraway seeds if using.",
+        "Pack into a jar or bowl and refrigerate at least 2 hours; the flavour improves overnight."
+      ],
+      "prepTime": 15,
+      "cookTime": 50,
+      "servings": 6,
+      "tags": ["romanian", "vegan", "winter", "meal-prep"],
+      "ingredients": [
+        { "product": "Beetroot", "quantity": 4, "unit": "pcs", "note": "medium" },
+        { "product": "Horseradish", "quantity": 1, "unit": "pcs", "note": "about 8 cm piece" },
+        { "product": "Vinegar", "quantity": 3, "unit": "tbsp" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Sugar", "quantity": 1, "unit": "tsp" },
+        { "product": "Caraway Seeds", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-ardei-copti",
+      "name": "Salată de Ardei Copți",
+      "category": "Salads",
+      "description": "Sweet charred kapia peppers peeled and marinated in garlicky oil and vinegar, served cool with crusty bread.",
+      "instructions": [
+        "Roast the whole peppers on a grill pan or under a hot broiler, turning until blistered and blackened all over, about 20 minutes.",
+        "Pile the hot peppers in a bowl, sprinkle with salt, cover tightly and let steam for 15 minutes.",
+        "Peel off the skins, pull out the stems and seeds, and leave the peppers whole or tear into wide strips.",
+        "Whisk the oil, vinegar, crushed garlic, salt and a pinch of sugar and pour over the peppers.",
+        "Scatter with parsley and marinate for at least 1 hour before serving."
+      ],
+      "prepTime": 20,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "summer", "grilled"],
+      "ingredients": [
+        { "product": "Kapia Peppers", "quantity": 8, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Sunflower Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Sugar", "quantity": 1, "unit": "pinch" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-fasole-cu-ceapa",
+      "name": "Salată de Fasole cu Ceapă",
+      "category": "Salads",
+      "description": "Hearty Romanian white bean salad with sweet softened onions, garlic and a tangy vinegar dressing.",
+      "instructions": [
+        "Soak the beans overnight, then simmer in fresh water with a bay leaf for 60 to 90 minutes until tender; drain and cool.",
+        "Slice the onions thinly and soften them in 2 tablespoons of oil over low heat for 8 minutes without browning.",
+        "Combine the beans with the warm onions, crushed garlic and the remaining oil.",
+        "Season with vinegar, salt and pepper and toss gently to avoid breaking the beans.",
+        "Sprinkle with sweet paprika and chopped parsley and serve at room temperature."
+      ],
+      "prepTime": 15,
+      "cookTime": 80,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "budget", "high-protein"],
+      "ingredients": [
+        { "product": "Dried Beans", "quantity": 300, "unit": "g" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Sunflower Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Bay Leaf", "quantity": 1, "unit": "pcs" },
+        { "product": "Sweet Paprika", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-rosii-cu-ceapa-si-telemea",
+      "name": "Salată de Roșii cu Ceapă și Telemea",
+      "category": "Salads",
+      "description": "Juicy summer tomatoes and thin red onion rings topped with crumbled telemea cheese and good oil.",
+      "instructions": [
+        "Cut the tomatoes into thick wedges and arrange on a platter.",
+        "Slice the red onion into thin rings and scatter over the tomatoes.",
+        "Season with salt and pepper and drizzle with oil and vinegar.",
+        "Crumble the telemea over the top and finish with chopped parsley.",
+        "Serve immediately with bread to mop up the juices."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "summer", "no-cook", "quick"],
+      "ingredients": [
+        { "product": "Tomatoes", "quantity": 5, "unit": "pcs", "note": "ripe" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Telemea Cheese", "quantity": 150, "unit": "g" },
+        { "product": "Sunflower Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-castraveti-cu-smantana",
+      "name": "Salată de Castraveți cu Smântână",
+      "category": "Salads",
+      "description": "Cool sliced cucumbers folded into sour cream with dill and garlic, a refreshing Romanian summer side.",
+      "instructions": [
+        "Peel the cucumbers in stripes and slice them very thinly.",
+        "Toss with salt in a colander and leave 15 minutes, then squeeze out the excess water.",
+        "Mix the sour cream with the crushed garlic, chopped dill, vinegar and pepper.",
+        "Fold the cucumbers into the dressing and taste for salt.",
+        "Chill for 20 minutes and serve cold."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "summer", "no-cook", "quick"],
+      "ingredients": [
+        { "product": "Cucumber", "quantity": 3, "unit": "pcs" },
+        { "product": "Sour Cream", "quantity": 200, "unit": "g" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Vinegar", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-telina-cu-mere",
+      "name": "Salată de Țelină cu Mere",
+      "category": "Salads",
+      "description": "Crisp grated celery root and tart apple in a light lemony mayonnaise with toasted walnuts.",
+      "instructions": [
+        "Peel the celery root and apples and grate both coarsely into a bowl.",
+        "Immediately toss with the lemon juice to prevent browning.",
+        "Stir the mayonnaise and yogurt together and fold through the celery and apple.",
+        "Season with salt and pepper and stir in most of the chopped walnuts.",
+        "Chill for 30 minutes and top with the remaining walnuts before serving."
+      ],
+      "prepTime": 20,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "winter", "no-cook"],
+      "ingredients": [
+        { "product": "Celery Root", "quantity": 1, "unit": "pcs", "note": "medium" },
+        { "product": "Apples", "quantity": 2, "unit": "pcs", "note": "tart" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Mayonnaise", "quantity": 4, "unit": "tbsp" },
+        { "product": "Yogurt", "quantity": 100, "unit": "g" },
+        { "product": "Walnuts", "quantity": 50, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-ciuperci-cu-maioneza",
+      "name": "Salată de Ciuperci cu Maioneză",
+      "category": "Salads",
+      "description": "Sautéed mushrooms cooled and folded with garlic mayonnaise and dill, a beloved Romanian party salad.",
+      "instructions": [
+        "Clean the mushrooms and slice them thickly.",
+        "Heat the oil in a large pan and sauté the mushrooms over high heat until golden and their liquid has evaporated, about 10 minutes.",
+        "Season with salt and pepper and let cool completely.",
+        "Mix the mayonnaise with the crushed garlic, lemon juice and chopped dill.",
+        "Fold the mushrooms through the dressing, chill for 1 hour and serve with bread."
+      ],
+      "prepTime": 15,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "budget", "holiday"],
+      "ingredients": [
+        { "product": "Mushrooms", "quantity": 600, "unit": "g" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Mayonnaise", "quantity": 5, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-varza-rosie-cu-mere",
+      "name": "Salată de Varză Roșie cu Mere",
+      "category": "Salads",
+      "description": "Vibrant shredded red cabbage with sweet apple, honey and apple cider vinegar for a crunchy winter salad.",
+      "instructions": [
+        "Shred the red cabbage very finely and place in a large bowl with the salt.",
+        "Massage the cabbage for 2 minutes until it softens slightly and turns glossy.",
+        "Core the apple and cut into thin matchsticks; add to the cabbage.",
+        "Whisk the vinegar, honey, oil and pepper and pour over the salad.",
+        "Toss well, stir in the parsley and let marinate for 20 minutes before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "winter", "healthy", "no-cook"],
+      "ingredients": [
+        { "product": "Red Cabbage", "quantity": 0.5, "unit": "head" },
+        { "product": "Apples", "quantity": 1, "unit": "pcs" },
+        { "product": "Apple Cider Vinegar", "quantity": 3, "unit": "tbsp" },
+        { "product": "Honey", "quantity": 1, "unit": "tbsp" },
+        { "product": "Sunflower Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-ridichi-cu-ceapa-verde",
+      "name": "Salată de Ridichi cu Ceapă Verde",
+      "category": "Salads",
+      "description": "Peppery spring radishes and green onions tossed with lemon and oil, served over crisp lettuce leaves.",
+      "instructions": [
+        "Trim and thinly slice the radishes and chop the green onions.",
+        "Tear the lettuce into bite-size pieces and arrange on a platter.",
+        "Toss the radishes and green onions with the lemon juice, oil, salt and pepper.",
+        "Spoon over the lettuce and finish with chopped parsley.",
+        "Serve immediately while the radishes are crisp."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "quick", "no-cook", "healthy"],
+      "ingredients": [
+        { "product": "Radishes", "quantity": 2, "unit": "bunch" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Lettuce", "quantity": 1, "unit": "head" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Sunflower Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "shopska-salad",
+      "name": "Shopska Salad",
+      "category": "Salads",
+      "description": "Bulgarian chopped salad of tomatoes, cucumber, peppers and onion buried under a snowdrift of grated brined cheese.",
+      "instructions": [
+        "Roast the pepper under a broiler until charred, peel and chop; or simply dice it raw for a crunchier salad.",
+        "Dice the tomatoes and cucumber into 2 cm pieces and finely chop the onion.",
+        "Combine the vegetables with the chopped parsley in a bowl.",
+        "Dress with oil, vinegar, salt and pepper and toss gently.",
+        "Pile onto plates and grate a thick layer of telemea or feta over the top just before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["vegetarian", "summer", "no-cook", "mediterranean"],
+      "ingredients": [
+        { "product": "Tomatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Cucumber", "quantity": 1, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs", "note": "small" },
+        { "product": "Telemea Cheese", "quantity": 200, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Sunflower Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "vinegret-beetroot-sauerkraut-salad",
+      "name": "Vinegret",
+      "category": "Salads",
+      "description": "Russian beetroot salad with diced potatoes, carrots, pickles, sauerkraut and peas in a bright sunflower dressing.",
+      "instructions": [
+        "Boil the beetroots, potatoes and carrots separately in their skins until tender; cool and peel.",
+        "Dice all the vegetables into small, even cubes and place the beetroot in a separate bowl.",
+        "Toss the beetroot with 1 tablespoon of oil so it does not stain the other vegetables.",
+        "Combine the potatoes, carrots, diced pickles, drained sauerkraut, peas and finely chopped onion.",
+        "Add the beetroot, dress with the remaining oil, vinegar, salt and pepper and mix gently.",
+        "Chill for 1 hour and sprinkle with dill before serving."
+      ],
+      "prepTime": 25,
+      "cookTime": 45,
+      "servings": 6,
+      "tags": ["vegan", "winter", "meal-prep", "budget"],
+      "ingredients": [
+        { "product": "Beetroot", "quantity": 2, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Pickles", "quantity": 3, "unit": "pcs" },
+        { "product": "Sauerkraut", "quantity": 150, "unit": "g" },
+        { "product": "Canned Peas", "quantity": 1, "unit": "can" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs", "note": "small" },
+        { "product": "Sunflower Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "greek-salad-horiatiki",
+      "name": "Greek Salad (Horiatiki)",
+      "category": "Salads",
+      "description": "Chunky tomatoes, cucumber, red onion and kalamata olives crowned with a slab of feta and oregano.",
+      "instructions": [
+        "Cut the tomatoes into wedges and the cucumber into thick half-moons.",
+        "Slice the red onion and bell pepper into thin rings.",
+        "Toss the vegetables with the olives, olive oil, red wine vinegar, salt and pepper.",
+        "Lay the feta on top in one piece or large chunks and sprinkle generously with oregano.",
+        "Drizzle a little more oil over the feta and serve with crusty bread."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["mediterranean", "vegetarian", "summer", "no-cook", "quick"],
+      "ingredients": [
+        { "product": "Tomatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Cucumber", "quantity": 1, "unit": "pcs" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Green Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Olives", "quantity": 100, "unit": "g", "note": "kalamata" },
+        { "product": "Feta Cheese", "quantity": 200, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Red Wine Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "chicken-caesar-salad",
+      "name": "Chicken Caesar Salad",
+      "category": "Salads",
+      "description": "Crisp romaine, golden croutons and grilled chicken in a garlicky anchovy-parmesan dressing.",
+      "instructions": [
+        "Season the chicken breasts with salt and pepper, brush with a little oil and grill or pan-fry for 6 minutes per side; rest and slice.",
+        "Mash the anchovies and garlic to a paste, then whisk in the egg yolk, mustard and lemon juice.",
+        "Slowly whisk in the olive oil until creamy, then stir in half the grated parmesan.",
+        "Tear the romaine into a large bowl and toss with the dressing until every leaf is coated.",
+        "Top with the sliced chicken, croutons and remaining parmesan and finish with black pepper."
+      ],
+      "prepTime": 20,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["american", "high-protein", "grilled"],
+      "ingredients": [
+        { "product": "Chicken Breast", "quantity": 500, "unit": "g" },
+        { "product": "Lettuce", "quantity": 2, "unit": "head", "note": "romaine" },
+        { "product": "Croutons", "quantity": 100, "unit": "g" },
+        { "product": "Parmesan", "quantity": 60, "unit": "g" },
+        { "product": "Anchovies", "quantity": 4, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs", "note": "yolk only" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp", "note": "dijon" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 6, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salade-nicoise",
+      "name": "Salade Niçoise",
+      "category": "Salads",
+      "description": "Provençal composed salad of tuna, green beans, potatoes, eggs, olives and tomatoes with a mustard vinaigrette.",
+      "instructions": [
+        "Boil the potatoes until tender, about 15 minutes, then slice; cook the green beans in salted water for 4 minutes and cool in iced water.",
+        "Hard-boil the eggs for 9 minutes, cool, peel and quarter.",
+        "Whisk the mustard, red wine vinegar, olive oil, salt and pepper into a vinaigrette.",
+        "Arrange the lettuce on a platter and group the potatoes, beans, tomato wedges, eggs and flaked tuna on top.",
+        "Scatter with olives, anchovies and capers and spoon the vinaigrette over everything."
+      ],
+      "prepTime": 20,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["french", "mediterranean", "high-protein", "summer"],
+      "ingredients": [
+        { "product": "Canned Tuna", "quantity": 2, "unit": "can" },
+        { "product": "Potatoes", "quantity": 400, "unit": "g", "note": "baby potatoes" },
+        { "product": "Green Beans", "quantity": 200, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Lettuce", "quantity": 1, "unit": "head" },
+        { "product": "Olives", "quantity": 80, "unit": "g", "note": "black" },
+        { "product": "Anchovies", "quantity": 6, "unit": "pcs" },
+        { "product": "Capers", "quantity": 1, "unit": "tbsp" },
+        { "product": "Mustard", "quantity": 2, "unit": "tsp", "note": "dijon" },
+        { "product": "Red Wine Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Olive Oil", "quantity": 5, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "waldorf-salad",
+      "name": "Waldorf Salad",
+      "category": "Salads",
+      "description": "Classic New York salad of crisp apple, celery, grapes and toasted walnuts in a light lemony mayo dressing.",
+      "instructions": [
+        "Toast the walnuts in a dry pan for 3 minutes until fragrant, then roughly chop.",
+        "Core and dice the apples and toss with the lemon juice to prevent browning.",
+        "Slice the celery thinly and halve the grapes.",
+        "Stir the mayonnaise and yogurt together and season with salt and pepper.",
+        "Fold in the apples, celery, grapes and most of the walnuts.",
+        "Serve on lettuce leaves topped with the remaining walnuts."
+      ],
+      "prepTime": 15,
+      "cookTime": 3,
+      "servings": 4,
+      "tags": ["american", "vegetarian", "quick", "kid-friendly"],
+      "ingredients": [
+        { "product": "Apples", "quantity": 2, "unit": "pcs", "note": "crisp red" },
+        { "product": "Celery", "quantity": 3, "unit": "stalk" },
+        { "product": "Grapes", "quantity": 150, "unit": "g", "note": "seedless" },
+        { "product": "Walnuts", "quantity": 60, "unit": "g" },
+        { "product": "Mayonnaise", "quantity": 3, "unit": "tbsp" },
+        { "product": "Yogurt", "quantity": 3, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Lettuce", "quantity": 0.5, "unit": "head", "note": "for serving" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "classic-creamy-coleslaw",
+      "name": "Classic Creamy Coleslaw",
+      "category": "Salads",
+      "description": "Finely shredded cabbage and carrot in a sweet-tangy creamy dressing, the perfect partner for burgers and BBQ.",
+      "instructions": [
+        "Quarter and core the cabbage and shred it as thinly as possible; grate the carrots.",
+        "Whisk the mayonnaise, yogurt, apple cider vinegar, mustard, sugar, salt and pepper in a large bowl.",
+        "Add the cabbage and carrot and toss until evenly coated.",
+        "Refrigerate for at least 30 minutes so the cabbage softens slightly.",
+        "Toss again and adjust salt and vinegar before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["american", "vegetarian", "no-cook", "kid-friendly", "budget"],
+      "ingredients": [
+        { "product": "Cabbage", "quantity": 0.5, "unit": "head" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Mayonnaise", "quantity": 5, "unit": "tbsp" },
+        { "product": "Yogurt", "quantity": 3, "unit": "tbsp" },
+        { "product": "Apple Cider Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp" },
+        { "product": "Sugar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "asian-sesame-slaw",
+      "name": "Asian Sesame Slaw",
+      "category": "Salads",
+      "description": "Crunchy red cabbage, carrot and bean sprouts in a ginger-soy-sesame dressing with toasted sesame seeds.",
+      "instructions": [
+        "Shred the red cabbage finely, cut the carrots into thin matchsticks and slice the green onions.",
+        "Whisk the soy sauce, rice vinegar, sesame oil, honey, grated ginger and lime juice into a dressing.",
+        "Toss the cabbage, carrots, bean sprouts and green onions with the dressing.",
+        "Toast the sesame seeds in a dry pan for 2 minutes until golden.",
+        "Let the slaw sit 10 minutes, then top with sesame seeds and chopped coriander."
+      ],
+      "prepTime": 15,
+      "cookTime": 2,
+      "servings": 4,
+      "tags": ["asian", "vegan", "healthy", "quick"],
+      "ingredients": [
+        { "product": "Red Cabbage", "quantity": 0.5, "unit": "head" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Bean Sprouts", "quantity": 100, "unit": "g" },
+        { "product": "Green Onions", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Soy Sauce", "quantity": 2, "unit": "tbsp" },
+        { "product": "Rice Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Sesame Oil", "quantity": 2, "unit": "tsp" },
+        { "product": "Honey", "quantity": 1, "unit": "tbsp" },
+        { "product": "Ginger", "quantity": 10, "unit": "g" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs" },
+        { "product": "Sesame Seeds", "quantity": 1, "unit": "tbsp" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "cucumber-yogurt-mint-salad",
+      "name": "Cucumber Yogurt Salad with Mint",
+      "category": "Salads",
+      "description": "Cooling diced cucumber in thick garlicky yogurt with fresh mint and a drizzle of olive oil.",
+      "instructions": [
+        "Dice the cucumbers small, salt them lightly and drain in a colander for 10 minutes.",
+        "Stir the yogurt with the crushed garlic, chopped mint, lemon juice and a pinch of salt.",
+        "Pat the cucumber dry and fold it into the yogurt.",
+        "Spoon into a bowl, drizzle with olive oil and dust with sumac or black pepper.",
+        "Serve chilled alongside grilled meats or warm pita."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["middle-eastern", "vegetarian", "no-cook", "quick", "healthy"],
+      "ingredients": [
+        { "product": "Cucumber", "quantity": 2, "unit": "pcs" },
+        { "product": "Yogurt", "quantity": 300, "unit": "g", "note": "greek style" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Fresh Mint", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Sumac", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "beetroot-feta-walnut-salad",
+      "name": "Beetroot, Feta and Walnut Salad",
+      "category": "Salads",
+      "description": "Sweet roasted beetroot wedges with salty feta, toasted walnuts and peppery arugula in balsamic dressing.",
+      "instructions": [
+        "Preheat the oven to 200°C. Peel and cut the beetroots into wedges, toss with 1 tablespoon of oil and salt, and roast for 35 to 40 minutes until tender.",
+        "Toast the walnuts in a dry pan for 3 minutes and roughly chop.",
+        "Whisk the remaining olive oil with the balsamic vinegar, honey, salt and pepper.",
+        "Arrange the arugula on a platter and top with the warm beetroot.",
+        "Crumble over the feta, scatter the walnuts and drizzle with the dressing."
+      ],
+      "prepTime": 15,
+      "cookTime": 40,
+      "servings": 4,
+      "tags": ["vegetarian", "healthy", "baked", "gluten-free"],
+      "ingredients": [
+        { "product": "Beetroot", "quantity": 4, "unit": "pcs" },
+        { "product": "Feta Cheese", "quantity": 150, "unit": "g" },
+        { "product": "Walnuts", "quantity": 60, "unit": "g" },
+        { "product": "Arugula", "quantity": 100, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Balsamic Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Honey", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "roasted-vegetable-salad-balsamic",
+      "name": "Roasted Vegetable Salad with Balsamic",
+      "category": "Salads",
+      "description": "Caramelised zucchini, peppers, red onion and cherry tomatoes over greens with a balsamic glaze and goat cheese.",
+      "instructions": [
+        "Preheat the oven to 220°C. Cut the zucchini, peppers and red onion into chunks and halve the cherry tomatoes.",
+        "Toss the vegetables with the olive oil, dried thyme, salt and pepper and spread on a baking tray.",
+        "Roast for 25 minutes, turning once, until edges are golden and caramelised.",
+        "Let the vegetables cool for 10 minutes, then pile onto the salad greens.",
+        "Crumble over the goat cheese, drizzle with balsamic glaze and scatter with torn basil."
+      ],
+      "prepTime": 15,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["mediterranean", "vegetarian", "baked", "healthy"],
+      "ingredients": [
+        { "product": "Zucchini", "quantity": 2, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 2, "unit": "pcs" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Cherry Tomatoes", "quantity": 250, "unit": "g" },
+        { "product": "Mixed Salad Greens", "quantity": 120, "unit": "g" },
+        { "product": "Goat Cheese", "quantity": 100, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Balsamic Glaze", "quantity": 2, "unit": "tbsp" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "tabbouleh",
+      "name": "Tabbouleh",
+      "category": "Salads",
+      "description": "Lebanese herb salad packed with parsley and mint, fine bulgur, tomatoes and plenty of lemon.",
+      "instructions": [
+        "Rinse the bulgur, cover with just-boiled water and let soak for 15 minutes; drain and squeeze dry.",
+        "Finely chop the parsley and mint leaves and dice the tomatoes very small, discarding the watery seeds.",
+        "Chop the green onions finely.",
+        "Combine the herbs, tomatoes, onions and bulgur in a bowl.",
+        "Dress with lemon juice, olive oil, salt and pepper, toss well and rest for 10 minutes before serving."
+      ],
+      "prepTime": 25,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["middle-eastern", "vegan", "healthy", "no-cook"],
+      "ingredients": [
+        { "product": "Bulgur", "quantity": 80, "unit": "g", "note": "fine" },
+        { "product": "Fresh Parsley", "quantity": 3, "unit": "bunch" },
+        { "product": "Fresh Mint", "quantity": 1, "unit": "bunch" },
+        { "product": "Tomatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Green Onions", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 2, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "quinoa-roasted-sweet-potato-salad",
+      "name": "Quinoa Salad with Roasted Sweet Potato",
+      "category": "Salads",
+      "description": "Fluffy quinoa with caramelised sweet potato cubes, spinach, feta and pumpkin seeds in a lemon-honey dressing.",
+      "instructions": [
+        "Preheat the oven to 200°C. Dice the sweet potatoes, toss with 1 tablespoon of oil, cumin and salt and roast for 25 minutes.",
+        "Rinse the quinoa, cook in 400 ml of water for 15 minutes until the water is absorbed, then fluff and cool.",
+        "Whisk the remaining olive oil with the lemon juice, honey, salt and pepper.",
+        "Toss the quinoa with the spinach, red onion and dressing.",
+        "Fold in the warm sweet potato and top with crumbled feta and pumpkin seeds."
+      ],
+      "prepTime": 15,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["healthy", "vegetarian", "gluten-free", "meal-prep"],
+      "ingredients": [
+        { "product": "Quinoa", "quantity": 200, "unit": "g" },
+        { "product": "Sweet Potatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Spinach", "quantity": 100, "unit": "g", "note": "baby" },
+        { "product": "Red Onion", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Feta Cheese", "quantity": 100, "unit": "g" },
+        { "product": "Pumpkin Seeds", "quantity": 40, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Honey", "quantity": 1, "unit": "tsp" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "moroccan-couscous-salad",
+      "name": "Moroccan Couscous Salad",
+      "category": "Salads",
+      "description": "Spiced couscous with chickpeas, dried apricots, almonds and fresh herbs, dressed with lemon and olive oil.",
+      "instructions": [
+        "Place the couscous in a bowl with the cumin, cinnamon and a pinch of salt; pour over 300 ml of boiling water, cover and leave 5 minutes.",
+        "Fluff the couscous with a fork and drizzle with 1 tablespoon of olive oil.",
+        "Toast the almonds in a dry pan for 3 minutes and chop the apricots into small pieces.",
+        "Stir in the drained chickpeas, apricots, almonds, diced cucumber and chopped herbs.",
+        "Dress with the remaining olive oil and lemon juice, season and serve at room temperature."
+      ],
+      "prepTime": 15,
+      "cookTime": 5,
+      "servings": 4,
+      "tags": ["middle-eastern", "vegan", "quick", "meal-prep"],
+      "ingredients": [
+        { "product": "Couscous", "quantity": 250, "unit": "g" },
+        { "product": "Canned Chickpeas", "quantity": 1, "unit": "can" },
+        { "product": "Dried Apricots", "quantity": 60, "unit": "g" },
+        { "product": "Almonds", "quantity": 50, "unit": "g", "note": "flaked" },
+        { "product": "Cucumber", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Fresh Mint", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Cinnamon", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "lentil-salad-feta-herbs",
+      "name": "Lentil Salad with Feta and Herbs",
+      "category": "Salads",
+      "description": "Nutty green lentils with cherry tomatoes, red onion, feta and a sharp mustard vinaigrette.",
+      "instructions": [
+        "Rinse the lentils and simmer in plenty of water with the bay leaf for 20 to 25 minutes until tender but holding their shape; drain.",
+        "While still warm, toss the lentils with the red wine vinegar, mustard, olive oil, salt and pepper.",
+        "Finely chop the red onion and halve the cherry tomatoes.",
+        "Fold the onion, tomatoes and chopped parsley through the lentils.",
+        "Top with crumbled feta and serve warm or at room temperature."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["vegetarian", "high-protein", "healthy", "meal-prep"],
+      "ingredients": [
+        { "product": "Green Lentils", "quantity": 250, "unit": "g" },
+        { "product": "Bay Leaf", "quantity": 1, "unit": "pcs" },
+        { "product": "Cherry Tomatoes", "quantity": 200, "unit": "g" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs", "note": "small" },
+        { "product": "Feta Cheese", "quantity": 120, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch" },
+        { "product": "Red Wine Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp", "note": "dijon" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mediterranean-chickpea-salad",
+      "name": "Mediterranean Chickpea Salad",
+      "category": "Salads",
+      "description": "Protein-rich chickpeas with cucumber, tomatoes, olives, red onion and parsley in a lemon-garlic dressing.",
+      "instructions": [
+        "Drain and rinse the chickpeas and pat dry.",
+        "Dice the cucumber and tomatoes, finely chop the red onion and halve the olives.",
+        "Whisk the olive oil, lemon juice, crushed garlic, oregano, salt and pepper.",
+        "Combine the chickpeas and vegetables, pour over the dressing and toss.",
+        "Stir in the chopped parsley and let marinate 15 minutes before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["mediterranean", "vegan", "no-cook", "high-protein", "quick"],
+      "ingredients": [
+        { "product": "Canned Chickpeas", "quantity": 2, "unit": "can" },
+        { "product": "Cucumber", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Red Onion", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Olives", "quantity": 80, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "italian-pasta-salad",
+      "name": "Italian Pasta Salad",
+      "category": "Salads",
+      "description": "Fusilli with salami, mozzarella, cherry tomatoes, olives and peppers in a zesty oregano vinaigrette.",
+      "instructions": [
+        "Cook the pasta in salted boiling water until al dente, drain, rinse briefly under cold water and toss with 1 tablespoon of olive oil.",
+        "Whisk the remaining olive oil with the red wine vinegar, oregano, crushed garlic, salt and pepper.",
+        "Halve the cherry tomatoes, dice the pepper and mozzarella and cut the salami into strips.",
+        "Combine the pasta with the tomatoes, pepper, mozzarella, salami, olives and red onion.",
+        "Pour over the dressing, toss well and chill for 30 minutes; finish with torn basil."
+      ],
+      "prepTime": 15,
+      "cookTime": 12,
+      "servings": 6,
+      "tags": ["italian", "meal-prep", "kid-friendly", "summer"],
+      "ingredients": [
+        { "product": "Pasta", "quantity": 400, "unit": "g", "note": "fusilli" },
+        { "product": "Salami", "quantity": 120, "unit": "g" },
+        { "product": "Fresh Mozzarella", "quantity": 200, "unit": "g" },
+        { "product": "Cherry Tomatoes", "quantity": 250, "unit": "g" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Olives", "quantity": 80, "unit": "g" },
+        { "product": "Red Onion", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 5, "unit": "tbsp" },
+        { "product": "Red Wine Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "german-potato-salad-bacon",
+      "name": "German Potato Salad with Bacon",
+      "category": "Salads",
+      "description": "Warm sliced potatoes tossed with crispy bacon, onion and a tangy mustard-vinegar dressing instead of mayo.",
+      "instructions": [
+        "Boil the potatoes in their skins until just tender, about 20 minutes; peel while warm and slice.",
+        "Fry the diced bacon in a pan until crisp, then remove and soften the chopped onion in the fat for 5 minutes.",
+        "Add the vinegar, broth, mustard and sugar to the pan and bring to a simmer.",
+        "Pour the hot dressing over the warm potatoes and toss gently to coat.",
+        "Fold in the bacon and chives, season with salt and pepper and serve warm."
+      ],
+      "prepTime": 15,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["comfort-food", "dairy-free", "budget"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 1, "unit": "kg", "note": "waxy" },
+        { "product": "Bacon", "quantity": 150, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Vinegar", "quantity": 4, "unit": "tbsp" },
+        { "product": "Vegetable Broth", "quantity": 100, "unit": "ml" },
+        { "product": "Mustard", "quantity": 2, "unit": "tsp" },
+        { "product": "Sugar", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Chives", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "tuna-white-bean-salad",
+      "name": "Tuna and White Bean Salad",
+      "category": "Salads",
+      "description": "Tuscan-style salad of creamy cannellini beans, flaked tuna, red onion and parsley with lemon and olive oil.",
+      "instructions": [
+        "Drain and rinse the beans and drain the tuna.",
+        "Slice the red onion paper-thin and soak in cold water for 5 minutes to mellow, then drain.",
+        "Combine the beans, flaked tuna, onion, halved cherry tomatoes and chopped parsley.",
+        "Dress with olive oil, lemon juice, salt and plenty of black pepper.",
+        "Toss gently and serve with crusty bread or over arugula."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["italian", "high-protein", "no-cook", "quick", "budget"],
+      "ingredients": [
+        { "product": "Canned Beans", "quantity": 2, "unit": "can", "note": "cannellini" },
+        { "product": "Canned Tuna", "quantity": 2, "unit": "can" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs", "note": "small" },
+        { "product": "Cherry Tomatoes", "quantity": 150, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "egg-salad-with-chives",
+      "name": "Egg Salad with Chives",
+      "category": "Salads",
+      "description": "Creamy chopped hard-boiled eggs with mayonnaise, mustard, crunchy celery and fresh chives for sandwiches.",
+      "instructions": [
+        "Place the eggs in cold water, bring to a boil and cook for 9 minutes; cool in iced water and peel.",
+        "Chop the eggs roughly and finely dice the celery.",
+        "Mix the mayonnaise, mustard, lemon juice, salt and pepper in a bowl.",
+        "Fold in the eggs, celery and most of the chopped chives.",
+        "Chill for 20 minutes and serve on bread or lettuce leaves, topped with remaining chives."
+      ],
+      "prepTime": 10,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["american", "vegetarian", "quick", "budget", "high-protein"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 8, "unit": "pcs" },
+        { "product": "Mayonnaise", "quantity": 4, "unit": "tbsp" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp", "note": "dijon" },
+        { "product": "Celery", "quantity": 1, "unit": "stalk" },
+        { "product": "Fresh Chives", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "chicken-salad-grapes-almonds",
+      "name": "Chicken Salad with Grapes and Almonds",
+      "category": "Salads",
+      "description": "Tender poached chicken with sweet grapes, celery and toasted almonds in a tarragon-scented creamy dressing.",
+      "instructions": [
+        "Poach the chicken breasts in gently simmering salted water for 15 minutes, cool and dice.",
+        "Toast the almonds in a dry pan for 3 minutes until golden.",
+        "Halve the grapes and thinly slice the celery.",
+        "Mix the mayonnaise, yogurt, lemon juice, chopped tarragon, salt and pepper.",
+        "Fold in the chicken, grapes and celery and chill for 30 minutes.",
+        "Top with the almonds and serve in lettuce cups or on bread."
+      ],
+      "prepTime": 15,
+      "cookTime": 18,
+      "servings": 4,
+      "tags": ["american", "high-protein", "meal-prep"],
+      "ingredients": [
+        { "product": "Chicken Breast", "quantity": 500, "unit": "g" },
+        { "product": "Grapes", "quantity": 150, "unit": "g", "note": "seedless" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Almonds", "quantity": 50, "unit": "g", "note": "flaked" },
+        { "product": "Mayonnaise", "quantity": 4, "unit": "tbsp" },
+        { "product": "Yogurt", "quantity": 3, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Fresh Tarragon", "quantity": 0.25, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "cobb-salad",
+      "name": "Cobb Salad",
+      "category": "Salads",
+      "description": "The American classic: rows of chicken, bacon, egg, avocado, tomato and blue cheese over lettuce with red wine vinaigrette.",
+      "instructions": [
+        "Season the chicken, pan-fry in 1 tablespoon of oil for 6 minutes per side, rest and dice.",
+        "Fry the bacon until crisp and crumble; hard-boil the eggs for 9 minutes, cool and chop.",
+        "Whisk the remaining olive oil with the red wine vinegar, mustard, salt and pepper.",
+        "Spread the chopped lettuce on a large platter.",
+        "Arrange the chicken, bacon, eggs, diced avocado, halved cherry tomatoes and crumbled blue cheese in neat rows on top.",
+        "Drizzle with the vinaigrette just before serving and toss at the table."
+      ],
+      "prepTime": 20,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["american", "high-protein", "low-carb", "gluten-free"],
+      "ingredients": [
+        { "product": "Chicken Breast", "quantity": 400, "unit": "g" },
+        { "product": "Bacon", "quantity": 120, "unit": "g" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Avocado", "quantity": 1, "unit": "pcs" },
+        { "product": "Cherry Tomatoes", "quantity": 200, "unit": "g" },
+        { "product": "Gorgonzola", "quantity": 100, "unit": "g", "note": "or other blue cheese" },
+        { "product": "Lettuce", "quantity": 1, "unit": "head", "note": "romaine" },
+        { "product": "Olive Oil", "quantity": 5, "unit": "tbsp" },
+        { "product": "Red Wine Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mexican-black-bean-corn-salad",
+      "name": "Mexican Black Bean and Corn Salad",
+      "category": "Salads",
+      "description": "Zesty black beans and sweetcorn with red pepper, red onion, jalapeño, coriander and lime, great with tortilla chips.",
+      "instructions": [
+        "Drain and rinse the black beans and the corn.",
+        "Dice the bell pepper, finely chop the red onion and mince the chili, removing seeds for less heat.",
+        "Whisk the lime juice, olive oil, cumin, salt and pepper.",
+        "Combine the beans, corn, pepper, onion and chili and toss with the dressing.",
+        "Fold in the diced avocado and chopped coriander just before serving with tortilla chips."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["mexican", "vegan", "no-cook", "spicy", "high-protein"],
+      "ingredients": [
+        { "product": "Canned Beans", "quantity": 2, "unit": "can", "note": "black beans" },
+        { "product": "Canned Corn", "quantity": 1, "unit": "can" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs", "note": "red" },
+        { "product": "Red Onion", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Chili Pepper", "quantity": 1, "unit": "pcs", "note": "jalapeño" },
+        { "product": "Avocado", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Coriander", "quantity": 1, "unit": "bunch" },
+        { "product": "Limes", "quantity": 2, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Tortilla Chips", "quantity": 1, "unit": "pack", "note": "for serving" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "thai-rice-noodle-peanut-salad",
+      "name": "Thai Rice Noodle Salad with Peanuts",
+      "category": "Salads",
+      "description": "Cold rice noodles with crunchy vegetables, herbs and roasted peanuts in a lime, fish sauce and chili dressing.",
+      "instructions": [
+        "Soak or cook the rice noodles according to the pack, rinse under cold water and drain well.",
+        "Cut the carrots and cucumber into thin matchsticks and slice the green onions and chili.",
+        "Whisk the lime juice, fish sauce, soy sauce, sugar, sesame oil, grated ginger and chili into a dressing.",
+        "Toss the noodles with the vegetables and dressing until well coated.",
+        "Top with chopped roasted peanuts, coriander and mint and serve cold."
+      ],
+      "prepTime": 20,
+      "cookTime": 5,
+      "servings": 4,
+      "tags": ["asian", "spicy", "dairy-free", "summer"],
+      "ingredients": [
+        { "product": "Rice Noodles", "quantity": 250, "unit": "g" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Cucumber", "quantity": 1, "unit": "pcs" },
+        { "product": "Green Onions", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Chili Pepper", "quantity": 1, "unit": "pcs" },
+        { "product": "Peanuts", "quantity": 60, "unit": "g", "note": "roasted" },
+        { "product": "Limes", "quantity": 2, "unit": "pcs" },
+        { "product": "Fish Sauce", "quantity": 2, "unit": "tbsp" },
+        { "product": "Soy Sauce", "quantity": 1, "unit": "tbsp" },
+        { "product": "Sugar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Sesame Oil", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "spinach-strawberry-almond-salad",
+      "name": "Spinach and Strawberry Salad with Almonds",
+      "category": "Salads",
+      "description": "Tender baby spinach with sweet strawberries, toasted almonds and goat cheese in a honey-balsamic dressing.",
+      "instructions": [
+        "Toast the almonds in a dry pan for 3 minutes until golden and set aside to cool.",
+        "Hull and slice the strawberries and thinly slice the red onion.",
+        "Whisk the olive oil, balsamic vinegar, honey, mustard, salt and pepper.",
+        "Toss the spinach with the dressing in a large bowl.",
+        "Top with the strawberries, red onion, crumbled goat cheese and almonds and serve at once."
+      ],
+      "prepTime": 15,
+      "cookTime": 3,
+      "servings": 4,
+      "tags": ["vegetarian", "summer", "healthy", "quick", "gluten-free"],
+      "ingredients": [
+        { "product": "Spinach", "quantity": 200, "unit": "g", "note": "baby" },
+        { "product": "Strawberries", "quantity": 250, "unit": "g" },
+        { "product": "Almonds", "quantity": 50, "unit": "g", "note": "flaked" },
+        { "product": "Goat Cheese", "quantity": 100, "unit": "g" },
+        { "product": "Red Onion", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Balsamic Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Honey", "quantity": 1, "unit": "tsp" },
+        { "product": "Mustard", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "pear-gorgonzola-walnut-salad",
+      "name": "Pear, Gorgonzola and Walnut Salad",
+      "category": "Salads",
+      "description": "Sliced ripe pears, creamy gorgonzola and candied-style toasted walnuts over mixed greens with honey vinaigrette.",
+      "instructions": [
+        "Toast the walnuts in a pan with 1 teaspoon of honey for 3 minutes until glossy; cool on baking paper.",
+        "Core and thinly slice the pears and toss with a squeeze of lemon.",
+        "Whisk the olive oil, remaining honey, lemon juice, mustard, salt and pepper.",
+        "Toss the mixed greens with half the dressing and arrange on plates.",
+        "Top with the pear slices, crumbled gorgonzola and walnuts and drizzle with the rest of the dressing."
+      ],
+      "prepTime": 15,
+      "cookTime": 3,
+      "servings": 4,
+      "tags": ["italian", "vegetarian", "quick", "holiday"],
+      "ingredients": [
+        { "product": "Pears", "quantity": 2, "unit": "pcs", "note": "ripe" },
+        { "product": "Gorgonzola", "quantity": 120, "unit": "g" },
+        { "product": "Walnuts", "quantity": 70, "unit": "g" },
+        { "product": "Mixed Salad Greens", "quantity": 150, "unit": "g" },
+        { "product": "Honey", "quantity": 2, "unit": "tsp" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Mustard", "quantity": 0.5, "unit": "tsp", "note": "dijon" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "watermelon-feta-mint-salad",
+      "name": "Watermelon, Feta and Mint Salad",
+      "category": "Salads",
+      "description": "Icy cubes of watermelon with salty feta, fresh mint and a lime and olive oil drizzle, the ultimate summer salad.",
+      "instructions": [
+        "Cut the watermelon into 3 cm cubes, removing any seeds, and chill well.",
+        "Slice the red onion paper-thin and soak in the lime juice for 10 minutes.",
+        "Arrange the watermelon on a platter and scatter over the onion and crumbled feta.",
+        "Drizzle with olive oil and the lime juice from the onion.",
+        "Finish with torn mint leaves and a little black pepper and serve immediately."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["summer", "vegetarian", "no-cook", "quick", "gluten-free"],
+      "ingredients": [
+        { "product": "Watermelon", "quantity": 0.5, "unit": "pcs", "note": "small, about 1.5 kg" },
+        { "product": "Feta Cheese", "quantity": 150, "unit": "g" },
+        { "product": "Fresh Mint", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Red Onion", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "fattoush",
+      "name": "Fattoush",
+      "category": "Salads",
+      "description": "Levantine chopped salad with crisp toasted pita shards, radishes, cucumber and tomatoes in a sumac-lemon dressing.",
+      "instructions": [
+        "Preheat the oven to 200°C. Tear the pita into bite-size pieces, toss with 1 tablespoon of olive oil and bake for 8 minutes until crisp.",
+        "Chop the lettuce, dice the cucumber and tomatoes and slice the radishes and green onions.",
+        "Whisk the remaining olive oil with the lemon juice, sumac, crushed garlic, salt and pepper.",
+        "Toss the vegetables with the chopped parsley and mint and the dressing.",
+        "Add the toasted pita just before serving and sprinkle with more sumac."
+      ],
+      "prepTime": 20,
+      "cookTime": 8,
+      "servings": 4,
+      "tags": ["middle-eastern", "vegan", "healthy", "summer"],
+      "ingredients": [
+        { "product": "Pita Bread", "quantity": 2, "unit": "pcs" },
+        { "product": "Lettuce", "quantity": 1, "unit": "head", "note": "romaine" },
+        { "product": "Cucumber", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Radishes", "quantity": 1, "unit": "bunch" },
+        { "product": "Green Onions", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Fresh Mint", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Sumac", "quantity": 2, "unit": "tsp" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 5, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "tropical-fruit-salad",
+      "name": "Tropical Fruit Salad",
+      "category": "Salads",
+      "description": "Juicy mango, pineapple, kiwi and banana tossed with lime, honey and a scattering of toasted coconut.",
+      "instructions": [
+        "Peel and dice the mango and pineapple into 2 cm chunks.",
+        "Peel and slice the kiwis and bananas.",
+        "Whisk the lime juice and honey and pour over the fruit; toss gently.",
+        "Toast the desiccated coconut in a dry pan for 2 minutes until lightly golden.",
+        "Chill the salad for 15 minutes and sprinkle with coconut and torn mint before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 2,
+      "servings": 4,
+      "tags": ["vegan", "kid-friendly", "summer", "quick", "healthy"],
+      "ingredients": [
+        { "product": "Mango", "quantity": 1, "unit": "pcs" },
+        { "product": "Pineapple", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Kiwi", "quantity": 3, "unit": "pcs" },
+        { "product": "Bananas", "quantity": 2, "unit": "pcs" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs" },
+        { "product": "Honey", "quantity": 1, "unit": "tbsp" },
+        { "product": "Desiccated Coconut", "quantity": 20, "unit": "g" },
+        { "product": "Fresh Mint", "quantity": 0.25, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "berry-fruit-salad-honey-lime",
+      "name": "Berry Fruit Salad with Honey and Lime",
+      "category": "Salads",
+      "description": "Strawberries, blueberries, raspberries and grapes glossed with a honey-lime syrup and fresh mint.",
+      "instructions": [
+        "Hull and quarter the strawberries and halve the grapes.",
+        "Gently combine all the berries and grapes in a serving bowl.",
+        "Whisk the honey with the lime juice and zest until smooth.",
+        "Pour the syrup over the fruit and fold very gently so the raspberries stay whole.",
+        "Chill for 20 minutes and scatter with chopped mint; serve with yogurt if you like."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["vegetarian", "no-cook", "kid-friendly", "summer", "healthy"],
+      "ingredients": [
+        { "product": "Strawberries", "quantity": 250, "unit": "g" },
+        { "product": "Blueberries", "quantity": 150, "unit": "g" },
+        { "product": "Raspberries", "quantity": 150, "unit": "g" },
+        { "product": "Grapes", "quantity": 150, "unit": "g" },
+        { "product": "Honey", "quantity": 2, "unit": "tbsp" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Mint", "quantity": 0.25, "unit": "bunch" },
+        { "product": "Yogurt", "quantity": 200, "unit": "g", "note": "for serving" }
+      ]
+    },
+    {
+      "key": "brown-rice-cranberry-pecan-salad",
+      "name": "Brown Rice Salad with Cranberries and Pecans",
+      "category": "Salads",
+      "description": "Chewy brown rice with tart dried cranberries, toasted pecans, celery and green onions in an orange vinaigrette.",
+      "instructions": [
+        "Rinse the brown rice and simmer in plenty of salted water for 30 to 35 minutes until tender; drain and cool.",
+        "Toast the pecans in a dry pan for 3 minutes and roughly chop.",
+        "Whisk the orange juice and zest with the olive oil, apple cider vinegar, honey, salt and pepper.",
+        "Combine the rice with the cranberries, sliced celery, chopped green onions and parsley.",
+        "Pour over the dressing, toss well and top with the pecans; serve at room temperature."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 6,
+      "tags": ["vegan", "meal-prep", "healthy", "holiday", "gluten-free"],
+      "ingredients": [
+        { "product": "Brown Rice", "quantity": 300, "unit": "g" },
+        { "product": "Dried Cranberries", "quantity": 80, "unit": "g" },
+        { "product": "Pecans", "quantity": 70, "unit": "g" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Green Onions", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Oranges", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Apple Cider Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Honey", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    }
+  ],
+  "newProducts": [
+    {
+      "name": "Fish Roe",
+      "category": "Fish & Seafood",
+      "unit": "g",
+      "emoji": "🐟",
+      "aliases": ["carp roe", "roe", "icre", "icre de crap", "icre de stiuca", "tarama"]
+    }
+  ]
+}

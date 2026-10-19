@@ -40,15 +40,6 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage> {
     _category = widget.category;
   }
 
-  bool get _isExpired =>
-      _product.expirationDate != null &&
-      _product.expirationDate!.isBefore(DateTime.now());
-
-  bool get _isExpiringSoon =>
-      _product.expirationDate != null &&
-      _product.expirationDate!
-          .isBefore(DateTime.now().add(const Duration(days: 7)));
-
   bool get _hasFilePhoto =>
       _product.photo != null &&
       _product.photo!.isNotEmpty &&
@@ -190,34 +181,22 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage> {
                   InfoRow(
                       icon: Icons.inventory_2_outlined,
                       label: 'Default Unit',
-                      value:
-                          '${_product.quantity ?? 1} ${_product.units ?? ''}',
+                      value: _product.defaultUnit,
                       iconColor: const Color(0xFF53B175)),
                   const SizedBox(height: 16),
-                  if (_product.expirationDate != null) ...[
+                  if (_product.aliases.isNotEmpty) ...[
                     InfoRow(
-                      icon: Icons.calendar_today_outlined,
-                      label: 'Expiration Date',
-                      value: _formatDate(_product.expirationDate!),
-                      iconColor: _isExpired
-                          ? const Color(0xFFF3603F)
-                          : _isExpiringSoon
-                              ? const Color(0xFFF8A44C)
-                              : const Color(0xFF7C7C7C),
-                      valueColor: _isExpired
-                          ? const Color(0xFFF3603F)
-                          : _isExpiringSoon
-                              ? const Color(0xFFF8A44C)
-                              : null,
-                    ),
+                        icon: Icons.label_outline,
+                        label: 'Also known as',
+                        value: _product.aliases.join(', '),
+                        iconColor: const Color(0xFF53B175)),
                     const SizedBox(height: 16),
-                    if (_isExpired || _isExpiringSoon)
-                      StatusBadge(
-                        label: _isExpired ? 'Expired' : 'Expiring Soon',
-                        color: _isExpired
-                            ? const Color(0xFFF3603F)
-                            : const Color(0xFFF8A44C),
-                      ),
+                  ],
+                  if (_product.isBuiltIn) ...[
+                    const StatusBadge(
+                      label: 'Catalogue product',
+                      color: Color(0xFF53B175),
+                    ),
                     const SizedBox(height: 16),
                   ],
                   Container(
@@ -290,6 +269,19 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage> {
       return const Icon(Icons.shopping_bag_outlined,
           size: 80, color: Color(0xFFDBDBDB));
     }
+    if (photo.startsWith('assets/')) {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(photo,
+            fit: BoxFit.cover,
+            height: 200,
+            width: 200,
+            errorBuilder: (_, __, ___) => const Icon(
+                Icons.broken_image_outlined,
+                size: 80,
+                color: Color(0xFFDBDBDB))),
+      );
+    }
     if (_hasFilePhoto) {
       final file = File(photo.replaceFirst('file://', ''));
       if (file.existsSync()) {
@@ -304,6 +296,4 @@ class _ProductDetailPageState extends ConsumerState<ProductDetailPage> {
     }
     return Text(photo, style: const TextStyle(fontSize: 110));
   }
-
-  String _formatDate(DateTime date) => '${date.day}/${date.month}/${date.year}';
 }

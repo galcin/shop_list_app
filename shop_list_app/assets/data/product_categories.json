@@ -1,0 +1,18 @@
+[
+  { "name": "Fruits", "emoji": "🍎", "colorHex": "#FF7043", "imageName": "fruits_category.png" },
+  { "name": "Vegetables", "emoji": "🥕", "colorHex": "#66BB6A", "imageName": "vegetables_category.png" },
+  { "name": "Herbs & Spices", "emoji": "🌿", "colorHex": "#9CCC65" },
+  { "name": "Dairy", "emoji": "🥛", "colorHex": "#42A5F5", "imageName": "dairy_category.png" },
+  { "name": "Meat", "emoji": "🥩", "colorHex": "#EF5350", "imageName": "meat_category.png" },
+  { "name": "Fish & Seafood", "emoji": "🐟", "colorHex": "#26A69A" },
+  { "name": "Bakery", "emoji": "🍞", "colorHex": "#D4A056", "imageName": "Bakery_category.png" },
+  { "name": "Grains & Pasta", "emoji": "🍝", "colorHex": "#FFB74D" },
+  { "name": "Canned & Jarred", "emoji": "🥫", "colorHex": "#8D6E63" },
+  { "name": "Oils & Condiments", "emoji": "🫙", "colorHex": "#FFCA28", "imageName": "oil_category.png" },
+  { "name": "Baking", "emoji": "🧁", "colorHex": "#BA68C8" },
+  { "name": "Nuts & Dried Fruit", "emoji": "🥜", "colorHex": "#A1887F" },
+  { "name": "Frozen", "emoji": "🧊", "colorHex": "#4FC3F7" },
+  { "name": "Beverages", "emoji": "🥤", "colorHex": "#29B6F6" },
+  { "name": "Snacks", "emoji": "🍿", "colorHex": "#EC407A" },
+  { "name": "Household", "emoji": "🧴", "colorHex": "#90A4AE" }
+]

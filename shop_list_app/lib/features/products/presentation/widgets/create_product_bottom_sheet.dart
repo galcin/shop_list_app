@@ -14,6 +14,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shop_list_app/core/constants/units.dart';
 import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart';
 import 'package:shop_list_app/features/product_category/presentation/providers/product_category_providers.dart';
 import 'package:shop_list_app/features/products/domain/entities/product.dart';
@@ -60,17 +61,17 @@ const _kProductEmojis = [
   '🧄',
 ];
 
-const _kUnits = [
-  'pcs',
-  'kg',
-  'g',
-  'L',
-  'mL',
-  'pack',
-  'bottle',
-  'box',
-  'bag',
-  'can',
+final List<String> _kUnits = [
+  Units.pcs,
+  Units.kg,
+  Units.g,
+  Units.l,
+  Units.ml,
+  Units.pack,
+  Units.bottle,
+  Units.jar,
+  Units.can,
+  Units.bunch,
 ];
 
 // ── Public helpers ─────────────────────────────────────────────────────────────
@@ -133,7 +134,11 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
       _photo!.isNotEmpty &&
       (_photo!.startsWith('/') || _photo!.startsWith('file://'));
 
-  bool get _hasEmoji => _photo != null && _photo!.isNotEmpty && !_hasFilePhoto;
+  bool get _hasEmoji =>
+      _photo != null &&
+      _photo!.isNotEmpty &&
+      !_hasFilePhoto &&
+      !_photo!.startsWith('assets/');
 
   // ── Lifecycle ────────────────────────────────────────────────────────────────
 
@@ -142,7 +147,7 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
     super.initState();
     final e = widget.existing;
     _nameCtrl = TextEditingController(text: e?.name ?? '');
-    _selectedUnit = (e?.units?.isNotEmpty == true) ? e!.units! : 'pcs';
+    _selectedUnit = Units.normalize(e?.defaultUnit ?? Units.pcs);
     _selectedCategoryId = e?.productCategoryId ?? widget.initialCategoryId;
     _photo = (e?.photo?.isNotEmpty == true) ? e!.photo : null;
   }
@@ -189,13 +194,13 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
     });
 
     final product = Product(
-      id: _isEditing ? widget.existing!.id : 0,
+      id: _isEditing ? widget.existing!.id : null,
       name: name,
-      units: _selectedUnit,
+      defaultUnit: _selectedUnit,
       photo: _photo ?? '',
       productCategoryId: _selectedCategoryId,
-      quantity: widget.existing?.quantity ?? 1.0,
-      expirationDate: widget.existing?.expirationDate,
+      aliases: widget.existing?.aliases ?? const [],
+      isBuiltIn: widget.existing?.isBuiltIn ?? false,
     );
 
     final notifier = ref.read(productListProvider.notifier);
@@ -513,6 +518,15 @@ class _ProductSheetState extends ConsumerState<_ProductSheet> {
           size: 36,
           color: Color(0xFFDBDBDB),
         ),
+      );
+    }
+    if (_photo!.startsWith('assets/')) {
+      return Image.asset(
+        _photo!,
+        fit: BoxFit.cover,
+        width: 88,
+        height: 88,
+        errorBuilder: (_, __, ___) => _noPhotoIcon(),
       );
     }
     if (_hasFilePhoto) {

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/features/meal_planning/domain/entities/meal_slot.dart';
 import 'package:shop_list_app/features/meal_planning/presentation/providers/meal_plan_providers.dart';
 import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
+import 'package:shop_list_app/features/recipes/presentation/widgets/recipe_image.dart';
 
 /// Bottom sheet for picking a recipe to assign to a meal slot.
 class RecipePickerBottomSheet extends ConsumerStatefulWidget {
@@ -116,25 +117,15 @@ class _RecipePickerBottomSheetState
                       ),
                       child: ListTile(
                         contentPadding: const EdgeInsets.all(12),
-                        leading: recipe.imageUrl != null &&
-                                recipe.imageUrl!.isNotEmpty
-                            ? ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: _buildRecipeImage(
-                                  recipe.imageUrl!,
-                                  colors,
-                                ),
-                              )
-                            : Container(
-                                width: 60,
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  color: colors.surface,
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: const Icon(Icons.restaurant,
-                                    color: Colors.grey),
-                              ),
+                        leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: RecipeImage(
+                            recipe: recipe,
+                            width: 60,
+                            height: 60,
+                            cacheSize: 120,
+                          ),
+                        ),
                         title: Text(
                           recipe.name ?? 'Untitled Recipe',
                           style: TextStyle(
@@ -206,43 +197,5 @@ class _RecipePickerBottomSheetState
   String _getMealLabel(dynamic mealType) {
     final typeStr = mealType.toString().split('.').last;
     return typeStr[0].toUpperCase() + typeStr.substring(1);
-  }
-
-  Widget _buildRecipeImage(String imageUrl, ColorScheme colors) {
-    if (imageUrl.startsWith('assets/')) {
-      return Image.asset(
-        imageUrl,
-        width: 60,
-        height: 60,
-        fit: BoxFit.cover,
-        cacheHeight: 120, // 2x for retina displays
-        cacheWidth: 120, // 2x for retina displays
-        errorBuilder: (context, error, stackTrace) => Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-            color: colors.surface,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: const Icon(Icons.restaurant, color: Colors.grey),
-        ),
-      );
-    } else {
-      return Image.network(
-        imageUrl,
-        width: 60,
-        height: 60,
-        fit: BoxFit.cover,
-        errorBuilder: (context, error, stackTrace) => Container(
-          width: 60,
-          height: 60,
-          decoration: BoxDecoration(
-            color: colors.surface,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: const Icon(Icons.restaurant, color: Colors.grey),
-        ),
-      );
-    }
   }
 }

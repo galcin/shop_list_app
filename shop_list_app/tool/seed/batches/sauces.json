@@ -1,0 +1,503 @@
+{
+  "category": "Sauces & Dips",
+  "recipes": [
+    {
+      "key": "classic-hummus",
+      "name": "Classic Hummus",
+      "category": "Sauces & Dips",
+      "description": "Silky chickpea and tahini dip brightened with lemon, garlic and a drizzle of olive oil.",
+      "instructions": [
+        "Drain and rinse the chickpeas, reserving a few tablespoons of the liquid.",
+        "Blend chickpeas, tahini, lemon juice, garlic, cumin and salt until smooth.",
+        "Add cold water a spoon at a time until the hummus is creamy and fluffy.",
+        "Spoon into a bowl, drizzle with olive oil and dust with paprika before serving."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["vegan", "middle-eastern", "no-cook", "healthy"],
+      "ingredients": [
+        { "product": "Canned Chickpeas", "quantity": 2, "unit": "can" },
+        { "product": "Tahini", "quantity": 4, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs", "note": "juiced" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Water", "quantity": 60, "unit": "ml", "note": "ice cold" },
+        { "product": "Sweet Paprika", "note": "for dusting" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "tzatziki",
+      "name": "Tzatziki",
+      "category": "Sauces & Dips",
+      "description": "Cool Greek yogurt dip with grated cucumber, garlic, dill and lemon for grilled meats and pita.",
+      "instructions": [
+        "Coarsely grate the cucumber, salt it lightly and squeeze out as much liquid as possible.",
+        "Mix the yogurt with crushed garlic, chopped dill, lemon juice and olive oil.",
+        "Fold in the drained cucumber and season with salt and pepper.",
+        "Chill for at least 30 minutes so the flavours meld before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["vegetarian", "mediterranean", "no-cook", "summer"],
+      "ingredients": [
+        { "product": "Yogurt", "quantity": 400, "unit": "g", "note": "thick Greek-style" },
+        { "product": "Cucumber", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs", "note": "juiced" },
+        { "product": "Olive Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "guacamole",
+      "name": "Guacamole",
+      "category": "Sauces & Dips",
+      "description": "Chunky mashed avocado with lime, red onion, tomato, chili and fresh coriander.",
+      "instructions": [
+        "Halve the avocados, remove the stones and scoop the flesh into a bowl.",
+        "Mash roughly with a fork, leaving some chunks, and stir in the lime juice.",
+        "Finely dice the red onion, tomato and chili and fold them in with chopped coriander.",
+        "Season with salt and serve right away with tortilla chips."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["vegan", "mexican", "no-cook", "quick"],
+      "ingredients": [
+        { "product": "Avocado", "quantity": 3, "unit": "pcs", "note": "ripe" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs", "note": "juiced" },
+        { "product": "Red Onion", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 1, "unit": "pcs" },
+        { "product": "Chili Pepper", "quantity": 1, "unit": "pcs", "note": "deseeded" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "pico-de-gallo",
+      "name": "Pico de Gallo",
+      "category": "Sauces & Dips",
+      "description": "Fresh chopped tomato salsa with onion, chili, coriander and lime, ready in ten minutes.",
+      "instructions": [
+        "Deseed and finely dice the tomatoes, then dice the red onion and chili.",
+        "Combine in a bowl with chopped coriander and lime juice.",
+        "Season generously with salt and let stand 10 minutes for the juices to release.",
+        "Drain off excess liquid if needed and serve with tacos or chips."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["vegan", "mexican", "no-cook", "summer"],
+      "ingredients": [
+        { "product": "Tomatoes", "quantity": 5, "unit": "pcs", "note": "ripe but firm" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Chili Pepper", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Coriander", "quantity": 1, "unit": "bunch" },
+        { "product": "Limes", "quantity": 2, "unit": "pcs", "note": "juiced" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "basil-pesto",
+      "name": "Basil Pesto",
+      "category": "Sauces & Dips",
+      "description": "Vibrant Genovese-style pesto of fresh basil, toasted pine nuts, parmesan and olive oil.",
+      "instructions": [
+        "Toast the pine nuts in a dry pan for 2-3 minutes until golden, then cool.",
+        "Blend basil leaves, pine nuts, garlic and parmesan to a coarse paste.",
+        "Stream in the olive oil while blending until the pesto is creamy but still textured.",
+        "Season with salt and pepper and store under a thin layer of oil in the fridge."
+      ],
+      "prepTime": 10,
+      "cookTime": 3,
+      "servings": 6,
+      "tags": ["vegetarian", "italian", "quick", "summer"],
+      "ingredients": [
+        { "product": "Fresh Basil", "quantity": 2, "unit": "bunch" },
+        { "product": "Pine Nuts", "quantity": 50, "unit": "g" },
+        { "product": "Parmesan", "quantity": 60, "unit": "g", "note": "finely grated" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Olive Oil", "quantity": 120, "unit": "ml" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "marinara-sauce",
+      "name": "Marinara Sauce",
+      "category": "Sauces & Dips",
+      "description": "Simple Italian tomato sauce simmered with garlic, oregano and basil for pasta or pizza.",
+      "instructions": [
+        "Warm the olive oil in a saucepan and gently fry the sliced garlic until fragrant, not browned.",
+        "Add the crushed tomatoes, oregano, sugar, salt and pepper and bring to a simmer.",
+        "Cook uncovered for 25 minutes, stirring now and then, until thickened.",
+        "Tear in the basil leaves, taste for seasoning and serve or cool and store."
+      ],
+      "prepTime": 5,
+      "cookTime": 30,
+      "servings": 6,
+      "tags": ["vegan", "italian", "budget", "meal-prep"],
+      "ingredients": [
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Crushed Tomatoes", "quantity": 800, "unit": "g" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Sugar", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "bechamel-sauce",
+      "name": "Béchamel Sauce",
+      "category": "Sauces & Dips",
+      "description": "Smooth French white sauce of butter, flour and milk with a whisper of nutmeg for lasagna and gratins.",
+      "instructions": [
+        "Melt the butter in a saucepan over medium heat and whisk in the flour.",
+        "Cook the roux for 2 minutes, stirring constantly, without letting it colour.",
+        "Gradually whisk in the warm milk until smooth, then simmer 8-10 minutes until thickened.",
+        "Season with salt, white pepper and freshly grated nutmeg."
+      ],
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 6,
+      "tags": ["vegetarian", "french", "comfort-food", "quick"],
+      "ingredients": [
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Flour", "quantity": 50, "unit": "g" },
+        { "product": "Milk", "quantity": 600, "unit": "ml", "note": "warmed" },
+        { "product": "Nutmeg", "quantity": 0.25, "unit": "tsp" },
+        { "product": "White Pepper", "quantity": 0.25, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "mujdei-garlic-sauce",
+      "name": "Mujdei de Usturoi",
+      "category": "Sauces & Dips",
+      "description": "Punchy Romanian garlic sauce whipped with oil and water, perfect over grilled meats, fish or polenta.",
+      "instructions": [
+        "Peel the garlic and crush it with the salt in a mortar to a smooth paste.",
+        "Add the oil a little at a time, stirring vigorously until it emulsifies.",
+        "Thin with cold water to a pourable consistency and season with pepper.",
+        "Rest 15 minutes so the sharpness mellows, then serve."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["romanian", "vegan", "no-cook", "budget"],
+      "ingredients": [
+        { "product": "Garlic", "quantity": 1, "unit": "head", "note": "whole head" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Sunflower Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Water", "quantity": 100, "unit": "ml", "note": "cold" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salata-de-vinete",
+      "name": "Salată de Vinete",
+      "category": "Sauces & Dips",
+      "description": "Smoky Romanian roasted eggplant dip, hand-chopped and beaten with oil and finely minced onion.",
+      "instructions": [
+        "Char the eggplants over a flame or under a hot grill, turning, until the skin blackens and the flesh collapses.",
+        "Peel while warm, drain in a colander for 30 minutes, then chop finely with a wooden knife.",
+        "Beat in the oil gradually with a wooden spoon until pale and creamy.",
+        "Fold in the finely minced onion and season with salt; serve with bread and tomatoes."
+      ],
+      "prepTime": 40,
+      "cookTime": 30,
+      "servings": 6,
+      "tags": ["romanian", "vegan", "summer", "grilled"],
+      "ingredients": [
+        { "product": "Eggplant", "quantity": 3, "unit": "pcs", "note": "large" },
+        { "product": "Sunflower Oil", "quantity": 5, "unit": "tbsp" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs", "note": "very finely minced" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Mayonnaise", "quantity": 1, "unit": "tbsp", "note": "optional, for extra creaminess" }
+      ]
+    },
+    {
+      "key": "fasole-batuta",
+      "name": "Fasole Bătută",
+      "category": "Sauces & Dips",
+      "description": "Creamy Romanian white bean purée topped with golden caramelised onions and paprika oil.",
+      "instructions": [
+        "Soak the beans overnight, then simmer with a bay leaf until very soft, about 90 minutes.",
+        "Drain, reserving some cooking liquid, and blend the beans with garlic, salt and 3 tbsp oil until smooth.",
+        "Thin with cooking liquid as needed and spoon into a serving dish.",
+        "Fry the sliced onions in the remaining oil until golden, stir in the paprika and pour over the beans."
+      ],
+      "prepTime": 20,
+      "cookTime": 100,
+      "servings": 6,
+      "tags": ["romanian", "vegan", "comfort-food", "budget"],
+      "ingredients": [
+        { "product": "Dried Beans", "quantity": 400, "unit": "g", "note": "white beans" },
+        { "product": "Bay Leaf", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs", "note": "sliced" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Sunflower Oil", "quantity": 6, "unit": "tbsp" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "sour-cream-garlic-dill-sauce",
+      "name": "Sos de Smântână cu Usturoi și Mărar",
+      "category": "Sauces & Dips",
+      "description": "Tangy Romanian sour cream sauce with crushed garlic and fresh dill for grilled meat, fish or potatoes.",
+      "instructions": [
+        "Crush the garlic with a pinch of salt to a fine paste.",
+        "Stir the garlic paste into the sour cream with the finely chopped dill.",
+        "Add lemon juice, salt and pepper to taste and mix until smooth.",
+        "Chill for 20 minutes before serving."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["romanian", "vegetarian", "no-cook", "quick"],
+      "ingredients": [
+        { "product": "Sour Cream", "quantity": 300, "unit": "g" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs", "note": "juiced" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "chimichurri",
+      "name": "Chimichurri",
+      "category": "Sauces & Dips",
+      "description": "Herby Argentinian sauce of parsley, garlic, oregano, chili and red wine vinegar for grilled steak.",
+      "instructions": [
+        "Finely chop the parsley and garlic by hand for the best texture.",
+        "Combine in a bowl with oregano, chili flakes, red wine vinegar and salt.",
+        "Stir in the olive oil and let the sauce rest for at least 30 minutes.",
+        "Spoon generously over grilled meats or roasted vegetables."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["vegan", "no-cook", "grilled", "spicy"],
+      "ingredients": [
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch", "note": "large" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Chili Flakes", "quantity": 1, "unit": "tsp" },
+        { "product": "Red Wine Vinegar", "quantity": 3, "unit": "tbsp" },
+        { "product": "Olive Oil", "quantity": 120, "unit": "ml" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "garlic-aioli",
+      "name": "Garlic Aioli",
+      "category": "Sauces & Dips",
+      "description": "Rich homemade garlic mayonnaise emulsified from egg yolk, mustard, lemon and olive oil.",
+      "instructions": [
+        "Crush the garlic with salt to a paste and whisk with the egg yolk, mustard and lemon juice.",
+        "Add the vegetable oil drop by drop at first, whisking constantly, until the mixture thickens.",
+        "Continue in a thin stream with the olive oil until thick and glossy.",
+        "Adjust with salt and lemon, and chill until needed."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["mediterranean", "no-cook", "vegetarian", "low-carb"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 1, "unit": "pcs", "note": "yolk only, room temperature" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp", "note": "Dijon" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs", "note": "juiced" },
+        { "product": "Vegetable Oil", "quantity": 120, "unit": "ml" },
+        { "product": "Olive Oil", "quantity": 60, "unit": "ml" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "honey-mustard-dressing",
+      "name": "Honey Mustard Dressing",
+      "category": "Sauces & Dips",
+      "description": "Sweet and tangy dressing of honey, Dijon mustard and cider vinegar that doubles as a dip for chicken.",
+      "instructions": [
+        "Whisk together the honey, mustard and apple cider vinegar in a small bowl.",
+        "Slowly whisk in the olive oil until the dressing is smooth and glossy.",
+        "Season with salt and pepper and adjust sweetness to taste.",
+        "Store in a jar in the fridge for up to a week; shake before use."
+      ],
+      "prepTime": 5,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["quick", "no-cook", "vegetarian", "american"],
+      "ingredients": [
+        { "product": "Honey", "quantity": 3, "unit": "tbsp" },
+        { "product": "Mustard", "quantity": 3, "unit": "tbsp", "note": "Dijon" },
+        { "product": "Apple Cider Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "classic-vinaigrette",
+      "name": "Classic Vinaigrette",
+      "category": "Sauces & Dips",
+      "description": "Bright French-style dressing of olive oil, red wine vinegar, shallot and Dijon mustard.",
+      "instructions": [
+        "Finely mince the shallot and soak it in the vinegar with a pinch of salt for 5 minutes.",
+        "Whisk in the mustard until combined.",
+        "Drizzle in the olive oil while whisking until emulsified.",
+        "Season with pepper and toss with salad just before serving."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["vegan", "french", "no-cook", "quick"],
+      "ingredients": [
+        { "product": "Olive Oil", "quantity": 90, "unit": "ml" },
+        { "product": "Red Wine Vinegar", "quantity": 3, "unit": "tbsp" },
+        { "product": "Shallots", "quantity": 1, "unit": "pcs" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp", "note": "Dijon" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "caesar-dressing",
+      "name": "Caesar Dressing",
+      "category": "Sauces & Dips",
+      "description": "Creamy, savoury Caesar dressing with anchovy, garlic, parmesan, lemon and Worcestershire sauce.",
+      "instructions": [
+        "Mash the anchovies and garlic together to a paste.",
+        "Whisk the paste into the mayonnaise with lemon juice, mustard and Worcestershire sauce.",
+        "Stir in the grated parmesan and season with plenty of black pepper.",
+        "Thin with a splash of water if needed and toss with romaine and croutons."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 6,
+      "tags": ["american", "no-cook", "quick", "low-carb"],
+      "ingredients": [
+        { "product": "Mayonnaise", "quantity": 6, "unit": "tbsp" },
+        { "product": "Anchovies", "quantity": 4, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Parmesan", "quantity": 40, "unit": "g", "note": "finely grated" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs", "note": "juiced" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp", "note": "Dijon" },
+        { "product": "Worcestershire Sauce", "quantity": 1, "unit": "tsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "peanut-satay-sauce",
+      "name": "Peanut Satay Sauce",
+      "category": "Sauces & Dips",
+      "description": "Creamy Thai-style peanut sauce with coconut milk, soy, lime, ginger and a touch of chili heat.",
+      "instructions": [
+        "Grate the garlic and ginger and warm them in a saucepan with a splash of the coconut milk.",
+        "Whisk in the peanut butter, remaining coconut milk, soy sauce, brown sugar and hot sauce.",
+        "Simmer gently for 5 minutes, stirring, until thick and glossy.",
+        "Finish with lime juice and thin with water if needed; serve warm with skewers."
+      ],
+      "prepTime": 5,
+      "cookTime": 10,
+      "servings": 6,
+      "tags": ["asian", "vegan", "quick", "spicy"],
+      "ingredients": [
+        { "product": "Peanut Butter", "quantity": 6, "unit": "tbsp" },
+        { "product": "Coconut Milk", "quantity": 200, "unit": "ml" },
+        { "product": "Soy Sauce", "quantity": 2, "unit": "tbsp" },
+        { "product": "Brown Sugar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Ginger", "quantity": 10, "unit": "g" },
+        { "product": "Hot Sauce", "quantity": 1, "unit": "tsp", "note": "sriracha" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs", "note": "juiced" }
+      ]
+    },
+    {
+      "key": "onion-gravy",
+      "name": "Onion Gravy",
+      "category": "Sauces & Dips",
+      "description": "Deep, glossy British onion gravy slow-cooked with butter, thyme, beef stock and Worcestershire sauce.",
+      "instructions": [
+        "Melt the butter and cook the sliced onions over low heat for 20 minutes until soft and caramelised.",
+        "Stir in the flour and cook for 1 minute.",
+        "Gradually add the beef broth, whisking to avoid lumps, then add thyme and Worcestershire sauce.",
+        "Simmer 10 minutes until thickened and season with salt and pepper."
+      ],
+      "prepTime": 10,
+      "cookTime": 35,
+      "servings": 6,
+      "tags": ["comfort-food", "winter", "budget", "one-pot"],
+      "ingredients": [
+        { "product": "Onion", "quantity": 3, "unit": "pcs", "note": "thinly sliced" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Flour", "quantity": 2, "unit": "tbsp" },
+        { "product": "Beef Broth", "quantity": 500, "unit": "ml" },
+        { "product": "Dried Thyme", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Worcestershire Sauce", "quantity": 2, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "cheddar-cheese-sauce",
+      "name": "Cheddar Cheese Sauce",
+      "category": "Sauces & Dips",
+      "description": "Velvety cheese sauce with a mustard kick, ideal over macaroni, broccoli, nachos or baked potatoes.",
+      "instructions": [
+        "Melt the butter in a saucepan, whisk in the flour and cook for 1 minute.",
+        "Gradually whisk in the milk and simmer until the sauce coats the back of a spoon.",
+        "Remove from the heat and stir in the grated cheese until melted and smooth.",
+        "Season with mustard, nutmeg, salt and pepper and serve warm."
+      ],
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 6,
+      "tags": ["vegetarian", "kid-friendly", "comfort-food", "quick"],
+      "ingredients": [
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Flour", "quantity": 40, "unit": "g" },
+        { "product": "Milk", "quantity": 500, "unit": "ml" },
+        { "product": "Cheese", "quantity": 200, "unit": "g", "note": "mature cheddar, grated" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp" },
+        { "product": "Nutmeg", "quantity": 1, "unit": "pinch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "cranberry-sauce",
+      "name": "Cranberry Sauce",
+      "category": "Sauces & Dips",
+      "description": "Glossy sweet-tart cranberry sauce with orange zest and cinnamon, the classic partner for roast turkey.",
+      "instructions": [
+        "Rinse the cranberries and place them in a saucepan with the sugar, orange juice and zest.",
+        "Add the water and cinnamon and bring to a boil.",
+        "Reduce the heat and simmer for 10-12 minutes until the berries burst and the sauce thickens.",
+        "Cool completely; it will set further as it chills."
+      ],
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 8,
+      "tags": ["holiday", "vegan", "winter", "american"],
+      "ingredients": [
+        { "product": "Cranberries", "quantity": 350, "unit": "g" },
+        { "product": "Sugar", "quantity": 150, "unit": "g" },
+        { "product": "Oranges", "quantity": 1, "unit": "pcs", "note": "zest and juice" },
+        { "product": "Water", "quantity": 60, "unit": "ml" },
+        { "product": "Cinnamon", "quantity": 0.5, "unit": "tsp" }
+      ]
+    }
+  ],
+  "newProducts": []
+}

@@ -1,0 +1,1378 @@
+{
+  "category": "Soups",
+  "recipes": [
+    {
+      "key": "meatball-sour-soup",
+      "name": "Meatball Sour Soup (Ciorbă de Perișoare)",
+      "category": "Soups",
+      "description": "Tender pork and rice meatballs simmered in a tangy borș broth with root vegetables and lovage.",
+      "instructions": [
+        "Dice the onion, carrots, bell pepper and celery root and sweat them in oil in a large pot for 5 minutes.",
+        "Add 2.5 litres of water and simmer for 15 minutes until the vegetables start to soften.",
+        "Mix the minced meat with the rice, one egg, salt and pepper and shape into walnut-sized meatballs.",
+        "Drop the meatballs into the simmering soup and cook for 20 minutes.",
+        "Add the grated tomatoes and the borș, bring back to a boil and simmer for 10 minutes.",
+        "Season with salt, stir in the chopped lovage and serve hot with sour cream."
+      ],
+      "prepTime": 25,
+      "cookTime": 50,
+      "servings": 6,
+      "tags": ["romanian", "comfort-food", "one-pot"],
+      "ingredients": [
+        { "product": "Mixed Minced Meat", "quantity": 500, "unit": "g" },
+        { "product": "Rice", "quantity": 60, "unit": "g" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Celery Root", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Borș", "quantity": 500, "unit": "ml" },
+        { "product": "Fresh Lovage", "quantity": 1, "unit": "bunch" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "radauti-chicken-soup",
+      "name": "Rădăuți Chicken Soup (Ciorbă Rădăuțeană)",
+      "category": "Soups",
+      "description": "Creamy Bukovina chicken soup thickened with sour cream and egg yolks, finished with garlic and vinegar.",
+      "instructions": [
+        "Simmer the chicken breast with the carrots, parsnip, celery root and onion in 2.5 litres of salted water for 35 minutes.",
+        "Lift out the chicken, shred it and return it to the pot; discard the onion.",
+        "Whisk the sour cream with the egg yolks and flour, then temper with a few ladles of hot soup.",
+        "Pour the mixture back into the pot, stirring constantly, and heat gently without boiling.",
+        "Stir in the crushed garlic and vinegar, season with salt and pepper and sprinkle with parsley."
+      ],
+      "prepTime": 15,
+      "cookTime": 45,
+      "servings": 6,
+      "tags": ["romanian", "comfort-food", "high-protein"],
+      "ingredients": [
+        { "product": "Chicken Breast", "quantity": 600, "unit": "g" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Parsnip", "quantity": 1, "unit": "pcs" },
+        { "product": "Celery Root", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Sour Cream", "quantity": 300, "unit": "g" },
+        { "product": "Eggs", "name": "Egg yolks", "quantity": 3, "unit": "pcs" },
+        { "product": "Flour", "quantity": 1, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Vinegar", "quantity": 3, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "tripe-soup-ciorba-de-burta",
+      "name": "Tripe Soup (Ciorbă de Burtă)",
+      "category": "Soups",
+      "description": "Rich, velvety beef tripe soup with a sour cream and egg liaison, served with garlic sauce and hot peppers.",
+      "instructions": [
+        "Rinse the tripe well, then boil it with the beef bones, carrots, celery root and onion in 3 litres of water for about 3 hours until tender.",
+        "Remove the tripe, slice it into thin strips and strain the broth back into the pot.",
+        "Return the tripe to the broth and season with salt.",
+        "Whisk the sour cream with the egg yolks and crushed garlic, temper with hot broth and stir into the soup off the heat.",
+        "Add the vinegar, adjust the seasoning and serve with extra garlic, hot peppers and sour cream on the side."
+      ],
+      "prepTime": 20,
+      "cookTime": 180,
+      "servings": 8,
+      "tags": ["romanian", "comfort-food", "winter"],
+      "ingredients": [
+        { "product": "Beef Tripe", "quantity": 1, "unit": "kg" },
+        { "product": "Beef with Bone", "quantity": 500, "unit": "g" },
+        { "product": "Carrots", "quantity": 3, "unit": "pcs" },
+        { "product": "Celery Root", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Sour Cream", "quantity": 400, "unit": "g" },
+        { "product": "Eggs", "name": "Egg yolks", "quantity": 4, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 1, "unit": "head" },
+        { "product": "Vinegar", "quantity": 4, "unit": "tbsp" },
+        { "product": "Chili Pepper", "quantity": 2, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "bean-soup-smoked-pork-knuckle",
+      "name": "Bean Sour Soup with Smoked Pork Knuckle",
+      "category": "Soups",
+      "description": "Hearty white bean ciorbă with a smoked ham hock, soured with borș and scented with thyme and lovage.",
+      "instructions": [
+        "Soak the beans overnight, drain and boil them in fresh water for 10 minutes, then drain again.",
+        "Simmer the beans with the smoked knuckle in 3 litres of water for about 1 hour until the beans are nearly tender.",
+        "Add the diced onion, carrots and bell pepper and cook for 20 minutes more.",
+        "Pull the meat off the bone, chop it and return it to the pot with the tomato paste and thyme.",
+        "Pour in the borș, boil for 10 minutes, season with salt and finish with chopped lovage."
+      ],
+      "prepTime": 20,
+      "cookTime": 100,
+      "servings": 8,
+      "tags": ["romanian", "comfort-food", "winter", "budget"],
+      "ingredients": [
+        { "product": "Dried Beans", "quantity": 500, "unit": "g" },
+        { "product": "Smoked Pork Knuckle", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomato Paste", "quantity": 2, "unit": "tbsp" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Borș", "quantity": 500, "unit": "ml" },
+        { "product": "Fresh Lovage", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "romanian-vegetable-sour-soup",
+      "name": "Romanian Vegetable Sour Soup (Ciorbă de Legume)",
+      "category": "Soups",
+      "description": "Light, garden-fresh ciorbă packed with seasonal vegetables and soured with borș and lovage.",
+      "instructions": [
+        "Dice the onion, carrots, celery root, bell pepper and potatoes.",
+        "Sweat the onion and carrots in oil for 5 minutes, then add 2.5 litres of water and the remaining root vegetables.",
+        "Simmer for 15 minutes, then add the potatoes, green beans and zucchini and cook for another 15 minutes.",
+        "Stir in the grated tomatoes and the borș and boil for 10 minutes.",
+        "Season with salt and pepper and finish with plenty of chopped lovage."
+      ],
+      "prepTime": 20,
+      "cookTime": 45,
+      "servings": 6,
+      "tags": ["romanian", "vegan", "healthy", "budget"],
+      "ingredients": [
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Celery Root", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Green Beans", "quantity": 200, "unit": "g" },
+        { "product": "Zucchini", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Borș", "quantity": 500, "unit": "ml" },
+        { "product": "Fresh Lovage", "quantity": 1, "unit": "bunch" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "greek-style-chicken-sour-soup",
+      "name": "Greek-Style Chicken Sour Soup (Ciorbă à la Grec)",
+      "category": "Soups",
+      "description": "Silky chicken and rice soup finished with a sour cream, egg and lemon liaison the Romanian way.",
+      "instructions": [
+        "Simmer the chicken thighs with the carrots, onion and parsley root in 2.5 litres of salted water for 35 minutes.",
+        "Remove the chicken, shred the meat and return it to the pot.",
+        "Add the rice and cook for 15 minutes until tender.",
+        "Whisk the sour cream with the egg yolks and lemon juice, temper with hot soup and stir in off the heat.",
+        "Season with salt and white pepper and sprinkle with chopped parsley before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 50,
+      "servings": 6,
+      "tags": ["romanian", "comfort-food", "kid-friendly"],
+      "ingredients": [
+        { "product": "Chicken Thighs", "quantity": 4, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Parsley Root", "quantity": 1, "unit": "pcs" },
+        { "product": "Rice", "quantity": 80, "unit": "g" },
+        { "product": "Sour Cream", "quantity": 250, "unit": "g" },
+        { "product": "Eggs", "name": "Egg yolks", "quantity": 2, "unit": "pcs" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch" },
+        { "product": "White Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "sorrel-sour-soup",
+      "name": "Sorrel Sour Soup (Ciorbă de Ștevie)",
+      "category": "Soups",
+      "description": "Springtime ciorbă of tangy sorrel leaves, rice and green onions, enriched with egg and sour cream.",
+      "instructions": [
+        "Wash the sorrel thoroughly and chop it roughly along with the green onions.",
+        "Sweat the chopped green onions and diced carrots in oil for 4 minutes, then add 2 litres of water.",
+        "Add the rice and simmer for 15 minutes.",
+        "Stir in the sorrel and the borș and boil for 5 minutes.",
+        "Beat the eggs with the sour cream, temper with hot soup and stir in off the heat.",
+        "Season with salt and finish with chopped dill."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "quick", "healthy"],
+      "ingredients": [
+        { "product": "Sorrel", "quantity": 3, "unit": "bunch" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Rice", "quantity": 50, "unit": "g" },
+        { "product": "Borș", "quantity": 300, "unit": "ml" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "chicken-soup-semolina-dumplings",
+      "name": "Chicken Soup with Semolina Dumplings",
+      "category": "Soups",
+      "description": "Clear golden chicken broth with fluffy semolina dumplings, the classic Romanian supă cu găluște.",
+      "instructions": [
+        "Cover the chicken pieces with 3 litres of cold water, bring to a boil and skim off the foam.",
+        "Add the whole carrots, parsnip, celery root and onion and simmer gently for 1 hour.",
+        "Strain the broth, dice the carrots and shred some of the chicken back into it.",
+        "Beat the eggs with a pinch of salt, fold in the semolina and let the batter rest for 10 minutes.",
+        "Drop teaspoons of batter into the barely simmering broth, cover and cook for 15 minutes without lifting the lid.",
+        "Season with salt and serve sprinkled with parsley."
+      ],
+      "prepTime": 15,
+      "cookTime": 80,
+      "servings": 6,
+      "tags": ["romanian", "kid-friendly", "comfort-food"],
+      "ingredients": [
+        { "product": "Whole Chicken", "name": "Chicken pieces", "quantity": 1, "unit": "kg" },
+        { "product": "Carrots", "quantity": 3, "unit": "pcs" },
+        { "product": "Parsnip", "quantity": 1, "unit": "pcs" },
+        { "product": "Celery Root", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Semolina", "quantity": 100, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "potato-sour-soup-smoked-bacon",
+      "name": "Potato Sour Soup with Smoked Bacon",
+      "category": "Soups",
+      "description": "Rustic Transylvanian ciorbă de cartofi with smoky bacon, sweet peppers and a sharp borș finish.",
+      "instructions": [
+        "Dice the smoked bacon and render it in a large pot until golden.",
+        "Add the chopped onion, carrots and bell pepper and cook for 5 minutes.",
+        "Pour in 2.5 litres of water, add the cubed potatoes and thyme and simmer for 20 minutes.",
+        "Add the grated tomatoes and the borș and boil for 10 minutes.",
+        "Season with salt and pepper and stir in the chopped lovage before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 40,
+      "servings": 6,
+      "tags": ["romanian", "budget", "comfort-food", "one-pot"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 6, "unit": "pcs" },
+        { "product": "Smoked Bacon", "quantity": 150, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Borș", "quantity": 500, "unit": "ml" },
+        { "product": "Fresh Lovage", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "danube-fish-sour-soup",
+      "name": "Danube Fish Sour Soup (Ciorbă de Pește)",
+      "category": "Soups",
+      "description": "Fisherman's carp ciorbă with tomatoes, peppers and borș, served with garlic sauce and hot chili.",
+      "instructions": [
+        "Clean the carp and cut it into thick steaks; season with salt and set aside.",
+        "Simmer the diced onion, carrots, bell pepper and tomatoes in 2.5 litres of water for 20 minutes.",
+        "Add the borș and bring back to a rolling boil.",
+        "Slide in the fish pieces and simmer gently for 12 minutes without stirring.",
+        "Season with salt and lovage, and serve with crushed garlic mixed with a little broth and sliced chili on the side."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 6,
+      "tags": ["romanian", "summer", "high-protein"],
+      "ingredients": [
+        { "product": "Carp", "quantity": 1.2, "unit": "kg" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Borș", "quantity": 500, "unit": "ml" },
+        { "product": "Garlic", "quantity": 6, "unit": "clove" },
+        { "product": "Chili Pepper", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Lovage", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "lettuce-soup-smoked-bacon",
+      "name": "Lettuce Soup with Smoked Bacon (Ciorbă de Salată)",
+      "category": "Soups",
+      "description": "Transylvanian lettuce soup with crisp bacon, a garlicky sour cream base and ribbons of egg.",
+      "instructions": [
+        "Fry the diced smoked bacon until crisp, add the chopped onion and soften for 3 minutes.",
+        "Stir in the flour, cook for 1 minute, then whisk in 1.5 litres of water and bring to a simmer.",
+        "Tear the lettuce into large pieces and add it to the pot with the crushed garlic; simmer for 5 minutes.",
+        "Beat the eggs with the sour cream, temper with hot soup and stir in off the heat.",
+        "Add the vinegar, season with salt and pepper and serve warm with chopped dill."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["romanian", "quick", "budget"],
+      "ingredients": [
+        { "product": "Lettuce", "quantity": 2, "unit": "head" },
+        { "product": "Smoked Bacon", "quantity": 150, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Flour", "quantity": 1, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Sour Cream", "quantity": 200, "unit": "g" },
+        { "product": "Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "zucchini-sour-soup-sour-cream",
+      "name": "Zucchini Sour Soup with Sour Cream",
+      "category": "Soups",
+      "description": "Summery ciorbă de dovlecei with tender zucchini, rice, fresh dill and a swirl of sour cream.",
+      "instructions": [
+        "Sweat the diced onion and carrots in oil for 5 minutes.",
+        "Add 2 litres of water and the rice and simmer for 10 minutes.",
+        "Add the cubed zucchini and grated tomatoes and cook for 10 minutes until just tender.",
+        "Pour in the borș and boil for 5 minutes.",
+        "Stir the sour cream into a ladle of hot soup, return it to the pot and season with salt.",
+        "Finish with chopped dill and serve."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "summer", "quick"],
+      "ingredients": [
+        { "product": "Zucchini", "quantity": 3, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Rice", "quantity": 50, "unit": "g" },
+        { "product": "Tomatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Borș", "quantity": 300, "unit": "ml" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "pumpkin-cream-soup-croutons",
+      "name": "Pumpkin Cream Soup with Croutons",
+      "category": "Soups",
+      "description": "Velvety roasted pumpkin soup with a hint of nutmeg, topped with crunchy croutons and toasted seeds.",
+      "instructions": [
+        "Roast the pumpkin cubes with a drizzle of oil at 200°C for 25 minutes until caramelised.",
+        "Soften the chopped onion and carrot in butter in a large pot for 5 minutes.",
+        "Add the roasted pumpkin, diced potato and vegetable broth and simmer for 15 minutes.",
+        "Blend until smooth, stir in the cream and nutmeg and season with salt and pepper.",
+        "Serve topped with croutons and toasted pumpkin seeds."
+      ],
+      "prepTime": 15,
+      "cookTime": 45,
+      "servings": 4,
+      "tags": ["vegetarian", "comfort-food", "winter", "kid-friendly"],
+      "ingredients": [
+        { "product": "Pumpkin", "quantity": 1, "unit": "kg" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 1, "unit": "pcs" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Vegetable Broth", "quantity": 1, "unit": "l" },
+        { "product": "Cooking Cream", "quantity": 150, "unit": "ml" },
+        { "product": "Nutmeg", "quantity": 0.25, "unit": "tsp" },
+        { "product": "Croutons", "quantity": 80, "unit": "g" },
+        { "product": "Pumpkin Seeds", "quantity": 30, "unit": "g" },
+        { "product": "Vegetable Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "kohlrabi-soup-dill",
+      "name": "Kohlrabi Soup with Dill (Supă de Gulii)",
+      "category": "Soups",
+      "description": "Gentle, creamy kohlrabi and potato soup brightened with fresh dill, a Transylvanian favourite.",
+      "instructions": [
+        "Peel and dice the kohlrabi, potatoes and carrot; chop the onion.",
+        "Melt the butter, soften the onion for 3 minutes, then add the vegetables and cook for 5 minutes.",
+        "Sprinkle over the flour, stir for 1 minute and gradually add the vegetable broth.",
+        "Simmer for 20 minutes until the kohlrabi is tender.",
+        "Stir in the sour cream, season with salt and pepper and finish with plenty of chopped dill."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "budget", "healthy"],
+      "ingredients": [
+        { "product": "Kohlrabi", "quantity": 3, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Flour", "quantity": 1, "unit": "tbsp" },
+        { "product": "Vegetable Broth", "quantity": 1.5, "unit": "l" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "peasant-pork-sour-soup",
+      "name": "Peasant Pork Sour Soup (Ciorbă Țărănească de Porc)",
+      "category": "Soups",
+      "description": "Chunky pork ciorbă loaded with potatoes, green beans, peppers and tomatoes, soured with borș.",
+      "instructions": [
+        "Brown the pork cubes in oil in a large pot, then add 3 litres of water and simmer for 40 minutes, skimming the foam.",
+        "Add the diced onion, carrots, celery root and bell pepper and cook for 15 minutes.",
+        "Add the cubed potatoes and green beans and simmer for 15 minutes more.",
+        "Stir in the grated tomatoes and the borș and boil for 10 minutes.",
+        "Season with salt and pepper and finish with chopped lovage; serve with sour cream."
+      ],
+      "prepTime": 20,
+      "cookTime": 85,
+      "servings": 8,
+      "tags": ["romanian", "comfort-food", "one-pot", "winter"],
+      "ingredients": [
+        { "product": "Pork Shoulder", "quantity": 700, "unit": "g" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Celery Root", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Green Beans", "quantity": 200, "unit": "g" },
+        { "product": "Tomatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Borș", "quantity": 500, "unit": "ml" },
+        { "product": "Fresh Lovage", "quantity": 1, "unit": "bunch" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "nettle-soup-garlic",
+      "name": "Nettle Soup with Garlic (Supă de Urzici)",
+      "category": "Soups",
+      "description": "Vibrant green spring soup of young nettles, rice and garlic, lifted with lemon and a spoon of sour cream.",
+      "instructions": [
+        "Wearing gloves, wash the nettles and blanch them in boiling water for 2 minutes; drain and chop.",
+        "Soften the chopped onion and green onions in oil for 4 minutes.",
+        "Add the rice and vegetable broth and simmer for 12 minutes.",
+        "Stir in the nettles and crushed garlic and cook for 5 minutes.",
+        "Season with salt, pepper and lemon juice and serve with a spoon of sour cream."
+      ],
+      "prepTime": 15,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "healthy", "quick"],
+      "ingredients": [
+        { "product": "Nettles", "quantity": 500, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Rice", "quantity": 50, "unit": "g" },
+        { "product": "Vegetable Broth", "quantity": 1.5, "unit": "l" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Sour Cream", "quantity": 100, "unit": "g" },
+        { "product": "Sunflower Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "lamb-sour-soup-tarragon",
+      "name": "Lamb Sour Soup with Tarragon (Ciorbă de Miel)",
+      "category": "Soups",
+      "description": "Easter-style lamb ciorbă with spring onions, tarragon and a sour cream and egg finish.",
+      "instructions": [
+        "Cover the lamb with 3 litres of cold water, bring to a boil and skim, then simmer for 50 minutes.",
+        "Add the diced carrots, parsley root and chopped green onions and cook for 15 minutes.",
+        "Add the rice and simmer for 15 minutes until tender.",
+        "Pour in the borș and boil for 5 minutes.",
+        "Whisk the egg yolks with the sour cream, temper with hot soup and stir in off the heat.",
+        "Season with salt and finish with chopped tarragon and lovage."
+      ],
+      "prepTime": 20,
+      "cookTime": 90,
+      "servings": 6,
+      "tags": ["romanian", "holiday", "high-protein"],
+      "ingredients": [
+        { "product": "Lamb", "quantity": 800, "unit": "g" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Parsley Root", "quantity": 1, "unit": "pcs" },
+        { "product": "Green Onions", "quantity": 2, "unit": "bunch" },
+        { "product": "Rice", "quantity": 60, "unit": "g" },
+        { "product": "Borș", "quantity": 400, "unit": "ml" },
+        { "product": "Eggs", "name": "Egg yolks", "quantity": 2, "unit": "pcs" },
+        { "product": "Sour Cream", "quantity": 200, "unit": "g" },
+        { "product": "Fresh Tarragon", "quantity": 1, "unit": "bunch" },
+        { "product": "Fresh Lovage", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "solyanka",
+      "name": "Solyanka",
+      "category": "Soups",
+      "description": "Bold Russian sweet-and-sour soup with smoked sausage, ham, pickles, olives and a lemon-sour cream topping.",
+      "instructions": [
+        "Fry the sliced onion in oil for 5 minutes, add the tomato paste and cook for 2 minutes.",
+        "Add the diced smoked sausage and ham and brown lightly.",
+        "Pour in the beef broth, add the diced pickles and bay leaf and simmer for 20 minutes.",
+        "Stir in the sliced olives and capers and cook for 5 minutes.",
+        "Season with pepper and a little pickle brine, then serve with a lemon slice and a spoon of sour cream."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 6,
+      "tags": ["comfort-food", "winter", "one-pot"],
+      "ingredients": [
+        { "product": "Smoked Sausages", "quantity": 300, "unit": "g" },
+        { "product": "Pressed Ham", "quantity": 200, "unit": "g" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Tomato Paste", "quantity": 3, "unit": "tbsp" },
+        { "product": "Pickles", "quantity": 4, "unit": "pcs" },
+        { "product": "Olives", "quantity": 100, "unit": "g" },
+        { "product": "Capers", "quantity": 2, "unit": "tbsp" },
+        { "product": "Beef Broth", "quantity": 2, "unit": "l" },
+        { "product": "Bay Leaf", "quantity": 2, "unit": "pcs" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g" },
+        { "product": "Vegetable Oil", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "hungarian-goulash-soup",
+      "name": "Hungarian Goulash Soup (Gulyásleves)",
+      "category": "Soups",
+      "description": "Deep paprika-red beef soup with potatoes, peppers and caraway, somewhere between a stew and a broth.",
+      "instructions": [
+        "Brown the beef cubes in oil in a heavy pot, then remove and set aside.",
+        "Soften the chopped onions in the same pot for 8 minutes, take off the heat and stir in the paprika and caraway.",
+        "Return the beef, add the garlic, tomatoes and beef broth and simmer covered for 1 hour.",
+        "Add the cubed potatoes, carrots and bell pepper and cook for 25 minutes until tender.",
+        "Season with salt and pepper and serve with crusty bread."
+      ],
+      "prepTime": 20,
+      "cookTime": 100,
+      "servings": 6,
+      "tags": ["comfort-food", "winter", "one-pot", "high-protein"],
+      "ingredients": [
+        { "product": "Beef", "quantity": 700, "unit": "g" },
+        { "product": "Onion", "quantity": 3, "unit": "pcs" },
+        { "product": "Sweet Paprika", "quantity": 3, "unit": "tbsp" },
+        { "product": "Caraway Seeds", "quantity": 1, "unit": "tsp" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Tomatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Beef Broth", "quantity": 2, "unit": "l" },
+        { "product": "Potatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Vegetable Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "minestrone",
+      "name": "Minestrone",
+      "category": "Soups",
+      "description": "Classic Italian vegetable soup with beans, pasta and tomatoes, finished with basil and Parmesan.",
+      "instructions": [
+        "Soften the diced onion, carrots and celery in olive oil for 8 minutes.",
+        "Add the garlic and zucchini and cook for 2 minutes.",
+        "Pour in the crushed tomatoes and vegetable broth and simmer for 15 minutes.",
+        "Add the drained beans and the pasta and cook until the pasta is al dente.",
+        "Season with salt and pepper, stir in torn basil and serve with grated Parmesan."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 6,
+      "tags": ["italian", "vegetarian", "healthy", "one-pot"],
+      "ingredients": [
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Zucchini", "quantity": 1, "unit": "pcs" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Vegetable Broth", "quantity": 1.5, "unit": "l" },
+        { "product": "Canned Beans", "name": "Cannellini beans", "quantity": 1, "unit": "can" },
+        { "product": "Pasta", "name": "Small pasta", "quantity": 100, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Parmesan", "quantity": 50, "unit": "g" }
+      ]
+    },
+    {
+      "key": "french-onion-soup",
+      "name": "French Onion Soup",
+      "category": "Soups",
+      "description": "Deeply caramelised onions in rich beef broth, topped with toasted baguette and bubbling melted cheese.",
+      "instructions": [
+        "Slice the onions thinly and cook them slowly in butter for 40 minutes, stirring often, until deep golden.",
+        "Sprinkle over the flour, cook for 1 minute, then deglaze with the white wine.",
+        "Add the beef broth, thyme and bay leaf and simmer for 20 minutes; season with salt and pepper.",
+        "Toast the baguette slices and ladle the soup into ovenproof bowls.",
+        "Top each bowl with toast and grated cheese and grill until golden and bubbling."
+      ],
+      "prepTime": 15,
+      "cookTime": 70,
+      "servings": 4,
+      "tags": ["french", "comfort-food", "winter", "baked"],
+      "ingredients": [
+        { "product": "Onion", "quantity": 6, "unit": "pcs" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Flour", "quantity": 1, "unit": "tbsp" },
+        { "product": "White Wine", "quantity": 150, "unit": "ml" },
+        { "product": "Beef Broth", "quantity": 1.5, "unit": "l" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Bay Leaf", "quantity": 1, "unit": "pcs" },
+        { "product": "Baguette", "quantity": 1, "unit": "pcs" },
+        { "product": "Emmental", "name": "Gruyère", "quantity": 150, "unit": "g" },
+        { "product": "Black Pepper", "note": "to taste" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "green-lentil-smoked-sausage-soup",
+      "name": "Green Lentil and Smoked Sausage Soup",
+      "category": "Soups",
+      "description": "Hearty, smoky lentil soup with kielbasa, root vegetables and a splash of red wine vinegar.",
+      "instructions": [
+        "Brown the sliced smoked sausage in olive oil, then remove and set aside.",
+        "Soften the diced onion, carrots and celery in the same pot for 8 minutes; add the garlic.",
+        "Add the rinsed lentils, crushed tomatoes, bay leaf and vegetable broth and simmer for 30 minutes.",
+        "Return the sausage and cook for 10 minutes until the lentils are tender.",
+        "Season with salt, pepper and red wine vinegar and serve."
+      ],
+      "prepTime": 15,
+      "cookTime": 50,
+      "servings": 6,
+      "tags": ["comfort-food", "high-protein", "budget", "one-pot"],
+      "ingredients": [
+        { "product": "Green Lentils", "quantity": 300, "unit": "g" },
+        { "product": "Smoked Sausages", "quantity": 300, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Bay Leaf", "quantity": 2, "unit": "pcs" },
+        { "product": "Vegetable Broth", "quantity": 1.5, "unit": "l" },
+        { "product": "Red Wine Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "chickpea-spinach-soup",
+      "name": "Spanish Chickpea and Spinach Soup",
+      "category": "Soups",
+      "description": "Smoky paprika-spiced chickpea soup with wilted spinach, tomatoes and a squeeze of lemon.",
+      "instructions": [
+        "Soften the chopped onion in olive oil for 6 minutes, then add the garlic, cumin and smoked paprika.",
+        "Add the crushed tomatoes and cook for 3 minutes.",
+        "Pour in the vegetable broth and the drained chickpeas and simmer for 15 minutes.",
+        "Stir in the spinach and let it wilt for 2 minutes.",
+        "Season with salt, pepper and lemon juice and serve drizzled with olive oil."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["vegan", "mediterranean", "quick", "healthy"],
+      "ingredients": [
+        { "product": "Canned Chickpeas", "quantity": 2, "unit": "can" },
+        { "product": "Spinach", "quantity": 200, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Vegetable Broth", "quantity": 1, "unit": "l" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "potato-leek-soup",
+      "name": "Potato Leek Soup",
+      "category": "Soups",
+      "description": "Smooth, buttery French-style soup of leeks and potatoes finished with cream and chives.",
+      "instructions": [
+        "Slice the leeks thinly and rinse well; peel and dice the potatoes.",
+        "Melt the butter and sweat the leeks gently for 10 minutes without colouring.",
+        "Add the potatoes and vegetable broth and simmer for 20 minutes until soft.",
+        "Blend until smooth, stir in the cream and season with salt and white pepper.",
+        "Serve sprinkled with chopped chives."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["french", "vegetarian", "comfort-food", "kid-friendly"],
+      "ingredients": [
+        { "product": "Leek", "quantity": 3, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Vegetable Broth", "quantity": 1.2, "unit": "l" },
+        { "product": "Cooking Cream", "quantity": 150, "unit": "ml" },
+        { "product": "White Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Fresh Chives", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "thai-butternut-squash-coconut-soup",
+      "name": "Thai Butternut Squash and Coconut Soup",
+      "category": "Soups",
+      "description": "Silky butternut squash soup with red curry paste, coconut milk, ginger and lime.",
+      "instructions": [
+        "Peel and cube the butternut squash; chop the onion, garlic and ginger.",
+        "Soften the onion in oil for 5 minutes, add the garlic, ginger and curry paste and fry for 1 minute.",
+        "Add the squash and vegetable broth and simmer for 20 minutes until tender.",
+        "Blend until smooth, stir in the coconut milk and warm through.",
+        "Season with salt and lime juice and serve topped with fresh coriander."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["asian", "vegan", "spicy", "healthy"],
+      "ingredients": [
+        { "product": "Butternut Squash", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Ginger", "quantity": 20, "unit": "g" },
+        { "product": "Curry Paste", "name": "Red curry paste", "quantity": 2, "unit": "tbsp" },
+        { "product": "Vegetable Broth", "quantity": 800, "unit": "ml" },
+        { "product": "Coconut Milk", "quantity": 400, "unit": "ml" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Vegetable Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "broccoli-cheddar-soup",
+      "name": "Broccoli Cheddar Soup",
+      "category": "Soups",
+      "description": "Thick, cheesy American-style soup with tender broccoli florets and shredded carrot.",
+      "instructions": [
+        "Melt the butter and soften the chopped onion for 5 minutes.",
+        "Stir in the flour and cook for 1 minute, then gradually whisk in the milk and vegetable broth.",
+        "Add the broccoli florets and grated carrot and simmer for 15 minutes until tender.",
+        "Blend half the soup for a creamier texture, if desired, and return it to the pot.",
+        "Remove from the heat, stir in the grated cheddar until melted and season with salt, pepper and nutmeg."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["american", "vegetarian", "comfort-food", "kid-friendly"],
+      "ingredients": [
+        { "product": "Broccoli", "quantity": 1, "unit": "head" },
+        { "product": "Cheese", "name": "Cheddar cheese", "quantity": 200, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Flour", "quantity": 3, "unit": "tbsp" },
+        { "product": "Milk", "quantity": 500, "unit": "ml" },
+        { "product": "Vegetable Broth", "quantity": 700, "unit": "ml" },
+        { "product": "Nutmeg", "quantity": 0.25, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "spanish-garlic-soup",
+      "name": "Spanish Garlic Soup (Sopa de Ajo)",
+      "category": "Soups",
+      "description": "Castilian peasant soup of golden garlic, smoked paprika and day-old bread with a poached egg in each bowl.",
+      "instructions": [
+        "Fry the sliced garlic gently in olive oil until golden, then add the diced ham.",
+        "Take off the heat, stir in the smoked paprika, then add the torn bread and toss to coat.",
+        "Pour in the chicken broth and simmer for 15 minutes until the bread breaks down.",
+        "Season with salt and pepper, then crack the eggs into the soup and poach for 3 minutes.",
+        "Serve immediately with chopped parsley."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["mediterranean", "budget", "quick", "comfort-food"],
+      "ingredients": [
+        { "product": "Garlic", "quantity": 8, "unit": "clove" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Prosciutto", "name": "Serrano ham", "quantity": 80, "unit": "g" },
+        { "product": "Smoked Paprika", "quantity": 2, "unit": "tsp" },
+        { "product": "Bread", "name": "Day-old bread", "quantity": 6, "unit": "slice" },
+        { "product": "Chicken Broth", "quantity": 1.2, "unit": "l" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "beef-pho",
+      "name": "Vietnamese-Style Beef Pho",
+      "category": "Soups",
+      "description": "Fragrant star anise and ginger beef broth over rice noodles with paper-thin beef, herbs and lime.",
+      "instructions": [
+        "Char the halved onion and ginger in a dry pan until blackened in spots.",
+        "Simmer the beef broth with the charred onion, ginger, star anise and cinnamon for 30 minutes, then strain.",
+        "Season the broth with fish sauce and a pinch of sugar.",
+        "Cook the rice noodles according to the pack and divide between bowls.",
+        "Top with very thinly sliced raw beef and pour over the boiling broth to cook it.",
+        "Serve with bean sprouts, basil, green onions and lime wedges."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 4,
+      "tags": ["asian", "high-protein", "dairy-free", "healthy"],
+      "ingredients": [
+        { "product": "Beef Broth", "quantity": 2, "unit": "l" },
+        { "product": "Beef Steak", "name": "Sirloin, thinly sliced", "quantity": 300, "unit": "g" },
+        { "product": "Rice Noodles", "quantity": 300, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Ginger", "quantity": 40, "unit": "g" },
+        { "product": "Star Anise", "quantity": 3, "unit": "pcs" },
+        { "product": "Cinnamon", "name": "Cinnamon stick", "quantity": 1, "unit": "pcs" },
+        { "product": "Fish Sauce", "quantity": 3, "unit": "tbsp" },
+        { "product": "Bean Sprouts", "quantity": 150, "unit": "g" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Limes", "quantity": 2, "unit": "pcs" }
+      ]
+    },
+    {
+      "key": "miso-ramen-pork-belly",
+      "name": "Miso Ramen with Pork Belly",
+      "category": "Soups",
+      "description": "Savoury miso and garlic ramen broth with springy noodles, sliced pork belly and a soft-boiled egg.",
+      "instructions": [
+        "Season the pork belly, roast it at 180°C for 50 minutes until tender, then slice.",
+        "Soft-boil the eggs for 7 minutes, cool in iced water and peel.",
+        "Fry the chopped garlic and ginger in sesame oil for 1 minute, add the chicken broth and simmer for 10 minutes.",
+        "Whisk in the miso paste and soy sauce and keep hot without boiling.",
+        "Cook the ramen noodles and the bok choy according to the pack.",
+        "Divide the noodles between bowls, pour over the broth and top with pork, halved eggs, bok choy, corn and green onions."
+      ],
+      "prepTime": 20,
+      "cookTime": 60,
+      "servings": 4,
+      "tags": ["asian", "comfort-food", "high-protein"],
+      "ingredients": [
+        { "product": "Ramen Noodles", "quantity": 4, "unit": "pack" },
+        { "product": "Pork Belly", "quantity": 500, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Chicken Broth", "quantity": 2, "unit": "l" },
+        { "product": "Miso Paste", "quantity": 4, "unit": "tbsp" },
+        { "product": "Soy Sauce", "quantity": 2, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Ginger", "quantity": 20, "unit": "g" },
+        { "product": "Sesame Oil", "quantity": 2, "unit": "tsp" },
+        { "product": "Bok Choy", "quantity": 2, "unit": "pcs" },
+        { "product": "Canned Corn", "quantity": 1, "unit": "can" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "tom-yum-shrimp-soup",
+      "name": "Tom Yum-Style Shrimp Soup",
+      "category": "Soups",
+      "description": "Hot and sour Thai broth with juicy shrimp, mushrooms, chili, lime and fresh coriander.",
+      "instructions": [
+        "Bring the chicken broth to a simmer with the sliced ginger, bruised chili and curry paste.",
+        "Add the halved mushrooms and cherry tomatoes and cook for 5 minutes.",
+        "Add the shrimp and simmer for 3 minutes until pink.",
+        "Season with fish sauce, lime juice and a pinch of sugar, tasting for a hot-sour balance.",
+        "Serve topped with fresh coriander and sliced green onions."
+      ],
+      "prepTime": 15,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["asian", "spicy", "quick", "low-carb"],
+      "ingredients": [
+        { "product": "Shrimp", "quantity": 400, "unit": "g" },
+        { "product": "Chicken Broth", "quantity": 1.5, "unit": "l" },
+        { "product": "Mushrooms", "quantity": 200, "unit": "g" },
+        { "product": "Cherry Tomatoes", "quantity": 150, "unit": "g" },
+        { "product": "Ginger", "quantity": 30, "unit": "g" },
+        { "product": "Chili Pepper", "quantity": 2, "unit": "pcs" },
+        { "product": "Curry Paste", "name": "Tom yum or red curry paste", "quantity": 2, "unit": "tbsp" },
+        { "product": "Fish Sauce", "quantity": 3, "unit": "tbsp" },
+        { "product": "Limes", "quantity": 2, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Green Onions", "quantity": 0.5, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "miso-soup-tofu",
+      "name": "Miso Soup with Tofu and Mushrooms",
+      "category": "Soups",
+      "description": "Light Japanese miso broth with silky tofu cubes, mushrooms, spinach and spring onions, ready in minutes.",
+      "instructions": [
+        "Bring the vegetable broth to a gentle simmer with the sliced mushrooms and ginger.",
+        "Cook for 5 minutes, then add the spinach and cubed tofu and warm for 2 minutes.",
+        "Take off the heat and whisk the miso paste with a ladle of broth until smooth, then stir it back in.",
+        "Season with soy sauce and a few drops of sesame oil.",
+        "Serve immediately topped with sliced green onions."
+      ],
+      "prepTime": 10,
+      "cookTime": 10,
+      "servings": 4,
+      "tags": ["asian", "vegan", "quick", "healthy"],
+      "ingredients": [
+        { "product": "Vegetable Broth", "quantity": 1.2, "unit": "l" },
+        { "product": "Miso Paste", "quantity": 3, "unit": "tbsp" },
+        { "product": "Tofu", "name": "Silken tofu", "quantity": 300, "unit": "g" },
+        { "product": "Mushrooms", "quantity": 150, "unit": "g" },
+        { "product": "Spinach", "quantity": 100, "unit": "g" },
+        { "product": "Ginger", "quantity": 10, "unit": "g" },
+        { "product": "Soy Sauce", "quantity": 1, "unit": "tbsp" },
+        { "product": "Sesame Oil", "quantity": 1, "unit": "tsp" },
+        { "product": "Green Onions", "quantity": 0.5, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "split-pea-ham-soup",
+      "name": "Split Pea and Ham Soup",
+      "category": "Soups",
+      "description": "Thick, smoky yellow split pea soup slow-cooked with a ham hock, carrots and bay.",
+      "instructions": [
+        "Rinse the split peas and place them in a large pot with the ham hock and 2.5 litres of water.",
+        "Bring to a boil, skim, then add the diced onion, carrots, celery, garlic, bay leaf and thyme.",
+        "Simmer for about 90 minutes, stirring now and then, until the peas have broken down.",
+        "Remove the hock, shred the meat and stir it back into the soup.",
+        "Season with salt and pepper and loosen with a little water if too thick."
+      ],
+      "prepTime": 15,
+      "cookTime": 100,
+      "servings": 6,
+      "tags": ["comfort-food", "winter", "budget", "high-protein"],
+      "ingredients": [
+        { "product": "Split Peas", "quantity": 500, "unit": "g" },
+        { "product": "Smoked Pork Knuckle", "name": "Ham hock", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Bay Leaf", "quantity": 2, "unit": "pcs" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Black Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mushroom-barley-soup",
+      "name": "Mushroom Barley Soup",
+      "category": "Soups",
+      "description": "Earthy brown mushroom and pearl barley soup with thyme and a savoury splash of soy sauce.",
+      "instructions": [
+        "Brown the sliced mushrooms in olive oil in batches until golden, then set aside.",
+        "Soften the diced onion, carrots and celery in the same pot for 8 minutes; add the garlic and thyme.",
+        "Add the rinsed barley and vegetable broth and simmer for 35 minutes.",
+        "Return the mushrooms, add the soy sauce and cook for 10 minutes until the barley is tender.",
+        "Season with salt and pepper and serve sprinkled with parsley."
+      ],
+      "prepTime": 15,
+      "cookTime": 55,
+      "servings": 6,
+      "tags": ["vegan", "comfort-food", "healthy", "winter"],
+      "ingredients": [
+        { "product": "Brown Mushrooms", "quantity": 500, "unit": "g" },
+        { "product": "Pearl Barley", "quantity": 150, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Vegetable Broth", "quantity": 1.8, "unit": "l" },
+        { "product": "Soy Sauce", "quantity": 1, "unit": "tbsp" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "tuscan-white-bean-kale-soup",
+      "name": "Tuscan White Bean and Kale Soup",
+      "category": "Soups",
+      "description": "Rustic Italian soup of cannellini beans, kale and rosemary in a tomato-tinged broth with Parmesan.",
+      "instructions": [
+        "Soften the diced onion, carrots and celery in olive oil for 8 minutes.",
+        "Add the garlic and rosemary and cook for 1 minute.",
+        "Pour in the crushed tomatoes and vegetable broth, add the drained beans and simmer for 15 minutes.",
+        "Mash a few beans against the side of the pot to thicken, then stir in the chopped kale and cook for 5 minutes.",
+        "Season with salt and pepper and serve with grated Parmesan and a drizzle of olive oil."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["italian", "vegetarian", "healthy", "budget"],
+      "ingredients": [
+        { "product": "Canned Beans", "name": "Cannellini beans", "quantity": 2, "unit": "can" },
+        { "product": "Kale", "quantity": 150, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Dried Rosemary", "quantity": 1, "unit": "tsp" },
+        { "product": "Crushed Tomatoes", "quantity": 200, "unit": "g" },
+        { "product": "Vegetable Broth", "quantity": 1.2, "unit": "l" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Parmesan", "quantity": 40, "unit": "g" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "corn-chowder-bacon",
+      "name": "Corn Chowder with Bacon",
+      "category": "Soups",
+      "description": "Creamy American sweetcorn and potato chowder with crispy bacon bits and chives.",
+      "instructions": [
+        "Fry the diced bacon until crisp, remove and set aside, leaving the fat in the pot.",
+        "Add the butter, chopped onion and celery and soften for 5 minutes.",
+        "Stir in the flour, then gradually add the chicken broth and the diced potatoes; simmer for 15 minutes.",
+        "Add the drained corn and the milk and simmer for 5 minutes more.",
+        "Stir in the cream, season with salt and pepper and serve topped with bacon and chives."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["american", "comfort-food", "kid-friendly"],
+      "ingredients": [
+        { "product": "Canned Corn", "quantity": 2, "unit": "can" },
+        { "product": "Potatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Bacon", "quantity": 150, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Celery", "quantity": 1, "unit": "stalk" },
+        { "product": "Butter", "quantity": 20, "unit": "g" },
+        { "product": "Flour", "quantity": 2, "unit": "tbsp" },
+        { "product": "Chicken Broth", "quantity": 700, "unit": "ml" },
+        { "product": "Milk", "quantity": 300, "unit": "ml" },
+        { "product": "Cooking Cream", "quantity": 100, "unit": "ml" },
+        { "product": "Fresh Chives", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "creamy-cod-chowder",
+      "name": "Creamy Cod and Potato Chowder",
+      "category": "Soups",
+      "description": "New England-style fish chowder with flaky cod, potatoes, leek and bacon in a creamy milk broth.",
+      "instructions": [
+        "Fry the diced bacon until golden, then add the butter, sliced leek and chopped onion and soften for 6 minutes.",
+        "Sprinkle over the flour, stir, then add the diced potatoes, bay leaf and 500 ml of water; simmer for 15 minutes.",
+        "Pour in the milk and bring to a gentle simmer.",
+        "Add the cod in large chunks and poach for 5 minutes until just flaking.",
+        "Stir in the cream, season with salt and pepper and serve with chopped parsley."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["american", "comfort-food", "high-protein"],
+      "ingredients": [
+        { "product": "Cod Fillets", "quantity": 500, "unit": "g" },
+        { "product": "Potatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Leek", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Bacon", "quantity": 100, "unit": "g" },
+        { "product": "Butter", "quantity": 20, "unit": "g" },
+        { "product": "Flour", "quantity": 2, "unit": "tbsp" },
+        { "product": "Bay Leaf", "quantity": 1, "unit": "pcs" },
+        { "product": "Milk", "quantity": 600, "unit": "ml" },
+        { "product": "Cooking Cream", "quantity": 150, "unit": "ml" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "carrot-ginger-soup",
+      "name": "Carrot and Ginger Soup",
+      "category": "Soups",
+      "description": "Bright, sweet carrot soup with warming ginger, a touch of orange and a swirl of coconut milk.",
+      "instructions": [
+        "Soften the chopped onion in olive oil for 5 minutes, then add the garlic, grated ginger and cumin.",
+        "Add the sliced carrots and vegetable broth and simmer for 25 minutes until very soft.",
+        "Blend until completely smooth.",
+        "Stir in the coconut milk and the juice of the orange and warm through.",
+        "Season with salt and pepper and serve with a drizzle of coconut milk."
+      ],
+      "prepTime": 10,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["vegan", "healthy", "gluten-free", "quick"],
+      "ingredients": [
+        { "product": "Carrots", "quantity": 8, "unit": "pcs" },
+        { "product": "Ginger", "quantity": 30, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Vegetable Broth", "quantity": 1, "unit": "l" },
+        { "product": "Coconut Milk", "quantity": 200, "unit": "ml" },
+        { "product": "Oranges", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "cauliflower-cream-soup",
+      "name": "Cauliflower Cream Soup with Parmesan",
+      "category": "Soups",
+      "description": "Luxuriously smooth cauliflower soup with garlic, nutmeg and Parmesan, low in carbs and big on comfort.",
+      "instructions": [
+        "Cut the cauliflower into florets and chop the onion and garlic.",
+        "Melt the butter and sweat the onion and garlic for 5 minutes without browning.",
+        "Add the cauliflower, potato and vegetable broth and simmer for 20 minutes until tender.",
+        "Blend until silky, then stir in the cream and grated Parmesan.",
+        "Season with salt, white pepper and nutmeg and serve."
+      ],
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["vegetarian", "low-carb", "comfort-food", "gluten-free"],
+      "ingredients": [
+        { "product": "Cauliflower", "quantity": 1, "unit": "head" },
+        { "product": "Potatoes", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Vegetable Broth", "quantity": 1, "unit": "l" },
+        { "product": "Cooking Cream", "quantity": 150, "unit": "ml" },
+        { "product": "Parmesan", "quantity": 50, "unit": "g" },
+        { "product": "Nutmeg", "quantity": 0.25, "unit": "tsp" },
+        { "product": "White Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "zucchini-basil-cream-soup",
+      "name": "Zucchini and Basil Cream Soup",
+      "category": "Soups",
+      "description": "Light green zucchini soup blended with cream cheese and fresh basil for a summery, velvety bowl.",
+      "instructions": [
+        "Soften the chopped onion and garlic in olive oil for 5 minutes.",
+        "Add the sliced zucchini and diced potato, pour in the vegetable broth and simmer for 15 minutes.",
+        "Add the basil leaves and blend until smooth.",
+        "Whisk in the cream cheese until melted and season with salt and pepper.",
+        "Serve warm or chilled with a drizzle of olive oil."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["vegetarian", "summer", "quick", "low-carb"],
+      "ingredients": [
+        { "product": "Zucchini", "quantity": 4, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Vegetable Broth", "quantity": 1, "unit": "l" },
+        { "product": "Cream Cheese", "quantity": 100, "unit": "g" },
+        { "product": "Fresh Basil", "quantity": 1, "unit": "bunch" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "caldo-verde",
+      "name": "Portuguese Caldo Verde",
+      "category": "Soups",
+      "description": "Portugal's beloved potato and kale soup with slices of smoky chorizo and good olive oil.",
+      "instructions": [
+        "Soften the chopped onion and garlic in olive oil for 5 minutes.",
+        "Add the diced potatoes and vegetable broth and simmer for 20 minutes until soft.",
+        "Blend the soup until smooth and return it to the pot.",
+        "Fry the sliced chorizo in a pan until crisp at the edges.",
+        "Stir the finely shredded kale into the soup and cook for 5 minutes.",
+        "Season with salt and pepper and serve topped with chorizo and a drizzle of olive oil."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["mediterranean", "budget", "comfort-food", "gluten-free"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 5, "unit": "pcs" },
+        { "product": "Kale", "quantity": 200, "unit": "g" },
+        { "product": "Chorizo", "quantity": 150, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Vegetable Broth", "quantity": 1.5, "unit": "l" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Black Pepper", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "moroccan-harira",
+      "name": "Moroccan Harira",
+      "category": "Soups",
+      "description": "Warmly spiced Moroccan soup of lamb, chickpeas, lentils and tomatoes with fresh coriander and lemon.",
+      "instructions": [
+        "Brown the diced lamb in olive oil, then add the chopped onion and celery and soften for 5 minutes.",
+        "Stir in the turmeric, cinnamon, ginger powder and pepper and cook for 1 minute.",
+        "Add the crushed tomatoes, lentils and 2 litres of water and simmer for 45 minutes.",
+        "Add the drained chickpeas and half the chopped herbs and cook for 15 minutes.",
+        "Whisk the flour with a little cold water, stir it in and simmer for 5 minutes to thicken.",
+        "Season with salt and lemon juice and serve with the remaining coriander and parsley."
+      ],
+      "prepTime": 20,
+      "cookTime": 75,
+      "servings": 6,
+      "tags": ["middle-eastern", "comfort-food", "high-protein", "one-pot"],
+      "ingredients": [
+        { "product": "Lamb", "quantity": 400, "unit": "g" },
+        { "product": "Canned Chickpeas", "quantity": 1, "unit": "can" },
+        { "product": "Green Lentils", "quantity": 100, "unit": "g" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Turmeric", "quantity": 1, "unit": "tsp" },
+        { "product": "Cinnamon", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Ginger Powder", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Coriander", "quantity": 1, "unit": "bunch" },
+        { "product": "Flour", "quantity": 2, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" }
+      ]
+    },
+    {
+      "key": "coconut-dal-soup",
+      "name": "Coconut Red Lentil Dal Soup",
+      "category": "Soups",
+      "description": "Creamy Indian-spiced red lentil soup with coconut milk, turmeric and garam masala.",
+      "instructions": [
+        "Fry the chopped onion in oil for 6 minutes, then add the garlic, grated ginger, turmeric and cumin.",
+        "Add the rinsed red lentils, crushed tomatoes and vegetable broth and simmer for 20 minutes, stirring occasionally.",
+        "Stir in the coconut milk and garam masala and cook for 5 minutes more.",
+        "Season with salt and lime juice.",
+        "Serve topped with fresh coriander and a little chili if you like heat."
+      ],
+      "prepTime": 10,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["asian", "vegan", "healthy", "budget"],
+      "ingredients": [
+        { "product": "Red Lentils", "quantity": 300, "unit": "g" },
+        { "product": "Coconut Milk", "quantity": 400, "unit": "ml" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Ginger", "quantity": 20, "unit": "g" },
+        { "product": "Turmeric", "quantity": 1, "unit": "tsp" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Garam Masala", "quantity": 1, "unit": "tsp" },
+        { "product": "Crushed Tomatoes", "quantity": 200, "unit": "g" },
+        { "product": "Vegetable Broth", "quantity": 1, "unit": "l" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "ukrainian-borscht",
+      "name": "Ukrainian Borscht",
+      "category": "Soups",
+      "description": "Ruby-red beetroot and beef soup with cabbage, potatoes and garlic, served with sour cream and dill.",
+      "instructions": [
+        "Simmer the beef in 2.5 litres of water with a bay leaf for 1 hour, skimming, then dice the meat and return it to the broth.",
+        "Grate the beetroot and carrots and fry them with the chopped onion in oil for 8 minutes; stir in the tomato paste and vinegar.",
+        "Add the diced potatoes to the broth and cook for 10 minutes.",
+        "Add the shredded cabbage and the beetroot mixture and simmer for 15 minutes.",
+        "Stir in the crushed garlic, season with salt and pepper and rest for 10 minutes.",
+        "Serve with sour cream and chopped dill."
+      ],
+      "prepTime": 25,
+      "cookTime": 100,
+      "servings": 8,
+      "tags": ["comfort-food", "winter", "one-pot"],
+      "ingredients": [
+        { "product": "Beef", "quantity": 500, "unit": "g" },
+        { "product": "Beetroot", "quantity": 3, "unit": "pcs" },
+        { "product": "Cabbage", "quantity": 0.5, "unit": "head" },
+        { "product": "Potatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomato Paste", "quantity": 2, "unit": "tbsp" },
+        { "product": "Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Bay Leaf", "quantity": 1, "unit": "pcs" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" }
+      ]
+    },
+    {
+      "key": "mexican-tortilla-soup",
+      "name": "Mexican Chicken Tortilla Soup",
+      "category": "Soups",
+      "description": "Smoky tomato and chili chicken soup topped with crunchy tortilla strips, avocado and lime.",
+      "instructions": [
+        "Soften the chopped onion in oil for 5 minutes, add the garlic, chopped chili and cumin and fry for 1 minute.",
+        "Add the crushed tomatoes and chicken broth and simmer for 10 minutes.",
+        "Add the chicken breast and poach for 15 minutes, then shred it and return to the pot with the drained corn and beans.",
+        "Cut the tortillas into strips and fry them in oil until crisp.",
+        "Season the soup with salt and lime juice and serve topped with tortilla strips, diced avocado and coriander."
+      ],
+      "prepTime": 20,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["mexican", "spicy", "high-protein"],
+      "ingredients": [
+        { "product": "Chicken Breast", "quantity": 400, "unit": "g" },
+        { "product": "Tortillas", "name": "Corn tortillas", "quantity": 4, "unit": "pcs" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Chicken Broth", "quantity": 1.2, "unit": "l" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Chili Pepper", "quantity": 1, "unit": "pcs" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Canned Corn", "quantity": 1, "unit": "can" },
+        { "product": "Canned Beans", "name": "Black beans", "quantity": 1, "unit": "can" },
+        { "product": "Avocado", "quantity": 1, "unit": "pcs" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs" }
+      ]
+    },
+    {
+      "key": "italian-wedding-soup",
+      "name": "Italian Wedding Soup",
+      "category": "Soups",
+      "description": "Little Parmesan meatballs, orzo and spinach in a light chicken broth, an Italian-American classic.",
+      "instructions": [
+        "Mix the minced turkey with the breadcrumbs, grated Parmesan, egg, half the garlic, salt and pepper and roll into small meatballs.",
+        "Soften the chopped onion and diced carrots in olive oil for 6 minutes; add the remaining garlic.",
+        "Pour in the chicken broth, bring to a simmer and drop in the meatballs; cook for 10 minutes.",
+        "Add the orzo and cook for 8 minutes until tender.",
+        "Stir in the spinach until wilted, season with salt and pepper and serve with extra Parmesan."
+      ],
+      "prepTime": 25,
+      "cookTime": 30,
+      "servings": 6,
+      "tags": ["italian", "kid-friendly", "comfort-food", "high-protein"],
+      "ingredients": [
+        { "product": "Minced Turkey", "quantity": 500, "unit": "g" },
+        { "product": "Breadcrumbs", "quantity": 50, "unit": "g" },
+        { "product": "Parmesan", "quantity": 60, "unit": "g" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Chicken Broth", "quantity": 2, "unit": "l" },
+        { "product": "Pasta", "name": "Orzo", "quantity": 150, "unit": "g" },
+        { "product": "Spinach", "quantity": 150, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    }
+  ],
+  "newProducts": [
+    {
+      "name": "Beef Tripe",
+      "category": "Meat",
+      "unit": "g",
+      "emoji": "🥩",
+      "aliases": ["tripe", "cleaned tripe", "honeycomb tripe", "burta de vita", "burta"]
+    },
+    {
+      "name": "Tofu",
+      "category": "Dairy",
+      "unit": "g",
+      "emoji": "⬜",
+      "aliases": ["silken tofu", "firm tofu", "bean curd"]
+    }
+  ]
+}

@@ -4,9 +4,12 @@ import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
+import 'package:shop_list_app/features/recipes/presentation/widgets/recipe_image.dart';
+import 'package:shop_list_app/features/shopping_lists/presentation/providers/shopping_list_providers.dart';
 import 'package:shop_list_app/shared/extensions/context_extensions.dart';
 import 'package:shop_list_app/shared/widgets/feedback/error_state_widget.dart';
 import 'package:shop_list_app/shared/widgets/feedback/loading_state_widget.dart';
+import 'package:shop_list_app/shared/widgets/shopping_list_picker_sheet.dart';
 
 class RecipeDetailPage extends ConsumerStatefulWidget {
   final int recipeId;
@@ -21,6 +24,7 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   static const _tabs = ['Ingredients', 'Instructions', 'Notes'];
+  bool _addingToList = false;
 
   @override
   void initState() {
@@ -35,9 +39,10 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
   }
 
   // Current serving count for this recipe session.
-  int _servingCount(int original) => ref
-      .watch(servingCountProvider(widget.recipeId))
-      .let((v) => v == 0 ? original : v);
+  int _servingCount(int original) {
+    final override = ref.watch(servingCountProvider(widget.recipeId));
+    return override == 0 ? original : override;
+  }
 
   void _incrementServings(int current) {
     ref.read(servingCountProvider(widget.recipeId).notifier).state =
@@ -53,6 +58,53 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
 
   void _resetServings() {
     ref.read(servingCountProvider(widget.recipeId).notifier).state = 0;
+  }
+
+  Future<void> _toggleFavorite(Recipe recipe) async {
+    final result =
+        await ref.read(recipeListProvider.notifier).toggleFavorite(recipe);
+    if (!mounted) return;
+    result.fold(
+      (f) => context.showSnackBar(f.message, isError: true),
+      (_) {},
+    );
+  }
+
+  Future<void> _addToShoppingList(Recipe recipe, int servings) async {
+    final target = await showShoppingListPickerSheet(
+      context,
+      defaultNewListName: recipe.name ?? 'Shopping list',
+    );
+    if (target == null || !mounted) return;
+
+    setState(() => _addingToList = true);
+    final result = await ref.read(addRecipeToListUseCaseProvider).call(
+          recipeId: widget.recipeId,
+          listId: target.listId,
+          newListName: target.newListName,
+          servings: servings,
+        );
+    if (!mounted) return;
+    setState(() => _addingToList = false);
+
+    result.fold(
+      (f) => context.showSnackBar(f.message, isError: true),
+      (listId) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            behavior: SnackBarBehavior.floating,
+            content: Text(
+              '${recipe.ingredients.length} ingredients added to your list',
+              style: const TextStyle(fontFamily: 'Poppins'),
+            ),
+            action: SnackBarAction(
+              label: 'View',
+              onPressed: () => GoRouter.of(context).go('/shopping/$listId'),
+            ),
+          ),
+        );
+      },
+    );
   }
 
   Future<void> _confirmDelete(Recipe recipe) async {
@@ -88,17 +140,10 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
       final result = await ref
           .read(recipeListProvider.notifier)
           .deleteRecipe(widget.recipeId);
+      if (!mounted) return;
       result.fold(
-        (f) {
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(f.message)),
-            );
-          }
-        },
-        (_) {
-          if (mounted) GoRouter.of(context).pop();
-        },
+        (f) => context.showSnackBar(f.message, isError: true),
+        (_) => GoRouter.of(context).pop(),
       );
     }
   }
@@ -133,13 +178,36 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
                       originalServings, currentServings)),
             ],
           ),
+          floatingActionButton: recipe.ingredients.isEmpty
+              ? null
+              : FloatingActionButton.extended(
+                  heroTag: 'recipe-add-to-list',
+                  backgroundColor: context.colorScheme.primary,
+                  foregroundColor: context.colorScheme.onPrimary,
+                  onPressed: _addingToList
+                      ? null
+                      : () => _addToShoppingList(recipe, currentServings),
+                  icon: _addingToList
+                      ? SizedBox(
+                          width: 18,
+                          height: 18,
+                          child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              color: context.colorScheme.onPrimary),
+                        )
+                      : const Icon(Icons.add_shopping_cart),
+                  label: const Text(
+                    'Add to list',
+                    style: TextStyle(
+                        fontFamily: 'Poppins', fontWeight: FontWeight.w600),
+                  ),
+                ),
         );
       },
     );
   }
 
   Widget _buildSliverAppBar(Recipe recipe) {
-    final ctx = context;
     return SliverAppBar(
       expandedHeight: 260,
       pinned: true,
@@ -150,16 +218,12 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
       ),
       actions: [
         IconButton(
+          tooltip: recipe.favorite ? 'Remove from favourites' : 'Favourite',
           icon: Icon(
-            recipe.favorite == true ? Icons.star : Icons.star_border,
+            recipe.favorite ? Icons.star : Icons.star_border,
             color: context.colorScheme.secondary,
           ),
-          onPressed: () async {
-            final updated =
-                recipe.copyWith(favorite: !(recipe.favorite ?? false));
-            await ref.read(recipeListProvider.notifier).saveRecipe(updated);
-            ref.invalidate(recipeDetailProvider(widget.recipeId));
-          },
+          onPressed: () => _toggleFavorite(recipe),
         ),
         PopupMenuButton<String>(
           icon: Icon(Icons.more_vert, color: context.colorScheme.onSurface),
@@ -201,9 +265,7 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
         background: Stack(
           fit: StackFit.expand,
           children: [
-            recipe.imageUrl != null && recipe.imageUrl!.isNotEmpty
-                ? _buildHeroImage(recipe.imageUrl!, context)
-                : _heroBg(context),
+            RecipeImage(recipe: recipe, cacheSize: 800, iconSize: 72),
             const DecoratedBox(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -219,32 +281,6 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
       ),
     );
   }
-
-  Widget _buildHeroImage(String imageUrl, BuildContext context) {
-    if (imageUrl.startsWith('assets/')) {
-      return Image.asset(
-        imageUrl,
-        fit: BoxFit.cover,
-        cacheHeight: 800, // Limit decoded image height
-        cacheWidth: 800, // Limit decoded image width
-        errorBuilder: (_, __, ___) => _heroBg(context),
-      );
-    } else {
-      return Image.network(
-        imageUrl,
-        fit: BoxFit.cover,
-        errorBuilder: (_, __, ___) => _heroBg(context),
-      );
-    }
-  }
-
-  Widget _heroBg(BuildContext context) => Container(
-        color: context.colorScheme.surfaceContainerHighest,
-        child: Center(
-          child: Icon(Icons.restaurant_menu,
-              color: context.colorScheme.onSurfaceVariant, size: 64),
-        ),
-      );
 
   Widget _buildContent(BuildContext context, Recipe recipe, Recipe scaled,
       int originalServings, int currentServings) {
@@ -264,11 +300,11 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
                 Expanded(
                   child: Text(
                     recipe.name ?? 'Recipe',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w700,
                       fontSize: 22,
-                      color: AppColors.textPrimary,
+                      color: context.colorScheme.onSurface,
                     ),
                   ),
                 ),
@@ -285,10 +321,10 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
                   const SizedBox(width: 4),
                   Text(
                     recipe.rating!.toStringAsFixed(1),
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w600,
-                        color: AppColors.textBody),
+                        color: context.colorScheme.onSurfaceVariant),
                   ),
                 ],
               ),
@@ -300,14 +336,15 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
             child: Wrap(
               spacing: 8,
               children: [
+                if (recipe.category != null && recipe.category!.isNotEmpty)
+                  _badge(Icons.local_offer_outlined, recipe.category!),
                 if (recipe.totalTime > 0)
                   _badge(Icons.access_time, '${recipe.totalTime} min'),
                 if (recipe.servings != null)
                   _badge(
                       Icons.restaurant_outlined, '$currentServings servings'),
-                if (recipe.description != null &&
-                    recipe.description!.isNotEmpty)
-                  _badge(Icons.info_outline, recipe.description!, maxChars: 20),
+                for (final tag in recipe.tags.take(3))
+                  _badge(Icons.tag, tag),
               ],
             ),
           ),
@@ -318,13 +355,13 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextButton.icon(
                 onPressed: _resetServings,
-                icon: const Icon(Icons.refresh,
-                    size: 16, color: AppColors.textSecondary),
+                icon: Icon(Icons.refresh,
+                    size: 16, color: context.colorScheme.onSurfaceVariant),
                 label: Text(
-                  '↺ Reset to $originalServings',
-                  style: const TextStyle(
+                  'Reset to $originalServings',
+                  style: TextStyle(
                       fontFamily: 'Poppins',
-                      color: AppColors.textSecondary,
+                      color: context.colorScheme.onSurfaceVariant,
                       fontSize: 12),
                 ),
               ),
@@ -334,9 +371,9 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
           // Tab bar
           TabBar(
             controller: _tabController,
-            labelColor: AppColors.primary,
-            unselectedLabelColor: AppColors.textSecondary,
-            indicatorColor: AppColors.primary,
+            labelColor: context.colorScheme.primary,
+            unselectedLabelColor: context.colorScheme.onSurfaceVariant,
+            indicatorColor: context.colorScheme.primary,
             labelStyle: const TextStyle(
                 fontFamily: 'Poppins', fontWeight: FontWeight.w600),
             unselectedLabelStyle: const TextStyle(fontFamily: 'Poppins'),
@@ -359,60 +396,62 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
   }
 
   Widget _buildServingsStepper(int original, int current) {
+    final primary = context.colorScheme.primary;
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: AppColors.primary),
+        border: Border.all(color: primary),
         borderRadius: BorderRadius.circular(20),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(Icons.restaurant_outlined,
-              size: 14, color: AppColors.primary),
+          Icon(Icons.restaurant_outlined, size: 14, color: primary),
           const SizedBox(width: 6),
           GestureDetector(
             onTap: () => _decrementServings(current, original),
-            child: const Icon(Icons.remove, size: 18, color: AppColors.primary),
+            child: Icon(Icons.remove, size: 18, color: primary),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Text(
               '$current',
-              style: const TextStyle(
+              style: TextStyle(
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w700,
-                  color: AppColors.textPrimary),
+                  color: context.colorScheme.onSurface),
             ),
           ),
           GestureDetector(
             onTap: () => _incrementServings(current),
-            child: const Icon(Icons.add, size: 18, color: AppColors.primary),
+            child: Icon(Icons.add, size: 18, color: primary),
           ),
         ],
       ),
     );
   }
 
-  Widget _badge(IconData icon, String label, {int maxChars = 999}) {
+  Widget _badge(IconData icon, String label, {int maxChars = 24}) {
     final text =
         label.length > maxChars ? '${label.substring(0, maxChars)}…' : label;
     return Container(
       margin: const EdgeInsets.only(bottom: 4),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        border: Border.all(color: AppColors.primary),
+        border: Border.all(color: context.colorScheme.primary),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 13, color: AppColors.primary),
+          Icon(icon, size: 13, color: context.colorScheme.primary),
           const SizedBox(width: 4),
           Text(
             text,
-            style: const TextStyle(
-                fontFamily: 'Poppins', fontSize: 12, color: AppColors.textBody),
+            style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 12,
+                color: context.colorScheme.onSurfaceVariant),
           ),
         ],
       ),
@@ -420,7 +459,7 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
   }
 
   Widget _buildIngredientsTab(Recipe scaled) {
-    final ingredients = scaled.ingredients ?? [];
+    final ingredients = scaled.ingredients;
     if (ingredients.isEmpty) {
       return Center(
         child: Text(
@@ -434,7 +473,7 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
     }
     return ListView.separated(
       padding: EdgeInsets.fromLTRB(
-          20, 20, 20, MediaQuery.of(context).padding.bottom + 80),
+          20, 20, 20, MediaQuery.of(context).padding.bottom + 96),
       itemCount: ingredients.length,
       separatorBuilder: (_, __) => Divider(
         height: 1,
@@ -442,27 +481,47 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
       ),
       itemBuilder: (_, i) {
         final ing = ingredients[i];
+        final showNote = ing.note != null && ing.quantity != null;
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 8),
           child: Row(
             children: [
-              Icon(Icons.circle,
-                  size: 8, color: Theme.of(context).colorScheme.primary),
+              Icon(
+                ing.productId != null ? Icons.circle : Icons.circle_outlined,
+                size: 8,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               const SizedBox(width: 12),
               Expanded(
-                child: Text(
-                  ing.name,
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    color: Theme.of(context).textTheme.bodyLarge?.color,
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      ing.name,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: Theme.of(context).textTheme.bodyLarge?.color,
+                      ),
+                    ),
+                    if (showNote)
+                      Text(
+                        ing.note!,
+                        style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 11,
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        ),
+                      ),
+                  ],
                 ),
               ),
               Text(
-                '${ing.quantity}${ing.unit.isNotEmpty ? ' ${ing.unit}' : ''}',
+                ing.quantityLabel,
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600,
+                  fontStyle:
+                      ing.isOptional ? FontStyle.italic : FontStyle.normal,
                   color: Theme.of(context).textTheme.bodyMedium?.color,
                 ),
               ),
@@ -488,7 +547,7 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
     }
     return ListView.builder(
       padding: EdgeInsets.fromLTRB(
-          20, 20, 20, MediaQuery.of(context).padding.bottom + 80),
+          20, 20, 20, MediaQuery.of(context).padding.bottom + 96),
       itemCount: steps.length,
       itemBuilder: (_, i) => Padding(
         padding: const EdgeInsets.only(bottom: 16),
@@ -546,7 +605,7 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
     }
     return SingleChildScrollView(
       padding: EdgeInsets.fromLTRB(
-          20, 20, 20, MediaQuery.of(context).padding.bottom + 80),
+          20, 20, 20, MediaQuery.of(context).padding.bottom + 96),
       child: Text(
         desc,
         style: TextStyle(
@@ -556,8 +615,4 @@ class _RecipeDetailPageState extends ConsumerState<RecipeDetailPage>
       ),
     );
   }
-}
-
-extension _LetExtension<T> on T {
-  R let<R>(R Function(T) f) => f(this);
 }

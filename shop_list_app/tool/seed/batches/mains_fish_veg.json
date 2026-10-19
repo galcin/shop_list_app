@@ -1,0 +1,1368 @@
+{
+  "category": "Main Courses",
+  "recipes": [
+    {
+      "key": "pan-fried-trout-with-garlic",
+      "name": "Pan-Fried Trout with Garlic",
+      "category": "Main Courses",
+      "description": "Whole trout dusted in flour, fried until crisp and finished with sizzling garlic butter and lemon.",
+      "instructions": [
+        "Rinse the trout, pat dry and season inside and out with salt and pepper.",
+        "Dredge each fish lightly in flour, shaking off the excess.",
+        "Heat the oil in a large pan and fry the trout for 5 to 6 minutes per side until golden and the flesh flakes easily.",
+        "Remove the fish and add the butter and sliced garlic to the pan, swirling until fragrant.",
+        "Pour the garlic butter over the trout, squeeze over lemon juice and scatter with parsley before serving."
+      ],
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 2,
+      "tags": ["romanian", "quick", "high-protein"],
+      "ingredients": [
+        { "product": "Trout", "quantity": 2, "unit": "pcs" },
+        { "product": "Flour", "quantity": 50, "unit": "g" },
+        { "product": "Vegetable Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "romanian-fish-plachie",
+      "name": "Romanian Fish Plachie",
+      "category": "Main Courses",
+      "description": "Carp pieces baked on a bed of slow-cooked onions, tomatoes and garlic with a splash of white wine.",
+      "instructions": [
+        "Cut the carp into thick portions, season with salt and pepper and set aside.",
+        "Slice the onions thinly and cook them gently in oil for 15 minutes until soft and sweet.",
+        "Add the sliced garlic, chopped tomatoes, bay leaves and wine and simmer for 5 minutes.",
+        "Spread half the onion mixture in a baking dish, lay the fish on top and cover with the rest.",
+        "Top with lemon slices and bake at 180 C for 35 minutes until the fish is cooked through.",
+        "Sprinkle with parsley and serve warm or at room temperature."
+      ],
+      "prepTime": 20,
+      "cookTime": 55,
+      "servings": 4,
+      "tags": ["romanian", "baked", "comfort-food"],
+      "ingredients": [
+        { "product": "Carp", "quantity": 1.2, "unit": "kg" },
+        { "product": "Onion", "quantity": 5, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 6, "unit": "clove" },
+        { "product": "Vegetable Oil", "quantity": 5, "unit": "tbsp" },
+        { "product": "White Wine", "quantity": 150, "unit": "ml" },
+        { "product": "Bay Leaf", "quantity": 2, "unit": "pcs" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "carp-saramura",
+      "name": "Carp Saramură",
+      "category": "Main Courses",
+      "description": "Danube Delta classic: grilled carp doused in a hot garlic, chili and tomato brine, served with polenta.",
+      "instructions": [
+        "Cut the carp into thick slices, salt them and grill or pan-sear on high heat for 5 minutes per side.",
+        "Char the tomatoes and chili pepper in a dry pan or under the grill until the skins blister.",
+        "Crush the garlic with a pinch of salt and chop the charred tomatoes and chili.",
+        "Bring the water to a boil with the thyme, garlic, tomatoes, chili and a good amount of salt.",
+        "Arrange the grilled fish in a deep dish and pour the boiling brine over it.",
+        "Let it rest 5 minutes, scatter with parsley and serve with hot polenta."
+      ],
+      "prepTime": 15,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["romanian", "spicy", "grilled", "gluten-free"],
+      "ingredients": [
+        { "product": "Carp", "quantity": 1.2, "unit": "kg" },
+        { "product": "Tomatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Chili Pepper", "quantity": 2, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 6, "unit": "clove" },
+        { "product": "Water", "quantity": 500, "unit": "ml" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Vegetable Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Cornmeal", "name": "Cornmeal for polenta", "quantity": 300, "unit": "g" },
+        { "product": "Salt", "quantity": 2, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "baked-carp-with-vegetables",
+      "name": "Baked Carp with Vegetables",
+      "category": "Main Courses",
+      "description": "A whole carp roasted over potatoes, carrots, peppers and tomatoes with white wine and dill.",
+      "instructions": [
+        "Clean the carp, score the skin diagonally and rub with salt, pepper and crushed garlic.",
+        "Cut the potatoes, carrots and peppers into chunks and toss with oil in a large roasting tin.",
+        "Roast the vegetables at 200 C for 20 minutes to give them a head start.",
+        "Lay the fish on the vegetables, tuck in the tomato wedges and onion and pour over the wine.",
+        "Bake for another 35 to 40 minutes, basting once, until the fish flakes at the thickest part.",
+        "Finish with chopped dill and serve from the tin."
+      ],
+      "prepTime": 25,
+      "cookTime": 60,
+      "servings": 4,
+      "tags": ["romanian", "baked", "one-pot"],
+      "ingredients": [
+        { "product": "Carp", "quantity": 1.5, "unit": "kg" },
+        { "product": "Potatoes", "quantity": 6, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 2, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Vegetable Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "White Wine", "quantity": 150, "unit": "ml" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "fish-cakes",
+      "name": "Fish Cakes",
+      "category": "Main Courses",
+      "description": "Golden patties of flaked white fish and mashed potato with spring onion, parsley and lemon.",
+      "instructions": [
+        "Boil the potatoes until tender, drain well and mash roughly.",
+        "Poach the fish fillets in simmering water for 6 minutes, drain and flake.",
+        "Mix the potato, fish, chopped spring onions, parsley, lemon zest, one egg, salt and pepper.",
+        "Shape into 8 patties, coat in breadcrumbs and chill for 15 minutes to firm up.",
+        "Fry in hot oil for 3 to 4 minutes per side until crisp and golden.",
+        "Serve with lemon wedges and a spoon of mayonnaise."
+      ],
+      "prepTime": 30,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["kid-friendly", "budget", "comfort-food"],
+      "ingredients": [
+        { "product": "Fish Fillets", "quantity": 500, "unit": "g" },
+        { "product": "Potatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Breadcrumbs", "quantity": 100, "unit": "g" },
+        { "product": "Vegetable Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Mayonnaise", "quantity": 3, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "oven-baked-fish-and-chips",
+      "name": "Oven-Baked Fish and Chips",
+      "category": "Main Courses",
+      "description": "Crunchy paprika-breadcrumb cod and crisp oven chips, no deep fryer needed.",
+      "instructions": [
+        "Cut the potatoes into thick chips, toss with half the oil and salt and spread on a tray.",
+        "Bake at 220 C for 20 minutes, then turn the chips over.",
+        "Set up three bowls: flour seasoned with salt and pepper, beaten eggs, and breadcrumbs mixed with paprika.",
+        "Coat each cod portion in flour, then egg, then breadcrumbs and place on a second oiled tray.",
+        "Bake the fish with the chips for 15 minutes until the coating is golden and the fish flakes.",
+        "Serve with lemon wedges and a dollop of mayonnaise."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["kid-friendly", "baked", "american"],
+      "ingredients": [
+        { "product": "Cod Fillets", "quantity": 700, "unit": "g" },
+        { "product": "Potatoes", "quantity": 8, "unit": "pcs" },
+        { "product": "Flour", "quantity": 60, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Breadcrumbs", "quantity": 120, "unit": "g" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Vegetable Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Mayonnaise", "quantity": 4, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "lemon-butter-cod",
+      "name": "Lemon Butter Cod",
+      "category": "Main Courses",
+      "description": "Flaky cod fillets pan-seared and bathed in a bright garlic, lemon and parsley butter sauce.",
+      "instructions": [
+        "Pat the cod dry and season both sides with salt and pepper.",
+        "Heat the olive oil in a non-stick pan and sear the cod for 3 to 4 minutes per side until opaque.",
+        "Transfer the fish to a warm plate.",
+        "Lower the heat, add the butter and minced garlic and cook for 1 minute without browning.",
+        "Stir in the lemon juice and zest and the chopped parsley.",
+        "Spoon the sauce over the cod and serve with steamed green beans."
+      ],
+      "prepTime": 10,
+      "cookTime": 12,
+      "servings": 4,
+      "tags": ["quick", "low-carb", "high-protein", "gluten-free"],
+      "ingredients": [
+        { "product": "Cod Fillets", "quantity": 700, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Green Beans", "quantity": 400, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mackerel-with-mustard",
+      "name": "Mackerel with Mustard",
+      "category": "Main Courses",
+      "description": "Oily, rich mackerel fillets grilled under a tangy mustard-dill crust with boiled potatoes.",
+      "instructions": [
+        "Boil the potatoes in salted water until tender, about 20 minutes.",
+        "Mix the mustard with olive oil, crushed garlic, lemon juice, chopped dill and pepper.",
+        "Score the mackerel skin and lay the fish skin side down on a lined tray.",
+        "Spread the mustard mixture thickly over the flesh.",
+        "Grill or bake at 220 C for 10 to 12 minutes until the crust is bubbling and the fish is cooked.",
+        "Serve with the potatoes and extra lemon."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 2,
+      "tags": ["quick", "healthy", "high-protein", "gluten-free"],
+      "ingredients": [
+        { "product": "Mackerel", "quantity": 2, "unit": "pcs" },
+        { "product": "Mustard", "quantity": 3, "unit": "tbsp" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Potatoes", "quantity": 5, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "sea-bass-baked-in-salt-crust",
+      "name": "Sea Bass Baked in Salt Crust",
+      "category": "Main Courses",
+      "description": "Whole sea bass sealed in a herbed salt crust so it steams in its own juices, moist and delicate.",
+      "instructions": [
+        "Heat the oven to 200 C and stuff the cleaned sea bass cavity with lemon slices, thyme and rosemary.",
+        "Mix the coarse salt with the lightly beaten egg whites until it feels like wet sand.",
+        "Spread a layer of the salt mixture on a baking tray and lay the fish on top.",
+        "Cover the fish completely with the remaining salt, pressing it firmly into a sealed crust.",
+        "Bake for 30 minutes, then rest 5 minutes and crack the crust open with the back of a spoon.",
+        "Lift off the skin, drizzle the fillets with olive oil and serve with lemon."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 2,
+      "tags": ["mediterranean", "baked", "low-carb", "holiday"],
+      "ingredients": [
+        { "product": "Sea Bass", "quantity": 1, "unit": "pcs", "note": "about 1 kg" },
+        { "product": "Salt", "name": "Coarse Salt", "quantity": 1.5, "unit": "kg" },
+        { "product": "Eggs", "name": "Egg Whites", "quantity": 2, "unit": "pcs" },
+        { "product": "Lemon", "quantity": 2, "unit": "pcs" },
+        { "product": "Fresh Thyme", "quantity": 4, "unit": "sprig" },
+        { "product": "Fresh Rosemary", "quantity": 2, "unit": "sprig" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "mediterranean-sea-bream",
+      "name": "Mediterranean Sea Bream",
+      "category": "Main Courses",
+      "description": "Whole sea bream roasted with cherry tomatoes, olives, garlic, oregano and a splash of white wine.",
+      "instructions": [
+        "Score the sea bream on both sides and season generously with salt and pepper.",
+        "Place the fish in a baking dish and scatter around the halved cherry tomatoes, olives and sliced garlic.",
+        "Tuck lemon slices into the cavities and sprinkle everything with oregano.",
+        "Drizzle with olive oil, pour in the wine and roast at 200 C for 25 minutes.",
+        "Spoon the pan juices over the fish and finish with chopped parsley."
+      ],
+      "prepTime": 15,
+      "cookTime": 25,
+      "servings": 2,
+      "tags": ["mediterranean", "baked", "healthy", "summer"],
+      "ingredients": [
+        { "product": "Sea Bream", "quantity": 2, "unit": "pcs" },
+        { "product": "Cherry Tomatoes", "quantity": 250, "unit": "g" },
+        { "product": "Olives", "quantity": 80, "unit": "g" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "White Wine", "quantity": 100, "unit": "ml" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "garlic-shrimp-gambas",
+      "name": "Garlic Shrimp (Gambas al Ajillo)",
+      "category": "Main Courses",
+      "description": "Spanish tapas-style shrimp sizzled in olive oil with lots of garlic and chili, mopped up with bread.",
+      "instructions": [
+        "Peel and devein the shrimp and pat them dry.",
+        "Warm the olive oil in a wide pan over medium heat with the sliced garlic and chili flakes.",
+        "When the garlic turns pale gold, raise the heat and add the shrimp in a single layer.",
+        "Cook for 2 minutes per side until pink and just curled, then season with salt.",
+        "Squeeze over lemon juice, scatter with parsley and serve straight from the pan with sliced baguette."
+      ],
+      "prepTime": 15,
+      "cookTime": 8,
+      "servings": 4,
+      "tags": ["mediterranean", "quick", "spicy", "high-protein"],
+      "ingredients": [
+        { "product": "Shrimp", "quantity": 600, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 100, "unit": "ml" },
+        { "product": "Garlic", "quantity": 8, "unit": "clove" },
+        { "product": "Chili Flakes", "quantity": 1, "unit": "tsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Baguette", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mussels-in-white-wine",
+      "name": "Mussels in White Wine",
+      "category": "Main Courses",
+      "description": "A big pot of mussels steamed open in white wine, shallots and garlic with a touch of cream.",
+      "instructions": [
+        "Scrub the mussels, pull off the beards and discard any that stay open when tapped.",
+        "Melt the butter in a large lidded pot and soften the chopped shallots and garlic for 3 minutes.",
+        "Pour in the wine, bring to a boil and tip in the mussels.",
+        "Cover and steam for 4 to 5 minutes, shaking the pot, until the shells open.",
+        "Stir in the cream, parsley and black pepper and discard any mussels still closed.",
+        "Serve in deep bowls with baguette for the broth."
+      ],
+      "prepTime": 20,
+      "cookTime": 12,
+      "servings": 2,
+      "tags": ["french", "quick", "one-pot"],
+      "ingredients": [
+        { "product": "Mussels", "quantity": 1.5, "unit": "kg" },
+        { "product": "White Wine", "quantity": 250, "unit": "ml" },
+        { "product": "Shallots", "quantity": 2, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Cooking Cream", "quantity": 100, "unit": "ml" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Baguette", "quantity": 1, "unit": "pcs" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "crispy-calamari-rings",
+      "name": "Crispy Calamari Rings",
+      "category": "Main Courses",
+      "description": "Light, crunchy squid rings in a paprika flour coating with a quick garlic mayo and lemon.",
+      "instructions": [
+        "Slice the squid tubes into 1 cm rings and pat them very dry.",
+        "Mix the flour, cornstarch, paprika, salt and pepper in a bowl.",
+        "Stir the crushed garlic into the mayonnaise with a squeeze of lemon for the dip.",
+        "Heat 3 cm of oil in a deep pan to 180 C.",
+        "Toss the rings in the flour mixture and fry in batches for 2 minutes until golden; do not overcrowd.",
+        "Drain on paper, salt lightly and serve hot with lemon wedges and the garlic mayo."
+      ],
+      "prepTime": 15,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["mediterranean", "quick", "summer"],
+      "ingredients": [
+        { "product": "Squid", "quantity": 700, "unit": "g" },
+        { "product": "Flour", "quantity": 120, "unit": "g" },
+        { "product": "Cornstarch", "quantity": 3, "unit": "tbsp" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Vegetable Oil", "quantity": 500, "unit": "ml", "note": "for frying" },
+        { "product": "Mayonnaise", "quantity": 5, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "sesame-crusted-tuna-steak",
+      "name": "Sesame-Crusted Tuna Steak",
+      "category": "Main Courses",
+      "description": "Seared tuna with a crunchy sesame crust, pink in the middle, over dressed salad greens.",
+      "instructions": [
+        "Brush the tuna steaks with soy sauce and let them sit for 10 minutes.",
+        "Press both sides of each steak firmly into the sesame seeds.",
+        "Heat the vegetable oil in a heavy pan until very hot.",
+        "Sear the tuna for 1 to 2 minutes per side so the crust browns and the centre stays pink.",
+        "Whisk the lime juice, sesame oil, grated ginger and pepper into a dressing and toss with the greens.",
+        "Slice the tuna thickly and serve on the salad."
+      ],
+      "prepTime": 15,
+      "cookTime": 5,
+      "servings": 2,
+      "tags": ["quick", "high-protein", "low-carb", "healthy"],
+      "ingredients": [
+        { "product": "Tuna Steak", "quantity": 2, "unit": "pcs" },
+        { "product": "Sesame Seeds", "quantity": 5, "unit": "tbsp" },
+        { "product": "Soy Sauce", "quantity": 2, "unit": "tbsp" },
+        { "product": "Vegetable Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Sesame Oil", "quantity": 1, "unit": "tsp" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs" },
+        { "product": "Ginger", "quantity": 10, "unit": "g" },
+        { "product": "Mixed Salad Greens", "quantity": 120, "unit": "g" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salmon-with-dill-sauce",
+      "name": "Salmon with Dill Sauce",
+      "category": "Main Courses",
+      "description": "Roasted salmon fillets with a cool, creamy sour cream and dill sauce and buttery new potatoes.",
+      "instructions": [
+        "Boil the potatoes in salted water until tender, then drain.",
+        "Rub the salmon with olive oil, salt and pepper and place skin side down on a lined tray.",
+        "Roast at 200 C for 12 to 14 minutes until just opaque in the centre.",
+        "Stir together the sour cream, yogurt, chopped dill, mustard, lemon zest and juice; season.",
+        "Serve the salmon with the potatoes and a generous spoonful of dill sauce."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["quick", "healthy", "high-protein", "gluten-free"],
+      "ingredients": [
+        { "product": "Salmon Fillets", "quantity": 4, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g" },
+        { "product": "Yogurt", "quantity": 100, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Potatoes", "name": "New Potatoes", "quantity": 800, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "salmon-patties",
+      "name": "Salmon Patties",
+      "category": "Main Courses",
+      "description": "Tender pan-fried salmon burgers bound with egg and breadcrumbs, brightened with red onion and dill.",
+      "instructions": [
+        "Remove the skin from the salmon and chop the flesh finely with a sharp knife.",
+        "Mix the salmon with the finely diced red onion, dill, egg, breadcrumbs, lemon zest, salt and pepper.",
+        "Form into 8 patties and chill for 20 minutes so they hold together.",
+        "Fry in hot oil for 3 to 4 minutes per side until golden and cooked through.",
+        "Stir lemon juice into the mayonnaise and serve alongside the patties."
+      ],
+      "prepTime": 25,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["high-protein", "kid-friendly", "quick"],
+      "ingredients": [
+        { "product": "Salmon Fillets", "quantity": 4, "unit": "pcs" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Breadcrumbs", "quantity": 80, "unit": "g" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Mayonnaise", "quantity": 4, "unit": "tbsp" },
+        { "product": "Vegetable Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "baked-trout-with-potatoes",
+      "name": "Baked Trout with Potatoes",
+      "category": "Main Courses",
+      "description": "Whole trout stuffed with lemon and rosemary, baked over crisp garlic potatoes in one tray.",
+      "instructions": [
+        "Slice the potatoes 1 cm thick, toss with olive oil, half the garlic, salt and pepper and spread on a tray.",
+        "Roast at 200 C for 25 minutes until the edges start to brown.",
+        "Fill each trout cavity with lemon slices, a rosemary sprig and the remaining sliced garlic.",
+        "Lay the trout on the potatoes, dot with butter and bake for 20 more minutes.",
+        "Rest for 3 minutes and serve with the pan juices spooned over."
+      ],
+      "prepTime": 15,
+      "cookTime": 45,
+      "servings": 2,
+      "tags": ["baked", "one-pot", "healthy"],
+      "ingredients": [
+        { "product": "Trout", "quantity": 2, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 6, "unit": "pcs" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Fresh Rosemary", "quantity": 2, "unit": "sprig" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "romanian-fish-stew-ghiveci",
+      "name": "Romanian Fish Stew (Ghiveci de Pește)",
+      "category": "Main Courses",
+      "description": "Chunks of white fish simmered with potatoes, peppers, zucchini and carrots in a tomato sauce.",
+      "instructions": [
+        "Soften the chopped onion and diced carrots in oil for 5 minutes.",
+        "Add the diced peppers, potatoes and garlic and cook for 3 minutes more.",
+        "Pour in the crushed tomatoes and 300 ml water, add the bay leaves and season; simmer for 15 minutes.",
+        "Add the zucchini chunks and cook 5 minutes until the potatoes are nearly tender.",
+        "Lay the fish pieces on top, cover and simmer gently for 10 minutes without stirring.",
+        "Scatter with parsley and serve with bread."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 4,
+      "tags": ["romanian", "one-pot", "healthy", "comfort-food"],
+      "ingredients": [
+        { "product": "Fish Fillets", "quantity": 700, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 2, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Zucchini", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Vegetable Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Bay Leaf", "quantity": 2, "unit": "pcs" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "smoked-mackerel-potato-bake",
+      "name": "Smoked Mackerel Potato Bake",
+      "category": "Main Courses",
+      "description": "Layers of sliced potato, leek and flaked smoked mackerel baked in mustardy cream under melted cheese.",
+      "instructions": [
+        "Slice the potatoes thinly and parboil for 5 minutes, then drain.",
+        "Soften the sliced leek in butter for 5 minutes.",
+        "Flake the smoked mackerel, discarding skin and bones.",
+        "Whisk the cream, milk, mustard and pepper together.",
+        "Layer potatoes, leek and mackerel in a buttered dish, pouring cream between layers and finishing with potato.",
+        "Top with grated cheese and bake at 190 C for 35 minutes until golden; scatter with chives."
+      ],
+      "prepTime": 20,
+      "cookTime": 45,
+      "servings": 4,
+      "tags": ["comfort-food", "baked", "winter", "budget"],
+      "ingredients": [
+        { "product": "Mackerel", "name": "Smoked Mackerel", "quantity": 2, "unit": "pcs", "note": "fillets" },
+        { "product": "Potatoes", "quantity": 7, "unit": "pcs" },
+        { "product": "Leek", "quantity": 1, "unit": "pcs" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Cooking Cream", "quantity": 250, "unit": "ml" },
+        { "product": "Milk", "quantity": 150, "unit": "ml" },
+        { "product": "Mustard", "quantity": 2, "unit": "tsp" },
+        { "product": "Cheese", "quantity": 120, "unit": "g" },
+        { "product": "Fresh Chives", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "crispy-breaded-fish-fillets",
+      "name": "Crispy Breaded Fish Fillets",
+      "category": "Main Courses",
+      "description": "Classic pane: white fish fillets in a seasoned breadcrumb crust, shallow-fried until golden.",
+      "instructions": [
+        "Pat the fillets dry and season with salt, pepper and garlic powder.",
+        "Dredge in flour, dip in beaten egg, then press into breadcrumbs to coat evenly.",
+        "Heat 1 cm of oil in a frying pan over medium-high heat.",
+        "Fry the fillets for 3 to 4 minutes per side until deep golden and crisp.",
+        "Drain on paper towels, sprinkle with parsley and serve with lemon wedges."
+      ],
+      "prepTime": 15,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["kid-friendly", "quick", "budget"],
+      "ingredients": [
+        { "product": "Fish Fillets", "quantity": 700, "unit": "g" },
+        { "product": "Flour", "quantity": 80, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Breadcrumbs", "quantity": 150, "unit": "g" },
+        { "product": "Garlic Powder", "quantity": 1, "unit": "tsp" },
+        { "product": "Vegetable Oil", "quantity": 150, "unit": "ml" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "romanian-potato-stew",
+      "name": "Romanian Potato Stew (Mâncare de Cartofi)",
+      "category": "Main Courses",
+      "description": "Humble, deeply savoury potatoes stewed with onion, pepper, paprika and tomato paste.",
+      "instructions": [
+        "Soften the chopped onion, diced carrot and pepper in oil over medium heat for 8 minutes.",
+        "Stir in the paprika and tomato paste and cook for 1 minute.",
+        "Add the potato chunks, bay leaf, thyme and enough water to just cover.",
+        "Simmer gently for 25 minutes until the potatoes are tender and the sauce has thickened.",
+        "Stir in the crushed garlic, season with salt and finish with chopped parsley."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "budget", "one-pot"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 8, "unit": "pcs" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomato Paste", "quantity": 2, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Vegetable Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Bay Leaf", "quantity": 1, "unit": "pcs" },
+        { "product": "Dried Thyme", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "romanian-bean-stew-iahnie",
+      "name": "Romanian Bean Stew (Iahnie de Fasole)",
+      "category": "Main Courses",
+      "description": "Creamy white beans slow-cooked with root vegetables, paprika and tomato, finished with dill.",
+      "instructions": [
+        "Soak the beans overnight, then drain and boil in fresh water for 10 minutes; drain again.",
+        "Return the beans to the pot with the diced carrot and celery root, cover with water and simmer 60 minutes.",
+        "Meanwhile soften the finely chopped onions in oil until golden, then stir in the paprika and tomato paste.",
+        "Add the onion mixture, bay leaf and thyme to the beans and cook 15 minutes more until thick and creamy.",
+        "Stir in the crushed garlic, season with salt and pepper and scatter with dill before serving."
+      ],
+      "prepTime": 15,
+      "cookTime": 90,
+      "servings": 6,
+      "tags": ["romanian", "vegan", "budget", "winter"],
+      "ingredients": [
+        { "product": "Dried Beans", "quantity": 500, "unit": "g" },
+        { "product": "Onion", "quantity": 3, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Celery Root", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Tomato Paste", "quantity": 3, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Vegetable Oil", "quantity": 5, "unit": "tbsp" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Bay Leaf", "quantity": 2, "unit": "pcs" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "romanian-pea-stew",
+      "name": "Romanian Pea Stew (Mâncare de Mazăre)",
+      "category": "Main Courses",
+      "description": "Sweet green peas in a light tomato and dill sauce, the everyday Romanian weeknight favourite.",
+      "instructions": [
+        "Soften the finely chopped onion and grated carrot in oil for 6 minutes.",
+        "Sprinkle over the flour and stir for 1 minute, then add the tomato paste.",
+        "Add the peas, a pinch of sugar and 400 ml water; season with salt and pepper.",
+        "Simmer uncovered for 15 minutes until the sauce coats the peas.",
+        "Stir in the crushed garlic and chopped dill and rest 5 minutes before serving."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "quick", "budget"],
+      "ingredients": [
+        { "product": "Frozen Peas", "quantity": 800, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomato Paste", "quantity": 2, "unit": "tbsp" },
+        { "product": "Flour", "quantity": 1, "unit": "tbsp" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Vegetable Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Sugar", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "romanian-vegetable-ghiveci",
+      "name": "Romanian Vegetable Ghiveci",
+      "category": "Main Courses",
+      "description": "A summer harvest baked together: eggplant, zucchini, peppers, beans, potatoes and tomatoes.",
+      "instructions": [
+        "Cut all the vegetables into bite-sized chunks and trim the green beans.",
+        "Soften the onion in oil in a large oven-proof pot, then add the carrots and potatoes for 5 minutes.",
+        "Add the eggplant, zucchini, peppers, green beans, garlic and chopped tomatoes and season well.",
+        "Stir, cover and bake at 180 C for 45 minutes, stirring once halfway.",
+        "Uncover for the last 10 minutes to thicken, then finish with parsley."
+      ],
+      "prepTime": 25,
+      "cookTime": 60,
+      "servings": 6,
+      "tags": ["romanian", "vegan", "summer", "baked"],
+      "ingredients": [
+        { "product": "Eggplant", "quantity": 1, "unit": "pcs" },
+        { "product": "Zucchini", "quantity": 2, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 2, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Green Beans", "quantity": 200, "unit": "g" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Vegetable Oil", "quantity": 5, "unit": "tbsp" },
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mushroom-tocanita-with-polenta",
+      "name": "Mushroom Tocăniță with Polenta",
+      "category": "Main Courses",
+      "description": "Juicy mushrooms stewed with onion, paprika, white wine and dill, served over soft polenta.",
+      "instructions": [
+        "Sauté the chopped onion in oil until golden, about 8 minutes.",
+        "Add the quartered mushrooms and cook on high heat until their liquid evaporates.",
+        "Stir in the paprika, tomato paste and garlic, then pour in the wine and let it bubble.",
+        "Add 150 ml water, season and simmer for 15 minutes until saucy.",
+        "Meanwhile whisk the cornmeal into 1.2 litres of salted boiling water and cook, stirring, for 20 minutes.",
+        "Serve the mushrooms over the polenta with plenty of dill."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "gluten-free", "comfort-food"],
+      "ingredients": [
+        { "product": "Mushrooms", "quantity": 800, "unit": "g" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Tomato Paste", "quantity": 1, "unit": "tbsp" },
+        { "product": "White Wine", "quantity": 100, "unit": "ml" },
+        { "product": "Vegetable Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Cornmeal", "quantity": 300, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "vegan-stuffed-peppers-rice",
+      "name": "Rice and Vegetable Stuffed Peppers",
+      "category": "Main Courses",
+      "description": "Romanian fasting-style peppers filled with rice, mushrooms and carrots, simmered in tomato sauce.",
+      "instructions": [
+        "Cut the tops off the peppers and scoop out the seeds.",
+        "Soften the chopped onion and grated carrot in oil, then add the chopped mushrooms and cook 5 minutes.",
+        "Stir in the rinsed rice, thyme, half the dill and parsley, salt and pepper and cook 2 minutes.",
+        "Fill the peppers three-quarters full and stand them upright in a deep pot.",
+        "Pour the tomato sauce and 300 ml water around them, cover and simmer for 45 minutes.",
+        "Rest 10 minutes and scatter with the remaining herbs."
+      ],
+      "prepTime": 25,
+      "cookTime": 50,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "gluten-free", "comfort-food"],
+      "ingredients": [
+        { "product": "Bell Peppers", "quantity": 8, "unit": "pcs" },
+        { "product": "Rice", "quantity": 200, "unit": "g" },
+        { "product": "Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Mushrooms", "quantity": 250, "unit": "g" },
+        { "product": "Tomato Sauce", "quantity": 500, "unit": "ml" },
+        { "product": "Vegetable Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Dried Thyme", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "stuffed-zucchini-dovlecei-umpluti",
+      "name": "Stuffed Zucchini (Dovlecei Umpluți)",
+      "category": "Main Courses",
+      "description": "Hollowed zucchini halves filled with herbed rice and vegetables, baked and served with sour cream.",
+      "instructions": [
+        "Halve the zucchini lengthwise and scoop out the centres, leaving a 1 cm shell; chop the flesh.",
+        "Soften the onion and grated carrot in oil, add the zucchini flesh and cook 5 minutes.",
+        "Stir in the rinsed rice, chopped tomatoes, dill, salt and pepper and cook 3 minutes, then cool slightly.",
+        "Mix in the beaten egg and fill the zucchini shells.",
+        "Arrange in a baking dish, add 150 ml water to the dish, cover with foil and bake at 180 C for 40 minutes.",
+        "Uncover for 10 minutes to colour and serve with sour cream."
+      ],
+      "prepTime": 25,
+      "cookTime": 55,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "baked", "summer"],
+      "ingredients": [
+        { "product": "Zucchini", "quantity": 4, "unit": "pcs" },
+        { "product": "Rice", "quantity": 120, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 1, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Vegetable Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "baked-eggplant-with-tomatoes",
+      "name": "Baked Eggplant with Tomatoes",
+      "category": "Main Courses",
+      "description": "Roasted eggplant slices layered with tomatoes, garlic and thyme and crumbled with salty telemea.",
+      "instructions": [
+        "Slice the eggplants 1 cm thick, salt them and leave for 20 minutes, then pat dry.",
+        "Brush the slices with olive oil and roast at 220 C for 20 minutes until golden.",
+        "Soften the sliced onion and garlic in the remaining oil, add the chopped tomatoes and thyme and simmer 10 minutes.",
+        "Layer the eggplant and tomato sauce in a baking dish, finishing with sauce.",
+        "Crumble the telemea on top and bake at 190 C for 20 minutes.",
+        "Scatter with parsley and serve warm with bread."
+      ],
+      "prepTime": 30,
+      "cookTime": 50,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "baked", "summer"],
+      "ingredients": [
+        { "product": "Eggplant", "quantity": 3, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 6, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 4, "unit": "clove" },
+        { "product": "Olive Oil", "quantity": 6, "unit": "tbsp" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Telemea Cheese", "quantity": 200, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "mamaliga-with-cheese-and-sour-cream",
+      "name": "Mămăligă with Cheese and Sour Cream",
+      "category": "Main Courses",
+      "description": "Golden Romanian polenta topped with crumbled telemea, cold sour cream, butter and a fried egg.",
+      "instructions": [
+        "Bring the water to a boil in a heavy pot with the salt.",
+        "Rain in the cornmeal while whisking constantly to avoid lumps.",
+        "Lower the heat and cook, stirring often with a wooden spoon, for 25 to 30 minutes until thick and pulling from the sides.",
+        "Fry the eggs in a little butter until the whites are set.",
+        "Turn the polenta out onto a board, slice with a string or knife and top each portion with telemea, sour cream, a knob of butter and a fried egg."
+      ],
+      "prepTime": 5,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "gluten-free", "comfort-food"],
+      "ingredients": [
+        { "product": "Cornmeal", "quantity": 400, "unit": "g" },
+        { "product": "Water", "quantity": 1.6, "unit": "l" },
+        { "product": "Salt", "quantity": 1.5, "unit": "tsp" },
+        { "product": "Telemea Cheese", "quantity": 300, "unit": "g" },
+        { "product": "Sour Cream", "quantity": 250, "unit": "g" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" }
+      ]
+    },
+    {
+      "key": "romanian-vegetable-patties",
+      "name": "Vegetable Patties (Chiftele de Legume)",
+      "category": "Main Courses",
+      "description": "Crisp fasting-day patties of grated potato, carrot and mushroom with garlic and fresh herbs.",
+      "instructions": [
+        "Grate the potatoes and carrots coarsely and squeeze out as much liquid as possible.",
+        "Finely chop the mushrooms and onion and sauté in 1 tbsp oil until dry, then cool.",
+        "Combine all vegetables with the crushed garlic, breadcrumbs, flour, chopped parsley and dill, salt and pepper.",
+        "Shape into small flat patties with wet hands.",
+        "Fry in hot oil for 4 minutes per side until deep golden and crisp.",
+        "Drain on paper and serve with a tomato sauce or garlic sauce."
+      ],
+      "prepTime": 25,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["romanian", "vegan", "budget"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Mushrooms", "quantity": 250, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Breadcrumbs", "quantity": 80, "unit": "g" },
+        { "product": "Flour", "quantity": 60, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Vegetable Oil", "quantity": 150, "unit": "ml" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "vegan-sarmale-de-post",
+      "name": "Vegan Sarmale (Sarmale de Post)",
+      "category": "Main Courses",
+      "description": "Pickled cabbage rolls filled with rice, mushrooms, carrot and onion, slow-baked in tomato sauce.",
+      "instructions": [
+        "Rinse the pickled cabbage leaves, trim the thick ribs and set a few torn leaves aside.",
+        "Soften the finely chopped onions and grated carrots in oil, add the chopped mushrooms and cook until dry.",
+        "Stir in the rinsed rice, thyme, dill, pepper and a little salt and cook for 2 minutes.",
+        "Place a spoonful of filling on each leaf, fold in the sides and roll up tightly.",
+        "Line a pot with torn leaves, pack the rolls in tightly, add the bay leaves and pour over tomato sauce and water to cover.",
+        "Cover and bake at 170 C for 2 hours; serve with polenta."
+      ],
+      "prepTime": 45,
+      "cookTime": 120,
+      "servings": 6,
+      "tags": ["romanian", "vegan", "holiday", "winter"],
+      "ingredients": [
+        { "product": "Sauerkraut", "name": "Pickled Cabbage Leaves", "quantity": 1.5, "unit": "kg", "note": "whole leaves" },
+        { "product": "Rice", "quantity": 300, "unit": "g" },
+        { "product": "Onion", "quantity": 4, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Mushrooms", "quantity": 400, "unit": "g" },
+        { "product": "Tomato Sauce", "quantity": 500, "unit": "ml" },
+        { "product": "Vegetable Oil", "quantity": 6, "unit": "tbsp" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Dried Dill", "quantity": 1, "unit": "tsp" },
+        { "product": "Bay Leaf", "quantity": 3, "unit": "pcs" },
+        { "product": "Black Pepper", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "ratatouille",
+      "name": "Ratatouille",
+      "category": "Main Courses",
+      "description": "Provencal stew of eggplant, zucchini, peppers and tomatoes, each cooked separately then married with basil.",
+      "instructions": [
+        "Dice the eggplant, zucchini and peppers into 2 cm pieces and chop the tomatoes.",
+        "In a wide pan, fry the eggplant in 2 tbsp olive oil until golden, then remove.",
+        "Repeat with the zucchini, then the peppers, adding oil as needed, and set aside.",
+        "Soften the onion and garlic in the pan, add the tomatoes and thyme and simmer 10 minutes.",
+        "Return all vegetables, season and simmer gently for 20 minutes until tender but holding shape.",
+        "Tear in the basil and serve warm with crusty bread."
+      ],
+      "prepTime": 25,
+      "cookTime": 50,
+      "servings": 4,
+      "tags": ["french", "vegan", "summer", "healthy"],
+      "ingredients": [
+        { "product": "Eggplant", "quantity": 1, "unit": "pcs" },
+        { "product": "Zucchini", "quantity": 2, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 2, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 5, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Olive Oil", "quantity": 6, "unit": "tbsp" },
+        { "product": "Fresh Thyme", "quantity": 3, "unit": "sprig" },
+        { "product": "Fresh Basil", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "eggplant-parmigiana",
+      "name": "Eggplant Parmigiana",
+      "category": "Main Courses",
+      "description": "Fried eggplant layered with tomato sauce, mozzarella, parmesan and basil, baked until bubbling.",
+      "instructions": [
+        "Slice the eggplants lengthwise 1 cm thick, salt and drain for 30 minutes, then pat dry.",
+        "Dust the slices in flour, dip in beaten egg and fry in olive oil until golden on both sides.",
+        "Warm the tomato sauce with the sliced garlic and half the basil for 5 minutes.",
+        "In a baking dish, layer sauce, eggplant, torn mozzarella and grated parmesan; repeat, ending with cheese.",
+        "Bake at 190 C for 35 minutes until golden and bubbling.",
+        "Rest 10 minutes and top with the remaining basil."
+      ],
+      "prepTime": 45,
+      "cookTime": 55,
+      "servings": 6,
+      "tags": ["italian", "vegetarian", "baked", "comfort-food"],
+      "ingredients": [
+        { "product": "Eggplant", "quantity": 3, "unit": "pcs" },
+        { "product": "Flour", "quantity": 80, "unit": "g" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 150, "unit": "ml" },
+        { "product": "Tomato Sauce", "quantity": 700, "unit": "ml" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Fresh Mozzarella", "quantity": 400, "unit": "g" },
+        { "product": "Parmesan", "quantity": 100, "unit": "g" },
+        { "product": "Fresh Basil", "quantity": 1, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "vegetable-moussaka",
+      "name": "Vegetable Moussaka",
+      "category": "Main Courses",
+      "description": "Greek-style layers of eggplant, potato and cinnamon-spiced lentils under a golden bechamel.",
+      "instructions": [
+        "Simmer the lentils in water for 20 minutes until tender, then drain.",
+        "Slice the eggplant and potatoes 1 cm thick, brush with olive oil and roast at 220 C for 20 minutes.",
+        "Soften the onion in oil, add the lentils, crushed tomatoes, cinnamon, salt and pepper and simmer 15 minutes.",
+        "Make the bechamel: melt the butter, stir in the flour for 1 minute, whisk in the milk and cook until thick; add half the cheese.",
+        "Layer potatoes, lentil sauce and eggplant in a dish, pour over the bechamel and top with the remaining cheese.",
+        "Bake at 180 C for 40 minutes until golden; rest 15 minutes before cutting."
+      ],
+      "prepTime": 40,
+      "cookTime": 80,
+      "servings": 6,
+      "tags": ["mediterranean", "vegetarian", "baked", "comfort-food"],
+      "ingredients": [
+        { "product": "Eggplant", "quantity": 2, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Green Lentils", "quantity": 250, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Cinnamon", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Olive Oil", "quantity": 5, "unit": "tbsp" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Flour", "quantity": 60, "unit": "g" },
+        { "product": "Milk", "quantity": 700, "unit": "ml" },
+        { "product": "Cheese", "quantity": 120, "unit": "g" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "stuffed-portobello-mushrooms",
+      "name": "Stuffed Portobello Mushrooms",
+      "category": "Main Courses",
+      "description": "Meaty portobello caps filled with garlicky spinach and goat cheese under a crisp parmesan crumb.",
+      "instructions": [
+        "Remove the mushroom stems, brush the caps with olive oil and season; roast gill side up at 200 C for 10 minutes.",
+        "Chop the stems and cook them with the garlic in olive oil for 3 minutes.",
+        "Add the spinach and cook until wilted, then squeeze out excess liquid and mix with the goat cheese and thyme.",
+        "Pour off any liquid from the caps and fill them with the spinach mixture.",
+        "Mix the breadcrumbs with parmesan and a drizzle of oil and sprinkle on top.",
+        "Bake for 15 minutes until the topping is golden."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["vegetarian", "low-carb", "baked", "quick"],
+      "ingredients": [
+        { "product": "Brown Mushrooms", "name": "Portobello Mushrooms", "quantity": 8, "unit": "pcs" },
+        { "product": "Spinach", "quantity": 300, "unit": "g" },
+        { "product": "Goat Cheese", "quantity": 200, "unit": "g" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Breadcrumbs", "quantity": 50, "unit": "g" },
+        { "product": "Parmesan", "quantity": 40, "unit": "g" },
+        { "product": "Fresh Thyme", "quantity": 3, "unit": "sprig" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "chickpea-and-spinach-stew",
+      "name": "Chickpea and Spinach Stew",
+      "category": "Main Courses",
+      "description": "Smoky Spanish-style chickpeas simmered with tomatoes, cumin and paprika, finished with wilted spinach.",
+      "instructions": [
+        "Soften the chopped onion in olive oil for 8 minutes, then add the garlic, cumin and smoked paprika for 1 minute.",
+        "Add the crushed tomatoes and drained chickpeas with 200 ml water and simmer for 15 minutes.",
+        "Crush a few chickpeas against the side of the pot to thicken the sauce.",
+        "Stir in the spinach in handfuls until wilted.",
+        "Season with salt, pepper and lemon juice and serve with crusty bread."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 4,
+      "tags": ["vegan", "quick", "one-pot", "healthy"],
+      "ingredients": [
+        { "product": "Canned Chickpeas", "quantity": 2, "unit": "can" },
+        { "product": "Spinach", "quantity": 300, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "lentil-shepherds-pie",
+      "name": "Lentil Shepherd's Pie",
+      "category": "Main Courses",
+      "description": "Rich lentil and vegetable gravy baked under a blanket of creamy mashed potato.",
+      "instructions": [
+        "Boil the potatoes until tender, drain and mash with the butter and milk; season.",
+        "Soften the onion, carrots and celery in oil for 10 minutes, then add the garlic and tomato paste.",
+        "Add the lentils, broth and thyme and simmer for 25 minutes until the lentils are soft and the sauce thick.",
+        "Season well and spoon into a baking dish.",
+        "Spread the mash over the top and rough up the surface with a fork.",
+        "Bake at 200 C for 25 minutes until the top is golden and crisp."
+      ],
+      "prepTime": 25,
+      "cookTime": 60,
+      "servings": 6,
+      "tags": ["vegetarian", "comfort-food", "baked", "winter"],
+      "ingredients": [
+        { "product": "Green Lentils", "quantity": 300, "unit": "g" },
+        { "product": "Potatoes", "quantity": 8, "unit": "pcs" },
+        { "product": "Carrots", "quantity": 2, "unit": "pcs" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Celery", "quantity": 2, "unit": "stalk" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Tomato Paste", "quantity": 2, "unit": "tbsp" },
+        { "product": "Vegetable Broth", "quantity": 700, "unit": "ml" },
+        { "product": "Dried Thyme", "quantity": 1, "unit": "tsp" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Milk", "quantity": 100, "unit": "ml" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "cauliflower-steaks-with-chimichurri",
+      "name": "Cauliflower Steaks with Chimichurri",
+      "category": "Main Courses",
+      "description": "Thick roasted cauliflower slabs with crispy chickpeas and a punchy herb and garlic chimichurri.",
+      "instructions": [
+        "Cut the cauliflower through the core into 4 thick steaks, keeping the loose florets.",
+        "Brush with olive oil, season with smoked paprika, salt and pepper and lay on a tray with the drained chickpeas.",
+        "Roast at 220 C for 25 to 30 minutes, turning once, until charred at the edges.",
+        "Finely chop the parsley, coriander and garlic and mix with vinegar, chili flakes, olive oil and salt.",
+        "Spoon the chimichurri generously over the steaks and chickpeas."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["vegan", "gluten-free", "healthy", "baked"],
+      "ingredients": [
+        { "product": "Cauliflower", "quantity": 2, "unit": "head" },
+        { "product": "Canned Chickpeas", "quantity": 1, "unit": "can" },
+        { "product": "Olive Oil", "quantity": 8, "unit": "tbsp" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Red Wine Vinegar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Chili Flakes", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "black-bean-veggie-burgers",
+      "name": "Black Bean Veggie Burgers",
+      "category": "Main Courses",
+      "description": "Hearty, smoky bean patties that hold together, served in buns with lettuce, tomato and mayo.",
+      "instructions": [
+        "Drain and rinse the beans, pat dry and mash roughly, leaving some texture.",
+        "Mix in the oats, breadcrumbs, egg, finely chopped red onion, garlic, cumin, smoked paprika, salt and pepper.",
+        "Shape into 4 thick patties and chill for 20 minutes.",
+        "Fry in a little oil over medium heat for 4 to 5 minutes per side until crisp and heated through.",
+        "Toast the buns and build the burgers with lettuce, tomato slices and mayonnaise."
+      ],
+      "prepTime": 25,
+      "cookTime": 12,
+      "servings": 4,
+      "tags": ["vegetarian", "american", "kid-friendly", "budget"],
+      "ingredients": [
+        { "product": "Canned Beans", "name": "Black Beans", "quantity": 2, "unit": "can" },
+        { "product": "Rolled Oats", "quantity": 60, "unit": "g" },
+        { "product": "Breadcrumbs", "quantity": 50, "unit": "g" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Burger Buns", "quantity": 4, "unit": "pcs" },
+        { "product": "Lettuce", "quantity": 0.5, "unit": "head" },
+        { "product": "Tomatoes", "quantity": 1, "unit": "pcs" },
+        { "product": "Mayonnaise", "quantity": 4, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "three-bean-chili",
+      "name": "Three-Bean Chili",
+      "category": "Main Courses",
+      "description": "Warming vegan chili loaded with mixed beans, corn and peppers, finished with lime and coriander.",
+      "instructions": [
+        "Soften the chopped onion and peppers in oil for 8 minutes.",
+        "Add the garlic, chili powder and cumin and cook for 1 minute until fragrant.",
+        "Tip in the crushed tomatoes, drained beans and corn and 200 ml water.",
+        "Simmer uncovered for 30 minutes, stirring now and then, until thick.",
+        "Season with salt and lime juice and scatter with chopped coriander.",
+        "Serve with rice or tortilla chips."
+      ],
+      "prepTime": 15,
+      "cookTime": 40,
+      "servings": 6,
+      "tags": ["vegan", "mexican", "spicy", "one-pot"],
+      "ingredients": [
+        { "product": "Canned Beans", "name": "Mixed Beans", "quantity": 3, "unit": "can" },
+        { "product": "Canned Corn", "quantity": 1, "unit": "can" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 2, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Crushed Tomatoes", "quantity": 800, "unit": "g" },
+        { "product": "Chili Powder", "quantity": 2, "unit": "tsp" },
+        { "product": "Cumin", "quantity": 2, "unit": "tsp" },
+        { "product": "Vegetable Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "greek-zucchini-fritters-with-feta",
+      "name": "Greek Zucchini Fritters with Feta",
+      "category": "Main Courses",
+      "description": "Crispy kolokithokeftedes: grated zucchini, feta, mint and dill fritters with a cool yogurt dip.",
+      "instructions": [
+        "Grate the zucchini, toss with a teaspoon of salt and leave in a sieve for 15 minutes, then squeeze very dry.",
+        "Mix the zucchini with the crumbled feta, eggs, flour, chopped spring onions, dill, mint and pepper.",
+        "Heat the oil in a frying pan over medium heat.",
+        "Drop in heaped spoonfuls of batter, flatten slightly and fry for 3 minutes per side until golden.",
+        "Drain on paper and serve hot with yogurt and lemon wedges."
+      ],
+      "prepTime": 25,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["mediterranean", "vegetarian", "summer", "quick"],
+      "ingredients": [
+        { "product": "Zucchini", "quantity": 4, "unit": "pcs" },
+        { "product": "Feta Cheese", "quantity": 200, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Flour", "quantity": 100, "unit": "g" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Fresh Mint", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Vegetable Oil", "quantity": 120, "unit": "ml" },
+        { "product": "Yogurt", "quantity": 200, "unit": "g" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "potato-and-spinach-bake",
+      "name": "Potato and Spinach Bake",
+      "category": "Main Courses",
+      "description": "A creamy gratin of thin potato slices and garlicky spinach with nutmeg and melted gruyere.",
+      "instructions": [
+        "Slice the potatoes very thinly.",
+        "Soften the sliced onion and garlic in butter, add the spinach and cook until wilted; squeeze out excess liquid.",
+        "Warm the cream and milk with the nutmeg, salt and pepper.",
+        "Layer potatoes and spinach in a buttered dish, pouring the cream mixture over each layer.",
+        "Top with grated cheese, cover with foil and bake at 180 C for 45 minutes.",
+        "Uncover and bake 20 minutes more until golden and a knife slides in easily."
+      ],
+      "prepTime": 25,
+      "cookTime": 65,
+      "servings": 4,
+      "tags": ["vegetarian", "french", "baked", "comfort-food"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 8, "unit": "pcs" },
+        { "product": "Spinach", "quantity": 400, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Cooking Cream", "quantity": 300, "unit": "ml" },
+        { "product": "Milk", "quantity": 200, "unit": "ml" },
+        { "product": "Emmental", "name": "Gruyere", "quantity": 150, "unit": "g" },
+        { "product": "Nutmeg", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "halloumi-with-roasted-vegetables",
+      "name": "Halloumi with Roasted Vegetables",
+      "category": "Main Courses",
+      "description": "Golden seared halloumi over oregano-roasted peppers, zucchini and red onion with a honey-lemon drizzle.",
+      "instructions": [
+        "Cut the peppers, zucchini and red onion into chunks and toss with olive oil, oregano, salt and pepper.",
+        "Roast at 220 C for 20 minutes, add the cherry tomatoes and roast 10 minutes more.",
+        "Slice the halloumi 1 cm thick and sear in a dry hot pan for 2 minutes per side until golden.",
+        "Whisk the lemon juice with the honey and a tablespoon of olive oil.",
+        "Pile the vegetables on plates, top with halloumi, drizzle with the dressing and scatter with mint."
+      ],
+      "prepTime": 15,
+      "cookTime": 30,
+      "servings": 4,
+      "tags": ["mediterranean", "vegetarian", "gluten-free", "summer"],
+      "ingredients": [
+        { "product": "Halloumi", "quantity": 450, "unit": "g" },
+        { "product": "Bell Peppers", "quantity": 2, "unit": "pcs" },
+        { "product": "Zucchini", "quantity": 2, "unit": "pcs" },
+        { "product": "Red Onion", "quantity": 2, "unit": "pcs" },
+        { "product": "Cherry Tomatoes", "quantity": 250, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 4, "unit": "tbsp" },
+        { "product": "Dried Oregano", "quantity": 1, "unit": "tsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Honey", "quantity": 1, "unit": "tbsp" },
+        { "product": "Fresh Mint", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "falafel-plate",
+      "name": "Falafel Plate",
+      "category": "Main Courses",
+      "description": "Crunchy herb-packed chickpea falafel with warm pita and a lemony tahini sauce.",
+      "instructions": [
+        "Soak the dried chickpeas in plenty of water for 12 hours, then drain well; do not cook them.",
+        "Blend the chickpeas with the onion, garlic, parsley, coriander, cumin, salt and baking soda to a coarse, grainy paste.",
+        "Chill the mixture for 30 minutes, then shape into walnut-sized balls.",
+        "Fry in 170 C oil for 4 minutes until deep brown and crisp; drain on paper.",
+        "Whisk the tahini with lemon juice, a pinch of salt and enough water to make a pourable sauce.",
+        "Serve the falafel with warm pita and the tahini sauce."
+      ],
+      "prepTime": 40,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["middle-eastern", "vegan", "high-protein", "meal-prep"],
+      "ingredients": [
+        { "product": "Dried Chickpeas", "quantity": 300, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 3, "unit": "clove" },
+        { "product": "Fresh Parsley", "quantity": 1, "unit": "bunch" },
+        { "product": "Fresh Coriander", "quantity": 1, "unit": "bunch" },
+        { "product": "Cumin", "quantity": 2, "unit": "tsp" },
+        { "product": "Baking Soda", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Vegetable Oil", "quantity": 600, "unit": "ml", "note": "for deep frying" },
+        { "product": "Pita Bread", "quantity": 4, "unit": "pcs" },
+        { "product": "Tahini", "quantity": 4, "unit": "tbsp" },
+        { "product": "Lemon", "quantity": 1, "unit": "pcs" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "quinoa-stuffed-butternut-squash",
+      "name": "Quinoa-Stuffed Butternut Squash",
+      "category": "Main Courses",
+      "description": "Roasted squash halves filled with quinoa, kale, cranberries and toasted walnuts with a maple glaze.",
+      "instructions": [
+        "Halve the squash lengthwise, scoop out the seeds, brush with oil and roast cut side down at 200 C for 40 minutes.",
+        "Rinse the quinoa and simmer in 400 ml water for 15 minutes until fluffy.",
+        "Soften the red onion and garlic in olive oil, add the chopped kale and cook until wilted.",
+        "Stir the quinoa, cranberries, walnuts, cinnamon, maple syrup, salt and pepper into the kale.",
+        "Turn the squash over, pile the filling into the cavities and bake for 10 minutes more."
+      ],
+      "prepTime": 20,
+      "cookTime": 55,
+      "servings": 4,
+      "tags": ["vegan", "gluten-free", "baked", "holiday"],
+      "ingredients": [
+        { "product": "Butternut Squash", "quantity": 2, "unit": "pcs" },
+        { "product": "Quinoa", "quantity": 200, "unit": "g" },
+        { "product": "Kale", "quantity": 150, "unit": "g" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Dried Cranberries", "quantity": 60, "unit": "g" },
+        { "product": "Walnuts", "quantity": 60, "unit": "g" },
+        { "product": "Olive Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Maple Syrup", "quantity": 1, "unit": "tbsp" },
+        { "product": "Cinnamon", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    }
+  ],
+  "newProducts": []
+}

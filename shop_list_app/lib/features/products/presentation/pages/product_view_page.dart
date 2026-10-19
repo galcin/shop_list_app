@@ -176,7 +176,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
       background: Container(
         margin: const EdgeInsets.only(left: 56, bottom: 10),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.error.withOpacity(0.85),
+          color: Theme.of(context).colorScheme.error.withValues(alpha: 0.85),
           borderRadius: BorderRadius.circular(18),
         ),
         alignment: Alignment.centerRight,
@@ -247,29 +247,21 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        if (product.quantity != null ||
-                            product.units != null) ...[
-                          const SizedBox(width: 8),
-                          Text(
-                            '${product.quantity ?? 0} ${product.units ?? ''}',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 12,
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .onSurfaceVariant,
-                            ),
+                        const SizedBox(width: 8),
+                        Text(
+                          '· ${product.defaultUnit}',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 12,
+                            color:
+                                Theme.of(context).colorScheme.onSurfaceVariant,
                           ),
-                        ],
+                        ),
                       ],
                     ),
                   ),
-                  // Expiry badge OR chevron
-                  if (_isExpired(product.expirationDate))
-                    _expiryBadge('Expired', Theme.of(context).colorScheme.error)
-                  else if (_isExpiringSoon(product.expirationDate))
-                    _expiryBadge('Exp. ${_formatDate(product.expirationDate!)}',
-                        AppColors.accent)
+                  if (product.isBuiltIn)
+                    _tagBadge('Catalogue', AppColors.accent)
                   else
                     Icon(Icons.chevron_right,
                         color: Theme.of(context).colorScheme.onSurfaceVariant,
@@ -283,13 +275,13 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
     );
   }
 
-  Widget _expiryBadge(String label, Color color) {
+  Widget _tagBadge(String label, Color color) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.12),
+        color: color.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: color.withOpacity(0.4), width: 0.8),
+        border: Border.all(color: color.withValues(alpha: 0.4), width: 0.8),
       ),
       child: Text(
         label,
@@ -404,7 +396,7 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
             width: 110,
             height: 110,
             decoration: BoxDecoration(
-              color: theme.colorScheme.primary.withOpacity(0.1),
+              color: theme.colorScheme.primary.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Icon(Icons.shopping_basket_outlined,
@@ -435,13 +427,6 @@ class _ProductViewPageState extends ConsumerState<ProductViewPage> {
   }
 
   // -- Helpers ----------------------------------------------------------------
-
-  bool _isExpired(DateTime? d) => d != null && d.isBefore(DateTime.now());
-
-  bool _isExpiringSoon(DateTime? d) =>
-      d != null && d.isBefore(DateTime.now().add(const Duration(days: 7)));
-
-  String _formatDate(DateTime d) => '${d.day}/${d.month}/${d.year}';
 
   Color? _parseColor(String? hex) {
     if (hex == null || hex.isEmpty) return null;

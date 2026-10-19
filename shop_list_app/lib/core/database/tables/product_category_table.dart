@@ -11,6 +11,9 @@ class ProductCategories extends Table {
   /// When set, the UI shows the image instead of the emoji/icon.
   TextColumn get imageName => text().nullable()();
   IntColumn get sortOrder => integer().withDefault(const Constant(0))();
+
+  /// `true` for categories shipped with the app.
+  BoolColumn get isBuiltIn => boolean().withDefault(const Constant(false))();
   DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime)();
   DateTimeColumn get updatedAt => dateTime().withDefault(currentDateAndTime)();
 }

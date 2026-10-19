@@ -1,16 +1,19 @@
+import 'dart:convert';
+
 import 'package:drift/drift.dart';
+import 'package:shop_list_app/core/constants/units.dart';
 import 'package:shop_list_app/core/utils/app_logger.dart';
 import 'package:shop_list_app/features/meal_planning/domain/entities/meal_type.dart';
 
 import 'connection/connection.dart' as impl;
-import 'seeder/product_category_seeder.dart';
-import 'seeder/product_seeder.dart';
-import 'seeder/recipe_seeder.dart';
+import 'seeder/seed_service.dart';
+import 'tables/app_meta_table.dart';
 import 'tables/meal_plan_table.dart';
 import 'tables/meal_slot_table.dart';
 import 'tables/pantry_table.dart';
 import 'tables/product_category_table.dart';
 import 'tables/product_table.dart';
+import 'tables/recipe_ingredient_table.dart';
 import 'tables/recipe_table.dart';
 import 'tables/shopping_item_table.dart';
 import 'tables/shopping_list_table.dart';
@@ -22,12 +25,14 @@ part 'app_database.g.dart';
   ProductCategories,
   Products,
   Recipes,
+  RecipeIngredients,
   SyncQueue,
   ShoppingLists,
   ShoppingItems,
   MealPlans,
   MealSlots,
-  PantryItems
+  PantryItems,
+  AppMeta,
 ])
 class AppDatabase extends _$AppDatabase {
   // Singleton pattern
@@ -47,68 +52,47 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase.forTesting(super.executor);
 
   @override
-  int get schemaVersion => 10;
+  int get schemaVersion => 11;
 
   /// Step-by-step migration strategy.
   ///
-  /// v1 → v2: initial data-table additions (ProductCategories, Products, Recipes).
-  /// v2 → v3: add sync_queue table to support Post-MVP cloud sync (US-E0.2).
-  /// v3 → v4: add colorHex, iconName, sortOrder, createdAt, updatedAt to
-  ///           product_categories for E2 feature (US-E2.1 – US-E2.3).
-  /// v4 → v5: add image_name to product_categories for asset image support.
+  /// v1 → v2:  initial data tables (ProductCategories, Products, Recipes).
+  /// v2 → v3:  sync_queue table (post-MVP cloud sync).
+  /// v3 → v4:  colorHex, iconName, sortOrder, timestamps on product_categories.
+  /// v4 → v5:  image_name on product_categories.
+  /// v5 → v6:  shopping_lists + shopping_items.
+  /// v6 → v7:  description, cook_time, servings, image_url, rating, tags_json,
+  ///           ingredients_json on recipes.
+  /// v7 → v8:  meal_plans + meal_slots.
+  /// v8 → v9:  pantry_items.
+  /// v9 → v10: category on recipes.
+  /// v10 → v11: product catalogue redesign — products lose quantity/expiry and
+  ///           gain default_unit/aliases/is_built_in; recipe ingredients move
+  ///           from a JSON column into the recipe_ingredients table; recipes
+  ///           gain is_built_in/seed_key/timestamps; app_meta table added.
   @override
   MigrationStrategy get migration {
     return MigrationStrategy(
-      // Called when the database is created for the first time.
       onCreate: (Migrator m) async {
         await m.createAll();
       },
-      // Called for each schema version increment above the stored version.
       onUpgrade: (Migrator m, int from, int to) async {
         AppLogger.instance.info('[DB] onUpgrade from=$from to=$to');
+        // Table rebuilds below must not trip foreign key checks.
+        await customStatement('PRAGMA foreign_keys = OFF');
 
-        // v2 → v3: create the SyncQueue table.
         if (from < 3) {
-          try {
-            await m.createTable(syncQueue);
-            AppLogger.instance.info('[DB] Created sync_queue table');
-          } catch (e) {
-            AppLogger.instance
-                .warning('[DB] sync_queue already exists (skipped)', error: e);
-          }
+          await _tryCreateTable(m, syncQueue, 'sync_queue');
         }
-
-        // v3 → v4: add new columns to ProductCategories.
         if (from < 4) {
-          Future<void> tryAdd(
-              String colName, Future<void> Function() fn) async {
-            try {
-              await fn();
-              AppLogger.instance.info('[DB] Added column $colName');
-            } catch (e) {
-              AppLogger.instance.warning(
-                  '[DB] Column $colName already exists (skipped)',
-                  error: e);
-            }
-          }
-
-          await tryAdd('color_hex',
-              () => m.addColumn(productCategories, productCategories.colorHex));
-          await tryAdd('icon_name',
-              () => m.addColumn(productCategories, productCategories.iconName));
-          await tryAdd(
-              'sort_order',
-              () =>
-                  m.addColumn(productCategories, productCategories.sortOrder));
-          await tryAdd(
-              'created_at',
-              () =>
-                  m.addColumn(productCategories, productCategories.createdAt));
-          await tryAdd(
-              'updated_at',
-              () =>
-                  m.addColumn(productCategories, productCategories.updatedAt));
-
+          await _tryAddColumn(m, productCategories, productCategories.colorHex);
+          await _tryAddColumn(m, productCategories, productCategories.iconName);
+          await _tryAddColumn(
+              m, productCategories, productCategories.sortOrder);
+          await _tryAddColumn(
+              m, productCategories, productCategories.createdAt);
+          await _tryAddColumn(
+              m, productCategories, productCategories.updatedAt);
           final nowMillis = DateTime.now().millisecondsSinceEpoch;
           await customStatement(
             'UPDATE product_categories SET created_at = $nowMillis '
@@ -118,25 +102,17 @@ class AppDatabase extends _$AppDatabase {
             'UPDATE product_categories SET updated_at = $nowMillis '
             "WHERE typeof(updated_at) != 'integer'",
           );
-          AppLogger.instance.info('[DB] onUpgrade v3→v4 complete');
         }
-
-        // v4 → v5: add image_name column to product_categories.
         if (from < 5) {
-          try {
-            await m.addColumn(productCategories, productCategories.imageName);
-            AppLogger.instance.info('[DB] Added column image_name');
-          } catch (e) {
-            AppLogger.instance.warning(
-                '[DB] Column image_name already exists (skipped)',
-                error: e);
-          }
-          AppLogger.instance.info('[DB] onUpgrade v4→v5 complete');
+          await _tryAddColumn(
+              m, productCategories, productCategories.imageName);
         }
-
-        // v6 → v7: add new columns to Recipes table.
+        if (from < 6) {
+          await _tryCreateTable(m, shoppingLists, 'shopping_lists');
+          await _tryCreateTable(m, shoppingItems, 'shopping_items');
+        }
         if (from < 7) {
-          final newRecipeCols = {
+          for (final col in const {
             'description': 'TEXT',
             'cook_time': 'INTEGER',
             'servings': 'INTEGER',
@@ -144,249 +120,161 @@ class AppDatabase extends _$AppDatabase {
             'rating': 'REAL',
             'tags_json': 'TEXT',
             'ingredients_json': 'TEXT',
-          };
-          for (final entry in newRecipeCols.entries) {
-            try {
-              await customStatement(
-                  'ALTER TABLE recipes ADD COLUMN ${entry.key} ${entry.value}');
-              AppLogger.instance
-                  .info('[DB] Added column ${entry.key} to recipes');
-            } catch (e) {
-              AppLogger.instance.warning(
-                  '[DB] Column ${entry.key} already exists in recipes (skipped)',
-                  error: e);
-            }
+          }.entries) {
+            await _tryRawAddColumn('recipes', col.key, col.value);
           }
-          AppLogger.instance.info('[DB] onUpgrade v6→v7 complete');
         }
-
-        // v5 → v6: create shopping_lists and shopping_items tables.
-        if (from < 6) {
-          try {
-            await m.createTable(shoppingLists);
-            AppLogger.instance.info('[DB] Created shopping_lists table');
-          } catch (e) {
-            AppLogger.instance.warning(
-                '[DB] shopping_lists already exists (skipped)',
-                error: e);
-          }
-          try {
-            await m.createTable(shoppingItems);
-            AppLogger.instance.info('[DB] Created shopping_items table');
-          } catch (e) {
-            AppLogger.instance.warning(
-                '[DB] shopping_items already exists (skipped)',
-                error: e);
-          }
-          AppLogger.instance.info('[DB] onUpgrade v5→v6 complete');
-        }
-
-        // v7 → v8: create meal_plans and meal_slots tables.
         if (from < 8) {
-          try {
-            await m.createTable(mealPlans);
-            AppLogger.instance.info('[DB] Created meal_plans table');
-          } catch (e) {
-            AppLogger.instance
-                .warning('[DB] meal_plans already exists (skipped)', error: e);
-          }
-          try {
-            await m.createTable(mealSlots);
-            AppLogger.instance.info('[DB] Created meal_slots table');
-          } catch (e) {
-            AppLogger.instance
-                .warning('[DB] meal_slots already exists (skipped)', error: e);
-          }
-          AppLogger.instance.info('[DB] onUpgrade v7→v8 complete');
+          await _tryCreateTable(m, mealPlans, 'meal_plans');
+          await _tryCreateTable(m, mealSlots, 'meal_slots');
         }
-
-        // v8 → v9: create pantry_items table.
         if (from < 9) {
-          try {
-            await m.createTable(pantryItems);
-            AppLogger.instance.info('[DB] Created pantry_items table');
-          } catch (e) {
-            AppLogger.instance.warning(
-                '[DB] pantry_items already exists (skipped)',
-                error: e);
-          }
-          AppLogger.instance.info('[DB] onUpgrade v8→v9 complete');
+          await _tryCreateTable(m, pantryItems, 'pantry_items');
         }
-
-        // v9 → v10: add category column to recipes table.
         if (from < 10) {
-          try {
-            await customStatement(
-                'ALTER TABLE recipes ADD COLUMN category TEXT');
-            AppLogger.instance.info('[DB] Added column category to recipes');
-          } catch (e) {
-            AppLogger.instance.warning(
-                '[DB] Column category already exists in recipes (skipped)',
-                error: e);
-          }
-          AppLogger.instance.info('[DB] onUpgrade v9→v10 complete');
+          await _tryRawAddColumn('recipes', 'category', 'TEXT');
         }
+        if (from < 11) {
+          await _migrateToV11(m);
+        }
+        AppLogger.instance.info('[DB] onUpgrade complete');
       },
-      // Runs after every open (new or upgraded) to verify integrity.
       beforeOpen: (details) async {
         AppLogger.instance.info(
           '[DB] Opening — schemaVersion=${details.versionNow}, '
           'wasCreated=${details.wasCreated}, '
           'hadUpgrade=${details.hadUpgrade}',
         );
-
         await customStatement('PRAGMA foreign_keys = ON');
-
-        // Self-healing: ensure all v4 columns exist regardless of migration
-        // history. This recovers databases where onUpgrade failed silently.
-        try {
-          final existingCols = await customSelect(
-            "SELECT name FROM pragma_table_info('product_categories')",
-          )
-              .get()
-              .then((rows) => rows.map((r) => r.read<String>('name')).toSet());
-
-          AppLogger.instance
-              .info('[DB] product_categories columns: $existingCols');
-
-          if (!existingCols.contains('color_hex')) {
-            await customStatement(
-                'ALTER TABLE product_categories ADD COLUMN color_hex TEXT');
-            AppLogger.instance.info('[DB] Recovered: added color_hex');
-          }
-          if (!existingCols.contains('icon_name')) {
-            await customStatement(
-                'ALTER TABLE product_categories ADD COLUMN icon_name TEXT');
-            AppLogger.instance.info('[DB] Recovered: added icon_name');
-          }
-          if (!existingCols.contains('sort_order')) {
-            await customStatement(
-                'ALTER TABLE product_categories ADD COLUMN sort_order INTEGER NOT NULL DEFAULT 0');
-            AppLogger.instance.info('[DB] Recovered: added sort_order');
-          }
-          if (!existingCols.contains('created_at')) {
-            final nowMillis = DateTime.now().millisecondsSinceEpoch;
-            await customStatement(
-                'ALTER TABLE product_categories ADD COLUMN created_at INTEGER NOT NULL DEFAULT $nowMillis');
-            AppLogger.instance.info('[DB] Recovered: added created_at');
-          }
-          if (!existingCols.contains('updated_at')) {
-            final nowMillis = DateTime.now().millisecondsSinceEpoch;
-            await customStatement(
-                'ALTER TABLE product_categories ADD COLUMN updated_at INTEGER NOT NULL DEFAULT $nowMillis');
-            AppLogger.instance.info('[DB] Recovered: added updated_at');
-          }
-          if (!existingCols.contains('image_name')) {
-            await customStatement(
-                'ALTER TABLE product_categories ADD COLUMN image_name TEXT');
-            AppLogger.instance.info('[DB] Recovered: added image_name');
-          }
-
-          // Fix any rows where datetime was stored as SQLite text instead of
-          // integer milliseconds (happens when DEFAULT CURRENT_TIMESTAMP was used).
-          final nowMillis = DateTime.now().millisecondsSinceEpoch;
-          await customStatement(
-            'UPDATE product_categories SET created_at = $nowMillis '
-            "WHERE typeof(created_at) != 'integer'",
-          );
-          await customStatement(
-            'UPDATE product_categories SET updated_at = $nowMillis '
-            "WHERE typeof(updated_at) != 'integer'",
-          );
-          // Self-heal recipe columns (v7).
-          final recipeColsResult = await customSelect(
-            "SELECT name FROM pragma_table_info('recipes')",
-          )
-              .get()
-              .then((rows) => rows.map((r) => r.read<String>('name')).toSet());
-
-          final recipeColsToAdd = {
-            'description': 'TEXT',
-            'cook_time': 'INTEGER',
-            'servings': 'INTEGER',
-            'image_url': 'TEXT',
-            'rating': 'REAL',
-            'tags_json': 'TEXT',
-            'ingredients_json': 'TEXT',
-            'category': 'TEXT',
-          };
-          for (final entry in recipeColsToAdd.entries) {
-            if (!recipeColsResult.contains(entry.key)) {
-              try {
-                await customStatement(
-                    'ALTER TABLE recipes ADD COLUMN ${entry.key} ${entry.value}');
-                AppLogger.instance
-                    .info('[DB] Self-healed recipe column: ${entry.key}');
-              } catch (e) {
-                AppLogger.instance.warning(
-                    '[DB] Column ${entry.key} already exists (skipped)',
-                    error: e);
-              }
-            }
-          }
-
-          // Self-heal: ensure pantry_items table exists (v9)
-          try {
-            final tableExists = await customSelect(
-              "SELECT name FROM sqlite_master WHERE type='table' AND name='pantry_items'",
-            ).get();
-
-            if (tableExists.isEmpty) {
-              AppLogger.instance.warning(
-                  '[DB] pantry_items table missing! Creating it now...');
-              // Create the pantry_items table using raw SQL
-              await customStatement('''
-                CREATE TABLE pantry_items (
-                  id INTEGER PRIMARY KEY AUTOINCREMENT,
-                  product_id INTEGER,
-                  name TEXT NOT NULL,
-                  quantity REAL NOT NULL,
-                  unit TEXT NOT NULL,
-                  category_id INTEGER NOT NULL,
-                  expiry_date INTEGER,
-                  purchased_date INTEGER NOT NULL,
-                  location TEXT,
-                  created_at INTEGER NOT NULL,
-                  updated_at INTEGER NOT NULL,
-                  is_synced INTEGER NOT NULL DEFAULT 0,
-                  is_deleted INTEGER NOT NULL DEFAULT 0,
-                  FOREIGN KEY (product_id) REFERENCES products (id),
-                  FOREIGN KEY (category_id) REFERENCES product_categories (id)
-                )
-              ''');
-              AppLogger.instance
-                  .info('[DB] Recovered: created pantry_items table');
-            } else {
-              AppLogger.instance.info('[DB] pantry_items table exists');
-            }
-          } catch (e, st) {
-            AppLogger.instance.warning(
-                '[DB] Error checking/creating pantry_items table',
-                error: e,
-                stackTrace: st);
-          }
-
-          AppLogger.instance.info('[DB] Self-heal complete');
-        } catch (e, st) {
-          AppLogger.instance
-              .error('[DB] Self-heal failed', error: e, stackTrace: st);
-        }
       },
     );
   }
 
-  /// Ensures the database is initialised and seeded with default data.
-  /// Safe to call multiple times – seeders check for existing data.
+  // ── v11 ────────────────────────────────────────────────────────────────────
+
+  Future<void> _migrateToV11(Migrator m) async {
+    await _tryCreateTable(m, appMeta, 'app_meta');
+    await _tryAddColumn(m, productCategories, productCategories.isBuiltIn);
+
+    // Products: rebuild without quantity/expiration_date, renaming units.
+    await m.alterTable(TableMigration(
+      products,
+      columnTransformer: {
+        products.defaultUnit: const CustomExpression<String>(
+            "COALESCE(NULLIF(TRIM(units), ''), 'pcs')"),
+        products.photo: const CustomExpression<String>("NULLIF(photo, '')"),
+      },
+    ));
+    await m.createIndex(idxProductsName);
+    await m.createIndex(idxProductsCategory);
+
+    // Recipe ingredients: new table, filled from the old JSON column.
+    await _tryCreateTable(m, recipeIngredients, 'recipe_ingredients');
+    await _copyIngredientsFromJson();
+
+    // Recipes: drop ingredients_json, add built-in bookkeeping columns.
+    await m.alterTable(TableMigration(
+      recipes,
+      columnTransformer: {
+        recipes.favorite:
+            const CustomExpression<bool>('COALESCE(favorite, 0)'),
+      },
+    ));
+    await m.createIndex(idxRecipesName);
+    await m.createIndex(idxRecipesCategory);
+    await m.createIndex(idxRecipeIngredientsRecipe);
+    await m.createIndex(idxRecipeIngredientsProduct);
+    AppLogger.instance.info('[DB] onUpgrade v10→v11 complete');
+  }
+
+  /// Reads `recipes.ingredients_json` (pre-v11) and inserts one
+  /// `recipe_ingredients` row per entry. Quantities that are not numbers
+  /// ("to taste") become notes; units are normalised.
+  Future<void> _copyIngredientsFromJson() async {
+    final rows = await customSelect(
+      'SELECT id, ingredients_json FROM recipes '
+      'WHERE ingredients_json IS NOT NULL',
+    ).get();
+
+    final companions = <RecipeIngredientsCompanion>[];
+    for (final row in rows) {
+      final recipeId = row.read<int>('id');
+      final raw = row.read<String?>('ingredients_json');
+      if (raw == null || raw.isEmpty) continue;
+      List<dynamic> list;
+      try {
+        list = jsonDecode(raw) as List<dynamic>;
+      } catch (_) {
+        continue;
+      }
+      for (var i = 0; i < list.length; i++) {
+        final map = list[i];
+        if (map is! Map) continue;
+        final name = (map['name'] as String? ?? '').trim();
+        if (name.isEmpty) continue;
+        final rawQty = (map['quantity'] ?? '').toString().trim();
+        final qty = double.tryParse(rawQty.replaceAll(',', '.'));
+        companions.add(RecipeIngredientsCompanion.insert(
+          recipeId: recipeId,
+          name: name,
+          quantity: Value(qty),
+          unit: Value(Units.normalize(map['unit'] as String?)),
+          note: Value(qty == null && rawQty.isNotEmpty ? rawQty : null),
+          sortOrder: Value(i),
+        ));
+      }
+    }
+    if (companions.isNotEmpty) {
+      await batch((b) => b.insertAll(recipeIngredients, companions));
+    }
+    AppLogger.instance.info(
+        '[DB] Copied ${companions.length} ingredient rows from JSON');
+  }
+
+  // ── Migration helpers ──────────────────────────────────────────────────────
+
+  Future<void> _tryCreateTable(
+      Migrator m, TableInfo table, String label) async {
+    try {
+      await m.createTable(table);
+      AppLogger.instance.info('[DB] Created $label table');
+    } catch (e) {
+      AppLogger.instance.warning('[DB] $label already exists (skipped)',
+          error: e);
+    }
+  }
+
+  Future<void> _tryAddColumn(
+      Migrator m, TableInfo table, GeneratedColumn column) async {
+    try {
+      await m.addColumn(table, column);
+      AppLogger.instance.info('[DB] Added column ${column.name}');
+    } catch (e) {
+      AppLogger.instance.warning(
+          '[DB] Column ${column.name} already exists (skipped)',
+          error: e);
+    }
+  }
+
+  Future<void> _tryRawAddColumn(String table, String column, String type) async {
+    try {
+      await customStatement('ALTER TABLE $table ADD COLUMN $column $type');
+      AppLogger.instance.info('[DB] Added column $column to $table');
+    } catch (e) {
+      AppLogger.instance.warning(
+          '[DB] Column $column already exists in $table (skipped)',
+          error: e);
+    }
+  }
+
+  // ── Seeding ────────────────────────────────────────────────────────────────
+
+  /// Applies bundled seed data when the database is behind the bundled seed
+  /// version. Safe to call on every launch — it is a no-op otherwise.
   Future<void> ensureInitialized() async {
     try {
-      AppLogger.instance.info('[Database] Starting seeding...');
-      await ProductCategorySeeder.seedDefaultCategories(this);
-      AppLogger.instance.info('[Database] Product categories seeded');
-      await ProductSeeder.seedDefaultProducts(this);
-      AppLogger.instance.info('[Database] Products seeded');
-      await RecipeSeeder.seedDefaultRecipes(this);
-      AppLogger.instance.info('[Database] Recipes seeded');
-      AppLogger.instance.info('[Database] Seeding complete');
+      final result = await SeedService(this).run();
+      AppLogger.instance.info('[Database] $result');
     } catch (e, stackTrace) {
       AppLogger.instance.error(
         '[Database] Error during seeding',

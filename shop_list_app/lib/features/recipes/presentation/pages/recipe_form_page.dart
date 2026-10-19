@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shop_list_app/core/constants/units.dart';
 import 'package:shop_list_app/core/theme/colors.dart';
+import 'package:shop_list_app/core/utils/number_utils.dart';
 import 'package:shop_list_app/features/products/domain/entities/product.dart';
 import 'package:shop_list_app/features/recipes/domain/entities/recipe.dart';
 import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
 import 'package:shop_list_app/shared/widgets/product_picker_sheet.dart';
+
+const String _kOtherCategory = '__other__';
 
 /// 3-step form for creating or editing a recipe.
 class RecipeFormPage extends ConsumerStatefulWidget {
@@ -29,6 +33,8 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
   late final TextEditingController _descCtrl;
   late final TextEditingController _prepCtrl;
   late final TextEditingController _cookCtrl;
+  late final TextEditingController _categoryCtrl;
+  String? _selectedCategory;
   late int _servings;
 
   // Step 2 – Ingredients
@@ -45,16 +51,11 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
     _descCtrl = TextEditingController(text: r?.description ?? '');
     _prepCtrl = TextEditingController(text: r?.prepTime?.toString() ?? '');
     _cookCtrl = TextEditingController(text: r?.cookTime?.toString() ?? '');
+    _categoryCtrl = TextEditingController(text: r?.category ?? '');
+    _selectedCategory = r?.category;
     _servings = r?.servings ?? 2;
-    _ingredients = r?.ingredients
-            ?.map((i) => _IngredientDraft(
-                  nameCtrl: TextEditingController(text: i.name),
-                  qtyCtrl: TextEditingController(text: i.quantity),
-                  unitCtrl: TextEditingController(text: i.unit),
-                ))
-            .toList() ??
-        [];
-    // selectedProduct starts null for pre-existing text entries
+    _ingredients =
+        r?.ingredients.map(_IngredientDraft.fromIngredient).toList() ?? [];
     _steps = (r?.instructionSteps ?? [])
         .map((s) => _StepDraft(ctrl: TextEditingController(text: s)))
         .toList();
@@ -67,6 +68,7 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
     _descCtrl.dispose();
     _prepCtrl.dispose();
     _cookCtrl.dispose();
+    _categoryCtrl.dispose();
     for (final i in _ingredients) {
       i.dispose();
     }
@@ -99,6 +101,14 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
     }
   }
 
+  String? get _categoryValue {
+    final typed = _categoryCtrl.text.trim();
+    if (_selectedCategory == _kOtherCategory) {
+      return typed.isEmpty ? null : typed;
+    }
+    return _selectedCategory;
+  }
+
   Future<void> _save() async {
     if (_nameCtrl.text.trim().isEmpty) {
       setState(() => _titleError = 'Recipe name is required');
@@ -109,11 +119,7 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
 
     final ingredients = _ingredients
         .where((d) => d.nameCtrl.text.trim().isNotEmpty)
-        .map((d) => Ingredient(
-              name: d.nameCtrl.text.trim(),
-              quantity: d.qtyCtrl.text.trim(),
-              unit: d.unitCtrl.text.trim(),
-            ))
+        .map((d) => d.toIngredient())
         .toList();
 
     if (ingredients.isEmpty) {
@@ -125,10 +131,12 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
       return;
     }
 
+    final initial = widget.initialRecipe;
     final recipe = Recipe(
-      id: widget.initialRecipe?.id,
+      id: initial?.id,
       name: _nameCtrl.text.trim(),
       description: _descCtrl.text.trim().isEmpty ? null : _descCtrl.text.trim(),
+      category: _categoryValue,
       prepTime: int.tryParse(_prepCtrl.text.trim()),
       cookTime: int.tryParse(_cookCtrl.text.trim()),
       servings: _servings,
@@ -137,10 +145,12 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
           .where((s) => s.isNotEmpty)
           .join('\n'),
       ingredients: ingredients,
-      favorite: widget.initialRecipe?.favorite ?? false,
-      rating: widget.initialRecipe?.rating,
-      imageUrl: widget.initialRecipe?.imageUrl,
-      tags: widget.initialRecipe?.tags,
+      favorite: initial?.favorite ?? false,
+      rating: initial?.rating,
+      imageUrl: initial?.imageUrl,
+      tags: initial?.tags ?? const [],
+      seedKey: initial?.seedKey,
+      createdAt: initial?.createdAt,
     );
 
     setState(() => _saving = true);
@@ -204,6 +214,8 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
       body: Column(
         children: [
           _buildProgressBar(),
+          if (isEditing && widget.initialRecipe!.isBuiltIn)
+            _buildBuiltInNotice(),
           Expanded(
             child: PageView(
               controller: _pageController,
@@ -217,6 +229,36 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildBuiltInNotice() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        decoration: BoxDecoration(
+          color: AppColors.primary.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: const Row(
+          children: [
+            Icon(Icons.info_outline, size: 16, color: AppColors.primary),
+            SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                'This is a built-in recipe. Saving makes it your own copy; '
+                'future app updates will not change it.',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 12,
+                  color: AppColors.textBody,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -265,6 +307,14 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
   // ── Step 1: Basics ──────────────────────────────────────────────────────────
 
   Widget _buildBasicsStep() {
+    final categories = ref.watch(recipeCategoriesProvider).asData?.value ?? [];
+    final options = <String>{
+      ...categories,
+      if (_selectedCategory != null && _selectedCategory != _kOtherCategory)
+        _selectedCategory!,
+    }.toList()
+      ..sort();
+
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
       child: Column(
@@ -279,6 +329,27 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
               if (_titleError != null) setState(() => _titleError = null);
             },
           ),
+          const SizedBox(height: 16),
+          _label('Category'),
+          DropdownButtonFormField<String>(
+            initialValue: _selectedCategory,
+            decoration: _decoration('Choose a category'),
+            dropdownColor: AppColors.surfaceVariant,
+            style: const TextStyle(
+                fontFamily: 'Poppins',
+                color: AppColors.textPrimary,
+                fontSize: 14),
+            items: [
+              ...options.map((c) => DropdownMenuItem(value: c, child: Text(c))),
+              const DropdownMenuItem(
+                  value: _kOtherCategory, child: Text('Other…')),
+            ],
+            onChanged: (v) => setState(() => _selectedCategory = v),
+          ),
+          if (_selectedCategory == _kOtherCategory) ...[
+            const SizedBox(height: 8),
+            _input(controller: _categoryCtrl, hint: 'New category name'),
+          ],
           const SizedBox(height: 16),
           _label('Description / Notes'),
           _input(
@@ -447,6 +518,30 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
         ),
       );
 
+  InputDecoration _decoration(String hint, {String? errorText}) =>
+      InputDecoration(
+        hintText: hint,
+        hintStyle: const TextStyle(
+            fontFamily: 'Poppins', color: AppColors.textSecondary),
+        errorText: errorText,
+        filled: true,
+        fillColor: AppColors.surfaceVariant,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide.none,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide.none,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: AppColors.primary),
+        ),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+      );
+
   Widget _input({
     required TextEditingController controller,
     required String hint,
@@ -462,57 +557,60 @@ class _RecipeFormPageState extends ConsumerState<RecipeFormPage> {
         onChanged: onChanged,
         style: const TextStyle(
             fontFamily: 'Poppins', color: AppColors.textPrimary),
-        decoration: InputDecoration(
-          hintText: hint,
-          hintStyle: const TextStyle(
-              fontFamily: 'Poppins', color: AppColors.textSecondary),
-          errorText: errorText,
-          filled: true,
-          fillColor: AppColors.surfaceVariant,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide.none,
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide.none,
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(color: AppColors.primary),
-          ),
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-        ),
+        decoration: _decoration(hint, errorText: errorText),
       );
 }
 
 // ── Ingredient draft state ────────────────────────────────────────────────────
 
 class _IngredientDraft {
-  /// The product linked from the catalogue. `null` means free-text entry.
-  Product? selectedProduct;
+  /// Catalogue product linked to this line. `null` means free-text entry.
+  int? productId;
 
   final TextEditingController nameCtrl;
+
+  /// Holds a number ("250", "1.5") or a note ("to taste") when no amount.
   final TextEditingController qtyCtrl;
-  final TextEditingController unitCtrl;
+  String unit;
 
   _IngredientDraft({
+    this.productId,
     required this.nameCtrl,
     required this.qtyCtrl,
-    required this.unitCtrl,
+    this.unit = Units.pcs,
   });
 
   factory _IngredientDraft.empty() => _IngredientDraft(
         nameCtrl: TextEditingController(),
         qtyCtrl: TextEditingController(),
-        unitCtrl: TextEditingController(),
       );
+
+  factory _IngredientDraft.fromIngredient(Ingredient i) => _IngredientDraft(
+        productId: i.productId,
+        nameCtrl: TextEditingController(text: i.name),
+        qtyCtrl: TextEditingController(
+          text: i.quantity != null
+              ? NumberUtils.formatDecimal(i.quantity!)
+              : (i.note ?? ''),
+        ),
+        unit: i.unit,
+      );
+
+  Ingredient toIngredient() {
+    final raw = qtyCtrl.text.trim().replaceAll(',', '.');
+    final qty = double.tryParse(raw);
+    return Ingredient(
+      productId: productId,
+      name: nameCtrl.text.trim(),
+      quantity: qty,
+      unit: qty == null ? Units.none : unit,
+      note: qty == null && raw.isNotEmpty ? raw : null,
+    );
+  }
 
   void dispose() {
     nameCtrl.dispose();
     qtyCtrl.dispose();
-    unitCtrl.dispose();
   }
 }
 
@@ -536,28 +634,25 @@ class _IngredientRowState extends State<_IngredientRow> {
   _IngredientDraft get draft => widget.draft;
 
   Future<void> _pickProduct() async {
-    final product = await showProductPickerSheet(context);
+    final Product? product = await showProductPickerSheet(context);
     if (!mounted || product == null) return;
     setState(() {
-      draft.selectedProduct = product;
+      draft.productId = product.id;
       draft.nameCtrl.text = product.name ?? '';
-      // Pre-fill unit from the product if the field is still empty
-      if (draft.unitCtrl.text.trim().isEmpty && product.units != null) {
-        draft.unitCtrl.text = product.units!;
-      }
+      draft.unit = product.defaultUnit;
     });
   }
 
   void _clearProduct() {
     setState(() {
-      draft.selectedProduct = null;
+      draft.productId = null;
       draft.nameCtrl.clear();
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final linkedProduct = draft.selectedProduct;
+    final linked = draft.productId != null;
 
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
@@ -572,16 +667,14 @@ class _IngredientRowState extends State<_IngredientRow> {
             Row(
               children: [
                 Expanded(
-                  child: linkedProduct != null
+                  child: linked
                       ? _ProductChip(
-                          name: linkedProduct.name ?? '',
+                          name: draft.nameCtrl.text,
                           onClear: _clearProduct,
                         )
-                      : _PickerButton(
-                          hint: draft.nameCtrl.text.isNotEmpty
-                              ? draft.nameCtrl.text
-                              : 'Tap to choose product…',
-                          onTap: _pickProduct,
+                      : _FreeTextField(
+                          controller: draft.nameCtrl,
+                          onPick: _pickProduct,
                         ),
                 ),
                 IconButton(
@@ -598,13 +691,32 @@ class _IngredientRowState extends State<_IngredientRow> {
             Row(
               children: [
                 Expanded(
-                  child: _inputField(draft.qtyCtrl, 'Qty',
-                      inputType: TextInputType.number),
+                  child: _inputField(draft.qtyCtrl, 'Qty or "to taste"',
+                      inputType: const TextInputType.numberWithOptions(
+                          decimal: true)),
                 ),
                 const SizedBox(width: 8),
                 SizedBox(
-                  width: 80,
-                  child: _inputField(draft.unitCtrl, 'Unit'),
+                  width: 104,
+                  child: DropdownButtonFormField<String>(
+                    initialValue: Units.common.contains(draft.unit)
+                        ? draft.unit
+                        : Units.pcs,
+                    isDense: true,
+                    dropdownColor: AppColors.surfaceVariant,
+                    style: const TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 13,
+                        color: AppColors.textPrimary),
+                    decoration: _fieldDecoration('Unit'),
+                    items: Units.common
+                        .map((u) => DropdownMenuItem(
+                            value: u, child: Text(Units.pickerLabel(u))))
+                        .toList(),
+                    onChanged: (v) {
+                      if (v != null) setState(() => draft.unit = v);
+                    },
+                  ),
                 ),
               ],
             ),
@@ -614,6 +726,31 @@ class _IngredientRowState extends State<_IngredientRow> {
     );
   }
 
+  InputDecoration _fieldDecoration(String hint) => InputDecoration(
+        hintText: hint,
+        hintStyle: const TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 13,
+            color: AppColors.textSecondary),
+        isDense: true,
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        filled: true,
+        fillColor: AppColors.surface,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide.none,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide.none,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: AppColors.primary, width: 1),
+        ),
+      );
+
   Widget _inputField(TextEditingController ctrl, String hint,
           {TextInputType inputType = TextInputType.text}) =>
       TextField(
@@ -621,30 +758,7 @@ class _IngredientRowState extends State<_IngredientRow> {
         keyboardType: inputType,
         style: const TextStyle(
             fontFamily: 'Poppins', fontSize: 13, color: AppColors.textPrimary),
-        decoration: InputDecoration(
-          hintText: hint,
-          hintStyle: const TextStyle(
-              fontFamily: 'Poppins',
-              fontSize: 13,
-              color: AppColors.textSecondary),
-          isDense: true,
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          filled: true,
-          fillColor: AppColors.surface,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide.none,
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: BorderSide.none,
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(color: AppColors.primary, width: 1),
-          ),
-        ),
+        decoration: _fieldDecoration(hint),
       );
 }
 
@@ -659,9 +773,9 @@ class _ProductChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
-        color: AppColors.primary.withOpacity(0.12),
+        color: AppColors.primary.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppColors.primary.withOpacity(0.4)),
+        border: Border.all(color: AppColors.primary.withValues(alpha: 0.4)),
       ),
       child: Row(
         children: [
@@ -691,39 +805,46 @@ class _ProductChip extends StatelessWidget {
   }
 }
 
-/// Dashed-style button shown when no product is linked.
-class _PickerButton extends StatelessWidget {
-  const _PickerButton({required this.hint, required this.onTap});
-  final String hint;
-  final VoidCallback onTap;
+/// Free-text ingredient name with a search button that opens the catalogue.
+class _FreeTextField extends StatelessWidget {
+  const _FreeTextField({required this.controller, required this.onPick});
+  final TextEditingController controller;
+  final VoidCallback onPick;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        decoration: BoxDecoration(
-          color: AppColors.surface,
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: AppColors.divider),
+    return TextField(
+      controller: controller,
+      textCapitalization: TextCapitalization.sentences,
+      style: const TextStyle(
+          fontFamily: 'Poppins', fontSize: 13, color: AppColors.textPrimary),
+      decoration: InputDecoration(
+        hintText: 'Ingredient name…',
+        hintStyle: const TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 13,
+            color: AppColors.textSecondary),
+        isDense: true,
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        filled: true,
+        fillColor: AppColors.surface,
+        suffixIcon: IconButton(
+          tooltip: 'Choose from catalogue',
+          icon: const Icon(Icons.search, color: AppColors.primary, size: 18),
+          onPressed: onPick,
         ),
-        child: Row(
-          children: [
-            const Icon(Icons.search, color: AppColors.textSecondary, size: 16),
-            const SizedBox(width: 6),
-            Expanded(
-              child: Text(
-                hint,
-                style: const TextStyle(
-                  fontFamily: 'Poppins',
-                  fontSize: 13,
-                  color: AppColors.textSecondary,
-                ),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-          ],
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide.none,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide.none,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: const BorderSide(color: AppColors.primary, width: 1),
         ),
       ),
     );

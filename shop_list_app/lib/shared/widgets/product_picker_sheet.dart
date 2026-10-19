@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/core/theme/colors.dart';
 import 'package:shop_list_app/features/products/domain/entities/product.dart';
 import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
+import 'package:shop_list_app/features/products/presentation/widgets/product_image_widget.dart';
 
 /// A bottom sheet that lets the user search the product catalogue and pick one.
 ///
@@ -43,10 +44,15 @@ class _ProductPickerSheetState extends ConsumerState<ProductPickerSheet> {
   List<Product> _filter(List<Product> products) {
     final q = _query.trim().toLowerCase();
     if (q.isEmpty) return products.take(8).toList();
-    return products
-        .where((p) => p.name?.toLowerCase().contains(q) ?? false)
-        .take(10)
+    bool matches(Product p) =>
+        (p.name?.toLowerCase().contains(q) ?? false) ||
+        p.aliases.any((a) => a.toLowerCase().contains(q));
+    // Names starting with the query first, then other matches.
+    final starts = products
+        .where((p) => p.name?.toLowerCase().startsWith(q) ?? false)
         .toList();
+    final rest = products.where((p) => !starts.contains(p) && matches(p));
+    return [...starts, ...rest].take(12).toList();
   }
 
   @override
@@ -152,15 +158,11 @@ class _ProductPickerSheetState extends ConsumerState<ProductPickerSheet> {
                     return ListTile(
                       contentPadding: const EdgeInsets.symmetric(
                           horizontal: 4, vertical: 4),
-                      leading: Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color: AppColors.surfaceVariant,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const Icon(Icons.shopping_bag_outlined,
-                            color: AppColors.textSecondary, size: 20),
+                      leading: ProductImageWidget(
+                        photo: p.photo,
+                        size: 40,
+                        borderRadius: 10,
+                        backgroundColor: AppColors.surfaceVariant,
                       ),
                       title: Text(
                         p.name ?? 'Unnamed',
@@ -171,15 +173,13 @@ class _ProductPickerSheetState extends ConsumerState<ProductPickerSheet> {
                           color: AppColors.textPrimary,
                         ),
                       ),
-                      subtitle: p.units != null
-                          ? Text(
-                              p.units!,
-                              style: const TextStyle(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 12,
-                                  color: AppColors.textSecondary),
-                            )
-                          : null,
+                      subtitle: Text(
+                        p.defaultUnit,
+                        style: const TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 12,
+                            color: AppColors.textSecondary),
+                      ),
                       trailing: const Icon(Icons.add_circle_outline,
                           color: AppColors.primary),
                       onTap: () => Navigator.of(context).pop(p),

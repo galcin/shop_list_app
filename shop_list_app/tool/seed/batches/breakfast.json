@@ -1,0 +1,1466 @@
+{
+  "category": "Breakfast",
+  "recipes": [
+    {
+      "key": "mamaliga-cu-branza-si-ou",
+      "name": "Mămăligă cu Brânză și Ou",
+      "category": "Breakfast",
+      "description": "Creamy Romanian polenta topped with crumbled telemea, a fried egg and a spoonful of sour cream.",
+      "instructions": [
+        "Bring the water to a boil with the salt in a heavy pot.",
+        "Pour in the cornmeal in a thin stream while whisking constantly to avoid lumps.",
+        "Reduce the heat and cook for 20 to 25 minutes, stirring often, until thick and pulling away from the sides.",
+        "Melt the butter in a pan and fry the eggs sunny-side up until the whites are set.",
+        "Spoon the mămăligă onto plates, crumble the telemea on top and add the fried egg.",
+        "Finish with a dollop of sour cream and freshly ground black pepper."
+      ],
+      "prepTime": 5,
+      "cookTime": 25,
+      "servings": 2,
+      "tags": ["romanian", "vegetarian", "comfort-food", "gluten-free"],
+      "ingredients": [
+        { "product": "Cornmeal", "quantity": 200, "unit": "g" },
+        { "product": "Water", "quantity": 800, "unit": "ml" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Telemea Cheese", "quantity": 150, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Butter", "quantity": 20, "unit": "g" },
+        { "product": "Sour Cream", "quantity": 80, "unit": "g" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "oua-ochiuri-romanesti",
+      "name": "Ouă Ochiuri Românești",
+      "category": "Breakfast",
+      "description": "Soft water-poached eggs with runny yolks, served the Romanian way with butter, telemea and fresh bread.",
+      "instructions": [
+        "Fill a wide pan with water, add the vinegar and a pinch of salt, and bring to a gentle simmer.",
+        "Crack each egg into a small cup and slide it carefully into the barely simmering water.",
+        "Poach for 3 minutes until the whites are set and the yolks still soft.",
+        "Lift the eggs out with a slotted spoon and drain briefly on a paper towel.",
+        "Place on warm plates, top each egg with a sliver of butter and season with pepper.",
+        "Serve with slices of telemea, fresh bread and green onions."
+      ],
+      "prepTime": 5,
+      "cookTime": 5,
+      "servings": 2,
+      "tags": ["romanian", "quick", "vegetarian", "high-protein"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Salt", "note": "a pinch for the water" },
+        { "product": "Butter", "quantity": 20, "unit": "g" },
+        { "product": "Telemea Cheese", "quantity": 100, "unit": "g" },
+        { "product": "Bread", "quantity": 4, "unit": "slice" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "papara",
+      "name": "Papară",
+      "category": "Breakfast",
+      "description": "Thrifty Romanian scramble of torn bread fried golden in butter, bound with eggs and finished with cheese.",
+      "instructions": [
+        "Tear the bread into bite-sized pieces.",
+        "Melt the butter in a large pan and fry the bread over medium heat until golden and slightly crisp.",
+        "Beat the eggs with the milk, salt and pepper.",
+        "Pour the eggs over the bread and stir gently until just set.",
+        "Crumble the telemea on top, take off the heat and let it soften for a minute.",
+        "Serve hot with chopped green onions."
+      ],
+      "prepTime": 5,
+      "cookTime": 10,
+      "servings": 2,
+      "tags": ["romanian", "quick", "budget", "vegetarian"],
+      "ingredients": [
+        { "product": "Bread", "quantity": 4, "unit": "slice" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Milk", "quantity": 50, "unit": "ml" },
+        { "product": "Telemea Cheese", "quantity": 80, "unit": "g" },
+        { "product": "Green Onions", "quantity": 2, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "clatite-cu-gem",
+      "name": "Clătite cu Gem",
+      "category": "Breakfast",
+      "description": "Thin, lacy Romanian crepes rolled around fruit jam and dusted with powdered sugar.",
+      "instructions": [
+        "Whisk the eggs with the sugar, vanilla sugar and a pinch of salt.",
+        "Add the milk and sparkling water, then whisk in the flour until the batter is smooth and thin.",
+        "Stir in the melted butter and let the batter rest for 15 minutes.",
+        "Heat a lightly oiled non-stick pan and pour in a small ladle of batter, swirling to coat the base.",
+        "Cook for about 1 minute per side until golden, then stack the crepes on a plate.",
+        "Spread each crepe with jam, roll up and dust with powdered sugar before serving."
+      ],
+      "prepTime": 20,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "kid-friendly", "comfort-food"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Flour", "quantity": 250, "unit": "g" },
+        { "product": "Milk", "quantity": 400, "unit": "ml" },
+        { "product": "Water", "name": "Sparkling water", "quantity": 100, "unit": "ml" },
+        { "product": "Sugar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Vegetable Oil", "note": "for the pan" },
+        { "product": "Jam", "quantity": 8, "unit": "tbsp" },
+        { "product": "Powdered Sugar", "note": "for dusting" }
+      ]
+    },
+    {
+      "key": "clatite-cu-branza-dulce-la-cuptor",
+      "name": "Clătite cu Brânză Dulce la Cuptor",
+      "category": "Breakfast",
+      "description": "Crepes filled with sweet vanilla cottage cheese and raisins, baked under a sour cream glaze until golden.",
+      "instructions": [
+        "Whisk the eggs, milk, flour and a pinch of salt into a thin batter and cook 8 crepes in a lightly oiled pan.",
+        "Mix the cottage cheese with the sugar, vanilla extract, lemon zest, raisins and one egg yolk.",
+        "Place a spoonful of filling on each crepe and roll it up, tucking in the sides.",
+        "Arrange the rolls snugly in a buttered baking dish.",
+        "Whisk the sour cream with a tablespoon of sugar and spread it over the crepes.",
+        "Bake at 180°C for 20 minutes until lightly golden on top and serve warm."
+      ],
+      "prepTime": 25,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["romanian", "baked", "vegetarian", "kid-friendly"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Milk", "quantity": 350, "unit": "ml" },
+        { "product": "Flour", "quantity": 200, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Cottage Cheese", "quantity": 400, "unit": "g" },
+        { "product": "Sugar", "quantity": 80, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Raisins", "quantity": 50, "unit": "g" },
+        { "product": "Sour Cream", "quantity": 200, "unit": "g" },
+        { "product": "Butter", "quantity": 20, "unit": "g" }
+      ]
+    },
+    {
+      "key": "placinta-cu-branza-sarata",
+      "name": "Plăcintă cu Brânză Sărată",
+      "category": "Breakfast",
+      "description": "Flaky phyllo pie layered with salty telemea, eggs and dill, baked until crisp and golden.",
+      "instructions": [
+        "Preheat the oven to 180°C and brush a rectangular baking dish with melted butter.",
+        "Crumble the telemea and mix it with the cottage cheese, 3 eggs, chopped dill and pepper.",
+        "Layer half the phyllo sheets in the dish, brushing every second sheet with melted butter.",
+        "Spread the cheese filling evenly, then cover with the remaining sheets, buttering as you go.",
+        "Whisk the last egg with the yogurt and pour it over the top, letting it soak in.",
+        "Score into squares and bake for 40 minutes until deep golden. Cool slightly before cutting."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 6,
+      "tags": ["romanian", "baked", "vegetarian", "comfort-food"],
+      "ingredients": [
+        { "product": "Phyllo Dough", "quantity": 400, "unit": "g" },
+        { "product": "Telemea Cheese", "quantity": 400, "unit": "g" },
+        { "product": "Cottage Cheese", "quantity": 200, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Fresh Dill", "quantity": 1, "unit": "bunch" },
+        { "product": "Butter", "quantity": 100, "unit": "g" },
+        { "product": "Yogurt", "quantity": 150, "unit": "g" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "placinta-cu-mere",
+      "name": "Plăcintă cu Mere",
+      "category": "Breakfast",
+      "description": "Crisp phyllo apple pie with grated apples, cinnamon and semolina, perfect warm with morning coffee.",
+      "instructions": [
+        "Peel and coarsely grate the apples, then squeeze out the excess juice.",
+        "Cook the apples with the sugar and cinnamon in a pan for 8 minutes until softened. Stir in the semolina and cool.",
+        "Preheat the oven to 180°C and butter a baking dish.",
+        "Layer half the phyllo sheets in the dish, brushing each with melted butter.",
+        "Spread the apple filling evenly and cover with the remaining buttered sheets.",
+        "Bake for 35 minutes until golden, cool for 10 minutes and dust with powdered sugar."
+      ],
+      "prepTime": 25,
+      "cookTime": 45,
+      "servings": 6,
+      "tags": ["romanian", "baked", "vegetarian", "kid-friendly"],
+      "ingredients": [
+        { "product": "Apples", "quantity": 6, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 100, "unit": "g" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Semolina", "quantity": 3, "unit": "tbsp" },
+        { "product": "Phyllo Dough", "quantity": 400, "unit": "g" },
+        { "product": "Butter", "quantity": 100, "unit": "g" },
+        { "product": "Powdered Sugar", "note": "for dusting" }
+      ]
+    },
+    {
+      "key": "gris-cu-lapte",
+      "name": "Griș cu Lapte",
+      "category": "Breakfast",
+      "description": "Silky warm semolina pudding simmered in vanilla milk and swirled with fruit jam.",
+      "instructions": [
+        "Bring the milk to a simmer with the sugar, vanilla sugar and a pinch of salt.",
+        "Pour the semolina in a thin stream while whisking constantly.",
+        "Cook over low heat for 4 to 5 minutes, stirring, until thick and creamy.",
+        "Take off the heat and stir in the butter.",
+        "Spoon into bowls and top each with a swirl of jam and a dusting of cinnamon."
+      ],
+      "prepTime": 2,
+      "cookTime": 10,
+      "servings": 2,
+      "tags": ["romanian", "quick", "vegetarian", "kid-friendly"],
+      "ingredients": [
+        { "product": "Milk", "quantity": 500, "unit": "ml" },
+        { "product": "Semolina", "quantity": 60, "unit": "g" },
+        { "product": "Sugar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Butter", "quantity": 10, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Jam", "quantity": 2, "unit": "tbsp" },
+        { "product": "Cinnamon", "note": "for dusting" }
+      ]
+    },
+    {
+      "key": "orez-cu-lapte",
+      "name": "Orez cu Lapte",
+      "category": "Breakfast",
+      "description": "Comforting Romanian rice pudding cooked slowly in milk with lemon zest and a cinnamon dusting.",
+      "instructions": [
+        "Rinse the rice and simmer it in the water for 10 minutes until the water is absorbed.",
+        "Add the milk, sugar, lemon zest and a pinch of salt and bring back to a gentle simmer.",
+        "Cook uncovered over low heat for 25 minutes, stirring often, until creamy.",
+        "Stir in the vanilla sugar and butter and take off the heat.",
+        "Serve warm or chilled, dusted with cinnamon and topped with jam."
+      ],
+      "prepTime": 5,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["romanian", "vegetarian", "comfort-food", "gluten-free"],
+      "ingredients": [
+        { "product": "Rice", "quantity": 200, "unit": "g" },
+        { "product": "Water", "quantity": 250, "unit": "ml" },
+        { "product": "Milk", "quantity": 1, "unit": "l" },
+        { "product": "Sugar", "quantity": 80, "unit": "g" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Butter", "quantity": 15, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Cinnamon", "note": "for dusting" },
+        { "product": "Jam", "note": "for serving" }
+      ]
+    },
+    {
+      "key": "papanasi",
+      "name": "Papanași",
+      "category": "Breakfast",
+      "description": "Golden fried cottage cheese doughnuts, piled with sour cream and sour cherry jam.",
+      "instructions": [
+        "Mix the cottage cheese with the egg, sugar, vanilla sugar, lemon zest and a pinch of salt.",
+        "Work in the flour and baking soda to get a soft dough that is just firm enough to shape.",
+        "With floured hands form 4 rings and 4 small balls from the dough.",
+        "Heat the oil to 170°C and fry the rings and balls in batches for 3 to 4 minutes per side until deep golden.",
+        "Drain on paper towels.",
+        "Stack each ring with a ball on top, spoon over sour cream and finish with jam."
+      ],
+      "prepTime": 20,
+      "cookTime": 15,
+      "servings": 4,
+      "tags": ["romanian", "comfort-food", "vegetarian", "kid-friendly"],
+      "ingredients": [
+        { "product": "Cottage Cheese", "quantity": 500, "unit": "g" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 3, "unit": "tbsp" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Flour", "quantity": 250, "unit": "g" },
+        { "product": "Baking Soda", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Sunflower Oil", "quantity": 500, "unit": "ml" },
+        { "product": "Sour Cream", "quantity": 200, "unit": "g" },
+        { "product": "Jam", "name": "Sour cherry jam", "quantity": 6, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "scrob-cu-slanina-afumata",
+      "name": "Scrob cu Slănină Afumată",
+      "category": "Breakfast",
+      "description": "Country-style scrambled eggs cooked in the rendered fat of crispy smoked bacon, with green onions.",
+      "instructions": [
+        "Dice the smoked bacon and fry it in a dry pan over medium heat until crisp and the fat has rendered.",
+        "Add the sliced green onions and cook for 1 minute.",
+        "Beat the eggs with a splash of milk, salt and pepper.",
+        "Pour the eggs into the pan and stir slowly with a spatula until soft curds form.",
+        "Remove from the heat while still slightly glossy and serve with bread and tomato wedges."
+      ],
+      "prepTime": 5,
+      "cookTime": 10,
+      "servings": 2,
+      "tags": ["romanian", "quick", "high-protein", "low-carb"],
+      "ingredients": [
+        { "product": "Smoked Bacon", "quantity": 100, "unit": "g" },
+        { "product": "Eggs", "quantity": 5, "unit": "pcs" },
+        { "product": "Green Onions", "quantity": 3, "unit": "pcs" },
+        { "product": "Milk", "quantity": 2, "unit": "tbsp" },
+        { "product": "Tomatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Bread", "quantity": 4, "unit": "slice" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "bulz-cu-branza-la-cuptor",
+      "name": "Bulz cu Brânză la Cuptor",
+      "category": "Breakfast",
+      "description": "Shepherd's polenta balls hiding a molten telemea centre, baked with butter and crisp smoked bacon.",
+      "instructions": [
+        "Cook the cornmeal in salted boiling water for 20 minutes, stirring, until very thick. Cool until handleable.",
+        "Mix the telemea with the butter and half the sour cream into a soft paste.",
+        "With wet hands flatten a portion of polenta, place a spoonful of cheese in the middle and shape into a ball.",
+        "Arrange the balls in a buttered dish and scatter the diced smoked bacon around them.",
+        "Bake at 200°C for 20 minutes until golden on top.",
+        "Serve hot with the remaining sour cream and a fried egg if you like."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 4,
+      "tags": ["romanian", "baked", "comfort-food", "gluten-free"],
+      "ingredients": [
+        { "product": "Cornmeal", "quantity": 300, "unit": "g" },
+        { "product": "Water", "quantity": 1.2, "unit": "l" },
+        { "product": "Salt", "quantity": 1, "unit": "tsp" },
+        { "product": "Telemea Cheese", "quantity": 250, "unit": "g" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Sour Cream", "quantity": 150, "unit": "g" },
+        { "product": "Smoked Bacon", "quantity": 100, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" }
+      ]
+    },
+    {
+      "key": "budinca-de-paine-cu-mere",
+      "name": "Budincă de Pâine cu Mere",
+      "category": "Breakfast",
+      "description": "Stale bread turned into a custardy baked pudding with apples, raisins and cinnamon.",
+      "instructions": [
+        "Cut the bread into cubes and spread them in a buttered baking dish.",
+        "Peel and dice the apples and scatter them with the raisins over the bread.",
+        "Whisk the eggs with the milk, sugar, vanilla extract and cinnamon.",
+        "Pour the custard over the bread and press down gently so everything soaks. Rest for 15 minutes.",
+        "Dot with butter and bake at 180°C for 40 minutes until puffed and golden.",
+        "Serve warm, dusted with powdered sugar."
+      ],
+      "prepTime": 20,
+      "cookTime": 40,
+      "servings": 6,
+      "tags": ["romanian", "baked", "budget", "vegetarian"],
+      "ingredients": [
+        { "product": "Bread", "quantity": 10, "unit": "slice" },
+        { "product": "Apples", "quantity": 3, "unit": "pcs" },
+        { "product": "Raisins", "quantity": 60, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Milk", "quantity": 600, "unit": "ml" },
+        { "product": "Sugar", "quantity": 100, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Powdered Sugar", "note": "for dusting" }
+      ]
+    },
+    {
+      "key": "branzoaice-poale-n-brau",
+      "name": "Brânzoaice (Poale-n Brâu)",
+      "category": "Breakfast",
+      "description": "Soft yeasted Moldavian buns folded around a sweet cottage cheese and raisin filling.",
+      "instructions": [
+        "Dissolve the yeast and a teaspoon of sugar in the warm milk and let it foam for 10 minutes.",
+        "Mix the flour, remaining sugar, 2 eggs, melted butter and salt with the yeast milk into a soft dough. Knead 10 minutes.",
+        "Cover and let rise in a warm place for 1 hour until doubled.",
+        "Mix the cottage cheese with 1 egg, sugar, vanilla sugar, lemon zest and raisins.",
+        "Roll the dough and cut into 12 squares. Put filling in the centre and fold the corners to the middle.",
+        "Brush with beaten egg and bake at 180°C for 25 minutes until golden."
+      ],
+      "prepTime": 90,
+      "cookTime": 25,
+      "servings": 6,
+      "tags": ["romanian", "baked", "vegetarian", "holiday"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 500, "unit": "g" },
+        { "product": "Yeast", "name": "Dry yeast", "quantity": 7, "unit": "g" },
+        { "product": "Milk", "quantity": 250, "unit": "ml" },
+        { "product": "Sugar", "quantity": 120, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Butter", "quantity": 80, "unit": "g" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Cottage Cheese", "quantity": 500, "unit": "g" },
+        { "product": "Vanilla Sugar", "quantity": 1, "unit": "pack" },
+        { "product": "Lemon", "name": "Lemon zest", "quantity": 1, "unit": "pcs" },
+        { "product": "Raisins", "quantity": 60, "unit": "g" }
+      ]
+    },
+    {
+      "key": "platou-mic-dejun-romanesc",
+      "name": "Platou de Mic Dejun Românesc",
+      "category": "Breakfast",
+      "description": "No-cook country platter of telemea, tomatoes, cucumber, green onions, olives, ham and fresh bread.",
+      "instructions": [
+        "Cut the telemea and cascaval into thick slices and arrange on a large board.",
+        "Slice the tomatoes and cucumber into wedges and add them alongside.",
+        "Trim the green onions and fold the ham slices beside the cheese.",
+        "Add a small bowl of olives and spoon the zacuscă into another.",
+        "Slice the bread and serve everything with butter, salt and pepper on the side."
+      ],
+      "prepTime": 15,
+      "cookTime": 0,
+      "servings": 4,
+      "tags": ["romanian", "no-cook", "quick", "summer"],
+      "ingredients": [
+        { "product": "Telemea Cheese", "quantity": 200, "unit": "g" },
+        { "product": "Cascaval", "quantity": 150, "unit": "g" },
+        { "product": "Tomatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Cucumber", "quantity": 1, "unit": "pcs" },
+        { "product": "Green Onions", "quantity": 1, "unit": "bunch" },
+        { "product": "Pressed Ham", "quantity": 150, "unit": "g" },
+        { "product": "Olives", "quantity": 100, "unit": "g" },
+        { "product": "Zacuscă", "quantity": 150, "unit": "g" },
+        { "product": "Bread", "quantity": 8, "unit": "slice" },
+        { "product": "Butter", "quantity": 50, "unit": "g" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "syrniki-cottage-cheese-pancakes",
+      "name": "Syrniki Cottage Cheese Pancakes",
+      "category": "Breakfast",
+      "description": "Thick, tender Eastern European cottage cheese pancakes, fried golden and served with sour cream and jam.",
+      "instructions": [
+        "Press the cottage cheese through a sieve for a smooth texture.",
+        "Mix it with the egg, sugar, vanilla extract and a pinch of salt.",
+        "Add the flour and stir until a soft, slightly sticky dough forms.",
+        "Shape into 8 thick patties and dredge lightly in extra flour.",
+        "Fry in butter over medium-low heat for 3 to 4 minutes per side until golden and cooked through.",
+        "Serve warm with sour cream and jam."
+      ],
+      "prepTime": 15,
+      "cookTime": 15,
+      "servings": 3,
+      "tags": ["vegetarian", "kid-friendly", "high-protein", "comfort-food"],
+      "ingredients": [
+        { "product": "Cottage Cheese", "quantity": 400, "unit": "g" },
+        { "product": "Eggs", "quantity": 1, "unit": "pcs" },
+        { "product": "Sugar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Flour", "quantity": 80, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Sour Cream", "quantity": 100, "unit": "g" },
+        { "product": "Jam", "quantity": 3, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "buckwheat-porridge-with-milk",
+      "name": "Buckwheat Porridge with Milk",
+      "category": "Breakfast",
+      "description": "Nutty toasted buckwheat simmered until tender, served warm with milk, butter and honey.",
+      "instructions": [
+        "Toast the buckwheat groats in a dry pan for 3 minutes until fragrant.",
+        "Add the water and salt, bring to a boil, then cover and simmer for 15 minutes until the water is absorbed.",
+        "Take off the heat and let it steam, covered, for 5 minutes.",
+        "Stir in the butter.",
+        "Spoon into bowls, pour over warm milk and drizzle with honey."
+      ],
+      "prepTime": 2,
+      "cookTime": 20,
+      "servings": 2,
+      "tags": ["healthy", "vegetarian", "gluten-free", "budget"],
+      "ingredients": [
+        { "product": "Buckwheat", "quantity": 150, "unit": "g" },
+        { "product": "Water", "quantity": 300, "unit": "ml" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Butter", "quantity": 20, "unit": "g" },
+        { "product": "Milk", "quantity": 300, "unit": "ml" },
+        { "product": "Honey", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "shakshuka",
+      "name": "Shakshuka",
+      "category": "Breakfast",
+      "description": "Eggs poached in a spiced tomato and pepper sauce with cumin and paprika, served with crusty bread.",
+      "instructions": [
+        "Heat the olive oil in a wide pan and soften the diced onion and bell pepper for 6 minutes.",
+        "Add the garlic, cumin, paprika and chili flakes and cook for 1 minute.",
+        "Pour in the crushed tomatoes, season with salt and pepper and simmer for 10 minutes until thickened.",
+        "Make 4 wells in the sauce and crack an egg into each.",
+        "Cover and cook for 6 to 8 minutes until the whites are set but the yolks still soft.",
+        "Scatter with parsley and crumbled feta and serve straight from the pan with bread."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 2,
+      "tags": ["middle-eastern", "vegetarian", "one-pot", "healthy"],
+      "ingredients": [
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Sweet Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Chili Flakes", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Feta Cheese", "quantity": 60, "unit": "g" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Bread", "quantity": 4, "unit": "slice" }
+      ]
+    },
+    {
+      "key": "green-shakshuka",
+      "name": "Green Shakshuka",
+      "category": "Breakfast",
+      "description": "A fresh twist on shakshuka: eggs baked into wilted spinach, leek and herbs with creamy feta.",
+      "instructions": [
+        "Heat the olive oil in a large pan and cook the sliced leek and garlic for 5 minutes until soft.",
+        "Add the spinach in handfuls and stir until wilted, then season with salt, pepper and cumin.",
+        "Stir in the chopped dill and parsley and a squeeze of lemon juice.",
+        "Make 4 wells in the greens and crack an egg into each.",
+        "Cover and cook on low for 6 to 7 minutes until the whites are set.",
+        "Crumble the feta on top and serve with yogurt and warm pita."
+      ],
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 2,
+      "tags": ["vegetarian", "healthy", "low-carb", "one-pot"],
+      "ingredients": [
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Leek", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 2, "unit": "clove" },
+        { "product": "Spinach", "quantity": 300, "unit": "g" },
+        { "product": "Cumin", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Feta Cheese", "quantity": 80, "unit": "g" },
+        { "product": "Yogurt", "quantity": 100, "unit": "g" },
+        { "product": "Pita Bread", "quantity": 2, "unit": "pcs" }
+      ]
+    },
+    {
+      "key": "spinach-feta-frittata",
+      "name": "Spinach and Feta Frittata",
+      "category": "Breakfast",
+      "description": "Fluffy oven-finished frittata packed with spinach, red onion, feta and fresh dill.",
+      "instructions": [
+        "Preheat the oven to 190°C.",
+        "Heat the olive oil in an ovenproof pan and soften the sliced red onion for 4 minutes.",
+        "Add the spinach and cook until wilted, then spread it evenly in the pan.",
+        "Whisk the eggs with the milk, dill, salt and pepper and pour over the vegetables.",
+        "Crumble the feta on top and cook on the stove for 3 minutes until the edges set.",
+        "Transfer to the oven for 12 minutes until puffed and just set in the centre. Slice into wedges."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["mediterranean", "vegetarian", "high-protein", "low-carb"],
+      "ingredients": [
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Red Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Spinach", "quantity": 200, "unit": "g" },
+        { "product": "Eggs", "quantity": 8, "unit": "pcs" },
+        { "product": "Milk", "quantity": 60, "unit": "ml" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Feta Cheese", "quantity": 120, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "potato-chorizo-frittata",
+      "name": "Potato and Chorizo Frittata",
+      "category": "Breakfast",
+      "description": "Spanish-style frittata with crisp-edged potatoes, smoky chorizo and sweet onion, baked until golden.",
+      "instructions": [
+        "Peel the potatoes, cut into 1 cm cubes and boil in salted water for 8 minutes. Drain well.",
+        "Fry the diced chorizo in an ovenproof pan for 3 minutes until the oil runs red, then add the sliced onion and cook for 5 minutes.",
+        "Add the potatoes and fry until lightly browned.",
+        "Whisk the eggs with the smoked paprika, parsley, salt and pepper and pour over the pan.",
+        "Cook on low for 5 minutes until the edges set, then bake at 190°C for 12 minutes.",
+        "Cool slightly, slice into wedges and serve warm or at room temperature."
+      ],
+      "prepTime": 15,
+      "cookTime": 35,
+      "servings": 4,
+      "tags": ["mediterranean", "high-protein", "meal-prep", "baked"],
+      "ingredients": [
+        { "product": "Potatoes", "quantity": 3, "unit": "pcs" },
+        { "product": "Chorizo", "quantity": 120, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Eggs", "quantity": 8, "unit": "pcs" },
+        { "product": "Smoked Paprika", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "baked-eggs-in-avocado",
+      "name": "Baked Eggs in Avocado",
+      "category": "Breakfast",
+      "description": "Halved avocados baked with an egg nestled inside, finished with crispy bacon bits and chives.",
+      "instructions": [
+        "Preheat the oven to 200°C.",
+        "Halve the avocados, remove the stones and scoop out a little flesh to make room for the eggs.",
+        "Set the halves in a small baking dish so they sit level.",
+        "Crack an egg into each half, season with salt, pepper and chili flakes.",
+        "Bake for 15 minutes until the whites are set.",
+        "Meanwhile fry the bacon until crisp, crumble it over the eggs and scatter with chives."
+      ],
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 2,
+      "tags": ["low-carb", "high-protein", "baked", "gluten-free"],
+      "ingredients": [
+        { "product": "Avocado", "quantity": 2, "unit": "pcs" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Bacon", "quantity": 60, "unit": "g" },
+        { "product": "Fresh Chives", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Chili Flakes", "quantity": 1, "unit": "pinch" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "smoked-salmon-scrambled-eggs",
+      "name": "Smoked Salmon Scrambled Eggs",
+      "category": "Breakfast",
+      "description": "Slow-cooked creamy scrambled eggs folded with smoked salmon and chives, served on buttered toast.",
+      "instructions": [
+        "Whisk the eggs with the cream, a pinch of salt and pepper.",
+        "Melt the butter in a non-stick pan over low heat and pour in the eggs.",
+        "Stir slowly and constantly with a spatula until soft, glossy curds form, about 5 minutes.",
+        "Tear the smoked salmon into pieces and fold it in with the chives just before the eggs finish.",
+        "Toast and butter the bread and pile the eggs on top. Serve with lemon wedges."
+      ],
+      "prepTime": 5,
+      "cookTime": 8,
+      "servings": 2,
+      "tags": ["quick", "high-protein", "french", "low-carb"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 5, "unit": "pcs" },
+        { "product": "Cooking Cream", "quantity": 2, "unit": "tbsp" },
+        { "product": "Butter", "quantity": 25, "unit": "g" },
+        { "product": "Smoked Salmon", "quantity": 100, "unit": "g" },
+        { "product": "Fresh Chives", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Bread", "quantity": 4, "unit": "slice" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "menemen",
+      "name": "Menemen",
+      "category": "Breakfast",
+      "description": "Turkish soft scrambled eggs cooked into sweet green peppers and juicy tomatoes with a hint of chili.",
+      "instructions": [
+        "Heat the olive oil and butter in a pan and cook the diced green peppers for 5 minutes.",
+        "Grate the tomatoes and add them with the chili flakes, salt and pepper. Simmer 8 minutes until jammy.",
+        "Lightly beat the eggs and pour them into the pan.",
+        "Stir gently over low heat until the eggs are just set but still creamy.",
+        "Sprinkle with parsley and serve immediately with warm bread."
+      ],
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 2,
+      "tags": ["middle-eastern", "vegetarian", "quick", "one-pot"],
+      "ingredients": [
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Butter", "quantity": 15, "unit": "g" },
+        { "product": "Green Peppers", "quantity": 2, "unit": "pcs" },
+        { "product": "Tomatoes", "quantity": 4, "unit": "pcs" },
+        { "product": "Chili Flakes", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Fresh Parsley", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Bread", "quantity": 4, "unit": "slice" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "huevos-rancheros",
+      "name": "Huevos Rancheros",
+      "category": "Breakfast",
+      "description": "Crisp tortillas topped with black beans, fried eggs, a quick spicy tomato salsa, avocado and coriander.",
+      "instructions": [
+        "Make the salsa: soften the onion and garlic in a little oil, add the crushed tomatoes, chili, cumin and salt and simmer 10 minutes.",
+        "Warm the drained beans in a small pan with a pinch of cumin, mashing lightly.",
+        "Fry the tortillas in a little oil for 1 minute per side until lightly crisp.",
+        "Fry the eggs sunny-side up.",
+        "Spread beans over each tortilla, add an egg and spoon over the salsa.",
+        "Top with sliced avocado, coriander and a squeeze of lime."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 2,
+      "tags": ["mexican", "spicy", "vegetarian", "high-protein"],
+      "ingredients": [
+        { "product": "Tortillas", "quantity": 4, "unit": "pcs" },
+        { "product": "Canned Beans", "name": "Black beans", "quantity": 1, "unit": "can" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Crushed Tomatoes", "quantity": 400, "unit": "g" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Chili Pepper", "quantity": 1, "unit": "pcs" },
+        { "product": "Cumin", "quantity": 1, "unit": "tsp" },
+        { "product": "Avocado", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Limes", "quantity": 1, "unit": "pcs" },
+        { "product": "Vegetable Oil", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "mushroom-thyme-scramble-on-toast",
+      "name": "Garlic Mushroom Scramble on Toast",
+      "category": "Breakfast",
+      "description": "Buttery garlic and thyme mushrooms folded into soft scrambled eggs, piled onto toasted sourdough-style bread.",
+      "instructions": [
+        "Slice the mushrooms and fry them in half the butter over high heat until golden, about 6 minutes.",
+        "Add the garlic and thyme leaves, season and cook 1 minute more. Set aside.",
+        "Whisk the eggs with the milk, salt and pepper.",
+        "Melt the remaining butter in the pan over low heat and scramble the eggs slowly until softly set.",
+        "Fold the mushrooms back in.",
+        "Toast the bread, spoon over the scramble and finish with grated parmesan and parsley."
+      ],
+      "prepTime": 5,
+      "cookTime": 12,
+      "servings": 2,
+      "tags": ["vegetarian", "quick", "comfort-food", "high-protein"],
+      "ingredients": [
+        { "product": "Mushrooms", "quantity": 250, "unit": "g" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Garlic", "quantity": 1, "unit": "clove" },
+        { "product": "Fresh Thyme", "quantity": 3, "unit": "sprig" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Milk", "quantity": 2, "unit": "tbsp" },
+        { "product": "Bread", "quantity": 4, "unit": "slice" },
+        { "product": "Parmesan", "quantity": 20, "unit": "g" },
+        { "product": "Fresh Parsley", "note": "to garnish" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "honey-walnut-porridge",
+      "name": "Honey and Walnut Porridge",
+      "category": "Breakfast",
+      "description": "Creamy stovetop oat porridge finished with toasted walnuts, a drizzle of honey and sliced banana.",
+      "instructions": [
+        "Combine the oats, milk, water and salt in a saucepan.",
+        "Bring to a simmer and cook for 5 to 6 minutes, stirring, until thick and creamy.",
+        "Meanwhile toast the walnuts in a dry pan for 3 minutes and roughly chop.",
+        "Stir the cinnamon into the porridge and divide between bowls.",
+        "Top with sliced banana, walnuts and a generous drizzle of honey."
+      ],
+      "prepTime": 3,
+      "cookTime": 8,
+      "servings": 2,
+      "tags": ["quick", "healthy", "vegetarian", "budget"],
+      "ingredients": [
+        { "product": "Rolled Oats", "quantity": 100, "unit": "g" },
+        { "product": "Milk", "quantity": 350, "unit": "ml" },
+        { "product": "Water", "quantity": 150, "unit": "ml" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Walnuts", "quantity": 40, "unit": "g" },
+        { "product": "Cinnamon", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Bananas", "quantity": 1, "unit": "pcs" },
+        { "product": "Honey", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "berry-chia-overnight-oats",
+      "name": "Berry and Chia Overnight Oats",
+      "category": "Breakfast",
+      "description": "No-cook jar of oats, chia and yogurt soaked overnight, layered with juicy mixed berries.",
+      "instructions": [
+        "Stir together the oats, chia seeds, milk, yogurt, honey and vanilla extract in a bowl.",
+        "Divide between two jars, cover and refrigerate overnight (at least 6 hours).",
+        "In the morning stir and loosen with a splash of milk if too thick.",
+        "Top with the berries and a sprinkle of almonds."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 2,
+      "tags": ["no-cook", "healthy", "meal-prep", "vegetarian"],
+      "ingredients": [
+        { "product": "Rolled Oats", "quantity": 100, "unit": "g" },
+        { "product": "Chia Seeds", "quantity": 2, "unit": "tbsp" },
+        { "product": "Milk", "quantity": 250, "unit": "ml" },
+        { "product": "Yogurt", "quantity": 150, "unit": "g" },
+        { "product": "Honey", "quantity": 2, "unit": "tbsp" },
+        { "product": "Vanilla Extract", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Frozen Berries", "quantity": 150, "unit": "g" },
+        { "product": "Almonds", "name": "Flaked almonds", "quantity": 20, "unit": "g" }
+      ]
+    },
+    {
+      "key": "peanut-butter-banana-overnight-oats",
+      "name": "Peanut Butter Banana Overnight Oats",
+      "category": "Breakfast",
+      "description": "Thick, satisfying overnight oats with mashed banana, peanut butter and dark chocolate shavings.",
+      "instructions": [
+        "Mash the banana in a bowl and whisk in the peanut butter, milk, yogurt and maple syrup.",
+        "Stir in the oats, chia seeds and a pinch of salt.",
+        "Spoon into a jar, cover and refrigerate overnight.",
+        "Serve topped with grated dark chocolate and a few extra banana slices."
+      ],
+      "prepTime": 8,
+      "cookTime": 0,
+      "servings": 1,
+      "tags": ["no-cook", "meal-prep", "vegetarian", "high-protein"],
+      "ingredients": [
+        { "product": "Bananas", "quantity": 1, "unit": "pcs" },
+        { "product": "Peanut Butter", "quantity": 1, "unit": "tbsp" },
+        { "product": "Milk", "quantity": 120, "unit": "ml" },
+        { "product": "Yogurt", "quantity": 60, "unit": "g" },
+        { "product": "Maple Syrup", "quantity": 1, "unit": "tbsp" },
+        { "product": "Rolled Oats", "quantity": 50, "unit": "g" },
+        { "product": "Chia Seeds", "quantity": 1, "unit": "tbsp" },
+        { "product": "Dark Chocolate", "quantity": 10, "unit": "g" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" }
+      ]
+    },
+    {
+      "key": "blueberry-baked-oatmeal",
+      "name": "Blueberry Baked Oatmeal",
+      "category": "Breakfast",
+      "description": "A sliceable tray of baked oats with bursting blueberries, cinnamon and maple syrup, great for meal prep.",
+      "instructions": [
+        "Preheat the oven to 180°C and butter a 20 cm baking dish.",
+        "Mix the oats, baking powder, cinnamon and salt in a bowl.",
+        "Whisk the eggs, milk, maple syrup, melted butter and vanilla extract in another bowl.",
+        "Combine wet and dry, fold in most of the blueberries and pour into the dish.",
+        "Scatter the remaining blueberries and the almonds on top.",
+        "Bake for 35 minutes until set and golden. Serve warm with yogurt."
+      ],
+      "prepTime": 10,
+      "cookTime": 35,
+      "servings": 6,
+      "tags": ["baked", "meal-prep", "healthy", "vegetarian"],
+      "ingredients": [
+        { "product": "Rolled Oats", "quantity": 250, "unit": "g" },
+        { "product": "Baking Powder", "quantity": 1, "unit": "tsp" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Milk", "quantity": 450, "unit": "ml" },
+        { "product": "Maple Syrup", "quantity": 4, "unit": "tbsp" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Blueberries", "quantity": 200, "unit": "g" },
+        { "product": "Almonds", "name": "Flaked almonds", "quantity": 30, "unit": "g" },
+        { "product": "Yogurt", "note": "for serving" }
+      ]
+    },
+    {
+      "key": "savoury-oat-porridge-egg-parmesan",
+      "name": "Savoury Oat Porridge with Egg and Parmesan",
+      "category": "Breakfast",
+      "description": "Oats cooked risotto-style in broth with parmesan and butter, topped with a fried egg and green onions.",
+      "instructions": [
+        "Melt the butter in a saucepan and toast the oats for 1 minute.",
+        "Add the broth and simmer for 6 minutes, stirring, until creamy.",
+        "Stir in the grated parmesan and season with pepper.",
+        "Fry the eggs in olive oil until the edges are crisp and the yolks runny.",
+        "Spoon the porridge into bowls, top with the eggs, sliced green onions and chili flakes."
+      ],
+      "prepTime": 5,
+      "cookTime": 12,
+      "servings": 2,
+      "tags": ["quick", "high-protein", "vegetarian", "comfort-food"],
+      "ingredients": [
+        { "product": "Rolled Oats", "quantity": 100, "unit": "g" },
+        { "product": "Butter", "quantity": 15, "unit": "g" },
+        { "product": "Vegetable Broth", "quantity": 500, "unit": "ml" },
+        { "product": "Parmesan", "quantity": 40, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Green Onions", "quantity": 2, "unit": "pcs" },
+        { "product": "Chili Flakes", "quantity": 1, "unit": "pinch" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "fluffy-buttermilk-pancakes",
+      "name": "Fluffy Buttermilk Pancakes",
+      "category": "Breakfast",
+      "description": "Tall, tender American-style pancakes with a buttermilk tang, stacked with butter and maple syrup.",
+      "instructions": [
+        "Whisk the flour, sugar, baking powder, baking soda and salt in a large bowl.",
+        "In a jug whisk the buttermilk, eggs, melted butter and vanilla extract.",
+        "Pour the wet into the dry and stir until just combined; a few lumps are fine. Rest 5 minutes.",
+        "Heat a lightly buttered pan over medium heat and ladle in 80 ml of batter per pancake.",
+        "Cook until bubbles form and pop on the surface, about 2 minutes, then flip and cook 1 minute more.",
+        "Serve stacked with butter and maple syrup."
+      ],
+      "prepTime": 10,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["american", "kid-friendly", "vegetarian", "comfort-food"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 300, "unit": "g" },
+        { "product": "Sugar", "quantity": 2, "unit": "tbsp" },
+        { "product": "Baking Powder", "quantity": 2, "unit": "tsp" },
+        { "product": "Baking Soda", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Buttermilk", "quantity": 450, "unit": "ml" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Butter", "quantity": 60, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Maple Syrup", "quantity": 6, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "belgian-waffles",
+      "name": "Belgian Waffles",
+      "category": "Breakfast",
+      "description": "Crisp, deep-pocketed waffles made light with whipped egg whites, topped with strawberries and cream.",
+      "instructions": [
+        "Separate the eggs. Whisk the yolks with the milk, melted butter and vanilla extract.",
+        "Stir in the flour, sugar, baking powder and salt until smooth.",
+        "Beat the egg whites to soft peaks and fold them gently into the batter.",
+        "Preheat and lightly grease the waffle iron.",
+        "Cook each waffle for 4 to 5 minutes until golden and crisp.",
+        "Serve warm with sliced strawberries, whipped cream and a dusting of powdered sugar."
+      ],
+      "prepTime": 15,
+      "cookTime": 20,
+      "servings": 4,
+      "tags": ["kid-friendly", "vegetarian", "comfort-food", "summer"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Milk", "quantity": 350, "unit": "ml" },
+        { "product": "Butter", "quantity": 80, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Flour", "quantity": 250, "unit": "g" },
+        { "product": "Sugar", "quantity": 40, "unit": "g" },
+        { "product": "Baking Powder", "quantity": 2, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Strawberries", "quantity": 250, "unit": "g" },
+        { "product": "Whipped Cream", "quantity": 150, "unit": "g" },
+        { "product": "Powdered Sugar", "note": "for dusting" }
+      ]
+    },
+    {
+      "key": "cinnamon-french-toast",
+      "name": "Cinnamon French Toast",
+      "category": "Breakfast",
+      "description": "Thick bread slices soaked in vanilla-cinnamon custard and fried in butter until caramelised and golden.",
+      "instructions": [
+        "Whisk the eggs, milk, sugar, cinnamon and vanilla extract in a shallow dish.",
+        "Dip each slice of bread in the custard for 20 seconds per side.",
+        "Melt some butter in a large pan over medium heat.",
+        "Fry the slices for 2 to 3 minutes per side until golden brown.",
+        "Serve warm with maple syrup and fresh berries."
+      ],
+      "prepTime": 5,
+      "cookTime": 15,
+      "servings": 2,
+      "tags": ["quick", "kid-friendly", "vegetarian", "comfort-food"],
+      "ingredients": [
+        { "product": "Bread", "quantity": 6, "unit": "slice" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Milk", "quantity": 150, "unit": "ml" },
+        { "product": "Sugar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Maple Syrup", "quantity": 3, "unit": "tbsp" },
+        { "product": "Raspberries", "quantity": 100, "unit": "g" }
+      ]
+    },
+    {
+      "key": "savoury-french-toast-ham-cheese",
+      "name": "Savoury French Toast with Ham and Cheese",
+      "category": "Breakfast",
+      "description": "Egg-soaked bread sandwiches with ham and melted cascaval, fried crisp and served with tomatoes.",
+      "instructions": [
+        "Whisk the eggs with the milk, mustard, salt and pepper in a shallow dish.",
+        "Make 2 sandwiches with the bread, ham and sliced cascaval.",
+        "Dip each sandwich in the egg mixture, letting both sides soak for 20 seconds.",
+        "Fry in butter over medium heat for 3 to 4 minutes per side until golden and the cheese melts.",
+        "Cut in half and serve with sliced tomatoes and chives."
+      ],
+      "prepTime": 5,
+      "cookTime": 10,
+      "servings": 2,
+      "tags": ["quick", "kid-friendly", "high-protein", "comfort-food"],
+      "ingredients": [
+        { "product": "Bread", "quantity": 4, "unit": "slice" },
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Milk", "quantity": 80, "unit": "ml" },
+        { "product": "Mustard", "quantity": 1, "unit": "tsp" },
+        { "product": "Pressed Ham", "quantity": 80, "unit": "g" },
+        { "product": "Cascaval", "quantity": 80, "unit": "g" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Tomatoes", "quantity": 1, "unit": "pcs" },
+        { "product": "Fresh Chives", "note": "to garnish" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "breakfast-burrito",
+      "name": "Breakfast Burrito",
+      "category": "Breakfast",
+      "description": "Warm tortillas rolled around scrambled eggs, crispy potatoes, bacon, cheese and salsa-style tomatoes.",
+      "instructions": [
+        "Dice the potatoes small and fry in oil for 12 minutes until crisp and golden. Season with paprika and salt.",
+        "Fry the bacon until crisp, then chop.",
+        "Scramble the eggs in butter until just set.",
+        "Warm the tortillas in a dry pan.",
+        "Fill each tortilla with eggs, potatoes, bacon, grated cheese, diced tomato and a dash of hot sauce.",
+        "Fold in the sides and roll tightly. Toast the burritos seam-side down for 1 minute to seal."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 2,
+      "tags": ["mexican", "high-protein", "meal-prep", "american"],
+      "ingredients": [
+        { "product": "Tortillas", "quantity": 2, "unit": "pcs" },
+        { "product": "Potatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Vegetable Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Sweet Paprika", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Bacon", "quantity": 80, "unit": "g" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Butter", "quantity": 15, "unit": "g" },
+        { "product": "Cheese", "quantity": 60, "unit": "g" },
+        { "product": "Tomatoes", "quantity": 1, "unit": "pcs" },
+        { "product": "Hot Sauce", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "bacon-egg-cheese-breakfast-sandwich",
+      "name": "Bacon, Egg and Cheese Breakfast Sandwich",
+      "category": "Breakfast",
+      "description": "Toasted bun with crispy bacon, a fried egg with a jammy yolk and melted cheddar — a diner classic.",
+      "instructions": [
+        "Fry the bacon in a pan until crisp and set aside on paper towels.",
+        "Split and toast the buns in the bacon fat until golden.",
+        "Fry the eggs in butter, breaking the yolks lightly if you prefer them set, and lay a slice of cheese on each to melt.",
+        "Spread the bun bases with mayonnaise and ketchup.",
+        "Stack the bacon, cheesy egg and a few arugula leaves, close the sandwich and serve hot."
+      ],
+      "prepTime": 5,
+      "cookTime": 10,
+      "servings": 2,
+      "tags": ["american", "quick", "high-protein", "comfort-food"],
+      "ingredients": [
+        { "product": "Burger Buns", "quantity": 2, "unit": "pcs" },
+        { "product": "Bacon", "quantity": 100, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Butter", "quantity": 10, "unit": "g" },
+        { "product": "Cheese", "quantity": 2, "unit": "slice" },
+        { "product": "Mayonnaise", "quantity": 1, "unit": "tbsp" },
+        { "product": "Ketchup", "quantity": 1, "unit": "tbsp" },
+        { "product": "Arugula", "quantity": 1, "unit": "handful" }
+      ]
+    },
+    {
+      "key": "avocado-toast-poached-egg",
+      "name": "Avocado Toast with Poached Egg",
+      "category": "Breakfast",
+      "description": "Smashed lemony avocado on toasted whole wheat bread, crowned with a poached egg and chili flakes.",
+      "instructions": [
+        "Bring a pan of water to a gentle simmer with the vinegar.",
+        "Mash the avocado with lemon juice, salt and pepper.",
+        "Toast the bread and spread thickly with the avocado.",
+        "Crack each egg into a cup, slide into the water and poach for 3 minutes.",
+        "Lift out, drain and place on the toast.",
+        "Finish with chili flakes, a drizzle of olive oil and cherry tomato halves."
+      ],
+      "prepTime": 5,
+      "cookTime": 8,
+      "servings": 2,
+      "tags": ["quick", "healthy", "vegetarian", "high-protein"],
+      "ingredients": [
+        { "product": "Whole Wheat Bread", "quantity": 2, "unit": "slice" },
+        { "product": "Avocado", "quantity": 1, "unit": "pcs" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Vinegar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Chili Flakes", "quantity": 1, "unit": "pinch" },
+        { "product": "Olive Oil", "quantity": 1, "unit": "tsp" },
+        { "product": "Cherry Tomatoes", "quantity": 80, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "smoked-salmon-cream-cheese-bagel",
+      "name": "Smoked Salmon and Cream Cheese Bagel",
+      "category": "Breakfast",
+      "description": "Toasted bagel with dill cream cheese, silky smoked salmon, red onion, capers and cucumber ribbons.",
+      "instructions": [
+        "Mix the cream cheese with chopped dill, lemon zest and a little black pepper.",
+        "Split and toast the bagels.",
+        "Spread both halves generously with the dill cream cheese.",
+        "Layer on the smoked salmon, thin red onion rings and cucumber ribbons.",
+        "Scatter with capers, squeeze over lemon juice and close or serve open-faced."
+      ],
+      "prepTime": 10,
+      "cookTime": 3,
+      "servings": 2,
+      "tags": ["quick", "no-cook", "high-protein", "american"],
+      "ingredients": [
+        { "product": "Bagels", "quantity": 2, "unit": "pcs" },
+        { "product": "Cream Cheese", "quantity": 100, "unit": "g" },
+        { "product": "Fresh Dill", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Smoked Salmon", "quantity": 120, "unit": "g" },
+        { "product": "Red Onion", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Cucumber", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Capers", "quantity": 1, "unit": "tbsp" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "croque-monsieur",
+      "name": "Croque Monsieur",
+      "category": "Breakfast",
+      "description": "Parisian café classic: ham and gruyère sandwich under a blanket of nutmeg béchamel, grilled until bubbling.",
+      "instructions": [
+        "Melt 20 g butter, stir in the flour and cook 1 minute. Whisk in the milk gradually and simmer until thick. Season with nutmeg, salt and pepper.",
+        "Lightly toast the bread and spread one side of each slice with mustard.",
+        "Layer ham and half the grated cheese on 2 slices and close with the other 2 slices.",
+        "Spread the béchamel over the tops and sprinkle with the remaining cheese.",
+        "Grill under a hot oven grill for 5 to 7 minutes until golden and bubbling.",
+        "Serve hot with a few salad leaves."
+      ],
+      "prepTime": 10,
+      "cookTime": 15,
+      "servings": 2,
+      "tags": ["french", "comfort-food", "baked", "high-protein"],
+      "ingredients": [
+        { "product": "Bread", "quantity": 4, "unit": "slice" },
+        { "product": "Butter", "quantity": 20, "unit": "g" },
+        { "product": "Flour", "quantity": 20, "unit": "g" },
+        { "product": "Milk", "quantity": 200, "unit": "ml" },
+        { "product": "Nutmeg", "quantity": 1, "unit": "pinch" },
+        { "product": "Mustard", "quantity": 2, "unit": "tsp" },
+        { "product": "Pressed Ham", "quantity": 120, "unit": "g" },
+        { "product": "Emmental", "name": "Gruyère", "quantity": 120, "unit": "g" },
+        { "product": "Mixed Salad Greens", "quantity": 50, "unit": "g" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "greek-yogurt-fig-pistachio-bowl",
+      "name": "Greek Yogurt Bowl with Figs and Pistachios",
+      "category": "Breakfast",
+      "description": "Thick Greek yogurt with fresh figs, crushed pistachios, honey and a hint of cinnamon — no cooking needed.",
+      "instructions": [
+        "Spoon the yogurt into two bowls and smooth the surface.",
+        "Quarter the figs and arrange them on top.",
+        "Roughly crush the pistachios and scatter over the figs.",
+        "Drizzle generously with honey and dust with cinnamon.",
+        "Add a sprinkle of granola for crunch and serve immediately."
+      ],
+      "prepTime": 5,
+      "cookTime": 0,
+      "servings": 2,
+      "tags": ["no-cook", "mediterranean", "healthy", "vegetarian"],
+      "ingredients": [
+        { "product": "Yogurt", "name": "Greek yogurt", "quantity": 400, "unit": "g" },
+        { "product": "Figs", "quantity": 4, "unit": "pcs" },
+        { "product": "Pistachios", "quantity": 40, "unit": "g" },
+        { "product": "Honey", "quantity": 2, "unit": "tbsp" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "pinch" },
+        { "product": "Granola", "quantity": 40, "unit": "g" }
+      ]
+    },
+    {
+      "key": "berry-smoothie-bowl",
+      "name": "Berry Smoothie Bowl",
+      "category": "Breakfast",
+      "description": "Thick blended frozen berries and banana topped with granola, fresh fruit, coconut and chia seeds.",
+      "instructions": [
+        "Blend the frozen berries, frozen banana, yogurt and a splash of milk until thick and smooth, scraping down as needed.",
+        "Spoon the mixture into a bowl.",
+        "Arrange the sliced strawberries and kiwi on top.",
+        "Sprinkle with granola, desiccated coconut and chia seeds.",
+        "Drizzle with honey and eat right away."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 1,
+      "tags": ["no-cook", "healthy", "vegetarian", "summer"],
+      "ingredients": [
+        { "product": "Frozen Berries", "quantity": 200, "unit": "g" },
+        { "product": "Bananas", "quantity": 1, "unit": "pcs" },
+        { "product": "Yogurt", "quantity": 100, "unit": "g" },
+        { "product": "Milk", "quantity": 50, "unit": "ml" },
+        { "product": "Strawberries", "quantity": 50, "unit": "g" },
+        { "product": "Kiwi", "quantity": 1, "unit": "pcs" },
+        { "product": "Granola", "quantity": 30, "unit": "g" },
+        { "product": "Desiccated Coconut", "quantity": 1, "unit": "tbsp" },
+        { "product": "Chia Seeds", "quantity": 1, "unit": "tsp" },
+        { "product": "Honey", "quantity": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "key": "mango-coconut-smoothie-bowl",
+      "name": "Mango Coconut Smoothie Bowl",
+      "category": "Breakfast",
+      "description": "Tropical dairy-free bowl of blended mango, banana and coconut milk, topped with toasted coconut and lime.",
+      "instructions": [
+        "Peel and dice the mango and freeze for at least 2 hours, or use pre-frozen.",
+        "Blend the frozen mango, banana, coconut milk and lime juice until thick and creamy.",
+        "Toast the desiccated coconut in a dry pan for 2 minutes until golden.",
+        "Pour the smoothie into a bowl and top with toasted coconut, pumpkin seeds and extra mango.",
+        "Finish with a drizzle of agave syrup and mint leaves."
+      ],
+      "prepTime": 10,
+      "cookTime": 2,
+      "servings": 1,
+      "tags": ["vegan", "dairy-free", "healthy", "summer"],
+      "ingredients": [
+        { "product": "Mango", "quantity": 1, "unit": "pcs" },
+        { "product": "Bananas", "quantity": 1, "unit": "pcs" },
+        { "product": "Coconut Milk", "quantity": 100, "unit": "ml" },
+        { "product": "Limes", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Desiccated Coconut", "quantity": 2, "unit": "tbsp" },
+        { "product": "Pumpkin Seeds", "quantity": 1, "unit": "tbsp" },
+        { "product": "Agave Syrup", "quantity": 1, "unit": "tsp" },
+        { "product": "Fresh Mint", "note": "to garnish" }
+      ]
+    },
+    {
+      "key": "homemade-honey-nut-granola",
+      "name": "Homemade Honey Nut Granola",
+      "category": "Breakfast",
+      "description": "Crunchy oven-baked clusters of oats, almonds, walnuts and seeds glazed with honey and cinnamon.",
+      "instructions": [
+        "Preheat the oven to 160°C and line a tray with baking paper.",
+        "Mix the oats, chopped almonds and walnuts, sunflower seeds, cinnamon and salt in a large bowl.",
+        "Warm the honey, coconut oil and vanilla extract together until liquid and pour over the oats. Stir to coat.",
+        "Spread evenly on the tray and bake for 25 minutes, stirring once halfway, until golden.",
+        "Cool completely on the tray so clusters form, then stir in the dried cranberries.",
+        "Store in an airtight jar for up to 2 weeks and serve with yogurt or milk."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 6,
+      "tags": ["baked", "meal-prep", "vegetarian", "healthy"],
+      "ingredients": [
+        { "product": "Rolled Oats", "quantity": 300, "unit": "g" },
+        { "product": "Almonds", "quantity": 80, "unit": "g" },
+        { "product": "Walnuts", "quantity": 60, "unit": "g" },
+        { "product": "Sunflower Seeds", "quantity": 40, "unit": "g" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Honey", "quantity": 6, "unit": "tbsp" },
+        { "product": "Coconut Oil", "quantity": 3, "unit": "tbsp" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Dried Cranberries", "quantity": 80, "unit": "g" }
+      ]
+    },
+    {
+      "key": "blueberry-muffins",
+      "name": "Blueberry Muffins",
+      "category": "Breakfast",
+      "description": "Bakery-style domed muffins bursting with blueberries and a crunchy sugar top.",
+      "instructions": [
+        "Preheat the oven to 200°C and line a 12-hole muffin tin with paper cases.",
+        "Whisk the flour, sugar, baking powder and salt in a bowl.",
+        "In a jug whisk the eggs, milk, melted butter and vanilla extract.",
+        "Pour the wet into the dry and stir briefly until just combined, then fold in the blueberries.",
+        "Divide between the cases, sprinkle the tops with brown sugar.",
+        "Bake for 20 to 22 minutes until risen and golden. Cool 5 minutes before eating."
+      ],
+      "prepTime": 15,
+      "cookTime": 22,
+      "servings": 6,
+      "tags": ["baked", "kid-friendly", "vegetarian", "american"],
+      "ingredients": [
+        { "product": "Flour", "quantity": 300, "unit": "g" },
+        { "product": "Sugar", "quantity": 150, "unit": "g" },
+        { "product": "Baking Powder", "quantity": 2.5, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Milk", "quantity": 200, "unit": "ml" },
+        { "product": "Butter", "quantity": 100, "unit": "g" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Blueberries", "quantity": 200, "unit": "g" },
+        { "product": "Brown Sugar", "quantity": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "key": "banana-walnut-bread",
+      "name": "Banana Walnut Bread",
+      "category": "Breakfast",
+      "description": "Moist, deeply flavoured loaf made from overripe bananas and toasted walnuts — ideal for slicing all week.",
+      "instructions": [
+        "Preheat the oven to 175°C and line a 25 cm loaf tin with baking paper.",
+        "Mash the bananas in a large bowl and mix in the melted butter, brown sugar, eggs and vanilla extract.",
+        "Stir in the flour, baking soda, cinnamon and salt until just combined.",
+        "Fold in the chopped walnuts and pour into the tin.",
+        "Bake for 55 to 60 minutes until a skewer comes out clean.",
+        "Cool in the tin for 10 minutes, then turn out and cool fully before slicing."
+      ],
+      "prepTime": 15,
+      "cookTime": 60,
+      "servings": 6,
+      "tags": ["baked", "meal-prep", "vegetarian", "american"],
+      "ingredients": [
+        { "product": "Bananas", "name": "Overripe bananas", "quantity": 3, "unit": "pcs" },
+        { "product": "Butter", "quantity": 100, "unit": "g" },
+        { "product": "Brown Sugar", "quantity": 150, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Flour", "quantity": 250, "unit": "g" },
+        { "product": "Baking Soda", "quantity": 1, "unit": "tsp" },
+        { "product": "Cinnamon", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Walnuts", "quantity": 100, "unit": "g" }
+      ]
+    },
+    {
+      "key": "coconut-chia-pudding",
+      "name": "Coconut Chia Pudding",
+      "category": "Breakfast",
+      "description": "Creamy vegan chia pudding set overnight in coconut milk, topped with mango and toasted almonds.",
+      "instructions": [
+        "Whisk the coconut milk, almond milk, maple syrup and vanilla extract in a bowl.",
+        "Stir in the chia seeds and whisk again after 5 minutes to break up clumps.",
+        "Cover and refrigerate overnight until thick and set.",
+        "Spoon into glasses and top with diced mango and toasted flaked almonds."
+      ],
+      "prepTime": 10,
+      "cookTime": 0,
+      "servings": 2,
+      "tags": ["vegan", "dairy-free", "no-cook", "meal-prep"],
+      "ingredients": [
+        { "product": "Coconut Milk", "quantity": 200, "unit": "ml" },
+        { "product": "Almond Milk", "quantity": 150, "unit": "ml" },
+        { "product": "Maple Syrup", "quantity": 2, "unit": "tbsp" },
+        { "product": "Vanilla Extract", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Chia Seeds", "quantity": 5, "unit": "tbsp" },
+        { "product": "Mango", "quantity": 1, "unit": "pcs" },
+        { "product": "Almonds", "name": "Flaked almonds", "quantity": 20, "unit": "g" }
+      ]
+    },
+    {
+      "key": "full-english-breakfast",
+      "name": "Full English Breakfast",
+      "category": "Breakfast",
+      "description": "The big weekend fry-up: sausages, bacon, fried eggs, baked beans, grilled tomatoes, mushrooms and toast.",
+      "instructions": [
+        "Preheat the oven to 100°C to keep things warm. Fry the sausages in a little oil over medium heat for 12 minutes, turning, until browned.",
+        "Add the bacon to the pan and cook until crisp. Transfer both to the oven.",
+        "Halve the tomatoes and fry them cut-side down with the whole mushrooms in butter for 5 minutes.",
+        "Warm the baked beans in a small pan.",
+        "Fry the eggs sunny-side up in the remaining fat.",
+        "Toast and butter the bread and plate everything up with salt and pepper."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 2,
+      "tags": ["comfort-food", "high-protein", "winter", "one-pot"],
+      "ingredients": [
+        { "product": "Sausages", "quantity": 4, "unit": "pcs" },
+        { "product": "Bacon", "quantity": 120, "unit": "g" },
+        { "product": "Eggs", "quantity": 2, "unit": "pcs" },
+        { "product": "Baked Beans", "quantity": 1, "unit": "can" },
+        { "product": "Tomatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Mushrooms", "quantity": 150, "unit": "g" },
+        { "product": "Butter", "quantity": 30, "unit": "g" },
+        { "product": "Vegetable Oil", "quantity": 1, "unit": "tbsp" },
+        { "product": "Bread", "quantity": 4, "unit": "slice" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    },
+    {
+      "key": "dutch-baby-pancake",
+      "name": "Dutch Baby Pancake",
+      "category": "Breakfast",
+      "description": "One giant puffed oven pancake with crisp golden edges, served with lemon, powdered sugar and berries.",
+      "instructions": [
+        "Preheat the oven to 220°C with a 25 cm ovenproof skillet inside.",
+        "Blend the eggs, milk, flour, sugar, vanilla extract and salt until completely smooth.",
+        "Carefully add the butter to the hot skillet and swirl until melted and foaming.",
+        "Pour in the batter immediately and return to the oven.",
+        "Bake for 18 to 20 minutes without opening the door until dramatically puffed and golden.",
+        "Squeeze over lemon juice, dust with powdered sugar and top with raspberries. Serve at once."
+      ],
+      "prepTime": 5,
+      "cookTime": 20,
+      "servings": 2,
+      "tags": ["baked", "vegetarian", "kid-friendly", "quick"],
+      "ingredients": [
+        { "product": "Eggs", "quantity": 3, "unit": "pcs" },
+        { "product": "Milk", "quantity": 150, "unit": "ml" },
+        { "product": "Flour", "quantity": 90, "unit": "g" },
+        { "product": "Sugar", "quantity": 1, "unit": "tbsp" },
+        { "product": "Vanilla Extract", "quantity": 1, "unit": "tsp" },
+        { "product": "Salt", "quantity": 1, "unit": "pinch" },
+        { "product": "Butter", "quantity": 40, "unit": "g" },
+        { "product": "Lemon", "quantity": 0.5, "unit": "pcs" },
+        { "product": "Powdered Sugar", "note": "for dusting" },
+        { "product": "Raspberries", "quantity": 100, "unit": "g" }
+      ]
+    },
+    {
+      "key": "sweet-potato-hash-with-eggs",
+      "name": "Sweet Potato Hash with Eggs",
+      "category": "Breakfast",
+      "description": "Caramelised sweet potato, pepper and onion hash with smoked paprika, finished with eggs baked right in.",
+      "instructions": [
+        "Peel and dice the sweet potatoes into 1 cm cubes.",
+        "Heat the olive oil in a large pan and fry the sweet potatoes for 10 minutes, stirring occasionally, until starting to brown.",
+        "Add the diced onion and bell pepper and cook 6 minutes more until tender.",
+        "Season with smoked paprika, cumin, salt and pepper.",
+        "Make 4 wells, crack in the eggs, cover and cook on low for 5 to 6 minutes until the whites set.",
+        "Scatter with green onions and coriander and serve with hot sauce."
+      ],
+      "prepTime": 10,
+      "cookTime": 25,
+      "servings": 2,
+      "tags": ["healthy", "vegetarian", "one-pot", "gluten-free"],
+      "ingredients": [
+        { "product": "Sweet Potatoes", "quantity": 2, "unit": "pcs" },
+        { "product": "Olive Oil", "quantity": 2, "unit": "tbsp" },
+        { "product": "Onion", "quantity": 1, "unit": "pcs" },
+        { "product": "Bell Peppers", "quantity": 1, "unit": "pcs" },
+        { "product": "Smoked Paprika", "quantity": 1, "unit": "tsp" },
+        { "product": "Cumin", "quantity": 0.5, "unit": "tsp" },
+        { "product": "Eggs", "quantity": 4, "unit": "pcs" },
+        { "product": "Green Onions", "quantity": 2, "unit": "pcs" },
+        { "product": "Fresh Coriander", "quantity": 0.5, "unit": "bunch" },
+        { "product": "Hot Sauce", "note": "for serving" },
+        { "product": "Salt", "note": "to taste" },
+        { "product": "Black Pepper", "note": "to taste" }
+      ]
+    }
+  ],
+  "newProducts": [
+    {
+      "name": "Baked Beans",
+      "category": "Canned & Jarred",
+      "unit": "can",
+      "emoji": "🫘",
+      "aliases": ["baked beans in tomato sauce", "canned baked beans", "fasole la cutie in sos de rosii"]
+    }
+  ]
+}

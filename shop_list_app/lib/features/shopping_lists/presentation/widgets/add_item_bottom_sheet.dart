@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shop_list_app/core/constants/units.dart';
 import 'package:shop_list_app/features/products/domain/entities/product.dart';
 import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
+import 'package:shop_list_app/features/products/presentation/widgets/product_image_widget.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/providers/shopping_list_providers.dart';
 
 /// Bottom sheet for adding a new item to a list.
@@ -18,46 +20,15 @@ class AddItemBottomSheet extends ConsumerStatefulWidget {
 class _AddItemBottomSheetState extends ConsumerState<AddItemBottomSheet> {
   final _nameController = TextEditingController();
   final _qtyController = TextEditingController(text: '1');
-  String _unit = 'pcs';
+  String _unit = Units.pcs;
   bool _isSubmitting = false;
   String _searchQuery = '';
   int? _selectedProductId;
   int? _selectedCategoryId;
 
-  static const _units = ['pcs', 'kg', 'g', 'L', 'mL', 'oz', 'lb', 'cup'];
-  static const _unitAliases = {
-    'liter': 'L',
-    'litre': 'L',
-    'liters': 'L',
-    'litres': 'L',
-    'ml': 'mL',
-    'milliliter': 'mL',
-    'millilitre': 'mL',
-    'milliliters': 'mL',
-    'millilitres': 'mL',
-    'ounce': 'oz',
-    'ounces': 'oz',
-    'pound': 'lb',
-    'pounds': 'lb',
-    'piece': 'pcs',
-    'pieces': 'pcs',
-    'kg': 'kg',
-    'g': 'g',
-    'lb': 'lb',
-    'oz': 'oz',
-    'cup': 'cup',
-    'cups': 'cup',
-  };
-
-  String _normalizeUnit(String? unit) {
-    if (unit == null || unit.isEmpty) return 'pcs';
-    final normalized = unit.trim().toLowerCase();
-    if (_units.contains(unit)) return unit;
-    if (_unitAliases.containsKey(normalized)) {
-      return _unitAliases[normalized]!;
-    }
-    return 'pcs';
-  }
+  /// Units offered in the dropdown (the empty unit is not useful here).
+  static final List<String> _units =
+      Units.common.where((u) => u != Units.none).toList();
 
   List<Product> _filterProducts(List<Product> products) {
     final query = _searchQuery.trim().toLowerCase();
@@ -65,21 +36,18 @@ class _AddItemBottomSheetState extends ConsumerState<AddItemBottomSheet> {
       return products.take(5).toList();
     }
 
-    return products
-        .where(
-            (product) => product.name?.toLowerCase().contains(query) ?? false)
-        .take(6)
-        .toList();
+    bool matches(Product p) =>
+        (p.name?.toLowerCase().contains(query) ?? false) ||
+        p.aliases.any((a) => a.toLowerCase().contains(query));
+    return products.where(matches).take(6).toList();
   }
 
   void _selectProduct(Product product) {
     _selectedProductId = product.id;
     _selectedCategoryId = product.productCategoryId;
     _nameController.text = product.name ?? '';
-    if (product.quantity != null && product.quantity! > 0) {
-      _qtyController.text = product.quantity!.toString();
-    }
-    _unit = _normalizeUnit(product.units);
+    final unit = Units.normalize(product.defaultUnit);
+    _unit = _units.contains(unit) ? unit : Units.pcs;
     _searchQuery = product.name?.trim() ?? '';
   }
 
@@ -232,8 +200,12 @@ class _AddItemBottomSheetState extends ConsumerState<AddItemBottomSheet> {
                                 horizontal: 12, vertical: 12),
                             child: Row(
                               children: [
-                                const Icon(Icons.shopping_bag_outlined,
-                                    color: Colors.white54, size: 18),
+                                ProductImageWidget(
+                                  photo: product.photo,
+                                  size: 36,
+                                  borderRadius: 10,
+                                  backgroundColor: const Color(0xFF353535),
+                                ),
                                 const SizedBox(width: 12),
                                 Expanded(
                                   child: Column(
@@ -250,7 +222,7 @@ class _AddItemBottomSheetState extends ConsumerState<AddItemBottomSheet> {
                                       ),
                                       const SizedBox(height: 2),
                                       Text(
-                                        '${product.quantity?.toStringAsFixed(0) ?? '1'} ${product.units ?? _unit}',
+                                        'Sold by ${product.defaultUnit}',
                                         style: const TextStyle(
                                           fontFamily: 'Poppins',
                                           fontSize: 12,

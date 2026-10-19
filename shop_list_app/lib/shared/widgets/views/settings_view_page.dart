@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shop_list_app/core/theme/app_theme.dart';
 import 'package:shop_list_app/core/theme/theme_simple.dart';
+import 'package:shop_list_app/features/backup/presentation/widgets/backup_section.dart';
 import 'package:shop_list_app/features/pantry/presentation/providers/pantry_providers.dart';
 
 class SettingsView extends ConsumerStatefulWidget {
@@ -69,6 +70,10 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
           ),
           const Divider(),
           const SizedBox(height: 8),
+          // ── Backup ───────────────────────────────────────────────────────
+          const BackupSection(),
+          const Divider(),
+          const SizedBox(height: 8),
           // ── Data management ─────────────────────────────────────────────
           const Text(
             'Data',
@@ -100,9 +105,9 @@ class _SettingsViewState extends ConsumerState<SettingsView> {
                   ],
                 ),
               );
-              if (confirm == true && mounted) {
+              if (confirm == true && context.mounted) {
                 await ref.read(pantryItemsProvider.notifier).clearAll();
-                if (mounted) {
+                if (context.mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('Pantry cleared'),

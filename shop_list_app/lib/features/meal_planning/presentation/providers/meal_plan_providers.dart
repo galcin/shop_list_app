@@ -13,6 +13,7 @@ import 'package:shop_list_app/features/meal_planning/domain/usecases/duplicate_m
 import 'package:shop_list_app/features/meal_planning/domain/usecases/generate_shopping_list_from_plan_use_case.dart';
 import 'package:shop_list_app/features/meal_planning/domain/usecases/get_or_create_weekly_plan_use_case.dart';
 import 'package:shop_list_app/features/meal_planning/domain/usecases/watch_weekly_plan_use_case.dart';
+import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
 import 'package:shop_list_app/features/recipes/presentation/providers/recipe_providers.dart';
 import 'package:shop_list_app/features/shopping_lists/presentation/providers/shopping_list_providers.dart';
 
@@ -65,6 +66,7 @@ final generateShoppingListFromPlanUseCaseProvider =
     ref.watch(mealPlanRepositoryProvider),
     ref.watch(recipeRepositoryProvider),
     ref.watch(shoppingListRepositoryProvider),
+    ref.watch(productRepositoryProvider),
   );
 });
 
