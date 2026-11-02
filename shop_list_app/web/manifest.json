@@ -1,11 +1,11 @@
 {
-    "name": "shop_list_app",
-    "short_name": "shop_list_app",
+    "name": "MealMinder",
+    "short_name": "MealMinder",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "MealMinder — shopping list & meal planning app.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
