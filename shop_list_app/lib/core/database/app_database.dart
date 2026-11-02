@@ -159,6 +159,12 @@ class AppDatabase extends _$AppDatabase {
     // Products: rebuild without quantity/expiration_date, renaming units.
     await m.alterTable(TableMigration(
       products,
+      newColumns: [
+        products.aliases,
+        products.isBuiltIn,
+        products.createdAt,
+        products.updatedAt,
+      ],
       columnTransformer: {
         products.defaultUnit: const CustomExpression<String>(
             "COALESCE(NULLIF(TRIM(units), ''), 'pcs')"),
@@ -175,6 +181,12 @@ class AppDatabase extends _$AppDatabase {
     // Recipes: drop ingredients_json, add built-in bookkeeping columns.
     await m.alterTable(TableMigration(
       recipes,
+      newColumns: [
+        recipes.isBuiltIn,
+        recipes.seedKey,
+        recipes.createdAt,
+        recipes.updatedAt,
+      ],
       columnTransformer: {
         recipes.favorite:
             const CustomExpression<bool>('COALESCE(favorite, 0)'),

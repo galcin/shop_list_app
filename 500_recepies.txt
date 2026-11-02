@@ -1,0 +1,351 @@
+{
+  "recipes": [
+    {
+      "title": "Classic French Toast",
+      "cuisine": "French",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "breakfast",
+      "description": "A soft, golden breakfast classic with a lightly sweet cinnamon flavor.",
+      "ingredients": [
+        "2 large eggs",
+        "1/2 cup milk",
+        "1/2 tsp vanilla extract",
+        "2 slices bread",
+        "1 tbsp butter",
+        "1 tbsp maple syrup",
+        "1/4 tsp cinnamon"
+      ],
+      "steps": [
+        "Whisk the eggs, milk, vanilla, and cinnamon in a shallow bowl.",
+        "Heat a non-stick pan and melt the butter.",
+        "Dip each bread slice into the egg mixture, coating both sides.",
+        "Cook each side for 2 to 3 minutes until golden brown.",
+        "Serve warm with maple syrup."
+      ]
+    },
+    {
+      "title": "Scrambled Eggs with Herbs",
+      "cuisine": "International",
+      "dietary_tags": ["vegetarian", "gluten-free"],
+      "servings": 2,
+      "meal_type": "breakfast",
+      "description": "Simple, fluffy scrambled eggs finished with fresh herbs and a little richness from butter.",
+      "ingredients": [
+        "4 large eggs",
+        "1 tbsp milk",
+        "1 tbsp butter",
+        "1 tbsp chopped chives",
+        "1 tbsp chopped parsley",
+        "1/4 tsp salt",
+        "1/8 tsp black pepper"
+      ],
+      "steps": [
+        "Whisk the eggs, milk, salt, and pepper in a bowl.",
+        "Melt the butter in a pan over low to medium heat.",
+        "Pour in the eggs and stir gently with a spatula.",
+        "Cook slowly until just set and still soft.",
+        "Fold in the herbs right before serving."
+      ]
+    },
+    {
+      "title": "Overnight Oats with Berries",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "A no-cook breakfast made with oats, milk, yogurt, and fruit for a creamy, filling start to the day.",
+      "ingredients": [
+        "1/2 cup rolled oats",
+        "1/2 cup milk",
+        "1/2 cup yogurt",
+        "1/2 cup mixed berries",
+        "1 tbsp chia seeds",
+        "1 tsp honey"
+      ],
+      "steps": [
+        "Combine oats, milk, yogurt, chia seeds, and honey in a jar or bowl.",
+        "Stir well and cover.",
+        "Refrigerate overnight.",
+        "In the morning, top with berries and serve chilled."
+      ]
+    },
+    {
+      "title": "Avocado Toast with Poached Egg",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "Creamy avocado on toast with a soft poached egg for a rich but easy breakfast.",
+      "ingredients": [
+        "1 slice whole grain bread",
+        "1/2 avocado",
+        "1 egg",
+        "1 tsp lemon juice",
+        "1 tsp olive oil",
+        "1/4 tsp salt",
+        "1/8 tsp black pepper"
+      ],
+      "steps": [
+        "Toast the bread until crisp.",
+        "Mash the avocado with lemon juice, salt, and pepper.",
+        "Spread the avocado on the toast and drizzle with olive oil.",
+        "Poach the egg in simmering water until the white is set and the yolk is soft.",
+        "Place the egg on top of the avocado toast and serve immediately."
+      ]
+    },
+    {
+      "title": "Banana Pancakes",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "breakfast",
+      "description": "A naturally sweet, fluffy pancake made with banana and eggs.",
+      "ingredients": [
+        "2 ripe bananas",
+        "2 eggs",
+        "1/2 tsp baking powder",
+        "1/2 tsp cinnamon",
+        "1 tsp butter",
+        "1 tbsp maple syrup"
+      ],
+      "steps": [
+        "Mash the bananas in a bowl until smooth.",
+        "Whisk in the eggs, baking powder, and cinnamon.",
+        "Heat a lightly buttered pan over medium heat.",
+        "Pour small amounts of batter into the pan and cook until bubbles form.",
+        "Flip and cook for another minute until golden.",
+        "Serve warm with maple syrup."
+      ]
+    },
+    {
+      "title": "Grilled Cheese Sandwich",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "A comforting golden grilled sandwich with melted cheddar and crisp bread.",
+      "ingredients": [
+        "2 slices bread",
+        "2 slices cheddar cheese",
+        "1 tbsp butter",
+        "1 tsp mustard optional"
+      ],
+      "steps": [
+        "Butter one side of each slice of bread.",
+        "Place cheese between the unbuttered sides.",
+        "Heat a pan over medium heat.",
+        "Toast each side until golden and the cheese melts.",
+        "Serve hot with mustard if desired."
+      ]
+    },
+    {
+      "title": "Chicken Caesar Wrap",
+      "cuisine": "American",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "lunch",
+      "description": "A quick lunch wrap with tender chicken, crunchy lettuce, and Caesar dressing.",
+      "ingredients": [
+        "2 large tortillas",
+        "1 cooked chicken breast, sliced",
+        "1 cup romaine lettuce",
+        "1/4 cup Caesar dressing",
+        "2 tbsp grated parmesan",
+        "1/4 cup croutons"
+      ],
+      "steps": [
+        "Lay out the tortillas on a clean surface.",
+        "Add lettuce, chicken, parmesan, and croutons to each.",
+        "Drizzle with Caesar dressing.",
+        "Roll the tortillas tightly and slice in half.",
+        "Serve immediately."
+      ]
+    },
+    {
+      "title": "Quinoa Chickpea Salad",
+      "cuisine": "Mediterranean",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 2,
+      "meal_type": "salad",
+      "description": "A refreshing grain salad with quinoa, chickpeas, cucumbers, and a lemony dressing.",
+      "ingredients": [
+        "1 cup cooked quinoa",
+        "1/2 cup chickpeas",
+        "1/2 cucumber, diced",
+        "1/2 tomato, diced",
+        "1 tbsp olive oil",
+        "1 tbsp lemon juice",
+        "1/4 tsp salt",
+        "1/8 tsp black pepper"
+      ],
+      "steps": [
+        "Place the quinoa, chickpeas, cucumber, and tomato in a bowl.",
+        "Whisk together olive oil, lemon juice, salt, and pepper.",
+        "Pour the dressing over the salad and toss gently.",
+        "Let it sit for 10 minutes before serving so the flavors blend."
+      ]
+    },
+    {
+      "title": "Spaghetti Aglio e Olio",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegetarian"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "A classic Italian pasta with garlic, olive oil, chili, and parsley.",
+      "ingredients": [
+        "200 g spaghetti",
+        "3 garlic cloves, sliced",
+        "2 tbsp olive oil",
+        "1 tbsp chopped parsley",
+        "1/2 tsp chili flakes",
+        "1/4 tsp salt"
+      ],
+      "steps": [
+        "Cook spaghetti according to package directions until al dente.",
+        "Warm olive oil in a pan and add the garlic and chili flakes.",
+        "Cook gently until fragrant, not browned.",
+        "Toss the cooked spaghetti into the pan with the garlic oil.",
+        "Add parsley and salt, then serve immediately."
+      ]
+    },
+    {
+      "title": "Lemon Garlic Salmon",
+      "cuisine": "Mediterranean",
+      "dietary_tags": ["pescatarian", "gluten-free"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "Bright, savory salmon fillets with a simple lemon-garlic finish and roasted vegetables.",
+      "ingredients": [
+        "2 salmon fillets",
+        "1 tbsp olive oil",
+        "1 lemon, juiced",
+        "2 garlic cloves, minced",
+        "1 cup broccoli",
+        "1/4 tsp salt",
+        "1/8 tsp black pepper"
+      ],
+      "steps": [
+        "Preheat the oven to 200°C / 400°F.",
+        "Place the salmon and broccoli on a tray.",
+        "Mix the olive oil, lemon juice, garlic, salt, and pepper.",
+        "Pour over the salmon and vegetables.",
+        "Bake for 15 to 20 minutes until cooked through.",
+        "Serve hot."
+      ]
+    },
+    {
+      "title": "Chicken Stir-Fry",
+      "cuisine": "Chinese",
+      "dietary_tags": ["none"],
+      "servings": 2,
+      "meal_type": "main_course",
+      "description": "A quick, colorful stir-fry with chicken and crisp vegetables in a savory sauce.",
+      "ingredients": [
+        "250 g chicken breast, sliced",
+        "1 cup bell peppers, sliced",
+        "1 cup broccoli florets",
+        "1 carrot, sliced",
+        "1 tbsp soy sauce",
+        "1 tsp sesame oil",
+        "1 tsp ginger, minced"
+      ],
+      "steps": [
+        "Heat oil in a skillet over high heat.",
+        "Cook the chicken until lightly browned and fully cooked.",
+        "Add the vegetables and ginger and stir-fry for 3 to 4 minutes.",
+        "Add soy sauce and sesame oil, tossing to coat.",
+        "Cook for another minute and serve hot."
+      ]
+    },
+    {
+      "title": "Tomato Basil Soup",
+      "cuisine": "Italian",
+      "dietary_tags": ["vegan"],
+      "servings": 3,
+      "meal_type": "soup",
+      "description": "A comforting tomato soup with basil and garlic, perfect for a light lunch or dinner.",
+      "ingredients": [
+        "4 tomatoes, chopped",
+        "1 onion, sliced",
+        "2 garlic cloves",
+        "1 tbsp olive oil",
+        "1 cup vegetable broth",
+        "1 tbsp fresh basil"
+      ],
+      "steps": [
+        "Sauté onion and garlic in olive oil until soft.",
+        "Add tomatoes and vegetable broth and simmer for 15 minutes.",
+        "Blend the soup until smooth if you prefer a creamy texture.",
+        "Stir in basil and season to taste.",
+        "Serve warm."
+      ]
+    },
+    {
+      "title": "Garlic Roasted Potatoes",
+      "cuisine": "French",
+      "dietary_tags": ["vegan", "gluten-free"],
+      "servings": 3,
+      "meal_type": "side",
+      "description": "Crispy roasted potatoes with garlic and rosemary; easy and crowd-pleasing.",
+      "ingredients": [
+        "500 g potatoes, cubed",
+        "2 tbsp olive oil",
+        "3 garlic cloves, minced",
+        "1 tsp rosemary",
+        "1/4 tsp salt",
+        "1/8 tsp black pepper"
+      ],
+      "steps": [
+        "Preheat the oven to 200°C / 400°F.",
+        "Toss the potatoes with olive oil, garlic, rosemary, salt, and pepper.",
+        "Spread on a baking tray in a single layer.",
+        "Roast for 25 to 30 minutes, turning once.",
+        "Serve hot and crispy."
+      ]
+    },
+    {
+      "title": "Greek Yogurt Parfait",
+      "cuisine": "Greek",
+      "dietary_tags": ["vegetarian", "gluten-free"],
+      "servings": 1,
+      "meal_type": "breakfast",
+      "description": "A creamy, fresh breakfast layered with yogurt, berries, and granola.",
+      "ingredients": [
+        "1 cup Greek yogurt",
+        "1/2 cup berries",
+        "2 tbsp granola",
+        "1 tbsp honey"
+      ],
+      "steps": [
+        "Spoon a layer of yogurt into a glass or bowl.",
+        "Add a layer of berries and granola.",
+        "Repeat the layers once more.",
+        "Finish with honey on top and serve."
+      ]
+    },
+    {
+      "title": "Chocolate Mug Cake",
+      "cuisine": "American",
+      "dietary_tags": ["vegetarian"],
+      "servings": 1,
+      "meal_type": "dessert",
+      "description": "A quick, single-serve cake made in a mug for a fast chocolate fix.",
+      "ingredients": [
+        "4 tbsp flour",
+        "2 tbsp sugar",
+        "2 tbsp cocoa powder",
+        "1/4 tsp baking powder",
+        "3 tbsp milk",
+        "1 tbsp oil",
+        "1/2 tsp vanilla"
+      ],
+      "steps": [
+        "Mix flour, sugar, cocoa powder, and baking powder in a mug.",
+        "Add milk, oil, and vanilla and stir until smooth.",
+        "Microwave for 45 to 60 seconds until puffed and cooked through.",
+        "Let it cool for 1 minute before eating."
+      ]
+    }
+  ]
+}

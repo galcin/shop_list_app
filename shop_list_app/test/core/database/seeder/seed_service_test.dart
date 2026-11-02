@@ -1,12 +1,11 @@
 import 'dart:io';
 
-import 'package:drift/drift.dart' hide isNull, isNotNull;
+import 'package:drift/drift.dart' show Value;
 import 'package:drift/native.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shop_list_app/core/database/app_database.dart';
 import 'package:shop_list_app/core/database/seeder/seed_data.dart';
 import 'package:shop_list_app/core/database/seeder/seed_service.dart';
-import 'package:shop_list_app/core/database/tables/app_meta_table.dart';
 
 /// Runs the real bundled seed files (assets/data/*.json) against an
 /// in-memory database. Tests run from the package root, so relative asset
@@ -131,10 +130,9 @@ void main() {
       const ProductsCompanion(photo: Value('🥕🥕'), isBuiltIn: Value(false)),
     );
 
-    await (db.update(db.appMeta)
-          ..where((t) => t.key.equals(AppMetaKeys.seedVersion)))
-        .write(const AppMetaCompanion(value: Value('0')));
-    // Not the very first run any more (version row exists), so no adoption.
+    // Not the very first run any more (version already stored), so rows are
+    // never adopted by name — only built-in ones may be refreshed.
+    expect(await seeder.currentVersion(), greaterThan(0));
     final result = await seeder.run(force: true);
     expect(result.applied, isTrue);
 
