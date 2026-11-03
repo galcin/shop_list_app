@@ -73,7 +73,9 @@ flutter:
   assets:
     - assets/images/
     - assets/images/recipes/
+    - assets/images/recipes_ai/
     - assets/images/products/
+    - assets/images/products_ai/
     - assets/data/
 
 flutter_launcher_icons:

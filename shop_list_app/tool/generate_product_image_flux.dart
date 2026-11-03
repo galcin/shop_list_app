@@ -38,6 +38,7 @@ import 'package:image/image.dart' as img;
 /// Hard size budget every generated product image must respect.
 const int _maxBytes = 50 * 1024;
 
+const String _productsJsonPath = 'assets/data/products.json';
 const String _imagesDir = 'assets/images/products_ai';
 
 const Map<String, String> _modelSlugs = {
@@ -48,67 +49,6 @@ const Map<String, String> _modelSlugs = {
   'flux-pro': 'fal-ai/flux-pro/v1.1',
   'flux-pro/v1.1': 'fal-ai/flux-pro/v1.1',
 };
-
-/// The default products seeded in lib/core/database/seeder/product_seeder.dart
-/// that currently only have an emoji "icon" (no real photo). Kept in sync
-/// manually with that file's `name` / `productCategoryId` (mapped to the
-/// category name for prompt context) pairs.
-const List<Map<String, String>> _defaultProducts = [
-  {'name': 'Apples', 'category': 'Fruits'},
-  {'name': 'Bananas', 'category': 'Fruits'},
-  {'name': 'Carrots', 'category': 'Vegetables'},
-  {'name': 'Tomatoes', 'category': 'Vegetables'},
-  {'name': 'Milk', 'category': 'Dairy'},
-  {'name': 'Cheese', 'category': 'Dairy'},
-  {'name': 'Bread', 'category': 'Bakery'},
-  {'name': 'Chicken Breast', 'category': 'Meat'},
-  {'name': 'Orange Juice', 'category': 'Beverages'},
-  {'name': 'Potato Chips', 'category': 'Snacks'},
-  {'name': 'Eggs', 'category': 'Dairy'},
-  {'name': 'Butter', 'category': 'Dairy'},
-  {'name': 'Sour Cream', 'category': 'Dairy'},
-  {'name': 'Cooking Cream', 'category': 'Dairy'},
-  {'name': 'Fresh Mozzarella', 'category': 'Dairy'},
-  {'name': 'Parmesan', 'category': 'Dairy'},
-  {'name': 'Minced Beef', 'category': 'Meat'},
-  {'name': 'Bacon', 'category': 'Meat'},
-  {'name': 'Turkey Breast', 'category': 'Meat'},
-  {'name': 'Pressed Ham', 'category': 'Meat'},
-  {'name': 'Onion', 'category': 'Vegetables'},
-  {'name': 'Garlic', 'category': 'Vegetables'},
-  {'name': 'Celery', 'category': 'Vegetables'},
-  {'name': 'Zucchini', 'category': 'Vegetables'},
-  {'name': 'Potatoes', 'category': 'Vegetables'},
-  {'name': 'Bell Peppers', 'category': 'Vegetables'},
-  {'name': 'Broccoli', 'category': 'Vegetables'},
-  {'name': 'Lettuce', 'category': 'Vegetables'},
-  {'name': 'Cucumber', 'category': 'Vegetables'},
-  {'name': 'Cherry Tomatoes', 'category': 'Vegetables'},
-  {'name': 'Mushrooms', 'category': 'Vegetables'},
-  {'name': 'Frozen Vegetables', 'category': 'Vegetables'},
-  {'name': 'Lemon', 'category': 'Fruits'},
-  {'name': 'Flatbread', 'category': 'Bakery'},
-  {'name': 'Puff Pastry Dough', 'category': 'Bakery'},
-  {'name': 'Spaghetti', 'category': 'Snacks'},
-  {'name': 'Pasta', 'category': 'Snacks'},
-  {'name': 'Noodles', 'category': 'Snacks'},
-  {'name': 'Rice', 'category': 'Snacks'},
-  {'name': 'Flour', 'category': 'Snacks'},
-  {'name': 'Rolled Oats', 'category': 'Snacks'},
-  {'name': 'Honey', 'category': 'Snacks'},
-  {'name': 'Olive Oil', 'category': 'Snacks'},
-  {'name': 'Vegetable Oil', 'category': 'Snacks'},
-  {'name': 'Soy Sauce', 'category': 'Snacks'},
-  {'name': 'Oyster Sauce', 'category': 'Snacks'},
-  {'name': 'Tomato Sauce', 'category': 'Snacks'},
-  {'name': 'Tomato Paste', 'category': 'Snacks'},
-  {'name': 'Crushed Tomatoes', 'category': 'Snacks'},
-  {'name': 'Vegetable Broth', 'category': 'Snacks'},
-  {'name': 'Canned Tuna', 'category': 'Snacks'},
-  {'name': 'Canned Corn', 'category': 'Snacks'},
-  {'name': 'Canned Mushrooms', 'category': 'Snacks'},
-  {'name': 'Olives', 'category': 'Snacks'},
-];
 
 Future<void> main(List<String> arguments) async {
   final args = _Args.parse(arguments);
@@ -139,6 +79,7 @@ Future<void> main(List<String> arguments) async {
       force: args.force,
       dryRun: args.dryRun,
       imagesDir: args.dir ?? _imagesDir,
+      updateJson: !args.noJson,
     );
     return;
   }
@@ -175,37 +116,71 @@ Future<void> main(List<String> arguments) async {
   }
 }
 
-/// Generates a Flux image for every entry in [_defaultProducts] whose
-/// output file doesn't exist yet under [imagesDir] (or for all products
-/// when [force] is true).
+/// Scans [_productsJsonPath] and generates a Flux image for every product
+/// whose output file doesn't exist yet under [imagesDir] (or for all
+/// products when [force] is true). When [updateJson] is true, each
+/// product's `image` field is pointed at the newly generated file (and the
+/// JSON file is rewritten) after a successful generation or when an output
+/// file already exists but the catalogue still points elsewhere (e.g. at
+/// the placeholder under assets/images/products/).
 Future<void> _processAllProducts({
   required String token,
   required String model,
   required bool force,
   required bool dryRun,
   String imagesDir = _imagesDir,
+  bool updateJson = true,
 }) async {
+  final jsonFile = File(_productsJsonPath);
+  if (!jsonFile.existsSync()) {
+    stderr.writeln(
+      'Error: could not find $_productsJsonPath '
+      '(run this script from the project root).',
+    );
+    exitCode = 66;
+    return;
+  }
+
+  final raw = await jsonFile.readAsString();
+  final decoded = jsonDecode(raw);
+  if (decoded is! List) {
+    stderr.writeln(
+      'Error: expected $_productsJsonPath to contain a JSON array of products.',
+    );
+    exitCode = 65;
+    return;
+  }
+
   await Directory(imagesDir).create(recursive: true);
 
+  var changedJson = false;
   var generatedCount = 0;
   var skippedCount = 0;
   var failedCount = 0;
   var isFirstRequest = true;
 
-  for (final entry in _defaultProducts) {
-    final name = entry['name']!;
-    final category = entry['category'] ?? '';
-    final slug = _slugify(name);
-    final imageUrl = '$imagesDir/$slug.jpg';
+  for (final entry in decoded) {
+    if (entry is! Map) continue;
+    final map = entry.cast<String, dynamic>();
+    final name = map['name'] as String?;
+    if (name == null || name.trim().isEmpty) continue;
 
-    final imageFile = File(imageUrl);
+    final category = (map['category'] as String?) ?? '';
+    final slug = _slugify(name);
+    final targetImageUrl = '$imagesDir/$slug.jpg';
+
+    final imageFile = File(targetImageUrl);
     if (imageFile.existsSync() && !force) {
       skippedCount++;
+      if (updateJson && map['image'] != targetImageUrl) {
+        map['image'] = targetImageUrl;
+        changedJson = true;
+      }
       continue;
     }
 
     if (dryRun) {
-      stdout.writeln('[dry-run] would generate $imageUrl for "$name"');
+      stdout.writeln('[dry-run] would generate $targetImageUrl for "$name"');
       generatedCount++;
       continue;
     }
@@ -227,13 +202,23 @@ Future<void> _processAllProducts({
       await imageFile.create(recursive: true);
       await imageFile.writeAsBytes(bytes);
       generatedCount++;
+      if (updateJson && map['image'] != targetImageUrl) {
+        map['image'] = targetImageUrl;
+        changedJson = true;
+      }
       stdout.writeln(
-        'Generated $imageUrl (${_formatBytes(bytes.length)}) for "$name"',
+        'Generated $targetImageUrl (${_formatBytes(bytes.length)}) for "$name"',
       );
     } catch (e) {
       failedCount++;
       stderr.writeln('Failed to generate image for "$name": $e');
     }
+  }
+
+  if (updateJson && changedJson && !dryRun) {
+    const encoder = JsonEncoder.withIndent('  ');
+    await jsonFile.writeAsString('${encoder.convert(decoded)}\n');
+    stdout.writeln('Updated $_productsJsonPath with new image paths.');
   }
 
   stdout.writeln(
@@ -450,27 +435,28 @@ void _printUsage() {
   stdout.writeln('''
 Product AI image generator — Flux (via fal.ai) edition
 ---------------------------------------------------------
-Requests a Flux-generated product photo for each default seeded product
-that currently only has an emoji icon, via fal.ai's hosted Flux models,
-and compresses it to fit the project's 50KB image budget.
+Requests a Flux-generated product photo for every product in
+assets/data/products.json, via fal.ai's hosted Flux models, and
+compresses it to fit the project's 50KB image budget.
 
 Setup: copy tool/.env.example to tool/.env and paste in a fal.ai API key
 (https://fal.ai/dashboard/keys), or set the FAL_KEY environment variable.
 
 Usage:
-  dart run tool/generate_product_image_flux.dart --all [--dir path] [--force] [--dry-run] [--model flux/schnell|flux/dev|flux-pro/v1.1]
-      Generate an image for every product in the built-in list whose
-      output file is missing (or all of them with --force).
+  dart run tool/generate_product_image_flux.dart --all [--dir path] [--force] [--dry-run] [--no-json] [--model flux/schnell|flux/dev|flux-pro/v1.1]
+      Scan assets/data/products.json; generate an image for every product
+      whose output file is missing (or all of them with --force).
 
   dart run tool/generate_product_image_flux.dart --name "Product Name" [--category "Category"] [--dir path] [--out path] [--model flux/schnell|flux/dev|flux-pro/v1.1]
       Generate a single image for the given product. Defaults to
       assets/images/products_ai/<slug>.jpg if --out/--dir are omitted.
 
 Options:
-  --all           Process every product in the built-in list.
+  --all           Process every product in assets/data/products.json.
   --force         Regenerate images even if a file already exists (with --all).
   --dry-run       Show what would be generated without writing files (with --all).
   --dir           Output directory for generated images (default: assets/images/products_ai).
+  --no-json       With --all, don't update the `image` field in products.json.
   --model         flux/schnell (default, cheapest/fastest), flux/dev, or flux-pro/v1.1.
   --name          Product name (required unless --all is given).
   --category      Product category, used to steer the prompt.
@@ -489,6 +475,7 @@ class _Args {
     this.processAll = false,
     this.force = false,
     this.dryRun = false,
+    this.noJson = false,
     this.showHelp = false,
   });
 
@@ -500,6 +487,7 @@ class _Args {
   final bool processAll;
   final bool force;
   final bool dryRun;
+  final bool noJson;
   final bool showHelp;
 
   static _Args parse(List<String> arguments) {
@@ -511,6 +499,7 @@ class _Args {
     var processAll = false;
     var force = false;
     var dryRun = false;
+    var noJson = false;
     var showHelp = false;
 
     var i = 0;
@@ -532,6 +521,8 @@ class _Args {
         force = true;
       } else if (arg == '--dry-run') {
         dryRun = true;
+      } else if (arg == '--no-json') {
+        noJson = true;
       } else if (arg == '--help' || arg == '-h') {
         showHelp = true;
       } else {
@@ -549,6 +540,7 @@ class _Args {
       processAll: processAll,
       force: force,
       dryRun: dryRun,
+      noJson: noJson,
       showHelp: showHelp,
     );
   }
