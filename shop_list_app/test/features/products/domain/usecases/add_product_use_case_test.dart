@@ -75,7 +75,7 @@ void main() {
 
     test('rejects an empty/blank name', () async {
       final result =
-          await useCase.call(Product(name: '  ', productCategoryId: 1));
+          await useCase.call(const Product(name: '  ', productCategoryId: 1));
 
       expect(result.isLeft(), true);
       result.fold(
@@ -86,7 +86,7 @@ void main() {
     });
 
     test('rejects a product with no category selected', () async {
-      final result = await useCase.call(Product(name: 'Milk'));
+      final result = await useCase.call(const Product(name: 'Milk'));
 
       expect(result.isLeft(), true);
       result.fold(
@@ -98,7 +98,7 @@ void main() {
 
     test('adds a valid product and returns its id', () async {
       final result =
-          await useCase.call(Product(name: 'Milk', productCategoryId: 2));
+          await useCase.call(const Product(name: 'Milk', productCategoryId: 2));
 
       expect(result.isRight(), true);
       result.fold(
@@ -114,7 +114,7 @@ void main() {
       useCase = AddProductUseCase(repository);
 
       final result =
-          await useCase.call(Product(name: 'Milk', productCategoryId: 2));
+          await useCase.call(const Product(name: 'Milk', productCategoryId: 2));
 
       expect(result.isLeft(), true);
       result.fold(

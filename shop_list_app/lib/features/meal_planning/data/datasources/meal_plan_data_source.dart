@@ -1,10 +1,10 @@
 import 'package:drift/drift.dart';
 import 'package:shop_list_app/core/database/app_database.dart' as db;
-import 'package:shop_list_app/features/meal_planning/domain/entities/meal_type.dart';
 import 'package:shop_list_app/features/meal_planning/domain/entities/meal_plan.dart'
     as domain;
 import 'package:shop_list_app/features/meal_planning/domain/entities/meal_slot.dart'
     as entity;
+import 'package:shop_list_app/features/meal_planning/domain/entities/meal_type.dart';
 
 /// Drift-backed data source for meal planning operations.
 class MealPlanDataSource {

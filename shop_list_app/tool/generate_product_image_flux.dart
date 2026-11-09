@@ -2,10 +2,9 @@
 //
 // Product AI image generator — Flux (via fal.ai) edition.
 //
-// Alternative to tool/generate_product_image_ai.dart (which uses
-// Pollinations.ai). Uses Black Forest Labs' Flux model hosted on
-// fal.ai (https://fal.ai) for noticeably better prompt adherence /
-// photorealism than Pollinations, at a small per-image cost.
+// Uses Black Forest Labs' Flux model hosted on fal.ai (https://fal.ai)
+// for high-quality, photorealistic product photos at a small per-image
+// cost.
 //
 // Setup (one-time):
 //   1. Create a free fal.ai account: https://fal.ai
@@ -93,7 +92,7 @@ Future<void> main(List<String> arguments) async {
 
   final name = args.name!;
   final slug = _slugify(name);
-  final outPath = args.out ?? '${args.dir ?? _imagesDir}/$slug.jpg';
+  final outPath = args.out ?? '${args.dir ?? _imagesDir}/$slug.webp';
 
   try {
     final bytes = await _generateProductImageBytes(
@@ -167,7 +166,7 @@ Future<void> _processAllProducts({
 
     final category = (map['category'] as String?) ?? '';
     final slug = _slugify(name);
-    final targetImageUrl = '$imagesDir/$slug.jpg';
+    final targetImageUrl = '$imagesDir/$slug.webp';
 
     final imageFile = File(targetImageUrl);
     if (imageFile.existsSync() && !force) {
@@ -395,7 +394,7 @@ String? _resolveApiToken() {
   return null;
 }
 
-/// Encodes [image] as JPEG, stepping down quality and (if that's not
+/// Encodes [image] as lossy WebP, stepping down quality and (if that's not
 /// enough) image dimensions until the result is at or under [maxBytes].
 List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
   const qualities = [92, 85, 78, 70, 62, 54, 46, 38, 30, 22, 15];
@@ -403,7 +402,8 @@ List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
 
   for (var pass = 0; pass < 5; pass++) {
     for (final quality in qualities) {
-      final bytes = img.encodeJpg(current, quality: quality);
+      final bytes =
+          img.encodeWebP(current, lossless: false, quality: quality, method: 4);
       if (bytes.length <= maxBytes) {
         return bytes;
       }
@@ -416,7 +416,7 @@ List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
   }
 
   // Last resort: whatever we could produce at the smallest size/quality.
-  return img.encodeJpg(current, quality: 12);
+  return img.encodeWebP(current, lossless: false, quality: 10, method: 4);
 }
 
 /// Converts a product name into the lowercase, hyphen-separated filename
@@ -449,7 +449,7 @@ Usage:
 
   dart run tool/generate_product_image_flux.dart --name "Product Name" [--category "Category"] [--dir path] [--out path] [--model flux/schnell|flux/dev|flux-pro/v1.1]
       Generate a single image for the given product. Defaults to
-      assets/images/products_ai/<slug>.jpg if --out/--dir are omitted.
+      assets/images/products_ai/<slug>.webp if --out/--dir are omitted.
 
 Options:
   --all           Process every product in assets/data/products.json.

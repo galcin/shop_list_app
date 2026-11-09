@@ -4,7 +4,7 @@
     "category": "Fruits",
     "unit": "pcs",
     "emoji": "🍎",
-    "image": "assets/images/products_ai/apples.jpg",
+    "image": "assets/images/products_ai/apples.webp",
     "aliases": [
       "apple",
       "green apples",
@@ -17,7 +17,7 @@
     "category": "Fruits",
     "unit": "pcs",
     "emoji": "🍌",
-    "image": "assets/images/products_ai/bananas.jpg",
+    "image": "assets/images/products_ai/bananas.webp",
     "aliases": [
       "banana",
       "ripe bananas",
@@ -29,7 +29,7 @@
     "category": "Fruits",
     "unit": "pcs",
     "emoji": "🍋",
-    "image": "assets/images/products_ai/lemon.jpg",
+    "image": "assets/images/products_ai/lemon.webp",
     "aliases": [
       "lemons",
       "lemon juice",
@@ -48,7 +48,7 @@
       "lime juice",
       "lime zest"
     ],
-    "image": "assets/images/products_ai/limes.jpg"
+    "image": "assets/images/products_ai/limes.webp"
   },
   {
     "name": "Oranges",
@@ -60,7 +60,7 @@
       "orange zest",
       "portocale"
     ],
-    "image": "assets/images/products_ai/oranges.jpg"
+    "image": "assets/images/products_ai/oranges.webp"
   },
   {
     "name": "Grapes",
@@ -70,7 +70,7 @@
     "aliases": [
       "struguri"
     ],
-    "image": "assets/images/products_ai/grapes.jpg"
+    "image": "assets/images/products_ai/grapes.webp"
   },
   {
     "name": "Strawberries",
@@ -81,7 +81,7 @@
       "strawberry",
       "capsuni"
     ],
-    "image": "assets/images/products_ai/strawberries.jpg"
+    "image": "assets/images/products_ai/strawberries.webp"
   },
   {
     "name": "Blueberries",
@@ -92,7 +92,7 @@
       "blueberry",
       "afine"
     ],
-    "image": "assets/images/products_ai/blueberries.jpg"
+    "image": "assets/images/products_ai/blueberries.webp"
   },
   {
     "name": "Raspberries",
@@ -103,7 +103,7 @@
       "raspberry",
       "zmeura"
     ],
-    "image": "assets/images/products_ai/raspberries.jpg"
+    "image": "assets/images/products_ai/raspberries.webp"
   },
   {
     "name": "Cherries",
@@ -114,7 +114,7 @@
       "cherry",
       "cirese"
     ],
-    "image": "assets/images/products_ai/cherries.jpg"
+    "image": "assets/images/products_ai/cherries.webp"
   },
   {
     "name": "Sour Cherries",
@@ -126,7 +126,7 @@
       "morello cherries",
       "visine"
     ],
-    "image": "assets/images/products_ai/sour-cherries.jpg"
+    "image": "assets/images/products_ai/sour-cherries.webp"
   },
   {
     "name": "Peaches",
@@ -138,7 +138,7 @@
       "nectarines",
       "piersici"
     ],
-    "image": "assets/images/products_ai/peaches.jpg"
+    "image": "assets/images/products_ai/peaches.webp"
   },
   {
     "name": "Apricots",
@@ -149,7 +149,7 @@
       "apricot",
       "caise"
     ],
-    "image": "assets/images/products_ai/apricots.jpg"
+    "image": "assets/images/products_ai/apricots.webp"
   },
   {
     "name": "Plums",
@@ -160,7 +160,7 @@
       "plum",
       "prune"
     ],
-    "image": "assets/images/products_ai/plums.jpg"
+    "image": "assets/images/products_ai/plums.webp"
   },
   {
     "name": "Pears",
@@ -171,7 +171,7 @@
       "pear",
       "pere"
     ],
-    "image": "assets/images/products_ai/pears.jpg"
+    "image": "assets/images/products_ai/pears.webp"
   },
   {
     "name": "Quince",
@@ -182,7 +182,7 @@
       "quinces",
       "gutui"
     ],
-    "image": "assets/images/products_ai/quince.jpg"
+    "image": "assets/images/products_ai/quince.webp"
   },
   {
     "name": "Watermelon",
@@ -192,7 +192,7 @@
     "aliases": [
       "pepene"
     ],
-    "image": "assets/images/products_ai/watermelon.jpg"
+    "image": "assets/images/products_ai/watermelon.webp"
   },
   {
     "name": "Melon",
@@ -204,7 +204,7 @@
       "honeydew",
       "pepene galben"
     ],
-    "image": "assets/images/products_ai/melon.jpg"
+    "image": "assets/images/products_ai/melon.webp"
   },
   {
     "name": "Pineapple",
@@ -214,7 +214,7 @@
     "aliases": [
       "ananas"
     ],
-    "image": "assets/images/products_ai/pineapple.jpg"
+    "image": "assets/images/products_ai/pineapple.webp"
   },
   {
     "name": "Mango",
@@ -224,7 +224,7 @@
     "aliases": [
       "mangoes"
     ],
-    "image": "assets/images/products_ai/mango.jpg"
+    "image": "assets/images/products_ai/mango.webp"
   },
   {
     "name": "Avocado",
@@ -235,7 +235,7 @@
       "avocados",
       "ripe avocado"
     ],
-    "image": "assets/images/products_ai/avocado.jpg"
+    "image": "assets/images/products_ai/avocado.webp"
   },
   {
     "name": "Kiwi",
@@ -245,7 +245,7 @@
     "aliases": [
       "kiwis"
     ],
-    "image": "assets/images/products_ai/kiwi.jpg"
+    "image": "assets/images/products_ai/kiwi.webp"
   },
   {
     "name": "Pomegranate",
@@ -256,7 +256,7 @@
       "pomegranate seeds",
       "rodie"
     ],
-    "image": "assets/images/products_ai/pomegranate.jpg"
+    "image": "assets/images/products_ai/pomegranate.webp"
   },
   {
     "name": "Figs",
@@ -268,21 +268,21 @@
       "fresh figs",
       "smochine"
     ],
-    "image": "assets/images/products_ai/figs.jpg"
+    "image": "assets/images/products_ai/figs.webp"
   },
   {
     "name": "Coconut",
     "category": "Fruits",
     "unit": "pcs",
     "emoji": "🥥",
-    "image": "assets/images/products_ai/coconut.jpg"
+    "image": "assets/images/products_ai/coconut.webp"
   },
   {
     "name": "Grapefruit",
     "category": "Fruits",
     "unit": "pcs",
     "emoji": "🍊",
-    "image": "assets/images/products_ai/grapefruit.jpg"
+    "image": "assets/images/products_ai/grapefruit.webp"
   },
   {
     "name": "Cranberries",
@@ -293,14 +293,14 @@
       "fresh cranberries",
       "merisoare"
     ],
-    "image": "assets/images/products_ai/cranberries.jpg"
+    "image": "assets/images/products_ai/cranberries.webp"
   },
   {
     "name": "Onion",
     "category": "Vegetables",
     "unit": "pcs",
     "emoji": "🧅",
-    "image": "assets/images/products_ai/onion.jpg",
+    "image": "assets/images/products_ai/onion.webp",
     "aliases": [
       "onions",
       "yellow onion",
@@ -319,7 +319,7 @@
       "purple onion",
       "ceapa rosie"
     ],
-    "image": "assets/images/products_ai/red-onion.jpg"
+    "image": "assets/images/products_ai/red-onion.webp"
   },
   {
     "name": "Green Onions",
@@ -334,7 +334,7 @@
       "scallion",
       "ceapa verde"
     ],
-    "image": "assets/images/products_ai/green-onions.jpg"
+    "image": "assets/images/products_ai/green-onions.webp"
   },
   {
     "name": "Leek",
@@ -345,7 +345,7 @@
       "leeks",
       "praz"
     ],
-    "image": "assets/images/products_ai/leek.jpg"
+    "image": "assets/images/products_ai/leek.webp"
   },
   {
     "name": "Shallots",
@@ -355,14 +355,14 @@
     "aliases": [
       "shallot"
     ],
-    "image": "assets/images/products_ai/shallots.jpg"
+    "image": "assets/images/products_ai/shallots.webp"
   },
   {
     "name": "Garlic",
     "category": "Vegetables",
     "unit": "clove",
     "emoji": "🧄",
-    "image": "assets/images/products_ai/garlic.jpg",
+    "image": "assets/images/products_ai/garlic.webp",
     "aliases": [
       "garlic cloves",
       "garlic clove",
@@ -378,7 +378,7 @@
     "category": "Vegetables",
     "unit": "pcs",
     "emoji": "🥕",
-    "image": "assets/images/products_ai/carrots.jpg",
+    "image": "assets/images/products_ai/carrots.webp",
     "aliases": [
       "carrot",
       "baby carrots",
@@ -391,7 +391,7 @@
     "category": "Vegetables",
     "unit": "pcs",
     "emoji": "🥔",
-    "image": "assets/images/products_ai/potatoes.jpg",
+    "image": "assets/images/products_ai/potatoes.webp",
     "aliases": [
       "potato",
       "baby potatoes",
@@ -408,14 +408,14 @@
       "sweet potato",
       "cartofi dulci"
     ],
-    "image": "assets/images/products_ai/sweet-potatoes.jpg"
+    "image": "assets/images/products_ai/sweet-potatoes.webp"
   },
   {
     "name": "Tomatoes",
     "category": "Vegetables",
     "unit": "pcs",
     "emoji": "🍅",
-    "image": "assets/images/products_ai/tomatoes.jpg",
+    "image": "assets/images/products_ai/tomatoes.webp",
     "aliases": [
       "tomato",
       "ripe tomatoes",
@@ -428,7 +428,7 @@
     "category": "Vegetables",
     "unit": "g",
     "emoji": "🍅",
-    "image": "assets/images/products_ai/cherry-tomatoes.jpg",
+    "image": "assets/images/products_ai/cherry-tomatoes.webp",
     "aliases": [
       "cherry tomato",
       "grape tomatoes",
@@ -440,7 +440,7 @@
     "category": "Vegetables",
     "unit": "pcs",
     "emoji": "🥒",
-    "image": "assets/images/products_ai/cucumber.jpg",
+    "image": "assets/images/products_ai/cucumber.webp",
     "aliases": [
       "cucumbers",
       "castraveti"
@@ -451,7 +451,7 @@
     "category": "Vegetables",
     "unit": "pcs",
     "emoji": "🫑",
-    "image": "assets/images/products_ai/bell-peppers.jpg",
+    "image": "assets/images/products_ai/bell-peppers.webp",
     "aliases": [
       "bell pepper",
       "red bell pepper",
@@ -475,7 +475,7 @@
       "red kapia",
       "ardei kapia"
     ],
-    "image": "assets/images/products_ai/kapia-peppers.jpg"
+    "image": "assets/images/products_ai/kapia-peppers.webp"
   },
   {
     "name": "Chili Pepper",
@@ -493,14 +493,14 @@
       "jalapeno",
       "ardei iute"
     ],
-    "image": "assets/images/products_ai/chili-pepper.jpg"
+    "image": "assets/images/products_ai/chili-pepper.webp"
   },
   {
     "name": "Zucchini",
     "category": "Vegetables",
     "unit": "pcs",
     "emoji": "🥒",
-    "image": "assets/images/products_ai/zucchini.jpg",
+    "image": "assets/images/products_ai/zucchini.webp",
     "aliases": [
       "courgette",
       "courgettes",
@@ -520,14 +520,14 @@
       "aubergines",
       "vinete"
     ],
-    "image": "assets/images/products_ai/eggplant.jpg"
+    "image": "assets/images/products_ai/eggplant.webp"
   },
   {
     "name": "Broccoli",
     "category": "Vegetables",
     "unit": "head",
     "emoji": "🥦",
-    "image": "assets/images/products_ai/broccoli.jpg",
+    "image": "assets/images/products_ai/broccoli.webp",
     "aliases": [
       "broccoli florets"
     ]
@@ -541,7 +541,7 @@
       "cauliflower florets",
       "conopida"
     ],
-    "image": "assets/images/products_ai/cauliflower.jpg"
+    "image": "assets/images/products_ai/cauliflower.webp"
   },
   {
     "name": "Cabbage",
@@ -554,7 +554,7 @@
       "savoy cabbage",
       "varza"
     ],
-    "image": "assets/images/products_ai/cabbage.jpg"
+    "image": "assets/images/products_ai/cabbage.webp"
   },
   {
     "name": "Red Cabbage",
@@ -565,14 +565,14 @@
       "purple cabbage",
       "varza rosie"
     ],
-    "image": "assets/images/products_ai/red-cabbage.jpg"
+    "image": "assets/images/products_ai/red-cabbage.webp"
   },
   {
     "name": "Lettuce",
     "category": "Vegetables",
     "unit": "head",
     "emoji": "🥬",
-    "image": "assets/images/products_ai/lettuce.jpg",
+    "image": "assets/images/products_ai/lettuce.webp",
     "aliases": [
       "romaine lettuce",
       "iceberg lettuce",
@@ -591,14 +591,14 @@
       "spinach leaves",
       "spanac"
     ],
-    "image": "assets/images/products_ai/spinach.jpg"
+    "image": "assets/images/products_ai/spinach.webp"
   },
   {
     "name": "Kale",
     "category": "Vegetables",
     "unit": "g",
     "emoji": "🥬",
-    "image": "assets/images/products_ai/kale.jpg"
+    "image": "assets/images/products_ai/kale.webp"
   },
   {
     "name": "Arugula",
@@ -609,7 +609,7 @@
       "rocket",
       "rucola"
     ],
-    "image": "assets/images/products_ai/arugula.jpg"
+    "image": "assets/images/products_ai/arugula.webp"
   },
   {
     "name": "Mixed Salad Greens",
@@ -622,14 +622,14 @@
       "salad leaves",
       "mixed salad"
     ],
-    "image": "assets/images/products_ai/mixed-salad-greens.jpg"
+    "image": "assets/images/products_ai/mixed-salad-greens.webp"
   },
   {
     "name": "Celery",
     "category": "Vegetables",
     "unit": "stalk",
     "emoji": "🥬",
-    "image": "assets/images/products_ai/celery.jpg",
+    "image": "assets/images/products_ai/celery.webp",
     "aliases": [
       "celery stalks",
       "celery stalk",
@@ -647,7 +647,7 @@
       "celery root (celeriac)",
       "telina"
     ],
-    "image": "assets/images/products_ai/celery-root.jpg"
+    "image": "assets/images/products_ai/celery-root.webp"
   },
   {
     "name": "Parsnip",
@@ -659,7 +659,7 @@
       "parsnip root",
       "pastarnac"
     ],
-    "image": "assets/images/products_ai/parsnip.jpg"
+    "image": "assets/images/products_ai/parsnip.webp"
   },
   {
     "name": "Parsley Root",
@@ -670,7 +670,7 @@
       "parsley roots",
       "radacina de patrunjel"
     ],
-    "image": "assets/images/products_ai/parsley-root.jpg"
+    "image": "assets/images/products_ai/parsley-root.webp"
   },
   {
     "name": "Beetroot",
@@ -683,7 +683,7 @@
       "red beet",
       "sfecla rosie"
     ],
-    "image": "assets/images/products_ai/beetroot.jpg"
+    "image": "assets/images/products_ai/beetroot.webp"
   },
   {
     "name": "Radishes",
@@ -694,7 +694,7 @@
       "radish",
       "ridichi"
     ],
-    "image": "assets/images/products_ai/radishes.jpg"
+    "image": "assets/images/products_ai/radishes.webp"
   },
   {
     "name": "Mushrooms",
@@ -708,7 +708,7 @@
       "fresh mushrooms",
       "ciuperci"
     ],
-    "image": "assets/images/products_ai/mushrooms.jpg"
+    "image": "assets/images/products_ai/mushrooms.webp"
   },
   {
     "name": "Brown Mushrooms",
@@ -721,7 +721,7 @@
       "portobello mushrooms",
       "ciuperci brune"
     ],
-    "image": "assets/images/products_ai/brown-mushrooms.jpg"
+    "image": "assets/images/products_ai/brown-mushrooms.webp"
   },
   {
     "name": "Green Beans",
@@ -733,7 +733,7 @@
       "fresh green beans",
       "fasole verde"
     ],
-    "image": "assets/images/products_ai/green-beans.jpg"
+    "image": "assets/images/products_ai/green-beans.webp"
   },
   {
     "name": "Peas",
@@ -745,7 +745,7 @@
       "green peas",
       "mazare"
     ],
-    "image": "assets/images/products_ai/peas.jpg"
+    "image": "assets/images/products_ai/peas.webp"
   },
   {
     "name": "Corn",
@@ -758,7 +758,7 @@
       "corn cobs",
       "porumb"
     ],
-    "image": "assets/images/products_ai/corn.jpg"
+    "image": "assets/images/products_ai/corn.webp"
   },
   {
     "name": "Pumpkin",
@@ -769,7 +769,7 @@
       "pumpkin flesh",
       "dovleac"
     ],
-    "image": "assets/images/products_ai/pumpkin.jpg"
+    "image": "assets/images/products_ai/pumpkin.webp"
   },
   {
     "name": "Butternut Squash",
@@ -780,7 +780,7 @@
       "squash",
       "dovleac placintar"
     ],
-    "image": "assets/images/products_ai/butternut-squash.jpg"
+    "image": "assets/images/products_ai/butternut-squash.webp"
   },
   {
     "name": "Asparagus",
@@ -792,7 +792,7 @@
       "asparagus spears",
       "sparanghel"
     ],
-    "image": "assets/images/products_ai/asparagus.jpg"
+    "image": "assets/images/products_ai/asparagus.webp"
   },
   {
     "name": "Fennel",
@@ -802,7 +802,7 @@
     "aliases": [
       "fennel bulb"
     ],
-    "image": "assets/images/products_ai/fennel.jpg"
+    "image": "assets/images/products_ai/fennel.webp"
   },
   {
     "name": "Ginger",
@@ -814,7 +814,7 @@
       "ginger root",
       "ghimbir"
     ],
-    "image": "assets/images/products_ai/ginger.jpg"
+    "image": "assets/images/products_ai/ginger.webp"
   },
   {
     "name": "Horseradish",
@@ -825,7 +825,7 @@
       "fresh horseradish",
       "hrean"
     ],
-    "image": "assets/images/products_ai/horseradish.jpg"
+    "image": "assets/images/products_ai/horseradish.webp"
   },
   {
     "name": "Turnip",
@@ -835,7 +835,7 @@
     "aliases": [
       "turnips"
     ],
-    "image": "assets/images/products_ai/turnip.jpg"
+    "image": "assets/images/products_ai/turnip.webp"
   },
   {
     "name": "Kohlrabi",
@@ -845,7 +845,7 @@
     "aliases": [
       "gulie"
     ],
-    "image": "assets/images/products_ai/kohlrabi.jpg"
+    "image": "assets/images/products_ai/kohlrabi.webp"
   },
   {
     "name": "Artichoke",
@@ -855,7 +855,7 @@
     "aliases": [
       "artichokes"
     ],
-    "image": "assets/images/products_ai/artichoke.jpg"
+    "image": "assets/images/products_ai/artichoke.webp"
   },
   {
     "name": "Okra",
@@ -865,14 +865,14 @@
     "aliases": [
       "bame"
     ],
-    "image": "assets/images/products_ai/okra.jpg"
+    "image": "assets/images/products_ai/okra.webp"
   },
   {
     "name": "Bean Sprouts",
     "category": "Vegetables",
     "unit": "g",
     "emoji": "🌱",
-    "image": "assets/images/products_ai/bean-sprouts.jpg"
+    "image": "assets/images/products_ai/bean-sprouts.webp"
   },
   {
     "name": "Bok Choy",
@@ -882,7 +882,7 @@
     "aliases": [
       "pak choi"
     ],
-    "image": "assets/images/products_ai/bok-choy.jpg"
+    "image": "assets/images/products_ai/bok-choy.webp"
   },
   {
     "name": "Brussels Sprouts",
@@ -893,7 +893,7 @@
       "brussel sprouts",
       "varza de bruxelles"
     ],
-    "image": "assets/images/products_ai/brussels-sprouts.jpg"
+    "image": "assets/images/products_ai/brussels-sprouts.webp"
   },
   {
     "name": "Green Peppers",
@@ -904,7 +904,7 @@
       "green pepper",
       "ardei verde"
     ],
-    "image": "assets/images/products_ai/green-peppers.jpg"
+    "image": "assets/images/products_ai/green-peppers.webp"
   },
   {
     "name": "Sorrel",
@@ -915,7 +915,7 @@
       "macris",
       "stevie"
     ],
-    "image": "assets/images/products_ai/sorrel.jpg"
+    "image": "assets/images/products_ai/sorrel.webp"
   },
   {
     "name": "Nettles",
@@ -925,7 +925,7 @@
     "aliases": [
       "urzici"
     ],
-    "image": "assets/images/products_ai/nettles.jpg"
+    "image": "assets/images/products_ai/nettles.webp"
   },
   {
     "name": "Salt",
@@ -939,7 +939,7 @@
       "coarse salt",
       "sare"
     ],
-    "image": "assets/images/products_ai/salt.jpg"
+    "image": "assets/images/products_ai/salt.webp"
   },
   {
     "name": "Black Pepper",
@@ -954,7 +954,7 @@
       "black peppercorns",
       "piper"
     ],
-    "image": "assets/images/products_ai/black-pepper.jpg"
+    "image": "assets/images/products_ai/black-pepper.webp"
   },
   {
     "name": "White Pepper",
@@ -965,7 +965,7 @@
       "ground white pepper",
       "piper alb"
     ],
-    "image": "assets/images/products_ai/white-pepper.jpg"
+    "image": "assets/images/products_ai/white-pepper.webp"
   },
   {
     "name": "Sweet Paprika",
@@ -978,7 +978,7 @@
       "boia dulce",
       "boia"
     ],
-    "image": "assets/images/products_ai/sweet-paprika.jpg"
+    "image": "assets/images/products_ai/sweet-paprika.webp"
   },
   {
     "name": "Smoked Paprika",
@@ -988,7 +988,7 @@
     "aliases": [
       "boia afumata"
     ],
-    "image": "assets/images/products_ai/smoked-paprika.jpg"
+    "image": "assets/images/products_ai/smoked-paprika.webp"
   },
   {
     "name": "Hot Paprika",
@@ -998,7 +998,7 @@
     "aliases": [
       "boia iute"
     ],
-    "image": "assets/images/products_ai/hot-paprika.jpg"
+    "image": "assets/images/products_ai/hot-paprika.webp"
   },
   {
     "name": "Cayenne Pepper",
@@ -1008,7 +1008,7 @@
     "aliases": [
       "cayenne"
     ],
-    "image": "assets/images/products_ai/cayenne-pepper.jpg"
+    "image": "assets/images/products_ai/cayenne-pepper.webp"
   },
   {
     "name": "Chili Flakes",
@@ -1021,7 +1021,7 @@
       "crushed red pepper",
       "fulgi de chili"
     ],
-    "image": "assets/images/products_ai/chili-flakes.jpg"
+    "image": "assets/images/products_ai/chili-flakes.webp"
   },
   {
     "name": "Chili Powder",
@@ -1031,7 +1031,7 @@
     "aliases": [
       "chilli powder"
     ],
-    "image": "assets/images/products_ai/chili-powder.jpg"
+    "image": "assets/images/products_ai/chili-powder.webp"
   },
   {
     "name": "Cumin",
@@ -1043,7 +1043,7 @@
       "cumin seeds",
       "chimion"
     ],
-    "image": "assets/images/products_ai/cumin.jpg"
+    "image": "assets/images/products_ai/cumin.webp"
   },
   {
     "name": "Coriander Seeds",
@@ -1055,7 +1055,7 @@
       "coriander powder",
       "coriandru"
     ],
-    "image": "assets/images/products_ai/coriander-seeds.jpg"
+    "image": "assets/images/products_ai/coriander-seeds.webp"
   },
   {
     "name": "Fresh Coriander",
@@ -1067,7 +1067,7 @@
       "coriander leaves",
       "fresh cilantro"
     ],
-    "image": "assets/images/products_ai/fresh-coriander.jpg"
+    "image": "assets/images/products_ai/fresh-coriander.webp"
   },
   {
     "name": "Turmeric",
@@ -1078,7 +1078,7 @@
       "ground turmeric",
       "curcuma"
     ],
-    "image": "assets/images/products_ai/turmeric.jpg"
+    "image": "assets/images/products_ai/turmeric.webp"
   },
   {
     "name": "Curry Powder",
@@ -1088,14 +1088,14 @@
     "aliases": [
       "curry"
     ],
-    "image": "assets/images/products_ai/curry-powder.jpg"
+    "image": "assets/images/products_ai/curry-powder.webp"
   },
   {
     "name": "Garam Masala",
     "category": "Herbs & Spices",
     "unit": "tsp",
     "emoji": "🌿",
-    "image": "assets/images/products_ai/garam-masala.jpg"
+    "image": "assets/images/products_ai/garam-masala.webp"
   },
   {
     "name": "Cinnamon",
@@ -1108,7 +1108,7 @@
       "cinnamon sticks",
       "scortisoara"
     ],
-    "image": "assets/images/products_ai/cinnamon.jpg"
+    "image": "assets/images/products_ai/cinnamon.webp"
   },
   {
     "name": "Nutmeg",
@@ -1119,7 +1119,7 @@
       "ground nutmeg",
       "nucsoara"
     ],
-    "image": "assets/images/products_ai/nutmeg.jpg"
+    "image": "assets/images/products_ai/nutmeg.webp"
   },
   {
     "name": "Cloves",
@@ -1131,7 +1131,7 @@
       "ground cloves",
       "cuisoare"
     ],
-    "image": "assets/images/products_ai/cloves.jpg"
+    "image": "assets/images/products_ai/cloves.webp"
   },
   {
     "name": "Allspice",
@@ -1141,7 +1141,7 @@
     "aliases": [
       "ienibahar"
     ],
-    "image": "assets/images/products_ai/allspice.jpg"
+    "image": "assets/images/products_ai/allspice.webp"
   },
   {
     "name": "Cardamom",
@@ -1152,7 +1152,7 @@
       "ground cardamom",
       "cardamom pods"
     ],
-    "image": "assets/images/products_ai/cardamom.jpg"
+    "image": "assets/images/products_ai/cardamom.webp"
   },
   {
     "name": "Star Anise",
@@ -1162,7 +1162,7 @@
     "aliases": [
       "anise"
     ],
-    "image": "assets/images/products_ai/star-anise.jpg"
+    "image": "assets/images/products_ai/star-anise.webp"
   },
   {
     "name": "Saffron",
@@ -1172,7 +1172,7 @@
     "aliases": [
       "saffron threads"
     ],
-    "image": "assets/images/products_ai/saffron.jpg"
+    "image": "assets/images/products_ai/saffron.webp"
   },
   {
     "name": "Bay Leaf",
@@ -1185,7 +1185,7 @@
       "foi de dafin",
       "dafin"
     ],
-    "image": "assets/images/products_ai/bay-leaf.jpg"
+    "image": "assets/images/products_ai/bay-leaf.webp"
   },
   {
     "name": "Dried Oregano",
@@ -1195,14 +1195,14 @@
     "aliases": [
       "oregano"
     ],
-    "image": "assets/images/products_ai/dried-oregano.jpg"
+    "image": "assets/images/products_ai/dried-oregano.webp"
   },
   {
     "name": "Dried Basil",
     "category": "Herbs & Spices",
     "unit": "tsp",
     "emoji": "🌿",
-    "image": "assets/images/products_ai/dried-basil.jpg"
+    "image": "assets/images/products_ai/dried-basil.webp"
   },
   {
     "name": "Dried Thyme",
@@ -1214,14 +1214,14 @@
       "cimbru uscat",
       "cimbru"
     ],
-    "image": "assets/images/products_ai/dried-thyme.jpg"
+    "image": "assets/images/products_ai/dried-thyme.webp"
   },
   {
     "name": "Dried Rosemary",
     "category": "Herbs & Spices",
     "unit": "tsp",
     "emoji": "🌿",
-    "image": "assets/images/products_ai/dried-rosemary.jpg"
+    "image": "assets/images/products_ai/dried-rosemary.webp"
   },
   {
     "name": "Dried Dill",
@@ -1231,7 +1231,7 @@
     "aliases": [
       "marar uscat"
     ],
-    "image": "assets/images/products_ai/dried-dill.jpg"
+    "image": "assets/images/products_ai/dried-dill.webp"
   },
   {
     "name": "Mixed Herbs",
@@ -1245,7 +1245,7 @@
       "dried mixed herbs",
       "mixed dried herbs"
     ],
-    "image": "assets/images/products_ai/mixed-herbs.jpg"
+    "image": "assets/images/products_ai/mixed-herbs.webp"
   },
   {
     "name": "Fresh Basil",
@@ -1258,7 +1258,7 @@
       "fresh basil leaves",
       "busuioc"
     ],
-    "image": "assets/images/products_ai/fresh-basil.jpg"
+    "image": "assets/images/products_ai/fresh-basil.webp"
   },
   {
     "name": "Fresh Parsley",
@@ -1272,7 +1272,7 @@
       "parsley leaves",
       "patrunjel"
     ],
-    "image": "assets/images/products_ai/fresh-parsley.jpg"
+    "image": "assets/images/products_ai/fresh-parsley.webp"
   },
   {
     "name": "Fresh Dill",
@@ -1284,7 +1284,7 @@
       "chopped dill",
       "marar"
     ],
-    "image": "assets/images/products_ai/fresh-dill.jpg"
+    "image": "assets/images/products_ai/fresh-dill.webp"
   },
   {
     "name": "Fresh Thyme",
@@ -1295,7 +1295,7 @@
       "thyme sprigs",
       "fresh thyme sprigs"
     ],
-    "image": "assets/images/products_ai/fresh-thyme.jpg"
+    "image": "assets/images/products_ai/fresh-thyme.webp"
   },
   {
     "name": "Fresh Rosemary",
@@ -1307,7 +1307,7 @@
       "rosemary sprigs",
       "rozmarin"
     ],
-    "image": "assets/images/products_ai/fresh-rosemary.jpg"
+    "image": "assets/images/products_ai/fresh-rosemary.webp"
   },
   {
     "name": "Fresh Mint",
@@ -1320,7 +1320,7 @@
       "fresh mint leaves",
       "menta"
     ],
-    "image": "assets/images/products_ai/fresh-mint.jpg"
+    "image": "assets/images/products_ai/fresh-mint.webp"
   },
   {
     "name": "Fresh Lovage",
@@ -1332,7 +1332,7 @@
       "lovage leaves",
       "leustean"
     ],
-    "image": "assets/images/products_ai/fresh-lovage.jpg"
+    "image": "assets/images/products_ai/fresh-lovage.webp"
   },
   {
     "name": "Fresh Tarragon",
@@ -1343,7 +1343,7 @@
       "tarragon",
       "tarhon"
     ],
-    "image": "assets/images/products_ai/fresh-tarragon.jpg"
+    "image": "assets/images/products_ai/fresh-tarragon.webp"
   },
   {
     "name": "Fresh Chives",
@@ -1353,7 +1353,7 @@
     "aliases": [
       "chives"
     ],
-    "image": "assets/images/products_ai/fresh-chives.jpg"
+    "image": "assets/images/products_ai/fresh-chives.webp"
   },
   {
     "name": "Fresh Sage",
@@ -1365,7 +1365,7 @@
       "sage leaves",
       "salvie"
     ],
-    "image": "assets/images/products_ai/fresh-sage.jpg"
+    "image": "assets/images/products_ai/fresh-sage.webp"
   },
   {
     "name": "Fresh Herbs",
@@ -1377,7 +1377,7 @@
       "chopped fresh herbs",
       "herbs"
     ],
-    "image": "assets/images/products_ai/fresh-herbs.jpg"
+    "image": "assets/images/products_ai/fresh-herbs.webp"
   },
   {
     "name": "Celery Leaves",
@@ -1387,7 +1387,7 @@
     "aliases": [
       "frunze de telina"
     ],
-    "image": "assets/images/products_ai/celery-leaves.jpg"
+    "image": "assets/images/products_ai/celery-leaves.webp"
   },
   {
     "name": "Mustard Seeds",
@@ -1398,7 +1398,7 @@
       "mustard seed",
       "boabe de mustar"
     ],
-    "image": "assets/images/products_ai/mustard-seeds.jpg"
+    "image": "assets/images/products_ai/mustard-seeds.webp"
   },
   {
     "name": "Sesame Seeds",
@@ -1410,7 +1410,7 @@
       "toasted sesame seeds",
       "susan"
     ],
-    "image": "assets/images/products_ai/sesame-seeds.jpg"
+    "image": "assets/images/products_ai/sesame-seeds.webp"
   },
   {
     "name": "Poppy Seeds",
@@ -1421,7 +1421,7 @@
       "poppy seed",
       "mac"
     ],
-    "image": "assets/images/products_ai/poppy-seeds.jpg"
+    "image": "assets/images/products_ai/poppy-seeds.webp"
   },
   {
     "name": "Caraway Seeds",
@@ -1432,21 +1432,21 @@
       "caraway",
       "chimen"
     ],
-    "image": "assets/images/products_ai/caraway-seeds.jpg"
+    "image": "assets/images/products_ai/caraway-seeds.webp"
   },
   {
     "name": "Garlic Powder",
     "category": "Herbs & Spices",
     "unit": "tsp",
     "emoji": "🧄",
-    "image": "assets/images/products_ai/garlic-powder.jpg"
+    "image": "assets/images/products_ai/garlic-powder.webp"
   },
   {
     "name": "Onion Powder",
     "category": "Herbs & Spices",
     "unit": "tsp",
     "emoji": "🧅",
-    "image": "assets/images/products_ai/onion-powder.jpg"
+    "image": "assets/images/products_ai/onion-powder.webp"
   },
   {
     "name": "Ginger Powder",
@@ -1456,7 +1456,7 @@
     "aliases": [
       "ground ginger"
     ],
-    "image": "assets/images/products_ai/ginger-powder.jpg"
+    "image": "assets/images/products_ai/ginger-powder.webp"
   },
   {
     "name": "Vegetable Seasoning",
@@ -1469,7 +1469,7 @@
       "vegeta",
       "delikat"
     ],
-    "image": "assets/images/products_ai/vegetable-seasoning.jpg"
+    "image": "assets/images/products_ai/vegetable-seasoning.webp"
   },
   {
     "name": "Stock Cube",
@@ -1484,7 +1484,7 @@
       "vegetable stock cube",
       "cub de supa"
     ],
-    "image": "assets/images/products_ai/stock-cube.jpg"
+    "image": "assets/images/products_ai/stock-cube.webp"
   },
   {
     "name": "Vanilla Extract",
@@ -1497,7 +1497,7 @@
       "pure vanilla extract",
       "esenta de vanilie"
     ],
-    "image": "assets/images/products_ai/vanilla-extract.jpg"
+    "image": "assets/images/products_ai/vanilla-extract.webp"
   },
   {
     "name": "Rum Extract",
@@ -1508,14 +1508,14 @@
       "rum essence",
       "esenta de rom"
     ],
-    "image": "assets/images/products_ai/rum-extract.jpg"
+    "image": "assets/images/products_ai/rum-extract.webp"
   },
   {
     "name": "Sumac",
     "category": "Herbs & Spices",
     "unit": "tsp",
     "emoji": "🔴",
-    "image": "assets/images/products_ai/sumac.jpg"
+    "image": "assets/images/products_ai/sumac.webp"
   },
   {
     "name": "Fenugreek",
@@ -1525,7 +1525,7 @@
     "aliases": [
       "schinduf"
     ],
-    "image": "assets/images/products_ai/fenugreek.jpg"
+    "image": "assets/images/products_ai/fenugreek.webp"
   },
   {
     "name": "Marjoram",
@@ -1536,7 +1536,7 @@
       "dried marjoram",
       "maghiran"
     ],
-    "image": "assets/images/products_ai/marjoram.jpg"
+    "image": "assets/images/products_ai/marjoram.webp"
   },
   {
     "name": "Savory",
@@ -1547,14 +1547,14 @@
       "summer savory",
       "cimbrisor"
     ],
-    "image": "assets/images/products_ai/savory.jpg"
+    "image": "assets/images/products_ai/savory.webp"
   },
   {
     "name": "Milk",
     "category": "Dairy",
     "unit": "ml",
     "emoji": "🥛",
-    "image": "assets/images/products_ai/milk.jpg",
+    "image": "assets/images/products_ai/milk.webp",
     "aliases": [
       "whole milk",
       "fresh milk",
@@ -1566,7 +1566,7 @@
     "category": "Dairy",
     "unit": "g",
     "emoji": "🧈",
-    "image": "assets/images/products_ai/butter.jpg",
+    "image": "assets/images/products_ai/butter.webp",
     "aliases": [
       "unsalted butter",
       "salted butter",
@@ -1579,7 +1579,7 @@
     "category": "Dairy",
     "unit": "pcs",
     "emoji": "🥚",
-    "image": "assets/images/products_ai/eggs.jpg",
+    "image": "assets/images/products_ai/eggs.webp",
     "aliases": [
       "egg",
       "large eggs",
@@ -1596,7 +1596,7 @@
     "category": "Dairy",
     "unit": "g",
     "emoji": "🧀",
-    "image": "assets/images/products_ai/cheese.jpg",
+    "image": "assets/images/products_ai/cheese.webp",
     "aliases": [
       "cheddar",
       "cheddar cheese",
@@ -1615,7 +1615,7 @@
       "kashkaval",
       "semi-hard cheese"
     ],
-    "image": "assets/images/products_ai/cascaval.jpg"
+    "image": "assets/images/products_ai/cascaval.webp"
   },
   {
     "name": "Smoked Cheese",
@@ -1626,14 +1626,14 @@
       "smoked cascaval",
       "cascaval afumat"
     ],
-    "image": "assets/images/products_ai/smoked-cheese.jpg"
+    "image": "assets/images/products_ai/smoked-cheese.webp"
   },
   {
     "name": "Parmesan",
     "category": "Dairy",
     "unit": "g",
     "emoji": "🧀",
-    "image": "assets/images/products_ai/parmesan.jpg",
+    "image": "assets/images/products_ai/parmesan.webp",
     "aliases": [
       "parmigiano",
       "parmigiano reggiano",
@@ -1647,7 +1647,7 @@
     "category": "Dairy",
     "unit": "g",
     "emoji": "🧀",
-    "image": "assets/images/products_ai/fresh-mozzarella.jpg",
+    "image": "assets/images/products_ai/fresh-mozzarella.webp",
     "aliases": [
       "mozzarella",
       "mozzarella cheese",
@@ -1663,7 +1663,7 @@
     "aliases": [
       "feta"
     ],
-    "image": "assets/images/products_ai/feta-cheese.jpg"
+    "image": "assets/images/products_ai/feta-cheese.webp"
   },
   {
     "name": "Telemea Cheese",
@@ -1675,7 +1675,7 @@
       "brined cheese",
       "white brined cheese"
     ],
-    "image": "assets/images/products_ai/telemea-cheese.jpg"
+    "image": "assets/images/products_ai/telemea-cheese.webp"
   },
   {
     "name": "Cottage Cheese",
@@ -1689,7 +1689,7 @@
       "quark",
       "branza de vaci"
     ],
-    "image": "assets/images/products_ai/cottage-cheese.jpg"
+    "image": "assets/images/products_ai/cottage-cheese.webp"
   },
   {
     "name": "Cream Cheese",
@@ -1700,7 +1700,7 @@
       "philadelphia",
       "soft cheese"
     ],
-    "image": "assets/images/products_ai/cream-cheese.jpg"
+    "image": "assets/images/products_ai/cream-cheese.webp"
   },
   {
     "name": "Ricotta",
@@ -1711,7 +1711,7 @@
       "ricotta cheese",
       "urda"
     ],
-    "image": "assets/images/products_ai/ricotta.jpg"
+    "image": "assets/images/products_ai/ricotta.webp"
   },
   {
     "name": "Gorgonzola",
@@ -1723,7 +1723,7 @@
       "roquefort",
       "stilton"
     ],
-    "image": "assets/images/products_ai/gorgonzola.jpg"
+    "image": "assets/images/products_ai/gorgonzola.webp"
   },
   {
     "name": "Gouda",
@@ -1734,7 +1734,7 @@
       "gouda cheese",
       "edam"
     ],
-    "image": "assets/images/products_ai/gouda.jpg"
+    "image": "assets/images/products_ai/gouda.webp"
   },
   {
     "name": "Emmental",
@@ -1746,14 +1746,14 @@
       "gruyere",
       "emmentaler"
     ],
-    "image": "assets/images/products_ai/emmental.jpg"
+    "image": "assets/images/products_ai/emmental.webp"
   },
   {
     "name": "Halloumi",
     "category": "Dairy",
     "unit": "g",
     "emoji": "🧀",
-    "image": "assets/images/products_ai/halloumi.jpg"
+    "image": "assets/images/products_ai/halloumi.webp"
   },
   {
     "name": "Goat Cheese",
@@ -1764,21 +1764,21 @@
       "chevre",
       "branza de capra"
     ],
-    "image": "assets/images/products_ai/goat-cheese.jpg"
+    "image": "assets/images/products_ai/goat-cheese.webp"
   },
   {
     "name": "Mascarpone",
     "category": "Dairy",
     "unit": "g",
     "emoji": "🧀",
-    "image": "assets/images/products_ai/mascarpone.jpg"
+    "image": "assets/images/products_ai/mascarpone.webp"
   },
   {
     "name": "Sour Cream",
     "category": "Dairy",
     "unit": "g",
     "emoji": "🥛",
-    "image": "assets/images/products_ai/sour-cream.jpg",
+    "image": "assets/images/products_ai/sour-cream.webp",
     "aliases": [
       "creme fraiche",
       "smantana"
@@ -1789,7 +1789,7 @@
     "category": "Dairy",
     "unit": "ml",
     "emoji": "🥛",
-    "image": "assets/images/products_ai/cooking-cream.jpg",
+    "image": "assets/images/products_ai/cooking-cream.webp",
     "aliases": [
       "cream",
       "single cream",
@@ -1810,7 +1810,7 @@
       "smantana pentru frisca",
       "frisca lichida"
     ],
-    "image": "assets/images/products_ai/heavy-cream.jpg"
+    "image": "assets/images/products_ai/heavy-cream.webp"
   },
   {
     "name": "Yogurt",
@@ -1824,7 +1824,7 @@
       "greek yogurt",
       "iaurt"
     ],
-    "image": "assets/images/products_ai/yogurt.jpg"
+    "image": "assets/images/products_ai/yogurt.webp"
   },
   {
     "name": "Kefir",
@@ -1835,7 +1835,7 @@
       "sana",
       "lapte batut"
     ],
-    "image": "assets/images/products_ai/kefir.jpg"
+    "image": "assets/images/products_ai/kefir.webp"
   },
   {
     "name": "Buttermilk",
@@ -1845,7 +1845,7 @@
     "aliases": [
       "zara"
     ],
-    "image": "assets/images/products_ai/buttermilk.jpg"
+    "image": "assets/images/products_ai/buttermilk.webp"
   },
   {
     "name": "Condensed Milk",
@@ -1856,7 +1856,7 @@
       "sweetened condensed milk",
       "lapte condensat"
     ],
-    "image": "assets/images/products_ai/condensed-milk.jpg"
+    "image": "assets/images/products_ai/condensed-milk.webp"
   },
   {
     "name": "Whipped Cream",
@@ -1866,7 +1866,7 @@
     "aliases": [
       "frisca"
     ],
-    "image": "assets/images/products_ai/whipped-cream.jpg"
+    "image": "assets/images/products_ai/whipped-cream.webp"
   },
   {
     "name": "Chicken Breast",
@@ -1880,7 +1880,7 @@
       "chicken fillets",
       "piept de pui"
     ],
-    "image": "assets/images/products_ai/chicken-breast.jpg"
+    "image": "assets/images/products_ai/chicken-breast.webp"
   },
   {
     "name": "Chicken Thighs",
@@ -1892,7 +1892,7 @@
       "boneless chicken thighs",
       "pulpe de pui"
     ],
-    "image": "assets/images/products_ai/chicken-thighs.jpg"
+    "image": "assets/images/products_ai/chicken-thighs.webp"
   },
   {
     "name": "Chicken Drumsticks",
@@ -1904,7 +1904,7 @@
       "drumsticks",
       "copane"
     ],
-    "image": "assets/images/products_ai/chicken-drumsticks.jpg"
+    "image": "assets/images/products_ai/chicken-drumsticks.webp"
   },
   {
     "name": "Chicken Wings",
@@ -1915,7 +1915,7 @@
       "wings",
       "aripioare"
     ],
-    "image": "assets/images/products_ai/chicken-wings.jpg"
+    "image": "assets/images/products_ai/chicken-wings.webp"
   },
   {
     "name": "Whole Chicken",
@@ -1929,7 +1929,7 @@
       "pui intreg",
       "pui"
     ],
-    "image": "assets/images/products_ai/whole-chicken.jpg"
+    "image": "assets/images/products_ai/whole-chicken.webp"
   },
   {
     "name": "Chicken Liver",
@@ -1940,14 +1940,14 @@
       "chicken livers",
       "ficatei de pui"
     ],
-    "image": "assets/images/products_ai/chicken-liver.jpg"
+    "image": "assets/images/products_ai/chicken-liver.webp"
   },
   {
     "name": "Turkey Breast",
     "category": "Meat",
     "unit": "g",
     "emoji": "🦃",
-    "image": "assets/images/products_ai/turkey-breast.jpg",
+    "image": "assets/images/products_ai/turkey-breast.webp",
     "aliases": [
       "turkey",
       "turkey fillet",
@@ -1964,14 +1964,14 @@
       "minced chicken",
       "ground chicken"
     ],
-    "image": "assets/images/products_ai/minced-turkey.jpg"
+    "image": "assets/images/products_ai/minced-turkey.webp"
   },
   {
     "name": "Minced Beef",
     "category": "Meat",
     "unit": "g",
     "emoji": "🥩",
-    "image": "assets/images/products_ai/minced-beef.jpg",
+    "image": "assets/images/products_ai/minced-beef.webp",
     "aliases": [
       "ground beef",
       "beef mince",
@@ -1989,7 +1989,7 @@
       "pork mince",
       "carne tocata de porc"
     ],
-    "image": "assets/images/products_ai/minced-pork.jpg"
+    "image": "assets/images/products_ai/minced-pork.webp"
   },
   {
     "name": "Mixed Minced Meat",
@@ -2004,7 +2004,7 @@
       "carne tocata",
       "carne tocata amestec"
     ],
-    "image": "assets/images/products_ai/mixed-minced-meat.jpg"
+    "image": "assets/images/products_ai/mixed-minced-meat.webp"
   },
   {
     "name": "Beef",
@@ -2020,7 +2020,7 @@
       "carne de vita",
       "vita"
     ],
-    "image": "assets/images/products_ai/beef.jpg"
+    "image": "assets/images/products_ai/beef.webp"
   },
   {
     "name": "Beef with Bone",
@@ -2035,7 +2035,7 @@
       "oase de vita",
       "rasol"
     ],
-    "image": "assets/images/products_ai/beef-with-bone.jpg"
+    "image": "assets/images/products_ai/beef-with-bone.webp"
   },
   {
     "name": "Beef Steak",
@@ -2050,7 +2050,7 @@
       "rump steak",
       "beef tenderloin"
     ],
-    "image": "assets/images/products_ai/beef-steak.jpg"
+    "image": "assets/images/products_ai/beef-steak.webp"
   },
   {
     "name": "Veal",
@@ -2062,7 +2062,7 @@
       "veal cubes",
       "vitel"
     ],
-    "image": "assets/images/products_ai/veal.jpg"
+    "image": "assets/images/products_ai/veal.webp"
   },
   {
     "name": "Veal Bones",
@@ -2073,7 +2073,7 @@
       "veal bones with marrow",
       "oase de vitel"
     ],
-    "image": "assets/images/products_ai/veal-bones.jpg"
+    "image": "assets/images/products_ai/veal-bones.webp"
   },
   {
     "name": "Pork Neck",
@@ -2084,7 +2084,7 @@
       "pork collar",
       "ceafa de porc"
     ],
-    "image": "assets/images/products_ai/pork-neck.jpg"
+    "image": "assets/images/products_ai/pork-neck.webp"
   },
   {
     "name": "Pork Shoulder",
@@ -2099,7 +2099,7 @@
       "pulpa de porc",
       "carne de porc"
     ],
-    "image": "assets/images/products_ai/pork-shoulder.jpg"
+    "image": "assets/images/products_ai/pork-shoulder.webp"
   },
   {
     "name": "Pork Chops",
@@ -2111,7 +2111,7 @@
       "pork loin chops",
       "cotlet de porc"
     ],
-    "image": "assets/images/products_ai/pork-chops.jpg"
+    "image": "assets/images/products_ai/pork-chops.webp"
   },
   {
     "name": "Pork Tenderloin",
@@ -2122,7 +2122,7 @@
       "pork fillet",
       "muschiulet de porc"
     ],
-    "image": "assets/images/products_ai/pork-tenderloin.jpg"
+    "image": "assets/images/products_ai/pork-tenderloin.webp"
   },
   {
     "name": "Pork Ribs",
@@ -2134,7 +2134,7 @@
       "spare ribs",
       "coaste de porc"
     ],
-    "image": "assets/images/products_ai/pork-ribs.jpg"
+    "image": "assets/images/products_ai/pork-ribs.webp"
   },
   {
     "name": "Pork Belly",
@@ -2144,7 +2144,7 @@
     "aliases": [
       "piept de porc"
     ],
-    "image": "assets/images/products_ai/pork-belly.jpg"
+    "image": "assets/images/products_ai/pork-belly.webp"
   },
   {
     "name": "Smoked Pork Knuckle",
@@ -2158,14 +2158,14 @@
       "ciolan afumat",
       "ciolan"
     ],
-    "image": "assets/images/products_ai/smoked-pork-knuckle.jpg"
+    "image": "assets/images/products_ai/smoked-pork-knuckle.webp"
   },
   {
     "name": "Bacon",
     "category": "Meat",
     "unit": "g",
     "emoji": "🥓",
-    "image": "assets/images/products_ai/bacon.jpg",
+    "image": "assets/images/products_ai/bacon.webp",
     "aliases": [
       "bacon slices",
       "bacon strips",
@@ -2182,7 +2182,7 @@
       "slanina afumata",
       "kaizer"
     ],
-    "image": "assets/images/products_ai/smoked-bacon.jpg"
+    "image": "assets/images/products_ai/smoked-bacon.webp"
   },
   {
     "name": "Pancetta",
@@ -2192,14 +2192,14 @@
     "aliases": [
       "guanciale"
     ],
-    "image": "assets/images/products_ai/pancetta.jpg"
+    "image": "assets/images/products_ai/pancetta.webp"
   },
   {
     "name": "Pressed Ham",
     "category": "Meat",
     "unit": "g",
     "emoji": "🍖",
-    "image": "assets/images/products_ai/pressed-ham.jpg",
+    "image": "assets/images/products_ai/pressed-ham.webp",
     "aliases": [
       "ham",
       "cooked ham",
@@ -2219,7 +2219,7 @@
       "jamon",
       "prosciutto crudo"
     ],
-    "image": "assets/images/products_ai/prosciutto.jpg"
+    "image": "assets/images/products_ai/prosciutto.webp"
   },
   {
     "name": "Salami",
@@ -2230,7 +2230,7 @@
       "pepperoni",
       "salam"
     ],
-    "image": "assets/images/products_ai/salami.jpg"
+    "image": "assets/images/products_ai/salami.webp"
   },
   {
     "name": "Sausages",
@@ -2244,7 +2244,7 @@
       "carnati",
       "carnati proaspeti"
     ],
-    "image": "assets/images/products_ai/sausages.jpg"
+    "image": "assets/images/products_ai/sausages.webp"
   },
   {
     "name": "Smoked Sausages",
@@ -2256,7 +2256,7 @@
       "kielbasa",
       "carnati afumati"
     ],
-    "image": "assets/images/products_ai/smoked-sausages.jpg"
+    "image": "assets/images/products_ai/smoked-sausages.webp"
   },
   {
     "name": "Hot Dogs",
@@ -2268,7 +2268,7 @@
       "wieners",
       "crenvursti"
     ],
-    "image": "assets/images/products_ai/hot-dogs.jpg"
+    "image": "assets/images/products_ai/hot-dogs.webp"
   },
   {
     "name": "Lamb",
@@ -2283,7 +2283,7 @@
       "miel",
       "carne de miel"
     ],
-    "image": "assets/images/products_ai/lamb.jpg"
+    "image": "assets/images/products_ai/lamb.webp"
   },
   {
     "name": "Lamb Chops",
@@ -2294,7 +2294,7 @@
       "lamb cutlets",
       "cotlete de miel"
     ],
-    "image": "assets/images/products_ai/lamb-chops.jpg"
+    "image": "assets/images/products_ai/lamb-chops.webp"
   },
   {
     "name": "Minced Lamb",
@@ -2304,7 +2304,7 @@
     "aliases": [
       "ground lamb"
     ],
-    "image": "assets/images/products_ai/minced-lamb.jpg"
+    "image": "assets/images/products_ai/minced-lamb.webp"
   },
   {
     "name": "Duck Breast",
@@ -2315,14 +2315,14 @@
       "duck",
       "piept de rata"
     ],
-    "image": "assets/images/products_ai/duck-breast.jpg"
+    "image": "assets/images/products_ai/duck-breast.webp"
   },
   {
     "name": "Chorizo",
     "category": "Meat",
     "unit": "g",
     "emoji": "🌭",
-    "image": "assets/images/products_ai/chorizo.jpg"
+    "image": "assets/images/products_ai/chorizo.webp"
   },
   {
     "name": "Liver",
@@ -2334,7 +2334,7 @@
       "beef liver",
       "ficat"
     ],
-    "image": "assets/images/products_ai/liver.jpg"
+    "image": "assets/images/products_ai/liver.webp"
   },
   {
     "name": "Salmon Fillets",
@@ -2347,7 +2347,7 @@
       "fresh salmon",
       "somon"
     ],
-    "image": "assets/images/products_ai/salmon-fillets.jpg"
+    "image": "assets/images/products_ai/salmon-fillets.webp"
   },
   {
     "name": "Smoked Salmon",
@@ -2357,7 +2357,7 @@
     "aliases": [
       "somon afumat"
     ],
-    "image": "assets/images/products_ai/smoked-salmon.jpg"
+    "image": "assets/images/products_ai/smoked-salmon.webp"
   },
   {
     "name": "Trout",
@@ -2369,7 +2369,7 @@
       "whole trout",
       "pastrav"
     ],
-    "image": "assets/images/products_ai/trout.jpg"
+    "image": "assets/images/products_ai/trout.webp"
   },
   {
     "name": "Cod Fillets",
@@ -2382,7 +2382,7 @@
       "haddock",
       "cod"
     ],
-    "image": "assets/images/products_ai/cod-fillets.jpg"
+    "image": "assets/images/products_ai/cod-fillets.webp"
   },
   {
     "name": "Fish Fillets",
@@ -2399,7 +2399,7 @@
       "file de peste",
       "peste"
     ],
-    "image": "assets/images/products_ai/fish-fillets.jpg"
+    "image": "assets/images/products_ai/fish-fillets.webp"
   },
   {
     "name": "Tuna Steak",
@@ -2410,7 +2410,7 @@
       "fresh tuna",
       "tuna steaks"
     ],
-    "image": "assets/images/products_ai/tuna-steak.jpg"
+    "image": "assets/images/products_ai/tuna-steak.webp"
   },
   {
     "name": "Mackerel",
@@ -2421,7 +2421,7 @@
       "smoked mackerel",
       "macrou"
     ],
-    "image": "assets/images/products_ai/mackerel.jpg"
+    "image": "assets/images/products_ai/mackerel.webp"
   },
   {
     "name": "Sea Bass",
@@ -2432,7 +2432,7 @@
       "branzino",
       "biban de mare"
     ],
-    "image": "assets/images/products_ai/sea-bass.jpg"
+    "image": "assets/images/products_ai/sea-bass.webp"
   },
   {
     "name": "Sea Bream",
@@ -2443,7 +2443,7 @@
       "dorada",
       "gilt-head bream"
     ],
-    "image": "assets/images/products_ai/sea-bream.jpg"
+    "image": "assets/images/products_ai/sea-bream.webp"
   },
   {
     "name": "Carp",
@@ -2453,7 +2453,7 @@
     "aliases": [
       "crap"
     ],
-    "image": "assets/images/products_ai/carp.jpg"
+    "image": "assets/images/products_ai/carp.webp"
   },
   {
     "name": "Fresh Sardines",
@@ -2464,7 +2464,7 @@
       "sardines",
       "sardine"
     ],
-    "image": "assets/images/products_ai/fresh-sardines.jpg"
+    "image": "assets/images/products_ai/fresh-sardines.webp"
   },
   {
     "name": "Shrimp",
@@ -2479,7 +2479,7 @@
       "shrimps",
       "creveti"
     ],
-    "image": "assets/images/products_ai/shrimp.jpg"
+    "image": "assets/images/products_ai/shrimp.webp"
   },
   {
     "name": "Mussels",
@@ -2490,7 +2490,7 @@
       "fresh mussels",
       "midii"
     ],
-    "image": "assets/images/products_ai/mussels.jpg"
+    "image": "assets/images/products_ai/mussels.webp"
   },
   {
     "name": "Squid",
@@ -2502,7 +2502,7 @@
       "squid rings",
       "calamar"
     ],
-    "image": "assets/images/products_ai/squid.jpg"
+    "image": "assets/images/products_ai/squid.webp"
   },
   {
     "name": "Octopus",
@@ -2512,14 +2512,14 @@
     "aliases": [
       "caracatita"
     ],
-    "image": "assets/images/products_ai/octopus.jpg"
+    "image": "assets/images/products_ai/octopus.webp"
   },
   {
     "name": "Scallops",
     "category": "Fish & Seafood",
     "unit": "g",
     "emoji": "🦪",
-    "image": "assets/images/products_ai/scallops.jpg"
+    "image": "assets/images/products_ai/scallops.webp"
   },
   {
     "name": "Crab Meat",
@@ -2531,14 +2531,14 @@
       "surimi",
       "crab sticks"
     ],
-    "image": "assets/images/products_ai/crab-meat.jpg"
+    "image": "assets/images/products_ai/crab-meat.webp"
   },
   {
     "name": "Bread",
     "category": "Bakery",
     "unit": "slice",
     "emoji": "🍞",
-    "image": "assets/images/products_ai/bread.jpg",
+    "image": "assets/images/products_ai/bread.webp",
     "aliases": [
       "white bread",
       "sliced bread",
@@ -2558,7 +2558,7 @@
       "brown bread",
       "paine integrala"
     ],
-    "image": "assets/images/products_ai/whole-wheat-bread.jpg"
+    "image": "assets/images/products_ai/whole-wheat-bread.webp"
   },
   {
     "name": "Rye Bread",
@@ -2568,7 +2568,7 @@
     "aliases": [
       "paine de secara"
     ],
-    "image": "assets/images/products_ai/rye-bread.jpg"
+    "image": "assets/images/products_ai/rye-bread.webp"
   },
   {
     "name": "Baguette",
@@ -2579,7 +2579,7 @@
       "french bread",
       "bagheta"
     ],
-    "image": "assets/images/products_ai/baguette.jpg"
+    "image": "assets/images/products_ai/baguette.webp"
   },
   {
     "name": "Ciabatta",
@@ -2590,7 +2590,7 @@
       "ciabatta rolls",
       "focaccia"
     ],
-    "image": "assets/images/products_ai/ciabatta.jpg"
+    "image": "assets/images/products_ai/ciabatta.webp"
   },
   {
     "name": "Flatbread",
@@ -2602,7 +2602,7 @@
       "naan",
       "lipie"
     ],
-    "image": "assets/images/products_ai/flatbread.jpg"
+    "image": "assets/images/products_ai/flatbread.webp"
   },
   {
     "name": "Pita Bread",
@@ -2614,7 +2614,7 @@
       "pita pockets",
       "pitas"
     ],
-    "image": "assets/images/products_ai/pita-bread.jpg"
+    "image": "assets/images/products_ai/pita-bread.webp"
   },
   {
     "name": "Tortillas",
@@ -2628,7 +2628,7 @@
       "flour tortillas",
       "corn tortillas"
     ],
-    "image": "assets/images/products_ai/tortillas.jpg"
+    "image": "assets/images/products_ai/tortillas.webp"
   },
   {
     "name": "Burger Buns",
@@ -2641,7 +2641,7 @@
       "brioche buns",
       "chifle de burger"
     ],
-    "image": "assets/images/products_ai/burger-buns.jpg"
+    "image": "assets/images/products_ai/burger-buns.webp"
   },
   {
     "name": "Hot Dog Buns",
@@ -2651,7 +2651,7 @@
     "aliases": [
       "hot dog rolls"
     ],
-    "image": "assets/images/products_ai/hot-dog-buns.jpg"
+    "image": "assets/images/products_ai/hot-dog-buns.webp"
   },
   {
     "name": "Bread Rolls",
@@ -2663,7 +2663,7 @@
       "dinner rolls",
       "chifle"
     ],
-    "image": "assets/images/products_ai/bread-rolls.jpg"
+    "image": "assets/images/products_ai/bread-rolls.webp"
   },
   {
     "name": "Croissants",
@@ -2673,7 +2673,7 @@
     "aliases": [
       "croissant"
     ],
-    "image": "assets/images/products_ai/croissants.jpg"
+    "image": "assets/images/products_ai/croissants.webp"
   },
   {
     "name": "Bagels",
@@ -2683,7 +2683,7 @@
     "aliases": [
       "bagel"
     ],
-    "image": "assets/images/products_ai/bagels.jpg"
+    "image": "assets/images/products_ai/bagels.webp"
   },
   {
     "name": "Puff Pastry Dough",
@@ -2698,7 +2698,7 @@
       "foietaj",
       "aluat foietaj"
     ],
-    "image": "assets/images/products_ai/puff-pastry-dough.jpg"
+    "image": "assets/images/products_ai/puff-pastry-dough.webp"
   },
   {
     "name": "Phyllo Dough",
@@ -2712,7 +2712,7 @@
       "phyllo sheets",
       "foi de placinta"
     ],
-    "image": "assets/images/products_ai/phyllo-dough.jpg"
+    "image": "assets/images/products_ai/phyllo-dough.webp"
   },
   {
     "name": "Pizza Dough",
@@ -2723,7 +2723,7 @@
       "pizza base",
       "aluat de pizza"
     ],
-    "image": "assets/images/products_ai/pizza-dough.jpg"
+    "image": "assets/images/products_ai/pizza-dough.webp"
   },
   {
     "name": "Shortcrust Pastry",
@@ -2735,7 +2735,7 @@
       "pastry dough",
       "aluat fraged"
     ],
-    "image": "assets/images/products_ai/shortcrust-pastry.jpg"
+    "image": "assets/images/products_ai/shortcrust-pastry.webp"
   },
   {
     "name": "Breadcrumbs",
@@ -2748,7 +2748,7 @@
       "panko breadcrumbs",
       "pesmet"
     ],
-    "image": "assets/images/products_ai/breadcrumbs.jpg"
+    "image": "assets/images/products_ai/breadcrumbs.webp"
   },
   {
     "name": "Croutons",
@@ -2758,7 +2758,7 @@
     "aliases": [
       "crutoane"
     ],
-    "image": "assets/images/products_ai/croutons.jpg"
+    "image": "assets/images/products_ai/croutons.webp"
   },
   {
     "name": "Ladyfingers",
@@ -2770,7 +2770,7 @@
       "sponge fingers",
       "piscoturi"
     ],
-    "image": "assets/images/products_ai/ladyfingers.jpg"
+    "image": "assets/images/products_ai/ladyfingers.webp"
   },
   {
     "name": "Sponge Cake",
@@ -2782,14 +2782,14 @@
       "sponge cake base",
       "blat de tort"
     ],
-    "image": "assets/images/products_ai/sponge-cake.jpg"
+    "image": "assets/images/products_ai/sponge-cake.webp"
   },
   {
     "name": "Spaghetti",
     "category": "Grains & Pasta",
     "unit": "g",
     "emoji": "🍝",
-    "image": "assets/images/products_ai/spaghetti.jpg",
+    "image": "assets/images/products_ai/spaghetti.webp",
     "aliases": [
       "linguine",
       "bucatini",
@@ -2801,7 +2801,7 @@
     "category": "Grains & Pasta",
     "unit": "g",
     "emoji": "🍝",
-    "image": "assets/images/products_ai/pasta.jpg",
+    "image": "assets/images/products_ai/pasta.webp",
     "aliases": [
       "short pasta",
       "fusilli",
@@ -2821,7 +2821,7 @@
       "penne pasta",
       "penne rigate"
     ],
-    "image": "assets/images/products_ai/penne.jpg"
+    "image": "assets/images/products_ai/penne.webp"
   },
   {
     "name": "Macaroni",
@@ -2832,7 +2832,7 @@
       "elbow macaroni",
       "macaroane"
     ],
-    "image": "assets/images/products_ai/macaroni.jpg"
+    "image": "assets/images/products_ai/macaroni.webp"
   },
   {
     "name": "Lasagna Sheets",
@@ -2844,7 +2844,7 @@
       "lasagna noodles",
       "foi de lasagna"
     ],
-    "image": "assets/images/products_ai/lasagna-sheets.jpg"
+    "image": "assets/images/products_ai/lasagna-sheets.webp"
   },
   {
     "name": "Tagliatelle",
@@ -2855,14 +2855,14 @@
       "fettuccine",
       "pappardelle"
     ],
-    "image": "assets/images/products_ai/tagliatelle.jpg"
+    "image": "assets/images/products_ai/tagliatelle.webp"
   },
   {
     "name": "Noodles",
     "category": "Grains & Pasta",
     "unit": "g",
     "emoji": "🍜",
-    "image": "assets/images/products_ai/noodles.jpg",
+    "image": "assets/images/products_ai/noodles.webp",
     "aliases": [
       "egg noodles",
       "soup noodles",
@@ -2881,7 +2881,7 @@
       "rice vermicelli",
       "pad thai noodles"
     ],
-    "image": "assets/images/products_ai/rice-noodles.jpg"
+    "image": "assets/images/products_ai/rice-noodles.webp"
   },
   {
     "name": "Ramen Noodles",
@@ -2893,21 +2893,21 @@
       "udon noodles",
       "soba noodles"
     ],
-    "image": "assets/images/products_ai/ramen-noodles.jpg"
+    "image": "assets/images/products_ai/ramen-noodles.webp"
   },
   {
     "name": "Gnocchi",
     "category": "Grains & Pasta",
     "unit": "g",
     "emoji": "🥟",
-    "image": "assets/images/products_ai/gnocchi.jpg"
+    "image": "assets/images/products_ai/gnocchi.webp"
   },
   {
     "name": "Rice",
     "category": "Grains & Pasta",
     "unit": "g",
     "emoji": "🍚",
-    "image": "assets/images/products_ai/rice.jpg",
+    "image": "assets/images/products_ai/rice.webp",
     "aliases": [
       "long-grain rice",
       "long grain rice",
@@ -2926,7 +2926,7 @@
     "aliases": [
       "basmati"
     ],
-    "image": "assets/images/products_ai/basmati-rice.jpg"
+    "image": "assets/images/products_ai/basmati-rice.webp"
   },
   {
     "name": "Risotto Rice",
@@ -2939,7 +2939,7 @@
       "carnaroli rice",
       "orez pentru risotto"
     ],
-    "image": "assets/images/products_ai/risotto-rice.jpg"
+    "image": "assets/images/products_ai/risotto-rice.webp"
   },
   {
     "name": "Brown Rice",
@@ -2950,14 +2950,14 @@
       "wholegrain rice",
       "orez brun"
     ],
-    "image": "assets/images/products_ai/brown-rice.jpg"
+    "image": "assets/images/products_ai/brown-rice.webp"
   },
   {
     "name": "Rolled Oats",
     "category": "Grains & Pasta",
     "unit": "g",
     "emoji": "🌾",
-    "image": "assets/images/products_ai/rolled-oats.jpg",
+    "image": "assets/images/products_ai/rolled-oats.webp",
     "aliases": [
       "oats",
       "oatmeal",
@@ -2976,7 +2976,7 @@
       "corn flour (coarse)",
       "malai"
     ],
-    "image": "assets/images/products_ai/cornmeal.jpg"
+    "image": "assets/images/products_ai/cornmeal.webp"
   },
   {
     "name": "Semolina",
@@ -2987,7 +2987,7 @@
       "gris",
       "semolina flour"
     ],
-    "image": "assets/images/products_ai/semolina.jpg"
+    "image": "assets/images/products_ai/semolina.webp"
   },
   {
     "name": "Couscous",
@@ -2997,7 +2997,7 @@
     "aliases": [
       "cuscus"
     ],
-    "image": "assets/images/products_ai/couscous.jpg"
+    "image": "assets/images/products_ai/couscous.webp"
   },
   {
     "name": "Bulgur",
@@ -3008,14 +3008,14 @@
       "bulgur wheat",
       "bulgur"
     ],
-    "image": "assets/images/products_ai/bulgur.jpg"
+    "image": "assets/images/products_ai/bulgur.webp"
   },
   {
     "name": "Quinoa",
     "category": "Grains & Pasta",
     "unit": "g",
     "emoji": "🌾",
-    "image": "assets/images/products_ai/quinoa.jpg"
+    "image": "assets/images/products_ai/quinoa.webp"
   },
   {
     "name": "Buckwheat",
@@ -3026,7 +3026,7 @@
       "buckwheat groats",
       "hrisca"
     ],
-    "image": "assets/images/products_ai/buckwheat.jpg"
+    "image": "assets/images/products_ai/buckwheat.webp"
   },
   {
     "name": "Pearl Barley",
@@ -3037,7 +3037,7 @@
       "barley",
       "arpacas"
     ],
-    "image": "assets/images/products_ai/pearl-barley.jpg"
+    "image": "assets/images/products_ai/pearl-barley.webp"
   },
   {
     "name": "Red Lentils",
@@ -3050,7 +3050,7 @@
       "linte rosie",
       "linte"
     ],
-    "image": "assets/images/products_ai/red-lentils.jpg"
+    "image": "assets/images/products_ai/red-lentils.webp"
   },
   {
     "name": "Green Lentils",
@@ -3062,7 +3062,7 @@
       "puy lentils",
       "linte verde"
     ],
-    "image": "assets/images/products_ai/green-lentils.jpg"
+    "image": "assets/images/products_ai/green-lentils.webp"
   },
   {
     "name": "Dried Beans",
@@ -3076,7 +3076,7 @@
       "fasole boabe",
       "fasole uscata"
     ],
-    "image": "assets/images/products_ai/dried-beans.jpg"
+    "image": "assets/images/products_ai/dried-beans.webp"
   },
   {
     "name": "Dried Chickpeas",
@@ -3087,7 +3087,7 @@
       "chickpeas (dried)",
       "naut uscat"
     ],
-    "image": "assets/images/products_ai/dried-chickpeas.jpg"
+    "image": "assets/images/products_ai/dried-chickpeas.webp"
   },
   {
     "name": "Split Peas",
@@ -3098,7 +3098,7 @@
       "yellow split peas",
       "mazare uscata"
     ],
-    "image": "assets/images/products_ai/split-peas.jpg"
+    "image": "assets/images/products_ai/split-peas.webp"
   },
   {
     "name": "Breakfast Cereal",
@@ -3111,7 +3111,7 @@
       "cereal",
       "cereale"
     ],
-    "image": "assets/images/products_ai/breakfast-cereal.jpg"
+    "image": "assets/images/products_ai/breakfast-cereal.webp"
   },
   {
     "name": "Granola",
@@ -3121,7 +3121,7 @@
     "aliases": [
       "muesli"
     ],
-    "image": "assets/images/products_ai/granola.jpg"
+    "image": "assets/images/products_ai/granola.webp"
   },
   {
     "name": "Crushed Tomatoes",
@@ -3139,14 +3139,14 @@
       "rosii in bulion",
       "rosii cuburi"
     ],
-    "image": "assets/images/products_ai/crushed-tomatoes.jpg"
+    "image": "assets/images/products_ai/crushed-tomatoes.webp"
   },
   {
     "name": "Tomato Paste",
     "category": "Canned & Jarred",
     "unit": "tbsp",
     "emoji": "🥫",
-    "image": "assets/images/products_ai/tomato-paste.jpg",
+    "image": "assets/images/products_ai/tomato-paste.webp",
     "aliases": [
       "tomato puree (concentrated)",
       "double concentrate tomato",
@@ -3158,7 +3158,7 @@
     "category": "Canned & Jarred",
     "unit": "ml",
     "emoji": "🥫",
-    "image": "assets/images/products_ai/tomato-sauce.jpg",
+    "image": "assets/images/products_ai/tomato-sauce.webp",
     "aliases": [
       "passata",
       "tomato passata",
@@ -3177,14 +3177,14 @@
     "aliases": [
       "suc de rosii (bautura)"
     ],
-    "image": "assets/images/products_ai/tomato-juice.jpg"
+    "image": "assets/images/products_ai/tomato-juice.webp"
   },
   {
     "name": "Canned Tuna",
     "category": "Canned & Jarred",
     "unit": "can",
     "emoji": "🐟",
-    "image": "assets/images/products_ai/canned-tuna.jpg",
+    "image": "assets/images/products_ai/canned-tuna.webp",
     "aliases": [
       "tuna",
       "tinned tuna",
@@ -3205,14 +3205,14 @@
       "corn kernels",
       "porumb conserva"
     ],
-    "image": "assets/images/products_ai/canned-corn.jpg"
+    "image": "assets/images/products_ai/canned-corn.webp"
   },
   {
     "name": "Canned Mushrooms",
     "category": "Canned & Jarred",
     "unit": "can",
     "emoji": "🍄",
-    "image": "assets/images/products_ai/canned-mushrooms.jpg",
+    "image": "assets/images/products_ai/canned-mushrooms.webp",
     "aliases": [
       "tinned mushrooms",
       "ciuperci conserva"
@@ -3232,7 +3232,7 @@
       "tinned beans",
       "fasole conserva"
     ],
-    "image": "assets/images/products_ai/canned-beans.jpg"
+    "image": "assets/images/products_ai/canned-beans.webp"
   },
   {
     "name": "Canned Chickpeas",
@@ -3245,7 +3245,7 @@
       "garbanzo beans",
       "naut"
     ],
-    "image": "assets/images/products_ai/canned-chickpeas.jpg"
+    "image": "assets/images/products_ai/canned-chickpeas.webp"
   },
   {
     "name": "Canned Peas",
@@ -3256,21 +3256,21 @@
       "tinned peas",
       "mazare conserva"
     ],
-    "image": "assets/images/products_ai/canned-peas.jpg"
+    "image": "assets/images/products_ai/canned-peas.webp"
   },
   {
     "name": "Canned Lentils",
     "category": "Canned & Jarred",
     "unit": "can",
     "emoji": "🟤",
-    "image": "assets/images/products_ai/canned-lentils.jpg"
+    "image": "assets/images/products_ai/canned-lentils.webp"
   },
   {
     "name": "Olives",
     "category": "Canned & Jarred",
     "unit": "g",
     "emoji": "🫒",
-    "image": "assets/images/products_ai/olives.jpg",
+    "image": "assets/images/products_ai/olives.webp",
     "aliases": [
       "black olives",
       "green olives",
@@ -3292,7 +3292,7 @@
       "castraveti murati",
       "muraturi"
     ],
-    "image": "assets/images/products_ai/pickles.jpg"
+    "image": "assets/images/products_ai/pickles.webp"
   },
   {
     "name": "Sauerkraut",
@@ -3304,7 +3304,7 @@
       "fermented cabbage",
       "varza murata"
     ],
-    "image": "assets/images/products_ai/sauerkraut.jpg"
+    "image": "assets/images/products_ai/sauerkraut.webp"
   },
   {
     "name": "Pickled Peppers",
@@ -3316,7 +3316,7 @@
       "gogosari",
       "gogosari murati"
     ],
-    "image": "assets/images/products_ai/pickled-peppers.jpg"
+    "image": "assets/images/products_ai/pickled-peppers.webp"
   },
   {
     "name": "Roasted Red Peppers",
@@ -3328,7 +3328,7 @@
       "roasted peppers",
       "ardei copti"
     ],
-    "image": "assets/images/products_ai/roasted-red-peppers.jpg"
+    "image": "assets/images/products_ai/roasted-red-peppers.webp"
   },
   {
     "name": "Sun-Dried Tomatoes",
@@ -3339,7 +3339,7 @@
       "sundried tomatoes",
       "rosii uscate"
     ],
-    "image": "assets/images/products_ai/sun-dried-tomatoes.jpg"
+    "image": "assets/images/products_ai/sun-dried-tomatoes.webp"
   },
   {
     "name": "Artichoke Hearts",
@@ -3349,7 +3349,7 @@
     "aliases": [
       "marinated artichokes"
     ],
-    "image": "assets/images/products_ai/artichoke-hearts.jpg"
+    "image": "assets/images/products_ai/artichoke-hearts.webp"
   },
   {
     "name": "Capers",
@@ -3359,7 +3359,7 @@
     "aliases": [
       "capere"
     ],
-    "image": "assets/images/products_ai/capers.jpg"
+    "image": "assets/images/products_ai/capers.webp"
   },
   {
     "name": "Anchovies",
@@ -3371,7 +3371,7 @@
       "anchovy",
       "ansoa"
     ],
-    "image": "assets/images/products_ai/anchovies.jpg"
+    "image": "assets/images/products_ai/anchovies.webp"
   },
   {
     "name": "Canned Sardines",
@@ -3382,7 +3382,7 @@
       "sardines in oil",
       "tinned sardines"
     ],
-    "image": "assets/images/products_ai/canned-sardines.jpg"
+    "image": "assets/images/products_ai/canned-sardines.webp"
   },
   {
     "name": "Coconut Milk",
@@ -3394,7 +3394,7 @@
       "canned coconut milk",
       "lapte de cocos"
     ],
-    "image": "assets/images/products_ai/coconut-milk.jpg"
+    "image": "assets/images/products_ai/coconut-milk.webp"
   },
   {
     "name": "Vegetable Broth",
@@ -3409,7 +3409,7 @@
       "clear broth or water",
       "supa de legume"
     ],
-    "image": "assets/images/products_ai/vegetable-broth.jpg"
+    "image": "assets/images/products_ai/vegetable-broth.webp"
   },
   {
     "name": "Chicken Broth",
@@ -3420,7 +3420,7 @@
       "chicken stock",
       "supa de pui"
     ],
-    "image": "assets/images/products_ai/chicken-broth.jpg"
+    "image": "assets/images/products_ai/chicken-broth.webp"
   },
   {
     "name": "Beef Broth",
@@ -3431,7 +3431,7 @@
       "beef stock",
       "supa de vita"
     ],
-    "image": "assets/images/products_ai/beef-broth.jpg"
+    "image": "assets/images/products_ai/beef-broth.webp"
   },
   {
     "name": "Borș",
@@ -3446,7 +3446,7 @@
       "fermented wheat bran liquid",
       "bors de putina"
     ],
-    "image": "assets/images/products_ai/bor.jpg"
+    "image": "assets/images/products_ai/bor.webp"
   },
   {
     "name": "Jam",
@@ -3464,14 +3464,14 @@
       "dulceata",
       "magiun"
     ],
-    "image": "assets/images/products_ai/jam.jpg"
+    "image": "assets/images/products_ai/jam.webp"
   },
   {
     "name": "Honey",
     "category": "Canned & Jarred",
     "unit": "tbsp",
     "emoji": "🍯",
-    "image": "assets/images/products_ai/honey.jpg",
+    "image": "assets/images/products_ai/honey.webp",
     "aliases": [
       "runny honey",
       "liquid honey",
@@ -3486,7 +3486,7 @@
     "aliases": [
       "unt de arahide"
     ],
-    "image": "assets/images/products_ai/peanut-butter.jpg"
+    "image": "assets/images/products_ai/peanut-butter.webp"
   },
   {
     "name": "Hazelnut Spread",
@@ -3498,7 +3498,7 @@
       "chocolate spread",
       "crema de alune"
     ],
-    "image": "assets/images/products_ai/hazelnut-spread.jpg"
+    "image": "assets/images/products_ai/hazelnut-spread.webp"
   },
   {
     "name": "Pesto",
@@ -3511,7 +3511,7 @@
       "pesto sauce",
       "pesto genovese"
     ],
-    "image": "assets/images/products_ai/pesto.jpg"
+    "image": "assets/images/products_ai/pesto.webp"
   },
   {
     "name": "Canned Pineapple",
@@ -3523,7 +3523,7 @@
       "pineapple rings",
       "ananas conserva"
     ],
-    "image": "assets/images/products_ai/canned-pineapple.jpg"
+    "image": "assets/images/products_ai/canned-pineapple.webp"
   },
   {
     "name": "Canned Peaches",
@@ -3534,7 +3534,7 @@
       "peaches in syrup",
       "compot de piersici"
     ],
-    "image": "assets/images/products_ai/canned-peaches.jpg"
+    "image": "assets/images/products_ai/canned-peaches.webp"
   },
   {
     "name": "Fruit Compote",
@@ -3545,7 +3545,7 @@
       "compote",
       "compot"
     ],
-    "image": "assets/images/products_ai/fruit-compote.jpg"
+    "image": "assets/images/products_ai/fruit-compote.webp"
   },
   {
     "name": "Zacuscă",
@@ -3556,7 +3556,7 @@
       "zacusca",
       "vegetable spread"
     ],
-    "image": "assets/images/products_ai/zacusc.jpg"
+    "image": "assets/images/products_ai/zacusc.webp"
   },
   {
     "name": "Eggplant Spread",
@@ -3567,14 +3567,14 @@
       "salata de vinete",
       "baba ganoush"
     ],
-    "image": "assets/images/products_ai/eggplant-spread.jpg"
+    "image": "assets/images/products_ai/eggplant-spread.webp"
   },
   {
     "name": "Olive Oil",
     "category": "Oils & Condiments",
     "unit": "tbsp",
     "emoji": "🫒",
-    "image": "assets/images/products_ai/olive-oil.jpg",
+    "image": "assets/images/products_ai/olive-oil.webp",
     "aliases": [
       "extra-virgin olive oil",
       "extra virgin olive oil",
@@ -3587,7 +3587,7 @@
     "category": "Oils & Condiments",
     "unit": "tbsp",
     "emoji": "🫙",
-    "image": "assets/images/products_ai/vegetable-oil.jpg",
+    "image": "assets/images/products_ai/vegetable-oil.webp",
     "aliases": [
       "cooking oil",
       "oil",
@@ -3605,7 +3605,7 @@
     "aliases": [
       "ulei de floarea soarelui"
     ],
-    "image": "assets/images/products_ai/sunflower-oil.jpg"
+    "image": "assets/images/products_ai/sunflower-oil.webp"
   },
   {
     "name": "Sesame Oil",
@@ -3616,7 +3616,7 @@
       "toasted sesame oil",
       "ulei de susan"
     ],
-    "image": "assets/images/products_ai/sesame-oil.jpg"
+    "image": "assets/images/products_ai/sesame-oil.webp"
   },
   {
     "name": "Coconut Oil",
@@ -3626,7 +3626,7 @@
     "aliases": [
       "ulei de cocos"
     ],
-    "image": "assets/images/products_ai/coconut-oil.jpg"
+    "image": "assets/images/products_ai/coconut-oil.webp"
   },
   {
     "name": "Lard",
@@ -3637,14 +3637,14 @@
       "pork fat",
       "untura"
     ],
-    "image": "assets/images/products_ai/lard.jpg"
+    "image": "assets/images/products_ai/lard.webp"
   },
   {
     "name": "Soy Sauce",
     "category": "Oils & Condiments",
     "unit": "tbsp",
     "emoji": "🫙",
-    "image": "assets/images/products_ai/soy-sauce.jpg",
+    "image": "assets/images/products_ai/soy-sauce.webp",
     "aliases": [
       "light soy sauce",
       "dark soy sauce",
@@ -3657,7 +3657,7 @@
     "category": "Oils & Condiments",
     "unit": "tbsp",
     "emoji": "🫙",
-    "image": "assets/images/products_ai/oyster-sauce.jpg",
+    "image": "assets/images/products_ai/oyster-sauce.webp",
     "aliases": [
       "sos de stridii"
     ]
@@ -3670,7 +3670,7 @@
     "aliases": [
       "sos de peste"
     ],
-    "image": "assets/images/products_ai/fish-sauce.jpg"
+    "image": "assets/images/products_ai/fish-sauce.webp"
   },
   {
     "name": "Worcestershire Sauce",
@@ -3680,7 +3680,7 @@
     "aliases": [
       "worcester sauce"
     ],
-    "image": "assets/images/products_ai/worcestershire-sauce.jpg"
+    "image": "assets/images/products_ai/worcestershire-sauce.webp"
   },
   {
     "name": "Hot Sauce",
@@ -3693,7 +3693,7 @@
       "chili sauce",
       "sos iute"
     ],
-    "image": "assets/images/products_ai/hot-sauce.jpg"
+    "image": "assets/images/products_ai/hot-sauce.webp"
   },
   {
     "name": "Sweet Chili Sauce",
@@ -3703,7 +3703,7 @@
     "aliases": [
       "sweet chilli sauce"
     ],
-    "image": "assets/images/products_ai/sweet-chili-sauce.jpg"
+    "image": "assets/images/products_ai/sweet-chili-sauce.webp"
   },
   {
     "name": "Ketchup",
@@ -3713,7 +3713,7 @@
     "aliases": [
       "tomato ketchup"
     ],
-    "image": "assets/images/products_ai/ketchup.jpg"
+    "image": "assets/images/products_ai/ketchup.webp"
   },
   {
     "name": "Mayonnaise",
@@ -3724,7 +3724,7 @@
       "mayo",
       "maioneza"
     ],
-    "image": "assets/images/products_ai/mayonnaise.jpg"
+    "image": "assets/images/products_ai/mayonnaise.webp"
   },
   {
     "name": "Mustard",
@@ -3737,7 +3737,7 @@
       "wholegrain mustard",
       "mustar"
     ],
-    "image": "assets/images/products_ai/mustard.jpg"
+    "image": "assets/images/products_ai/mustard.webp"
   },
   {
     "name": "Vinegar",
@@ -3750,7 +3750,7 @@
       "distilled vinegar",
       "otet"
     ],
-    "image": "assets/images/products_ai/vinegar.jpg"
+    "image": "assets/images/products_ai/vinegar.webp"
   },
   {
     "name": "Apple Cider Vinegar",
@@ -3761,7 +3761,7 @@
       "cider vinegar",
       "otet de mere"
     ],
-    "image": "assets/images/products_ai/apple-cider-vinegar.jpg"
+    "image": "assets/images/products_ai/apple-cider-vinegar.webp"
   },
   {
     "name": "Balsamic Vinegar",
@@ -3772,7 +3772,7 @@
       "balsamic",
       "otet balsamic"
     ],
-    "image": "assets/images/products_ai/balsamic-vinegar.jpg"
+    "image": "assets/images/products_ai/balsamic-vinegar.webp"
   },
   {
     "name": "Balsamic Glaze",
@@ -3784,7 +3784,7 @@
       "balsamic cream",
       "crema de otet balsamic"
     ],
-    "image": "assets/images/products_ai/balsamic-glaze.jpg"
+    "image": "assets/images/products_ai/balsamic-glaze.webp"
   },
   {
     "name": "Red Wine Vinegar",
@@ -3794,7 +3794,7 @@
     "aliases": [
       "otet de vin rosu"
     ],
-    "image": "assets/images/products_ai/red-wine-vinegar.jpg"
+    "image": "assets/images/products_ai/red-wine-vinegar.webp"
   },
   {
     "name": "Rice Vinegar",
@@ -3805,7 +3805,7 @@
       "rice wine vinegar",
       "mirin"
     ],
-    "image": "assets/images/products_ai/rice-vinegar.jpg"
+    "image": "assets/images/products_ai/rice-vinegar.webp"
   },
   {
     "name": "Tahini",
@@ -3815,7 +3815,7 @@
     "aliases": [
       "sesame paste"
     ],
-    "image": "assets/images/products_ai/tahini.jpg"
+    "image": "assets/images/products_ai/tahini.webp"
   },
   {
     "name": "Miso Paste",
@@ -3826,7 +3826,7 @@
       "miso",
       "white miso"
     ],
-    "image": "assets/images/products_ai/miso-paste.jpg"
+    "image": "assets/images/products_ai/miso-paste.webp"
   },
   {
     "name": "Curry Paste",
@@ -3838,7 +3838,7 @@
       "green curry paste",
       "thai curry paste"
     ],
-    "image": "assets/images/products_ai/curry-paste.jpg"
+    "image": "assets/images/products_ai/curry-paste.webp"
   },
   {
     "name": "Harissa",
@@ -3848,7 +3848,7 @@
     "aliases": [
       "harissa paste"
     ],
-    "image": "assets/images/products_ai/harissa.jpg"
+    "image": "assets/images/products_ai/harissa.webp"
   },
   {
     "name": "BBQ Sauce",
@@ -3858,21 +3858,21 @@
     "aliases": [
       "barbecue sauce"
     ],
-    "image": "assets/images/products_ai/bbq-sauce.jpg"
+    "image": "assets/images/products_ai/bbq-sauce.webp"
   },
   {
     "name": "Teriyaki Sauce",
     "category": "Oils & Condiments",
     "unit": "tbsp",
     "emoji": "🫙",
-    "image": "assets/images/products_ai/teriyaki-sauce.jpg"
+    "image": "assets/images/products_ai/teriyaki-sauce.webp"
   },
   {
     "name": "Hoisin Sauce",
     "category": "Oils & Condiments",
     "unit": "tbsp",
     "emoji": "🫙",
-    "image": "assets/images/products_ai/hoisin-sauce.jpg"
+    "image": "assets/images/products_ai/hoisin-sauce.webp"
   },
   {
     "name": "Horseradish Sauce",
@@ -3883,28 +3883,28 @@
       "creamed horseradish",
       "hrean cu smantana"
     ],
-    "image": "assets/images/products_ai/horseradish-sauce.jpg"
+    "image": "assets/images/products_ai/horseradish-sauce.webp"
   },
   {
     "name": "Tzatziki",
     "category": "Oils & Condiments",
     "unit": "g",
     "emoji": "🥒",
-    "image": "assets/images/products_ai/tzatziki.jpg"
+    "image": "assets/images/products_ai/tzatziki.webp"
   },
   {
     "name": "Hummus",
     "category": "Oils & Condiments",
     "unit": "g",
     "emoji": "🫘",
-    "image": "assets/images/products_ai/hummus.jpg"
+    "image": "assets/images/products_ai/hummus.webp"
   },
   {
     "name": "Flour",
     "category": "Baking",
     "unit": "g",
     "emoji": "🌾",
-    "image": "assets/images/products_ai/flour.jpg",
+    "image": "assets/images/products_ai/flour.webp",
     "aliases": [
       "all-purpose flour",
       "plain flour",
@@ -3923,7 +3923,7 @@
       "wholemeal flour",
       "faina integrala"
     ],
-    "image": "assets/images/products_ai/whole-wheat-flour.jpg"
+    "image": "assets/images/products_ai/whole-wheat-flour.webp"
   },
   {
     "name": "Bread Flour",
@@ -3935,7 +3935,7 @@
       "strong white flour",
       "faina de paine"
     ],
-    "image": "assets/images/products_ai/bread-flour.jpg"
+    "image": "assets/images/products_ai/bread-flour.webp"
   },
   {
     "name": "Almond Flour",
@@ -3947,7 +3947,7 @@
       "almond meal",
       "faina de migdale"
     ],
-    "image": "assets/images/products_ai/almond-flour.jpg"
+    "image": "assets/images/products_ai/almond-flour.webp"
   },
   {
     "name": "Cornstarch",
@@ -3961,7 +3961,7 @@
       "amidon",
       "amidon de porumb"
     ],
-    "image": "assets/images/products_ai/cornstarch.jpg"
+    "image": "assets/images/products_ai/cornstarch.webp"
   },
   {
     "name": "Sugar",
@@ -3974,7 +3974,7 @@
       "caster sugar",
       "zahar"
     ],
-    "image": "assets/images/products_ai/sugar.jpg"
+    "image": "assets/images/products_ai/sugar.webp"
   },
   {
     "name": "Brown Sugar",
@@ -3987,7 +3987,7 @@
       "demerara sugar",
       "zahar brun"
     ],
-    "image": "assets/images/products_ai/brown-sugar.jpg"
+    "image": "assets/images/products_ai/brown-sugar.webp"
   },
   {
     "name": "Powdered Sugar",
@@ -3999,7 +3999,7 @@
       "confectioners sugar",
       "zahar pudra"
     ],
-    "image": "assets/images/products_ai/powdered-sugar.jpg"
+    "image": "assets/images/products_ai/powdered-sugar.webp"
   },
   {
     "name": "Vanilla Sugar",
@@ -4009,7 +4009,7 @@
     "aliases": [
       "zahar vanilat"
     ],
-    "image": "assets/images/products_ai/vanilla-sugar.jpg"
+    "image": "assets/images/products_ai/vanilla-sugar.webp"
   },
   {
     "name": "Baking Powder",
@@ -4019,7 +4019,7 @@
     "aliases": [
       "praf de copt"
     ],
-    "image": "assets/images/products_ai/baking-powder.jpg"
+    "image": "assets/images/products_ai/baking-powder.webp"
   },
   {
     "name": "Baking Soda",
@@ -4031,7 +4031,7 @@
       "sodium bicarbonate",
       "bicarbonat"
     ],
-    "image": "assets/images/products_ai/baking-soda.jpg"
+    "image": "assets/images/products_ai/baking-soda.webp"
   },
   {
     "name": "Yeast",
@@ -4046,7 +4046,7 @@
       "drojdie",
       "drojdie uscata"
     ],
-    "image": "assets/images/products_ai/yeast.jpg"
+    "image": "assets/images/products_ai/yeast.webp"
   },
   {
     "name": "Cocoa Powder",
@@ -4058,7 +4058,7 @@
       "unsweetened cocoa powder",
       "cacao"
     ],
-    "image": "assets/images/products_ai/cocoa-powder.jpg"
+    "image": "assets/images/products_ai/cocoa-powder.webp"
   },
   {
     "name": "Dark Chocolate",
@@ -4072,7 +4072,7 @@
       "ciocolata neagra",
       "ciocolata"
     ],
-    "image": "assets/images/products_ai/dark-chocolate.jpg"
+    "image": "assets/images/products_ai/dark-chocolate.webp"
   },
   {
     "name": "Milk Chocolate",
@@ -4082,7 +4082,7 @@
     "aliases": [
       "ciocolata cu lapte"
     ],
-    "image": "assets/images/products_ai/milk-chocolate.jpg"
+    "image": "assets/images/products_ai/milk-chocolate.webp"
   },
   {
     "name": "White Chocolate",
@@ -4092,7 +4092,7 @@
     "aliases": [
       "ciocolata alba"
     ],
-    "image": "assets/images/products_ai/white-chocolate.jpg"
+    "image": "assets/images/products_ai/white-chocolate.webp"
   },
   {
     "name": "Chocolate Chips",
@@ -4103,7 +4103,7 @@
       "chocolate chunks",
       "picaturi de ciocolata"
     ],
-    "image": "assets/images/products_ai/chocolate-chips.jpg"
+    "image": "assets/images/products_ai/chocolate-chips.webp"
   },
   {
     "name": "Gelatin",
@@ -4116,7 +4116,7 @@
       "gelatin powder",
       "gelatina"
     ],
-    "image": "assets/images/products_ai/gelatin.jpg"
+    "image": "assets/images/products_ai/gelatin.webp"
   },
   {
     "name": "Maple Syrup",
@@ -4126,7 +4126,7 @@
     "aliases": [
       "sirop de artar"
     ],
-    "image": "assets/images/products_ai/maple-syrup.jpg"
+    "image": "assets/images/products_ai/maple-syrup.webp"
   },
   {
     "name": "Agave Syrup",
@@ -4136,7 +4136,7 @@
     "aliases": [
       "agave nectar"
     ],
-    "image": "assets/images/products_ai/agave-syrup.jpg"
+    "image": "assets/images/products_ai/agave-syrup.webp"
   },
   {
     "name": "Desiccated Coconut",
@@ -4149,7 +4149,7 @@
       "fulgi de cocos",
       "nuca de cocos"
     ],
-    "image": "assets/images/products_ai/desiccated-coconut.jpg"
+    "image": "assets/images/products_ai/desiccated-coconut.webp"
   },
   {
     "name": "Vanilla Pudding Mix",
@@ -4161,7 +4161,7 @@
       "vanilla pudding powder",
       "budinca de vanilie"
     ],
-    "image": "assets/images/products_ai/vanilla-pudding-mix.jpg"
+    "image": "assets/images/products_ai/vanilla-pudding-mix.webp"
   },
   {
     "name": "Lemon Essence",
@@ -4172,7 +4172,7 @@
       "lemon extract",
       "esenta de lamaie"
     ],
-    "image": "assets/images/products_ai/lemon-essence.jpg"
+    "image": "assets/images/products_ai/lemon-essence.webp"
   },
   {
     "name": "Food Colouring",
@@ -4183,7 +4183,7 @@
       "food coloring",
       "colorant alimentar"
     ],
-    "image": "assets/images/products_ai/food-colouring.jpg"
+    "image": "assets/images/products_ai/food-colouring.webp"
   },
   {
     "name": "Sprinkles",
@@ -4194,7 +4194,7 @@
       "sugar sprinkles",
       "hundreds and thousands"
     ],
-    "image": "assets/images/products_ai/sprinkles.jpg"
+    "image": "assets/images/products_ai/sprinkles.webp"
   },
   {
     "name": "Turkish Delight",
@@ -4205,7 +4205,7 @@
       "rahat",
       "lokum"
     ],
-    "image": "assets/images/products_ai/turkish-delight.jpg"
+    "image": "assets/images/products_ai/turkish-delight.webp"
   },
   {
     "name": "Marzipan",
@@ -4215,7 +4215,7 @@
     "aliases": [
       "martipan"
     ],
-    "image": "assets/images/products_ai/marzipan.jpg"
+    "image": "assets/images/products_ai/marzipan.webp"
   },
   {
     "name": "Walnuts",
@@ -4228,7 +4228,7 @@
       "ground walnuts",
       "nuci"
     ],
-    "image": "assets/images/products_ai/walnuts.jpg"
+    "image": "assets/images/products_ai/walnuts.webp"
   },
   {
     "name": "Almonds",
@@ -4241,7 +4241,7 @@
       "flaked almonds",
       "migdale"
     ],
-    "image": "assets/images/products_ai/almonds.jpg"
+    "image": "assets/images/products_ai/almonds.webp"
   },
   {
     "name": "Hazelnuts",
@@ -4252,7 +4252,7 @@
       "hazelnut",
       "alune de padure"
     ],
-    "image": "assets/images/products_ai/hazelnuts.jpg"
+    "image": "assets/images/products_ai/hazelnuts.webp"
   },
   {
     "name": "Cashews",
@@ -4264,7 +4264,7 @@
       "cashew",
       "caju"
     ],
-    "image": "assets/images/products_ai/cashews.jpg"
+    "image": "assets/images/products_ai/cashews.webp"
   },
   {
     "name": "Peanuts",
@@ -4276,7 +4276,7 @@
       "salted peanuts",
       "arahide"
     ],
-    "image": "assets/images/products_ai/peanuts.jpg"
+    "image": "assets/images/products_ai/peanuts.webp"
   },
   {
     "name": "Pistachios",
@@ -4287,7 +4287,7 @@
       "pistachio",
       "fistic"
     ],
-    "image": "assets/images/products_ai/pistachios.jpg"
+    "image": "assets/images/products_ai/pistachios.webp"
   },
   {
     "name": "Pine Nuts",
@@ -4298,7 +4298,7 @@
       "pine nut",
       "pinoli"
     ],
-    "image": "assets/images/products_ai/pine-nuts.jpg"
+    "image": "assets/images/products_ai/pine-nuts.webp"
   },
   {
     "name": "Pecans",
@@ -4308,7 +4308,7 @@
     "aliases": [
       "pecan nuts"
     ],
-    "image": "assets/images/products_ai/pecans.jpg"
+    "image": "assets/images/products_ai/pecans.webp"
   },
   {
     "name": "Mixed Nuts",
@@ -4319,7 +4319,7 @@
       "nuts",
       "chopped nuts"
     ],
-    "image": "assets/images/products_ai/mixed-nuts.jpg"
+    "image": "assets/images/products_ai/mixed-nuts.webp"
   },
   {
     "name": "Sunflower Seeds",
@@ -4329,7 +4329,7 @@
     "aliases": [
       "seminte de floarea soarelui"
     ],
-    "image": "assets/images/products_ai/sunflower-seeds.jpg"
+    "image": "assets/images/products_ai/sunflower-seeds.webp"
   },
   {
     "name": "Pumpkin Seeds",
@@ -4340,7 +4340,7 @@
       "pepitas",
       "seminte de dovleac"
     ],
-    "image": "assets/images/products_ai/pumpkin-seeds.jpg"
+    "image": "assets/images/products_ai/pumpkin-seeds.webp"
   },
   {
     "name": "Chia Seeds",
@@ -4350,7 +4350,7 @@
     "aliases": [
       "chia"
     ],
-    "image": "assets/images/products_ai/chia-seeds.jpg"
+    "image": "assets/images/products_ai/chia-seeds.webp"
   },
   {
     "name": "Flax Seeds",
@@ -4362,7 +4362,7 @@
       "ground flaxseed",
       "seminte de in"
     ],
-    "image": "assets/images/products_ai/flax-seeds.jpg"
+    "image": "assets/images/products_ai/flax-seeds.webp"
   },
   {
     "name": "Raisins",
@@ -4374,7 +4374,7 @@
       "currants",
       "stafide"
     ],
-    "image": "assets/images/products_ai/raisins.jpg"
+    "image": "assets/images/products_ai/raisins.webp"
   },
   {
     "name": "Dried Apricots",
@@ -4384,7 +4384,7 @@
     "aliases": [
       "caise uscate"
     ],
-    "image": "assets/images/products_ai/dried-apricots.jpg"
+    "image": "assets/images/products_ai/dried-apricots.webp"
   },
   {
     "name": "Dates",
@@ -4396,7 +4396,7 @@
       "pitted dates",
       "curmale"
     ],
-    "image": "assets/images/products_ai/dates.jpg"
+    "image": "assets/images/products_ai/dates.webp"
   },
   {
     "name": "Dried Cranberries",
@@ -4406,7 +4406,7 @@
     "aliases": [
       "merisoare uscate"
     ],
-    "image": "assets/images/products_ai/dried-cranberries.jpg"
+    "image": "assets/images/products_ai/dried-cranberries.webp"
   },
   {
     "name": "Dried Figs",
@@ -4416,7 +4416,7 @@
     "aliases": [
       "smochine uscate"
     ],
-    "image": "assets/images/products_ai/dried-figs.jpg"
+    "image": "assets/images/products_ai/dried-figs.webp"
   },
   {
     "name": "Prunes",
@@ -4427,14 +4427,14 @@
       "dried plums",
       "prune uscate"
     ],
-    "image": "assets/images/products_ai/prunes.jpg"
+    "image": "assets/images/products_ai/prunes.webp"
   },
   {
     "name": "Frozen Vegetables",
     "category": "Frozen",
     "unit": "g",
     "emoji": "🥦",
-    "image": "assets/images/products_ai/frozen-vegetables.jpg",
+    "image": "assets/images/products_ai/frozen-vegetables.webp",
     "aliases": [
       "mixed vegetables",
       "mixed frozen vegetables",
@@ -4452,7 +4452,7 @@
     "aliases": [
       "mazare congelata"
     ],
-    "image": "assets/images/products_ai/frozen-peas.jpg"
+    "image": "assets/images/products_ai/frozen-peas.webp"
   },
   {
     "name": "Frozen Spinach",
@@ -4462,7 +4462,7 @@
     "aliases": [
       "spanac congelat"
     ],
-    "image": "assets/images/products_ai/frozen-spinach.jpg"
+    "image": "assets/images/products_ai/frozen-spinach.webp"
   },
   {
     "name": "Frozen Corn",
@@ -4472,7 +4472,7 @@
     "aliases": [
       "frozen sweetcorn"
     ],
-    "image": "assets/images/products_ai/frozen-corn.jpg"
+    "image": "assets/images/products_ai/frozen-corn.webp"
   },
   {
     "name": "Frozen Berries",
@@ -4486,7 +4486,7 @@
       "frozen blueberries",
       "fructe de padure congelate"
     ],
-    "image": "assets/images/products_ai/frozen-berries.jpg"
+    "image": "assets/images/products_ai/frozen-berries.webp"
   },
   {
     "name": "Frozen French Fries",
@@ -4499,7 +4499,7 @@
       "oven chips",
       "cartofi prajiti congelati"
     ],
-    "image": "assets/images/products_ai/frozen-french-fries.jpg"
+    "image": "assets/images/products_ai/frozen-french-fries.webp"
   },
   {
     "name": "Ice Cream",
@@ -4510,7 +4510,7 @@
       "vanilla ice cream",
       "inghetata"
     ],
-    "image": "assets/images/products_ai/ice-cream.jpg"
+    "image": "assets/images/products_ai/ice-cream.webp"
   },
   {
     "name": "Frozen Dumplings",
@@ -4521,7 +4521,7 @@
       "frozen pierogi",
       "frozen gyoza"
     ],
-    "image": "assets/images/products_ai/frozen-dumplings.jpg"
+    "image": "assets/images/products_ai/frozen-dumplings.webp"
   },
   {
     "name": "Frozen Green Beans",
@@ -4531,7 +4531,7 @@
     "aliases": [
       "fasole verde congelata"
     ],
-    "image": "assets/images/products_ai/frozen-green-beans.jpg"
+    "image": "assets/images/products_ai/frozen-green-beans.webp"
   },
   {
     "name": "Water",
@@ -4546,7 +4546,7 @@
       "warm water",
       "apa"
     ],
-    "image": "assets/images/products_ai/water.jpg"
+    "image": "assets/images/products_ai/water.webp"
   },
   {
     "name": "Orange Juice",
@@ -4557,7 +4557,7 @@
       "fresh orange juice",
       "suc de portocale"
     ],
-    "image": "assets/images/products_ai/orange-juice.jpg"
+    "image": "assets/images/products_ai/orange-juice.webp"
   },
   {
     "name": "Apple Juice",
@@ -4567,7 +4567,7 @@
     "aliases": [
       "suc de mere"
     ],
-    "image": "assets/images/products_ai/apple-juice.jpg"
+    "image": "assets/images/products_ai/apple-juice.webp"
   },
   {
     "name": "Coffee",
@@ -4581,7 +4581,7 @@
       "brewed coffee",
       "cafea"
     ],
-    "image": "assets/images/products_ai/coffee.jpg"
+    "image": "assets/images/products_ai/coffee.webp"
   },
   {
     "name": "Instant Coffee",
@@ -4592,7 +4592,7 @@
       "ness",
       "cafea instant"
     ],
-    "image": "assets/images/products_ai/instant-coffee.jpg"
+    "image": "assets/images/products_ai/instant-coffee.webp"
   },
   {
     "name": "Tea",
@@ -4606,7 +4606,7 @@
       "ceai",
       "ceai negru"
     ],
-    "image": "assets/images/products_ai/tea.jpg"
+    "image": "assets/images/products_ai/tea.webp"
   },
   {
     "name": "Green Tea",
@@ -4617,7 +4617,7 @@
       "matcha",
       "ceai verde"
     ],
-    "image": "assets/images/products_ai/green-tea.jpg"
+    "image": "assets/images/products_ai/green-tea.webp"
   },
   {
     "name": "Herbal Tea",
@@ -4629,7 +4629,7 @@
       "mint tea",
       "ceai de plante"
     ],
-    "image": "assets/images/products_ai/herbal-tea.jpg"
+    "image": "assets/images/products_ai/herbal-tea.webp"
   },
   {
     "name": "Beer",
@@ -4640,7 +4640,7 @@
       "lager",
       "bere"
     ],
-    "image": "assets/images/products_ai/beer.jpg"
+    "image": "assets/images/products_ai/beer.webp"
   },
   {
     "name": "White Wine",
@@ -4651,7 +4651,7 @@
       "dry white wine",
       "vin alb"
     ],
-    "image": "assets/images/products_ai/white-wine.jpg"
+    "image": "assets/images/products_ai/white-wine.webp"
   },
   {
     "name": "Red Wine",
@@ -4662,7 +4662,7 @@
       "dry red wine",
       "vin rosu"
     ],
-    "image": "assets/images/products_ai/red-wine.jpg"
+    "image": "assets/images/products_ai/red-wine.webp"
   },
   {
     "name": "Sparkling Wine",
@@ -4674,7 +4674,7 @@
       "champagne",
       "vin spumant"
     ],
-    "image": "assets/images/products_ai/sparkling-wine.jpg"
+    "image": "assets/images/products_ai/sparkling-wine.webp"
   },
   {
     "name": "Rum",
@@ -4686,7 +4686,7 @@
       "white rum",
       "rom"
     ],
-    "image": "assets/images/products_ai/rum.jpg"
+    "image": "assets/images/products_ai/rum.webp"
   },
   {
     "name": "Brandy",
@@ -4697,14 +4697,14 @@
       "cognac",
       "coniac"
     ],
-    "image": "assets/images/products_ai/brandy.jpg"
+    "image": "assets/images/products_ai/brandy.webp"
   },
   {
     "name": "Vodka",
     "category": "Beverages",
     "unit": "ml",
     "emoji": "🥃",
-    "image": "assets/images/products_ai/vodka.jpg"
+    "image": "assets/images/products_ai/vodka.webp"
   },
   {
     "name": "Lemonade",
@@ -4714,7 +4714,7 @@
     "aliases": [
       "limonada"
     ],
-    "image": "assets/images/products_ai/lemonade.jpg"
+    "image": "assets/images/products_ai/lemonade.webp"
   },
   {
     "name": "Cola",
@@ -4727,7 +4727,7 @@
       "coca cola",
       "suc carbogazos"
     ],
-    "image": "assets/images/products_ai/cola.jpg"
+    "image": "assets/images/products_ai/cola.webp"
   },
   {
     "name": "Oat Milk",
@@ -4737,7 +4737,7 @@
     "aliases": [
       "lapte de ovaz"
     ],
-    "image": "assets/images/products_ai/oat-milk.jpg"
+    "image": "assets/images/products_ai/oat-milk.webp"
   },
   {
     "name": "Almond Milk",
@@ -4747,7 +4747,7 @@
     "aliases": [
       "lapte de migdale"
     ],
-    "image": "assets/images/products_ai/almond-milk.jpg"
+    "image": "assets/images/products_ai/almond-milk.webp"
   },
   {
     "name": "Soy Milk",
@@ -4757,7 +4757,7 @@
     "aliases": [
       "lapte de soia"
     ],
-    "image": "assets/images/products_ai/soy-milk.jpg"
+    "image": "assets/images/products_ai/soy-milk.webp"
   },
   {
     "name": "Coconut Water",
@@ -4767,14 +4767,14 @@
     "aliases": [
       "apa de cocos"
     ],
-    "image": "assets/images/products_ai/coconut-water.jpg"
+    "image": "assets/images/products_ai/coconut-water.webp"
   },
   {
     "name": "Potato Chips",
     "category": "Snacks",
     "unit": "pack",
     "emoji": "🥔",
-    "image": "assets/images/products_ai/potato-chips.jpg",
+    "image": "assets/images/products_ai/potato-chips.webp",
     "aliases": [
       "chips",
       "crisps",
@@ -4790,7 +4790,7 @@
       "popcorn kernels",
       "floricele"
     ],
-    "image": "assets/images/products_ai/popcorn.jpg"
+    "image": "assets/images/products_ai/popcorn.webp"
   },
   {
     "name": "Crackers",
@@ -4801,7 +4801,7 @@
       "salted crackers",
       "biscuiti sarati"
     ],
-    "image": "assets/images/products_ai/crackers.jpg"
+    "image": "assets/images/products_ai/crackers.webp"
   },
   {
     "name": "Pretzels",
@@ -4811,7 +4811,7 @@
     "aliases": [
       "covrigei"
     ],
-    "image": "assets/images/products_ai/pretzels.jpg"
+    "image": "assets/images/products_ai/pretzels.webp"
   },
   {
     "name": "Tortilla Chips",
@@ -4822,7 +4822,7 @@
       "nachos",
       "corn chips"
     ],
-    "image": "assets/images/products_ai/tortilla-chips.jpg"
+    "image": "assets/images/products_ai/tortilla-chips.webp"
   },
   {
     "name": "Biscuits",
@@ -4836,7 +4836,7 @@
       "biscuiti",
       "biscuiti digestivi"
     ],
-    "image": "assets/images/products_ai/biscuits.jpg"
+    "image": "assets/images/products_ai/biscuits.webp"
   },
   {
     "name": "Wafers",
@@ -4848,7 +4848,7 @@
       "napolitane",
       "foi de napolitane"
     ],
-    "image": "assets/images/products_ai/wafers.jpg"
+    "image": "assets/images/products_ai/wafers.webp"
   },
   {
     "name": "Rice Cakes",
@@ -4858,7 +4858,7 @@
     "aliases": [
       "rondele de orez"
     ],
-    "image": "assets/images/products_ai/rice-cakes.jpg"
+    "image": "assets/images/products_ai/rice-cakes.webp"
   },
   {
     "name": "Granola Bars",
@@ -4869,7 +4869,7 @@
       "cereal bars",
       "batoane de cereale"
     ],
-    "image": "assets/images/products_ai/granola-bars.jpg"
+    "image": "assets/images/products_ai/granola-bars.webp"
   },
   {
     "name": "Chocolate Bar",
@@ -4880,7 +4880,7 @@
       "candy bar",
       "baton de ciocolata"
     ],
-    "image": "assets/images/products_ai/chocolate-bar.jpg"
+    "image": "assets/images/products_ai/chocolate-bar.webp"
   },
   {
     "name": "Candy",
@@ -4892,7 +4892,7 @@
       "gummies",
       "bomboane"
     ],
-    "image": "assets/images/products_ai/candy.jpg"
+    "image": "assets/images/products_ai/candy.webp"
   },
   {
     "name": "Marshmallows",
@@ -4902,7 +4902,7 @@
     "aliases": [
       "bezele"
     ],
-    "image": "assets/images/products_ai/marshmallows.jpg"
+    "image": "assets/images/products_ai/marshmallows.webp"
   },
   {
     "name": "Dish Soap",
@@ -4914,7 +4914,7 @@
       "washing up liquid",
       "detergent de vase"
     ],
-    "image": "assets/images/products_ai/dish-soap.jpg"
+    "image": "assets/images/products_ai/dish-soap.webp"
   },
   {
     "name": "Paper Towels",
@@ -4926,7 +4926,7 @@
       "kitchen paper",
       "prosoape de hartie"
     ],
-    "image": "assets/images/products_ai/paper-towels.jpg"
+    "image": "assets/images/products_ai/paper-towels.webp"
   },
   {
     "name": "Toilet Paper",
@@ -4936,7 +4936,7 @@
     "aliases": [
       "hartie igienica"
     ],
-    "image": "assets/images/products_ai/toilet-paper.jpg"
+    "image": "assets/images/products_ai/toilet-paper.webp"
   },
   {
     "name": "Trash Bags",
@@ -4948,7 +4948,7 @@
       "garbage bags",
       "saci de gunoi"
     ],
-    "image": "assets/images/products_ai/trash-bags.jpg"
+    "image": "assets/images/products_ai/trash-bags.webp"
   },
   {
     "name": "Aluminium Foil",
@@ -4961,7 +4961,7 @@
       "foil",
       "folie de aluminiu"
     ],
-    "image": "assets/images/products_ai/aluminium-foil.jpg"
+    "image": "assets/images/products_ai/aluminium-foil.webp"
   },
   {
     "name": "Cling Film",
@@ -4973,7 +4973,7 @@
       "food wrap",
       "folie alimentara"
     ],
-    "image": "assets/images/products_ai/cling-film.jpg"
+    "image": "assets/images/products_ai/cling-film.webp"
   },
   {
     "name": "Baking Paper",
@@ -4985,7 +4985,7 @@
       "greaseproof paper",
       "hartie de copt"
     ],
-    "image": "assets/images/products_ai/baking-paper.jpg"
+    "image": "assets/images/products_ai/baking-paper.webp"
   },
   {
     "name": "Freezer Bags",
@@ -4997,7 +4997,7 @@
       "ziplock bags",
       "pungi de congelare"
     ],
-    "image": "assets/images/products_ai/freezer-bags.jpg"
+    "image": "assets/images/products_ai/freezer-bags.webp"
   },
   {
     "name": "Laundry Detergent",
@@ -5008,7 +5008,7 @@
       "washing powder",
       "detergent de rufe"
     ],
-    "image": "assets/images/products_ai/laundry-detergent.jpg"
+    "image": "assets/images/products_ai/laundry-detergent.webp"
   },
   {
     "name": "Sponges",
@@ -5019,7 +5019,7 @@
       "kitchen sponges",
       "bureti"
     ],
-    "image": "assets/images/products_ai/sponges.jpg"
+    "image": "assets/images/products_ai/sponges.webp"
   },
   {
     "name": "Hand Soap",
@@ -5030,7 +5030,7 @@
       "liquid soap",
       "sapun lichid"
     ],
-    "image": "assets/images/products_ai/hand-soap.jpg"
+    "image": "assets/images/products_ai/hand-soap.webp"
   },
   {
     "name": "Toothpaste",
@@ -5040,7 +5040,7 @@
     "aliases": [
       "pasta de dinti"
     ],
-    "image": "assets/images/products_ai/toothpaste.jpg"
+    "image": "assets/images/products_ai/toothpaste.webp"
   },
   {
     "name": "Shampoo",
@@ -5050,7 +5050,7 @@
     "aliases": [
       "sampon"
     ],
-    "image": "assets/images/products_ai/shampoo.jpg"
+    "image": "assets/images/products_ai/shampoo.webp"
   },
   {
     "name": "Napkins",
@@ -5061,7 +5061,7 @@
       "paper napkins",
       "servetele"
     ],
-    "image": "assets/images/products_ai/napkins.jpg"
+    "image": "assets/images/products_ai/napkins.webp"
   },
   {
     "name": "Candles",
@@ -5072,7 +5072,7 @@
       "birthday candles",
       "lumanari"
     ],
-    "image": "assets/images/products_ai/candles.jpg"
+    "image": "assets/images/products_ai/candles.webp"
   },
   {
     "name": "Toothpicks",
@@ -5086,7 +5086,7 @@
       "scobitori",
       "frigarui din lemn"
     ],
-    "image": "assets/images/products_ai/toothpicks.jpg"
+    "image": "assets/images/products_ai/toothpicks.webp"
   },
   {
     "name": "Baked Beans",
@@ -5098,7 +5098,7 @@
       "canned baked beans",
       "fasole la cutie in sos de rosii"
     ],
-    "image": "assets/images/products_ai/baked-beans.jpg"
+    "image": "assets/images/products_ai/baked-beans.webp"
   },
   {
     "name": "Tofu",
@@ -5111,7 +5111,7 @@
       "silken tofu",
       "bean curd"
     ],
-    "image": "assets/images/products_ai/tofu.jpg"
+    "image": "assets/images/products_ai/tofu.webp"
   },
   {
     "name": "Paneer",
@@ -5122,7 +5122,7 @@
       "paneer cheese",
       "indian cheese"
     ],
-    "image": "assets/images/products_ai/paneer.jpg"
+    "image": "assets/images/products_ai/paneer.webp"
   },
   {
     "name": "Lemongrass",
@@ -5133,7 +5133,7 @@
       "lemon grass",
       "lemongrass stalks"
     ],
-    "image": "assets/images/products_ai/lemongrass.jpg"
+    "image": "assets/images/products_ai/lemongrass.webp"
   },
   {
     "name": "Gochujang",
@@ -5144,7 +5144,7 @@
       "korean chili paste",
       "gochujang paste"
     ],
-    "image": "assets/images/products_ai/gochujang.jpg"
+    "image": "assets/images/products_ai/gochujang.webp"
   },
   {
     "name": "Orzo",
@@ -5156,7 +5156,7 @@
       "risoni",
       "rice-shaped pasta"
     ],
-    "image": "assets/images/products_ai/orzo.jpg"
+    "image": "assets/images/products_ai/orzo.webp"
   },
   {
     "name": "Fish Roe",
@@ -5171,7 +5171,7 @@
       "icre de stiuca",
       "tarama"
     ],
-    "image": "assets/images/products_ai/fish-roe.jpg"
+    "image": "assets/images/products_ai/fish-roe.webp"
   },
   {
     "name": "Beef Tripe",
@@ -5185,6 +5185,6 @@
       "burta de vita",
       "burta"
     ],
-    "image": "assets/images/products_ai/beef-tripe.jpg"
+    "image": "assets/images/products_ai/beef-tripe.webp"
   }
 ]

@@ -17,7 +17,7 @@
       "vegetarian",
       "high-protein"
     ],
-    "imageUrl": "assets/images/recipes/egg-omelet.jpg",
+    "imageUrl": "assets/images/recipes/egg-omelet.webp",
     "ingredients": [
       {
         "product": "Eggs",
@@ -56,7 +56,7 @@
       "comfort-food",
       "romanian"
     ],
-    "imageUrl": "assets/images/recipes/chicken-soup.jpg",
+    "imageUrl": "assets/images/recipes/chicken-soup.webp",
     "ingredients": [
       {
         "product": "Whole Chicken",
@@ -112,7 +112,7 @@
       "italian",
       "kid-friendly"
     ],
-    "imageUrl": "assets/images/recipes/pasta_bolognese.jpg",
+    "imageUrl": "assets/images/recipes/pasta_bolognese.webp",
     "ingredients": [
       {
         "product": "Minced Beef",
@@ -181,7 +181,7 @@
       "vegetarian",
       "italian"
     ],
-    "imageUrl": "assets/images/recipes/tomato-basil-soup.jpg",
+    "imageUrl": "assets/images/recipes/tomato-basil-soup.webp",
     "ingredients": [
       {
         "product": "Tomatoes",
@@ -240,7 +240,7 @@
       "vegetarian",
       "kid-friendly"
     ],
-    "imageUrl": "assets/images/recipes/banana-pancakes.jpg",
+    "imageUrl": "assets/images/recipes/banana-pancakes.webp",
     "ingredients": [
       {
         "product": "Bananas",
@@ -295,7 +295,7 @@
       "vegetarian",
       "kid-friendly"
     ],
-    "imageUrl": "assets/images/recipes/grilled-cheese-sandwich.jpg",
+    "imageUrl": "assets/images/recipes/grilled-cheese-sandwich.webp",
     "ingredients": [
       {
         "product": "Bread",
@@ -332,7 +332,7 @@
       "quick",
       "high-protein"
     ],
-    "imageUrl": "assets/images/recipes/chicken-stir-fry.jpg",
+    "imageUrl": "assets/images/recipes/chicken-stir-fry.webp",
     "ingredients": [
       {
         "product": "Chicken Breast",
@@ -400,7 +400,7 @@
       "vegetarian",
       "healthy"
     ],
-    "imageUrl": "assets/images/recipes/apple-cinnamon-oatmeal.jpg",
+    "imageUrl": "assets/images/recipes/apple-cinnamon-oatmeal.webp",
     "ingredients": [
       {
         "product": "Rolled Oats",
@@ -451,7 +451,7 @@
       "vegan",
       "one-pot"
     ],
-    "imageUrl": "assets/images/recipes/vegetable-stew.jpg",
+    "imageUrl": "assets/images/recipes/vegetable-stew.webp",
     "ingredients": [
       {
         "product": "Potatoes",
@@ -538,7 +538,7 @@
       "no-cook",
       "quick"
     ],
-    "imageUrl": "assets/images/recipes/caprese-salad.jpg",
+    "imageUrl": "assets/images/recipes/caprese-salad.webp",
     "ingredients": [
       {
         "product": "Tomatoes",
@@ -592,7 +592,7 @@
       "italian",
       "quick"
     ],
-    "imageUrl": "assets/images/recipes/pasta_carbonara.jpg",
+    "imageUrl": "assets/images/recipes/pasta_carbonara.webp",
     "ingredients": [
       {
         "product": "Spaghetti",
@@ -646,7 +646,7 @@
       "italian",
       "vegetarian"
     ],
-    "imageUrl": "assets/images/recipes/pasta-tomato-mushroom-sauce.jpg",
+    "imageUrl": "assets/images/recipes/pasta-tomato-mushroom-sauce.webp",
     "ingredients": [
       {
         "product": "Pasta",
@@ -696,7 +696,7 @@
       "no-cook",
       "healthy"
     ],
-    "imageUrl": "assets/images/recipes/green-salad-tuna-corn.jpg",
+    "imageUrl": "assets/images/recipes/green-salad-tuna-corn.webp",
     "ingredients": [
       {
         "product": "Lettuce",
@@ -746,7 +746,7 @@
       "quick",
       "vegetarian"
     ],
-    "imageUrl": "assets/images/recipes/cheese-herb-omelet.jpg",
+    "imageUrl": "assets/images/recipes/cheese-herb-omelet.webp",
     "ingredients": [
       {
         "product": "Eggs",
@@ -791,7 +791,7 @@
       "asian",
       "one-pot"
     ],
-    "imageUrl": "assets/images/recipes/asian-rice-chicken.jpg",
+    "imageUrl": "assets/images/recipes/asian-rice-chicken.webp",
     "ingredients": [
       {
         "product": "Rice",
@@ -830,7 +830,7 @@
       "healthy",
       "baked"
     ],
-    "imageUrl": "assets/images/recipes/turkey-breast-vegetables.jpg",
+    "imageUrl": "assets/images/recipes/turkey-breast-vegetables.webp",
     "ingredients": [
       {
         "product": "Turkey Breast",
@@ -874,7 +874,7 @@
       "vegetarian",
       "comfort-food"
     ],
-    "imageUrl": "assets/images/recipes/cream-mushroom-soup.jpg",
+    "imageUrl": "assets/images/recipes/cream-mushroom-soup.webp",
     "ingredients": [
       {
         "product": "Mushrooms",
@@ -919,7 +919,7 @@
       "baked",
       "kid-friendly"
     ],
-    "imageUrl": "assets/images/recipes/chicken-cheese-puff-pastry-braid.jpg",
+    "imageUrl": "assets/images/recipes/chicken-cheese-puff-pastry-braid.webp",
     "ingredients": [
       {
         "product": "Puff Pastry Dough",
@@ -974,7 +974,7 @@
       "italian",
       "kid-friendly"
     ],
-    "imageUrl": "assets/images/recipes/flatbread-pizza.jpg",
+    "imageUrl": "assets/images/recipes/flatbread-pizza.webp",
     "ingredients": [
       {
         "product": "Flatbread",
@@ -1029,7 +1029,7 @@
       "quick",
       "high-protein"
     ],
-    "imageUrl": "assets/images/recipes/chicken-skewers-pan.jpg",
+    "imageUrl": "assets/images/recipes/chicken-skewers-pan.webp",
     "ingredients": [
       {
         "product": "Chicken Breast",
@@ -1083,7 +1083,7 @@
     "tags": [
       "quick"
     ],
-    "imageUrl": "assets/images/recipes_ai/crispy-sandwich.jpg",
+    "imageUrl": "assets/images/recipes/crispy-sandwich.webp",
     "ingredients": [
       {
         "product": "Bread",
@@ -1133,7 +1133,7 @@
       "vegetarian",
       "baked"
     ],
-    "imageUrl": "assets/images/recipes/french-potato-pudding.jpg",
+    "imageUrl": "assets/images/recipes/french-potato-pudding.webp",
     "ingredients": [
       {
         "product": "Potatoes",
@@ -1178,7 +1178,7 @@
       "vegetarian",
       "vegan"
     ],
-    "imageUrl": "assets/images/recipes/rice-mexican-vegetables.jpg",
+    "imageUrl": "assets/images/recipes/rice-mexican-vegetables.webp",
     "ingredients": [
       {
         "product": "Rice",
@@ -1224,7 +1224,7 @@
     "tags": [
       "comfort-food"
     ],
-    "imageUrl": "assets/images/recipes/chicken-mushrooms-cream-sauce.jpg",
+    "imageUrl": "assets/images/recipes/chicken-mushrooms-cream-sauce.webp",
     "ingredients": [
       {
         "product": "Chicken Breast",
@@ -1290,7 +1290,7 @@
       "comfort-food",
       "one-pot"
     ],
-    "imageUrl": "assets/images/recipes/pork-potato-stew.jpg",
+    "imageUrl": "assets/images/recipes/pork-potato-stew.webp",
     "ingredients": [
       {
         "product": "Pork Neck",
@@ -1372,7 +1372,7 @@
       "baked",
       "romanian"
     ],
-    "imageUrl": "assets/images/recipes/oven-baked-chicken-potatoes.jpg",
+    "imageUrl": "assets/images/recipes/oven-baked-chicken-potatoes.webp",
     "ingredients": [
       {
         "product": "Chicken Thighs",
@@ -1463,7 +1463,7 @@
       "italian",
       "vegetarian"
     ],
-    "imageUrl": "assets/images/recipes/penne-quattro-formaggi.jpg",
+    "imageUrl": "assets/images/recipes/penne-quattro-formaggi.webp",
     "ingredients": [
       {
         "product": "Penne",
@@ -1534,7 +1534,7 @@
       "vegan",
       "spicy"
     ],
-    "imageUrl": "assets/images/recipes/pasta-arrabiata.jpg",
+    "imageUrl": "assets/images/recipes/pasta-arrabiata.webp",
     "ingredients": [
       {
         "product": "Spaghetti",
@@ -1605,7 +1605,7 @@
       "italian",
       "quick"
     ],
-    "imageUrl": "assets/images/recipes/pasta-chicken-pesto.jpg",
+    "imageUrl": "assets/images/recipes/pasta-chicken-pesto.webp",
     "ingredients": [
       {
         "product": "Spaghetti",
@@ -1680,7 +1680,7 @@
       "italian",
       "quick"
     ],
-    "imageUrl": "assets/images/recipes/pasta-shrimp.jpg",
+    "imageUrl": "assets/images/recipes/pasta-shrimp.webp",
     "ingredients": [
       {
         "product": "Pasta",
@@ -1758,7 +1758,7 @@
       "quick",
       "spicy"
     ],
-    "imageUrl": "assets/images/recipes/pasta-garlic-hot-pepper.jpg",
+    "imageUrl": "assets/images/recipes/pasta-garlic-hot-pepper.webp",
     "ingredients": [
       {
         "product": "Spaghetti",
@@ -1824,7 +1824,7 @@
       "baked",
       "high-protein"
     ],
-    "imageUrl": "assets/images/recipes/baked-salmon-asparagus.jpg",
+    "imageUrl": "assets/images/recipes/baked-salmon-asparagus.webp",
     "ingredients": [
       {
         "product": "Salmon Fillets",
@@ -1889,7 +1889,7 @@
       "healthy",
       "baked"
     ],
-    "imageUrl": "assets/images/recipes/baked-salmon-vegetables.jpg",
+    "imageUrl": "assets/images/recipes/baked-salmon-vegetables.webp",
     "ingredients": [
       {
         "product": "Salmon Fillets",
@@ -1970,7 +1970,7 @@
       "romanian",
       "comfort-food"
     ],
-    "imageUrl": "assets/images/recipes/classic-beef-soup.jpg",
+    "imageUrl": "assets/images/recipes/classic-beef-soup.webp",
     "ingredients": [
       {
         "product": "Beef",
@@ -2047,7 +2047,7 @@
     "tags": [
       "romanian"
     ],
-    "imageUrl": "assets/images/recipes/sour-beef-soup.jpg",
+    "imageUrl": "assets/images/recipes/sour-beef-soup.webp",
     "ingredients": [
       {
         "product": "Beef with Bone",
@@ -2137,7 +2137,7 @@
     "tags": [
       "romanian"
     ],
-    "imageUrl": "assets/images/recipes/transylvanian-veal-soup.jpg",
+    "imageUrl": "assets/images/recipes/transylvanian-veal-soup.webp",
     "ingredients": [
       {
         "product": "Veal",
@@ -2262,7 +2262,7 @@
       "romanian",
       "comfort-food"
     ],
-    "imageUrl": "assets/images/recipes/country-beef-soup.jpg",
+    "imageUrl": "assets/images/recipes/country-beef-soup.webp",
     "ingredients": [
       {
         "product": "Beef with Bone",
@@ -2360,7 +2360,7 @@
     "tags": [
       "vegetarian"
     ],
-    "imageUrl": "assets/images/recipes/classic-tomato-soup.jpg",
+    "imageUrl": "assets/images/recipes/classic-tomato-soup.webp",
     "ingredients": [
       {
         "product": "Tomatoes",
@@ -2452,7 +2452,7 @@
       "romanian",
       "vegetarian"
     ],
-    "imageUrl": "assets/images/recipes/tomato-soup-homemade-noodles.jpg",
+    "imageUrl": "assets/images/recipes/tomato-soup-homemade-noodles.webp",
     "ingredients": [
       {
         "product": "Tomatoes",
@@ -2534,7 +2534,7 @@
       "vegetarian",
       "kid-friendly"
     ],
-    "imageUrl": "assets/images/recipes/tomato-soup-semolina-dumplings.jpg",
+    "imageUrl": "assets/images/recipes/tomato-soup-semolina-dumplings.webp",
     "ingredients": [
       {
         "product": "Tomato Juice",
@@ -2603,7 +2603,7 @@
     "tags": [
       "vegetarian"
     ],
-    "imageUrl": "assets/images/recipes/cream-of-tomato-soup.jpg",
+    "imageUrl": "assets/images/recipes/cream-of-tomato-soup.webp",
     "ingredients": [
       {
         "product": "Tomatoes",
@@ -2683,7 +2683,7 @@
       "vegetarian",
       "vegan"
     ],
-    "imageUrl": "assets/images/recipes/tomato-soup-with-garlic.jpg",
+    "imageUrl": "assets/images/recipes/tomato-soup-with-garlic.webp",
     "ingredients": [
       {
         "product": "Tomatoes",
@@ -2743,7 +2743,7 @@
       "vegan",
       "summer"
     ],
-    "imageUrl": "assets/images/recipes/gazpacho.jpg",
+    "imageUrl": "assets/images/recipes/gazpacho.webp",
     "ingredients": [
       {
         "product": "Tomatoes",
@@ -2824,7 +2824,7 @@
       "vegetarian",
       "middle-eastern"
     ],
-    "imageUrl": "assets/images/recipes/turkish-tomato-soup.jpg",
+    "imageUrl": "assets/images/recipes/turkish-tomato-soup.webp",
     "ingredients": [
       {
         "product": "Flour",
@@ -2925,7 +2925,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/m-m-lig-cu-br-nz-i-ou.jpg"
+    "imageUrl": "assets/images/recipes/m-m-lig-cu-br-nz-i-ou.webp"
   },
   {
     "key": "oua-ochiuri-romanesti",
@@ -2989,7 +2989,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/ou-ochiuri-rom-ne-ti.jpg"
+    "imageUrl": "assets/images/recipes/ou-ochiuri-rom-ne-ti.webp"
   },
   {
     "key": "papara",
@@ -3053,7 +3053,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/papar.jpg"
+    "imageUrl": "assets/images/recipes/papar.webp"
   },
   {
     "key": "clatite-cu-gem",
@@ -3133,7 +3133,7 @@
         "note": "for dusting"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cl-tite-cu-gem.jpg"
+    "imageUrl": "assets/images/recipes/cl-tite-cu-gem.webp"
   },
   {
     "key": "clatite-cu-branza-dulce-la-cuptor",
@@ -3215,7 +3215,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cl-tite-cu-br-nz-dulce-la-cuptor.jpg"
+    "imageUrl": "assets/images/recipes/cl-tite-cu-br-nz-dulce-la-cuptor.webp"
   },
   {
     "key": "placinta-cu-branza-sarata",
@@ -3280,7 +3280,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pl-cint-cu-br-nz-s-rat.jpg"
+    "imageUrl": "assets/images/recipes/pl-cint-cu-br-nz-s-rat.webp"
   },
   {
     "key": "placinta-cu-mere",
@@ -3340,7 +3340,7 @@
         "note": "for dusting"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pl-cint-cu-mere.jpg"
+    "imageUrl": "assets/images/recipes/pl-cint-cu-mere.webp"
   },
   {
     "key": "gris-cu-lapte",
@@ -3404,7 +3404,7 @@
         "note": "for dusting"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/gri-cu-lapte.jpg"
+    "imageUrl": "assets/images/recipes/gri-cu-lapte.webp"
   },
   {
     "key": "orez-cu-lapte",
@@ -3478,7 +3478,7 @@
         "note": "for serving"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/orez-cu-lapte.jpg"
+    "imageUrl": "assets/images/recipes/orez-cu-lapte.webp"
   },
   {
     "key": "papanasi",
@@ -3561,7 +3561,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/papana-i.jpg"
+    "imageUrl": "assets/images/recipes/papana-i.webp"
   },
   {
     "key": "scrob-cu-slanina-afumata",
@@ -3624,7 +3624,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/scrob-cu-sl-nin-afumat.jpg"
+    "imageUrl": "assets/images/recipes/scrob-cu-sl-nin-afumat.webp"
   },
   {
     "key": "bulz-cu-branza-la-cuptor",
@@ -3690,7 +3690,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/bulz-cu-br-nz-la-cuptor.jpg"
+    "imageUrl": "assets/images/recipes/bulz-cu-br-nz-la-cuptor.webp"
   },
   {
     "key": "budinca-de-paine-cu-mere",
@@ -3765,7 +3765,7 @@
         "note": "for dusting"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/budinc-de-p-ine-cu-mere.jpg"
+    "imageUrl": "assets/images/recipes/budinc-de-p-ine-cu-mere.webp"
   },
   {
     "key": "branzoaice-poale-n-brau",
@@ -3848,7 +3848,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/br-nzoaice-poale-n-br-u.jpg"
+    "imageUrl": "assets/images/recipes/br-nzoaice-poale-n-br-u.webp"
   },
   {
     "key": "platou-mic-dejun-romanesc",
@@ -3927,7 +3927,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/platou-de-mic-dejun-rom-nesc.jpg"
+    "imageUrl": "assets/images/recipes/platou-de-mic-dejun-rom-nesc.webp"
   },
   {
     "key": "syrniki-cottage-cheese-pancakes",
@@ -3998,7 +3998,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/syrniki-cottage-cheese-pancakes.jpg"
+    "imageUrl": "assets/images/recipes/syrniki-cottage-cheese-pancakes.webp"
   },
   {
     "key": "buckwheat-porridge-with-milk",
@@ -4053,7 +4053,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/buckwheat-porridge-with-milk.jpg"
+    "imageUrl": "assets/images/recipes/buckwheat-porridge-with-milk.webp"
   },
   {
     "key": "shakshuka",
@@ -4139,7 +4139,7 @@
         "unit": "slice"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/shakshuka.jpg"
+    "imageUrl": "assets/images/recipes/shakshuka.webp"
   },
   {
     "key": "green-shakshuka",
@@ -4225,7 +4225,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/green-shakshuka.jpg"
+    "imageUrl": "assets/images/recipes/green-shakshuka.webp"
   },
   {
     "key": "spinach-feta-frittata",
@@ -4294,7 +4294,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/spinach-and-feta-frittata.jpg"
+    "imageUrl": "assets/images/recipes/spinach-and-feta-frittata.webp"
   },
   {
     "key": "potato-chorizo-frittata",
@@ -4363,7 +4363,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/potato-and-chorizo-frittata.jpg"
+    "imageUrl": "assets/images/recipes/potato-and-chorizo-frittata.webp"
   },
   {
     "key": "baked-eggs-in-avocado",
@@ -4422,7 +4422,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/baked-eggs-in-avocado.jpg"
+    "imageUrl": "assets/images/recipes/baked-eggs-in-avocado.webp"
   },
   {
     "key": "smoked-salmon-scrambled-eggs",
@@ -4490,7 +4490,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/smoked-salmon-scrambled-eggs.jpg"
+    "imageUrl": "assets/images/recipes/smoked-salmon-scrambled-eggs.webp"
   },
   {
     "key": "menemen",
@@ -4563,7 +4563,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/menemen.jpg"
+    "imageUrl": "assets/images/recipes/menemen.webp"
   },
   {
     "key": "huevos-rancheros",
@@ -4650,7 +4650,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/huevos-rancheros.jpg"
+    "imageUrl": "assets/images/recipes/huevos-rancheros.webp"
   },
   {
     "key": "mushroom-thyme-scramble-on-toast",
@@ -4728,7 +4728,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/garlic-mushroom-scramble-on-toast.jpg"
+    "imageUrl": "assets/images/recipes/garlic-mushroom-scramble-on-toast.webp"
   },
   {
     "key": "honey-walnut-porridge",
@@ -4793,7 +4793,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/honey-and-walnut-porridge.jpg"
+    "imageUrl": "assets/images/recipes/honey-and-walnut-porridge.webp"
   },
   {
     "key": "berry-chia-overnight-oats",
@@ -4858,7 +4858,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/berry-and-chia-overnight-oats.jpg"
+    "imageUrl": "assets/images/recipes/berry-and-chia-overnight-oats.webp"
   },
   {
     "key": "peanut-butter-banana-overnight-oats",
@@ -4927,7 +4927,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/peanut-butter-banana-overnight-oats.jpg"
+    "imageUrl": "assets/images/recipes/peanut-butter-banana-overnight-oats.webp"
   },
   {
     "key": "blueberry-baked-oatmeal",
@@ -5013,7 +5013,7 @@
         "note": "for serving"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/blueberry-baked-oatmeal.jpg"
+    "imageUrl": "assets/images/recipes/blueberry-baked-oatmeal.webp"
   },
   {
     "key": "savoury-oat-porridge-egg-parmesan",
@@ -5082,7 +5082,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/savoury-oat-porridge-with-egg-and-parmesan.jpg"
+    "imageUrl": "assets/images/recipes/savoury-oat-porridge-with-egg-and-parmesan.webp"
   },
   {
     "key": "fluffy-buttermilk-pancakes",
@@ -5158,7 +5158,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/fluffy-buttermilk-pancakes.jpg"
+    "imageUrl": "assets/images/recipes/fluffy-buttermilk-pancakes.webp"
   },
   {
     "key": "belgian-waffles",
@@ -5238,7 +5238,7 @@
         "note": "for dusting"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/belgian-waffles.jpg"
+    "imageUrl": "assets/images/recipes/belgian-waffles.webp"
   },
   {
     "key": "cinnamon-french-toast",
@@ -5308,7 +5308,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cinnamon-french-toast.jpg"
+    "imageUrl": "assets/images/recipes/cinnamon-french-toast.webp"
   },
   {
     "key": "savoury-french-toast-ham-cheese",
@@ -5385,7 +5385,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/savoury-french-toast-with-ham-and-cheese.jpg"
+    "imageUrl": "assets/images/recipes/savoury-french-toast-with-ham-and-cheese.webp"
   },
   {
     "key": "breakfast-burrito",
@@ -5465,7 +5465,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/breakfast-burrito.jpg"
+    "imageUrl": "assets/images/recipes/breakfast-burrito.webp"
   },
   {
     "key": "bacon-egg-cheese-breakfast-sandwich",
@@ -5530,7 +5530,7 @@
         "unit": "handful"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/bacon-egg-and-cheese-breakfast-sandwich.jpg"
+    "imageUrl": "assets/images/recipes/bacon-egg-and-cheese-breakfast-sandwich.webp"
   },
   {
     "key": "avocado-toast-poached-egg",
@@ -5604,7 +5604,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/avocado-toast-with-poached-egg.jpg"
+    "imageUrl": "assets/images/recipes/avocado-toast-with-poached-egg.webp"
   },
   {
     "key": "smoked-salmon-cream-cheese-bagel",
@@ -5673,7 +5673,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/smoked-salmon-and-cream-cheese-bagel.jpg"
+    "imageUrl": "assets/images/recipes/smoked-salmon-and-cream-cheese-bagel.webp"
   },
   {
     "key": "croque-monsieur",
@@ -5753,7 +5753,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/croque-monsieur.jpg"
+    "imageUrl": "assets/images/recipes/croque-monsieur.webp"
   },
   {
     "key": "greek-yogurt-fig-pistachio-bowl",
@@ -5809,7 +5809,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/greek-yogurt-bowl-with-figs-and-pistachios.jpg"
+    "imageUrl": "assets/images/recipes/greek-yogurt-bowl-with-figs-and-pistachios.webp"
   },
   {
     "key": "berry-smoothie-bowl",
@@ -5884,7 +5884,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/berry-smoothie-bowl.jpg"
+    "imageUrl": "assets/images/recipes/berry-smoothie-bowl.webp"
   },
   {
     "key": "mango-coconut-smoothie-bowl",
@@ -5948,7 +5948,7 @@
         "note": "to garnish"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mango-coconut-smoothie-bowl.jpg"
+    "imageUrl": "assets/images/recipes/mango-coconut-smoothie-bowl.webp"
   },
   {
     "key": "homemade-honey-nut-granola",
@@ -6024,7 +6024,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/homemade-honey-nut-granola.jpg"
+    "imageUrl": "assets/images/recipes/homemade-honey-nut-granola.webp"
   },
   {
     "key": "blueberry-muffins",
@@ -6100,7 +6100,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/blueberry-muffins.jpg"
+    "imageUrl": "assets/images/recipes/blueberry-muffins.webp"
   },
   {
     "key": "banana-walnut-bread",
@@ -6177,7 +6177,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/banana-walnut-bread.jpg"
+    "imageUrl": "assets/images/recipes/banana-walnut-bread.webp"
   },
   {
     "key": "coconut-chia-pudding",
@@ -6237,7 +6237,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/coconut-chia-pudding.jpg"
+    "imageUrl": "assets/images/recipes/coconut-chia-pudding.webp"
   },
   {
     "key": "full-english-breakfast",
@@ -6316,7 +6316,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/full-english-breakfast.jpg"
+    "imageUrl": "assets/images/recipes/full-english-breakfast.webp"
   },
   {
     "key": "dutch-baby-pancake",
@@ -6391,7 +6391,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/dutch-baby-pancake.jpg"
+    "imageUrl": "assets/images/recipes/dutch-baby-pancake.webp"
   },
   {
     "key": "sweet-potato-hash-with-eggs",
@@ -6474,7 +6474,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sweet-potato-hash-with-eggs.jpg"
+    "imageUrl": "assets/images/recipes/sweet-potato-hash-with-eggs.webp"
   },
   {
     "key": "cozonac-cu-nuca",
@@ -6563,7 +6563,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cozonac-cu-nuc.jpg"
+    "imageUrl": "assets/images/recipes/cozonac-cu-nuc.webp"
   },
   {
     "key": "placinta-cu-branza-dulce",
@@ -6640,7 +6640,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pl-cint-cu-br-nz-dulce.jpg"
+    "imageUrl": "assets/images/recipes/pl-cint-cu-br-nz-dulce.webp"
   },
   {
     "key": "clatite-cu-dulceata",
@@ -6716,7 +6716,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cl-tite-cu-dulcea.jpg"
+    "imageUrl": "assets/images/recipes/cl-tite-cu-dulcea.webp"
   },
   {
     "key": "gogosi-pufoase",
@@ -6794,7 +6794,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/gogo-i-pufoase.jpg"
+    "imageUrl": "assets/images/recipes/gogo-i-pufoase.webp"
   },
   {
     "key": "salam-de-biscuiti",
@@ -6870,7 +6870,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salam-de-biscui-i.jpg"
+    "imageUrl": "assets/images/recipes/salam-de-biscui-i.webp"
   },
   {
     "key": "negresa",
@@ -6950,7 +6950,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/negres.jpg"
+    "imageUrl": "assets/images/recipes/negres.webp"
   },
   {
     "key": "chec-marmorat-cu-cacao",
@@ -7020,7 +7020,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chec-marmorat-cu-cacao.jpg"
+    "imageUrl": "assets/images/recipes/chec-marmorat-cu-cacao.webp"
   },
   {
     "key": "cremsnit",
@@ -7091,7 +7091,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/crem-nit.jpg"
+    "imageUrl": "assets/images/recipes/crem-nit.webp"
   },
   {
     "key": "savarina",
@@ -7179,7 +7179,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/savarin.jpg"
+    "imageUrl": "assets/images/recipes/savarin.webp"
   },
   {
     "key": "budinca-de-taitei",
@@ -7256,7 +7256,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/budinc-de-t-i-ei.jpg"
+    "imageUrl": "assets/images/recipes/budinc-de-t-i-ei.webp"
   },
   {
     "key": "lapte-de-pasare",
@@ -7306,7 +7306,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lapte-de-pas-re.jpg"
+    "imageUrl": "assets/images/recipes/lapte-de-pas-re.webp"
   },
   {
     "key": "cornulete-cu-gem",
@@ -7379,7 +7379,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cornule-e-cu-gem.jpg"
+    "imageUrl": "assets/images/recipes/cornule-e-cu-gem.webp"
   },
   {
     "key": "prajitura-albinita",
@@ -7462,7 +7462,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pr-jitura-albini-a.jpg"
+    "imageUrl": "assets/images/recipes/pr-jitura-albini-a.webp"
   },
   {
     "key": "baklava-cu-nuci",
@@ -7530,7 +7530,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/baklava-cu-nuci.jpg"
+    "imageUrl": "assets/images/recipes/baklava-cu-nuci.webp"
   },
   {
     "key": "tiramisu-classic",
@@ -7597,7 +7597,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/tiramisu.jpg"
+    "imageUrl": "assets/images/recipes/tiramisu.webp"
   },
   {
     "key": "panna-cotta-raspberry",
@@ -7658,7 +7658,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/panna-cotta-with-raspberry-sauce.jpg"
+    "imageUrl": "assets/images/recipes/panna-cotta-with-raspberry-sauce.webp"
   },
   {
     "key": "creme-brulee",
@@ -7709,7 +7709,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cr-me-br-l-e.jpg"
+    "imageUrl": "assets/images/recipes/cr-me-br-l-e.webp"
   },
   {
     "key": "chocolate-mousse",
@@ -7769,7 +7769,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/dark-chocolate-mousse.jpg"
+    "imageUrl": "assets/images/recipes/dark-chocolate-mousse.webp"
   },
   {
     "key": "baked-cheesecake",
@@ -7842,7 +7842,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/baked-vanilla-cheesecake.jpg"
+    "imageUrl": "assets/images/recipes/baked-vanilla-cheesecake.webp"
   },
   {
     "key": "no-bake-strawberry-cheesecake",
@@ -7921,7 +7921,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/no-bake-strawberry-cheesecake.jpg"
+    "imageUrl": "assets/images/recipes/no-bake-strawberry-cheesecake.webp"
   },
   {
     "key": "fudgy-brownies",
@@ -7991,7 +7991,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/fudgy-chocolate-brownies.jpg"
+    "imageUrl": "assets/images/recipes/fudgy-chocolate-brownies.webp"
   },
   {
     "key": "chocolate-chip-cookies",
@@ -8061,7 +8061,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chocolate-chip-cookies.jpg"
+    "imageUrl": "assets/images/recipes/chocolate-chip-cookies.webp"
   },
   {
     "key": "lemon-bars",
@@ -8127,7 +8127,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lemon-bars.jpg"
+    "imageUrl": "assets/images/recipes/lemon-bars.webp"
   },
   {
     "key": "apple-crumble",
@@ -8202,7 +8202,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/apple-crumble.jpg"
+    "imageUrl": "assets/images/recipes/apple-crumble.webp"
   },
   {
     "key": "banana-bread",
@@ -8279,7 +8279,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/banana-bread.jpg"
+    "imageUrl": "assets/images/recipes/banana-bread.webp"
   },
   {
     "key": "carrot-cake",
@@ -8365,7 +8365,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/carrot-cake-with-cream-cheese-frosting.jpg"
+    "imageUrl": "assets/images/recipes/carrot-cake-with-cream-cheese-frosting.webp"
   },
   {
     "key": "lemon-drizzle-cake",
@@ -8436,7 +8436,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lemon-drizzle-cake.jpg"
+    "imageUrl": "assets/images/recipes/lemon-drizzle-cake.webp"
   },
   {
     "key": "victoria-sponge",
@@ -8512,7 +8512,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/victoria-sponge.jpg"
+    "imageUrl": "assets/images/recipes/victoria-sponge.webp"
   },
   {
     "key": "pavlova-berries",
@@ -8594,7 +8594,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pavlova-with-berries.jpg"
+    "imageUrl": "assets/images/recipes/pavlova-with-berries.webp"
   },
   {
     "key": "chocolate-lava-cakes",
@@ -8664,7 +8664,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chocolate-lava-cakes.jpg"
+    "imageUrl": "assets/images/recipes/chocolate-lava-cakes.webp"
   },
   {
     "key": "chocolate-layer-cake",
@@ -8750,7 +8750,7 @@
         "unit": "ml"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chocolate-layer-cake.jpg"
+    "imageUrl": "assets/images/recipes/chocolate-layer-cake.webp"
   },
   {
     "key": "sticky-toffee-pudding",
@@ -8830,7 +8830,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sticky-toffee-pudding.jpg"
+    "imageUrl": "assets/images/recipes/sticky-toffee-pudding.webp"
   },
   {
     "key": "bread-pudding",
@@ -8901,7 +8901,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cinnamon-raisin-bread-pudding.jpg"
+    "imageUrl": "assets/images/recipes/cinnamon-raisin-bread-pudding.webp"
   },
   {
     "key": "fresh-fruit-tart",
@@ -8983,7 +8983,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/fresh-fruit-tart.jpg"
+    "imageUrl": "assets/images/recipes/fresh-fruit-tart.webp"
   },
   {
     "key": "churros-chocolate-sauce",
@@ -9059,7 +9059,7 @@
         "unit": "ml"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/churros-with-chocolate-sauce.jpg"
+    "imageUrl": "assets/images/recipes/churros-with-chocolate-sauce.webp"
   },
   {
     "key": "caramel-flan",
@@ -9114,7 +9114,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/caramel-flan.jpg"
+    "imageUrl": "assets/images/recipes/caramel-flan.webp"
   },
   {
     "key": "baked-apples-walnuts",
@@ -9183,7 +9183,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/baked-apples-with-walnuts-and-honey.jpg"
+    "imageUrl": "assets/images/recipes/baked-apples-with-walnuts-and-honey.webp"
   },
   {
     "key": "red-wine-poached-pears",
@@ -9251,7 +9251,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/red-wine-poached-pears.jpg"
+    "imageUrl": "assets/images/recipes/red-wine-poached-pears.webp"
   },
   {
     "key": "mango-lime-sorbet",
@@ -9301,7 +9301,7 @@
         "note": "a few leaves to garnish"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/no-churn-mango-lime-sorbet.jpg"
+    "imageUrl": "assets/images/recipes/no-churn-mango-lime-sorbet.webp"
   },
   {
     "key": "no-churn-vanilla-ice-cream",
@@ -9350,7 +9350,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/no-churn-vanilla-ice-cream.jpg"
+    "imageUrl": "assets/images/recipes/no-churn-vanilla-ice-cream.webp"
   },
   {
     "key": "date-energy-balls",
@@ -9410,7 +9410,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/date-and-oat-energy-balls.jpg"
+    "imageUrl": "assets/images/recipes/date-and-oat-energy-balls.webp"
   },
   {
     "key": "chocolate-truffles",
@@ -9465,7 +9465,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/dark-chocolate-truffles.jpg"
+    "imageUrl": "assets/images/recipes/dark-chocolate-truffles.webp"
   },
   {
     "key": "affogato",
@@ -9511,7 +9511,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/affogato.jpg"
+    "imageUrl": "assets/images/recipes/affogato.webp"
   },
   {
     "key": "classic-scones",
@@ -9583,7 +9583,7 @@
         "unit": "ml"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/classic-scones-with-jam-and-cream.jpg"
+    "imageUrl": "assets/images/recipes/classic-scones-with-jam-and-cream.webp"
   },
   {
     "key": "cinnamon-rolls",
@@ -9670,7 +9670,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cinnamon-rolls-with-cream-cheese-glaze.jpg"
+    "imageUrl": "assets/images/recipes/cinnamon-rolls-with-cream-cheese-glaze.webp"
   },
   {
     "key": "peach-cobbler",
@@ -9757,7 +9757,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/peach-cobbler.jpg"
+    "imageUrl": "assets/images/recipes/peach-cobbler.webp"
   },
   {
     "key": "oatmeal-raisin-cookies",
@@ -9837,7 +9837,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/oatmeal-raisin-cookies.jpg"
+    "imageUrl": "assets/images/recipes/oatmeal-raisin-cookies.webp"
   },
   {
     "key": "pan-fried-trout-with-garlic",
@@ -9904,7 +9904,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pan-fried-trout-with-garlic.jpg"
+    "imageUrl": "assets/images/recipes/pan-fried-trout-with-garlic.webp"
   },
   {
     "key": "romanian-fish-plachie",
@@ -9982,7 +9982,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/romanian-fish-plachie.jpg"
+    "imageUrl": "assets/images/recipes/romanian-fish-plachie.webp"
   },
   {
     "key": "carp-saramura",
@@ -10059,7 +10059,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/carp-saramur.jpg"
+    "imageUrl": "assets/images/recipes/carp-saramur.webp"
   },
   {
     "key": "baked-carp-with-vegetables",
@@ -10142,7 +10142,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/baked-carp-with-vegetables.jpg"
+    "imageUrl": "assets/images/recipes/baked-carp-with-vegetables.webp"
   },
   {
     "key": "fish-cakes",
@@ -10220,7 +10220,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/fish-cakes.jpg"
+    "imageUrl": "assets/images/recipes/fish-cakes.webp"
   },
   {
     "key": "oven-baked-fish-and-chips",
@@ -10298,7 +10298,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/oven-baked-fish-and-chips.jpg"
+    "imageUrl": "assets/images/recipes/oven-baked-fish-and-chips.webp"
   },
   {
     "key": "lemon-butter-cod",
@@ -10367,7 +10367,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lemon-butter-cod.jpg"
+    "imageUrl": "assets/images/recipes/lemon-butter-cod.webp"
   },
   {
     "key": "mackerel-with-mustard",
@@ -10436,7 +10436,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mackerel-with-mustard.jpg"
+    "imageUrl": "assets/images/recipes/mackerel-with-mustard.webp"
   },
   {
     "key": "sea-bass-baked-in-salt-crust",
@@ -10500,7 +10500,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sea-bass-baked-in-salt-crust.jpg"
+    "imageUrl": "assets/images/recipes/sea-bass-baked-in-salt-crust.webp"
   },
   {
     "key": "mediterranean-sea-bream",
@@ -10578,7 +10578,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mediterranean-sea-bream.jpg"
+    "imageUrl": "assets/images/recipes/mediterranean-sea-bream.webp"
   },
   {
     "key": "garlic-shrimp-gambas",
@@ -10642,7 +10642,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/garlic-shrimp-gambas-al-ajillo.jpg"
+    "imageUrl": "assets/images/recipes/garlic-shrimp-gambas-al-ajillo.webp"
   },
   {
     "key": "mussels-in-white-wine",
@@ -10711,7 +10711,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mussels-in-white-wine.jpg"
+    "imageUrl": "assets/images/recipes/mussels-in-white-wine.webp"
   },
   {
     "key": "crispy-calamari-rings",
@@ -10785,7 +10785,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/crispy-calamari-rings.jpg"
+    "imageUrl": "assets/images/recipes/crispy-calamari-rings.webp"
   },
   {
     "key": "sesame-crusted-tuna-steak",
@@ -10855,7 +10855,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sesame-crusted-tuna-steak.jpg"
+    "imageUrl": "assets/images/recipes/sesame-crusted-tuna-steak.webp"
   },
   {
     "key": "salmon-with-dill-sauce",
@@ -10929,7 +10929,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salmon-with-dill-sauce.jpg"
+    "imageUrl": "assets/images/recipes/salmon-with-dill-sauce.webp"
   },
   {
     "key": "salmon-patties",
@@ -11001,7 +11001,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salmon-patties.jpg"
+    "imageUrl": "assets/images/recipes/salmon-patties.webp"
   },
   {
     "key": "baked-trout-with-potatoes",
@@ -11068,7 +11068,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/baked-trout-with-potatoes.jpg"
+    "imageUrl": "assets/images/recipes/baked-trout-with-potatoes.webp"
   },
   {
     "key": "romanian-fish-stew-ghiveci",
@@ -11153,7 +11153,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/romanian-fish-stew-ghiveci-de-pe-te.jpg"
+    "imageUrl": "assets/images/recipes/romanian-fish-stew-ghiveci-de-pe-te.webp"
   },
   {
     "key": "smoked-mackerel-potato-bake",
@@ -11230,7 +11230,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/smoked-mackerel-potato-bake.jpg"
+    "imageUrl": "assets/images/recipes/smoked-mackerel-potato-bake.webp"
   },
   {
     "key": "crispy-breaded-fish-fillets",
@@ -11302,7 +11302,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/crispy-breaded-fish-fillets.jpg"
+    "imageUrl": "assets/images/recipes/crispy-breaded-fish-fillets.webp"
   },
   {
     "key": "romanian-potato-stew",
@@ -11386,7 +11386,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/romanian-potato-stew-m-ncare-de-cartofi.jpg"
+    "imageUrl": "assets/images/recipes/romanian-potato-stew-m-ncare-de-cartofi.webp"
   },
   {
     "key": "romanian-bean-stew-iahnie",
@@ -11470,7 +11470,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/romanian-bean-stew-iahnie-de-fasole.jpg"
+    "imageUrl": "assets/images/recipes/romanian-bean-stew-iahnie-de-fasole.webp"
   },
   {
     "key": "romanian-pea-stew",
@@ -11548,7 +11548,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/romanian-pea-stew-m-ncare-de-maz-re.jpg"
+    "imageUrl": "assets/images/recipes/romanian-pea-stew-m-ncare-de-maz-re.webp"
   },
   {
     "key": "romanian-vegetable-ghiveci",
@@ -11632,7 +11632,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/romanian-vegetable-ghiveci.jpg"
+    "imageUrl": "assets/images/recipes/romanian-vegetable-ghiveci.webp"
   },
   {
     "key": "mushroom-tocanita-with-polenta",
@@ -11711,7 +11711,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mushroom-toc-ni-with-polenta.jpg"
+    "imageUrl": "assets/images/recipes/mushroom-toc-ni-with-polenta.webp"
   },
   {
     "key": "vegan-stuffed-peppers-rice",
@@ -11795,7 +11795,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/rice-and-vegetable-stuffed-peppers.jpg"
+    "imageUrl": "assets/images/recipes/rice-and-vegetable-stuffed-peppers.webp"
   },
   {
     "key": "stuffed-zucchini-dovlecei-umpluti",
@@ -11874,7 +11874,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/stuffed-zucchini-dovlecei-umplu-i.jpg"
+    "imageUrl": "assets/images/recipes/stuffed-zucchini-dovlecei-umplu-i.webp"
   },
   {
     "key": "baked-eggplant-with-tomatoes",
@@ -11948,7 +11948,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/baked-eggplant-with-tomatoes.jpg"
+    "imageUrl": "assets/images/recipes/baked-eggplant-with-tomatoes.webp"
   },
   {
     "key": "mamaliga-with-cheese-and-sour-cream",
@@ -12008,7 +12008,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/m-m-lig-with-cheese-and-sour-cream.jpg"
+    "imageUrl": "assets/images/recipes/m-m-lig-with-cheese-and-sour-cream.webp"
   },
   {
     "key": "romanian-vegetable-patties",
@@ -12091,7 +12091,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/vegetable-patties-chiftele-de-legume.jpg"
+    "imageUrl": "assets/images/recipes/vegetable-patties-chiftele-de-legume.webp"
   },
   {
     "key": "vegan-sarmale-de-post",
@@ -12178,7 +12178,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/vegan-sarmale-sarmale-de-post.jpg"
+    "imageUrl": "assets/images/recipes/vegan-sarmale-sarmale-de-post.webp"
   },
   {
     "key": "ratatouille",
@@ -12257,7 +12257,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/ratatouille.jpg"
+    "imageUrl": "assets/images/recipes/ratatouille.webp"
   },
   {
     "key": "eggplant-parmigiana",
@@ -12336,7 +12336,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/eggplant-parmigiana.jpg"
+    "imageUrl": "assets/images/recipes/eggplant-parmigiana.webp"
   },
   {
     "key": "vegetable-moussaka",
@@ -12421,7 +12421,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/vegetable-moussaka.jpg"
+    "imageUrl": "assets/images/recipes/vegetable-moussaka.webp"
   },
   {
     "key": "stuffed-portobello-mushrooms",
@@ -12496,7 +12496,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/stuffed-portobello-mushrooms.jpg"
+    "imageUrl": "assets/images/recipes/stuffed-portobello-mushrooms.webp"
   },
   {
     "key": "chickpea-and-spinach-stew",
@@ -12574,7 +12574,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chickpea-and-spinach-stew.jpg"
+    "imageUrl": "assets/images/recipes/chickpea-and-spinach-stew.webp"
   },
   {
     "key": "lentil-shepherds-pie",
@@ -12659,7 +12659,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lentil-shepherd-s-pie.jpg"
+    "imageUrl": "assets/images/recipes/lentil-shepherd-s-pie.webp"
   },
   {
     "key": "cauliflower-steaks-with-chimichurri",
@@ -12737,7 +12737,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cauliflower-steaks-with-chimichurri.jpg"
+    "imageUrl": "assets/images/recipes/cauliflower-steaks-with-chimichurri.webp"
   },
   {
     "key": "black-bean-veggie-burgers",
@@ -12823,7 +12823,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/black-bean-veggie-burgers.jpg"
+    "imageUrl": "assets/images/recipes/black-bean-veggie-burgers.webp"
   },
   {
     "key": "three-bean-chili",
@@ -12909,7 +12909,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/three-bean-chili.jpg"
+    "imageUrl": "assets/images/recipes/three-bean-chili.webp"
   },
   {
     "key": "greek-zucchini-fritters-with-feta",
@@ -12992,7 +12992,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/greek-zucchini-fritters-with-feta.jpg"
+    "imageUrl": "assets/images/recipes/greek-zucchini-fritters-with-feta.webp"
   },
   {
     "key": "potato-and-spinach-bake",
@@ -13072,7 +13072,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/potato-and-spinach-bake.jpg"
+    "imageUrl": "assets/images/recipes/potato-and-spinach-bake.webp"
   },
   {
     "key": "halloumi-with-roasted-vegetables",
@@ -13155,7 +13155,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/halloumi-with-roasted-vegetables.jpg"
+    "imageUrl": "assets/images/recipes/halloumi-with-roasted-vegetables.webp"
   },
   {
     "key": "falafel-plate",
@@ -13242,7 +13242,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/falafel-plate.jpg"
+    "imageUrl": "assets/images/recipes/falafel-plate.webp"
   },
   {
     "key": "quinoa-stuffed-butternut-squash",
@@ -13325,7 +13325,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/quinoa-stuffed-butternut-squash.jpg"
+    "imageUrl": "assets/images/recipes/quinoa-stuffed-butternut-squash.webp"
   },
   {
     "key": "sarmale-cabbage-rolls",
@@ -13412,7 +13412,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sarmale-stuffed-cabbage-rolls.jpg"
+    "imageUrl": "assets/images/recipes/sarmale-stuffed-cabbage-rolls.webp"
   },
   {
     "key": "mici-romanian-grilled-sausages",
@@ -13487,7 +13487,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mici-romanian-grilled-minced-meat-rolls.jpg"
+    "imageUrl": "assets/images/recipes/mici-romanian-grilled-minced-meat-rolls.webp"
   },
   {
     "key": "tochitura-moldoveneasca",
@@ -13575,7 +13575,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/tochitur-romanian-pork-stew-with-polenta.jpg"
+    "imageUrl": "assets/images/recipes/tochitur-romanian-pork-stew-with-polenta.webp"
   },
   {
     "key": "chiftele-romanian-fried-meatballs",
@@ -13656,7 +13656,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chiftele-romanian-fried-meatballs.jpg"
+    "imageUrl": "assets/images/recipes/chiftele-romanian-fried-meatballs.webp"
   },
   {
     "key": "chicken-in-sour-cream-with-polenta",
@@ -13735,7 +13735,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-in-sour-cream-with-polenta-pui-cu-sm-nt-n.jpg"
+    "imageUrl": "assets/images/recipes/chicken-in-sour-cream-with-polenta-pui-cu-sm-nt-n.webp"
   },
   {
     "key": "ostropel-de-pui",
@@ -13821,7 +13821,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/ostropel-chicken-in-garlic-tomato-sauce.jpg"
+    "imageUrl": "assets/images/recipes/ostropel-chicken-in-garlic-tomato-sauce.webp"
   },
   {
     "key": "ciulama-de-pui",
@@ -13897,7 +13897,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/ciulama-chicken-in-white-sauce.jpg"
+    "imageUrl": "assets/images/recipes/ciulama-chicken-in-white-sauce.webp"
   },
   {
     "key": "friptura-de-porc-la-tava",
@@ -13972,7 +13972,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/romanian-roast-pork-neck-friptur-de-porc-la-tav.jpg"
+    "imageUrl": "assets/images/recipes/romanian-roast-pork-neck-friptur-de-porc-la-tav.webp"
   },
   {
     "key": "chicken-schnitzel",
@@ -14048,7 +14048,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-schnitzel-ni-el-de-pui.jpg"
+    "imageUrl": "assets/images/recipes/chicken-schnitzel-ni-el-de-pui.webp"
   },
   {
     "key": "drob-de-miel",
@@ -14130,7 +14130,7 @@
         "unit": "sheet"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/drob-de-miel-romanian-lamb-easter-loaf.jpg"
+    "imageUrl": "assets/images/recipes/drob-de-miel-romanian-lamb-easter-loaf.webp"
   },
   {
     "key": "chicken-and-pea-stew",
@@ -14209,7 +14209,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-and-pea-stew-m-ncare-de-maz-re-cu-pui.jpg"
+    "imageUrl": "assets/images/recipes/chicken-and-pea-stew-m-ncare-de-maz-re-cu-pui.webp"
   },
   {
     "key": "green-bean-stew-with-pork",
@@ -14289,7 +14289,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/green-bean-stew-with-pork-m-ncare-de-fasole-verde.jpg"
+    "imageUrl": "assets/images/recipes/green-bean-stew-with-pork-m-ncare-de-fasole-verde.webp"
   },
   {
     "key": "pork-goulash-with-potatoes",
@@ -14374,7 +14374,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pork-goulash-with-potatoes-gula-de-porc.jpg"
+    "imageUrl": "assets/images/recipes/pork-goulash-with-potatoes-gula-de-porc.webp"
   },
   {
     "key": "chicken-paprikash",
@@ -14453,7 +14453,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-paprikash-paprika-de-pui.jpg"
+    "imageUrl": "assets/images/recipes/chicken-paprikash-paprika-de-pui.webp"
   },
   {
     "key": "stuffed-bell-peppers-ardei-umpluti",
@@ -14539,7 +14539,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/stuffed-bell-peppers-ardei-umplu-i.jpg"
+    "imageUrl": "assets/images/recipes/stuffed-bell-peppers-ardei-umplu-i.webp"
   },
   {
     "key": "baked-potatoes-with-pork",
@@ -14625,7 +14625,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/baked-potatoes-with-pork-cartofi-cu-carne-la-cuptor.jpg"
+    "imageUrl": "assets/images/recipes/baked-potatoes-with-pork-cartofi-cu-carne-la-cuptor.webp"
   },
   {
     "key": "tocana-de-vita",
@@ -14710,7 +14710,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/romanian-beef-stew-tocan-de-vit.jpg"
+    "imageUrl": "assets/images/recipes/romanian-beef-stew-tocan-de-vit.webp"
   },
   {
     "key": "potato-moussaka-musaca",
@@ -14796,7 +14796,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/potato-moussaka-musaca-de-cartofi.jpg"
+    "imageUrl": "assets/images/recipes/potato-moussaka-musaca-de-cartofi.webp"
   },
   {
     "key": "braised-cabbage-with-sausages",
@@ -14868,7 +14868,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/braised-cabbage-with-sausages-varz-c-lit-cu-c-rna-i.jpg"
+    "imageUrl": "assets/images/recipes/braised-cabbage-with-sausages-varz-c-lit-cu-c-rna-i.webp"
   },
   {
     "key": "hungarian-beef-porkolt",
@@ -14944,7 +14944,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/hungarian-beef-p-rk-lt.jpg"
+    "imageUrl": "assets/images/recipes/hungarian-beef-p-rk-lt.webp"
   },
   {
     "key": "polish-bigos-hunters-stew",
@@ -15031,7 +15031,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/polish-bigos-hunter-s-stew.jpg"
+    "imageUrl": "assets/images/recipes/polish-bigos-hunter-s-stew.webp"
   },
   {
     "key": "serbian-pljeskavica",
@@ -15109,7 +15109,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/serbian-pljeskavica-grilled-meat-patties.jpg"
+    "imageUrl": "assets/images/recipes/serbian-pljeskavica-grilled-meat-patties.webp"
   },
   {
     "key": "bulgarian-pork-kavarma",
@@ -15195,7 +15195,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/bulgarian-pork-kavarma.jpg"
+    "imageUrl": "assets/images/recipes/bulgarian-pork-kavarma.webp"
   },
   {
     "key": "classic-meatloaf",
@@ -15281,7 +15281,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/classic-meatloaf.jpg"
+    "imageUrl": "assets/images/recipes/classic-meatloaf.webp"
   },
   {
     "key": "meatballs-in-tomato-sauce",
@@ -15366,7 +15366,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/meatballs-in-tomato-sauce.jpg"
+    "imageUrl": "assets/images/recipes/meatballs-in-tomato-sauce.webp"
   },
   {
     "key": "pork-chops-with-apples",
@@ -15445,7 +15445,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pork-chops-with-caramelised-apples.jpg"
+    "imageUrl": "assets/images/recipes/pork-chops-with-caramelised-apples.webp"
   },
   {
     "key": "shepherds-pie",
@@ -15531,7 +15531,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/shepherd-s-pie.jpg"
+    "imageUrl": "assets/images/recipes/shepherd-s-pie.webp"
   },
   {
     "key": "chicken-cordon-bleu",
@@ -15610,7 +15610,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-cordon-bleu.jpg"
+    "imageUrl": "assets/images/recipes/chicken-cordon-bleu.webp"
   },
   {
     "key": "coq-au-vin",
@@ -15696,7 +15696,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/coq-au-vin.jpg"
+    "imageUrl": "assets/images/recipes/coq-au-vin.webp"
   },
   {
     "key": "beef-bourguignon",
@@ -15783,7 +15783,7 @@
         "unit": "sprig"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/beef-bourguignon.jpg"
+    "imageUrl": "assets/images/recipes/beef-bourguignon.webp"
   },
   {
     "key": "swedish-meatballs",
@@ -15870,7 +15870,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/swedish-meatballs-in-cream-gravy.jpg"
+    "imageUrl": "assets/images/recipes/swedish-meatballs-in-cream-gravy.webp"
   },
   {
     "key": "pork-tenderloin-medallions-mustard-cream",
@@ -15950,7 +15950,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pork-tenderloin-medallions-in-mustard-cream-sauce.jpg"
+    "imageUrl": "assets/images/recipes/pork-tenderloin-medallions-in-mustard-cream-sauce.webp"
   },
   {
     "key": "honey-mustard-chicken-thighs",
@@ -16027,7 +16027,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/honey-mustard-baked-chicken-thighs.jpg"
+    "imageUrl": "assets/images/recipes/honey-mustard-baked-chicken-thighs.webp"
   },
   {
     "key": "lemon-garlic-roast-chicken",
@@ -16098,7 +16098,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lemon-garlic-roast-chicken.jpg"
+    "imageUrl": "assets/images/recipes/lemon-garlic-roast-chicken.webp"
   },
   {
     "key": "chicken-kiev",
@@ -16177,7 +16177,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-kiev.jpg"
+    "imageUrl": "assets/images/recipes/chicken-kiev.webp"
   },
   {
     "key": "wiener-schnitzel",
@@ -16249,7 +16249,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/wiener-schnitzel.jpg"
+    "imageUrl": "assets/images/recipes/wiener-schnitzel.webp"
   },
   {
     "key": "roast-pork-belly-with-crackling",
@@ -16327,7 +16327,7 @@
         "unit": "ml"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/roast-pork-belly-with-crackling.jpg"
+    "imageUrl": "assets/images/recipes/roast-pork-belly-with-crackling.webp"
   },
   {
     "key": "rosemary-garlic-lamb-chops",
@@ -16388,7 +16388,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/rosemary-and-garlic-lamb-chops.jpg"
+    "imageUrl": "assets/images/recipes/rosemary-and-garlic-lamb-chops.webp"
   },
   {
     "key": "irish-lamb-stew",
@@ -16473,7 +16473,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/irish-lamb-stew.jpg"
+    "imageUrl": "assets/images/recipes/irish-lamb-stew.webp"
   },
   {
     "key": "oven-bbq-pork-ribs",
@@ -16554,7 +16554,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/oven-baked-bbq-pork-ribs.jpg"
+    "imageUrl": "assets/images/recipes/oven-baked-bbq-pork-ribs.webp"
   },
   {
     "key": "sloppy-joes",
@@ -16639,7 +16639,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sloppy-joes.jpg"
+    "imageUrl": "assets/images/recipes/sloppy-joes.webp"
   },
   {
     "key": "chicken-parmesan",
@@ -16723,7 +16723,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-parmesan.jpg"
+    "imageUrl": "assets/images/recipes/chicken-parmesan.webp"
   },
   {
     "key": "duck-breast-with-orange-sauce",
@@ -16794,7 +16794,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/duck-breast-with-orange-sauce.jpg"
+    "imageUrl": "assets/images/recipes/duck-breast-with-orange-sauce.webp"
   },
   {
     "key": "beef-stroganoff",
@@ -16881,7 +16881,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/beef-stroganoff.jpg"
+    "imageUrl": "assets/images/recipes/beef-stroganoff.webp"
   },
   {
     "key": "sausage-and-mash-onion-gravy",
@@ -16966,7 +16966,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sausage-and-mash-with-onion-gravy.jpg"
+    "imageUrl": "assets/images/recipes/sausage-and-mash-with-onion-gravy.webp"
   },
   {
     "key": "butter-chicken",
@@ -17061,7 +17061,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/butter-chicken.jpg"
+    "imageUrl": "assets/images/recipes/butter-chicken.webp"
   },
   {
     "key": "chicken-tikka-masala",
@@ -17173,7 +17173,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-tikka-masala.jpg"
+    "imageUrl": "assets/images/recipes/chicken-tikka-masala.webp"
   },
   {
     "key": "chana-masala",
@@ -17270,7 +17270,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chana-masala.jpg"
+    "imageUrl": "assets/images/recipes/chana-masala.webp"
   },
   {
     "key": "dal-tadka",
@@ -17366,7 +17366,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/dal-tadka.jpg"
+    "imageUrl": "assets/images/recipes/dal-tadka.webp"
   },
   {
     "key": "aloo-gobi",
@@ -17468,7 +17468,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/aloo-gobi.jpg"
+    "imageUrl": "assets/images/recipes/aloo-gobi.webp"
   },
   {
     "key": "palak-paneer",
@@ -17553,7 +17553,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/palak-paneer.jpg"
+    "imageUrl": "assets/images/recipes/palak-paneer.webp"
   },
   {
     "key": "thai-green-chicken-curry",
@@ -17637,7 +17637,7 @@
         "note": "jasmine"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/thai-green-chicken-curry.jpg"
+    "imageUrl": "assets/images/recipes/thai-green-chicken-curry.webp"
   },
   {
     "key": "thai-red-curry-with-shrimp",
@@ -17734,7 +17734,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/thai-red-curry-with-shrimp.jpg"
+    "imageUrl": "assets/images/recipes/thai-red-curry-with-shrimp.webp"
   },
   {
     "key": "pad-thai",
@@ -17829,7 +17829,7 @@
         "note": "to garnish"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pad-thai.jpg"
+    "imageUrl": "assets/images/recipes/pad-thai.webp"
   },
   {
     "key": "thai-basil-chicken",
@@ -17912,7 +17912,7 @@
         "note": "jasmine"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/thai-basil-chicken.jpg"
+    "imageUrl": "assets/images/recipes/thai-basil-chicken.webp"
   },
   {
     "key": "sweet-and-sour-chicken",
@@ -18009,7 +18009,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sweet-and-sour-chicken.jpg"
+    "imageUrl": "assets/images/recipes/sweet-and-sour-chicken.webp"
   },
   {
     "key": "kung-pao-chicken",
@@ -18118,7 +18118,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/kung-pao-chicken.jpg"
+    "imageUrl": "assets/images/recipes/kung-pao-chicken.webp"
   },
   {
     "key": "beef-and-broccoli-stir-fry",
@@ -18215,7 +18215,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/beef-and-broccoli-stir-fry.jpg"
+    "imageUrl": "assets/images/recipes/beef-and-broccoli-stir-fry.webp"
   },
   {
     "key": "mapo-tofu",
@@ -18322,7 +18322,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mapo-tofu.jpg"
+    "imageUrl": "assets/images/recipes/mapo-tofu.webp"
   },
   {
     "key": "egg-fried-rice-with-vegetables",
@@ -18409,7 +18409,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/egg-fried-rice-with-vegetables.jpg"
+    "imageUrl": "assets/images/recipes/egg-fried-rice-with-vegetables.webp"
   },
   {
     "key": "chicken-chow-mein",
@@ -18501,7 +18501,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-chow-mein.jpg"
+    "imageUrl": "assets/images/recipes/chicken-chow-mein.webp"
   },
   {
     "key": "chicken-teriyaki",
@@ -18584,7 +18584,7 @@
         "unit": "head"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-teriyaki.jpg"
+    "imageUrl": "assets/images/recipes/chicken-teriyaki.webp"
   },
   {
     "key": "chicken-katsu-curry",
@@ -18686,7 +18686,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-katsu-curry.jpg"
+    "imageUrl": "assets/images/recipes/chicken-katsu-curry.webp"
   },
   {
     "key": "salmon-teriyaki",
@@ -18776,7 +18776,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salmon-teriyaki.jpg"
+    "imageUrl": "assets/images/recipes/salmon-teriyaki.webp"
   },
   {
     "key": "chicken-yakitori-skewers",
@@ -18865,7 +18865,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-yakitori-skewers.jpg"
+    "imageUrl": "assets/images/recipes/chicken-yakitori-skewers.webp"
   },
   {
     "key": "bibimbap",
@@ -18966,7 +18966,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/bibimbap.jpg"
+    "imageUrl": "assets/images/recipes/bibimbap.webp"
   },
   {
     "key": "beef-bulgogi",
@@ -19064,7 +19064,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/beef-bulgogi.jpg"
+    "imageUrl": "assets/images/recipes/beef-bulgogi.webp"
   },
   {
     "key": "vietnamese-lemongrass-pork",
@@ -19166,7 +19166,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/vietnamese-lemongrass-pork.jpg"
+    "imageUrl": "assets/images/recipes/vietnamese-lemongrass-pork.webp"
   },
   {
     "key": "vietnamese-caramelised-pork",
@@ -19258,7 +19258,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/vietnamese-caramelised-pork.jpg"
+    "imageUrl": "assets/images/recipes/vietnamese-caramelised-pork.webp"
   },
   {
     "key": "chicken-fajitas",
@@ -19358,7 +19358,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-fajitas.jpg"
+    "imageUrl": "assets/images/recipes/chicken-fajitas.webp"
   },
   {
     "key": "beef-tacos",
@@ -19468,7 +19468,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/beef-tacos.jpg"
+    "imageUrl": "assets/images/recipes/beef-tacos.webp"
   },
   {
     "key": "chicken-enchiladas",
@@ -19570,7 +19570,7 @@
         "note": "to garnish"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-enchiladas.jpg"
+    "imageUrl": "assets/images/recipes/chicken-enchiladas.webp"
   },
   {
     "key": "chicken-burrito-bowl",
@@ -19682,7 +19682,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-burrito-bowl.jpg"
+    "imageUrl": "assets/images/recipes/chicken-burrito-bowl.webp"
   },
   {
     "key": "chili-con-carne",
@@ -19797,7 +19797,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chili-con-carne.jpg"
+    "imageUrl": "assets/images/recipes/chili-con-carne.webp"
   },
   {
     "key": "chicken-quesadillas",
@@ -19893,7 +19893,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-quesadillas.jpg"
+    "imageUrl": "assets/images/recipes/chicken-quesadillas.webp"
   },
   {
     "key": "chicken-shawarma-plate",
@@ -20005,7 +20005,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-shawarma-plate.jpg"
+    "imageUrl": "assets/images/recipes/chicken-shawarma-plate.webp"
   },
   {
     "key": "lamb-kofta-with-yogurt-sauce",
@@ -20111,7 +20111,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lamb-kofta-with-yogurt-sauce.jpg"
+    "imageUrl": "assets/images/recipes/lamb-kofta-with-yogurt-sauce.webp"
   },
   {
     "key": "moroccan-chicken-tagine",
@@ -20219,7 +20219,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/moroccan-chicken-tagine.jpg"
+    "imageUrl": "assets/images/recipes/moroccan-chicken-tagine.webp"
   },
   {
     "key": "moroccan-vegetable-tagine",
@@ -20345,7 +20345,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/moroccan-vegetable-tagine.jpg"
+    "imageUrl": "assets/images/recipes/moroccan-vegetable-tagine.webp"
   },
   {
     "key": "harissa-chicken-with-couscous",
@@ -20442,7 +20442,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/harissa-chicken-with-couscous.jpg"
+    "imageUrl": "assets/images/recipes/harissa-chicken-with-couscous.webp"
   },
   {
     "key": "bbq-pulled-pork-sandwiches",
@@ -20542,7 +20542,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/bbq-pulled-pork-sandwiches.jpg"
+    "imageUrl": "assets/images/recipes/bbq-pulled-pork-sandwiches.webp"
   },
   {
     "key": "buffalo-chicken-wings",
@@ -20637,7 +20637,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/buffalo-chicken-wings.jpg"
+    "imageUrl": "assets/images/recipes/buffalo-chicken-wings.webp"
   },
   {
     "key": "chicken-and-chorizo-jambalaya",
@@ -20759,7 +20759,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-and-chorizo-jambalaya.jpg"
+    "imageUrl": "assets/images/recipes/chicken-and-chorizo-jambalaya.webp"
   },
   {
     "key": "smash-burgers",
@@ -20850,7 +20850,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/smash-burgers.jpg"
+    "imageUrl": "assets/images/recipes/smash-burgers.webp"
   },
   {
     "key": "bbq-chicken-drumsticks",
@@ -20940,7 +20940,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/bbq-chicken-drumsticks.jpg"
+    "imageUrl": "assets/images/recipes/bbq-chicken-drumsticks.webp"
   },
   {
     "key": "pasta-alla-norma",
@@ -21016,7 +21016,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pasta-alla-norma.jpg"
+    "imageUrl": "assets/images/recipes/pasta-alla-norma.webp"
   },
   {
     "key": "spaghetti-alla-puttanesca",
@@ -21091,7 +21091,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/spaghetti-alla-puttanesca.jpg"
+    "imageUrl": "assets/images/recipes/spaghetti-alla-puttanesca.webp"
   },
   {
     "key": "bucatini-all-amatriciana",
@@ -21163,7 +21163,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/bucatini-all-amatriciana.jpg"
+    "imageUrl": "assets/images/recipes/bucatini-all-amatriciana.webp"
   },
   {
     "key": "pasta-primavera",
@@ -21249,7 +21249,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pasta-primavera.jpg"
+    "imageUrl": "assets/images/recipes/pasta-primavera.webp"
   },
   {
     "key": "tuna-pasta-bake",
@@ -21333,7 +21333,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/tuna-pasta-bake.jpg"
+    "imageUrl": "assets/images/recipes/tuna-pasta-bake.webp"
   },
   {
     "key": "spinach-ricotta-cannelloni",
@@ -21420,7 +21420,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/spinach-and-ricotta-cannelloni.jpg"
+    "imageUrl": "assets/images/recipes/spinach-and-ricotta-cannelloni.webp"
   },
   {
     "key": "gnocchi-sage-butter",
@@ -21485,7 +21485,7 @@
         "note": "for the cooking water"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/gnocchi-with-sage-butter.jpg"
+    "imageUrl": "assets/images/recipes/gnocchi-with-sage-butter.webp"
   },
   {
     "key": "gnocchi-al-pomodoro",
@@ -21560,7 +21560,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/gnocchi-al-pomodoro.jpg"
+    "imageUrl": "assets/images/recipes/gnocchi-al-pomodoro.webp"
   },
   {
     "key": "pesto-gnocchi-green-beans",
@@ -21624,7 +21624,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pesto-gnocchi-with-green-beans.jpg"
+    "imageUrl": "assets/images/recipes/pesto-gnocchi-with-green-beans.webp"
   },
   {
     "key": "orecchiette-sausage-broccoli",
@@ -21697,7 +21697,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/orecchiette-with-sausage-and-broccoli.jpg"
+    "imageUrl": "assets/images/recipes/orecchiette-with-sausage-and-broccoli.webp"
   },
   {
     "key": "lemon-ricotta-pasta",
@@ -21766,7 +21766,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lemon-ricotta-pasta.jpg"
+    "imageUrl": "assets/images/recipes/lemon-ricotta-pasta.webp"
   },
   {
     "key": "creamy-mushroom-tagliatelle",
@@ -21850,7 +21850,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/creamy-mushroom-tagliatelle.jpg"
+    "imageUrl": "assets/images/recipes/creamy-mushroom-tagliatelle.webp"
   },
   {
     "key": "pasta-e-fagioli",
@@ -21937,7 +21937,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pasta-e-fagioli.jpg"
+    "imageUrl": "assets/images/recipes/pasta-e-fagioli.webp"
   },
   {
     "key": "orzo-roasted-vegetables",
@@ -22021,7 +22021,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/orzo-with-roasted-vegetables-and-feta.jpg"
+    "imageUrl": "assets/images/recipes/orzo-with-roasted-vegetables-and-feta.webp"
   },
   {
     "key": "macaroane-cu-branza",
@@ -22104,7 +22104,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/macaroane-cu-br-nz-sweet-baked-pasta-with-cheese.jpg"
+    "imageUrl": "assets/images/recipes/macaroane-cu-br-nz-sweet-baked-pasta-with-cheese.webp"
   },
   {
     "key": "taitei-cu-nuca",
@@ -22166,7 +22166,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/t-i-ei-cu-nuc-noodles-with-walnuts.jpg"
+    "imageUrl": "assets/images/recipes/t-i-ei-cu-nuc-noodles-with-walnuts.webp"
   },
   {
     "key": "penne-alla-vodka",
@@ -22251,7 +22251,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/penne-alla-vodka.jpg"
+    "imageUrl": "assets/images/recipes/penne-alla-vodka.webp"
   },
   {
     "key": "fettuccine-alfredo",
@@ -22320,7 +22320,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/fettuccine-alfredo.jpg"
+    "imageUrl": "assets/images/recipes/fettuccine-alfredo.webp"
   },
   {
     "key": "linguine-with-mussels",
@@ -22396,7 +22396,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/linguine-with-mussels.jpg"
+    "imageUrl": "assets/images/recipes/linguine-with-mussels.webp"
   },
   {
     "key": "pappardelle-slow-beef-ragu",
@@ -22484,7 +22484,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pappardelle-with-slow-cooked-beef-rag.jpg"
+    "imageUrl": "assets/images/recipes/pappardelle-with-slow-cooked-beef-rag.webp"
   },
   {
     "key": "salmon-dill-tagliatelle",
@@ -22561,7 +22561,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salmon-and-dill-tagliatelle.jpg"
+    "imageUrl": "assets/images/recipes/salmon-and-dill-tagliatelle.webp"
   },
   {
     "key": "spaghetti-and-meatballs",
@@ -22645,7 +22645,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/spaghetti-and-meatballs.jpg"
+    "imageUrl": "assets/images/recipes/spaghetti-and-meatballs.webp"
   },
   {
     "key": "spaghetti-zucchini-lemon-mint",
@@ -22714,7 +22714,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/spaghetti-with-zucchini-lemon-and-mint.jpg"
+    "imageUrl": "assets/images/recipes/spaghetti-with-zucchini-lemon-and-mint.webp"
   },
   {
     "key": "sesame-peanut-noodles",
@@ -22800,7 +22800,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sesame-peanut-noodles.jpg"
+    "imageUrl": "assets/images/recipes/sesame-peanut-noodles.webp"
   },
   {
     "key": "singapore-noodles",
@@ -22888,7 +22888,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/singapore-noodles.jpg"
+    "imageUrl": "assets/images/recipes/singapore-noodles.webp"
   },
   {
     "key": "beef-udon-stir-fry",
@@ -22975,7 +22975,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/beef-udon-stir-fry.jpg"
+    "imageUrl": "assets/images/recipes/beef-udon-stir-fry.webp"
   },
   {
     "key": "mushroom-risotto",
@@ -23060,7 +23060,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mushroom-risotto.jpg"
+    "imageUrl": "assets/images/recipes/mushroom-risotto.webp"
   },
   {
     "key": "pumpkin-sage-risotto",
@@ -23146,7 +23146,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pumpkin-and-sage-risotto.jpg"
+    "imageUrl": "assets/images/recipes/pumpkin-and-sage-risotto.webp"
   },
   {
     "key": "risotto-alla-milanese",
@@ -23218,7 +23218,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/risotto-alla-milanese.jpg"
+    "imageUrl": "assets/images/recipes/risotto-alla-milanese.webp"
   },
   {
     "key": "seafood-risotto",
@@ -23305,7 +23305,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/seafood-risotto.jpg"
+    "imageUrl": "assets/images/recipes/seafood-risotto.webp"
   },
   {
     "key": "pea-mint-risotto",
@@ -23390,7 +23390,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pea-and-mint-risotto.jpg"
+    "imageUrl": "assets/images/recipes/pea-and-mint-risotto.webp"
   },
   {
     "key": "pilaf-cu-legume",
@@ -23476,7 +23476,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pilaf-cu-legume-romanian-vegetable-pilaf.jpg"
+    "imageUrl": "assets/images/recipes/pilaf-cu-legume-romanian-vegetable-pilaf.webp"
   },
   {
     "key": "pilaf-cu-pui",
@@ -23561,7 +23561,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pilaf-cu-pui-romanian-chicken-pilaf.jpg"
+    "imageUrl": "assets/images/recipes/pilaf-cu-pui-romanian-chicken-pilaf.webp"
   },
   {
     "key": "paella-mixta",
@@ -23648,7 +23648,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/paella-mixta-chicken-and-seafood-paella.jpg"
+    "imageUrl": "assets/images/recipes/paella-mixta-chicken-and-seafood-paella.webp"
   },
   {
     "key": "spanish-chicken-and-rice",
@@ -23734,7 +23734,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/spanish-chicken-and-rice-arroz-con-pollo.jpg"
+    "imageUrl": "assets/images/recipes/spanish-chicken-and-rice-arroz-con-pollo.webp"
   },
   {
     "key": "spanakorizo",
@@ -23819,7 +23819,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/spanakorizo-greek-spinach-rice.jpg"
+    "imageUrl": "assets/images/recipes/spanakorizo-greek-spinach-rice.webp"
   },
   {
     "key": "kedgeree",
@@ -23903,7 +23903,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/kedgeree.jpg"
+    "imageUrl": "assets/images/recipes/kedgeree.webp"
   },
   {
     "key": "coconut-rice-and-beans",
@@ -23981,7 +23981,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/caribbean-coconut-rice-and-beans.jpg"
+    "imageUrl": "assets/images/recipes/caribbean-coconut-rice-and-beans.webp"
   },
   {
     "key": "mujadara",
@@ -24063,7 +24063,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mujadara-lentils-and-rice-with-crispy-onions.jpg"
+    "imageUrl": "assets/images/recipes/mujadara-lentils-and-rice-with-crispy-onions.webp"
   },
   {
     "key": "turkish-bulgur-pilaf",
@@ -24149,7 +24149,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/turkish-bulgur-pilaf.jpg"
+    "imageUrl": "assets/images/recipes/turkish-bulgur-pilaf.webp"
   },
   {
     "key": "couscous-roasted-vegetables",
@@ -24234,7 +24234,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/couscous-with-roasted-vegetables-and-chickpeas.jpg"
+    "imageUrl": "assets/images/recipes/couscous-with-roasted-vegetables-and-chickpeas.webp"
   },
   {
     "key": "mediterranean-quinoa-bowl",
@@ -24319,7 +24319,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mediterranean-quinoa-bowl.jpg"
+    "imageUrl": "assets/images/recipes/mediterranean-quinoa-bowl.webp"
   },
   {
     "key": "hrisca-cu-ciuperci",
@@ -24404,7 +24404,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/hri-c-cu-ciuperci-buckwheat-with-mushrooms.jpg"
+    "imageUrl": "assets/images/recipes/hri-c-cu-ciuperci-buckwheat-with-mushrooms.webp"
   },
   {
     "key": "mamaliga-mushroom-ragout",
@@ -24490,7 +24490,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/m-m-lig-with-mushroom-ragout.jpg"
+    "imageUrl": "assets/images/recipes/m-m-lig-with-mushroom-ragout.webp"
   },
   {
     "key": "cajun-dirty-rice",
@@ -24586,7 +24586,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cajun-dirty-rice.jpg"
+    "imageUrl": "assets/images/recipes/cajun-dirty-rice.webp"
   },
   {
     "key": "salata-de-boeuf",
@@ -24671,7 +24671,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-boeuf.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-boeuf.webp"
   },
   {
     "key": "salata-orientala",
@@ -24746,7 +24746,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-oriental.jpg"
+    "imageUrl": "assets/images/recipes/salat-oriental.webp"
   },
   {
     "key": "salata-de-vinete",
@@ -24810,7 +24810,7 @@
         "note": "for serving"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-vinete.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-vinete.webp"
   },
   {
     "key": "salata-de-icre",
@@ -24873,7 +24873,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-icre.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-icre.webp"
   },
   {
     "key": "salata-de-varza",
@@ -24932,7 +24932,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-varz.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-varz.webp"
   },
   {
     "key": "salata-de-sfecla-cu-hrean",
@@ -24993,7 +24993,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-sfecl-cu-hrean.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-sfecl-cu-hrean.webp"
   },
   {
     "key": "salata-de-ardei-copti",
@@ -25052,7 +25052,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-ardei-cop-i.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-ardei-cop-i.webp"
   },
   {
     "key": "salata-de-fasole-cu-ceapa",
@@ -25125,7 +25125,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-fasole-cu-ceap.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-fasole-cu-ceap.webp"
   },
   {
     "key": "salata-de-rosii-cu-ceapa-si-telemea",
@@ -25190,7 +25190,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-ro-ii-cu-ceap-i-telemea.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-ro-ii-cu-ceap-i-telemea.webp"
   },
   {
     "key": "salata-de-castraveti-cu-smantana",
@@ -25250,7 +25250,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-castrave-i-cu-sm-nt-n.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-castrave-i-cu-sm-nt-n.webp"
   },
   {
     "key": "salata-de-telina-cu-mere",
@@ -25315,7 +25315,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-elin-cu-mere.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-elin-cu-mere.webp"
   },
   {
     "key": "salata-de-ciuperci-cu-maioneza",
@@ -25378,7 +25378,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-ciuperci-cu-maionez.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-ciuperci-cu-maionez.webp"
   },
   {
     "key": "salata-de-varza-rosie-cu-mere",
@@ -25443,7 +25443,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-varz-ro-ie-cu-mere.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-varz-ro-ie-cu-mere.webp"
   },
   {
     "key": "salata-de-ridichi-cu-ceapa-verde",
@@ -25507,7 +25507,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salat-de-ridichi-cu-ceap-verde.jpg"
+    "imageUrl": "assets/images/recipes/salat-de-ridichi-cu-ceap-verde.webp"
   },
   {
     "key": "shopska-salad",
@@ -25581,7 +25581,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/shopska-salad.jpg"
+    "imageUrl": "assets/images/recipes/shopska-salad.webp"
   },
   {
     "key": "vinegret-beetroot-sauerkraut-salad",
@@ -25666,7 +25666,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/vinegret.jpg"
+    "imageUrl": "assets/images/recipes/vinegret.webp"
   },
   {
     "key": "greek-salad-horiatiki",
@@ -25746,7 +25746,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/greek-salad-horiatiki.jpg"
+    "imageUrl": "assets/images/recipes/greek-salad-horiatiki.webp"
   },
   {
     "key": "chicken-caesar-salad",
@@ -25831,7 +25831,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-caesar-salad.jpg"
+    "imageUrl": "assets/images/recipes/chicken-caesar-salad.webp"
   },
   {
     "key": "salade-nicoise",
@@ -25919,7 +25919,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/salade-ni-oise.jpg"
+    "imageUrl": "assets/images/recipes/salade-ni-oise.webp"
   },
   {
     "key": "waldorf-salad",
@@ -25996,7 +25996,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/waldorf-salad.jpg"
+    "imageUrl": "assets/images/recipes/waldorf-salad.webp"
   },
   {
     "key": "classic-creamy-coleslaw",
@@ -26066,7 +26066,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/classic-creamy-coleslaw.jpg"
+    "imageUrl": "assets/images/recipes/classic-creamy-coleslaw.webp"
   },
   {
     "key": "asian-sesame-slaw",
@@ -26151,7 +26151,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/asian-sesame-slaw.jpg"
+    "imageUrl": "assets/images/recipes/asian-sesame-slaw.webp"
   },
   {
     "key": "cucumber-yogurt-mint-salad",
@@ -26217,7 +26217,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cucumber-yogurt-salad-with-mint.jpg"
+    "imageUrl": "assets/images/recipes/cucumber-yogurt-salad-with-mint.webp"
   },
   {
     "key": "beetroot-feta-walnut-salad",
@@ -26285,7 +26285,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/beetroot-feta-and-walnut-salad.jpg"
+    "imageUrl": "assets/images/recipes/beetroot-feta-and-walnut-salad.webp"
   },
   {
     "key": "roasted-vegetable-salad-balsamic",
@@ -26368,7 +26368,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/roasted-vegetable-salad-with-balsamic.jpg"
+    "imageUrl": "assets/images/recipes/roasted-vegetable-salad-with-balsamic.webp"
   },
   {
     "key": "tabbouleh",
@@ -26437,7 +26437,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/tabbouleh.jpg"
+    "imageUrl": "assets/images/recipes/tabbouleh.webp"
   },
   {
     "key": "quinoa-roasted-sweet-potato-salad",
@@ -26521,7 +26521,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/quinoa-salad-with-roasted-sweet-potato.jpg"
+    "imageUrl": "assets/images/recipes/quinoa-salad-with-roasted-sweet-potato.webp"
   },
   {
     "key": "moroccan-couscous-salad",
@@ -26606,7 +26606,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/moroccan-couscous-salad.jpg"
+    "imageUrl": "assets/images/recipes/moroccan-couscous-salad.webp"
   },
   {
     "key": "lentil-salad-feta-herbs",
@@ -26686,7 +26686,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lentil-salad-with-feta-and-herbs.jpg"
+    "imageUrl": "assets/images/recipes/lentil-salad-with-feta-and-herbs.webp"
   },
   {
     "key": "mediterranean-chickpea-salad",
@@ -26770,7 +26770,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mediterranean-chickpea-salad.jpg"
+    "imageUrl": "assets/images/recipes/mediterranean-chickpea-salad.webp"
   },
   {
     "key": "italian-pasta-salad",
@@ -26856,7 +26856,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/italian-pasta-salad.jpg"
+    "imageUrl": "assets/images/recipes/italian-pasta-salad.webp"
   },
   {
     "key": "german-potato-salad-bacon",
@@ -26929,7 +26929,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/german-potato-salad-with-bacon.jpg"
+    "imageUrl": "assets/images/recipes/german-potato-salad-with-bacon.webp"
   },
   {
     "key": "tuna-white-bean-salad",
@@ -27000,7 +27000,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/tuna-and-white-bean-salad.jpg"
+    "imageUrl": "assets/images/recipes/tuna-and-white-bean-salad.webp"
   },
   {
     "key": "egg-salad-with-chives",
@@ -27065,7 +27065,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/egg-salad-with-chives.jpg"
+    "imageUrl": "assets/images/recipes/egg-salad-with-chives.webp"
   },
   {
     "key": "chicken-salad-grapes-almonds",
@@ -27140,7 +27140,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-salad-with-grapes-and-almonds.jpg"
+    "imageUrl": "assets/images/recipes/chicken-salad-with-grapes-and-almonds.webp"
   },
   {
     "key": "cobb-salad",
@@ -27226,7 +27226,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cobb-salad.jpg"
+    "imageUrl": "assets/images/recipes/cobb-salad.webp"
   },
   {
     "key": "mexican-black-bean-corn-salad",
@@ -27315,7 +27315,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mexican-black-bean-and-corn-salad.jpg"
+    "imageUrl": "assets/images/recipes/mexican-black-bean-and-corn-salad.webp"
   },
   {
     "key": "thai-rice-noodle-peanut-salad",
@@ -27401,7 +27401,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/thai-rice-noodle-salad-with-peanuts.jpg"
+    "imageUrl": "assets/images/recipes/thai-rice-noodle-salad-with-peanuts.webp"
   },
   {
     "key": "spinach-strawberry-almond-salad",
@@ -27482,7 +27482,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/spinach-and-strawberry-salad-with-almonds.jpg"
+    "imageUrl": "assets/images/recipes/spinach-and-strawberry-salad-with-almonds.webp"
   },
   {
     "key": "pear-gorgonzola-walnut-salad",
@@ -27557,7 +27557,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pear-gorgonzola-and-walnut-salad.jpg"
+    "imageUrl": "assets/images/recipes/pear-gorgonzola-and-walnut-salad.webp"
   },
   {
     "key": "watermelon-feta-mint-salad",
@@ -27618,7 +27618,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/watermelon-feta-and-mint-salad.jpg"
+    "imageUrl": "assets/images/recipes/watermelon-feta-and-mint-salad.webp"
   },
   {
     "key": "fattoush",
@@ -27704,7 +27704,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/fattoush.jpg"
+    "imageUrl": "assets/images/recipes/fattoush.webp"
   },
   {
     "key": "tropical-fruit-salad",
@@ -27770,7 +27770,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/tropical-fruit-salad.jpg"
+    "imageUrl": "assets/images/recipes/tropical-fruit-salad.webp"
   },
   {
     "key": "berry-fruit-salad-honey-lime",
@@ -27837,7 +27837,7 @@
         "note": "for serving"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/berry-fruit-salad-with-honey-and-lime.jpg"
+    "imageUrl": "assets/images/recipes/berry-fruit-salad-with-honey-and-lime.webp"
   },
   {
     "key": "brown-rice-cranberry-pecan-salad",
@@ -27921,7 +27921,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/brown-rice-salad-with-cranberries-and-pecans.jpg"
+    "imageUrl": "assets/images/recipes/brown-rice-salad-with-cranberries-and-pecans.webp"
   },
   {
     "key": "classic-hummus",
@@ -27990,7 +27990,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/classic-hummus.jpg"
+    "imageUrl": "assets/images/recipes/classic-hummus.webp"
   },
   {
     "key": "tzatziki",
@@ -28054,7 +28054,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/tzatziki.jpg"
+    "imageUrl": "assets/images/recipes/tzatziki.webp"
   },
   {
     "key": "guacamole",
@@ -28115,7 +28115,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/guacamole.jpg"
+    "imageUrl": "assets/images/recipes/guacamole.webp"
   },
   {
     "key": "pico-de-gallo",
@@ -28171,7 +28171,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pico-de-gallo.jpg"
+    "imageUrl": "assets/images/recipes/pico-de-gallo.webp"
   },
   {
     "key": "basil-pesto",
@@ -28229,7 +28229,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/basil-pesto.jpg"
+    "imageUrl": "assets/images/recipes/basil-pesto.webp"
   },
   {
     "key": "marinara-sauce",
@@ -28292,7 +28292,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/marinara-sauce.jpg"
+    "imageUrl": "assets/images/recipes/marinara-sauce.webp"
   },
   {
     "key": "bechamel-sauce",
@@ -28347,7 +28347,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/b-chamel-sauce.jpg"
+    "imageUrl": "assets/images/recipes/b-chamel-sauce.webp"
   },
   {
     "key": "mujdei-garlic-sauce",
@@ -28397,7 +28397,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mujdei-de-usturoi.jpg"
+    "imageUrl": "assets/images/recipes/mujdei-de-usturoi.webp"
   },
   {
     "key": "fasole-batuta",
@@ -28457,7 +28457,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/fasole-b-tut.jpg"
+    "imageUrl": "assets/images/recipes/fasole-b-tut.webp"
   },
   {
     "key": "sour-cream-garlic-dill-sauce",
@@ -28510,7 +28510,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sos-de-sm-nt-n-cu-usturoi-i-m-rar.jpg"
+    "imageUrl": "assets/images/recipes/sos-de-sm-nt-n-cu-usturoi-i-m-rar.webp"
   },
   {
     "key": "chimichurri",
@@ -28570,7 +28570,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chimichurri.jpg"
+    "imageUrl": "assets/images/recipes/chimichurri.webp"
   },
   {
     "key": "garlic-aioli",
@@ -28632,7 +28632,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/garlic-aioli.jpg"
+    "imageUrl": "assets/images/recipes/garlic-aioli.webp"
   },
   {
     "key": "honey-mustard-dressing",
@@ -28685,7 +28685,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/honey-mustard-dressing.jpg"
+    "imageUrl": "assets/images/recipes/honey-mustard-dressing.webp"
   },
   {
     "key": "classic-vinaigrette",
@@ -28739,7 +28739,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/classic-vinaigrette.jpg"
+    "imageUrl": "assets/images/recipes/classic-vinaigrette.webp"
   },
   {
     "key": "caesar-dressing",
@@ -28805,7 +28805,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/caesar-dressing.jpg"
+    "imageUrl": "assets/images/recipes/caesar-dressing.webp"
   },
   {
     "key": "peanut-satay-sauce",
@@ -28871,7 +28871,7 @@
         "note": "juiced"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/peanut-satay-sauce.jpg"
+    "imageUrl": "assets/images/recipes/peanut-satay-sauce.webp"
   },
   {
     "key": "onion-gravy",
@@ -28934,7 +28934,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/onion-gravy.jpg"
+    "imageUrl": "assets/images/recipes/onion-gravy.webp"
   },
   {
     "key": "cheddar-cheese-sauce",
@@ -28997,7 +28997,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cheddar-cheese-sauce.jpg"
+    "imageUrl": "assets/images/recipes/cheddar-cheese-sauce.webp"
   },
   {
     "key": "cranberry-sauce",
@@ -29047,7 +29047,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cranberry-sauce.jpg"
+    "imageUrl": "assets/images/recipes/cranberry-sauce.webp"
   },
   {
     "key": "creamy-mashed-potatoes",
@@ -29101,7 +29101,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/creamy-mashed-potatoes-piure-de-cartofi.jpg"
+    "imageUrl": "assets/images/recipes/creamy-mashed-potatoes-piure-de-cartofi.webp"
   },
   {
     "key": "crispy-roast-potatoes-rosemary",
@@ -29157,7 +29157,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/crispy-roast-potatoes-with-rosemary.jpg"
+    "imageUrl": "assets/images/recipes/crispy-roast-potatoes-with-rosemary.webp"
   },
   {
     "key": "baked-paprika-potato-wedges",
@@ -29217,7 +29217,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/baked-paprika-potato-wedges.jpg"
+    "imageUrl": "assets/images/recipes/baked-paprika-potato-wedges.webp"
   },
   {
     "key": "hasselback-potatoes",
@@ -29279,7 +29279,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/hasselback-potatoes.jpg"
+    "imageUrl": "assets/images/recipes/hasselback-potatoes.webp"
   },
   {
     "key": "potato-dauphinoise",
@@ -29354,7 +29354,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/potato-dauphinoise.jpg"
+    "imageUrl": "assets/images/recipes/potato-dauphinoise.webp"
   },
   {
     "key": "cartofi-taranesti",
@@ -29422,7 +29422,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cartofi-r-ne-ti-country-style-potatoes-with-smoked-bacon.jpg"
+    "imageUrl": "assets/images/recipes/cartofi-r-ne-ti-country-style-potatoes-with-smoked-bacon.webp"
   },
   {
     "key": "cartofi-natur-cu-marar",
@@ -29467,7 +29467,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cartofi-natur-cu-m-rar-buttered-potatoes-with-dill.jpg"
+    "imageUrl": "assets/images/recipes/cartofi-natur-cu-m-rar-buttered-potatoes-with-dill.webp"
   },
   {
     "key": "crispy-sweet-potato-fries",
@@ -29522,7 +29522,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/crispy-sweet-potato-fries.jpg"
+    "imageUrl": "assets/images/recipes/crispy-sweet-potato-fries.webp"
   },
   {
     "key": "mamaliga",
@@ -29567,7 +29567,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/m-m-lig-romanian-polenta.jpg"
+    "imageUrl": "assets/images/recipes/m-m-lig-romanian-polenta.webp"
   },
   {
     "key": "varza-calita",
@@ -29637,7 +29637,7 @@
         "note": "to taste, be generous"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/varz-c-lit-romanian-braised-cabbage.jpg"
+    "imageUrl": "assets/images/recipes/varz-c-lit-romanian-braised-cabbage.webp"
   },
   {
     "key": "mancare-de-spanac",
@@ -29700,7 +29700,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/m-ncare-de-spanac-romanian-garlicky-spinach.jpg"
+    "imageUrl": "assets/images/recipes/m-ncare-de-spanac-romanian-garlicky-spinach.webp"
   },
   {
     "key": "muraturi-rapide",
@@ -29775,7 +29775,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mur-turi-rapide-quick-pickled-vegetables.jpg"
+    "imageUrl": "assets/images/recipes/mur-turi-rapide-quick-pickled-vegetables.webp"
   },
   {
     "key": "sote-de-ciuperci",
@@ -29833,7 +29833,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sote-de-ciuperci-garlic-mushroom-saut.jpg"
+    "imageUrl": "assets/images/recipes/sote-de-ciuperci-garlic-mushroom-saut.webp"
   },
   {
     "key": "dovlecei-pane",
@@ -29898,7 +29898,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/dovlecei-pane-breaded-fried-zucchini.jpg"
+    "imageUrl": "assets/images/recipes/dovlecei-pane-breaded-fried-zucchini.webp"
   },
   {
     "key": "conopida-pane",
@@ -29962,7 +29962,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/conopid-pane-breaded-cauliflower.jpg"
+    "imageUrl": "assets/images/recipes/conopid-pane-breaded-cauliflower.webp"
   },
   {
     "key": "fasole-verde-cu-usturoi",
@@ -30016,7 +30016,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/fasole-verde-cu-usturoi-green-beans-with-garlic.jpg"
+    "imageUrl": "assets/images/recipes/fasole-verde-cu-usturoi-green-beans-with-garlic.webp"
   },
   {
     "key": "mazare-sote",
@@ -30073,7 +30073,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/maz-re-sote-buttered-peas-with-dill.jpg"
+    "imageUrl": "assets/images/recipes/maz-re-sote-buttered-peas-with-dill.webp"
   },
   {
     "key": "zacusca-de-casa",
@@ -30144,7 +30144,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/zacusc-de-cas-roasted-eggplant-and-pepper-spread.jpg"
+    "imageUrl": "assets/images/recipes/zacusc-de-cas-roasted-eggplant-and-pepper-spread.webp"
   },
   {
     "key": "honey-roasted-carrots-thyme",
@@ -30196,7 +30196,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/honey-roasted-carrots-with-thyme.jpg"
+    "imageUrl": "assets/images/recipes/honey-roasted-carrots-with-thyme.webp"
   },
   {
     "key": "roasted-broccoli-garlic-lemon",
@@ -30252,7 +30252,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/roasted-broccoli-with-garlic-and-lemon.jpg"
+    "imageUrl": "assets/images/recipes/roasted-broccoli-with-garlic-and-lemon.webp"
   },
   {
     "key": "spiced-roasted-cauliflower",
@@ -30317,7 +30317,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/spiced-roasted-cauliflower.jpg"
+    "imageUrl": "assets/images/recipes/spiced-roasted-cauliflower.webp"
   },
   {
     "key": "grilled-zucchini-mint-lemon",
@@ -30375,7 +30375,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/grilled-zucchini-with-mint-and-lemon.jpg"
+    "imageUrl": "assets/images/recipes/grilled-zucchini-with-mint-and-lemon.webp"
   },
   {
     "key": "roasted-beetroot-balsamic-walnuts",
@@ -30434,7 +30434,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/roasted-beetroot-with-balsamic-and-walnuts.jpg"
+    "imageUrl": "assets/images/recipes/roasted-beetroot-with-balsamic-and-walnuts.webp"
   },
   {
     "key": "roasted-pumpkin-sage-garlic",
@@ -30493,7 +30493,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/roasted-pumpkin-with-sage-and-garlic.jpg"
+    "imageUrl": "assets/images/recipes/roasted-pumpkin-with-sage-and-garlic.webp"
   },
   {
     "key": "roasted-brussels-sprouts-bacon",
@@ -30546,7 +30546,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/roasted-brussels-sprouts-with-bacon.jpg"
+    "imageUrl": "assets/images/recipes/roasted-brussels-sprouts-with-bacon.webp"
   },
   {
     "key": "braised-red-cabbage-apples",
@@ -30615,7 +30615,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/braised-red-cabbage-with-apples.jpg"
+    "imageUrl": "assets/images/recipes/braised-red-cabbage-with-apples.webp"
   },
   {
     "key": "steakhouse-creamed-spinach",
@@ -30688,7 +30688,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/steakhouse-creamed-spinach.jpg"
+    "imageUrl": "assets/images/recipes/steakhouse-creamed-spinach.webp"
   },
   {
     "key": "brown-sugar-glazed-carrots",
@@ -30742,7 +30742,7 @@
         "note": "a pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/brown-sugar-glazed-carrots.jpg"
+    "imageUrl": "assets/images/recipes/brown-sugar-glazed-carrots.webp"
   },
   {
     "key": "cheesy-garlic-bread",
@@ -30798,7 +30798,7 @@
         "unit": "pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cheesy-garlic-bread.jpg"
+    "imageUrl": "assets/images/recipes/cheesy-garlic-bread.webp"
   },
   {
     "key": "yorkshire-puddings",
@@ -30848,7 +30848,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/yorkshire-puddings.jpg"
+    "imageUrl": "assets/images/recipes/yorkshire-puddings.webp"
   },
   {
     "key": "corn-on-the-cob-chili-lime-butter",
@@ -30904,7 +30904,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/corn-on-the-cob-with-chili-lime-butter.jpg"
+    "imageUrl": "assets/images/recipes/corn-on-the-cob-with-chili-lime-butter.webp"
   },
   {
     "key": "homemade-smoky-baked-beans",
@@ -30979,7 +30979,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/homemade-smoky-baked-beans.jpg"
+    "imageUrl": "assets/images/recipes/homemade-smoky-baked-beans.webp"
   },
   {
     "key": "crispy-polenta-fries-parmesan",
@@ -31039,7 +31039,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/crispy-polenta-fries-with-parmesan.jpg"
+    "imageUrl": "assets/images/recipes/crispy-polenta-fries-with-parmesan.webp"
   },
   {
     "key": "crispy-onion-rings",
@@ -31106,7 +31106,7 @@
         "note": "for deep-frying"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/crispy-onion-rings.jpg"
+    "imageUrl": "assets/images/recipes/crispy-onion-rings.webp"
   },
   {
     "key": "caramelised-onions",
@@ -31167,7 +31167,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/caramelised-onions.jpg"
+    "imageUrl": "assets/images/recipes/caramelised-onions.webp"
   },
   {
     "key": "creamy-cauliflower-mash",
@@ -31225,7 +31225,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/creamy-cauliflower-mash.jpg"
+    "imageUrl": "assets/images/recipes/creamy-cauliflower-mash.webp"
   },
   {
     "key": "green-beans-almondine",
@@ -31284,7 +31284,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/green-beans-almondine.jpg"
+    "imageUrl": "assets/images/recipes/green-beans-almondine.webp"
   },
   {
     "key": "minted-pea-puree",
@@ -31341,7 +31341,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/minted-pea-pur-e.jpg"
+    "imageUrl": "assets/images/recipes/minted-pea-pur-e.webp"
   },
   {
     "key": "sage-and-onion-stuffing",
@@ -31416,7 +31416,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sage-and-onion-stuffing.jpg"
+    "imageUrl": "assets/images/recipes/sage-and-onion-stuffing.webp"
   },
   {
     "key": "pateuri-cu-branza",
@@ -31472,7 +31472,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pateuri-cu-br-nz-puff-pastry-cheese-pockets.jpg"
+    "imageUrl": "assets/images/recipes/pateuri-cu-br-nz-puff-pastry-cheese-pockets.webp"
   },
   {
     "key": "saleuri-cheese-sticks",
@@ -31535,7 +31535,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/saleuri-romanian-cheese-sticks.jpg"
+    "imageUrl": "assets/images/recipes/saleuri-romanian-cheese-sticks.webp"
   },
   {
     "key": "covrigei-cu-sare",
@@ -31605,7 +31605,7 @@
         "note": "1 tsp for dough, coarse salt for topping"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/covrigei-cu-sare-salted-pretzel-rings.jpg"
+    "imageUrl": "assets/images/recipes/covrigei-cu-sare-salted-pretzel-rings.webp"
   },
   {
     "key": "chiftelute-de-post",
@@ -31681,7 +31681,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chiftelu-e-de-post-vegan-vegetable-patties.jpg"
+    "imageUrl": "assets/images/recipes/chiftelu-e-de-post-vegan-vegetable-patties.webp"
   },
   {
     "key": "bulz-polenta-balls",
@@ -31745,7 +31745,7 @@
         "note": "to serve"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/bulz-polenta-balls-with-cheese.jpg"
+    "imageUrl": "assets/images/recipes/bulz-polenta-balls-with-cheese.webp"
   },
   {
     "key": "oua-umplute",
@@ -31810,7 +31810,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/ou-umplute-romanian-deviled-eggs.jpg"
+    "imageUrl": "assets/images/recipes/ou-umplute-romanian-deviled-eggs.webp"
   },
   {
     "key": "rosii-umplute-salata-vinete",
@@ -31877,7 +31877,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/ro-ii-umplute-cu-salat-de-vinete-tomatoes-stuffed-with-eggplant-spread.jpg"
+    "imageUrl": "assets/images/recipes/ro-ii-umplute-cu-salat-de-vinete-tomatoes-stuffed-with-eggplant-spread.webp"
   },
   {
     "key": "cascaval-pane",
@@ -31945,7 +31945,7 @@
         "note": "cut into wedges"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/ca-caval-pane-breaded-fried-cheese.jpg"
+    "imageUrl": "assets/images/recipes/ca-caval-pane-breaded-fried-cheese.webp"
   },
   {
     "key": "zacusca-on-toast",
@@ -32006,7 +32006,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/zacusc-on-toast.jpg"
+    "imageUrl": "assets/images/recipes/zacusc-on-toast.webp"
   },
   {
     "key": "langosi-fried-dough",
@@ -32081,7 +32081,7 @@
         "note": "crumbled"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lango-i-fried-dough-with-cheese-and-garlic.jpg"
+    "imageUrl": "assets/images/recipes/lango-i-fried-dough-with-cheese-and-garlic.webp"
   },
   {
     "key": "classic-tomato-bruschetta",
@@ -32145,7 +32145,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/classic-tomato-bruschetta.jpg"
+    "imageUrl": "assets/images/recipes/classic-tomato-bruschetta.webp"
   },
   {
     "key": "garlic-knots",
@@ -32208,7 +32208,7 @@
         "note": "a pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/garlic-knots.jpg"
+    "imageUrl": "assets/images/recipes/garlic-knots.webp"
   },
   {
     "key": "cream-cheese-stuffed-mushrooms",
@@ -32280,7 +32280,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cream-cheese-stuffed-mushrooms.jpg"
+    "imageUrl": "assets/images/recipes/cream-cheese-stuffed-mushrooms.webp"
   },
   {
     "key": "mozzarella-sticks",
@@ -32353,7 +32353,7 @@
         "note": "a pinch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/crispy-mozzarella-sticks.jpg"
+    "imageUrl": "assets/images/recipes/crispy-mozzarella-sticks.webp"
   },
   {
     "key": "loaded-nachos",
@@ -32423,7 +32423,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/loaded-nachos.jpg"
+    "imageUrl": "assets/images/recipes/loaded-nachos.webp"
   },
   {
     "key": "chicken-quesadilla-bites",
@@ -32495,7 +32495,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-quesadilla-bites.jpg"
+    "imageUrl": "assets/images/recipes/chicken-quesadilla-bites.webp"
   },
   {
     "key": "baked-vegetable-spring-rolls",
@@ -32573,7 +32573,7 @@
         "note": "for dipping"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/baked-vegetable-spring-rolls.jpg"
+    "imageUrl": "assets/images/recipes/baked-vegetable-spring-rolls.webp"
   },
   {
     "key": "loaded-potato-skins",
@@ -32640,7 +32640,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/loaded-potato-skins.jpg"
+    "imageUrl": "assets/images/recipes/loaded-potato-skins.webp"
   },
   {
     "key": "mini-ham-and-cheese-quiches",
@@ -32712,7 +32712,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mini-ham-and-cheese-quiches.jpg"
+    "imageUrl": "assets/images/recipes/mini-ham-and-cheese-quiches.webp"
   },
   {
     "key": "sausage-rolls",
@@ -32780,7 +32780,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sausage-rolls.jpg"
+    "imageUrl": "assets/images/recipes/sausage-rolls.webp"
   },
   {
     "key": "parmesan-herb-popcorn",
@@ -32843,7 +32843,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/parmesan-herb-popcorn.jpg"
+    "imageUrl": "assets/images/recipes/parmesan-herb-popcorn.webp"
   },
   {
     "key": "crispy-roasted-chickpeas",
@@ -32898,7 +32898,7 @@
         "unit": "tsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/crispy-roasted-chickpeas.jpg"
+    "imageUrl": "assets/images/recipes/crispy-roasted-chickpeas.webp"
   },
   {
     "key": "crispy-kale-chips",
@@ -32950,7 +32950,7 @@
         "note": "flaky sea salt"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/crispy-kale-chips.jpg"
+    "imageUrl": "assets/images/recipes/crispy-kale-chips.webp"
   },
   {
     "key": "caprese-skewers",
@@ -33014,7 +33014,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/caprese-skewers.jpg"
+    "imageUrl": "assets/images/recipes/caprese-skewers.webp"
   },
   {
     "key": "prosciutto-wrapped-melon",
@@ -33064,7 +33064,7 @@
         "note": "freshly ground, to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/prosciutto-wrapped-melon.jpg"
+    "imageUrl": "assets/images/recipes/prosciutto-wrapped-melon.webp"
   },
   {
     "key": "smoked-salmon-blinis",
@@ -33141,7 +33141,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/smoked-salmon-blinis.jpg"
+    "imageUrl": "assets/images/recipes/smoked-salmon-blinis.webp"
   },
   {
     "key": "arancini",
@@ -33222,7 +33222,7 @@
         "note": "for deep frying"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/arancini-fried-risotto-balls.jpg"
+    "imageUrl": "assets/images/recipes/arancini-fried-risotto-balls.webp"
   },
   {
     "key": "cucumber-tea-sandwiches",
@@ -33289,7 +33289,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cucumber-tea-sandwiches.jpg"
+    "imageUrl": "assets/images/recipes/cucumber-tea-sandwiches.webp"
   },
   {
     "key": "meatball-sour-soup",
@@ -33373,7 +33373,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/meatball-sour-soup-ciorb-de-peri-oare.jpg"
+    "imageUrl": "assets/images/recipes/meatball-sour-soup-ciorb-de-peri-oare.webp"
   },
   {
     "key": "radauti-chicken-soup",
@@ -33457,7 +33457,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/r-d-u-i-chicken-soup-ciorb-r-d-u-ean.jpg"
+    "imageUrl": "assets/images/recipes/r-d-u-i-chicken-soup-ciorb-r-d-u-ean.webp"
   },
   {
     "key": "tripe-soup-ciorba-de-burta",
@@ -33536,7 +33536,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/tripe-soup-ciorb-de-burt.jpg"
+    "imageUrl": "assets/images/recipes/tripe-soup-ciorb-de-burt.webp"
   },
   {
     "key": "bean-soup-smoked-pork-knuckle",
@@ -33610,7 +33610,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/bean-sour-soup-with-smoked-pork-knuckle.jpg"
+    "imageUrl": "assets/images/recipes/bean-sour-soup-with-smoked-pork-knuckle.webp"
   },
   {
     "key": "romanian-vegetable-sour-soup",
@@ -33694,7 +33694,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/romanian-vegetable-sour-soup-ciorb-de-legume.jpg"
+    "imageUrl": "assets/images/recipes/romanian-vegetable-sour-soup-ciorb-de-legume.webp"
   },
   {
     "key": "greek-style-chicken-sour-soup",
@@ -33773,7 +33773,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/greek-style-chicken-sour-soup-ciorb-la-grec.jpg"
+    "imageUrl": "assets/images/recipes/greek-style-chicken-sour-soup-ciorb-la-grec.webp"
   },
   {
     "key": "sorrel-sour-soup",
@@ -33848,7 +33848,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/sorrel-sour-soup-ciorb-de-tevie.jpg"
+    "imageUrl": "assets/images/recipes/sorrel-sour-soup-ciorb-de-tevie.webp"
   },
   {
     "key": "chicken-soup-semolina-dumplings",
@@ -33918,7 +33918,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/chicken-soup-with-semolina-dumplings.jpg"
+    "imageUrl": "assets/images/recipes/chicken-soup-with-semolina-dumplings.webp"
   },
   {
     "key": "potato-sour-soup-smoked-bacon",
@@ -33992,7 +33992,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/potato-sour-soup-with-smoked-bacon.jpg"
+    "imageUrl": "assets/images/recipes/potato-sour-soup-with-smoked-bacon.webp"
   },
   {
     "key": "danube-fish-sour-soup",
@@ -34065,7 +34065,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/danube-fish-sour-soup-ciorb-de-pe-te.jpg"
+    "imageUrl": "assets/images/recipes/danube-fish-sour-soup-ciorb-de-pe-te.webp"
   },
   {
     "key": "lettuce-soup-smoked-bacon",
@@ -34138,7 +34138,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lettuce-soup-with-smoked-bacon-ciorb-de-salat.jpg"
+    "imageUrl": "assets/images/recipes/lettuce-soup-with-smoked-bacon-ciorb-de-salat.webp"
   },
   {
     "key": "zucchini-sour-soup-sour-cream",
@@ -34213,7 +34213,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/zucchini-sour-soup-with-sour-cream.jpg"
+    "imageUrl": "assets/images/recipes/zucchini-sour-soup-with-sour-cream.webp"
   },
   {
     "key": "pumpkin-cream-soup-croutons",
@@ -34297,7 +34297,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/pumpkin-cream-soup-with-croutons.jpg"
+    "imageUrl": "assets/images/recipes/pumpkin-cream-soup-with-croutons.webp"
   },
   {
     "key": "kohlrabi-soup-dill",
@@ -34371,7 +34371,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/kohlrabi-soup-with-dill-sup-de-gulii.jpg"
+    "imageUrl": "assets/images/recipes/kohlrabi-soup-with-dill-sup-de-gulii.webp"
   },
   {
     "key": "peasant-pork-sour-soup",
@@ -34455,7 +34455,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/peasant-pork-sour-soup-ciorb-r-neasc-de-porc.jpg"
+    "imageUrl": "assets/images/recipes/peasant-pork-sour-soup-ciorb-r-neasc-de-porc.webp"
   },
   {
     "key": "nettle-soup-garlic",
@@ -34529,7 +34529,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/nettle-soup-with-garlic-sup-de-urzici.jpg"
+    "imageUrl": "assets/images/recipes/nettle-soup-with-garlic-sup-de-urzici.webp"
   },
   {
     "key": "lamb-sour-soup-tarragon",
@@ -34609,7 +34609,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/lamb-sour-soup-with-tarragon-ciorb-de-miel.jpg"
+    "imageUrl": "assets/images/recipes/lamb-sour-soup-with-tarragon-ciorb-de-miel.webp"
   },
   {
     "key": "solyanka",
@@ -34693,7 +34693,7 @@
         "unit": "tbsp"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/solyanka.jpg"
+    "imageUrl": "assets/images/recipes/solyanka.webp"
   },
   {
     "key": "hungarian-goulash-soup",
@@ -34777,7 +34777,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/hungarian-goulash-soup-guly-sleves.jpg"
+    "imageUrl": "assets/images/recipes/hungarian-goulash-soup-guly-sleves.webp"
   },
   {
     "key": "minestrone",
@@ -34864,7 +34864,7 @@
         "unit": "g"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/minestrone.jpg"
+    "imageUrl": "assets/images/recipes/minestrone.webp"
   },
   {
     "key": "french-onion-soup",
@@ -34943,7 +34943,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/french-onion-soup.jpg"
+    "imageUrl": "assets/images/recipes/french-onion-soup.webp"
   },
   {
     "key": "green-lentil-smoked-sausage-soup",
@@ -35027,7 +35027,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/green-lentil-and-smoked-sausage-soup.jpg"
+    "imageUrl": "assets/images/recipes/green-lentil-and-smoked-sausage-soup.webp"
   },
   {
     "key": "chickpea-spinach-soup",
@@ -35106,7 +35106,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/spanish-chickpea-and-spinach-soup.jpg"
+    "imageUrl": "assets/images/recipes/spanish-chickpea-and-spinach-soup.webp"
   },
   {
     "key": "potato-leek-soup",
@@ -35170,7 +35170,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/potato-leek-soup.jpg"
+    "imageUrl": "assets/images/recipes/potato-leek-soup.webp"
   },
   {
     "key": "thai-butternut-squash-coconut-soup",
@@ -35250,7 +35250,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/thai-butternut-squash-and-coconut-soup.jpg"
+    "imageUrl": "assets/images/recipes/thai-butternut-squash-and-coconut-soup.webp"
   },
   {
     "key": "broccoli-cheddar-soup",
@@ -35325,7 +35325,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/broccoli-cheddar-soup.jpg"
+    "imageUrl": "assets/images/recipes/broccoli-cheddar-soup.webp"
   },
   {
     "key": "spanish-garlic-soup",
@@ -35396,7 +35396,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/spanish-garlic-soup-sopa-de-ajo.jpg"
+    "imageUrl": "assets/images/recipes/spanish-garlic-soup-sopa-de-ajo.webp"
   },
   {
     "key": "beef-pho",
@@ -35484,7 +35484,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/vietnamese-style-beef-pho.jpg"
+    "imageUrl": "assets/images/recipes/vietnamese-style-beef-pho.webp"
   },
   {
     "key": "miso-ramen-pork-belly",
@@ -35569,7 +35569,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/miso-ramen-with-pork-belly.jpg"
+    "imageUrl": "assets/images/recipes/miso-ramen-with-pork-belly.webp"
   },
   {
     "key": "tom-yum-shrimp-soup",
@@ -35655,7 +35655,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/tom-yum-style-shrimp-soup.jpg"
+    "imageUrl": "assets/images/recipes/tom-yum-style-shrimp-soup.webp"
   },
   {
     "key": "miso-soup-tofu",
@@ -35726,7 +35726,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/miso-soup-with-tofu-and-mushrooms.jpg"
+    "imageUrl": "assets/images/recipes/miso-soup-with-tofu-and-mushrooms.webp"
   },
   {
     "key": "split-pea-ham-soup",
@@ -35801,7 +35801,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/split-pea-and-ham-soup.jpg"
+    "imageUrl": "assets/images/recipes/split-pea-and-ham-soup.webp"
   },
   {
     "key": "mushroom-barley-soup",
@@ -35885,7 +35885,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mushroom-barley-soup.jpg"
+    "imageUrl": "assets/images/recipes/mushroom-barley-soup.webp"
   },
   {
     "key": "tuscan-white-bean-kale-soup",
@@ -35970,7 +35970,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/tuscan-white-bean-and-kale-soup.jpg"
+    "imageUrl": "assets/images/recipes/tuscan-white-bean-and-kale-soup.webp"
   },
   {
     "key": "corn-chowder-bacon",
@@ -36053,7 +36053,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/corn-chowder-with-bacon.jpg"
+    "imageUrl": "assets/images/recipes/corn-chowder-with-bacon.webp"
   },
   {
     "key": "creamy-cod-chowder",
@@ -36136,7 +36136,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/creamy-cod-and-potato-chowder.jpg"
+    "imageUrl": "assets/images/recipes/creamy-cod-and-potato-chowder.webp"
   },
   {
     "key": "carrot-ginger-soup",
@@ -36210,7 +36210,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/carrot-and-ginger-soup.jpg"
+    "imageUrl": "assets/images/recipes/carrot-and-ginger-soup.webp"
   },
   {
     "key": "cauliflower-cream-soup",
@@ -36289,7 +36289,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/cauliflower-cream-soup-with-parmesan.jpg"
+    "imageUrl": "assets/images/recipes/cauliflower-cream-soup-with-parmesan.webp"
   },
   {
     "key": "zucchini-basil-cream-soup",
@@ -36358,7 +36358,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/zucchini-and-basil-cream-soup.jpg"
+    "imageUrl": "assets/images/recipes/zucchini-and-basil-cream-soup.webp"
   },
   {
     "key": "caldo-verde",
@@ -36428,7 +36428,7 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/portuguese-caldo-verde.jpg"
+    "imageUrl": "assets/images/recipes/portuguese-caldo-verde.webp"
   },
   {
     "key": "moroccan-harira",
@@ -36514,7 +36514,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/moroccan-harira.jpg"
+    "imageUrl": "assets/images/recipes/moroccan-harira.webp"
   },
   {
     "key": "coconut-dal-soup",
@@ -36599,7 +36599,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/coconut-red-lentil-dal-soup.jpg"
+    "imageUrl": "assets/images/recipes/coconut-red-lentil-dal-soup.webp"
   },
   {
     "key": "ukrainian-borscht",
@@ -36684,7 +36684,7 @@
         "unit": "bunch"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/ukrainian-borscht.jpg"
+    "imageUrl": "assets/images/recipes/ukrainian-borscht.webp"
   },
   {
     "key": "mexican-tortilla-soup",
@@ -36770,7 +36770,7 @@
         "unit": "pcs"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/mexican-chicken-tortilla-soup.jpg"
+    "imageUrl": "assets/images/recipes/mexican-chicken-tortilla-soup.webp"
   },
   {
     "key": "italian-wedding-soup",
@@ -36855,6 +36855,6 @@
         "note": "to taste"
       }
     ],
-    "imageUrl": "assets/images/recipes_ai/italian-wedding-soup.jpg"
+    "imageUrl": "assets/images/recipes/italian-wedding-soup.webp"
   }
 ]

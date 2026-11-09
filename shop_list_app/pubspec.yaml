@@ -59,7 +59,7 @@ dev_dependencies:
   json_serializable: ^6.8.0
 
   # Dev tooling (recipe placeholder image generation script under tool/)
-  image: ^4.2.0
+  image: ^4.10.0
 
   # Testing
   mockito: ^5.4.2
@@ -73,7 +73,6 @@ flutter:
   assets:
     - assets/images/
     - assets/images/recipes/
-    - assets/images/recipes_ai/
     - assets/images/products_ai/
     - assets/data/
 

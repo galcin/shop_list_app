@@ -185,3 +185,28 @@ flutter test
   with no `futureValue` threw `type 'Null' is not a subtype of type 'List<int>'`); fixed by using
   `response.drain<void>()`. After the fixes, 4 sequential `--all --no-json` runs (each one only
   retrying files still missing) got all 44 images generated successfully.
+- 2026-11-09: Removed the Pollinations.ai-based image generator scripts
+  (`tool/generate_recipe_image_ai.dart`, `tool/generate_product_image_ai.dart`) — Pollinations'
+  anonymous endpoint now requires payment (HTTP 402), making them unusable without an API key.
+  The fal.ai/Flux-based scripts (`tool/generate_recipe_image_flux.dart`,
+  [tool/generate_product_image_flux.dart](../tool/generate_product_image_flux.dart),
+  [tool/generate_category_image_flux.dart](../tool/generate_category_image_flux.dart) — all
+  require a `FAL_KEY`, see [tool/.env.example](../tool/.env.example)) are now the sole AI-photo
+  path; the deterministic placeholder generator
+  [tool/generate_recipe_image.dart](../tool/generate_recipe_image.dart) remains as the no-API-key
+  fallback. Updated stale comments/docs that referenced the removed scripts in
+  [tool/convert_images_to_webp.dart](../tool/convert_images_to_webp.dart),
+  [tool/generate_recipe_image_flux.dart](../tool/generate_recipe_image_flux.dart),
+  [tool/generate_product_image_flux.dart](../tool/generate_product_image_flux.dart), and
+  [tool/seed/README.md](../tool/seed/README.md).
+- 2026-11-09: Merged `assets/images/recipes_ai/` into `assets/images/recipes/` (no filename
+  collisions; 43 + 449 = 492 files, one per recipe in
+  [assets/data/recipes.json](../assets/data/recipes.json)) — there was never a meaningful
+  distinction between the two, `recipes_ai` had just become the default output dir for the Flux
+  generator. Updated all `imageUrl` values in recipes.json from `assets/images/recipes_ai/...` to
+  `assets/images/recipes/...`, removed the now-nonexistent `assets/images/recipes_ai/` asset entry
+  from [pubspec.yaml](../pubspec.yaml), changed
+  [tool/generate_recipe_image_flux.dart](../tool/generate_recipe_image_flux.dart)'s default
+  `--dir` to `assets/images/recipes`, and dropped the second recipe dir from
+  [tool/convert_images_to_webp.dart](../tool/convert_images_to_webp.dart)'s `_recipeDirs` list.
+  Verified with `dart run tool/seed/validate_seed.dart` (492 recipes, seed data OK).

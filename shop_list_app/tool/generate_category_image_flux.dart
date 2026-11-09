@@ -21,7 +21,7 @@
 //   flux-pro/v1.1 — best quality, slowest/most expensive.
 //
 // Images are written directly under assets/images/ (no subfolder) as
-// `<slug>_category.jpg`, matching the convention of the 6 existing
+// `<slug>_category.webp`, matching the convention of the 6 existing
 // hand-picked category images (e.g. `dairy_category.png`), so no pubspec.yaml
 // changes or extra asset declarations are needed.
 //
@@ -132,7 +132,7 @@ Future<void> main(List<String> arguments) async {
 
   final name = args.name!;
   final slug = _slugify(name);
-  final outPath = args.out ?? '${args.dir ?? _imagesDir}/${slug}_category.jpg';
+  final outPath = args.out ?? '${args.dir ?? _imagesDir}/${slug}_category.webp';
 
   try {
     final bytes = await _generateCategoryImageBytes(
@@ -202,7 +202,7 @@ Future<void> _processAllCategories({
     if (name == null || name.trim().isEmpty) continue;
 
     final slug = _slugify(name);
-    final fileName = '${slug}_category.jpg';
+    final fileName = '${slug}_category.webp';
     final targetPath = '$imagesDir/$fileName';
 
     final existingImageName = map['imageName'] as String?;
@@ -431,7 +431,7 @@ String? _resolveApiToken() {
   return null;
 }
 
-/// Encodes [image] as JPEG, stepping down quality and (if that's not
+/// Encodes [image] as lossy WebP, stepping down quality and (if that's not
 /// enough) image dimensions until the result is at or under [maxBytes].
 List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
   const qualities = [92, 85, 78, 70, 62, 54, 46, 38, 30, 22, 15];
@@ -439,7 +439,8 @@ List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
 
   for (var pass = 0; pass < 5; pass++) {
     for (final quality in qualities) {
-      final bytes = img.encodeJpg(current, quality: quality);
+      final bytes =
+          img.encodeWebP(current, lossless: false, quality: quality, method: 4);
       if (bytes.length <= maxBytes) {
         return bytes;
       }
@@ -452,7 +453,7 @@ List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
   }
 
   // Last resort: whatever we could produce at the smallest size/quality.
-  return img.encodeJpg(current, quality: 12);
+  return img.encodeWebP(current, lossless: false, quality: 10, method: 4);
 }
 
 /// Converts a category name into the lowercase, hyphen-separated slug used
@@ -474,7 +475,7 @@ Requests a Flux-generated "poster" photo for every category in
 assets/data/product_categories.json that doesn't have an imageName yet,
 via fal.ai's hosted Flux models, and compresses it to fit the project's
 50KB image budget. Images are written directly under assets/images/ as
-<slug>_category.jpg, matching the existing hand-picked category images.
+<slug>_category.webp, matching the existing hand-picked category images.
 
 Setup: copy tool/.env.example to tool/.env and paste in a fal.ai API key
 (https://fal.ai/dashboard/keys), or set the FAL_KEY environment variable.
@@ -487,7 +488,7 @@ Usage:
 
   dart run tool/generate_category_image_flux.dart --name "Category Name" [--dir path] [--out path] [--model flux/schnell|flux/dev|flux-pro/v1.1]
       Generate a single image for the given category. Defaults to
-      assets/images/<slug>_category.jpg if --out/--dir are omitted.
+      assets/images/<slug>_category.webp if --out/--dir are omitted.
 
 Options:
   --all           Process every category in assets/data/product_categories.json.

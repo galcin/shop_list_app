@@ -59,7 +59,7 @@ Future<void> main(List<String> arguments) async {
 
   final name = args.name!;
   final slug = _slugify(name);
-  final outPath = args.out ?? '${args.dir ?? _imagesDir}/$slug.jpg';
+  final outPath = args.out ?? '${args.dir ?? _imagesDir}/$slug.webp';
 
   final bytes = _generateRecipeImageBytes(
     name: name,
@@ -79,7 +79,7 @@ Future<void> main(List<String> arguments) async {
 /// Scans [_recipesJsonPath] and generates a placeholder image for every
 /// recipe whose referenced image file doesn't exist on disk yet (or for all
 /// recipes when [force] is true). Recipes without an `imageUrl` get one
-/// assigned automatically (`assets/images/recipes/<slug>.jpg`) and the JSON
+/// assigned automatically (`assets/images/recipes/<slug>.webp`) and the JSON
 /// file is rewritten with the new values.
 Future<void> _processAllRecipes({
   required bool force,
@@ -121,7 +121,7 @@ Future<void> _processAllRecipes({
     final ingredients = _ingredientNamesFrom(map['ingredients']);
     final slug = _slugify(name);
 
-    final targetImageUrl = '$imagesDir/$slug.jpg';
+    final targetImageUrl = '$imagesDir/$slug.webp';
     var imageUrl = (map['imageUrl'] as String?)?.trim();
     if (updateJson) {
       if (imageUrl == null || imageUrl.isEmpty) {
@@ -313,7 +313,7 @@ img.Image _buildPlaceholderImage({
   return image;
 }
 
-/// Encodes [image] as JPEG, stepping down quality and (if that's not
+/// Encodes [image] as lossy WebP, stepping down quality and (if that's not
 /// enough) image dimensions until the result is at or under [maxBytes].
 List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
   const qualities = [92, 85, 78, 70, 62, 54, 46, 38, 30, 22, 15];
@@ -321,7 +321,8 @@ List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
 
   for (var pass = 0; pass < 5; pass++) {
     for (final quality in qualities) {
-      final bytes = img.encodeJpg(current, quality: quality);
+      final bytes =
+          img.encodeWebP(current, lossless: false, quality: quality, method: 4);
       if (bytes.length <= maxBytes) {
         return bytes;
       }
@@ -334,7 +335,7 @@ List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
   }
 
   // Last resort: whatever we could produce at the smallest size/quality.
-  return img.encodeJpg(current, quality: 12);
+  return img.encodeWebP(current, lossless: false, quality: 10, method: 4);
 }
 
 /// Simple string hash (djb2-like) used to deterministically seed colors.
@@ -378,7 +379,7 @@ Usage:
 
   dart run tool/generate_recipe_image.dart --name "Recipe Name" [--category "Category"] [--ingredients "a,b,c"] [--out path]
       Generate a single image for the given recipe. Defaults to
-      assets/images/recipes/<slug>.jpg if --out is omitted.
+      assets/images/recipes/<slug>.webp if --out is omitted.
 
 Options:
   --all           Process every recipe in assets/data/recipes.json.

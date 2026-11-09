@@ -3,96 +3,96 @@
     "name": "Fruits",
     "emoji": "🍎",
     "colorHex": "#FF7043",
-    "imageName": "fruits_category.png"
+    "imageName": "fruits_category.webp"
   },
   {
     "name": "Vegetables",
     "emoji": "🥕",
     "colorHex": "#66BB6A",
-    "imageName": "vegetables_category.png"
+    "imageName": "vegetables_category.webp"
   },
   {
     "name": "Herbs & Spices",
     "emoji": "🌿",
     "colorHex": "#9CCC65",
-    "imageName": "herbs-spices_category.jpg"
+    "imageName": "herbs-spices_category.webp"
   },
   {
     "name": "Dairy",
     "emoji": "🥛",
     "colorHex": "#42A5F5",
-    "imageName": "dairy_category.png"
+    "imageName": "dairy_category.webp"
   },
   {
     "name": "Meat",
     "emoji": "🥩",
     "colorHex": "#EF5350",
-    "imageName": "meat_category.png"
+    "imageName": "meat_category.webp"
   },
   {
     "name": "Fish & Seafood",
     "emoji": "🐟",
     "colorHex": "#26A69A",
-    "imageName": "fish-seafood_category.jpg"
+    "imageName": "fish-seafood_category.webp"
   },
   {
     "name": "Bakery",
     "emoji": "🍞",
     "colorHex": "#D4A056",
-    "imageName": "Bakery_category.png"
+    "imageName": "Bakery_category.webp"
   },
   {
     "name": "Grains & Pasta",
     "emoji": "🍝",
     "colorHex": "#FFB74D",
-    "imageName": "grains-pasta_category.jpg"
+    "imageName": "grains-pasta_category.webp"
   },
   {
     "name": "Canned & Jarred",
     "emoji": "🥫",
     "colorHex": "#8D6E63",
-    "imageName": "canned-jarred_category.jpg"
+    "imageName": "canned-jarred_category.webp"
   },
   {
     "name": "Oils & Condiments",
     "emoji": "🫙",
     "colorHex": "#FFCA28",
-    "imageName": "oil_category.png"
+    "imageName": "oil_category.webp"
   },
   {
     "name": "Baking",
     "emoji": "🧁",
     "colorHex": "#BA68C8",
-    "imageName": "baking_category.jpg"
+    "imageName": "baking_category.webp"
   },
   {
     "name": "Nuts & Dried Fruit",
     "emoji": "🥜",
     "colorHex": "#A1887F",
-    "imageName": "nuts-dried-fruit_category.jpg"
+    "imageName": "nuts-dried-fruit_category.webp"
   },
   {
     "name": "Frozen",
     "emoji": "🧊",
     "colorHex": "#4FC3F7",
-    "imageName": "frozen_category.jpg"
+    "imageName": "frozen_category.webp"
   },
   {
     "name": "Beverages",
     "emoji": "🥤",
     "colorHex": "#29B6F6",
-    "imageName": "beverages_category.jpg"
+    "imageName": "beverages_category.webp"
   },
   {
     "name": "Snacks",
     "emoji": "🍿",
     "colorHex": "#EC407A",
-    "imageName": "snacks_category.jpg"
+    "imageName": "snacks_category.webp"
   },
   {
     "name": "Household",
     "emoji": "🧴",
     "colorHex": "#90A4AE",
-    "imageName": "household_category.jpg"
+    "imageName": "household_category.webp"
   }
 ]

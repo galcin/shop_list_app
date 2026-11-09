@@ -114,31 +114,31 @@ void main() {
     ''');
 
     raw.execute(
-        "INSERT INTO product_categories (id, name, photo, created_at, updated_at) "
+        'INSERT INTO product_categories (id, name, photo, created_at, updated_at) '
         "VALUES (1, 'Vegetables', '🥕', 0, 0)");
     raw.execute(
-        "INSERT INTO products (id, name, quantity, units, photo, expiration_date, product_category_id) "
+        'INSERT INTO products (id, name, quantity, units, photo, expiration_date, product_category_id) '
         "VALUES (7, 'Carrots', 3.0, 'kg', '🥕', 0, 1)");
     raw.execute(
-        "INSERT INTO products (id, name, quantity, units, photo, expiration_date, product_category_id) "
+        'INSERT INTO products (id, name, quantity, units, photo, expiration_date, product_category_id) '
         "VALUES (8, 'Mystery', 1.0, '', '', 0, 1)");
     raw.execute(
-        "INSERT INTO recipes (id, name, category, favorite, ingredients_json) VALUES "
+        'INSERT INTO recipes (id, name, category, favorite, ingredients_json) VALUES '
         "(3, 'Chicken Soup', 'Soups', 1, "
         "'[{\"name\":\"Chicken\",\"quantity\":\"500\",\"unit\":\"g\"},"
-        "{\"name\":\"Carrots\",\"quantity\":\"2\",\"unit\":\"pcs\"},"
-        "{\"name\":\"Salt\",\"quantity\":\"to taste\",\"unit\":\"\"},"
+        '{"name":"Carrots","quantity":"2","unit":"pcs"},'
+        '{"name":"Salt","quantity":"to taste","unit":""},'
         "{\"name\":\"Celery\",\"quantity\":\"2\",\"unit\":\"stalks\"}]')");
     raw.execute(
         "INSERT INTO recipes (id, name, favorite, ingredients_json) VALUES (4, 'Empty', NULL, NULL)");
-    raw.execute("INSERT INTO meal_plans (id, week_start_date) VALUES (1, 0)");
+    raw.execute('INSERT INTO meal_plans (id, week_start_date) VALUES (1, 0)');
     raw.execute(
-        "INSERT INTO meal_slots (plan_id, date, meal_type, recipe_id) VALUES (1, 0, 0, 3)");
+        'INSERT INTO meal_slots (plan_id, date, meal_type, recipe_id) VALUES (1, 0, 0, 3)');
     raw.execute("INSERT INTO shopping_lists (id, name) VALUES (1, 'Weekly')");
     raw.execute(
         "INSERT INTO shopping_items (list_id, product_id, name) VALUES (1, 7, 'Carrots')");
     raw.execute(
-        "INSERT INTO pantry_items (product_id, name, quantity, unit, category_id) "
+        'INSERT INTO pantry_items (product_id, name, quantity, unit, category_id) '
         "VALUES (7, 'Carrots', 2, 'pcs', 1)");
 
     db = AppDatabase.forTesting(NativeDatabase.opened(raw));

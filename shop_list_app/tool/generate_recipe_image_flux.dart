@@ -4,11 +4,9 @@
 //
 // Companion to tool/generate_product_image_flux.dart and
 // tool/generate_category_image_flux.dart, using the same fal.ai-hosted Flux
-// models instead of Pollinations.ai (see tool/generate_recipe_image_ai.dart
-// for that free/no-API-key alternative). Generates a photorealistic food
-// photo for every recipe in assets/data/recipes.json that doesn't yet have
-// an `imageUrl`, and compresses the result to fit the project's 50KB image
-// budget.
+// models. Generates a photorealistic food photo for every recipe in
+// assets/data/recipes.json that doesn't yet have an `imageUrl`, and
+// compresses the result to fit the project's 50KB image budget.
 //
 // Setup (one-time): same as the other *_flux.dart scripts —
 //   1. Create a free fal.ai account: https://fal.ai
@@ -38,7 +36,7 @@ import 'package:image/image.dart' as img;
 const int _maxBytes = 50 * 1024;
 
 const String _recipesJsonPath = 'assets/data/recipes.json';
-const String _imagesDir = 'assets/images/recipes_ai';
+const String _imagesDir = 'assets/images/recipes';
 
 const Map<String, String> _modelSlugs = {
   'flux-schnell': 'fal-ai/flux/schnell',
@@ -92,7 +90,7 @@ Future<void> main(List<String> arguments) async {
 
   final name = args.name!;
   final slug = _slugify(name);
-  final outPath = args.out ?? '${args.dir ?? _imagesDir}/$slug.jpg';
+  final outPath = args.out ?? '${args.dir ?? _imagesDir}/$slug.webp';
 
   try {
     final bytes = await _generateRecipeImageBytes(
@@ -167,7 +165,7 @@ Future<void> _processAllRecipes({
     final ingredients = _ingredientNamesFrom(map['ingredients']);
     final slug = _slugify(name);
 
-    final targetImageUrl = '$imagesDir/$slug.jpg';
+    final targetImageUrl = '$imagesDir/$slug.webp';
     var imageUrl = (map['imageUrl'] as String?)?.trim();
     if (updateJson) {
       if (imageUrl == null || imageUrl.isEmpty) {
@@ -419,7 +417,7 @@ String? _resolveApiToken() {
   return null;
 }
 
-/// Encodes [image] as JPEG, stepping down quality and (if that's not
+/// Encodes [image] as lossy WebP, stepping down quality and (if that's not
 /// enough) image dimensions until the result is at or under [maxBytes].
 List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
   const qualities = [92, 85, 78, 70, 62, 54, 46, 38, 30, 22, 15];
@@ -427,7 +425,8 @@ List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
 
   for (var pass = 0; pass < 5; pass++) {
     for (final quality in qualities) {
-      final bytes = img.encodeJpg(current, quality: quality);
+      final bytes =
+          img.encodeWebP(current, lossless: false, quality: quality, method: 4);
       if (bytes.length <= maxBytes) {
         return bytes;
       }
@@ -440,7 +439,7 @@ List<int> _compressToBudget(img.Image image, {int maxBytes = _maxBytes}) {
   }
 
   // Last resort: whatever we could produce at the smallest size/quality.
-  return img.encodeJpg(current, quality: 12);
+  return img.encodeWebP(current, lossless: false, quality: 10, method: 4);
 }
 
 /// Converts a recipe name into the lowercase, hyphen-separated filename
@@ -474,13 +473,13 @@ Usage:
 
   dart run tool/generate_recipe_image_flux.dart --name "Recipe Name" [--category "Category"] [--ingredients "a,b,c"] [--dir path] [--out path] [--model flux/schnell|flux/dev|flux-pro/v1.1]
       Generate a single image for the given recipe. Defaults to
-      assets/images/recipes_ai/<slug>.jpg if --out/--dir are omitted.
+      assets/images/recipes/<slug>.webp if --out/--dir are omitted.
 
 Options:
   --all           Process every recipe in assets/data/recipes.json.
   --force         Regenerate images even if a file already exists (with --all).
   --dry-run       Show what would be generated without writing files (with --all).
-  --dir           Output directory for generated images (default: assets/images/recipes_ai).
+  --dir           Output directory for generated images (default: assets/images/recipes).
   --no-json       With --all, don't read/write imageUrl in recipes.json; resolve
                   every recipe's output path against --dir instead.
   --model         flux/schnell (default, cheapest/fastest), flux/dev, or flux-pro/v1.1.
