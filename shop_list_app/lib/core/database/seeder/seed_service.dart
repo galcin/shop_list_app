@@ -88,8 +88,8 @@ class SeedService {
     late SeedResult result;
     await _db.transaction(() async {
       final categoryIds = await _seedCategories(categories, adoptByName);
-      final productIndex = await _seedProducts(
-          products, categoryIds, adoptByName);
+      final productIndex =
+          await _seedProducts(products, categoryIds, adoptByName);
       final unresolved = await _seedRecipes(recipes, productIndex, adoptByName);
 
       await _db.into(_db.appMeta).insertOnConflictUpdate(
@@ -124,41 +124,63 @@ class SeedService {
     final ids = <String, int>{};
     final now = DateTime.now();
 
+    final inserts = <ProductCategoriesCompanion>[];
+    final updates = <(int, ProductCategoriesCompanion)>[];
+
     for (final seed in seeds) {
       final key = normalizeSeedName(seed.name);
       final row = byName[key];
       if (row == null) {
-        final id = await _db.into(_db.productCategories).insert(
-              ProductCategoriesCompanion.insert(
-                name: seed.name,
-                photo: Value(seed.emoji),
-                iconName: Value(seed.emoji),
-                colorHex: Value(seed.colorHex),
-                imageName: Value(seed.imageName),
-                sortOrder: Value(seed.sortOrder),
-                isBuiltIn: const Value(true),
-                createdAt: Value(now),
-                updatedAt: Value(now),
-              ),
-            );
-        ids[key] = id;
+        inserts.add(ProductCategoriesCompanion.insert(
+          name: seed.name,
+          photo: Value(seed.emoji),
+          iconName: Value(seed.emoji),
+          colorHex: Value(seed.colorHex),
+          imageName: Value(seed.imageName),
+          sortOrder: Value(seed.sortOrder),
+          isBuiltIn: const Value(true),
+          createdAt: Value(now),
+          updatedAt: Value(now),
+        ));
       } else {
         ids[key] = row.id;
         if (row.isBuiltIn || adoptByName) {
-          await (_db.update(_db.productCategories)
-                ..where((t) => t.id.equals(row.id)))
-              .write(ProductCategoriesCompanion(
-            photo: Value(seed.emoji ?? row.photo),
-            iconName: Value(seed.emoji ?? row.iconName),
-            colorHex: Value(seed.colorHex ?? row.colorHex),
-            imageName: Value(seed.imageName ?? row.imageName),
-            sortOrder: Value(seed.sortOrder),
-            isBuiltIn: const Value(true),
-            updatedAt: Value(now),
+          updates.add((
+            row.id,
+            ProductCategoriesCompanion(
+              photo: Value(seed.emoji ?? row.photo),
+              iconName: Value(seed.emoji ?? row.iconName),
+              colorHex: Value(seed.colorHex ?? row.colorHex),
+              imageName: Value(seed.imageName ?? row.imageName),
+              sortOrder: Value(seed.sortOrder),
+              isBuiltIn: const Value(true),
+              updatedAt: Value(now),
+            ),
           ));
         }
       }
     }
+
+    if (updates.isNotEmpty) {
+      await _db.batch((b) {
+        for (final (id, companion) in updates) {
+          b.update(_db.productCategories, companion,
+              where: (t) => t.id.equals(id));
+        }
+      });
+    }
+
+    if (inserts.isNotEmpty) {
+      await _db.batch((b) => b.insertAll(_db.productCategories, inserts));
+      final names = inserts.map((c) => c.name.value).toList();
+      final rows = await (_db.select(_db.productCategories)
+            ..where((t) => t.name.isIn(names)))
+          .get();
+      for (final r in rows) {
+        ids[normalizeSeedName(r.name)] = r.id;
+      }
+    }
+
     // User categories keep their ids too, so products may reference them.
     for (final row in existing) {
       ids.putIfAbsent(normalizeSeedName(row.name), () => row.id);
@@ -190,6 +212,7 @@ class SeedService {
 
     final inserts = <ProductsCompanion>[];
     final pendingKeys = <List<String>>[];
+    final updates = <(int, ProductsCompanion)>[];
 
     for (final seed in seeds) {
       final key = normalizeSeedName(seed.name);
@@ -215,16 +238,18 @@ class SeedService {
         ));
         pendingKeys.add(seed.lookupKeys.toList());
       } else if (row.isBuiltIn || adoptByName) {
-        await (_db.update(_db.products)..where((t) => t.id.equals(row.id)))
-            .write(ProductsCompanion(
-          name: Value(seed.name),
-          defaultUnit: Value(seed.unit),
-          // Keep a user-chosen photo if the seed has none.
-          photo: Value(seed.photo ?? row.photo),
-          aliases: Value(aliases ?? row.aliases),
-          productCategoryId: Value(categoryId),
-          isBuiltIn: const Value(true),
-          updatedAt: Value(now),
+        updates.add((
+          row.id,
+          ProductsCompanion(
+            name: Value(seed.name),
+            defaultUnit: Value(seed.unit),
+            // Keep a user-chosen photo if the seed has none.
+            photo: Value(seed.photo ?? row.photo),
+            aliases: Value(aliases ?? row.aliases),
+            productCategoryId: Value(categoryId),
+            isBuiltIn: const Value(true),
+            updatedAt: Value(now),
+          ),
         ));
         for (final k in seed.lookupKeys) {
           index.add(row.id, k);
@@ -234,6 +259,14 @@ class SeedService {
           index.add(row.id, k);
         }
       }
+    }
+
+    if (updates.isNotEmpty) {
+      await _db.batch((b) {
+        for (final (id, companion) in updates) {
+          b.update(_db.products, companion, where: (t) => t.id.equals(id));
+        }
+      });
     }
 
     // Batch insert, then read ids back by name (SQLite returns no ids for
@@ -283,6 +316,9 @@ class SeedService {
 
     final newRecipes = <RecipesCompanion>[];
     final newRecipeIngredients = <SeedRecipe>[];
+    final recipeUpdates = <(int, RecipesCompanion)>[];
+    final ingredientResetIds = <int>[];
+    final allIngredientCompanions = <RecipeIngredientsCompanion>[];
 
     for (final seed in seeds) {
       final existingRow =
@@ -297,13 +333,29 @@ class SeedService {
       final editable = existingRow.isBuiltIn || adoptByName;
       if (!editable) continue;
 
-      await (_db.update(_db.recipes)
-            ..where((t) => t.id.equals(existingRow.id)))
-          .write(_recipeCompanion(seed, now));
+      recipeUpdates.add((existingRow.id, _recipeCompanion(seed, now)));
+      ingredientResetIds.add(existingRow.id);
+      final built = _ingredientCompanions(existingRow.id, seed, products);
+      unresolved += built.unresolved;
+      allIngredientCompanions.addAll(built.companions);
+    }
+
+    // Batch every existing-recipe update (and the ingredient rows that go
+    // with it) into a handful of statements instead of 2-3 awaited round
+    // trips per recipe — with hundreds of built-in recipes that difference
+    // is the gap between an instant re-seed and one slow enough to risk an
+    // ANR on lower-end devices.
+    if (recipeUpdates.isNotEmpty) {
+      await _db.batch((b) {
+        for (final (id, companion) in recipeUpdates) {
+          b.update(_db.recipes, companion, where: (t) => t.id.equals(id));
+        }
+      });
+    }
+    if (ingredientResetIds.isNotEmpty) {
       await (_db.delete(_db.recipeIngredients)
-            ..where((t) => t.recipeId.equals(existingRow.id)))
+            ..where((t) => t.recipeId.isIn(ingredientResetIds)))
           .go();
-      unresolved += await _insertIngredients(existingRow.id, seed, products);
     }
 
     if (newRecipes.isNotEmpty) {
@@ -313,17 +365,18 @@ class SeedService {
             ..where((t) => t.seedKey.isIn(keys)))
           .get();
       final idByKey = {for (final r in rows) r.seedKey!: r.id};
-      final companions = <RecipeIngredientsCompanion>[];
       for (final seed in newRecipeIngredients) {
         final id = idByKey[seed.key];
         if (id == null) continue;
         final built = _ingredientCompanions(id, seed, products);
         unresolved += built.unresolved;
-        companions.addAll(built.companions);
+        allIngredientCompanions.addAll(built.companions);
       }
-      if (companions.isNotEmpty) {
-        await _db.batch((b) => b.insertAll(_db.recipeIngredients, companions));
-      }
+    }
+
+    if (allIngredientCompanions.isNotEmpty) {
+      await _db.batch(
+          (b) => b.insertAll(_db.recipeIngredients, allIngredientCompanions));
     }
     return unresolved;
   }
@@ -345,16 +398,6 @@ class SeedService {
       updatedAt: Value(now),
       createdAt: createdAt != null ? Value(createdAt) : const Value.absent(),
     );
-  }
-
-  Future<int> _insertIngredients(
-      int recipeId, SeedRecipe seed, _ProductIndex products) async {
-    final built = _ingredientCompanions(recipeId, seed, products);
-    if (built.companions.isNotEmpty) {
-      await _db.batch(
-          (b) => b.insertAll(_db.recipeIngredients, built.companions));
-    }
-    return built.unresolved;
   }
 
   _BuiltIngredients _ingredientCompanions(

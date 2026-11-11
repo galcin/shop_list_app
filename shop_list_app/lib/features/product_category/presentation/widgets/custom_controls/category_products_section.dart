@@ -1,7 +1,7 @@
 // category_products_section.dart  –  analogous to movie_detail_cast.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shop_list_app/core/theme/colors.dart';
+import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_empty_products.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_product_tile.dart';
 import 'package:shop_list_app/features/products/presentation/providers/product_providers.dart';
@@ -13,10 +13,25 @@ import 'package:shop_list_app/features/products/presentation/widgets/create_prod
 class CategoryProductsSection extends ConsumerWidget {
   final int categoryId;
 
-  const CategoryProductsSection({super.key, required this.categoryId});
+  /// The category these products belong to – forwarded to each tile so it
+  /// can theme itself with the category accent and open
+  /// `ProductDetailPage` with the right category context.
+  final ProductCategory category;
+
+  /// Accent colour of [category] (already computed by the parent page),
+  /// kept consistent with the header/thumbnail widgets above this section.
+  final Color accentColor;
+
+  const CategoryProductsSection({
+    super.key,
+    required this.categoryId,
+    required this.category,
+    required this.accentColor,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
     final asyncProducts = ref.watch(categoryProductsProvider(categoryId));
 
     return Padding(
@@ -28,13 +43,13 @@ class CategoryProductsSection extends ConsumerWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 'PRODUCTS',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
-                  color: AppColors.textSecondary,
+                  color: theme.colorScheme.onSurfaceVariant,
                   letterSpacing: 0.8,
                 ),
               ),
@@ -45,16 +60,16 @@ class CategoryProductsSection extends ConsumerWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 3),
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.12),
+                        color: accentColor.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
                         '${products.length}',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 13,
                           fontWeight: FontWeight.w700,
-                          color: AppColors.primary,
+                          color: accentColor,
                         ),
                       ),
                     ),
@@ -68,11 +83,10 @@ class CategoryProductsSection extends ConsumerWidget {
                     child: Container(
                       padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.12),
+                        color: accentColor.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: const Icon(Icons.add,
-                          size: 16, color: AppColors.primary),
+                      child: Icon(Icons.add, size: 16, color: accentColor),
                     ),
                   ),
                 ],
@@ -82,8 +96,9 @@ class CategoryProductsSection extends ConsumerWidget {
           const SizedBox(height: 12),
           // ── Products ────────────────────────────────────────────────────
           asyncProducts.when(
-            loading: () => const Center(
-              child: CircularProgressIndicator(color: AppColors.primary),
+            loading: () => Center(
+              child:
+                  CircularProgressIndicator(color: theme.colorScheme.primary),
             ),
             error: (err, _) => Center(child: Text(err.toString())),
             data: (products) => products.isEmpty
@@ -95,7 +110,11 @@ class CategoryProductsSection extends ConsumerWidget {
                   )
                 : Column(
                     children: products
-                        .map((p) => CategoryProductTile(product: p))
+                        .map((p) => CategoryProductTile(
+                              product: p,
+                              accentColor: accentColor,
+                              category: category,
+                            ))
                         .toList(),
                   ),
           ),

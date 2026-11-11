@@ -15,6 +15,7 @@ class DetailRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
@@ -22,19 +23,19 @@ class DetailRow extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: 'Poppins',
               fontSize: 13,
-              color: Color(0xFF7C7C7C),
+              color: theme.colorScheme.onSurfaceVariant,
             ),
           ),
           Text(
             value,
-            style: const TextStyle(
+            style: TextStyle(
               fontFamily: 'Poppins',
               fontSize: 13,
               fontWeight: FontWeight.w600,
-              color: Color(0xFF181725),
+              color: theme.colorScheme.onSurface,
             ),
           ),
         ],

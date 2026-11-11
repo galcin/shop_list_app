@@ -1,17 +1,14 @@
 // product_category_detail_page.dart
 //
-// Refactored to mirror the `MovieDetailsPage` pattern from movies_ui:
-// - The page is a thin scaffold that composes decoupled display widgets.
-// - All display widgets live in widgets/custom_controls/.
-// - Business-logic callbacks (edit / delete) stay here.
+// Mirrors the `RecipeDetailPage` convention: a pinned `SliverAppBar` with a
+// hero image/emoji background that fades into the content, followed by a
+// title + icon badge row (no raw numeric IDs), then the products list.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shop_list_app/features/product_category/domain/entities/product_category.dart'
     as cat_model;
 import 'package:shop_list_app/features/product_category/presentation/providers/product_category_providers.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/category_bottom_sheet.dart';
-import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_detail_header_poster.dart';
-import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_detail_thumbnail.dart';
 import 'package:shop_list_app/features/product_category/presentation/widgets/custom_controls/category_products_section.dart';
 import 'package:shop_list_app/features/products/presentation/widgets/create_product_bottom_sheet.dart';
 
@@ -50,47 +47,10 @@ class _ProductCategoryDetailPageState
     final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
-      appBar: AppBar(
-        backgroundColor: theme.colorScheme.surface,
-        elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios,
-              color: theme.colorScheme.onSurface, size: 20),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Text(
-          category.name,
-          style: TextStyle(
-            fontFamily: 'Poppins',
-            color: theme.colorScheme.onSurface,
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.edit_outlined, color: theme.colorScheme.onSurface),
-            onPressed: () => showEditCategorySheet(context, category),
-          ),
-          IconButton(
-            icon: Icon(Icons.delete_outline, color: theme.colorScheme.error),
-            onPressed: _deleteCategory,
-          ),
-        ],
-      ),
-      // Mirroring MovieDetailsPage: a ListView of decoupled widgets
-      body: ListView(
-        children: [
-          CategoryDetailThumbnail(
-              category: category, accentColor: _accentColor),
-          CategoryDetailHeaderPoster(
-              category: category, accentColor: _accentColor),
-          Divider(
-              indent: 16,
-              endIndent: 16,
-              color: theme.colorScheme.outlineVariant),
-          CategoryProductsSection(categoryId: category.id),
+      body: CustomScrollView(
+        slivers: [
+          _buildSliverAppBar(theme),
+          SliverToBoxAdapter(child: _buildContent(theme)),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -104,6 +64,163 @@ class _ProductCategoryDetailPageState
           initialCategoryId: category.id,
         ),
         child: const Icon(Icons.add),
+      ),
+    );
+  }
+
+  // ── Hero header ──────────────────────────────────────────────────────────
+
+  Widget _buildSliverAppBar(ThemeData theme) {
+    final accentColor = _accentColor;
+    final emoji = category.iconName ?? category.photo ?? '?';
+    final imageName = category.imageName;
+
+    return SliverAppBar(
+      expandedHeight: 220,
+      pinned: true,
+      backgroundColor: theme.colorScheme.surface,
+      leading: IconButton(
+        icon: Icon(Icons.arrow_back_ios,
+            color: theme.colorScheme.onSurface, size: 20),
+        onPressed: () => Navigator.pop(context),
+      ),
+      actions: [
+        IconButton(
+          icon: Icon(Icons.edit_outlined, color: theme.colorScheme.onSurface),
+          onPressed: () => showEditCategorySheet(context, category),
+        ),
+        IconButton(
+          icon: Icon(Icons.delete_outline, color: theme.colorScheme.error),
+          onPressed: _deleteCategory,
+        ),
+      ],
+      flexibleSpace: FlexibleSpaceBar(
+        background: Stack(
+          fit: StackFit.expand,
+          children: [
+            Container(color: accentColor.withValues(alpha: 0.12)),
+            Center(
+              child: Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  color: theme.colorScheme.surface,
+                  borderRadius: BorderRadius.circular(28),
+                  boxShadow: [
+                    BoxShadow(
+                      color: accentColor.withValues(alpha: 0.25),
+                      blurRadius: 22,
+                      offset: const Offset(0, 7),
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(28),
+                  child: imageName != null
+                      ? Image.asset(
+                          'assets/images/$imageName',
+                          fit: BoxFit.cover,
+                          errorBuilder: (_, __, ___) => Center(
+                            child: Text(emoji,
+                                style: const TextStyle(fontSize: 64)),
+                          ),
+                        )
+                      : Center(
+                          child:
+                              Text(emoji, style: const TextStyle(fontSize: 64)),
+                        ),
+                ),
+              ),
+            ),
+            // Fades the hero band into the content surface below it.
+            DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.transparent, theme.colorScheme.surface],
+                  stops: const [0.6, 1.0],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // ── Content ────────────────────────────────────────────────────────────────
+
+  Widget _buildContent(ThemeData theme) {
+    final accentColor = _accentColor;
+    return Container(
+      color: theme.colorScheme.surface,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 4, 20, 0),
+            child: Text(
+              category.name,
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w700,
+                fontSize: 22,
+                color: theme.colorScheme.onSurface,
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Wrap(
+              spacing: 8,
+              children: [
+                _badge(theme, accentColor, Icons.sort_outlined,
+                    'Sort order ${category.sortOrder}'),
+                if (category.colorHex != null)
+                  _badge(theme, accentColor, Icons.palette_outlined,
+                      category.colorHex!),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          Divider(
+              indent: 20,
+              endIndent: 20,
+              color: theme.colorScheme.outlineVariant),
+          CategoryProductsSection(
+            categoryId: category.id,
+            category: category,
+            accentColor: accentColor,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _badge(
+      ThemeData theme, Color accentColor, IconData icon, String label) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      decoration: BoxDecoration(
+        border: Border.all(color: accentColor),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 13, color: accentColor),
+          const SizedBox(width: 4),
+          Text(
+            label,
+            style: TextStyle(
+              fontFamily: 'Poppins',
+              fontSize: 12,
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+        ],
       ),
     );
   }

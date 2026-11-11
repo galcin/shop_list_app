@@ -68,12 +68,41 @@ lib/
   `data/` querying Drift tables directly (e.g. `_database.select(_database.pantryItems)`).
 - **Async UI state**: use `AsyncValue.when(loading:, error:, data:)` for rendering and
   `state = await AsyncValue.guard(_fetchUpdatedData)` for mutations.
-- **Colors**: always use `AppColors.*` constants from `lib/core/theme/colors.dart`, never raw hex
-  literals in widget code.
+- **Colors**: always theme via `Theme.of(context).colorScheme.*` (or the `context.colorScheme` /
+  `context.theme` extensions) in widget code — **never** raw hex `Color(0xFF...)` literals and
+  **never** the legacy `AppColors.*` constants from `lib/core/theme/colors.dart` (those are fixed,
+  single-theme values left over from an early dark-only design and do **not** react to the
+  Dark/Light/Green theme switch; using them is a recurring bug class — see the 2026-11-11 session
+  log entry for a real instance). `AppColors` should be treated as deprecated for new/edited UI
+  code; prefer `colorScheme.surface`, `onSurface`, `onSurfaceVariant`, `primary`, `error`, etc.
 - **Text style**: `fontFamily: 'Poppins'` is used throughout for consistency.
 - **User feedback**: errors surfaced via `ScaffoldMessenger.of(context).showSnackBar(...)`.
 - Context/theme access commonly goes through extension helpers in
   `lib/shared/extensions/context_extensions.dart` (e.g. `context.colorScheme`, `context.theme`).
+- **Detail page pattern** (established by `RecipeDetailPage`; also applied to
+  `ProductCategoryDetailPage` and `ProductDetailPage`): entity "detail" screens should be a
+  `Scaffold` → `CustomScrollView` with:
+  - A pinned `SliverAppBar` (`expandedHeight: ~220-260`, `pinned: true`,
+    `backgroundColor: theme.colorScheme.surface`) whose `flexibleSpace` is a `Stack` hero: a
+    background tint/image (accent-coloured tint or the entity's photo/emoji inside a rounded
+    card), then a `DecoratedBox` gradient from `Colors.transparent` to `theme.colorScheme.surface`
+    (stops `[0.6, 1.0]`) so the hero fades into the content below instead of hard-cutting.
+    Back/edit/delete actions live in the app bar's `leading`/`actions`, not duplicated as buttons
+    further down the page.
+  - Below the hero: the entity title (Poppins, w700, ~22px), then a `Wrap` of small pill/badge
+    chips (bordered with the entity's accent colour, small leading `Icon`, 12-13px label text in
+    `onSurfaceVariant`) for secondary metadata (category, unit, tags, servings, "Catalogue
+    product", etc.) — this replaces older stacked `InfoRow`/`ListTile`-style metadata blocks.
+  - **Never surface raw internal/database identifiers** in this UI (no "Product #12",
+    "Category #2", raw hex colour strings, etc.) — if an id-like value is useful for
+    debugging, it belongs in logs/diagnostics, not the user-facing detail page.
+  - Any feature-specific sections below (ingredients list, products list, etc.) are separate
+    `ConsumerWidget`s that take the parent's resolved accent colour so nested list tiles (e.g.
+    `CategoryProductTile`) stay visually consistent with the header.
+  - List tiles that open a detail page should also follow the "round avatar overlapping a card"
+    look (`AccentCircleListCard` + `CircleAccentAvatar` + the entity's image widget), be tappable
+    (`onTap` → push the detail page), long-press to edit, and swipe (`Dismissible`) to delete —
+    see `CategoryProductTile` / `ProductViewPage`'s product rows as the reference implementation.
 
 ## Codegen & Commands
 
@@ -210,3 +239,59 @@ flutter test
   `--dir` to `assets/images/recipes`, and dropped the second recipe dir from
   [tool/convert_images_to_webp.dart](../tool/convert_images_to_webp.dart)'s `_recipeDirs` list.
   Verified with `dart run tool/seed/validate_seed.dart` (492 recipes, seed data OK).
+- 2026-11-09: Bug: after the "removed some images and converted jpeg to webp" commit, recipes,
+  products and categories all lost their images in already-seeded databases (fresh installs were
+  fine). Root cause: that commit rewrote every `image`/`imageUrl`/`imageName` path in
+  [assets/data/products.json](../assets/data/products.json),
+  [assets/data/product_categories.json](../assets/data/product_categories.json) and
+  [assets/data/recipes.json](../assets/data/recipes.json) from `.jpg`/`.png` to `.webp`, but
+  [`SeedService.run()`](../lib/core/database/seeder/seed_service.dart) only re-applies the bundled
+  seed when `assets/data/seed_manifest.json`'s `version` is _higher_ than the value already stored
+  in `app_meta.seed_version` — and the manifest's version hadn't been bumped, so existing
+  databases kept their old (now-deleted) image paths forever. Fix: ran
+  `dart run tool/seed/validate_seed.dart --write-manifest --bump-version`, which validated the
+  seed data (no missing files) and bumped `seed_manifest.json` to `version: 2`. On next launch
+  `SeedService` will update the `photo`/`imageUrl` columns on every `is_built_in` row to the new
+  `.webp` paths. **Lesson: any edit to the bundled seed JSON files (image paths, content, etc.)
+  that should reach already-seeded devices/users must be paired with
+  `--write-manifest --bump-version`** (or a manual version bump), otherwise it silently never
+  applies to upgraded installs. Verified via
+  `flutter test test/core/database/seeder/seed_service_test.dart` (3/3 passing).- 2026-11-09: Fixed a follow-on bug from the v2 bump above: on a real device, upgrading an
+  already-seeded db to seed v2 (re-touching all ~447 built-in products / ~492 built-in recipes)
+  reproducibly caused "I/Choreographer: Skipped N frames" then "Lost connection to device" (the
+  app got killed, presumably ANR'd) right after the "[Seed] Applying seed v2" log line. Root
+  cause: [`SeedService`](../lib/core/database/seeder/seed_service.dart)'s update path (used when
+  a built-in row already exists) issued **one awaited `UPDATE`/`DELETE`/`INSERT` per row** inside
+  the single `_db.transaction`, i.e. ~1,900 sequential isolate round-trips (products: 447 updates;
+  recipes: 492 × update+delete-ingredients+insert-ingredients) — fine against an in-memory test db
+  (confirmed <250ms with a throwaway repro test) but apparently slow/bursty enough against a real
+  on-device SQLite file + `NativeDatabase.createInBackground` isolate to starve the splash
+  screen's frame pump and risk an ANR-style kill. Fix: batched all three hot paths
+  (`_seedCategories`, `_seedProducts`, `_seedRecipes`) using drift's `Batch.update`/`deleteWhere`/
+  `insertAll`, cutting the v1→v2 re-seed down to ~5 round-trips total regardless of row count
+  (measured ~100-250ms for the full 16 categories / 447 products / 492 recipes dataset). Removed
+  the now-dead `_insertIngredients` helper. Verified: `flutter analyze` on
+  [lib/core/database](../lib/core/database) clean, and the full `flutter test` suite (258 tests)
+  passes, including all three `seed_service_test.dart` cases.
+- 2026-11-11: Codified the **"Detail page pattern"** (pinned `SliverAppBar` hero →
+  gradient-faded title + accent-bordered badge chips → feature sections) as a documented
+  convention above, generalising from `RecipeDetailPage`. Brought
+  [ProductCategoryDetailPage](../lib/features/product_category/presentation/pages/product_category_detail_page.dart)
+  and [ProductDetailPage](../lib/features/products/presentation/pages/product_detail_page.dart)
+  in line with it (both previously used a flat `AppBar` + `ListView`/`SingleChildScrollView`,
+  hardcoded hex colours ignoring the Dark/Light/Green theme switch, and surfaced raw IDs like
+  "Category #2" / "#66BB6A" / "Product ID: 12" directly in the UI — all now removed). Deleted the
+  now-unused `category_detail_thumbnail.dart`, `category_detail_header_poster.dart`, and
+  `category_detail_header.dart` widgets (logic inlined into the page, matching how
+  `RecipeDetailPage` is structured) and the unused `DetailRow`/`StatusBadge` imports from
+  `ProductDetailPage`. Also fixed
+  [category_product_tile.dart](../lib/features/product_category/presentation/widgets/custom_controls/category_product_tile.dart)
+  (the per-category products list): it rendered square images with hardcoded `AppColors` and had
+  no tap-to-detail handler — rewired to the round `AccentCircleListCard` +
+  `CircleAccentAvatar` + `ProductImageWidget` stack (same visual language as `ProductViewPage`'s
+  rows), themed via `colorScheme`, and wired `onTap` → `ProductDetailPage`, long-press → edit
+  sheet, swipe → delete. While doing this, also theme-ified the shared
+  [info_row.dart](../lib/shared/widgets/display/info_row.dart) and
+  [detail_row.dart](../lib/shared/widgets/display/detail_row.dart) widgets (no more hardcoded hex
+  defaults) even though they're currently unused by the rewritten `ProductDetailPage`. Verified
+  `flutter analyze` clean across `lib/`.

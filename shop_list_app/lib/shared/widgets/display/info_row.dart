@@ -27,7 +27,8 @@ class InfoRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final resolvedIconColor = iconColor ?? const Color(0xFF7C7C7C);
+    final theme = Theme.of(context);
+    final resolvedIconColor = iconColor ?? theme.colorScheme.onSurfaceVariant;
     return Row(
       children: [
         Container(
@@ -46,10 +47,10 @@ class InfoRow extends StatelessWidget {
             children: [
               Text(
                 label,
-                style: const TextStyle(
+                style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 12,
-                  color: Color(0xFF7C7C7C),
+                  color: theme.colorScheme.onSurfaceVariant,
                 ),
               ),
               Text(
@@ -58,7 +59,7 @@ class InfoRow extends StatelessWidget {
                   fontFamily: 'Poppins',
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
-                  color: valueColor ?? const Color(0xFF181725),
+                  color: valueColor ?? theme.colorScheme.onSurface,
                 ),
               ),
             ],
